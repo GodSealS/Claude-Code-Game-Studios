@@ -1,5 +1,5 @@
 #!/bin/bash
-# Claude Code PostToolUse hook: Validates asset files after Write/Edit
+# CodeBuddy PostToolUse hook: Validates asset files after Write/Edit
 # Checks naming conventions for files in assets/ directory
 #
 # Exit behavior:

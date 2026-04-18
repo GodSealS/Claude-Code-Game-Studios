@@ -1,4 +1,4 @@
-# Upgrading Claude Code Game Studios
+# Upgrading CodeBuddy Game Studios
 
 This guide covers upgrading your existing game project repo from one version
 of the template to the next.

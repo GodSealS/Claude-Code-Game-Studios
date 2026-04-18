@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Notification hook — fires when Claude Code sends a notification
+# Notification hook — fires when CodeBuddy sends a notification
 # Shows a Windows toast via PowerShell
 
 # Read notification JSON from stdin
@@ -13,7 +13,7 @@ if [ -z "$MESSAGE" ]; then
   MESSAGE=$(echo "$INPUT" | grep -oE '"message":"[^"]*"' | sed 's/"message":"//;s/"//')
 fi
 if [ -z "$MESSAGE" ]; then
-  MESSAGE="Claude Code needs your attention"
+  MESSAGE="CodeBuddy needs your attention"
 fi
 
 # Sanitize message for PowerShell string embedding (escape single quotes)
@@ -24,7 +24,7 @@ powershell.exe -NonInteractive -WindowStyle Hidden -Command "
   Add-Type -AssemblyName System.Windows.Forms
   \$notify = New-Object System.Windows.Forms.NotifyIcon
   \$notify.Icon = [System.Drawing.SystemIcons]::Information
-  \$notify.BalloonTipTitle = 'Claude Code'
+  \$notify.BalloonTipTitle = 'CodeBuddy'
   \$notify.BalloonTipText = '$MESSAGE_SAFE'
   \$notify.Visible = \$true
   \$notify.ShowBalloonTip(5000)

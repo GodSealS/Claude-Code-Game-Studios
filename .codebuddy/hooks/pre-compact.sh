@@ -1,5 +1,5 @@
 #!/bin/bash
-# Claude Code PreCompact hook: Dump session state before context compression
+# CodeBuddy PreCompact hook: Dump session state before context compression
 # This output appears in the conversation right before compaction, ensuring
 # critical state survives the summarization process.
 

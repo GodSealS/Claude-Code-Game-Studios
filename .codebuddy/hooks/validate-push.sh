@@ -1,5 +1,5 @@
 #!/bin/bash
-# Claude Code PreToolUse hook: Validates git push commands
+# CodeBuddy PreToolUse hook: Validates git push commands
 # Warns on pushes to protected branches
 # Exit 0 = allow, Exit 2 = block
 #

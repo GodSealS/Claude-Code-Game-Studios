@@ -9,7 +9,7 @@ allowed-tools: Read, Glob, Grep
 
 ## Phase 1: Read Standards
 
-Read the art bible or asset standards from the relevant design docs and the CLAUDE.md naming conventions.
+Read the art bible or asset standards from the relevant design docs and the CODEBUDDY.md naming conventions.
 
 ---
 

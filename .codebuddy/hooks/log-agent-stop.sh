@@ -1,8 +1,8 @@
 #!/bin/bash
-# Claude Code SubagentStop hook: Log agent completion for audit trail
+# CodeBuddy SubagentStop hook: Log agent completion for audit trail
 # Tracks when agents finish and their outcome
 #
-# Input schema (SubagentStop) — per Claude Code hooks reference:
+# Input schema (SubagentStop) — per CodeBuddy hooks reference:
 # { "session_id": "...", "agent_id": "agent-abc123", "agent_type": "Explore",
 #   "agent_transcript_path": "...", "last_assistant_message": "...", ... }
 #

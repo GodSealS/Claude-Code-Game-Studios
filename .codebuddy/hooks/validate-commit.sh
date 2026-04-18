@@ -1,7 +1,7 @@
 #!/bin/bash
-# Claude Code PreToolUse hook: Validates git commit commands
+# CodeBuddy PreToolUse hook: Validates git commit commands
 # Receives JSON on stdin with tool_input.command
-# Exit 0 = allow, Exit 2 = block (stderr shown to Claude)
+# Exit 0 = allow, Exit 2 = block (stderr shown to CodeBuddy)
 #
 # Input schema (PreToolUse for Bash):
 # { "tool_name": "Bash", "tool_input": { "command": "git commit -m ..." } }

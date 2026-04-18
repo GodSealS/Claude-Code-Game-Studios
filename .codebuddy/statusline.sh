@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Claude Code Game Studios — Status Line
+# CodeBuddy Game Studios — Status Line
 # Receives JSON on stdin, outputs a single-line status.
 #
 # Segments: ctx% | model | production stage [| Epic > Feature > Task]

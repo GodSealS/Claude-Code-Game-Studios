@@ -334,7 +334,7 @@ This is a multi-phase skill. If context reaches or exceeds 70% during any phase,
 append this notice to the current response before continuing:
 
 > **Context is approaching the limit (≥70%).** The game concept document is saved
-> to `design/gdd/game-concept.md`. Open a fresh Claude Code session to continue
+> to `design/gdd/game-concept.md`. Open a fresh CodeBuddy session to continue
 > if needed — progress is not lost.
 
 ---

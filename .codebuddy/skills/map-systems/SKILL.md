@@ -350,7 +350,7 @@ This skill follows the collaborative design principle at every phase:
 If context reaches or exceeds 70% at any point, append this notice:
 
 > **Context is approaching the limit (≥70%).** The systems index is saved to
-> `design/gdd/systems-index.md`. Open a fresh Claude Code session to continue
+> `design/gdd/systems-index.md`. Open a fresh CodeBuddy session to continue
 > designing individual GDDs — run `/map-systems next` to pick up where you left off.
 
 ---

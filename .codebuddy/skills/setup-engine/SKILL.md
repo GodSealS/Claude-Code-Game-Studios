@@ -1,6 +1,6 @@
 ---
 name: setup-engine
-description: "Configure the project's game engine and version. Pins the engine in CLAUDE.md, detects knowledge gaps, and populates engine reference docs via WebSearch when the version is beyond the LLM's training data."
+description: "Configure the project's game engine and version. Pins the engine in CODEBUDDY.md, detects knowledge gaps, and populates engine reference docs via WebSearch when the version is beyond the LLM's training data."
 argument-hint: "[engine] | [engine version] | refresh | upgrade [old-version] [new-version] | no args for guided selection"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch, Task, AskUserQuestion
@@ -124,7 +124,7 @@ Once the engine is chosen:
 
 ---
 
-## 4. Update CLAUDE.md Technology Stack
+## 4. Update CODEBUDDY.md Technology Stack
 
 ### Language Selection (Godot only)
 
@@ -138,12 +138,12 @@ If Godot was chosen, ask the user which language to use **before** showing the p
 >
 > Which will this project primarily use?"
 
-Record the choice. It determines the CLAUDE.md template, naming conventions, specialist routing, and which agent is spawned for code files throughout the project.
+Record the choice. It determines the CODEBUDDY.md template, naming conventions, specialist routing, and which agent is spawned for code files throughout the project.
 
 ---
 
-Read `CLAUDE.md` and show the user the proposed Technology Stack changes.
-Ask: "May I write these engine settings to `CLAUDE.md`?"
+Read `CODEBUDDY.md` and show the user the proposed Technology Stack changes.
+Ask: "May I write these engine settings to `CODEBUDDY.md`?"
 
 Wait for confirmation before making any edits.
 
@@ -171,7 +171,7 @@ Update the Technology Stack section, replacing the `[CHOOSE]` placeholders with 
 
 ## 5. Populate Technical Preferences
 
-After updating CLAUDE.md, create or update `.codebuddy/docs/technical-preferences.md` with
+After updating CODEBUDDY.md, create or update `.codebuddy/docs/technical-preferences.md` with
 engine-appropriate defaults. Read the existing template first, then fill in:
 
 ### Engine & Language Section
@@ -386,9 +386,9 @@ Wait for confirmation before writing any files.
 
 ---
 
-## 8. Update CLAUDE.md Import
+## 8. Update CODEBUDDY.md Import
 
-Ask: "May I update the `@` import in `CLAUDE.md` to point to the new engine reference?"
+Ask: "May I update the `@` import in `CODEBUDDY.md` to point to the new engine reference?"
 
 Wait for confirmation, then update the `@` import under "Engine Version Reference" to point to the
 correct engine:
@@ -552,7 +552,7 @@ Engine:          [name] [version]
 Language:        [GDScript | C# | GDScript + C# | C# | C++ + Blueprint]
 Knowledge Risk:  [LOW/MEDIUM/HIGH]
 Reference Docs:  [created/skipped]
-CLAUDE.md:       [updated]
+CODEBUDDY.md:    [updated]
 Tech Prefs:      [created/updated]
 Agent Config:    [verified]
 
@@ -574,7 +574,7 @@ Verdict: **COMPLETE** — engine configured and reference docs populated.
 - NEVER guess an engine version — always verify via WebSearch or user confirmation
 - NEVER overwrite existing reference docs without asking — append or update
 - If reference docs already exist for a different engine, ask before replacing
-- Always show the user what you're about to change before making CLAUDE.md edits
+- Always show the user what you're about to change before making CODEBUDDY.md edits
 - If WebSearch returns ambiguous results, show the user and let them decide
 - When the user chose **GDScript**: copy the GDScript CLAUDE.md template from Appendix A1 exactly. NEVER add "C++ via GDExtension" to the Language field. GDScript projects may use GDExtension, but it is not a primary project language. The `godot-gdextension-specialist` in the routing table is available for when native extensions are needed — it does not make C++ a project language.
 
@@ -586,7 +586,7 @@ All Godot-specific variants for language-dependent configuration. Referenced fro
 
 ---
 
-### A1. CLAUDE.md Technology Stack Templates
+### A1. CODEBUDDY.md Technology Stack Templates
 
 **GDScript:**
 ```markdown

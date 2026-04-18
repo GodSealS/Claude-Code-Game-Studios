@@ -2,7 +2,7 @@
 
 ## What Is This?
 
-This is a complete Claude Code agent architecture for game development. It
+This is a complete CodeBuddy agent architecture for game development. It
 organizes 48 specialized AI agents into a studio hierarchy that mirrors
 real game development teams, with defined responsibilities, delegation
 rules, and coordination protocols. It includes engine-specialist agents
@@ -210,7 +210,7 @@ If you already know what you need, jump directly to the relevant path:
    - Generates 3 concepts, helps you pick one, defines core loop and pillars
    - Produces a game concept document and recommends an engine
 2. **Set up the engine** — Run `/setup-engine` (uses the brainstorm recommendation)
-   - Configures CLAUDE.md, detects knowledge gaps, populates reference docs
+   - Configures CODEBUDDY.md, detects knowledge gaps, populates reference docs
    - Creates `.codebuddy/docs/technical-preferences.md` with naming conventions,
      performance budgets, and engine-specific defaults
    - If the engine version is newer than the LLM's training data, it fetches
@@ -263,9 +263,9 @@ If you have design docs, prototypes, or code already:
 ## File Structure Reference
 
 ```
-CLAUDE.md                          -- Master config (read this first, ~60 lines)
+CODEBUDDY.md                       -- Master config (read this first, ~60 lines)
 .codebuddy/
-  settings.json                    -- Claude Code hooks and project settings
+  settings.json                    -- CodeBuddy hooks and project settings
   agents/                          -- 48 agent definitions (YAML frontmatter)
   skills/                          -- 68 slash command definitions (YAML frontmatter)
   hooks/                           -- 12 hook scripts (.sh) wired by settings.json
