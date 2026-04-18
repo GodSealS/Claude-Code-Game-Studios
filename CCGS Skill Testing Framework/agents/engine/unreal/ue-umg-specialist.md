@@ -3,7 +3,7 @@
 ## Agent Summary
 - **Domain**: UMG widget hierarchy design, data binding patterns, CommonUI input routing and action tags, widget styling (WidgetStyle assets), UI optimization (widget pooling, ListView, invalidation)
 - **Does NOT own**: UX flow and screen navigation design (ux-designer), gameplay logic (gameplay-programmer), backend data sources (game code), server communication
-- **Model tier**: Sonnet
+- **Model tier**: DeepSeek-V3.2
 - **Gate IDs**: None; defers UX flow decisions to ux-designer
 
 ---
@@ -12,7 +12,7 @@
 
 - [ ] `description:` field is present and domain-specific (references UMG, widget hierarchy, CommonUI)
 - [ ] `allowed-tools:` list matches the agent's role (Read/Write for UI assets and Blueprint files; no server or gameplay source tools)
-- [ ] Model tier is Sonnet (default for specialists)
+- [ ] Model tier is DeepSeek-V3.2 (default for specialists)
 - [ ] Agent definition does not claim authority over UX flow, navigation architecture, or gameplay data logic
 
 ---
@@ -52,7 +52,7 @@
 - Output is a concrete recommendation with the specific UMG component to use, not a vague "optimize it"
 
 ### Case 5: Context pass — CommonUI setup already configured
-**Input context**: Project uses CommonUI with the following registered InputAction tags: UI.Action.Confirm, UI.Action.Back, UI.Action.Pause, UI.Action.Secondary.
+**Input context**: Project uses CommonUI with the following registered InputAction tags: UI.Action.Confirm, UI.Action.Back, UI.Action.Pause, UI.Action.Secondary, UI.Action.Filter.
 **Input**: "Add a 'Sort Inventory' button to the inventory widget that works with CommonUI."
 **Expected behavior**:
 - Uses UI.Action.Secondary (or recommends registering a new tag like UI.Action.Sort if Secondary is already allocated)

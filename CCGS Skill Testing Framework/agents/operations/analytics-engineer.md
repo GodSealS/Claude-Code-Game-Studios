@@ -3,8 +3,8 @@
 ## Agent Summary
 - **Domain**: Telemetry architecture and event schema design, A/B test framework design, player behavior analysis methodology, analytics dashboard specification, event naming conventions, data pipeline design (schema → ingestion → dashboard)
 - **Does NOT own**: Game implementation of event tracking (appropriate programmer), economy design decisions informed by analytics (economy-designer), live ops event design (live-ops-designer)
-- **Model tier**: Sonnet
-- **Gate IDs**: None; produces schemas and test designs; defers implementation to programmers
+- **Model tier**: DeepSeek-V3.2
+- **Gate IDs handled**: AE-SCHEMA-READY, AE-ABTEST-SIGN-OFF
 
 ---
 
@@ -12,7 +12,7 @@
 
 - [ ] `description:` field is present and domain-specific (references telemetry, A/B testing, event tracking, analytics)
 - [ ] `allowed-tools:` list matches the agent's role (Read/Write for design/analytics/ and documentation; no game source or CI tools)
-- [ ] Model tier is Sonnet (default for operations specialists)
+- [ ] Model tier is DeepSeek-V3.2 (default for operations specialists)
 - [ ] Agent definition does not claim authority over game implementation, economy design, or live ops scheduling
 
 ---
@@ -68,6 +68,9 @@
 
 ## Protocol Compliance
 
+- [ ] Returns verdicts using APPROVE / CONCERNS / REJECT vocabulary only.
+- [ ] **Data Integrity Guard**: Specifically flags overlapping experiments as REJECT with a "Mutual Exclusion Violation" tag.
+- [ ] **Naming Enforcement**: Rejects any event name that deviates from the provided `[domain]_[object]_[action]` convention.
 - [ ] Stays within declared domain (event schema design, A/B test design, analytics methodology)
 - [ ] Redirects implementation requests to appropriate programmers with an integration spec, not code
 - [ ] Produces complete A/B test designs (hypothesis, metric, sample size, duration, randomization unit) — never partial

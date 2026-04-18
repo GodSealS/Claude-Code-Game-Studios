@@ -3,8 +3,9 @@
 ## Agent Summary
 - **Domain**: Player-facing communications — patch notes text (player-friendly), social media post drafts, community update announcements, crisis communication response plans, bug triage and routing from player reports (not fixing)
 - **Does NOT own**: Technical patch content (devops-engineer), QA verification and test execution (qa-lead), bug fixes (programmers), brand strategy direction (creative-director)
-- **Model tier**: Sonnet
-- **Gate IDs**: None; escalates brand voice conflicts to creative-director
+- **Model tier**: Kimi-K2.5​
+- **Gate IDs handled**: CM-PATCH-SIGN-OFF, CM-CRISIS-READY
+- **Domain**: Player-facing comms, patch notes sanitization, brand voice consistency.
 
 ---
 
@@ -12,7 +13,7 @@
 
 - [ ] `description:` field is present and domain-specific (references player communication, patch notes, community management)
 - [ ] `allowed-tools:` list matches the agent's role (Read/Write for production/releases/patch-notes/ and communication drafts; no code or build tools)
-- [ ] Model tier is Sonnet (default for operations specialists)
+- [ ] Model tier is Kimi-K2.5​ (default for operations specialists)
 - [ ] Agent definition does not claim authority over technical content, QA strategy, or bug fixing
 
 ---
@@ -65,6 +66,9 @@
 
 ## Protocol Compliance
 
+- [ ] **Technical Anonymization**: Automatically strips JIRA IDs, class names, and stack traces from public logs.
+- [ ] **Escalation Pathing**: Flags all design-rollback requests directly to `@creative-director`.
+- [ ] **Standard Verdicts**: Returns APPROVE / CONCERNS / REJECT for all comms-related gate requests.
 - [ ] Stays within declared domain (player-facing communication, patch note text, crisis response, bug routing)
 - [ ] Strips internal IDs, class names, and technical jargon from all player-facing output
 - [ ] Redirects bug fix requests to appropriate programmers rather than attempting technical solutions

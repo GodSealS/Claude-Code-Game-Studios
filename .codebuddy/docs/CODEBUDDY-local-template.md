@@ -1,13 +1,13 @@
-# CLAUDE.local.md Template
+# CODEBUDDY.local.md Template
 
-Copy this file to the project root as `CLAUDE.local.md` for personal overrides.
+Copy this file to the project root as `CODEBUDDY.local.md` for personal overrides.
 This file is gitignored and will not be committed.
 
 ```markdown
 # Personal Preferences
 
 ## Model Preferences
-- Prefer Opus for complex design tasks
+- Prefer GLM-5.1 for complex design tasks
 - Use Haiku for quick lookups and simple edits
 
 ## Workflow Preferences
@@ -32,6 +32,6 @@ This file is gitignored and will not be committed.
 
 ## Setup
 
-1. Copy this template to your project root: `cp .claude/docs/CLAUDE-local-template.md CLAUDE.local.md`
+1. Copy this template to your project root: `cp .codebuddy/docs/CODEBUDDY-local-template.md CODEBUDDY.local.md`
 2. Edit to match your preferences
-3. Verify `CLAUDE.local.md` is in `.gitignore` (Claude Code reads it from the project root)
+3. Verify `CODEBUDDY.local.md` is in `.gitignore` (Claude Code reads it from the project root)

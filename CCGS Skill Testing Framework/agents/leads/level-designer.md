@@ -3,18 +3,18 @@
 ## Agent Summary
 **Domain owned:** Level layouts, encounter design, pacing and tension arc, environmental storytelling, spatial puzzles.
 **Does NOT own:** Narrative dialogue (writer / narrative-director), visual art style (art-director), code implementation (lead-programmer / ai-programmer), enemy AI behavior logic (ai-programmer / gameplay-programmer).
-**Model tier:** Sonnet (individual system analysis — level design review and encounter assessment).
-**Gate IDs handled:** Level design review verdicts (uses APPROVED / REVISION NEEDED vocabulary).
+**Model tier:** DeepSeek-V3.2 (individual system analysis — level design review and encounter assessment).
+**Gate IDs**: LD-LAYOUT-REVIEW, LD-ENCOUNTER-CHECK, LD-PHASE-GATE
 
 ---
 
 ## Static Assertions (Structural)
 
-Verified by reading the agent's `.claude/agents/level-designer.md` frontmatter:
+Verified by reading the agent's `.codebuddy/agents/level-designer.md` frontmatter:
 
 - [ ] `description:` field is present and domain-specific (references level layout, encounter design, pacing, environmental storytelling — not generic)
 - [ ] `allowed-tools:` list is read-focused; includes Read for level design documents and GDDs; no Bash unless level tooling requires it
-- [ ] Model tier is `claude-sonnet-4-6` per coordination-rules.md
+- [ ] Model tier is `DeepSeek-V3.2` per coordination-rules.md
 - [ ] Agent definition does not claim authority over narrative dialogue, AI behavior code, or visual art style
 
 ---
@@ -69,7 +69,8 @@ Verified by reading the agent's `.claude/agents/level-designer.md` frontmatter:
 
 ## Protocol Compliance
 
-- [ ] Returns verdicts using APPROVED / REVISION NEEDED vocabulary only
+- [ ] Returns verdicts using APPROVE / CONCERNS / REJECT vocabulary only
+- [ ] Verdict token is formatted as `GATE-ID: VERDICT` (e.g., `LD-LAYOUT-REVIEW: REJECT`)
 - [ ] Stays within declared level design domain
 - [ ] Escalates challenge-density vs. pacing conflicts to creative-director
 - [ ] Does not make binding narrative dialogue, AI code implementation, or visual art style decisions

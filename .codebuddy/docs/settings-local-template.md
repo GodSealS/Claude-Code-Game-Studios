@@ -1,6 +1,6 @@
 # settings.local.json Template
 
-Create `.claude/settings.local.json` for personal overrides that should NOT
+Create `.codebuddy/settings.local.json` for personal overrides that should NOT
 be committed to version control. Add it to `.gitignore`.
 
 ## Example settings.local.json

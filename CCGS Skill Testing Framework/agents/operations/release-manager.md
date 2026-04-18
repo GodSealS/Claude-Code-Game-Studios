@@ -3,8 +3,9 @@
 ## Agent Summary
 - **Domain**: Release pipeline management, platform certification checklists (Nintendo, Sony, Microsoft, Apple, Google), store submission workflows, platform technical requirements compliance, semantic version numbering, release branch management
 - **Does NOT own**: Game design decisions, QA test strategy or test case design (qa-lead), QA test execution (qa-tester), build infrastructure (devops-engineer)
-- **Model tier**: Sonnet
-- **Gate IDs**: May be invoked by `/gate-check` during Release phase; LAUNCH BLOCKED verdict is release-manager's primary escalation output
+- **Model tier**: DeepSeek-V3.2
+- **Gate IDs handled**: RM-CERT-CHECK, RM-VERSION-SIGN-OFF, RM-PHASE-GATE
+- **Domain**: Certification checklists (Nintendo/Sony/MS), SemVer, store submissions.
 
 ---
 
@@ -12,7 +13,7 @@
 
 - [ ] `description:` field is present and domain-specific (references release pipeline, certification, store submission)
 - [ ] `allowed-tools:` list matches the agent's role (Read/Write for production/releases/ directory; no game source or test tools)
-- [ ] Model tier is Sonnet (default for operations specialists)
+- [ ] Model tier is DeepSeek-V3.2 (default for operations specialists)
 - [ ] Agent definition does not claim authority over QA strategy, game design, or build infrastructure
 
 ---
@@ -65,6 +66,9 @@
 
 ## Protocol Compliance
 
+- [ ] **Standard Verdicts**: Returns APPROVE / CONCERNS / REJECT only.
+- [ ] **Blocking Authority**: Issues REJECT for any certification failure or versioning conflict.
+- [ ] **Timeline Awareness**: Uses the provided `current_date` to calculate submission windows.
 - [ ] Stays within declared domain (release pipeline, certification checklists, version numbering, store submission)
 - [ ] Redirects test case design requests to qa-lead/qa-tester without producing test specs
 - [ ] Issues LAUNCH BLOCKED verdicts for certification failures — does not downgrade to advisory

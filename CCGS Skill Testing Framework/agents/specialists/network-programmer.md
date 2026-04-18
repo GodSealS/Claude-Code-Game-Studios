@@ -1,10 +1,9 @@
 # Agent Test Spec: network-programmer
 
 ## Agent Summary
-Domain: Multiplayer networking, state replication, lag compensation, matchmaking protocol design, and network message schemas.
-Does NOT own: gameplay logic (only the networking of it), server infrastructure and deployment (devops-engineer).
-Model tier: Sonnet (default).
-No gate IDs assigned.
+- **Domain**: Multiplayer networking, state replication, lag compensation, matchmaking protocol design, and network message schemas.
+- **Does NOT own**: gameplay logic (only the networking of it), server infrastructure and deployment (devops-engineer).
+- **Model tier**: DeepSeek-V3.2 (default).
 
 ---
 
@@ -12,7 +11,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and domain-specific (references multiplayer / replication / networking)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is Sonnet (default for specialists)
+- [ ] Model tier is DeepSeek-V3.2 is verified for technical reasoning and math accuracy.
 - [ ] Agent definition does not claim authority over gameplay logic or server deployment infrastructure
 
 ---
@@ -45,6 +44,7 @@ No gate IDs assigned.
 - Specifies the state snapshot format, reconciliation trigger threshold (e.g., >5 units position error), and correction interpolation speed
 - Notes the input buffer pattern for deterministic replay
 - Does NOT change the physics simulation itself — documents the interface contract for engine-programmer
+- Explicitly lists the 'Security-Performance Trade-off' in a table format for the Technical Director's review.
 
 ### Case 4: Anti-cheat conflict
 **Input:** "We want client-authoritative position for smooth movement, but anti-cheat requires server validation."
@@ -72,6 +72,8 @@ No gate IDs assigned.
 - [ ] Does not implement gameplay logic — only specifies the network contract for it
 - [ ] Coordinates with security-engineer on anti-cheat boundaries
 - [ ] Designs to explicit latency targets from provided context
+- [ ] All bandwidth estimates must use LaTeX for unit consistency (e.g., "$12.5\text{ KB/s}$ per client").
+- [ ] Lag compensation designs must explicitly calculate frame delay values (e.g., "$80\text{ms} / 16.67\text{ms} \approx 5$ frames").
 
 ---
 

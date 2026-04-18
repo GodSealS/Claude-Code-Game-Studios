@@ -1,10 +1,12 @@
 # Agent Test Spec: ai-programmer
 
 ## Agent Summary
-Domain: NPC behavior, state machines, pathfinding, perception systems, and AI decision-making.
-Does NOT own: player mechanics (gameplay-programmer), rendering or engine internals (engine-programmer).
-Model tier: Sonnet (default).
-No gate IDs assigned.
+- **Domain**: NPC behavior, state machines, pathfinding, perception systems, UE 5.5 NPC Systems (StateTree/MassAI), Perception (EQS), Pathfinding (NavMesh), and AI decision-making.
+- **Does NOT own**: player mechanics (gameplay-programmer), rendering or engine internals (engine-programmer).
+- **Exclusion**: No authority over Player Mechanics (`gameplay-programmer`) or low-level NavMesh generators (`engine-programmer`).
+- **Model tie**r: DeepSeek-V3.2 (default).
+- **Gate IDs handled**: AI-BEHAVIOR-REVIEW, AI-PERF-AUDIT, AI-PHASE-GATE
+- **Domain**: NPC Behavior (StateTree/BT), Pathfinding (NavMesh/MassAI), Perception, EQS.
 
 ---
 
@@ -12,7 +14,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and domain-specific (references NPC behavior / AI systems)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is Sonnet (default for specialists)
+- [ ] Model tier is DeepSeek-V3.2 (default for specialists)
 - [ ] Agent definition does not claim authority over player mechanics or engine rendering
 
 ---
@@ -64,6 +66,11 @@ No gate IDs assigned.
 
 ## Protocol Compliance
 
+- [ ] Uses Mermaid.js or text-based state transition tables for behavior specifications.
+- [ ] All performance metrics must use LaTeX for quantitative expressions (e.g., "Expected complexity: $O(\log n)$").
+- [ ] **Standard Verdicts**: Returns APPROVE / CONCERNS / REJECT for all architectural audits.
+- [ ] **Handoff Protocol**: Explicitly tags `@level-designer` for NavMesh issues or `@engine-programmer` for low-level perf structures.
+- [ ] **Data-Driven Guard**: Rejects hardcoded coordinates in AI logic; enforces use of Data Assets or Blackboards.
 - [ ] Stays within declared domain (NPC behavior, pathfinding, perception, state machines)
 - [ ] Redirects out-of-domain requests to correct agent (gameplay-programmer, engine-programmer, level-designer)
 - [ ] Returns structured findings (behavior tree specs, state machine diagrams, code scaffolds)

@@ -1,18 +1,18 @@
 # Agent Roster
 
 The following agents are available. Each has a dedicated definition file in
-`.claude/agents/`. Use the agent best suited to the task at hand. When a task
+`.codebuddy/agents/`. Use the agent best suited to the task at hand. When a task
 spans multiple domains, the coordinating agent (usually `producer` or the
 domain lead) should delegate to specialists.
 
-## Tier 1 -- Leadership Agents (Opus)
+## Tier 1 -- Leadership Agents (GLM-5.1)
 | Agent | Domain | When to Use |
 |-------|--------|-------------|
 | `creative-director` | High-level vision | Major creative decisions, pillar conflicts, tone/direction |
 | `technical-director` | Technical vision | Architecture decisions, tech stack choices, performance strategy |
 | `producer` | Production management | Sprint planning, milestone tracking, risk management, coordination |
 
-## Tier 2 -- Department Lead Agents (Sonnet)
+## Tier 2 -- Department Lead Agents (DeepSeek-V3.2)
 | Agent | Domain | When to Use |
 |-------|--------|-------------|
 | `game-designer` | Game design | Mechanics, systems, progression, economy, balancing |
@@ -24,32 +24,34 @@ domain lead) should delegate to specialists.
 | `release-manager` | Release pipeline | Build management, versioning, changelogs, deployment, rollbacks |
 | `localization-lead` | Internationalization | String externalization, translation pipeline, locale testing |
 
-## Tier 3 -- Specialist Agents (Sonnet or Haiku)
+## Tier 3 -- Specialist Agents (Kimi-K2.5 or MiniMax-M2.7)
 | Agent | Domain | Model | When to Use |
 |-------|--------|-------|-------------|
-| `systems-designer` | Systems design | Sonnet | Specific mechanic implementation, formula design, loops |
-| `level-designer` | Level design | Sonnet | Level layouts, pacing, encounter design, flow |
-| `economy-designer` | Economy/balance | Sonnet | Resource economies, loot tables, progression curves |
-| `gameplay-programmer` | Gameplay code | Sonnet | Feature implementation, gameplay systems code |
-| `engine-programmer` | Engine systems | Sonnet | Core engine, rendering, physics, memory management |
-| `ai-programmer` | AI systems | Sonnet | Behavior trees, pathfinding, NPC logic, state machines |
-| `network-programmer` | Networking | Sonnet | Netcode, replication, lag compensation, matchmaking |
-| `tools-programmer` | Dev tools | Sonnet | Editor extensions, pipeline tools, debug utilities |
-| `ui-programmer` | UI implementation | Sonnet | UI framework, screens, widgets, data binding |
-| `technical-artist` | Tech art | Sonnet | Shaders, VFX, optimization, art pipeline tools |
-| `sound-designer` | Sound design | Haiku | SFX design docs, audio event lists, mixing notes |
-| `writer` | Dialogue/lore | Sonnet | Dialogue writing, lore entries, item descriptions |
-| `world-builder` | World/lore design | Sonnet | World rules, faction design, history, geography |
-| `qa-tester` | Test execution | Haiku | Writing test cases, bug reports, test checklists |
-| `performance-analyst` | Performance | Sonnet | Profiling, optimization recs, memory analysis |
-| `devops-engineer` | Build/deploy | Haiku | CI/CD, build scripts, version control workflow |
-| `analytics-engineer` | Telemetry | Sonnet | Event tracking, dashboards, A/B test design |
-| `ux-designer` | UX flows | Sonnet | User flows, wireframes, accessibility, input handling |
-| `prototyper` | Rapid prototyping | Sonnet | Throwaway prototypes, mechanic testing, feasibility validation |
-| `security-engineer` | Security | Sonnet | Anti-cheat, exploit prevention, save encryption, network security |
-| `accessibility-specialist` | Accessibility | Haiku | WCAG compliance, colorblind modes, remapping, text scaling |
-| `live-ops-designer` | Live operations | Sonnet | Seasons, events, battle passes, retention, live economy |
-| `community-manager` | Community | Haiku | Patch notes, player feedback, crisis comms, community health |
+| `systems-designer` | Systems design | DeepSeek-V3.2 | Specific mechanic implementation, formula design, loops |
+| `level-designer` | Level design | Kimi-K2.5 | Level layouts, pacing, encounter design, flow |
+| `economy-designer` | Economy/balance | DeepSeek-V3.2 | Resource economies, loot tables, progression curves |
+
+| `gameplay-programmer` | Gameplay code | DeepSeek-V3.2 | Feature implementation, gameplay systems code |
+
+| `engine-programmer` | Engine systems | DeepSeek-V3.2 | Core engine, rendering, physics, memory management |
+| `ai-programmer` | AI systems | DeepSeek-V3.2 | Behavior trees, pathfinding, NPC logic, state machines |
+| `network-programmer` | Networking | DeepSeek-V3.2 | Netcode, replication, lag compensation, matchmaking |
+| `tools-programmer` | Dev tools | DeepSeek-V3.2 | Editor extensions, pipeline tools, debug utilities |
+| `ui-programmer` | UI implementation | GLM-5v-Turbo | UI framework, screens, widgets, data binding |
+| `technical-artist` | Tech art | GLM-5v-Turbo | Shaders, VFX, optimization, art pipeline tools |
+| `sound-designer` | Sound design | MiniMax-M2.7 | SFX design docs, audio event lists, mixing notes |
+| `writer` | Dialogue/lore | MiniMax-M2.7 | Dialogue writing, lore entries, item descriptions |
+| `world-builder` | World/lore design | MiniMax-M2.7 | World rules, faction design, history, geography |
+| `qa-tester` | Test execution | DeepSeek-V3.2 | Writing test cases, bug reports, test checklists |
+| `performance-analyst` | Performance | GLM-5.1 | Profiling, optimization recs, memory analysis |
+| `devops-engineer` | Build/deploy | GLM-5.1 | CI/CD, build scripts, version control workflow |
+| `analytics-engineer` | Telemetry | DeepSeek-V3.2 | Event tracking, dashboards, A/B test design |
+| `ux-designer` | UX flows | GLM-5.1 | User flows, wireframes, accessibility, input handling |
+| `prototyper` | Rapid prototyping | DeepSeek-V3.2 | Throwaway prototypes, mechanic testing, feasibility validation |
+| `security-engineer` | Security | DeepSeek-V3.2 | Anti-cheat, exploit prevention, save encryption, network security |
+| `accessibility-specialist` | Accessibility | GLM-5v-Turbo | WCAG compliance, colorblind modes, remapping, text scaling |
+| `live-ops-designer` | Live operations | DeepSeek-V3.2 | Seasons, events, battle passes, retention, live economy |
+| `community-manager` | Community | GLM-5.0-Turbo | Patch notes, player feedback, crisis comms, community health |
 
 ## Engine-Specific Agents (use the set matching your engine)
 
@@ -57,32 +59,32 @@ domain lead) should delegate to specialists.
 
 | Agent | Engine | Model | When to Use |
 | ---- | ---- | ---- | ---- |
-| `unreal-specialist` | Unreal Engine 5 | Sonnet | Blueprint vs C++, GAS overview, UE subsystems, Unreal optimization |
-| `unity-specialist` | Unity | Sonnet | MonoBehaviour vs DOTS, Addressables, URP/HDRP, Unity optimization |
-| `godot-specialist` | Godot 4 | Sonnet | GDScript patterns, node/scene architecture, signals, Godot optimization |
+| `unreal-specialist` | Unreal Engine 5 | DeepSeek-V3.2 | Blueprint vs C++, GAS overview, UE subsystems, Unreal optimization |
+| `unity-specialist` | Unity | DeepSeek-V3.2 | MonoBehaviour vs DOTS, Addressables, URP/HDRP, Unity optimization |
+| `godot-specialist` | Godot 4 | DeepSeek-V3.2 | GDScript patterns, node/scene architecture, signals, Godot optimization |
 
 ### Unreal Engine Sub-Specialists
 
 | Agent | Subsystem | Model | When to Use |
 | ---- | ---- | ---- | ---- |
-| `ue-gas-specialist` | Gameplay Ability System | Sonnet | Abilities, gameplay effects, attribute sets, tags, prediction |
-| `ue-blueprint-specialist` | Blueprint Architecture | Sonnet | BP/C++ boundary, graph standards, naming, BP optimization |
-| `ue-replication-specialist` | Networking/Replication | Sonnet | Property replication, RPCs, prediction, relevancy, bandwidth |
-| `ue-umg-specialist` | UMG/CommonUI | Sonnet | Widget hierarchy, data binding, CommonUI input, UI performance |
+| `ue-gas-specialist` | Gameplay Ability System | DeepSeek-V3.2 | Abilities, gameplay effects, attribute sets, tags, prediction |
+| `ue-blueprint-specialist` | Blueprint Architecture | GLM-5v-Turbo | BP/C++ boundary, graph standards, naming, BP optimization |
+| `ue-replication-specialist` | Networking/Replication | GLM-5.1 | Property replication, RPCs, prediction, relevancy, bandwidth |
+| `ue-umg-specialist` | UMG/CommonUI | DeepSeek-V3.2 | Widget hierarchy, data binding, CommonUI input, UI performance |
 
 ### Unity Sub-Specialists
 
 | Agent | Subsystem | Model | When to Use |
 | ---- | ---- | ---- | ---- |
-| `unity-dots-specialist` | DOTS/ECS | Sonnet | Entity Component System, Jobs, Burst compiler, hybrid renderer |
-| `unity-shader-specialist` | Shaders/VFX | Sonnet | Shader Graph, VFX Graph, URP/HDRP customization, post-processing |
-| `unity-addressables-specialist` | Asset Management | Sonnet | Addressable groups, async loading, memory, content delivery |
-| `unity-ui-specialist` | UI Toolkit/UGUI | Sonnet | UI Toolkit, UXML/USS, UGUI Canvas, data binding, cross-platform input |
+| `unity-dots-specialist` | DOTS/ECS | DeepSeek-V3.2 | Entity Component System, Jobs, Burst compiler, hybrid renderer |
+| `unity-shader-specialist` | Shaders/VFX | GLM-5.1 | Shader Graph, VFX Graph, URP/HDRP customization, post-processing |
+| `unity-addressables-specialist` | Asset Management | DeepSeek-V3.2 | Addressable groups, async loading, memory, content delivery |
+| `unity-ui-specialist` | UI Toolkit/UGUI | GLM-5v-Turbo | UI Toolkit, UXML/USS, UGUI Canvas, data binding, cross-platform input |
 
 ### Godot Sub-Specialists
 
 | Agent | Subsystem | Model | When to Use |
 | ---- | ---- | ---- | ---- |
-| `godot-gdscript-specialist` | GDScript | Sonnet | Static typing, design patterns, signals, coroutines, GDScript performance |
-| `godot-shader-specialist` | Shaders/Rendering | Sonnet | Godot shading language, visual shaders, particles, post-processing |
-| `godot-gdextension-specialist` | GDExtension | Sonnet | C++/Rust bindings, native performance, custom nodes, build systems |
+| `godot-gdscript-specialist` | GDScript | DeepSeek-V3.2 | Static typing, design patterns, signals, coroutines, GDScript performance |
+| `godot-shader-specialist` | Shaders/Rendering | GLM-5v-Turbo | Godot shading language, visual shaders, particles, post-processing |
+| `godot-gdextension-specialist` | GDExtension | DeepSeek-V3.2 | C++/Rust bindings, native performance, custom nodes, build systems |

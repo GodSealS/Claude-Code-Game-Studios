@@ -1,10 +1,11 @@
 # Agent Test Spec: security-engineer
 
 ## Agent Summary
-Domain: Anti-cheat systems, save data security, network security, vulnerability assessment, and data privacy compliance.
-Does NOT own: game logic design (gameplay-programmer), server infrastructure (devops-engineer).
-Model tier: Sonnet (default).
-No gate IDs assigned.
+- **Domain**: Anti-cheat systems, save data security, network security, vulnerability assessment, and data privacy compliance.
+- **Does NOT own**: game logic design (gameplay-programmer), server infrastructure (devops-engineer).
+- **Model tier**: DeepSeek-V3.2 (default).
+- **Gate IDs handled**: SE-VULNERABILITY-AUDIT, SE-SAVE-SECURITY-CHECK, SE-PHASE-GATE
+- **Domain**: Anti-cheat, Network Security, SQLi/XSS, UE 5.5 Save Security.
 
 ---
 
@@ -12,7 +13,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and domain-specific (references anti-cheat / security / vulnerability assessment)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is Sonnet (default for specialists)
+- [ ] Model tier is DeepSeek-V3.2 (default for specialists)
 - [ ] Agent definition does not claim authority over game logic design or server deployment
 
 ---
@@ -64,6 +65,9 @@ No gate IDs assigned.
 
 ## Protocol Compliance
 
+- [ ] **Standard Verdicts**: Returns APPROVE / CONCERNS / REJECT vocabulary only.
+- [ ] **Escalation Trigger**: Specifically tags `@technical-director` for any finding labeled as $CRITICAL$ or $HIGH$.
+- [ ] **Remediation Boundary**: Provides parameterized query examples but defers code changes to `@gameplay-programmer`.
 - [ ] Stays within declared domain (anti-cheat, save security, network security, vulnerability assessment)
 - [ ] Redirects matchmaking / game logic requests to appropriate agents
 - [ ] Returns structured findings with severity classification (CRITICAL / HIGH / MEDIUM / LOW)

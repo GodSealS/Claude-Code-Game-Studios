@@ -17,16 +17,16 @@ Flow State, Bartle Player Types). Use whichever engine set matches your project.
 
 There are three tiers of agents:
 
-- **Tier 1 (Opus)**: Directors who make high-level decisions
+- **Tier 1 (DeepSeek-V3.2/GLM-5.1)**: Directors who make high-level decisions
   - `creative-director` -- vision and creative conflict resolution
   - `technical-director` -- architecture and technology decisions
   - `producer` -- scheduling, coordination, and risk management
 
-- **Tier 2 (Sonnet)**: Department leads who own their domain
+- **Tier 2 (Kimi-K2.5/GLM-5.1)**: Department leads who own their domain
   - `game-designer`, `lead-programmer`, `art-director`, `audio-director`,
     `narrative-director`, `qa-lead`, `release-manager`, `localization-lead`
 
-- **Tier 3 (Sonnet/Haiku)**: Specialists who execute within their domain
+- **Tier 3 (GLM-5.0-Turbo / MiniMax-M2.7)**: Specialists who execute within their domain
   - Designers, programmers, artists, writers, testers, engineers
 
 ### 2. Pick the Right Agent for the Job
@@ -145,7 +145,7 @@ Ask yourself: "What department would handle this in a real studio?"
 
 ### 4. Use Templates for New Documents
 
-Templates are in `.claude/docs/templates/`:
+Templates are in `.codebuddy/docs/templates/`:
 
 - `game-design-document.md` -- for new mechanics and systems
 - `architecture-decision-record.md` -- for technical decisions
@@ -182,7 +182,7 @@ Templates are in `.claude/docs/templates/`:
 - `difficulty-curve.md` -- for difficulty axes, onboarding ramp, and cross-system interactions
 - `test-evidence.md` -- template for recording manual test evidence (screenshots, walkthrough notes)
 
-Also in `.claude/docs/templates/collaborative-protocols/` (used by agents, not typically edited directly):
+Also in `.codebuddy/docs/templates/collaborative-protocols/` (used by agents, not typically edited directly):
 
 - `design-agent-protocol.md` -- question-options-draft-approval cycle for design agents
 - `implementation-agent-protocol.md` -- story pickup through /story-done cycle for programming agents
@@ -211,7 +211,7 @@ If you already know what you need, jump directly to the relevant path:
    - Produces a game concept document and recommends an engine
 2. **Set up the engine** — Run `/setup-engine` (uses the brainstorm recommendation)
    - Configures CLAUDE.md, detects knowledge gaps, populates reference docs
-   - Creates `.claude/docs/technical-preferences.md` with naming conventions,
+   - Creates `.codebuddy/docs/technical-preferences.md` with naming conventions,
      performance budgets, and engine-specific defaults
    - If the engine version is newer than the LLM's training data, it fetches
      current docs from the web so agents suggest correct APIs
@@ -264,7 +264,7 @@ If you have design docs, prototypes, or code already:
 
 ```
 CLAUDE.md                          -- Master config (read this first, ~60 lines)
-.claude/
+.codebuddy/
   settings.json                    -- Claude Code hooks and project settings
   agents/                          -- 48 agent definitions (YAML frontmatter)
   skills/                          -- 68 slash command definitions (YAML frontmatter)

@@ -1,20 +1,20 @@
 # Agent Test Spec: systems-designer
 
 ## Agent Summary
-**Domain owned:** Combat formulas, progression curves, crafting recipes, status effect interactions, economy math, numerical balance.
-**Does NOT own:** Narrative and lore (narrative-director), visual design (art-director), code implementation (lead-programmer), conceptual mechanic rules (game-designer — collaborates with).
-**Model tier:** Sonnet (individual system analysis — formula review and balance math).
-**Gate IDs handled:** Systems review verdicts on formulas and balance specs (uses APPROVED / NEEDS REVISION vocabulary).
+- **Domain**: Combat formulas, progression curves, crafting economy, and numerical balance.
+- **Model tier**: DeepSeek-V3.2
+- **Gate IDs handled**: SD-FORMULA-REVIEW, SD-ECONOMY-BALANCE, SD-PHASE-GATE
+- **Does NOT own**: Narrative lore, visual art, or code implementation.
 
 ---
 
 ## Static Assertions (Structural)
 
-Verified by reading the agent's `.claude/agents/systems-designer.md` frontmatter:
+Verified by reading the agent's `.codebuddy/agents/systems-designer.md` frontmatter:
 
 - [ ] `description:` field is present and domain-specific (references formulas, progression curves, balance math, economy — not generic)
 - [ ] `allowed-tools:` list is read-focused; may include Bash for formula evaluation scripts if the project uses them; no write access outside `design/balance/` without delegation
-- [ ] Model tier is `claude-sonnet-4-6` per coordination-rules.md
+- [ ] Model tier is `DeepSeek-V3.2` per coordination-rules.md
 - [ ] Agent definition does not claim authority over narrative, visual design, or conceptual mechanic rule ownership
 
 ---

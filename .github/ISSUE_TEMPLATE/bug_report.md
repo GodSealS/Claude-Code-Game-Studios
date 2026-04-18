@@ -29,7 +29,7 @@ What actually happened. Include any error messages or unexpected output.
 
 - **OS**: (e.g., Windows 10, macOS 14, Ubuntu 24.04)
 - **Shell**: (e.g., Git Bash, zsh, bash)
-- **Claude Code version**: (run `claude --version`)
+- **Claude Code version**: (run `codebuddy --version`)
 - **Node.js version**: (run `node --version`)
 - **jq installed?**: Yes / No
 - **Python installed?**: Yes / No

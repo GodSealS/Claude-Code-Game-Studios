@@ -1,8 +1,8 @@
 {
-  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "$schema": "https://www.codebuddy.cn/docs/cli/settings",
   "statusLine": {
     "type": "command",
-    "command": "bash .claude/statusline.sh"
+    "command": "bash .codebuddy/statusline.sh"
   },
   "permissions": {
     "allow": [
@@ -38,12 +38,12 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash .claude/hooks/session-start.sh",
+            "command": "bash .codebuddy/hooks/session-start.sh",
             "timeout": 10
           },
           {
             "type": "command",
-            "command": "bash .claude/hooks/detect-gaps.sh",
+            "command": "bash .codebuddy/hooks/detect-gaps.sh",
             "timeout": 10
           }
         ]
@@ -55,12 +55,12 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash .claude/hooks/validate-commit.sh",
+            "command": "bash .codebuddy/hooks/validate-commit.sh",
             "timeout": 15
           },
           {
             "type": "command",
-            "command": "bash .claude/hooks/validate-push.sh",
+            "command": "bash .codebuddy/hooks/validate-push.sh",
             "timeout": 10
           }
         ]
@@ -72,12 +72,12 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash .claude/hooks/validate-assets.sh",
+            "command": "bash .codebuddy/hooks/validate-assets.sh",
             "timeout": 10
           },
           {
             "type": "command",
-            "command": "bash .claude/hooks/validate-skill-change.sh",
+            "command": "bash .codebuddy/hooks/validate-skill-change.sh",
             "timeout": 5
           }
         ]
@@ -89,7 +89,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash .claude/hooks/notify.sh",
+            "command": "bash .codebuddy/hooks/notify.sh",
             "timeout": 10
           }
         ]
@@ -101,7 +101,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash .claude/hooks/pre-compact.sh",
+            "command": "bash .codebuddy/hooks/pre-compact.sh",
             "timeout": 10
           }
         ]
@@ -113,7 +113,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash .claude/hooks/post-compact.sh",
+            "command": "bash .codebuddy/hooks/post-compact.sh",
             "timeout": 10
           }
         ]
@@ -125,7 +125,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash .claude/hooks/session-stop.sh",
+            "command": "bash .codebuddy/hooks/session-stop.sh",
             "timeout": 10
           }
         ]
@@ -137,7 +137,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash .claude/hooks/log-agent.sh",
+            "command": "bash .codebuddy/hooks/log-agent.sh",
             "timeout": 5
           }
         ]
@@ -149,7 +149,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash .claude/hooks/log-agent-stop.sh",
+            "command": "bash .codebuddy/hooks/log-agent-stop.sh",
             "timeout": 5
           }
         ]

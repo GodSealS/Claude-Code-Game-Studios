@@ -3,20 +3,20 @@
 ## Agent Summary
 **Domain owned:** Music direction and palette, sound design philosophy, audio implementation strategy, mix balance, audio aspects of phase gates.
 **Does NOT own:** Visual design (art-director), code implementation (lead-programmer), narrative story content (narrative-director), UX interaction flows (ux-designer).
-**Model tier:** Sonnet (individual system analysis — audio direction and spec review).
-**Gate IDs handled:** AD-VISUAL (audio aspect of the phase gate; may be referenced as part of AD-PHASE-GATE in the audio dimension).
+**Model tier:** Kimi-K2.5 (individual system analysis — audio direction and spec review).
+**Gate IDs handled:** AU-VISUAL (audio aspect of the phase gate; may be referenced as part of AU-PHASE-GATE in the audio dimension).
 
 ---
 
 ## Static Assertions (Structural)
 
-Verified by reading the agent's `.claude/agents/audio-director.md` frontmatter:
+Verified by reading the agent's `.codebuddy/agents/audio-director.md` frontmatter:
 
 - [ ] `description:` field is present and domain-specific (references music direction, sound design, mix, audio implementation — not generic)
 - [ ] `allowed-tools:` list is read-focused; no Bash unless audio asset pipeline checks are justified
-- [ ] Model tier is `claude-sonnet-4-6` per coordination-rules.md
-- [ ] Agent definition does not claim authority over visual design, code implementation, or narrative content
+- [ ] Model tier is `Kimi-K2.5` per coordination-rules.md
 
+- [ ] Agent definition does not claim authority over visual design, code implementation, or narrative content
 ---
 
 ## Test Cases
@@ -25,7 +25,7 @@ Verified by reading the agent's `.claude/agents/audio-director.md` frontmatter:
 **Scenario:** An audio specification document is submitted for the game's "Exploration" music layer. The spec defines a generative ambient system using layered stems that shift based on environmental density, designed to reinforce the pillar "lived-in world." The tone palette (sparse, organic, slightly melancholic) matches the established design pillars.
 **Expected:** Returns `APPROVED` with rationale confirming the stem-based approach supports dynamic responsiveness and the tone palette aligns with the pillar vocabulary.
 **Assertions:**
-- [ ] Verdict is exactly one of APPROVED / NEEDS REVISION
+- [ ] Verdict is exactly one of APPROVE / CONCERNS / REJECT
 - [ ] Rationale references the specific pillar ("lived-in world") and how the audio spec supports it
 - [ ] Output stays within audio scope — does not comment on visual design of the environment or UI layout
 - [ ] Verdict is clearly labeled with context (e.g., "Audio Spec Review: APPROVED")

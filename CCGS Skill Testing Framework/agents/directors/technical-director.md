@@ -3,18 +3,18 @@
 ## Agent Summary
 **Domain owned:** System architecture decisions, technical feasibility assessment, ADR oversight and approval, engine risk evaluation, technical phase gate.
 **Does NOT own:** Game design decisions (creative-director / game-designer), creative direction, visual art style, production scheduling (producer).
-**Model tier:** Opus (multi-document synthesis, high-stakes architecture and phase gate verdicts).
+**Model tier:** DeepSeek-V3.2 (multi-document synthesis, high-stakes architecture logic and phase gate verdicts).
 **Gate IDs handled:** TD-SYSTEM-BOUNDARY, TD-FEASIBILITY, TD-ARCHITECTURE, TD-ADR, TD-ENGINE-RISK, TD-PHASE-GATE.
 
 ---
 
 ## Static Assertions (Structural)
 
-Verified by reading the agent's `.claude/agents/technical-director.md` frontmatter:
+Verified by reading the agent's `.codebuddy/agents/technical-director.md` frontmatter:
 
 - [ ] `description:` field is present and domain-specific (references architecture, feasibility, ADR — not generic)
 - [ ] `allowed-tools:` list may include Read for architecture documents; Bash only if required for technical checks
-- [ ] Model tier is `claude-opus-4-6` per coordination-rules.md (directors with gate synthesis = Opus)
+- [ ] Model tier is `DeepSeek-V3.2` (Matches director-gates.md; ensures the highest degree of technical rigor)
 - [ ] Agent definition does not claim authority over game design decisions or creative direction
 
 ---
@@ -39,7 +39,7 @@ Verified by reading the agent's `.claude/agents/technical-director.md` frontmatt
 - [ ] May note technical constraints that affect dialogue (e.g., localization string limits, data format), but defers all content decisions
 
 ### Case 3: Gate verdict — correct vocabulary
-**Scenario:** A proposed multiplayer mechanic requires raycasting against all active entities every frame to detect line-of-sight. At expected player counts (1000 entities in a large zone), this is O(n²) per frame. Request is tagged TD-FEASIBILITY.
+**Scenario:** A proposed multiplayer mechanic requires raycasting against all active entities every frame to detect line-of-sight. At expected player counts (1000 entities in a large zone), this is O(n²) . Request is tagged TD-FEASIBILITY.
 **Expected:** Returns `TD-FEASIBILITY: CONCERNS` with specific citation of the O(n²) complexity and the entity count that makes this infeasible at target framerate.
 **Assertions:**
 - [ ] Verdict is exactly one of APPROVE / CONCERNS / REJECT — not freeform text

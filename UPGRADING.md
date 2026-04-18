@@ -47,7 +47,7 @@ changed. Resolve each one — your game content goes in, structural improvements
 come along for the ride. Then commit the merge.
 
 **Tip:** The files most likely to conflict are `CLAUDE.md` and
-`.claude/docs/technical-preferences.md`, because you've filled them in with
+`.codebuddy/docs/technical-preferences.md`, because you've filled them in with
 your engine and project settings. Keep your content; accept the structural changes.
 
 ---
@@ -103,19 +103,19 @@ Best when: you didn't use git to set up the template (just downloaded a zip).
 
 **New files to add:**
 ```
-.claude/skills/art-bible/SKILL.md
-.claude/skills/asset-spec/SKILL.md
-.claude/docs/director-gates.md
+.codebuddy/skills/art-bible/SKILL.md
+.codebuddy/skills/asset-spec/SKILL.md
+.codebuddy/docs/director-gates.md
 ```
 
 **Existing files to overwrite (no user content):**
 ```
-.claude/skills/brainstorm/SKILL.md
-.claude/skills/gate-check/SKILL.md
-.claude/skills/team-level/SKILL.md
-.claude/skills/team-narrative/SKILL.md
-.claude/skills/design-system/SKILL.md
-.claude/docs/workflow-catalog.yaml
+.codebuddy/skills/brainstorm/SKILL.md
+.codebuddy/skills/gate-check/SKILL.md
+.codebuddy/skills/team-level/SKILL.md
+.codebuddy/skills/team-narrative/SKILL.md
+.codebuddy/skills/design-system/SKILL.md
+.codebuddy/docs/workflow-catalog.yaml
 README.md
 UPGRADING.md
 ```
@@ -136,7 +136,7 @@ None — all changes are to infrastructure files with no user content.
 
 | Category | Changes |
 |----------|---------|
-| **New system** | Director gates — named review checkpoints shared across all workflow skills. Defined in `.claude/docs/director-gates.md` |
+| **New system** | Director gates — named review checkpoints shared across all workflow skills. Defined in `.codebuddy/docs/director-gates.md` |
 | **New feature** | Gate intensity modes: `full` (all director gates), `lean` (phase gates only), `solo` (no directors). Set globally via `production/review-mode.txt` during `/start`, or override per-run with `--review [mode]` on any gate-using skill |
 | **New agent** | `godot-csharp-specialist` — C# code quality in Godot 4 projects |
 | **Skill updates (13)** | All gate-using skills now parse `--review [full\|lean\|solo]` and include it in their argument-hint: `brainstorm`, `map-systems`, `design-system`, `architecture-decision`, `create-architecture`, `create-epics`, `create-stories`, `sprint-plan`, `milestone-review`, `playtest-report`, `prototype`, `story-done`, `gate-check` |
@@ -150,28 +150,28 @@ None — all changes are to infrastructure files with no user content.
 
 **New files to add:**
 ```
-.claude/agents/godot-csharp-specialist.md
-.claude/docs/director-gates.md
+.codebuddy/agents/godot-csharp-specialist.md
+.codebuddy/docs/director-gates.md
 ```
 
 **Existing files to overwrite (no user content):**
 ```
-.claude/skills/brainstorm/SKILL.md
-.claude/skills/map-systems/SKILL.md
-.claude/skills/design-system/SKILL.md
-.claude/skills/architecture-decision/SKILL.md
-.claude/skills/create-architecture/SKILL.md
-.claude/skills/create-epics/SKILL.md
-.claude/skills/create-stories/SKILL.md
-.claude/skills/sprint-plan/SKILL.md
-.claude/skills/milestone-review/SKILL.md
-.claude/skills/playtest-report/SKILL.md
-.claude/skills/prototype/SKILL.md
-.claude/skills/story-done/SKILL.md
-.claude/skills/gate-check/SKILL.md
-.claude/skills/start/SKILL.md
-.claude/skills/quick-design/SKILL.md
-.claude/skills/setup-engine/SKILL.md
+.codebuddy/skills/brainstorm/SKILL.md
+.codebuddy/skills/map-systems/SKILL.md
+.codebuddy/skills/design-system/SKILL.md
+.codebuddy/skills/architecture-decision/SKILL.md
+.codebuddy/skills/create-architecture/SKILL.md
+.codebuddy/skills/create-epics/SKILL.md
+.codebuddy/skills/create-stories/SKILL.md
+.codebuddy/skills/sprint-plan/SKILL.md
+.codebuddy/skills/milestone-review/SKILL.md
+.codebuddy/skills/playtest-report/SKILL.md
+.codebuddy/skills/prototype/SKILL.md
+.codebuddy/skills/story-done/SKILL.md
+.codebuddy/skills/gate-check/SKILL.md
+.codebuddy/skills/start/SKILL.md
+.codebuddy/skills/quick-design/SKILL.md
+.codebuddy/skills/setup-engine/SKILL.md
 README.md
 docs/WORKFLOW-GUIDE.md
 UPGRADING.md
@@ -190,7 +190,7 @@ No files require manual merging in this release. All changes are to infrastructu
 #### Director Gates System
 
 All major workflow skills now reference named gate checkpoints defined in
-`.claude/docs/director-gates.md`. Gates are identified by domain prefix and name
+`.codebuddy/docs/director-gates.md`. Gates are identified by domain prefix and name
 (e.g., `CD-CONCEPT`, `TD-ARCHITECTURE`, `LP-CODE-REVIEW`). Each gate defines
 which director to spawn, what inputs to pass, what verdicts mean, and how
 lean/solo modes affect it.
@@ -221,7 +221,7 @@ individual run with `--review [mode]` on any gate-using skill:
 ### After Upgrading
 
 1. Run `/start` once to set your preferred review mode — or create `production/review-mode.txt` manually with `full`, `lean`, or `solo`.
-2. If you're mid-project, review `.claude/docs/director-gates.md` to understand which gates apply to your current phase.
+2. If you're mid-project, review `.codebuddy/docs/director-gates.md` to understand which gates apply to your current phase.
 3. Run `/skill-test static all` to verify all skills pass structural checks.
 
 ---
@@ -246,27 +246,27 @@ individual run with `--review [mode]` on any gate-using skill:
 
 **New files to add:**
 ```
-.claude/skills/consistency-check/SKILL.md
+.codebuddy/skills/consistency-check/SKILL.md
 ```
 
 **Existing files to overwrite (no user content):**
 ```
-.claude/skills/team-combat/SKILL.md      ← no-arg guard, verdict keywords, gate improvements
-.claude/skills/team-narrative/SKILL.md   ← no-arg guard, verdict keywords, gate improvements
-.claude/skills/team-ui/SKILL.md          ← no-arg guard, verdict keywords, gate improvements
-.claude/skills/team-release/SKILL.md     ← no-arg guard, verdict keywords, NO-GO path
-.claude/skills/team-polish/SKILL.md      ← no-arg guard, verdict keywords, gate improvements
-.claude/skills/team-audio/SKILL.md       ← no-arg guard, verdict keywords, gate improvements
-.claude/skills/team-level/SKILL.md       ← no-arg guard, verdict keywords, adjacent area checks
-.claude/skills/team-live-ops/SKILL.md    ← no-arg guard, verdict keywords, ethics enforcement
-.claude/skills/team-qa/SKILL.md          ← no-arg guard, verdict keywords, gate improvements
-.claude/skills/map-systems/SKILL.md      ← verdict keywords
-.claude/skills/create-epics/SKILL.md     ← "May I write" protocol fix, verdict keywords
-.claude/skills/create-stories/SKILL.md   ← verdict keywords
-.claude/agents/game-designer.md          ← genre-agnostic language
-.claude/agents/systems-designer.md       ← genre-agnostic language
-.claude/agents/economy-designer.md       ← genre-agnostic language
-.claude/agents/live-ops-designer.md      ← genre-agnostic language
+.codebuddy/skills/team-combat/SKILL.md      ← no-arg guard, verdict keywords, gate improvements
+.codebuddy/skills/team-narrative/SKILL.md   ← no-arg guard, verdict keywords, gate improvements
+.codebuddy/skills/team-ui/SKILL.md          ← no-arg guard, verdict keywords, gate improvements
+.codebuddy/skills/team-release/SKILL.md     ← no-arg guard, verdict keywords, NO-GO path
+.codebuddy/skills/team-polish/SKILL.md      ← no-arg guard, verdict keywords, gate improvements
+.codebuddy/skills/team-audio/SKILL.md       ← no-arg guard, verdict keywords, gate improvements
+.codebuddy/skills/team-level/SKILL.md       ← no-arg guard, verdict keywords, adjacent area checks
+.codebuddy/skills/team-live-ops/SKILL.md    ← no-arg guard, verdict keywords, ethics enforcement
+.codebuddy/skills/team-qa/SKILL.md          ← no-arg guard, verdict keywords, gate improvements
+.codebuddy/skills/map-systems/SKILL.md      ← verdict keywords
+.codebuddy/skills/create-epics/SKILL.md     ← "May I write" protocol fix, verdict keywords
+.codebuddy/skills/create-stories/SKILL.md   ← verdict keywords
+.codebuddy/agents/game-designer.md          ← genre-agnostic language
+.codebuddy/agents/systems-designer.md       ← genre-agnostic language
+.codebuddy/agents/economy-designer.md       ← genre-agnostic language
+.codebuddy/agents/live-ops-designer.md      ← genre-agnostic language
 ```
 
 ---
@@ -318,46 +318,46 @@ No files require manual merging in this release. All changes are to infrastructu
 
 **New files to add:**
 ```
-.claude/skills/ux-design/SKILL.md
-.claude/skills/ux-review/SKILL.md
-.claude/skills/help/SKILL.md
-.claude/skills/quick-design/SKILL.md
-.claude/skills/review-all-gdds/SKILL.md
-.claude/skills/story-readiness/SKILL.md
-.claude/skills/story-done/SKILL.md
-.claude/skills/sprint-status/SKILL.md
-.claude/skills/adopt/SKILL.md
-.claude/skills/create-architecture/SKILL.md
-.claude/skills/create-control-manifest/SKILL.md
-.claude/skills/create-epics/SKILL.md
-.claude/skills/create-stories/SKILL.md
-.claude/skills/dev-story/SKILL.md
-.claude/skills/propagate-design-change/SKILL.md
-.claude/skills/content-audit/SKILL.md
-.claude/skills/architecture-review/SKILL.md
-.claude/skills/qa-plan/SKILL.md
-.claude/skills/smoke-check/SKILL.md
-.claude/skills/soak-test/SKILL.md
-.claude/skills/regression-suite/SKILL.md
-.claude/skills/test-setup/SKILL.md
-.claude/skills/test-helpers/SKILL.md
-.claude/skills/test-evidence-review/SKILL.md
-.claude/skills/test-flakiness/SKILL.md
-.claude/skills/skill-test/SKILL.md
-.claude/skills/bug-triage/SKILL.md
-.claude/skills/team-live-ops/SKILL.md
-.claude/skills/team-qa/SKILL.md
-.claude/hooks/log-agent-stop.sh
-.claude/hooks/notify.sh
-.claude/hooks/post-compact.sh
-.claude/hooks/validate-skill-change.sh
-.claude/docs/workflow-catalog.yaml
-.claude/docs/templates/ux-spec.md
-.claude/docs/templates/hud-design.md
-.claude/docs/templates/accessibility-requirements.md
-.claude/docs/templates/interaction-pattern-library.md
-.claude/docs/templates/player-journey.md
-.claude/docs/templates/difficulty-curve.md
+.codebuddy/skills/ux-design/SKILL.md
+.codebuddy/skills/ux-review/SKILL.md
+.codebuddy/skills/help/SKILL.md
+.codebuddy/skills/quick-design/SKILL.md
+.codebuddy/skills/review-all-gdds/SKILL.md
+.codebuddy/skills/story-readiness/SKILL.md
+.codebuddy/skills/story-done/SKILL.md
+.codebuddy/skills/sprint-status/SKILL.md
+.codebuddy/skills/adopt/SKILL.md
+.codebuddy/skills/create-architecture/SKILL.md
+.codebuddy/skills/create-control-manifest/SKILL.md
+.codebuddy/skills/create-epics/SKILL.md
+.codebuddy/skills/create-stories/SKILL.md
+.codebuddy/skills/dev-story/SKILL.md
+.codebuddy/skills/propagate-design-change/SKILL.md
+.codebuddy/skills/content-audit/SKILL.md
+.codebuddy/skills/architecture-review/SKILL.md
+.codebuddy/skills/qa-plan/SKILL.md
+.codebuddy/skills/smoke-check/SKILL.md
+.codebuddy/skills/soak-test/SKILL.md
+.codebuddy/skills/regression-suite/SKILL.md
+.codebuddy/skills/test-setup/SKILL.md
+.codebuddy/skills/test-helpers/SKILL.md
+.codebuddy/skills/test-evidence-review/SKILL.md
+.codebuddy/skills/test-flakiness/SKILL.md
+.codebuddy/skills/skill-test/SKILL.md
+.codebuddy/skills/bug-triage/SKILL.md
+.codebuddy/skills/team-live-ops/SKILL.md
+.codebuddy/skills/team-qa/SKILL.md
+.codebuddy/hooks/log-agent-stop.sh
+.codebuddy/hooks/notify.sh
+.codebuddy/hooks/post-compact.sh
+.codebuddy/hooks/validate-skill-change.sh
+.codebuddy/docs/workflow-catalog.yaml
+.codebuddy/docs/templates/ux-spec.md
+.codebuddy/docs/templates/hud-design.md
+.codebuddy/docs/templates/accessibility-requirements.md
+.codebuddy/docs/templates/interaction-pattern-library.md
+.codebuddy/docs/templates/player-journey.md
+.codebuddy/docs/templates/difficulty-curve.md
 design/CLAUDE.md
 src/CLAUDE.md
 docs/CLAUDE.md
@@ -365,14 +365,14 @@ docs/CLAUDE.md
 
 **Existing files to overwrite (no user content):**
 ```
-.claude/skills/gate-check/SKILL.md
-.claude/skills/sprint-plan/SKILL.md
-.claude/skills/sprint-status/SKILL.md
-.claude/skills/design-review/SKILL.md
-.claude/skills/team-ui/SKILL.md
-.claude/skills/story-readiness/SKILL.md
-.claude/skills/story-done/SKILL.md
-.claude/docs/templates/game-design-document.md    ← adds Game Feel section
+.codebuddy/skills/gate-check/SKILL.md
+.codebuddy/skills/sprint-plan/SKILL.md
+.codebuddy/skills/sprint-status/SKILL.md
+.codebuddy/skills/design-review/SKILL.md
+.codebuddy/skills/team-ui/SKILL.md
+.codebuddy/skills/story-readiness/SKILL.md
+.codebuddy/skills/story-done/SKILL.md
+.codebuddy/docs/templates/game-design-document.md    ← adds Game Feel section
 README.md
 docs/WORKFLOW-GUIDE.md
 UPGRADING.md
@@ -380,34 +380,34 @@ UPGRADING.md
 
 **Agent files to overwrite** (if you haven't written custom prompts into them):
 ```
-.claude/agents/prototyper.md         ← adds isolation: worktree
-.claude/agents/art-director.md       ← adds memory: project
-.claude/agents/audio-director.md     ← adds memory: project
-.claude/agents/economy-designer.md   ← adds memory: project
-.claude/agents/game-designer.md      ← adds memory: project
-.claude/agents/gameplay-programmer.md ← adds memory: project
-.claude/agents/lead-programmer.md    ← adds memory: project
-.claude/agents/level-designer.md     ← adds memory: project
-.claude/agents/narrative-director.md ← adds memory: project
-.claude/agents/systems-designer.md   ← adds memory: project
-.claude/agents/technical-artist.md   ← adds memory: project
-.claude/agents/ui-programmer.md      ← adds memory: project
-.claude/agents/ux-designer.md        ← adds memory: project
-.claude/agents/world-builder.md      ← adds memory: project
+.codebuddy/agents/prototyper.md         ← adds isolation: worktree
+.codebuddy/agents/art-director.md       ← adds memory: project
+.codebuddy/agents/audio-director.md     ← adds memory: project
+.codebuddy/agents/economy-designer.md   ← adds memory: project
+.codebuddy/agents/game-designer.md      ← adds memory: project
+.codebuddy/agents/gameplay-programmer.md ← adds memory: project
+.codebuddy/agents/lead-programmer.md    ← adds memory: project
+.codebuddy/agents/level-designer.md     ← adds memory: project
+.codebuddy/agents/narrative-director.md ← adds memory: project
+.codebuddy/agents/systems-designer.md   ← adds memory: project
+.codebuddy/agents/technical-artist.md   ← adds memory: project
+.codebuddy/agents/ui-programmer.md      ← adds memory: project
+.codebuddy/agents/ux-designer.md        ← adds memory: project
+.codebuddy/agents/world-builder.md      ← adds memory: project
 ```
 
 ---
 
 ### Files: Merge Carefully
 
-#### `.claude/settings.json`
+#### `.codebuddy/settings.json`
 
 Four new hooks are registered in this version. If you haven't customized `settings.json`, overwriting is safe. Otherwise, add the following hook entries manually:
 
 - `log-agent-stop.sh` — `SubagentStop` event (agent audit trail stop)
 - `notify.sh` — `Notification` event (Windows toast notification)
 - `post-compact.sh` — `PostCompact` event (session recovery reminder)
-- `validate-skill-change.sh` — `PostToolUse` event filtered to `.claude/skills/` writes
+- `validate-skill-change.sh` — `PostToolUse` event filtered to `.codebuddy/skills/` writes
 
 #### Customized agent files
 
@@ -473,7 +473,7 @@ Also new: **`/bug-triage`** re-evaluates all open bugs for priority, severity, a
 `/skill-test` is a meta-skill for validating the harness itself. Run it after editing any skill file. Three modes:
 - `lint` — validates YAML frontmatter and required fields
 - `spec [skill-name]` — runs behavioral spec tests against a specific skill
-- `catalog` — checks that all skills in `.claude/skills/` are indexed in the catalog
+- `catalog` — checks that all skills in `.codebuddy/skills/` are indexed in the catalog
 
 The new `validate-skill-change.sh` hook reminds you to run `/skill-test` automatically when a skill file is modified.
 
@@ -484,7 +484,7 @@ The new `validate-skill-change.sh` hook reminds you to run `/skill-test` automat
 
 #### Model Tier Routing
 
-Skills are now explicitly assigned to Haiku, Sonnet, or Opus tiers based on task complexity. Read-only status checks use Haiku; complex multi-document synthesis uses Opus; everything else defaults to Sonnet. Tier assignments are documented in `.claude/docs/coordination-rules.md`.
+Skills are now explicitly assigned to Haiku, Sonnet, or Opus tiers based on task complexity. Read-only status checks use Haiku; complex multi-document synthesis uses Opus; everything else defaults to Sonnet. Tier assignments are documented in `.codebuddy/docs/coordination-rules.md`.
 
 #### Directory CLAUDE.md Files
 
@@ -494,7 +494,7 @@ Three new directory-scoped CLAUDE.md files (`design/`, `src/`, `docs/`) provide 
 
 ### After Upgrading
 
-1. **Verify new hooks** are registered in `.claude/settings.json` — check for all four: `log-agent-stop.sh`, `notify.sh`, `post-compact.sh`, `validate-skill-change.sh`.
+1. **Verify new hooks** are registered in `.codebuddy/settings.json` — check for all four: `log-agent-stop.sh`, `notify.sh`, `post-compact.sh`, `validate-skill-change.sh`.
 
 2. **Test the audit trail** by spawning any subagent — both start and stop events should appear in `production/session-logs/`.
 
@@ -531,7 +531,7 @@ The `/design-systems` skill was renamed to `/map-systems` for clarity
 |----------|---------|
 | **New skills** | `/design-system` (guided GDD authoring, section-by-section) |
 | **Renamed skills** | `/design-systems` → `/map-systems` (breaking rename) |
-| **New files** | `.claude/statusline.sh`, `.claude/settings.json` statusline config |
+| **New files** | `.codebuddy/statusline.sh`, `.codebuddy/settings.json` statusline config |
 | **Skill updates** | `/gate-check` — writes `production/stage.txt` on PASS, new phase definitions |
 | **Skill updates** | `brainstorm`, `start`, `design-review`, `project-stage-detect`, `setup-engine` — cross-reference fixes |
 | **Bug fixes** | `log-agent.sh`, `validate-commit.sh` — hook execution fixed |
@@ -543,21 +543,21 @@ The `/design-systems` skill was renamed to `/map-systems` for clarity
 
 **New files to add:**
 ```
-.claude/skills/design-system/SKILL.md
-.claude/statusline.sh
+.codebuddy/skills/design-system/SKILL.md
+.codebuddy/statusline.sh
 ```
 
 **Existing files to overwrite (no user content):**
 ```
-.claude/skills/map-systems/SKILL.md      ← was design-systems/SKILL.md
-.claude/skills/gate-check/SKILL.md
-.claude/skills/brainstorm/SKILL.md
-.claude/skills/start/SKILL.md
-.claude/skills/design-review/SKILL.md
-.claude/skills/project-stage-detect/SKILL.md
-.claude/skills/setup-engine/SKILL.md
-.claude/hooks/log-agent.sh
-.claude/hooks/validate-commit.sh
+.codebuddy/skills/map-systems/SKILL.md      ← was design-systems/SKILL.md
+.codebuddy/skills/gate-check/SKILL.md
+.codebuddy/skills/brainstorm/SKILL.md
+.codebuddy/skills/start/SKILL.md
+.codebuddy/skills/design-review/SKILL.md
+.codebuddy/skills/project-stage-detect/SKILL.md
+.codebuddy/skills/setup-engine/SKILL.md
+.codebuddy/hooks/log-agent.sh
+.codebuddy/hooks/validate-commit.sh
 README.md
 docs/WORKFLOW-GUIDE.md
 UPGRADING.md
@@ -565,22 +565,22 @@ UPGRADING.md
 
 **Delete (replaced by rename):**
 ```
-.claude/skills/design-systems/   ← entire directory; replaced by map-systems/
+.codebuddy/skills/design-systems/   ← entire directory; replaced by map-systems/
 ```
 
 ---
 
 ### Files: Merge Carefully
 
-#### `.claude/settings.json`
+#### `.codebuddy/settings.json`
 
 The new version adds a `statusLine` configuration block pointing to
-`.claude/statusline.sh`. If you haven't customized `settings.json`, overwriting
+`.codebuddy/statusline.sh`. If you haven't customized `settings.json`, overwriting
 is safe. Otherwise, add this block manually:
 
 ```json
 "statusLine": {
-  "script": ".claude/statusline.sh"
+  "script": ".codebuddy/statusline.sh"
 }
 ```
 
@@ -590,7 +590,7 @@ is safe. Otherwise, add this block manually:
 
 #### Custom Status Line
 
-`.claude/statusline.sh` displays a 7-stage production pipeline breadcrumb in
+`.codebuddy/statusline.sh` displays a 7-stage production pipeline breadcrumb in
 the terminal status line:
 
 ```
@@ -619,7 +619,7 @@ future sessions without requiring manual file edits.
 
 1. **Delete the old skill directory:**
    ```bash
-   rm -rf .claude/skills/design-systems/
+   rm -rf .codebuddy/skills/design-systems/
    ```
 
 2. **Test the status line** by starting a Claude Code session — you should see
@@ -627,8 +627,8 @@ future sessions without requiring manual file edits.
 
 3. **Verify hook execution** still works:
    ```bash
-   bash .claude/hooks/log-agent.sh '{}' '{}'
-   bash .claude/hooks/validate-commit.sh '{}' '{}'
+   bash .codebuddy/hooks/log-agent.sh '{}' '{}'
+   bash .codebuddy/hooks/validate-commit.sh '{}' '{}'
    ```
 
 ---
@@ -662,15 +662,15 @@ versions directly with no risk to your project content.
 
 **New files to add:**
 ```
-.claude/skills/start/SKILL.md
-.claude/skills/map-systems/SKILL.md
-.claude/skills/design-system/SKILL.md
-.claude/docs/templates/systems-index.md
-.claude/docs/templates/collaborative-protocols/design-agent-protocol.md
-.claude/docs/templates/collaborative-protocols/implementation-agent-protocol.md
-.claude/docs/templates/collaborative-protocols/leadership-agent-protocol.md
-.claude/hooks/detect-gaps.sh
-.claude/hooks/session-start.sh
+.codebuddy/skills/start/SKILL.md
+.codebuddy/skills/map-systems/SKILL.md
+.codebuddy/skills/design-system/SKILL.md
+.codebuddy/docs/templates/systems-index.md
+.codebuddy/docs/templates/collaborative-protocols/design-agent-protocol.md
+.codebuddy/docs/templates/collaborative-protocols/implementation-agent-protocol.md
+.codebuddy/docs/templates/collaborative-protocols/leadership-agent-protocol.md
+.codebuddy/hooks/detect-gaps.sh
+.codebuddy/hooks/session-start.sh
 production/session-state/.gitkeep
 docs/examples/README.md
 .github/ISSUE_TEMPLATE/bug_report.md
@@ -680,30 +680,30 @@ docs/examples/README.md
 
 **Existing files to overwrite (no user content):**
 ```
-.claude/skills/brainstorm/SKILL.md
-.claude/skills/design-review/SKILL.md
-.claude/skills/gate-check/SKILL.md
-.claude/skills/project-stage-detect/SKILL.md
-.claude/skills/setup-engine/SKILL.md
-.claude/skills/team-audio/SKILL.md
-.claude/skills/team-combat/SKILL.md
-.claude/skills/team-level/SKILL.md
-.claude/skills/team-narrative/SKILL.md
-.claude/skills/team-polish/SKILL.md
-.claude/skills/team-release/SKILL.md
-.claude/skills/team-ui/SKILL.md
-.claude/hooks/log-agent.sh
-.claude/hooks/pre-compact.sh
-.claude/hooks/session-stop.sh
-.claude/hooks/validate-assets.sh
-.claude/hooks/validate-commit.sh
-.claude/hooks/validate-push.sh
-.claude/rules/design-docs.md
-.claude/docs/hooks-reference.md
-.claude/docs/skills-reference.md
-.claude/docs/quick-start.md
-.claude/docs/directory-structure.md
-.claude/docs/context-management.md
+.codebuddy/skills/brainstorm/SKILL.md
+.codebuddy/skills/design-review/SKILL.md
+.codebuddy/skills/gate-check/SKILL.md
+.codebuddy/skills/project-stage-detect/SKILL.md
+.codebuddy/skills/setup-engine/SKILL.md
+.codebuddy/skills/team-audio/SKILL.md
+.codebuddy/skills/team-combat/SKILL.md
+.codebuddy/skills/team-level/SKILL.md
+.codebuddy/skills/team-narrative/SKILL.md
+.codebuddy/skills/team-polish/SKILL.md
+.codebuddy/skills/team-release/SKILL.md
+.codebuddy/skills/team-ui/SKILL.md
+.codebuddy/hooks/log-agent.sh
+.codebuddy/hooks/pre-compact.sh
+.codebuddy/hooks/session-stop.sh
+.codebuddy/hooks/validate-assets.sh
+.codebuddy/hooks/validate-commit.sh
+.codebuddy/hooks/validate-push.sh
+.codebuddy/rules/design-docs.md
+.codebuddy/docs/hooks-reference.md
+.codebuddy/docs/skills-reference.md
+.codebuddy/docs/quick-start.md
+.codebuddy/docs/directory-structure.md
+.codebuddy/docs/context-management.md
 docs/COLLABORATIVE-DESIGN-PRINCIPLE.md
 docs/WORKFLOW-GUIDE.md
 README.md
@@ -711,20 +711,20 @@ README.md
 
 **Agent files to overwrite** (if you haven't written custom prompts into them):
 ```
-.claude/agents/art-director.md
-.claude/agents/audio-director.md
-.claude/agents/creative-director.md
-.claude/agents/economy-designer.md
-.claude/agents/game-designer.md
-.claude/agents/level-designer.md
-.claude/agents/live-ops-designer.md
-.claude/agents/narrative-director.md
-.claude/agents/producer.md
-.claude/agents/systems-designer.md
-.claude/agents/technical-director.md
-.claude/agents/ux-designer.md
-.claude/agents/world-builder.md
-.claude/agents/writer.md
+.codebuddy/agents/art-director.md
+.codebuddy/agents/audio-director.md
+.codebuddy/agents/creative-director.md
+.codebuddy/agents/economy-designer.md
+.codebuddy/agents/game-designer.md
+.codebuddy/agents/level-designer.md
+.codebuddy/agents/live-ops-designer.md
+.codebuddy/agents/narrative-director.md
+.codebuddy/agents/producer.md
+.codebuddy/agents/systems-designer.md
+.codebuddy/agents/technical-director.md
+.codebuddy/agents/ux-designer.md
+.codebuddy/agents/world-builder.md
+.codebuddy/agents/writer.md
 ```
 
 If you *have* customized agent prompts, see "Merge carefully" below.
@@ -751,19 +751,19 @@ rules-reference, review-workflow).
 - Slimmer imports list (drop the 5 redundant `@` imports if present)
 - Updated collaboration protocol wording
 
-#### `.claude/docs/technical-preferences.md`
+#### `.codebuddy/docs/technical-preferences.md`
 
 If you ran `/setup-engine`, this file has your engine config, naming
 conventions, and performance budgets. Keep all of it. The template version
 is just the empty placeholder.
 
-#### `.claude/docs/templates/game-concept.md`
+#### `.codebuddy/docs/templates/game-concept.md`
 
 Minor structural update — a `## Next Steps` section was added pointing to
 `/map-systems`. Add that section to your copy if you want the updated
 guidance, but it's not required.
 
-#### `.claude/settings.json`
+#### `.codebuddy/settings.json`
 
 Check whether the new version adds any permission rules you want. The change
 was minor (schema update). If you haven't customized your `settings.json`,
@@ -807,8 +807,8 @@ docs/MULTI-STAGE-DOCUMENT-WORKFLOW.md → content merged into context-management
 4. **Test hook execution** — if you're on Windows, verify the new hooks run
    without errors in Git Bash:
    ```bash
-   bash .claude/hooks/detect-gaps.sh '{}' '{}'
-   bash .claude/hooks/session-start.sh '{}' '{}'
+   bash .codebuddy/hooks/detect-gaps.sh '{}' '{}'
+   bash .codebuddy/hooks/session-start.sh '{}' '{}'
    ```
 
 ---

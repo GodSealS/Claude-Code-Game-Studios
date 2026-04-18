@@ -3,18 +3,19 @@
 ## Agent Summary
 Domain: Godot shading language (GLSL-derivative), visual shaders (VisualShader graph), material setup, particle shaders, and post-processing effects.
 Does NOT own: gameplay code, art style direction.
-Model tier: Sonnet (default).
+Model tier: GLM-5v-Turbo (Selected for multi-modal visual-to-code synthesis; handles reference image interpretation).
 No gate IDs assigned.
 
 ---
 
 ## Static Assertions (Structural)
 
-- [ ] `description:` field is present and domain-specific (references Godot shading language / materials / post-processing)
-- [ ] `allowed-tools:` list includes Read, Write, Edit, Glob, Grep
-- [ ] Model tier is Sonnet (default for specialists)
-- [ ] Agent definition references `docs/engine-reference/godot/VERSION.md` as the authoritative source for Godot shader API changes
+Verified by reading the agent's `.codebuddy/agents/godot-shader-specialist.md` frontmatter:
 
+- [ ] `description:` field is present and domain-specific (references Godot shading language / materials / post-processing)
+- [ ] `allowed-tools:` list includes image_analysis (to process visual references); no Bash unless profiling tools are used
+- [ ] Model tier is `GLM-5v-Turbo` (Strategic choice for VFX/Shader domain; NOT the DeepSeek-V3.2 specialist default)
+- [ ] Agent definition references `docs/engine-reference/godot/VERSION.md` for API changes
 ---
 
 ## Test Cases

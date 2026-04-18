@@ -3,8 +3,9 @@
 ## Agent Summary
 - **Domain**: Resource economy design, loot table design, progression curves (XP, level, unlock), in-game market and shop design, economic balance analysis, sink and faucet mechanics, inflation/deflation risk assessment
 - **Does NOT own**: Live ops event scheduling and structure (live-ops-designer), code implementation, analytics tracking design (analytics-engineer), narrative justification for economy systems (writer)
-- **Model tier**: Sonnet
-- **Gate IDs**: None; escalates economy-breaking design conflicts to creative-director or producer
+- **Model tier**: DeepSeek-V3.2
+- **Gate IDs handled**: ED-ECONOMY-BALANCE, ED-LOOT-VALIDATION
+- **Domain**: Resource economy, loot tables, sink/faucet balancing, progression math.
 
 ---
 
@@ -12,7 +13,7 @@
 
 - [ ] `description:` field is present and domain-specific (references economy, loot tables, progression curves, balance)
 - [ ] `allowed-tools:` list matches the agent's role (Read/Write for design/balance/ documents; no code or analytics tools)
-- [ ] Model tier is Sonnet (default for design specialists)
+- [ ] Model tier is DeepSeek-V3.2 (default for design specialists)
 - [ ] Agent definition does not claim authority over live ops scheduling, code, or narrative
 
 ---
@@ -65,6 +66,9 @@
 
 ## Protocol Compliance
 
+- [ ] Returns verdicts using APPROVE / CONCERNS / REJECT vocabulary only.
+- [ ] **Quantified Analysis**: All balance assessments must include specific ratios (e.g., $Reward/Hour$ vs $Cost/Item$).
+- [ ] **Sink/Faucet Enforcement**: Rejects any new currency proposal that lacks a defined sink capacity at least 1.2x the projected faucet rate.
 - [ ] Stays within declared domain (loot tables, progression curves, resource economy, inflation/deflation analysis)
 - [ ] Redirects live ops scheduling requests to live-ops-designer without producing schedules
 - [ ] Flags inflation/deflation risks proactively with quantified sink/faucet analysis

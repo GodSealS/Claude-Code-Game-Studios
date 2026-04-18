@@ -1,10 +1,11 @@
 # Agent Test Spec: tools-programmer
 
 ## Agent Summary
-Domain: Editor extensions, content authoring tools, debug utilities, and pipeline automation scripts.
-Does NOT own: game code (gameplay-programmer, ui-programmer, etc.), engine core systems (engine-programmer).
-Model tier: Sonnet (default).
-No gate IDs assigned.
+- **Domain**: Editor extensions, content authoring tools, debug utilities, and pipeline automation scripts.
+- **Does NOT own**: game code (gameplay-programmer, ui-programmer, etc.), engine core systems (engine-programmer).
+- **Model tier**: DeepSeek-V3.2 (default).
+- **Gate IDs handled**: TOOL-SPEC-REVIEW, PIPELINE-AUDIT
+- **Gate IDs**: PIPELINE-AUDIT
 
 ---
 
@@ -12,8 +13,9 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and domain-specific (references editor tools / pipeline / debug utilities)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is Sonnet (default for specialists)
+- [ ] Model tier is DeepSeek-V3.2 (default for specialists)
 - [ ] Agent definition does not claim authority over game source code or engine internals
+- [ ] Allowed-tools list grants READ access to src/ for data-structure synchronization, but strictly denies WRITE access to gameplay files.
 
 ---
 
@@ -27,6 +29,7 @@ No gate IDs assigned.
 - Waypoints are serialized as engine-native resource (not hardcoded) so level-designer can edit without code
 - Includes undo/redo support per editor plugin best practices
 - Does NOT modify the AI pathfinding runtime code (that belongs to ai-programmer)
+- Code must demonstrate integration with the engine's Command/Action stack (e.g., UndoRedo class in Godot).
 
 ### Case 2: Out-of-domain request — redirects correctly
 **Input:** "Implement the enemy melee combo system in code."

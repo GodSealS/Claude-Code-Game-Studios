@@ -1,18 +1,17 @@
 # Agent Test Spec: sound-designer
 
 ## Agent Summary
-Domain: SFX specs, audio events, mixing parameters, and sound category definitions.
-Does NOT own: music composition direction (audio-director), code implementation of audio systems.
-Model tier: Sonnet (default).
-No gate IDs assigned.
-
+- **Domain**: SFX specs, audio events, mixing parameters, and sound category definitions.
+- **Does NOT own**: music composition direction (audio-director), code implementation of audio systems.
+- **Model tier**: DeepSeek-V3.2 (default).
+- **Gate IDs**: AUDIO-SPEC-REVIEW
 ---
 
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references SFX / audio events / mixing)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Glob, Grep — does NOT include engine code execution tools
-- [ ] Model tier is Sonnet (default for specialists)
+- [ ] Model tier is DeepSeek-V3.2 (default for specialists)
 - [ ] Agent definition does not claim authority over music direction or audio code implementation
 
 ---
@@ -56,6 +55,7 @@ No gate IDs assigned.
 - Does NOT silently register the non-conforming name
 - Flags the conflict to `audio-director` with the proposed compliant alternative
 - Will proceed with the corrected name once confirmed by audio-director
+- Produces a CSV or Table format mapping the rejected name to the proposed name for batch updating.
 
 ### Case 5: Context pass — uses audio style guide
 **Input:** Audio style guide provided in context specifying: "gritty, grounded, no reverb tails over 1.5s, reference: The Witcher 3 combat audio." Request: "Create SFX specs for the full melee combat suite."
@@ -69,6 +69,7 @@ No gate IDs assigned.
 
 ## Protocol Compliance
 
+- [ ] Every SFX spec must include a defined "Resource Path" relative to the project root (e.g., "audio/sfx/combat/").
 - [ ] Stays within declared domain (SFX specs, event definitions, mixing parameters)
 - [ ] Redirects music direction requests to audio-director
 - [ ] Returns structured audio event specs (event name, variations, pitch, volume, category)

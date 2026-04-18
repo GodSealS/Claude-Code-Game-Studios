@@ -3,7 +3,7 @@
 ## Agent Summary
 Domain: Unity Shader Graph, custom HLSL, VFX Graph, URP/HDRP pipeline customization, and post-processing effects.
 Does NOT own: gameplay code, art style direction.
-Model tier: Sonnet (default).
+Model tier: GLM-5v-Turbo (default).
 No gate IDs assigned.
 
 ---
@@ -11,8 +11,8 @@ No gate IDs assigned.
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references Shader Graph / HLSL / VFX Graph / URP / HDRP)
-- [ ] `allowed-tools:` list includes Read, Write, Edit, Glob, Grep
-- [ ] Model tier is Sonnet (default for specialists)
+- [ ] `allowed-tools:` list includes Read, Write, Edit, Glob, Grep,Python,Lua
+- [ ] Model tier is GLM-5v-Turbo (Vision-optimized for graphics)
 - [ ] Agent definition does not claim authority over gameplay code or art direction
 
 ---
@@ -74,6 +74,7 @@ No gate IDs assigned.
 - [ ] Distinguishes between URP and HDRP approaches — never cross-contaminates pipeline-specific APIs
 - [ ] Flags geometry shader approaches as URP-incompatible when relevant
 - [ ] Produces VFX optimizations that do not change gameplay behavior
+- [ ] Variant Management: Proactively identifies potential shader variant explosion; prefers Local Keywords over Global Keywords for effect-specific toggles unless cross-material synchronization is required.
 
 ---
 

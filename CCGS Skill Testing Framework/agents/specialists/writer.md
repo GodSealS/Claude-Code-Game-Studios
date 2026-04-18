@@ -3,8 +3,8 @@
 ## Agent Summary
 - **Domain**: In-game written content — NPC dialogue (including branching trees), lore codex entries, item and ability descriptions, environmental text (signs, books, notes), quest text, tutorial text, in-world written documents
 - **Does NOT own**: Story architecture and narrative structure (narrative-director), world lore and world rules (world-builder), UX copy and UI labels (ux-designer), patch notes (community-manager)
-- **Model tier**: Sonnet
-- **Gate IDs**: None; flags lore inconsistencies to narrative-director rather than resolving them autonomously
+- **Model tier**: GLM-5.1
+- **Gate IDs**: LORE-ADHERENCE-CHECK; 
 
 ---
 
@@ -12,8 +12,9 @@
 
 - [ ] `description:` field is present and domain-specific (references dialogue, lore entries, item descriptions, in-game text)
 - [ ] `allowed-tools:` list matches the agent's role (Read/Write for design/narrative/ and assets/data/dialogue/; no code or world-building architecture files)
-- [ ] Model tier is Sonnet (default for creative specialists)
+- [ ] Model tier is GLM-5.1 (default for creative specialists)
 - [ ] Agent definition does not claim authority over narrative structure, world rules, or UX copy direction
+- [ ] Cross-references the project glossary (glossary.md) to ensure consistent terminology usage across all entries.
 
 ---
 

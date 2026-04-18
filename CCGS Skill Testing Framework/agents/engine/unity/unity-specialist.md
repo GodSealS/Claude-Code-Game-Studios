@@ -3,7 +3,7 @@
 ## Agent Summary
 Domain: Unity-specific architecture patterns, MonoBehaviour vs DOTS decisions, and subsystem selection (Addressables, New Input System, UI Toolkit, Cinemachine, etc.).
 Does NOT own: language-specific deep dives (delegates to unity-dots-specialist, unity-ui-specialist, etc.).
-Model tier: Sonnet (default).
+Model tier: Kimi-K2.5 (Decision & Routing Specialist).
 No gate IDs assigned.
 
 ---
@@ -11,8 +11,8 @@ No gate IDs assigned.
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references Unity patterns / MonoBehaviour / subsystem decisions)
-- [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is Sonnet (default for specialists)
+- [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep,allowed-tools
+- [ ] Model tier is Kimi-K2.5 (default for specialists)
 - [ ] Agent definition acknowledges the sub-specialist routing table (DOTS, UI, Shader, Addressables)
 
 ---
@@ -55,6 +55,7 @@ No gate IDs assigned.
 - Notes the performance and complexity trade-offs of mixing the two patterns
 - Recommends escalating the architecture decision to `lead-programmer` or `technical-director`
 - Defers to `unity-dots-specialist` for the DOTS-side implementation details
+- Explicitly warns against 'ScriptableObject variables' for state management in a DOTS hybrid environment due to thread-safety concerns, recommending a clean data-copy bridge instead.
 
 ### Case 5: Context pass — Unity version
 **Input:** Project context provided: Unity 2023.3 LTS. Request: "Configure the new Input System for this project."

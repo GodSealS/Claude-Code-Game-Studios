@@ -3,18 +3,18 @@
 ## Agent Summary
 **Domain owned:** Core loop design, progression systems, combat mechanics rules, economy design, player-facing rules and interactions.
 **Does NOT own:** Code implementation (lead-programmer / gameplay-programmer), visual art (art-director), narrative lore and story (narrative-director — coordinates with), balance formula math (systems-designer — collaborates with).
-**Model tier:** Sonnet (individual system design authoring and review).
-**Gate IDs handled:** Design review verdicts on mechanic specs (no named gate ID prefix — uses APPROVED / NEEDS REVISION vocabulary).
+**Model tier:** DeepSeek-V3.2 (individual system design authoring and review).
+**Gate IDs handled:** GD-MECHANIC-REVIEW, GD-ECONOMY-CHECK, GD-PHASE-GATE
 
 ---
 
 ## Static Assertions (Structural)
 
-Verified by reading the agent's `.claude/agents/game-designer.md` frontmatter:
+Verified by reading the agent's `.codebuddy/agents/game-designer.md` frontmatter:
 
 - [ ] `description:` field is present and domain-specific (references core loop, progression, combat rules, economy, player-facing design — not generic)
 - [ ] `allowed-tools:` list is read-focused; includes Read for GDDs and design docs; no Bash unless design tooling requires it
-- [ ] Model tier is `claude-sonnet-4-6` per coordination-rules.md
+- [ ] Model tier is `DeepSeek-V3.2` per coordination-rules.md
 - [ ] Agent definition does not claim authority over code implementation, visual art style, or standalone narrative lore decisions
 
 ---
@@ -40,9 +40,9 @@ Verified by reading the agent's `.claude/agents/game-designer.md` frontmatter:
 
 ### Case 3: Gate verdict — correct vocabulary
 **Scenario:** A mechanic spec for "Environmental Hazard Damage" is submitted. The spec defines three hazard types (fire, acid, electricity) but does not specify what happens when a player is simultaneously affected by multiple hazard types, what happens when a hazard is applied during the invincibility window from a dodge, or what the damage frequency is (per-second, per-tick, on-enter).
-**Expected:** Returns `NEEDS REVISION` with specific identification of the undefined edge cases: multi-hazard interaction, hazard-during-invincibility, and damage frequency specification.
+**Expected:** Returns REJECT [list of blockers] with specific identification of the undefined edge cases...
 **Assertions:**
-- [ ] Verdict is exactly one of APPROVED / NEEDS REVISION — not freeform text
+- [ ] Verdict is exactly one of APPROVE / CONCERNS / REJECT
 - [ ] Rationale identifies the specific missing edge cases by name
 - [ ] Does not reject the entire mechanic — identifies the specific gaps to fill
 - [ ] Provides actionable guidance on what to define (not how to implement it)

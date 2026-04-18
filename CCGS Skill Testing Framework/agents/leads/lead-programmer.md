@@ -3,18 +3,18 @@
 ## Agent Summary
 **Domain owned:** Code architecture decisions, LP-FEASIBILITY gate, LP-CODE-REVIEW gate, coding standards enforcement, tech stack decisions within the approved engine.
 **Does NOT own:** Game design decisions (game-designer), creative direction (creative-director), production scheduling (producer), visual art direction (art-director).
-**Model tier:** Sonnet (implementation-level analysis of individual systems).
-**Gate IDs handled:** LP-FEASIBILITY, LP-CODE-REVIEW.
+**Model tier:** DeepSeek-V3.2 (implementation-level analysis of individual systems).
+**Gate IDs:** LP-FEASIBILITY, LP-CODE-REVIEW.
 
 ---
 
 ## Static Assertions (Structural)
 
-Verified by reading the agent's `.claude/agents/lead-programmer.md` frontmatter:
+Verified by reading the agent's `.codebuddy/agents/lead-programmer.md` frontmatter:
 
 - [ ] `description:` field is present and domain-specific (references code architecture, feasibility, code review, coding standards — not generic)
 - [ ] `allowed-tools:` list includes Read for source files; Bash may be included for static analysis or test runs; no write access outside `src/` without explicit delegation
-- [ ] Model tier is `claude-sonnet-4-6` per coordination-rules.md
+- [ ] Model tier is `DeepSeek-V3.2` per coordination-rules.md
 - [ ] Agent definition does not claim authority over game design, creative direction, or production scheduling
 
 ---
@@ -69,12 +69,13 @@ Verified by reading the agent's `.claude/agents/lead-programmer.md` frontmatter:
 
 ## Protocol Compliance
 
-- [ ] Returns LP-CODE-REVIEW verdicts using APPROVED / NEEDS CHANGES vocabulary only
+- [ ] Returns LP-CODE-REVIEW verdicts using APPROVE / CONCERNS / REJECT vocabulary only
 - [ ] Returns LP-FEASIBILITY verdicts using FEASIBLE / CONCERNS / INFEASIBLE vocabulary only
 - [ ] Stays within declared code architecture domain
 - [ ] Defers design priority conflicts to creative-director
 - [ ] Uses gate IDs in output (e.g., `LP-FEASIBILITY: INFEASIBLE`) not inline prose verdicts
 - [ ] Does not make binding game design or creative direction decisions
+- [ ] Verdict token is formatted exactly as `GATE-ID: VERDICT` (e.g., `LP-CODE-REVIEW: REJECT`)
 
 ---
 

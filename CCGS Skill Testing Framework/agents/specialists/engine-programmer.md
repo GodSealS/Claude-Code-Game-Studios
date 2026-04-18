@@ -1,10 +1,11 @@
 # Agent Test Spec: engine-programmer
-
 ## Agent Summary
-Domain: Rendering pipeline, physics integration, memory management, resource loading, and core engine framework.
-Does NOT own: gameplay mechanics (gameplay-programmer), editor/debug tool UI (tools-programmer).
-Model tier: Sonnet (default).
-No gate IDs assigned.
+- **Domain**: Rendering pipeline, physics integration, memory management, resource loading, and core engine framework.
+
+- **Does NOT own**: gameplay mechanics (gameplay-programmer), editor/debug tool UI (tools-programmer).
+- **Model tier**: DeepSeek-V3.2 (default).
+- **Gate IDs handled**: EP-PERF-AUDIT, EP-MEMORY-SIGN-OFF, EP-PHASE-GATE
+- **Domain**: UE 5.5 Rendering (Nanite/Lumen), Chaos Physics, Zen Loader, Memory Management.
 
 ---
 
@@ -12,7 +13,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and domain-specific (references rendering / memory / engine core)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is Sonnet (default for specialists)
+- [ ] Model tier is DeepSeek-V3.2 (Ensures logic-heavy reasoning for memory/rendering audits)
 - [ ] Agent definition does not claim authority over gameplay mechanics or tool UI
 
 ---
@@ -64,6 +65,9 @@ No gate IDs assigned.
 
 ## Protocol Compliance
 
+- [ ] **Standard Verdicts**: Returns APPROVE / CONCERNS / REJECT for all architectural audits.
+- [ ] **Memory Quantization**: All memory audit findings must include specific values (e.g., "leak detected: $\approx 50MB$ per level").
+- [ ] **Handoff Protocol**: Explicitly tags `@ui-programmer` for HUD/Menu requests or `@lead-programmer` for API breaking changes.
 - [ ] Stays within declared domain (rendering, physics, memory, resource loading, core framework)
 - [ ] Redirects UI/menu requests to ui-programmer
 - [ ] Returns structured findings (implementation code, diagnosis steps, migration plans)

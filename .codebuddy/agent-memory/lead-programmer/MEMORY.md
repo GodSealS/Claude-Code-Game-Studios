@@ -10,7 +10,7 @@
   in `allowed-tools` frontmatter (no existing skill does this)
 
 ### File Layout
-- Skills live in `.claude/skills/<name>/SKILL.md` (subdirectory per skill, never flat .md)
+- Skills live in `.codebuddy/skills/<name>/SKILL.md` (subdirectory per skill, never flat .md)
 - Section headers use `##` for phases, `###` for sub-sections
 - Phase names follow "Phase N: Verb Noun" pattern (e.g., "Phase 1: Find the Story")
 - Output format templates go in fenced code blocks

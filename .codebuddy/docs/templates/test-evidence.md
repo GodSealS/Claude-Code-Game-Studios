@@ -81,6 +81,6 @@ past the sprint review.
 
 ---
 
-*Template: `.claude/docs/templates/test-evidence.md`*
+*Template: `.codebuddy/docs/templates/test-evidence.md`*
 *Used for: Visual/Feel and UI story type evidence records*
 *Location: `production/qa/evidence/[story-slug]-evidence.md`*

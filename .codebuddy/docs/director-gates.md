@@ -15,7 +15,7 @@ In any skill, replace an inline director prompt with a reference:
 
 ```
 Spawn `creative-director` via Task using gate **CD-PILLARS** from
-`.claude/docs/director-gates.md`.
+`.codebuddy/docs/director-gates.md`.
 ```
 
 Pass the context listed under that gate's **Context to pass** field, then handle
@@ -79,7 +79,7 @@ Apply the resolved mode:
 ```
 # Apply mode check, then:
 Spawn `[agent-name]` via Task:
-- Gate: [GATE-ID] (see .claude/docs/director-gates.md)
+- Gate: [GATE-ID] (see .codebuddy/docs/director-gates.md)
 - Context: [fields listed under that gate]
 - Await the verdict before proceeding.
 ```
@@ -124,7 +124,7 @@ For phase gates, record in `docs/architecture/architecture.md` or
 
 ## Tier 1 — Creative Director Gates
 
-Agent: `creative-director` | Model tier: Opus | Domain: Vision, pillars, player experience
+Agent: `creative-director` | Model tier: GLM-5v-Turbo | Domain: Vision, pillars, player experience
 
 ---
 
@@ -266,7 +266,7 @@ any session that produces player feedback
 
 ## Tier 1 — Technical Director Gates
 
-Agent: `technical-director` | Model tier: Opus | Domain: Architecture, engine risk, performance
+Agent: `technical-director` | Model tier: DeepSeek-V3.2 | Domain: Architecture, engine risk, performance
 
 ---
 
@@ -412,7 +412,7 @@ or before finalizing any engine-specific implementation approach
 
 ## Tier 1 — Producer Gates
 
-Agent: `producer` | Model tier: Opus | Domain: Scope, timeline, dependencies, production risk
+Agent: `producer` | Model tier: Kimi-K2.5 | Domain: Scope, timeline, dependencies, production risk
 
 ---
 
@@ -538,7 +538,7 @@ is invoked
 
 ## Tier 1 — Art Director Gates
 
-Agent: `art-director` | Model tier: Sonnet | Domain: Visual identity, art bible, visual production readiness
+Agent: `art-director` | Model tier: MiniMax-M2.7 | Domain: Visual identity, art bible, visual production readiness
 
 ---
 
@@ -573,7 +573,7 @@ Agent: `art-director` | Model tier: Sonnet | Domain: Visual identity, art bible,
 **Context to pass**:
 - Art bible path (`design/art/art-bible.md`)
 - Game pillars and core fantasy
-- Platform and performance constraints (from `.claude/docs/technical-preferences.md` if configured)
+- Platform and performance constraints (from `.codebuddy/docs/technical-preferences.md` if configured)
 - Visual identity anchor chosen during brainstorm (from `design/gdd/game-concept.md`)
 
 **Prompt**:
@@ -619,7 +619,7 @@ Agent: `art-director` | Model tier: Sonnet | Domain: Visual identity, art bible,
 ## Tier 2 — Lead Gates
 
 These gates are invoked by orchestration skills and senior skills when a domain
-specialist's feasibility sign-off is needed. Tier 2 leads use Sonnet (default).
+specialist's feasibility sign-off is needed. Tier 2 leads use GLM-5.1 (default).
 
 ---
 

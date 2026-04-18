@@ -3,18 +3,18 @@
 ## Agent Summary
 **Domain owned:** Test strategy, QL-STORY-READY gate, QL-TEST-COVERAGE gate, bug severity triage, release quality gates.
 **Does NOT own:** Feature implementation (programmers), game design decisions, creative direction, production scheduling.
-**Model tier:** Sonnet (individual system analysis — story readiness and coverage assessment).
-**Gate IDs handled:** QL-STORY-READY, QL-TEST-COVERAGE.
+**Model tier:** DeepSeek-V3.2 (individual system analysis — story readiness and coverage assessment).
+**Gate IDs handled**: QL-STORY-READY, QL-TEST-COVERAGE, QL-RELEASE-GATE
 
 ---
 
 ## Static Assertions (Structural)
 
-Verified by reading the agent's `.claude/agents/qa-lead.md` frontmatter:
+Verified by reading the agent's `.codebuddy/agents/qa-lead.md` frontmatter:
 
 - [ ] `description:` field is present and domain-specific (references test strategy, story readiness, coverage, bug triage — not generic)
 - [ ] `allowed-tools:` list is read-focused; may include Read for story files, test files, and coding-standards; Bash only if running test commands is required
-- [ ] Model tier is `claude-sonnet-4-6` per coordination-rules.md
+- [ ] Model tier is `DeepSeek-V3.2` per coordination-rules.md
 - [ ] Agent definition does not claim authority over implementation decisions or game design
 
 ---
@@ -69,8 +69,9 @@ Verified by reading the agent's `.claude/agents/qa-lead.md` frontmatter:
 
 ## Protocol Compliance
 
-- [ ] Returns QL-STORY-READY verdicts using ADEQUATE / INADEQUATE vocabulary only
-- [ ] Returns QL-TEST-COVERAGE verdicts using ADEQUATE / INADEQUATE vocabulary only (or PASS / FAIL for release gates)
+- [ ] Returns QL-STORY-READY verdicts using ADEQUATE / GAPS / INADEQUATE only
+- [ ] Returns QL-TEST-COVERAGE verdicts using ADEQUATE / GAPS / INADEQUATE only (or PASS / FAIL for release gates)
+- [ ] Verdict token is formatted exactly as `GATE-ID: VERDICT`.
 - [ ] Stays within declared QA and test strategy domain
 - [ ] Escalates technical standards disputes to lead-programmer
 - [ ] Uses gate IDs in output (e.g., `QL-STORY-READY: INADEQUATE`) not inline prose verdicts

@@ -1,10 +1,11 @@
 # Agent Test Spec: ui-programmer
 
 ## Agent Summary
-Domain: Menu screens, HUDs, inventory screens, dialogue boxes, UI framework code, and data binding.
-Does NOT own: UX flow design (ux-designer), visual style direction (art-director / technical-artist).
-Model tier: Sonnet (default).
-No gate IDs assigned.
+- **Domain**: Menu screens, HUDs, inventory screens, dialogue boxes, UI framework code, and data binding.
+- **Does NOT own**: UX flow design (ux-designer), visual style direction (art-director / technical-artist).
+- **Model tie**r: DeepSeek-V3.2 (default).
+- **Gate IDs handled**: UI-ACCESSIBILITY-REVIEW, UI-LAYOUT-SIGN-OFF。
+- **Gate IDs**: UI-LAYOUT-SIGN-OFF。
 
 ---
 
@@ -12,8 +13,10 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and domain-specific (references menus / HUDs / UI framework / data binding)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is Sonnet (default for specialists)
-- [ ] Agent definition does not claim authority over UX flow design or visual art direction
+- [ ] Model tier is DeepSeek-V3.2 (default for specialists)
+- [ ] Agent definition does not claim authority over UX flow design or visual art 
+direction
+- [ ] Agent rejects hardcoded display text in favor of localization IDs.
 
 ---
 
@@ -59,6 +62,7 @@ No gate IDs assigned.
 - Does NOT produce Unity UGUI or Unreal UMG code for a Godot project
 - Checks the engine version reference (4.6) for any Control node API changes from 4.4/4.5 before using specific APIs
 - Produces GDScript or C# code consistent with the project's configured language
+- The implementation should use an 'Animation Interface' (e.g., Godot's Tween or AnimationPlayer) rather than hardcoded Lerp logic in _process.
 
 ---
 
@@ -70,6 +74,8 @@ No gate IDs assigned.
 - [ ] Flags ambiguous UX specs back to ux-designer rather than making arbitrary implementation decisions
 - [ ] Returns structured output (implementation code, data binding patterns, state machine for UI states)
 - [ ] Uses the correct engine UI toolkit for the project — never cross-engine code
+- [ ] Enforces localization keys (e.g., "#ID_INV_TITLE") instead of hardcoded strings in all UI implementations.
+- [ ] Strictly adheres to the MVVM or MVC pattern provided in the technical-preferences.md to decouple UI from gameplay state.
 
 ---
 

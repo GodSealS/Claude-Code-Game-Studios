@@ -3,7 +3,7 @@
 ## Agent Summary
 Domain: Unity UI Toolkit (UXML/USS), UGUI (Canvas), data binding, runtime UI performance, and UI input event handling.
 Does NOT own: UX flow design (ux-designer), visual art style (art-director).
-Model tier: Sonnet (default).
+Model tier: DeepSeek-V3.2 (Logic-optimized for UI architecture).
 No gate IDs assigned.
 
 ---
@@ -12,7 +12,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and domain-specific (references UI Toolkit / UGUI / Canvas / data binding)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is Sonnet (default for specialists)
+- [ ] Model tier is DeepSeek-V3.2 (default for specialists)
 - [ ] Agent definition does not claim authority over UX flow design or visual art direction
 
 ---
@@ -53,6 +53,7 @@ No gate IDs assigned.
   - Disable/deactivate panels instead of setting alpha to 0 (invisible alpha-0 panels still draw)
   - Canvas Group + alpha for fade effects, not individual Image alpha
 - Notes UI Toolkit alternative if the project is in a migration position
+- Identifies redundant Layout Group usage in UGUI that triggers recursive dirtying of the layout system, recommending custom positioning or flattened hierarchies.
 
 ### Case 5: Context pass — Unity version
 **Input:** Project context: Unity 2022.3 LTS. Request: "Implement the settings panel with data binding."

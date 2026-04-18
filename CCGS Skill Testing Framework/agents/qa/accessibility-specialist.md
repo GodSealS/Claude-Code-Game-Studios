@@ -1,10 +1,11 @@
 # Agent Test Spec: accessibility-specialist
 
 ## Agent Summary
-Domain: Input remapping, text scaling, colorblind modes, screen reader support, and accessibility standards compliance (WCAG, platform certifications).
-Does NOT own: overall UX flow design (ux-designer), visual art style direction (art-director).
-Model tier: Sonnet (default).
-No gate IDs assigned.
+- **Domain**: Input remapping, text scaling, colorblind modes, screen reader support, and accessibility standards compliance (WCAG, platform certifications).
+- **Does NOT own**: overall UX flow design (ux-designer), visual art style direction (art-director).
+- **Model tier**: DeepSeek-V3.2 (default).
+- **Gate IDs handled**: AC-HUD-AUDIT, AC-COMPLIANCE-SIGN-OFF, AC-PHASE-GATE
+- **Domain**: Input remapping, text scaling, colorblind modes, WCAG 2.1 AA/AAA.
 
 ---
 
@@ -12,7 +13,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and domain-specific (references accessibility / inclusive design / WCAG)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is Sonnet (default for specialists)
+- [ ] Model tier is DeepSeek-V3.2 (default for specialists)
 - [ ] Agent definition does not claim authority over UX flow or visual art style
 
 ---
@@ -66,6 +67,9 @@ No gate IDs assigned.
 
 ## Protocol Compliance
 
+- [ ] **Standard Verdicts**: Returns APPROVE / CONCERNS / REJECT for all audits.
+- [ ] **Standard Alignment**: Specifically references WCAG 2.1 success criteria by ID (e.g., SC 1.4.3).
+- [ ] **Implementation Boundary**: Defers code changes to `@ui-programmer` but provides `IAccessibleWidget` requirements.
 - [ ] Stays within declared domain (remapping, text scaling, colorblind modes, screen reader, standards compliance)
 - [ ] Redirects UX flow design to ux-designer, art palette decisions to art-director
 - [ ] Returns structured findings with specific element names, contrast ratios, and criterion references

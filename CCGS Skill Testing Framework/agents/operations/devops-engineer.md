@@ -3,8 +3,9 @@
 ## Agent Summary
 - **Domain**: CI/CD pipeline configuration, build scripts, version control workflow enforcement, deployment infrastructure, branching strategy, environment management, automated test integration in CI
 - **Does NOT own**: Game logic or gameplay systems, security audits (security-engineer), QA test strategy (qa-lead), game networking logic (network-programmer)
-- **Model tier**: Sonnet
-- **Gate IDs**: None; escalates deployment blockers to producer
+- **Model tier**: DeepSeek-V3.2​
+- **Gate IDs handled**: DE-BUILD-READY, DE-DEPLOY-SIGN-OFF
+- **Domain**: CI/CD (UAT/UBT), version control workflow, build matrix optimization.
 
 ---
 
@@ -12,7 +13,7 @@
 
 - [ ] `description:` field is present and domain-specific (references CI/CD, build, deployment, version control)
 - [ ] `allowed-tools:` list matches the agent's role (Read/Write for pipeline config files, shell scripts, YAML; no game source editing tools)
-- [ ] Model tier is Sonnet (default for operations specialists)
+- [ ] Model tier is DeepSeek-V3.2​ (default for operations specialists)
 - [ ] Agent definition does not claim authority over game logic, security audits, or QA test design
 
 ---

@@ -3,18 +3,18 @@
 ## Agent Summary
 **Domain owned:** Story architecture, character design direction, world-building oversight, ND-CONSISTENCY gate, dialogue quality review.
 **Does NOT own:** Visual art style (art-director), technical systems or code (lead-programmer), production scheduling (producer), game mechanics rules (game-designer).
-**Model tier:** Sonnet (individual system analysis — narrative consistency and lore review).
-**Gate IDs handled:** ND-CONSISTENCY.
+**Model tier:** GLM-5.1 (individual system analysis — narrative consistency and lore review).
+**Gate IDs handled**: ND-CONSISTENCY
 
 ---
 
 ## Static Assertions (Structural)
 
-Verified by reading the agent's `.claude/agents/narrative-director.md` frontmatter:
+Verified by reading the agent's `.codebuddy/agents/narrative-director.md` frontmatter:
 
 - [ ] `description:` field is present and domain-specific (references story, character, world-building, consistency — not generic)
 - [ ] `allowed-tools:` list is read-focused; includes Read for lore documents, GDDs, and narrative docs; no Bash unless justified
-- [ ] Model tier is `claude-sonnet-4-6` per coordination-rules.md
+- [ ] Model tier is `GLM-5.1` per coordination-rules.md
 - [ ] Agent definition does not claim authority over visual style, technical systems, or production scheduling
 
 ---
@@ -69,7 +69,8 @@ Verified by reading the agent's `.claude/agents/narrative-director.md` frontmatt
 
 ## Protocol Compliance
 
-- [ ] Returns verdicts using CONSISTENT / INCONSISTENT vocabulary only
+- [ ] Returns verdicts using APPROVE / CONCERNS / REJECT vocabulary only
+- [ ] Verdict token is formatted as `ND-CONSISTENCY: REJECT` (e.g., when timeline conflicts occur)
 - [ ] Stays within declared narrative domain
 - [ ] Makes binding decisions for intra-narrative conflicts without unnecessary escalation
 - [ ] Uses gate IDs in output (e.g., `ND-CONSISTENCY: INCONSISTENT`) not inline prose verdicts

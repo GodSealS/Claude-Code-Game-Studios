@@ -3,8 +3,9 @@
 ## Agent Summary
 - **Domain**: Post-launch content strategy, seasonal events (design and structure), battle pass design, content cadence planning, player retention mechanic design, live service feature roadmaps
 - **Does NOT own**: Economy math and reward value calculations (economy-designer), analytics tracking implementation (analytics-engineer), narrative content within events (writer), code implementation
-- **Model tier**: Sonnet
-- **Gate IDs**: None; escalates monetization concerns to creative-director for brand/ethics review
+- **Model tier**: GLM-5.1
+- **Gate IDs handled**: LO-EVENT-REVIEW, LO-SEASON-PLAN, LO-PHASE-GATE
+- **Domain**: Seasonal events, Battle Pass structure, retention mechanics, cadence.
 
 ---
 
@@ -12,7 +13,7 @@
 
 - [ ] `description:` field is present and domain-specific (references live ops, seasonal events, battle pass, retention)
 - [ ] `allowed-tools:` list matches the agent's role (Read/Write for design/live-ops/ documents; no code or analytics tools)
-- [ ] Model tier is Sonnet (default for design specialists)
+- [ ] Model tier is GLM-5.1 (default for design specialists)
 - [ ] Agent definition does not claim authority over economy math, analytics pipelines, or narrative direction
 
 ---
@@ -66,6 +67,9 @@
 
 ## Protocol Compliance
 
+- [ ] Returns verdicts using APPROVE / CONCERNS / REJECT vocabulary only.
+- [ ] **Value Isolation**: Strictly forbids assigning specific currency numbers; uses `[TO BE BALANCED BY ECONOMY-DESIGNER]` placeholders.
+- [ ] **Ethical Guardrail**: Automatically flags any "pay-to-complete" or "FOMO-driven" designs as REJECT, requiring @creative-director sign-off.
 - [ ] Stays within declared domain (event structure, content cadence, retention design, battle pass design)
 - [ ] Redirects reward value and economy math requests to economy-designer
 - [ ] Flags predatory monetization patterns and escalates to creative-director rather than implementing them silently
