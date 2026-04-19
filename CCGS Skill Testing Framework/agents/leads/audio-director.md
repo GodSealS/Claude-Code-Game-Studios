@@ -25,7 +25,7 @@ Verified by reading the agent's `.codebuddy/agents/audio-director.md` frontmatte
 **Scenario:** An audio specification document is submitted for the game's "Exploration" music layer. The spec defines a generative ambient system using layered stems that shift based on environmental density, designed to reinforce the pillar "lived-in world." The tone palette (sparse, organic, slightly melancholic) matches the established design pillars.
 **Expected:** Returns `APPROVED` with rationale confirming the stem-based approach supports dynamic responsiveness and the tone palette aligns with the pillar vocabulary.
 **Assertions:**
-- [ ] Verdict is exactly one of APPROVE / CONCERNS / REJECT
+- [ ] Verdict is exactly one of APPROVED / CONCERNS / REJECT
 - [ ] Rationale references the specific pillar ("lived-in world") and how the audio spec supports it
 - [ ] Output stays within audio scope — does not comment on visual design of the environment or UI layout
 - [ ] Verdict is clearly labeled with context (e.g., "Audio Spec Review: APPROVED")

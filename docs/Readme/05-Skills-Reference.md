@@ -8,7 +8,7 @@
 
 | 类别 | 数量 | Skills |
 |------|------|--------|
-| 入门与导航 | 5 | `/start`, `/help`, `/project-stage-detect`, `/setup-engine`, `/adopt` |
+| 入门与导航 | 8 | `/start`, `/help`, `/project-stage-detect`, `/setup-engine`, `/setup-wechat-minigame`, `/wechat-shader`, `/wechat-ui-design`, `/adopt` |
 | 游戏设计 | 6 | `/brainstorm`, `/map-systems`, `/design-system`, `/quick-design`, `/review-all-gdds`, `/propagate-design-change` |
 | UX 设计 | 2 | `/ux-design`, `/ux-review` |
 | 架构 | 4 | `/create-architecture`, `/architecture-decision`, `/architecture-review`, `/create-control-manifest` |
@@ -96,6 +96,80 @@
 **参数**: 无
 
 **使用场景**: 已有项目，想采用本架构
+
+---
+
+### /setup-wechat-minigame
+
+**功能**: 初始化微信小游戏项目，包含平台专属配置、样板代码和目录结构。
+
+**参数**: `[options]`（可选）
+
+**选项**:
+- `--engine [native|cocos|laya]` - 游戏引擎选择
+- `--lang [js|ts]` - 开发语言
+- `--cloud` - 启用云开发
+
+**使用场景**: 新建微信小游戏项目时
+
+**输出**:
+- `miniprogram/` 目录结构
+- `game.json` / `app.json` 配置
+- 项目样板代码
+
+---
+
+### /wechat-shader
+
+**Agent**: `wechat-shader-specialist`
+
+**功能**: 初始化 WebGL Shader 管线，将 Unity/Unreal/Godot Shader 转换为 WebGL GLSL，移动端优化。
+
+**参数**: `[action]` `[source-file]`
+
+**操作**:
+- `setup [webgl-version]` - 设置 Shader 管线（webgl1/webgl2）
+- `convert [engine] [file]` - 从其他引擎转换 Shader
+- `optimize [file]` - 优化现有 Shader
+
+**使用场景**:
+- 需要自定义 WebGL Shader 效果
+- 从 Unity/Unreal/Godot 迁移 Shader
+- 移动端 Shader 性能优化
+
+**示例**:
+```
+/wechat-shader setup webgl2
+/wechat-shader convert unity Assets/Shaders/Effect.shader
+/wechat-shader optimize shaders/water.frag
+```
+
+---
+
+### /wechat-ui-design
+
+**Agent**: `wechat-ui-specialist`
+
+**功能**: 使用 Figma/Sketch 设计 UI，Photoshop/Illustrator 制作资产，FairyGUI 搭建自适应界面。
+
+**参数**: `[action]` `[name]`
+
+**操作**:
+- `init [project-name]` - 初始化设计项目
+- `assets [screen-name]` - 生成屏幕资产
+- `fairygui [package-name]` - 创建 FairyGUI 包
+
+**使用场景**:
+- 设计微信小游戏 UI
+- 制作精灵图和纹理图集
+- 在 FairyGUI 中搭建界面
+
+**示例**:
+```
+/wechat-ui-design init "MyGame"
+/wechat-ui-design assets MainMenu
+/wechat-ui-design fairygui UI_Main
+```
 
 ---
 

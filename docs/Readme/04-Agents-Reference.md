@@ -34,7 +34,8 @@ Tier 3: 专家 (Specialists)
 引擎专属专家 (Engine Specialists)
     ├── Godot: godot-specialist, godot-gdscript-specialist, godot-shader-specialist, godot-gdextension-specialist
     ├── Unity: unity-specialist, unity-dots-specialist, unity-shader-specialist, unity-addressables-specialist, unity-ui-specialist
-    └── Unreal: unreal-specialist, ue-gas-specialist, ue-blueprint-specialist, ue-replication-specialist, ue-umg-specialist
+    ├── Unreal: unreal-specialist, ue-gas-specialist, ue-blueprint-specialist, ue-replication-specialist, ue-umg-specialist
+    └── WeChat Mini Game: wechat-minigame-specialist, wechat-cloudbase-specialist, wechat-shader-specialist, wechat-ui-specialist
 ```
 
 ---
@@ -573,6 +574,23 @@ producer: "让我分析一下...
 | `ue-replication-specialist` | 属性复制、RPC、预测、相关性 |
 | `ue-umg-specialist` | Widget 层级、数据绑定、CommonUI |
 
+### 微信小游戏专家团队
+
+| Agent | 专长 | 模型 |
+|-------|------|------|
+| `wechat-minigame-specialist` | 平台 API、4MB 包体限制、物理引擎(Box2D/Bullet/JoltPhysics)、WebAssembly 集成、Spine/DragonBones 骨骼动画运行时 | DeepSeek-V3.2 |
+| `wechat-cloudbase-specialist` | 微信云开发、数据库、云函数、存储、安全规则 | DeepSeek-V3.2 |
+| `wechat-shader-specialist` | WebGL 1.0/2.0 Shader、Unity/Unreal/Godot Shader 转 WebGL GLSL、后处理效果 | GLM-5v-Turbo |
+| `wechat-ui-specialist` | Figma/Sketch 原型、Photoshop/Illustrator 资产制作、FairyGUI 界面拼装、微信设计规范 | GLM-5v-Turbo |
+
+**使用场景**：
+- 开发微信小游戏平台专属功能
+- 需要物理引擎集成（2D/3D）
+- 需要 WebAssembly 第三方库
+- 需要骨骼动画运行时
+- 需要自定义 WebGL Shader
+- 需要 UI 设计和 FairyGUI 实现
+
 ---
 
 ## Agent 选择指南
@@ -630,12 +648,18 @@ producer: "让我分析一下...
     │   ├── 着色器 → unity-shader-specialist
     │   ├── 资源管理 → unity-addressables-specialist
     │   └── UI → unity-ui-specialist
-    └── Unreal
-        ├── 一般问题 → unreal-specialist
-        ├── GAS → ue-gas-specialist
-        ├── Blueprint → ue-blueprint-specialist
-        ├── 网络复制 → ue-replication-specialist
-        └── UMG → ue-umg-specialist
+    ├── Unreal
+    │   ├── 一般问题 → unreal-specialist
+    │   ├── GAS → ue-gas-specialist
+    │   ├── Blueprint → ue-blueprint-specialist
+    │   ├── 网络复制 → ue-replication-specialist
+    │   └── UMG → ue-umg-specialist
+    └── 微信小游戏
+        ├── 平台 API / 包体优化 / 发布 → wechat-minigame-specialist
+        ├── 物理引擎 / WASM / 骨骼动画 → wechat-minigame-specialist
+        ├── 云开发后端 → wechat-cloudbase-specialist
+        ├── WebGL Shader → wechat-shader-specialist
+        └── UI 设计 / FairyGUI → wechat-ui-specialist
 ```
 
 ---

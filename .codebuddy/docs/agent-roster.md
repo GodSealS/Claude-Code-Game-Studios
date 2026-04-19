@@ -88,3 +88,20 @@ domain lead) should delegate to specialists.
 | `godot-gdscript-specialist` | GDScript | DeepSeek-V3.2 | Static typing, design patterns, signals, coroutines, GDScript performance |
 | `godot-shader-specialist` | Shaders/Rendering | GLM-5v-Turbo | Godot shading language, visual shaders, particles, post-processing |
 | `godot-gdextension-specialist` | GDExtension | DeepSeek-V3.2 | C++/Rust bindings, native performance, custom nodes, build systems |
+
+---
+
+### WeChat Mini Game (微信小游戏) Specialists
+
+| Agent | Domain | Model | When to Use |
+| ---- | ---- | ---- | ---- |
+| `wechat-minigame-specialist` | WeChat Mini Game Platform | DeepSeek-V3.2 | Platform APIs, 4MB package limit, mobile optimization, physics engines (Box2D/Bullet/JoltPhysics), WebAssembly integration, Spine/DragonBones animation runtimes, social features, submission |
+| `wechat-cloudbase-specialist` | WeChat Cloud Base | DeepSeek-V3.2 | Serverless backend, database, cloud functions, storage, security rules |
+| `wechat-shader-specialist` | WebGL Shaders | GLM-5v-Turbo | Custom shaders, WebGL 1.0/2.0, Unity/Unreal/Godot shader conversion to GLSL, post-processing effects |
+| `wechat-ui-specialist` | UI/UX Design | GLM-5v-Turbo | Figma/Sketch prototyping, Photoshop/Illustrator asset production, FairyGUI layout, WeChat design system compliance |
+
+**Notes:**
+- WeChat Mini Game specialists are for JavaScript/TypeScript games targeting the WeChat platform
+- 4MB package size limit is strictly enforced
+- Cloud Base provides serverless backend with MongoDB-like database
+- Real-name verification (实名制) and anti-addiction (防沉迷) compliance required for China market

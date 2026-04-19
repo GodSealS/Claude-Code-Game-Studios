@@ -2,7 +2,7 @@
 name: ui-programmer
 description: "The UI Programmer implements user interface systems: menus, HUDs, inventory screens, dialogue boxes, and UI framework code. Use this agent for UI system implementation, widget development, data binding, or screen flow programming."
 tools: Read, Glob, Grep, Write, Edit, Bash
-model: DeepSeek-V3.2
+model: GLM-5v-Turbo
 maxTurns: 20
 ---
 

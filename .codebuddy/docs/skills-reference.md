@@ -1,6 +1,6 @@
 # Available Skills (Slash Commands)
 
-68 slash commands organized by phase. Type `/` in CodeBuddy to access any of them.
+70 slash commands organized by phase. Type `/` in CodeBuddy to access any of them.
 
 ## Onboarding & Navigation
 
@@ -10,6 +10,9 @@
 | `/help` | Context-aware "what do I do next?" — reads current stage and surfaces the required next step |
 | `/project-stage-detect` | Full project audit — detect phase, identify existence gaps, recommend next steps |
 | `/setup-engine` | Configure engine + version, detect knowledge gaps, populate version-aware reference docs |
+| `/setup-wechat-minigame` | Initialize WeChat Mini Game project with platform-specific configuration, boilerplate code, and directory structure |
+| `/wechat-shader` | Initialize WebGL shader pipeline, convert Unity/Unreal/Godot shaders to WebGL GLSL, optimize for mobile |
+| `/wechat-ui-design` | Design UI with Figma/Sketch, produce assets in Photoshop/Illustrator, build adaptive layouts in FairyGUI |
 | `/adopt` | Brownfield format audit — checks internal structure of existing GDDs/ADRs/stories, produces migration plan |
 
 ## Game Design

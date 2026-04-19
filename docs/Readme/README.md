@@ -17,6 +17,7 @@
 | 07 | [游戏开发使用指南](./07-Game-Development-Guide.md) | 如何使用本架构开发游戏 | 游戏开发者 |
 | 08 | [Open Spec 集成指南](./08-Open-Spec-Integration.md) | 与 Open Spec 的集成方法 | 高级用户、架构师 |
 | 09 | [流程图和组织结构图](./09-Diagrams-and-Charts.md) | 项目架构图、流程图、决策树 | 视觉学习者 |
+| 10 | [微信小游戏开发指南](./10-WeChat-Mini-Game-Guide.md) | 微信小游戏专用开发指南 | 微信小游戏开发者 |
 
 ---
 
