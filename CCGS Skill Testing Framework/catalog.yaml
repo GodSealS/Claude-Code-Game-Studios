@@ -1032,6 +1032,37 @@ agents:
     last_spec_result: ""
     category: engine
 
+  # Engine Specialists — WeChat
+  - name: wechat-specialist
+    spec: CCGS Skill Testing Framework/agents/engine/wechat/wechat-specialist.md
+    last_spec: ""
+    last_spec_result: ""
+    category: engine
+
+  - name: wechat-minigame-specialist
+    spec: CCGS Skill Testing Framework/agents/engine/wechat/wechat-minigame-specialist.md
+    last_spec: ""
+    last_spec_result: ""
+    category: engine
+
+  - name: wechat-shader-specialist
+    spec: CCGS Skill Testing Framework/agents/engine/wechat/wechat-shader-specialist.md
+    last_spec: ""
+    last_spec_result: ""
+    category: engine
+
+  - name: wechat-ui-specialist
+    spec: CCGS Skill Testing Framework/agents/engine/wechat/wechat-ui-specialist.md
+    last_spec: ""
+    last_spec_result: ""
+    category: engine
+
+  - name: wechat-cloudbase-specialist
+    spec: CCGS Skill Testing Framework/agents/engine/wechat/wechat-cloudbase-specialist.md
+    last_spec: ""
+    last_spec_result: ""
+    category: engine
+
   # Operations
   - name: devops-engineer
     spec: CCGS Skill Testing Framework/agents/operations/devops-engineer.md

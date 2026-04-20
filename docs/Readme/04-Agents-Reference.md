@@ -35,7 +35,7 @@ Tier 3: 专家 (Specialists)
     ├── Godot: godot-specialist, godot-gdscript-specialist, godot-shader-specialist, godot-gdextension-specialist
     ├── Unity: unity-specialist, unity-dots-specialist, unity-shader-specialist, unity-addressables-specialist, unity-ui-specialist
     ├── Unreal: unreal-specialist, ue-gas-specialist, ue-blueprint-specialist, ue-replication-specialist, ue-umg-specialist
-    └── WeChat Mini Game: wechat-minigame-specialist, wechat-cloudbase-specialist, wechat-shader-specialist, wechat-ui-specialist
+    └── WeChat Mini Game: wechat-specialist → wechat-minigame-specialist, wechat-shader-specialist, wechat-ui-specialist, wechat-cloudbase-specialist
 ```
 
 ---
@@ -576,12 +576,20 @@ producer: "让我分析一下...
 
 ### 微信小游戏专家团队
 
-| Agent | 专长 | 模型 |
-|-------|------|------|
-| `wechat-minigame-specialist` | 平台 API、4MB 包体限制、物理引擎(Box2D/Bullet/JoltPhysics)、WebAssembly 集成、Spine/DragonBones 骨骼动画运行时 | DeepSeek-V3.2 |
-| `wechat-cloudbase-specialist` | 微信云开发、数据库、云函数、存储、安全规则 | DeepSeek-V3.2 |
-| `wechat-shader-specialist` | WebGL 1.0/2.0 Shader、Unity/Unreal/Godot Shader 转 WebGL GLSL、后处理效果 | GLM-5v-Turbo |
-| `wechat-ui-specialist` | Figma/Sketch 原型、Photoshop/Illustrator 资产制作、FairyGUI 界面拼装、微信设计规范 | GLM-5v-Turbo |
+**Engine Lead**: `wechat-specialist` — 微信小游戏平台核心协调者，负责架构决策（MVC/ECS）、wx.* API 最佳实践、游戏循环优化、状态/资源管理、音频系统、子专家协调
+
+| Agent | 专长 | 模型 | 汇报给 |
+|-------|------|------|--------|
+| `wechat-specialist` | 微信平台架构、MVC/ECS 决策、游戏循环优化、状态/资源管理、音频系统、子专家协调 | DeepSeek-V3.2 | lead-programmer |
+| `wechat-minigame-specialist` | 平台 API、4MB 包体限制、物理引擎(Box2D/Bullet/JoltPhysics 统一 IPhysicsWorld 接口)、WebAssembly 集成、Spine/DragonBones 骨骼动画运行时 | DeepSeek-V3.2 | wechat-specialist |
+| `wechat-shader-specialist` | WebGL 1.0/2.0 Shader、Unity/Unreal/Godot Shader 转 WebGL GLSL、后处理效果、渲染管线标准 | GLM-5v-Turbo | wechat-specialist |
+| `wechat-ui-specialist` | Figma/Sketch 原型、Photoshop/Illustrator 资产制作、FairyGUI 界面拼装(含数据绑定/Screen管理)、竖屏默认适配、微信设计规范 | GLM-5v-Turbo | wechat-specialist |
+| `wechat-cloudbase-specialist` | 微信云开发、数据库、云函数、存储、安全规则、反作弊 | DeepSeek-V3.2 | wechat-specialist |
+
+**技术规范**：
+- 代码语言：TypeScript（首选），JavaScript
+- 音频格式：AAC（首选），MP3（备选）；避免 WAV 和 OGG
+- 物理引擎：通过统一 `IPhysicsWorld` 接口抽象，配置驱动选择 Box2D/Bullet/JoltPhysics
 
 **使用场景**：
 - 开发微信小游戏平台专属功能
@@ -655,11 +663,11 @@ producer: "让我分析一下...
     │   ├── 网络复制 → ue-replication-specialist
     │   └── UMG → ue-umg-specialist
     └── 微信小游戏
-        ├── 平台 API / 包体优化 / 发布 → wechat-minigame-specialist
-        ├── 物理引擎 / WASM / 骨骼动画 → wechat-minigame-specialist
+        ├── 架构/平台决策 → wechat-specialist
+        ├── 平台 API / 物理引擎 / WASM / 骨骼动画 → wechat-minigame-specialist
         ├── 云开发后端 → wechat-cloudbase-specialist
-        ├── WebGL Shader → wechat-shader-specialist
-        └── UI 设计 / FairyGUI → wechat-ui-specialist
+        ├── WebGL Shader / 渲染管线 → wechat-shader-specialist
+        └── UI 设计 / FairyGUI / 数据绑定 → wechat-ui-specialist
 ```
 
 ---

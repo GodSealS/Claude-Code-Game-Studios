@@ -36,6 +36,7 @@ CCGS Skill Testing Framework/
 │   ├── godot/             ← Godot-specific specialists
 │   ├── unity/             ← Unity-specific specialists
 │   ├── unreal/            ← Unreal-specific specialists
+│   ├── wechat/            ← WeChat Mini Game specialists
 │   ├── operations/        ← QA, live-ops, release, localization, etc.
 │   └── creative/          ← writer, world-builder, game-designer, etc.
 │
@@ -113,6 +114,7 @@ All testing is driven by two skills already in the framework:
 | `godot` | godot-specialist, godot-gdscript-specialist, godot-csharp-specialist, godot-shader-specialist, godot-gdextension-specialist |
 | `unity` | unity-specialist, unity-ui-specialist, unity-shader-specialist, unity-dots-specialist, unity-addressables-specialist |
 | `unreal` | unreal-specialist, ue-gas-specialist, ue-replication-specialist, ue-umg-specialist, ue-blueprint-specialist |
+| `wechat` | wechat-specialist, wechat-minigame-specialist, wechat-shader-specialist, wechat-ui-specialist, wechat-cloudbase-specialist |
 | `operations` | devops-engineer, security-engineer, performance-analyst, analytics-engineer, community-manager |
 | `creative` | writer, world-builder, game-designer, economy-designer, systems-designer, prototyper |
 

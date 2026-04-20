@@ -71,9 +71,23 @@ Before writing any code:
 
 Cloud Base uses MongoDB-like NoSQL. Design for your query patterns, not normalization:
 
-```javascript
+```typescript
 // Good — denormalized for common read pattern
-{
+interface PlayerDocument {
+  _id: string;
+  nickname: string;
+  level: number;
+  inventory: InventoryItem[];
+  lastLogin: Date;
+  stats: { wins: number; losses: number };
+}
+
+interface InventoryItem {
+  itemId: string;
+  count: number;
+}
+
+const playerDoc: PlayerDocument = {
   _id: "player_123",
   nickname: "PlayerOne",
   level: 10,
@@ -81,19 +95,19 @@ Cloud Base uses MongoDB-like NoSQL. Design for your query patterns, not normaliz
     { itemId: "sword_001", count: 2 },
     { itemId: "potion_001", count: 5 }
   ],
-  lastLogin: Date,
+  lastLogin: new Date(),
   stats: {
     wins: 100,
     losses: 20
   }
-}
+};
 ```
 
 - Embed data that is read together
 - Reference data that changes independently
 - Use composite keys for relationships: `friend_userA_userB`
 - Add indexes for frequently queried fields:
-  ```javascript
+  ```typescript
   // In database console or migration script
   db.collection('players').createIndex({ level: -1 });
   db.collection('scores').createIndex({ score: -1, timestamp: -1 });
@@ -103,13 +117,25 @@ Cloud Base uses MongoDB-like NoSQL. Design for your query patterns, not normaliz
 
 Structure your cloud functions:
 
-```javascript
-// cloudfunctions/saveScore/index.js
+```typescript
+// cloudfunctions/saveScore/index.ts
 const cloud = require('wx-server-sdk');
 cloud.init({ env: cloud.DYNAMIC_CURRENT_ENV });
 
-exports.main = async (event, context) => {
-  const { userInfo, score, level } = event;
+interface SaveScoreEvent {
+  userInfo?: any;
+  score: number;
+  level: number;
+}
+
+interface CloudResponse {
+  code: number;
+  message: string;
+  data?: any;
+}
+
+exports.main = async (event: SaveScoreEvent, context: any): Promise<CloudResponse> => {
+  const { score, level } = event;
   const { OPENID } = cloud.getWXContext();
   
   const db = cloud.database();
@@ -155,32 +181,37 @@ Best practices:
 
 Define granular access control:
 
-```javascript
+```typescript
 // database rules
-{
-  "read": true,  // Public read
-  "write": "auth != null && doc._openid == auth.openid"
+interface DatabaseRule {
+  read: boolean | string;
+  write: boolean | string;
 }
 
+const playerRules: DatabaseRule = {
+  read: true,  // Public read
+  write: "auth != null && doc._openid == auth.openid"
+};
+
 // For leaderboards — public read, server-only write
-{
-  "read": true,
-  "write": false  // Only cloud functions can write
-}
+const leaderboardRules: DatabaseRule = {
+  read: true,
+  write: false  // Only cloud functions can write
+};
 ```
 
 ### Real-time Synchronization
 
 Use watch() for live features:
 
-```javascript
+```typescript
 // Client-side real-time listener
 const watcher = db.collection('rooms').doc(roomId).watch({
-  onChange: (snapshot) => {
+  onChange: (snapshot: any): void => {
     // Handle document changes
     updateGameState(snapshot.docs[0]);
   },
-  onError: (err) => {
+  onError: (err: Error): void => {
     console.error('Watch error:', err);
   }
 });
@@ -198,13 +229,13 @@ Use cases:
 
 For user-generated content:
 
-```javascript
+```typescript
 // Upload file
 const uploadTask = wx.cloud.uploadFile({
   cloudPath: `avatars/${openid}.jpg`,
   filePath: tempFilePath,
-  success: (res) => {
-    const fileID = res.fileID;
+  success: (res: any): void => {
+    const fileID: string = res.fileID;
     // Save fileID to database
   }
 });
@@ -212,8 +243,8 @@ const uploadTask = wx.cloud.uploadFile({
 // Get temporary URL
 wx.cloud.getTempFileURL({
   fileList: [fileID],
-  success: (res) => {
-    const url = res.fileList[0].tempFileURL;
+  success: (res: any): void => {
+    const url: string = res.fileList[0].tempFileURL;
   }
 });
 ```
@@ -244,9 +275,16 @@ Optimization strategies:
 
 Critical for competitive games:
 
-```javascript
-// cloudfunctions/submitScore/index.js
-exports.main = async (event) => {
+```typescript
+// cloudfunctions/submitScore/index.ts
+interface SubmitScoreEvent {
+  score: number;
+  levelId: string;
+  playTime: number;
+  checksum: string;
+}
+
+exports.main = async (event: SubmitScoreEvent): Promise<CloudResponse> => {
   const { score, levelId, playTime, checksum } = event;
   const { OPENID } = cloud.getWXContext();
   
@@ -304,7 +342,7 @@ cloudbase/
 
 Use WeChat DevTools Cloud Base local emulator:
 
-```javascript
+```typescript
 // Use local emulator in development
 cloud.init({
   env: 'development',
@@ -340,12 +378,31 @@ wxcloud database migrate
 - Storing sensitive data without encryption
 - Missing indexes causing slow queries
 
-## Coordination
+## Delegation Map
 
-- Work with **wechat-minigame-specialist** for client-server integration
-- Work with **gameplay-programmer** for game state synchronization
-- Work with **live-ops-designer** for event data and leaderboards
-- Work with **security-analyst** for anti-cheat and data protection
+**Reports to**: `wechat-specialist`
+
+**Coordinates with**:
+- `wechat-specialist` for overall WeChat architecture and backend strategy decisions
+- `wechat-minigame-specialist` for client-server integration, game state persistence, and multiplayer features
+- `wechat-ui-specialist` for dynamic UI content loading from cloud storage
+- `gameplay-programmer` for game state synchronization patterns
+- `live-ops-designer` for event data, leaderboards, and live service features
+- `devops-engineer` for CI/CD, cloud function deployment, and environment management
+- `performance-analyst` for database query optimization and cloud function profiling
+
+**Escalation targets**:
+- `wechat-specialist` for backend architecture decisions (Cloud Base vs self-hosted), data model strategy
+- `technical-director` for cross-platform backend architecture decisions
+
+## What This Agent Must NOT Do
+
+- Make backend architecture decisions (Cloud Base vs self-hosted, database design strategy) — defer to `wechat-specialist`
+- Override `wechat-specialist` backend configuration without discussion
+- Implement gameplay logic or physics — delegate to `wechat-minigame-specialist`
+- Design UI layouts or screens — delegate to `wechat-ui-specialist`
+- Implement shaders or rendering — delegate to `wechat-shader-specialist`
+- Approve database schema changes that affect multiple subsystems without `wechat-specialist` sign-off
 
 ## When Consulted
 

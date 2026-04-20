@@ -255,17 +255,23 @@ graph TD
 
 ### Agent 协作
 
-微信小游戏开发涉及的 Agent：
+微信小游戏开发涉及的 Agent 及其层级关系：
 
-| Agent | 职责 | 使用场景 |
-|-------|------|----------|
-| `wechat-minigame-specialist` | 平台 API、包体优化、物理引擎、WASM、骨骼动画 | 核心游戏逻辑开发 |
-| `wechat-cloudbase-specialist` | 云开发后端、数据库、云函数 | 需要后端服务时 |
-| `wechat-shader-specialist` | WebGL Shader、Shader 转换 | 自定义渲染效果 |
-| `wechat-ui-specialist` | UI 设计、FairyGUI、资产制作 | 界面设计和实现 |
-| `frontend-programmer` | JavaScript/TypeScript 实现 | 通用前端逻辑 |
-| `ui-designer` | 移动端 UI 设计 | UI 视觉设计 |
-| `live-ops-designer` | 社交功能、排行榜 | 运营功能 |
+```
+technical-director → lead-programmer → wechat-specialist
+                                          ├── wechat-minigame-specialist (物理/WASM/动画)
+                                          ├── wechat-shader-specialist (WebGL Shader)
+                                          ├── wechat-ui-specialist (UI设计/FairyGUI)
+                                          └── wechat-cloudbase-specialist (云开发)
+```
+
+| Agent | 职责 | 汇报给 | 使用场景 |
+|-------|------|--------|----------|
+| `wechat-specialist` | 平台架构决策、MVC/ECS选择、游戏循环优化、子专家协调 | lead-programmer | 架构决策、平台问题、子专家协调 |
+| `wechat-minigame-specialist` | 平台 API、包体优化、物理引擎(IPhysicsWorld接口)、WASM、骨骼动画 | wechat-specialist | 核心游戏逻辑开发 |
+| `wechat-shader-specialist` | WebGL Shader、渲染管线标准、Shader 转换 | wechat-specialist | 自定义渲染效果 |
+| `wechat-ui-specialist` | UI 设计、FairyGUI(含数据绑定/Screen管理)、竖屏适配、资产制作 | wechat-specialist | 界面设计和实现 |
+| `wechat-cloudbase-specialist` | 云开发后端、数据库、云函数、安全规则、反作弊 | wechat-specialist | 需要后端服务时 |
 
 **工作流示例**：
 ```
@@ -303,17 +309,46 @@ graph TD
 
 ### 1. 物理引擎集成
 
-微信小游戏支持通过 WebAssembly 集成物理引擎：
+微信小游戏支持通过 WebAssembly 集成物理引擎，所有引擎通过统一 `IPhysicsWorld` 接口抽象：
 
-| 引擎 | 类型 | WASM 大小 | 适用场景 |
-|------|------|-----------|----------|
-| Box2D | 2D 物理 | ~500KB | 平台游戏、物理解谜 |
-| Bullet | 3D 物理 | ~1.5MB | 3D 游戏、复杂碰撞 |
-| JoltPhysics | 3D 物理 | ~800KB | 高性能 3D 游戏 |
+| 引擎 | 类型 | WASM 大小 | 适用场景 | Skill |
+|------|------|-----------|----------|-------|
+| Box2D | 2D 物理 | ~500KB | 平台游戏、物理解谜 | `/wechat-physics-box2d` |
+| Bullet | 3D 物理 | ~1.5MB | 3D 游戏、复杂碰撞、软体 | `/wechat-physics-bullet` |
+| JoltPhysics | 3D 物理 | ~800KB | 高性能 3D、确定性模拟、角色控制器 | `/wechat-physics-jolt` |
 
 使用 Skill 集成物理引擎：
 ```
-/wechat-shader setup wasm
+# 2D 物理游戏
+/wechat-physics-box2d init 0 -9.8
+
+# 3D 物理游戏（标准）
+/wechat-physics-bullet init 0 -9.8 0
+
+# 3D 物理游戏（高性能/多人）
+/wechat-physics-jolt init 0 -9.8 0
+```
+
+**统一接口架构**：所有物理引擎通过 `IPhysicsWorld` 接口抽象，游戏逻辑无需关心底层实现：
+
+```typescript
+// 通过工厂方法创建物理世界（配置驱动）
+const world = createPhysicsWorld(config.physicsEngine, config.physicsConfig);
+
+// 统一接口操作
+const body = world.createBody({ type: 'dynamic', position: { x: 0, y: 10 } });
+body.applyImpulse({ x: 5, y: 0 });
+world.step(dt);
+```
+
+在 `game.json` 中配置物理引擎：
+```json
+{
+  "physicsEngine": "box2d",
+  "physicsConfig": {
+    "gravity": { "x": 0, "y": -9.8 }
+  }
+}
 ```
 
 详细集成代码参考：[wechat-minigame-specialist](../../.codebuddy/agents/wechat-minigame-specialist.md) 中的物理引擎章节。
@@ -573,15 +608,19 @@ A: 主要优化点：
 - [微信开发者工具下载](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)
 
 ### CodeBuddy Agents
+- [wechat-specialist](../../.codebuddy/agents/wechat-specialist.md) - 微信平台核心协调者（架构决策、游戏循环、状态管理）
 - [wechat-minigame-specialist](../../.codebuddy/agents/wechat-minigame-specialist.md) - 平台 API、物理引擎、WASM、骨骼动画
 - [wechat-cloudbase-specialist](../../.codebuddy/agents/wechat-cloudbase-specialist.md) - 云开发后端
 - [wechat-shader-specialist](../../.codebuddy/agents/wechat-shader-specialist.md) - WebGL Shader 开发
-- [wechat-ui-specialist](../../.codebuddy/agents/wechat-ui-specialist.md) - UI 设计和 FairyGUI
+- [wechat-ui-specialist](../../.codebuddy/agents/wechat-ui-specialist.md) - UI 设计、FairyGUI、数据绑定
 
 ### CodeBuddy Skills
 - `/setup-wechat-minigame` - 项目初始化
 - `/wechat-shader` - Shader 开发和转换
 - `/wechat-ui-design` - UI 设计和资产制作
+- `/wechat-physics-box2d` - Box2D 2D 物理引擎初始化
+- `/wechat-physics-bullet` - Bullet 3D 物理引擎初始化
+- `/wechat-physics-jolt` - JoltPhysics 高性能3D物理引擎初始化
 
 ---
 

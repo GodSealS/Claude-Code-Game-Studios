@@ -1,6 +1,6 @@
 # Skills 参考手册
 
-本文档详细介绍 CodeBuddy Game Studios 架构中所有 72 个 Skill（斜杠命令）的功能、使用场景和参数。
+本文档详细介绍 CodeBuddy Game Studios 架构中所有 73 个 Skill（斜杠命令）的功能、使用场景和参数。
 
 ---
 
@@ -8,7 +8,7 @@
 
 | 类别 | 数量 | Skills |
 |------|------|--------|
-| 入门与导航 | 8 | `/start`, `/help`, `/project-stage-detect`, `/setup-engine`, `/setup-wechat-minigame`, `/wechat-shader`, `/wechat-ui-design`, `/adopt` |
+| 入门与导航 | 11 | `/start`, `/help`, `/project-stage-detect`, `/setup-engine`, `/setup-wechat-minigame`, `/wechat-shader`, `/wechat-ui-design`, `/wechat-physics-box2d`, `/wechat-physics-bullet`, `/wechat-physics-jolt`, `/adopt` |
 | 游戏设计 | 6 | `/brainstorm`, `/map-systems`, `/design-system`, `/quick-design`, `/review-all-gdds`, `/propagate-design-change` |
 | UX 设计 | 2 | `/ux-design`, `/ux-review` |
 | 架构 | 4 | `/create-architecture`, `/architecture-decision`, `/architecture-review`, `/create-control-manifest` |
@@ -150,7 +150,7 @@
 
 **Agent**: `wechat-ui-specialist`
 
-**功能**: 使用 Figma/Sketch 设计 UI，Photoshop/Illustrator 制作资产，FairyGUI 搭建自适应界面。
+**功能**: 使用 Figma/Sketch 设计 UI，Photoshop/Illustrator 制作资产，FairyGUI 搭建自适应界面，支持数据绑定和Screen管理。
 
 **参数**: `[action]` `[name]`
 
@@ -158,17 +158,109 @@
 - `init [project-name]` - 初始化设计项目
 - `assets [screen-name]` - 生成屏幕资产
 - `fairygui [package-name]` - 创建 FairyGUI 包
+- `binding [component-name]` - 创建数据绑定
+- `screen [screen-name]` - 创建Screen并加入导航栈
 
 **使用场景**:
 - 设计微信小游戏 UI
 - 制作精灵图和纹理图集
 - 在 FairyGUI 中搭建界面
+- 设置数据绑定（GameState → ViewModel → UI）
+- 管理Screen导航栈
 
 **示例**:
 ```
 /wechat-ui-design init "MyGame"
 /wechat-ui-design assets MainMenu
 /wechat-ui-design fairygui UI_Main
+/wechat-ui-design binding ScorePanel
+/wechat-ui-design screen ShopScreen
+```
+
+---
+
+### /wechat-physics-box2d
+
+**Agent**: `wechat-minigame-specialist`
+
+**功能**: 初始化 Box2D WASM 2D 物理引擎，通过统一 IPhysicsWorld 接口创建物理世界、配置刚体和碰撞。
+
+**参数**: `[action]` `[params]`
+
+**操作**:
+- `init [gravity-x] [gravity-y]` - 初始化 Box2D 物理世界
+- `body [type] [x] [y] [shape]` - 创建刚体
+- `joint [type] [body-a] [body-b]` - 创建关节
+
+**使用场景**:
+- 2D 游戏需要物理模拟（平台跳跃、物理解谜、布娃娃）
+- 碰撞检测和响应
+- 轻量级物理方案（~500KB WASM）
+
+**示例**:
+```
+/wechat-physics-box2d init 0 -9.8
+/wechat-physics-box2d body dynamic 100 200 circle
+/wechat-physics-box2d joint revolute bodyA bodyB
+```
+
+---
+
+### /wechat-physics-bullet
+
+**Agent**: `wechat-minigame-specialist`
+
+**功能**: 初始化 Bullet (ammo.js) WASM 3D 物理引擎，通过统一 IPhysicsWorld 接口创建物理世界，支持刚体、软体和碰撞检测。
+
+**参数**: `[action]` `[params]`
+
+**操作**:
+- `init [gravity-x] [gravity-y] [gravity-z]` - 初始化 Bullet 3D 物理世界
+- `body [type] [x] [y] [z] [shape]` - 创建刚体
+- `softbody [type] [params]` - 创建软体（布料、绳索）
+- `constraint [type] [body-a] [body-b]` - 创建约束
+
+**使用场景**:
+- 3D 游戏需要物理模拟（3D 平台、车辆物理、布娃娃）
+- 软体物理（布料、绳索、可变形物体）
+- 完整的 3D 物理方案（~1.5MB WASM）
+
+**示例**:
+```
+/wechat-physics-bullet init 0 -9.8 0
+/wechat-physics-bullet body dynamic 0 10 0 box
+/wechat-physics-bullet softbody cloth 5 5
+/wechat-physics-bullet constraint hinge bodyA bodyB
+```
+
+---
+
+### /wechat-physics-jolt
+
+**Agent**: `wechat-minigame-specialist`
+
+**功能**: 初始化 JoltPhysics WASM 高性能 3D 物理引擎，通过统一 IPhysicsWorld 接口创建物理世界，支持确定性模拟和内置角色控制器。
+
+**参数**: `[action]` `[params]`
+
+**操作**:
+- `init [gravity-x] [gravity-y] [gravity-z]` - 初始化 JoltPhysics 物理世界
+- `body [type] [x] [y] [z] [shape]` - 创建刚体
+- `constraint [type] [body-a] [body-b]` - 创建约束
+- `character [position] [height] [radius]` - 创建角色控制器
+
+**使用场景**:
+- 高性能 3D 物理模拟（~800KB WASM）
+- 网络多人游戏的确定性物理
+- 需要内置角色控制器
+- 大规模场景物体模拟
+
+**示例**:
+```
+/wechat-physics-jolt init 0 -9.8 0
+/wechat-physics-jolt body dynamic 0 10 0 capsule
+/wechat-physics-jolt constraint swing-twist bodyA bodyB
+/wechat-physics-jolt character 0 1.8 0.3
 ```
 
 ---

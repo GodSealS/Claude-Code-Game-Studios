@@ -62,6 +62,7 @@ domain lead) should delegate to specialists.
 | `unreal-specialist` | Unreal Engine 5 | DeepSeek-V3.2 | Blueprint vs C++, GAS overview, UE subsystems, Unreal optimization |
 | `unity-specialist` | Unity | DeepSeek-V3.2 | MonoBehaviour vs DOTS, Addressables, URP/HDRP, Unity optimization |
 | `godot-specialist` | Godot 4 | DeepSeek-V3.2 | GDScript patterns, node/scene architecture, signals, Godot optimization |
+| `wechat-specialist` | WeChat Mini Game | DeepSeek-V3.2 | WeChat platform architecture (MVC/ECS), wx.* APIs, game loop optimization, state/resource management, audio systems, sub-specialist coordination |
 
 ### Unreal Engine Sub-Specialists
 
@@ -91,17 +92,19 @@ domain lead) should delegate to specialists.
 
 ---
 
-### WeChat Mini Game (微信小游戏) Specialists
+### WeChat Mini Game (微信小游戏) Sub-Specialists
 
-| Agent | Domain | Model | When to Use |
-| ---- | ---- | ---- | ---- |
-| `wechat-minigame-specialist` | WeChat Mini Game Platform | DeepSeek-V3.2 | Platform APIs, 4MB package limit, mobile optimization, physics engines (Box2D/Bullet/JoltPhysics), WebAssembly integration, Spine/DragonBones animation runtimes, social features, submission |
-| `wechat-cloudbase-specialist` | WeChat Cloud Base | DeepSeek-V3.2 | Serverless backend, database, cloud functions, storage, security rules |
-| `wechat-shader-specialist` | WebGL Shaders | GLM-5v-Turbo | Custom shaders, WebGL 1.0/2.0, Unity/Unreal/Godot shader conversion to GLSL, post-processing effects |
-| `wechat-ui-specialist` | UI/UX Design | GLM-5v-Turbo | Figma/Sketch prototyping, Photoshop/Illustrator asset production, FairyGUI layout, WeChat design system compliance |
+| Agent | Domain | Model | Reports To | When to Use |
+| ---- | ---- | ---- | ---- | ---- |
+| `wechat-minigame-specialist` | Gameplay & Physics | DeepSeek-V3.2 | wechat-specialist | Platform APIs, 4MB package limit, physics engines (Box2D/Bullet/JoltPhysics via unified IPhysicsWorld interface), WASM integration, Spine/DragonBones animation runtimes |
+| `wechat-shader-specialist` | WebGL Shaders | GLM-5v-Turbo | wechat-specialist | Custom shaders, WebGL 1.0/2.0, Unity/Unreal/Godot shader conversion to GLSL, post-processing effects, render pipeline standards |
+| `wechat-ui-specialist` | UI/UX Design | GLM-5v-Turbo | wechat-specialist | Figma/Sketch prototyping, Photoshop/Illustrator asset production, FairyGUI layout with data binding, screen management, portrait-first design, WeChat design system compliance |
+| `wechat-cloudbase-specialist` | Cloud Backend | DeepSeek-V3.2 | wechat-specialist | Serverless backend, database, cloud functions, storage, security rules, anti-cheat |
 
 **Notes:**
-- WeChat Mini Game specialists are for JavaScript/TypeScript games targeting the WeChat platform
+- `wechat-specialist` is the Engine Lead for the WeChat platform, coordinating all sub-specialists
+- WeChat Mini Game specialists use TypeScript (preferred) for all JavaScript code
 - 4MB package size limit is strictly enforced
+- Audio format: AAC preferred, MP3 fallback; avoid WAV and OGG
 - Cloud Base provides serverless backend with MongoDB-like database
 - Real-name verification (实名制) and anti-addiction (防沉迷) compliance required for China market
