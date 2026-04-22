@@ -1,4 +1,4 @@
-# Technical Design: [System Name]
+# Technical Design: [System Name] / 技术设计：[系统名称]
 
 ## Document Status
 - **Version**: 1.0

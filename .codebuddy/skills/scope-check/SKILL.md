@@ -1,6 +1,6 @@
 ---
 name: scope-check
-description: "Analyze a feature or sprint for scope creep by comparing current scope against the original plan. Flags additions, quantifies bloat, and recommends cuts. Use when user says 'any scope creep', 'scope review', 'are we staying in scope'."
+description: "Analyze a feature or sprint for scope creep by comparing current scope against the original plan. Flags additions, quantifies bloat, and recommends cuts. Use when user says 'any scope creep', 'scope review', 'are we staying in scope'. / 通过比较当前范围与原始计划来分析功能或冲刺的范围蔓延。标记新增内容，量化膨胀，并建议削减。当用户说'有范围蔓延吗'、'范围审查'、'我们在范围内吗'时使用。"
 argument-hint: "[feature-name or sprint-N]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Bash

@@ -1,6 +1,6 @@
 ---
 name: ux-designer
-description: "The UX Designer owns user experience flows, interaction design, accessibility, information architecture, and input handling design. Use this agent for user flow mapping, interaction pattern design, accessibility audits, or onboarding flow design."
+description: "The UX Designer owns user experience flows, interaction design, accessibility, information architecture, and input handling design. Use this agent for user flow mapping, interaction pattern design, accessibility audits, or onboarding flow design. / UX设计师负责用户体验流程、交互设计、无障碍、信息架构和输入处理设计。用于用户流程映射、交互模式设计、无障碍审查或引导流程设计。"
 tools: Read, Glob, Grep, Write, Edit, WebSearch
 model: GLM-5.1
 maxTurns: 20

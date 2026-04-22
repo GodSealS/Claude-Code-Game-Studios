@@ -1,4 +1,4 @@
-# Example Session: Using /design-system to Author a GDD
+# Example Session: Using /design-system to Author a GDD / 示例会话：使用 /design-system 编写 GDD
 
 **Context:** Solo indie dev, week 3 of project. `/map-systems` already ran and produced `design/gdd/systems-index.md`. The movement system is listed as MVP tier, Foundation priority.
 

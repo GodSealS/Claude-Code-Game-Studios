@@ -1,6 +1,6 @@
 ---
 name: adopt
-description: "Brownfield onboarding — audits existing project artifacts for template format compliance (not just existence), classifies gaps by impact, and produces a numbered migration plan. Run this when joining an in-progress project or upgrading from an older template version. Distinct from /project-stage-detect (which checks what exists) — this checks whether what exists will actually work with the template's skills."
+description: "Brownfield onboarding — audits existing project artifacts for template format compliance (not just existence), classifies gaps by impact, and produces a numbered migration plan. Run this when joining an in-progress project or upgrading from an older template version. Distinct from /project-stage-detect (which checks what exists) — this checks whether what exists will actually work with the template's skills. / 棕地引导入门 — 审计现有项目工件的模板格式合规性（不仅是存在性），按影响分类差距，并生成编号的迁移计划。当加入进行中的项目或从旧版模板升级时运行。与 /project-stage-detect（检查什么存在）不同 — 这个检查现有内容是否能真正与模板的技能配合工作。"
 argument-hint: "[focus: full | gdds | adrs | stories | infra]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, AskUserQuestion

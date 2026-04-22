@@ -1,4 +1,4 @@
-# Economy Model: [System Name]
+# Economy Model: [System Name] / 经济模型：[系统名称]
 
 *Created: [Date]*
 *Owner: economy-designer*

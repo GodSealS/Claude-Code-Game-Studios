@@ -1,6 +1,6 @@
 ---
 name: test-flakiness
-description: "Detect non-deterministic (flaky) tests by reading CI run logs or test result history. Aggregates pass rates per test, identifies intermittent failures, recommends quarantine or fix, and maintains a flaky test registry. Best run during Polish phase or after multiple CI runs."
+description: "Detect non-deterministic (flaky) tests by reading CI run logs or test result history. Aggregates pass rates per test, identifies intermittent failures, recommends quarantine or fix, and maintains a flaky test registry. Best run during Polish phase or after multiple CI runs. / 通过读取 CI 运行日志或测试结果历史检测非确定性（不稳定）测试。聚合每个测试的通过率，识别间歇性失败，建议隔离或修复，并维护不稳定测试注册表。最好在打磨阶段或多次 CI 运行后使用。"
 argument-hint: "[ci-log-path | scan | registry]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Bash

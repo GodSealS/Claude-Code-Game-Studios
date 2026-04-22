@@ -1,6 +1,8 @@
-# Skills 参考手册
+# Skills Reference / 技能参考
 
-本文档详细介绍 CodeBuddy Game Studios 架构中所有 73 个 Skill（斜杠命令）的功能、使用场景和参数。
+This document details the functionality, use cases, and parameters of all 73 Skills (slash commands) in the CodeBuddy Game Studios architecture.
+
+> **中文翻译**：本文档详细介绍 CodeBuddy Game Studios 架构中所有 73 个 Skill（斜杠命令）的功能、使用场景和参数。
 
 ---
 

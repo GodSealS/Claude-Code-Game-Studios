@@ -1,6 +1,6 @@
 ---
 name: story-readiness
-description: "Validate that a story file is implementation-ready. Checks for embedded GDD requirements, ADR references, engine notes, clear acceptance criteria, and no open design questions. Produces READY / NEEDS WORK / BLOCKED verdict with specific gaps. Use when user says 'is this story ready', 'can I start on this story', 'is story X ready to implement'."
+description: "Validate that a story file is implementation-ready. Checks for embedded GDD requirements, ADR references, engine notes, clear acceptance criteria, and no open design questions. Produces READY / NEEDS WORK / BLOCKED verdict with specific gaps. Use when user says 'is this story ready', 'can I start on this story', 'is story X ready to implement'. / 验证故事文件是否可进入实现阶段。检查嵌入的 GDD 需求、ADR 引用、引擎说明、清晰的验收标准，且无开放设计问题。生成 READY / NEEDS WORK / BLOCKED 裁决及具体差距。当用户说'这个故事准备好了吗'、'我可以开始这个故事吗'时使用。"
 argument-hint: "[story-file-path or 'all' or 'sprint']"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, AskUserQuestion, Task

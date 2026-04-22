@@ -1,6 +1,6 @@
 ---
 name: prototyper
-description: "Rapid prototyping specialist for pre-production. Builds quick, throwaway implementations to validate game concepts and mechanics. Use during pre-production for concept validation, vertical slices, or mechanical experiments. Standards are intentionally relaxed for speed."
+description: "Rapid prototyping specialist for pre-production. Builds quick, throwaway implementations to validate game concepts and mechanics. Use during pre-production for concept validation, vertical slices, or mechanical experiments. Standards are intentionally relaxed for speed. / 预生产阶段的快速原型专家。构建快速、一次性的实现来验证游戏概念和机制。在预生产阶段用于概念验证、垂直切片或机制实验。标准为了速度而有意放宽。"
 tools: Read, Glob, Grep, Write, Edit, Bash
 model: DeepSeek-V3.2
 maxTurns: 25

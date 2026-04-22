@@ -1,6 +1,6 @@
 ---
 name: localize
-description: "Full localization pipeline: scan for hardcoded strings, extract and manage string tables, validate translations, generate translator briefings, run cultural/sensitivity review, manage VO localization, test RTL/platform requirements, enforce string freeze, and report coverage."
+description: "Full localization pipeline: scan for hardcoded strings, extract and manage string tables, validate translations, generate translator briefings, run cultural/sensitivity review, manage VO localization, test RTL/platform requirements, enforce string freeze, and report coverage. / 完整本地化管线：扫描硬编码字符串、提取和管理字符串表、验证翻译、生成翻译员简报、运行文化/敏感性审查、管理语音本地化、测试 RTL/平台要求、执行字符串冻结并报告覆盖率。"
 argument-hint: "[scan|extract|validate|status|brief|cultural-review|vo-pipeline|rtl-check|freeze|qa]"
 user-invocable: true
 agent: localization-lead

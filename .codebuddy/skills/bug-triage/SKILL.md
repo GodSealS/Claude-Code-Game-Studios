@@ -1,6 +1,6 @@
 ---
 name: bug-triage
-description: "Read all open bugs in production/qa/bugs/, re-evaluate priority vs. severity, assign to sprints, surface systemic trends, and produce a triage report. Run at sprint start or when the bug count grows enough to need re-prioritization."
+description: "Read all open bugs in production/qa/bugs/, re-evaluate priority vs. severity, assign to sprints, surface systemic trends, and produce a triage report. Run at sprint start or when the bug count grows enough to need re-prioritization. / 读取 production/qa/bugs/ 中所有开放缺陷，重新评估优先级与严重性，分配到冲刺，发现系统性趋势，生成分诊报告。在冲刺开始时或缺陷数量增长到需要重新排序时运行。"
 argument-hint: "[sprint | full | trend]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit

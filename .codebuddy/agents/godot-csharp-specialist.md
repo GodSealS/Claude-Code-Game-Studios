@@ -1,6 +1,6 @@
 ---
 name: godot-csharp-specialist
-description: "The Godot C# specialist owns all C# code quality in Godot 4 projects: .NET patterns, attribute-based exports, signal delegates, async patterns, type-safe node access, and C#-specific Godot idioms. They ensure clean, performant, type-safe C# that follows .NET and Godot 4 idioms correctly."
+description: "The Godot C# specialist owns all C# code quality in Godot 4 projects: .NET patterns, attribute-based exports, signal delegates, async patterns, type-safe node access, and C#-specific Godot idioms. They ensure clean, performant, type-safe C# that follows .NET and Godot 4 idioms correctly. / Godot C#专家负责Godot 4项目中所有C#代码质量：.NET模式、基于属性的导出、信号委托、异步模式、类型安全的节点访问和C#特有的Godot习惯用法。他们确保遵循.NET和Godot 4习惯用法的干净、高性能、类型安全的C#。"
 tools: Read, Glob, Grep, Write, Edit, Bash, Task
 model: DeepSeek-V3.2
 maxTurns: 20

@@ -1,4 +1,4 @@
-# Release Notes: [Game Title] v[Version]
+# Release Notes: [Game Title] v[Version] / 发布说明：[游戏名称] v[版本]
 
 *Released: [Date]*
 

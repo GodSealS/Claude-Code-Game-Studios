@@ -1,4 +1,4 @@
-# ADR: [Decision Name]
+# ADR: [Decision Name] / 架构决策记录：[决策名称]
 
 ---
 **Status**: Reverse-Documented

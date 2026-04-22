@@ -1,6 +1,6 @@
 ---
 name: qa-plan
-description: "Generate a QA test plan for a sprint or feature. Reads GDDs and story files, classifies stories by test type (Logic/Integration/Visual/UI), and produces a structured test plan covering automated tests required, manual test cases, smoke test scope, and playtest sign-off requirements. Run before sprint begins or when starting a major feature."
+description: "Generate a QA test plan for a sprint or feature. Reads GDDs and story files, classifies stories by test type (Logic/Integration/Visual/UI), and produces a structured test plan covering automated tests required, manual test cases, smoke test scope, and playtest sign-off requirements. Run before sprint begins or when starting a major feature. / 为冲刺或功能生成 QA 测试计划。读取 GDD 和故事文件，按测试类型（逻辑/集成/视觉/UI）分类故事，生成覆盖自动化测试要求、手动测试用例、冒烟测试范围和试玩签署要求的结构化测试计划。在冲刺开始前或启动重大功能时运行。"
 argument-hint: "[sprint | feature: system-name | story: path]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, AskUserQuestion

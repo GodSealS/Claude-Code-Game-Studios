@@ -1,6 +1,6 @@
 ---
 name: ux-design
-description: "Guided, section-by-section UX spec authoring for a screen, flow, or HUD. Reads game concept, player journey, and relevant GDDs to provide context-aware design guidance. Produces ux-spec.md (per screen/flow) or hud-design.md using the studio templates."
+description: "Guided, section-by-section UX spec authoring for a screen, flow, or HUD. Reads game concept, player journey, and relevant GDDs to provide context-aware design guidance. Produces ux-spec.md (per screen/flow) or hud-design.md using the studio templates. / 引导式逐节 UX 规格编写，用于屏幕、流程或 HUD。读取游戏概念、玩家旅程和相关 GDD 以提供上下文感知的设计指导。使用工作室模板生成 ux-spec.md（每个屏幕/流程）或 hud-design.md。"
 argument-hint: "[screen/flow name] or 'hud' or 'patterns'"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, AskUserQuestion, Task

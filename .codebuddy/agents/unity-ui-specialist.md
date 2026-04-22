@@ -1,6 +1,6 @@
 ---
 name: unity-ui-specialist
-description: "The Unity UI specialist owns all Unity UI implementation: UI Toolkit (UXML/USS), UGUI (Canvas), data binding, runtime UI performance, input handling, and cross-platform UI adaptation. They ensure responsive, performant, and accessible UI."
+description: "The Unity UI specialist owns all Unity UI implementation: UI Toolkit (UXML/USS), UGUI (Canvas), data binding, runtime UI performance, input handling, and cross-platform UI adaptation. They ensure responsive, performant, and accessible UI. / Unity UI专家负责所有Unity UI实现：UI Toolkit（UXML/USS）、UGUI（Canvas）、数据绑定、运行时UI性能、输入处理和跨平台UI适配。他们确保响应式、高性能和无障碍的UI。"
 tools: Read, Glob, Grep, Write, Edit, Bash, Task
 model: GLM-5v-Turbo
 maxTurns: 20

@@ -1,6 +1,6 @@
 ---
 name: milestone-review
-description: "Generates a comprehensive milestone progress review including feature completeness, quality metrics, risk assessment, and go/no-go recommendation. Use at milestone checkpoints or when evaluating readiness for a milestone deadline."
+description: "Generates a comprehensive milestone progress review including feature completeness, quality metrics, risk assessment, and go/no-go recommendation. Use at milestone checkpoints or when evaluating readiness for a milestone deadline. / 生成全面的里程碑进度审查，包括功能完整性、质量指标、风险评估和继续/停止建议。在里程碑检查点或评估里程碑截止日期准备度时使用。"
 argument-hint: "[milestone-name|current] [--review full|lean|solo]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Task, AskUserQuestion

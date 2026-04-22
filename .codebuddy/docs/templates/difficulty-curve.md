@@ -1,4 +1,4 @@
-# Difficulty Curve: [Game Title]
+# Difficulty Curve: [Game Title] / 难度曲线：[游戏名称]
 
 > **Status**: Draft | In Review | Approved
 > **Author**: [game-designer / systems-designer]

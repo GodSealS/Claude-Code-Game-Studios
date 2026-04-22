@@ -1,6 +1,6 @@
 ---
 name: team-audio
-description: "Orchestrate audio team: audio-director + sound-designer + technical-artist + gameplay-programmer for full audio pipeline from direction to implementation."
+description: "Orchestrate audio team: audio-director + sound-designer + technical-artist + gameplay-programmer for full audio pipeline from direction to implementation. / 编排音频团队：audio-director + sound-designer + technical-artist + gameplay-programmer 完成从方向到实现的完整音频管线。"
 argument-hint: "[feature or area to design audio for]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Bash, Task, AskUserQuestion, TodoWrite

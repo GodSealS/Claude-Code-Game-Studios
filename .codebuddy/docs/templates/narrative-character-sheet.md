@@ -1,4 +1,4 @@
-# Character: [Name]
+# Character: [Name] / 角色：[名称]
 
 ## Quick Reference
 

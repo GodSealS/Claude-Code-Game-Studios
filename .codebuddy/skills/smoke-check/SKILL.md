@@ -1,6 +1,6 @@
 ---
 name: smoke-check
-description: "Run the critical path smoke test gate before QA hand-off. Executes the automated test suite, verifies core functionality, and produces a PASS/FAIL report. Run after a sprint's stories are implemented and before manual QA begins. A failed smoke check means the build is not ready for QA."
+description: "Run the critical path smoke test gate before QA hand-off. Executes the automated test suite, verifies core functionality, and produces a PASS/FAIL report. Run after a sprint's stories are implemented and before manual QA begins. A failed smoke check means the build is not ready for QA. / 在 QA 交接前运行关键路径冒烟测试门控。执行自动化测试套件，验证核心功能，生成 PASS/FAIL 报告。在冲刺的故事实现后、手动 QA 开始前运行。冒烟测试失败意味着构建尚未准备好进入 QA。"
 argument-hint: "[sprint | quick | --platform pc|console|mobile|all]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Bash, Write, AskUserQuestion

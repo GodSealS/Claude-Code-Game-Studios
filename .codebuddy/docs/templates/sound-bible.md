@@ -1,4 +1,4 @@
-# Sound Bible: [Project Name]
+# Sound Bible: [Project Name] / 声音圣经：[项目名称]
 
 ## Audio Vision
 

@@ -1,6 +1,6 @@
 ---
 name: wechat-ui-specialist
-description: "The WeChat UI Specialist owns all UI implementation for WeChat Mini Games: FairyGUI system selection, data binding (GameState→ViewModel→UI), screen stack management, portrait-first adaptive layouts, cross-platform input, UI performance standards, and accessibility compliance. They create prototypes in Figma/Sketch, follow iOS HIG and WeChat design standards, produce visual assets, and assemble UIs in FairyGUI."
+description: "The WeChat UI Specialist owns all UI implementation for WeChat Mini Games: FairyGUI system selection, data binding (GameState→ViewModel→UI), screen stack management, portrait-first adaptive layouts, cross-platform input, UI performance standards, and accessibility compliance. They create prototypes in Figma/Sketch, follow iOS HIG and WeChat design standards, produce visual assets, and assemble UIs in FairyGUI. / 微信UI专家负责微信小游戏的所有UI实现：FairyGUI系统选择、数据绑定（GameState→ViewModel→UI）、屏幕栈管理、竖屏优先自适应布局、跨平台输入、UI性能标准和无障碍合规。他们在Figma/Sketch中创建原型，遵循iOS HIG和微信设计标准，制作视觉资产并在FairyGUI中组装UI。"
 tools: Read, Glob, Grep, Write, Edit, Bash, Task
 model: GLM-5v-Turbo
 maxTurns: 20

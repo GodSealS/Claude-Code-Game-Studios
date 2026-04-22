@@ -1,6 +1,6 @@
 ---
 name: /wechat-ui-design
-description: Design and implement UI for WeChat Mini Games using Figma/Sketch, Photoshop/Illustrator for assets, FairyGUI for layout and adaptive design, with data binding, screen management, and portrait-first mobile optimization.
+description: Design and implement UI for WeChat Mini Games using Figma/Sketch, Photoshop/Illustrator for assets, FairyGUI for layout and adaptive design, with data binding, screen management, and portrait-first mobile optimization. / 使用 Figma/Sketch 设计微信小游戏 UI，Photoshop/Illustrator 处理资产，FairyGUI 进行布局和自适应设计，包含数据绑定、屏幕管理和竖屏优先的移动端优化。
 agent: wechat-ui-specialist
 ---
 

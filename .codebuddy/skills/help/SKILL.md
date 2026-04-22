@@ -1,6 +1,6 @@
 ---
 name: help
-description: "Analyzes what is done and the users query and offers advice on what to do next. Use if user says what should I do next or what do I do now or I'm stuck or I don't know what to do"
+description: "Analyzes what is done and the users query and offers advice on what to do next. Use if user says what should I do next or what do I do now or I'm stuck or I don't know what to do / 分析已完成的工作和用户查询，提供下一步建议。当用户说"接下来该做什么"、"我卡住了"或"我不知道该做什么"时使用"
 argument-hint: "[optional: what you just finished, e.g. 'finished design-review' or 'stuck on ADRs']"
 user-invocable: true
 allowed-tools: Read, Glob, Grep

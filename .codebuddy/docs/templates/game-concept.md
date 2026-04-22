@@ -1,4 +1,4 @@
-# Game Concept: [Working Title]
+# Game Concept: [Working Title] / 游戏概念：[工作标题]
 
 *Created: [Date]*
 *Status: [Draft / Under Review / Approved]*

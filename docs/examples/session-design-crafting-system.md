@@ -1,4 +1,4 @@
-# Example Session: Designing the Crafting System
+# Example Session: Designing the Crafting System / 示例会话：设计制作系统
 
 **Context:** Solo indie dev, week 2 of project, needs to design the crafting system mentioned in the game pillars.
 

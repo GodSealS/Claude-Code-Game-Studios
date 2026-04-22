@@ -1,6 +1,8 @@
-# Collaborative Session Examples
+# Collaborative Session Examples / 协作会话示例
 
 This directory contains realistic, end-to-end session transcripts showing how the Game Studio Agent Architecture works in practice. Each example demonstrates the **collaborative workflow** where agents ask questions, present options, and wait for user approval rather than autonomously generating content.
+
+> **中文翻译**：此目录包含真实的端到端会话记录，展示游戏工作室代理架构的实际运作方式。每个示例演示了**协作工作流**，代理提出问题、呈现选项并等待用户批准，而非自主生成内容。
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: perf-profile
-description: "Structured performance profiling workflow. Identifies bottlenecks, measures against budgets, and generates optimization recommendations with priority rankings."
+description: "Structured performance profiling workflow. Identifies bottlenecks, measures against budgets, and generates optimization recommendations with priority rankings. / 结构化性能分析工作流。识别瓶颈，对照预算测量，并生成带优先级排序的优化建议。"
 argument-hint: "[system-name or 'full']"
 user-invocable: true
 agent: performance-analyst

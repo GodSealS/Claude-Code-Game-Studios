@@ -1,6 +1,6 @@
 ---
 name: team-narrative
-description: "Orchestrate the narrative team: coordinates narrative-director, writer, world-builder, and level-designer to create cohesive story content, world lore, and narrative-driven level design."
+description: "Orchestrate the narrative team: coordinates narrative-director, writer, world-builder, and level-designer to create cohesive story content, world lore, and narrative-driven level design. / 编排叙事团队：协调 narrative-director、writer、world-builder 和 level-designer 创建连贯的故事内容、世界设定和叙事驱动的关卡设计。"
 argument-hint: "[narrative content description]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Task, AskUserQuestion, TodoWrite

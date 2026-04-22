@@ -1,6 +1,6 @@
 ---
 name: design-review
-description: "Reviews a game design document for completeness, internal consistency, implementability, and adherence to project design standards. Run this before handing a design document to programmers."
+description: "Reviews a game design document for completeness, internal consistency, implementability, and adherence to project design standards. Run this before handing a design document to programmers. / 审查游戏设计文档的完整性、内部一致性、可实现性和项目设计标准遵循情况。在将设计文档交给程序员之前运行此技能。"
 argument-hint: "[path-to-design-doc] [--depth full|lean|solo]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Task, AskUserQuestion

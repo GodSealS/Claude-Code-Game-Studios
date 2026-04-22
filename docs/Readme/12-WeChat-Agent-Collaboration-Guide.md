@@ -1,6 +1,8 @@
-# 微信小游戏 Agent 协作指南
+# WeChat Agent Collaboration Guide / 微信代理协作指南
 
-本指南介绍微信小游戏平台下各 Agent 之间的协作模式、工作流程和最佳实践。
+This guide introduces the collaboration patterns, workflows, and best practices among Agents on the WeChat Mini Game platform.
+
+> **中文翻译**：本指南介绍微信小游戏平台下各 Agent 之间的协作模式、工作流程和最佳实践。
 
 ---
 

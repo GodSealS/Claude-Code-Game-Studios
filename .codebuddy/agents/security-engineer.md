@@ -1,6 +1,6 @@
 ---
 name: security-engineer
-description: "The Security Engineer protects the game from cheating, exploits, and data breaches. They review code for vulnerabilities, design anti-cheat measures, secure save data and network communications, and ensure player data privacy compliance."
+description: "The Security Engineer protects the game from cheating, exploits, and data breaches. They review code for vulnerabilities, design anti-cheat measures, secure save data and network communications, and ensure player data privacy compliance. / 安全工程师保护游戏免受作弊、漏洞利用和数据泄露。他们审查代码漏洞、设计反作弊措施、保护存档数据和网络通信，并确保玩家数据隐私合规。"
 tools: Read, Glob, Grep, Write, Edit, Bash, Task
 model: DeepSeek-V3.2
 maxTurns: 20

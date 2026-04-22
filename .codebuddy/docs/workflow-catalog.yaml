@@ -1,387 +1,389 @@
-# Workflow Catalog
+# Workflow Catalog / 工作流目录
 # Used by /help to determine where a user is and what comes next.
+# 被 /help 使用，确定用户当前阶段和下一步。
 #
-# Artifact checks:
-#   glob: file glob pattern — complete if ≥1 file matches (or min_count)
-#   pattern: text pattern that must appear in the file (checked after glob)
-#   min_count: minimum matching files required (default: 1)
-#   note: human-readable fallback when completion can't be auto-detected
+# Artifact checks / 产物检查：
+#   glob: file glob pattern — complete if ≥1 file matches (or min_count) / 文件glob模式 — 如果≥1个文件匹配则完成（或min_count）
+#   pattern: text pattern that must appear in the file (checked after glob) / 必须出现在文件中的文本模式（在glob后检查）
+#   min_count: minimum matching files required (default: 1) / 所需最小匹配文件数（默认：1）
+#   note: human-readable fallback when completion can't be auto-detected / 完成度无法自动检测时的人工可读备选
 #
-# required: true → blocks progression to next phase (shown as REQUIRED)
-# required: false → optional enhancement (shown as OPTIONAL)
-# repeatable: true → runs multiple times (one per system, story, etc.)
+# required: true → blocks progression to next phase (shown as REQUIRED) / 阻止进入下一阶段（显示为必需）
+# required: false → optional enhancement (shown as OPTIONAL) / 可选增强（显示为可选）
+# repeatable: true → runs multiple times (one per system, story, etc.) / 可多次运行（每个系统、故事等运行一次）
 #
 # Phase gates (/gate-check): verdicts are ADVISORY — they guide the decision
 # but never hard-block advancement. The user always decides whether to proceed.
+# 阶段门控（/gate-check）：裁决是建议性的 — 它们指导决策但从不硬性阻止推进。用户始终决定是否继续。
 
 phases:
 
-  concept:
-    label: "Concept"
-    description: "Develop your game idea into a documented concept"
+  concept:  # 概念阶段
+    label: "Concept / 概念"
+    description: "Develop your game idea into a documented concept / 将游戏创意发展为文档化的概念"
     next_phase: systems-design
     steps:
       - id: brainstorm
-        name: "Brainstorm"
+        name: "Brainstorm / 创意发想"
         command: /brainstorm
         required: false
-        description: "Explore the game concept using MDA, verb-first, and player psychology frameworks"
+        description: "Explore the game concept using MDA, verb-first, and player psychology frameworks / 使用MDA、动词优先和玩家心理学框架探索游戏概念"
 
       - id: engine-setup
-        name: "Engine Setup"
+        name: "Engine Setup / 引擎设置"
         command: /setup-engine
         required: true
         artifact:
           glob: ".codebuddy/docs/technical-preferences.md"
           pattern: "Engine: [^[]"
-        description: "Configure engine, pin version, set naming conventions and performance budgets"
+        description: "Configure engine, pin version, set naming conventions and performance budgets / 配置引擎、锁定版本、设置命名约定和性能预算"
 
       - id: game-concept
-        name: "Game Concept Document"
+        name: "Game Concept Document / 游戏概念文档"
         command: /brainstorm
         required: true
         artifact:
           glob: "design/gdd/game-concept.md"
-        description: "Formalize concept with pillars, MDA analysis, and scope tiers"
+        description: "Formalize concept with pillars, MDA analysis, and scope tiers / 用支柱、MDA分析和范围层级正式化概念"
 
       - id: design-review-concept
-        name: "Concept Review"
+        name: "Concept Review / 概念审查"
         command: /design-review
         required: false
-        description: "Validate the game concept (recommended before proceeding)"
+        description: "Validate the game concept (recommended before proceeding) / 验证游戏概念（建议在继续前执行）"
 
       - id: art-bible
-        name: "Art Bible"
+        name: "Art Bible / 美术圣经"
         command: /art-bible
         required: true
         artifact:
           glob: "design/art/art-bible.md"
-        description: "Author the visual identity specification (9 sections). Uses the Visual Identity Anchor produced by /brainstorm. Run after game concept is formed, before systems design."
+        description: "Author the visual identity specification (9 sections). Uses the Visual Identity Anchor produced by /brainstorm. Run after game concept is formed, before systems design. / 编写视觉身份规格（9个章节）。使用 /brainstorm 生成的视觉身份锚点。在游戏概念形成后、系统设计前运行。"
 
       - id: map-systems
-        name: "Systems Map"
+        name: "Systems Map / 系统映射"
         command: /map-systems
         required: true
         artifact:
           glob: "design/gdd/systems-index.md"
-        description: "Decompose concept into systems with dependency ordering and priority tiers"
+        description: "Decompose concept into systems with dependency ordering and priority tiers / 将概念分解为系统，含依赖排序和优先层级"
 
-  systems-design:
-    label: "Systems Design"
-    description: "Author a GDD for each system in the systems index"
+  systems-design:  # 系统设计阶段
+    label: "Systems Design / 系统设计"
+    description: "Author a GDD for each system in the systems index / 为系统索引中的每个系统编写GDD"
     next_phase: technical-setup
     steps:
       - id: design-system
-        name: "System GDDs"
+        name: "System GDDs / 系统GDD"
         command: /design-system
         required: true
         repeatable: true
         artifact:
-          note: "Check design/gdd/systems-index.md — each MVP system needs Status: Approved"
-        description: "Author per-system GDDs (guided, section-by-section). Run once per system."
+          note: "Check design/gdd/systems-index.md — each MVP system needs Status: Approved / 检查 design/gdd/systems-index.md — 每个MVP系统需要Status: Approved"
+        description: "Author per-system GDDs (guided, section-by-section). Run once per system. / 编写每个系统的GDD（引导式、逐章节）。每个系统运行一次。"
 
       - id: design-review
-        name: "Per-System Design Review"
+        name: "Per-System Design Review / 逐系统设计审查"
         command: /design-review
         required: true
         repeatable: true
-        description: "Validate each GDD (8 required sections, no MAJOR REVISION verdict). Run per system."
+        description: "Validate each GDD (8 required sections, no MAJOR REVISION verdict). Run per system. / 验证每个GDD（8个必需章节，无重大修订裁决）。每个系统运行。"
 
       - id: review-all-gdds
-        name: "Cross-GDD Review"
+        name: "Cross-GDD Review / 跨GDD审查"
         command: /review-all-gdds
         required: true
         artifact:
           glob: "design/gdd/gdd-cross-review-*.md"
-        description: "Holistic consistency check + design theory review across all GDDs simultaneously"
+        description: "Holistic consistency check + design theory review across all GDDs simultaneously / 跨所有GDD的整体一致性检查+设计理论审查"
 
       - id: consistency-check
-        name: "Consistency Check"
+        name: "Consistency Check / 一致性检查"
         command: /consistency-check
         required: false
         repeatable: true
-        description: "Scan all GDDs for contradictions, undefined references, and mechanic conflicts. Run after /review-all-gdds, and again any time a GDD is added or revised mid-project."
+        description: "Scan all GDDs for contradictions, undefined references, and mechanic conflicts. Run after /review-all-gdds, and again any time a GDD is added or revised mid-project. / 扫描所有GDD查找矛盾、未定义引用和机制冲突。在 /review-all-gdds 后运行，项目中期添加或修订GDD时再次运行。"
 
-  technical-setup:
-    label: "Technical Setup"
-    description: "Architecture decisions, visual identity specification, accessibility foundations, engine validation"
+  technical-setup:  # 技术设置阶段
+    label: "Technical Setup / 技术设置"
+    description: "Architecture decisions, visual identity specification, accessibility foundations, engine validation / 架构决策、视觉身份规格、无障碍基础、引擎验证"
     next_phase: pre-production
     steps:
       - id: create-architecture
-        name: "Architecture Document"
+        name: "Architecture Document / 架构文档"
         command: /create-architecture
         required: true
         artifact:
           glob: "docs/architecture/architecture.md"
-        description: "Author the master architecture document covering all systems"
+        description: "Author the master architecture document covering all systems / 编写覆盖所有系统的主架构文档"
 
       - id: architecture-decision
-        name: "Architecture Decisions (ADRs)"
+        name: "Architecture Decisions (ADRs) / 架构决策（ADR）"
         command: /architecture-decision
         required: true
         repeatable: true
         artifact:
           glob: "docs/architecture/adr-*.md"
           min_count: 3
-        description: "Document key technical decisions as ADRs. Minimum 3 Foundation-layer ADRs required."
+        description: "Document key technical decisions as ADRs. Minimum 3 Foundation-layer ADRs required. / 将关键技术决策文档化为ADR。至少需要3个基础层ADR。"
 
       - id: architecture-review
-        name: "Architecture Review"
+        name: "Architecture Review / 架构审查"
         command: /architecture-review
         required: true
         artifact:
           glob: "docs/architecture/architecture-review-*.md"
-        description: "Validate completeness, dependency ordering, engine compatibility"
+        description: "Validate completeness, dependency ordering, engine compatibility / 验证完整性、依赖排序、引擎兼容性"
 
       - id: control-manifest
-        name: "Control Manifest"
+        name: "Control Manifest / 控制清单"
         command: /create-control-manifest
         required: true
         artifact:
           glob: "docs/architecture/control-manifest.md"
-        description: "Flat programmer rules sheet generated from all Accepted ADRs"
+        description: "Flat programmer rules sheet generated from all Accepted ADRs / 从所有已接受ADR生成的扁平化程序员规则表"
 
       - id: accessibility-doc
-        name: "Accessibility Requirements"
+        name: "Accessibility Requirements / 无障碍要求"
         required: true
         artifact:
           glob: "design/accessibility-requirements.md"
-        description: "Commit accessibility tier (Basic/Standard/Comprehensive/Exemplary) and feature matrix. UX specs (Phase 4) reference this tier."
+        description: "Commit accessibility tier (Basic/Standard/Comprehensive/Exemplary) and feature matrix. UX specs (Phase 4) reference this tier. / 确定无障碍层级（基础/标准/全面/典范）和功能矩阵。UX规格（阶段4）引用此层级。"
 
-  pre-production:
-    label: "Pre-Production"
-    description: "UX specs, asset specs, prototype the core mechanic, define stories, validate fun"
+  pre-production:  # 预制作阶段
+    label: "Pre-Production / 预制作"
+    description: "UX specs, asset specs, prototype the core mechanic, define stories, validate fun / UX规格、资产规格、核心机制原型、定义故事、验证乐趣"
     next_phase: production
     steps:
       - id: asset-spec
-        name: "Asset Specs"
+        name: "Asset Specs / 资产规格"
         command: /asset-spec
         required: false
         repeatable: true
         artifact:
           glob: "design/assets/asset-manifest.md"
-        description: "Generate per-asset visual specifications and AI generation prompts from approved GDDs and level docs. Run once per system/level/character."
+        description: "Generate per-asset visual specifications and AI generation prompts from approved GDDs and level docs. Run once per system/level/character. / 从已批准的GDD和关卡文档生成每个资产的视觉规格和AI生成提示。每个系统/关卡/角色运行一次。"
 
       - id: ux-design
-        name: "UX Specs (key screens)"
+        name: "UX Specs (key screens) / UX规格（关键界面）"
         command: /ux-design
         required: true
         repeatable: true
         artifact:
           glob: "design/ux/*.md"
           min_count: 1
-        description: "Author UX specs for main menu, core gameplay HUD, and interaction patterns. Reads input method and platform from technical-preferences.md."
+        description: "Author UX specs for main menu, core gameplay HUD, and interaction patterns. Reads input method and platform from technical-preferences.md. / 为主菜单、核心游戏HUD和交互模式编写UX规格。从technical-preferences.md读取输入方法和平台。"
 
       - id: ux-review
-        name: "UX Review"
+        name: "UX Review / UX审查"
         command: /ux-review
         required: true
-        description: "Validate all key screen UX specs for GDD alignment and accessibility tier compliance. Run before creating epics."
+        description: "Validate all key screen UX specs for GDD alignment and accessibility tier compliance. Run before creating epics. / 验证所有关键界面UX规格的GDD一致性和无障碍层级合规性。在创建史诗前运行。"
 
       - id: prototype
-        name: "Prototype"
+        name: "Prototype / 原型"
         command: /prototype
         required: true
         artifact:
           glob: "prototypes/*/README.md"
           min_count: 1
-        description: "Build throwaway prototypes in isolated worktree to validate core mechanic"
+        description: "Build throwaway prototypes in isolated worktree to validate core mechanic / 在隔离工作树中构建一次性原型以验证核心机制"
 
       - id: create-epics
-        name: "Create Epics"
+        name: "Create Epics / 创建史诗"
         command: /create-epics
         required: true
         repeatable: true
         artifact:
           glob: "production/epics/*/EPIC.md"
           min_count: 1
-        description: "Translate GDDs + ADRs into epics — one per architectural module. Run per layer: /create-epics layer: foundation, then /create-epics layer: core"
+        description: "Translate GDDs + ADRs into epics — one per architectural module. Run per layer: /create-epics layer: foundation, then /create-epics layer: core / 将GDD+ADR转化为史诗 — 每个架构模块一个。按层运行：/create-epics layer: foundation，然后 /create-epics layer: core"
 
       - id: create-stories
-        name: "Create Stories"
+        name: "Create Stories / 创建故事"
         command: /create-stories
         required: true
         repeatable: true
         artifact:
           glob: "production/epics/**/*.md"
           min_count: 2
-        description: "Break each epic into implementable story files. Run per epic: /create-stories [epic-slug]"
+        description: "Break each epic into implementable story files. Run per epic: /create-stories [epic-slug] / 将每个史诗拆分为可实现的故事文件。按史诗运行：/create-stories [史诗标识]"
 
       - id: test-setup
-        name: "Test Framework Setup"
+        name: "Test Framework Setup / 测试框架设置"
         command: /test-setup
         required: false
         artifact:
-          note: "Check tests/ directory for engine-specific test framework scaffold"
-        description: "Scaffold the test framework and CI pipeline once before the first sprint. Leads to /test-helpers for fixture generation, /qa-plan per epic, and /smoke-check per sprint."
+          note: "Check tests/ directory for engine-specific test framework scaffold / 检查 tests/ 目录中的引擎特定测试框架脚手架"
+        description: "Scaffold the test framework and CI pipeline once before the first sprint. Leads to /test-helpers for fixture generation, /qa-plan per epic, and /smoke-check per sprint. / 在第一个冲刺前搭建测试框架和CI管线。引出 /test-helpers（夹具生成）、/qa-plan（每个史诗）和 /smoke-check（每个冲刺）。"
 
       - id: sprint-plan
-        name: "First Sprint Plan"
+        name: "First Sprint Plan / 首次冲刺计划"
         command: /sprint-plan
         required: true
         artifact:
           glob: "production/sprints/sprint-*.md"
           min_count: 1
-        description: "Plan the first sprint with prioritized stories from epics"
+        description: "Plan the first sprint with prioritized stories from epics / 用史诗中优先排序的故事规划第一个冲刺"
 
       - id: vertical-slice
-        name: "Vertical Slice (playtested)"
+        name: "Vertical Slice (playtested) / 垂直切片（已试玩）"
         command: /playtest-report
         required: true
         artifact:
           glob: "production/playtests/*.md"
           min_count: 1
-        description: "Document vertical slice playtest sessions using /playtest-report. Run at least once here (≥1 session required before Production; ≥3 required before Polish). Each session should cover one complete run-through of the core loop."
+        description: "Document vertical slice playtest sessions using /playtest-report. Run at least once here (≥1 session required before Production; ≥3 required before Polish). Each session should cover one complete run-through of the core loop. / 使用 /playtest-report 记录垂直切片试玩会话。至少运行一次（制作前需≥1次；打磨前需≥3次）。每次会话应覆盖核心循环的完整运行。"
 
-  production:
-    label: "Production"
-    description: "Sprint-based feature development — pick, implement, close stories"
+  production:  # 制作阶段
+    label: "Production / 制作"
+    description: "Sprint-based feature development — pick, implement, close stories / 基于冲刺的功能开发 — 拾取、实现、关闭故事"
     next_phase: polish
     steps:
       - id: sprint-plan
-        name: "Sprint Plan"
+        name: "Sprint Plan / 冲刺计划"
         command: /sprint-plan
         required: true
         repeatable: true
         artifact:
           glob: "production/sprints/sprint-*.md"
-        description: "Plan the current sprint with prioritized, ready stories"
+        description: "Plan the current sprint with prioritized, ready stories / 用优先排序的已就绪故事规划当前冲刺"
 
       - id: story-readiness
-        name: "Story Readiness Check"
+        name: "Story Readiness Check / 故事就绪检查"
         command: /story-readiness
         required: false
-        description: "Validate a story is implementation-ready before a developer picks it up"
+        description: "Validate a story is implementation-ready before a developer picks it up / 在开发者拾取前验证故事是否实现就绪"
 
       - id: implement
-        name: "Implement Stories"
+        name: "Implement Stories / 实现故事"
         command: /dev-story
         required: true
         repeatable: true
         artifact:
-          note: "Check src/ for active code and production/epics/**/*.md for In Progress stories"
-        description: "Pick the next ready story and implement it with /dev-story [story-path]. Routes to the correct programmer agent."
+          note: "Check src/ for active code and production/epics/**/*.md for In Progress stories / 检查 src/ 中的活跃代码和 production/epics/**/*.md 中的进行中故事"
+        description: "Pick the next ready story and implement it with /dev-story [story-path]. Routes to the correct programmer agent. / 拾取下一个就绪故事并用 /dev-story [故事路径] 实现。路由到正确的程序员代理。"
 
       - id: code-review
-        name: "Code Review"
+        name: "Code Review / 代码审查"
         command: /code-review
         required: false
         repeatable: true
-        description: "Architectural code review after each story implementation. Run after /dev-story, before /story-done."
+        description: "Architectural code review after each story implementation. Run after /dev-story, before /story-done. / 每个故事实现后的架构级代码审查。在 /dev-story 后、/story-done 前运行。"
 
       - id: story-done
-        name: "Story Done Review"
+        name: "Story Done Review / 故事完成审查"
         command: /story-done
         required: true
         repeatable: true
-        description: "Verify all acceptance criteria, check GDD/ADR deviations, close the story"
+        description: "Verify all acceptance criteria, check GDD/ADR deviations, close the story / 验证所有验收标准、检查GDD/ADR偏差、关闭故事"
 
       - id: qa-plan
-        name: "QA Plan"
+        name: "QA Plan / QA计划"
         command: /qa-plan
         required: false
         repeatable: true
-        description: "Generate a QA test plan per epic or sprint. Run /qa-plan [epic-slug]. Produces test cases for /smoke-check, /regression-suite, and /test-evidence-review."
+        description: "Generate a QA test plan per epic or sprint. Run /qa-plan [epic-slug]. Produces test cases for /smoke-check, /regression-suite, and /test-evidence-review. / 为每个史诗或冲刺生成QA测试计划。运行 /qa-plan [史诗标识]。生成 /smoke-check、/regression-suite 和 /test-evidence-review 的测试用例。"
 
       - id: bug-report
-        name: "Bug Report / Triage"
+        name: "Bug Report / Triage / 缺陷报告/分类"
         command: /bug-report
         required: false
         repeatable: true
-        description: "Log and prioritize bugs found during implementation. /bug-report creates a structured report; /bug-triage prioritizes the open backlog."
+        description: "Log and prioritize bugs found during implementation. /bug-report creates a structured report; /bug-triage prioritizes the open backlog. / 记录和优先排序实现中发现的缺陷。/bug-report 创建结构化报告；/bug-triage 对未关闭积压进行优先排序。"
 
       - id: retrospective
-        name: "Sprint Retrospective"
+        name: "Sprint Retrospective / 冲刺回顾"
         command: /retrospective
         required: false
         repeatable: true
-        description: "Post-sprint review to capture what worked and what to change. Run at the end of each sprint, before planning the next."
+        description: "Post-sprint review to capture what worked and what to change. Run at the end of each sprint, before planning the next. / 冲刺后回顾以捕获有效和需改变的内容。在每个冲刺结束时、规划下一个前运行。"
 
       - id: team-feature
-        name: "Team Orchestration (optional)"
+        name: "Team Orchestration (optional) / 团队编排（可选）"
         required: false
         repeatable: true
-        description: "Coordinate multiple agents on a complex feature. Use: /team-combat, /team-narrative, /team-ui, /team-audio, /team-level, /team-live-ops, /team-qa. Run when a feature spans multiple agent domains."
+        description: "Coordinate multiple agents on a complex feature. Use: /team-combat, /team-narrative, /team-ui, /team-audio, /team-level, /team-live-ops, /team-qa. Run when a feature spans multiple agent domains. / 在复杂功能上协调多个代理。使用：/team-combat、/team-narrative、/team-ui、/team-audio、/team-level、/team-live-ops、/team-qa。当功能跨多个代理领域时运行。"
 
       - id: scope-check
-        name: "Scope Check"
+        name: "Scope Check / 范围检查"
         command: /scope-check
         required: false
         repeatable: true
         artifact:
           glob: "production/sprints/sprint-*.md"
-          note: "Run when stories are added mid-sprint, or before sprint retrospectives"
-        description: "Detect scope creep by comparing current sprint scope to original epic scope. Run (a) when stories are added mid-sprint, or (b) before sprint retrospectives."
+          note: "Run when stories are added mid-sprint, or before sprint retrospectives / 在冲刺中期添加故事时或冲刺回顾前运行"
+        description: "Detect scope creep by comparing current sprint scope to original epic scope. Run (a) when stories are added mid-sprint, or (b) before sprint retrospectives. / 通过比较当前冲刺范围与原始史诗范围来检测范围蔓延。在(a)冲刺中期添加故事时或(b)冲刺回顾前运行。"
 
       - id: sprint-status
-        name: "Sprint Status"
+        name: "Sprint Status / 冲刺状态"
         command: /sprint-status
         required: false
-        description: "Quick 30-line snapshot of sprint progress without a full report"
+        description: "Quick 30-line snapshot of sprint progress without a full report / 无需完整报告的快速30行冲刺进度快照"
 
-  polish:
-    label: "Polish"
-    description: "Performance, balance, playtesting, bug fixing"
+  polish:  # 打磨阶段
+    label: "Polish / 打磨"
+    description: "Performance, balance, playtesting, bug fixing / 性能、平衡、试玩、缺陷修复"
     next_phase: release
     steps:
       - id: perf-profile
-        name: "Performance Profile"
+        name: "Performance Profile / 性能分析"
         command: /perf-profile
         required: false
-        description: "Profile and optimize CPU/GPU/memory bottlenecks"
+        description: "Profile and optimize CPU/GPU/memory bottlenecks / 分析和优化CPU/GPU/内存瓶颈"
 
       - id: balance-check
-        name: "Balance Check"
+        name: "Balance Check / 平衡检查"
         command: /balance-check
         required: false
-        description: "Analyze game balance formulas and data for outliers and broken progressions"
+        description: "Analyze game balance formulas and data for outliers and broken progressions / 分析游戏平衡公式和数据，查找异常值和破坏性进度"
 
       - id: asset-audit
-        name: "Asset Audit"
+        name: "Asset Audit / 资产审计"
         command: /asset-audit
         required: false
-        description: "Verify naming conventions, file format standards, and size budgets"
+        description: "Verify naming conventions, file format standards, and size budgets / 验证命名约定、文件格式标准和大小预算"
 
       - id: playtest-polish
-        name: "Playtest Sessions (×3)"
+        name: "Playtest Sessions (×3) / 试玩会话（×3）"
         command: /playtest-report
         required: true
         artifact:
           glob: "production/playtests/*.md"
           min_count: 3
-        description: "Cover: new player experience, mid-game systems, difficulty curve"
+        description: "Cover: new player experience, mid-game systems, difficulty curve / 覆盖：新玩家体验、中期系统、难度曲线"
 
       - id: team-polish
-        name: "Polish Team Pass"
+        name: "Polish Team Pass / 打磨团队通过"
         command: /team-polish
         required: true
-        description: "Coordinated polish pass across performance, audio, visual, and UX"
+        description: "Coordinated polish pass across performance, audio, visual, and UX / 跨性能、音频、视觉和UX的协调打磨通过"
 
-  release:
-    label: "Release"
-    description: "Launch preparation, certification, and ship"
+  release:  # 发布阶段
+    label: "Release / 发布"
+    description: "Launch preparation, certification, and ship / 上线准备、认证和发布"
     next_phase: null
     steps:
       - id: release-checklist
-        name: "Release Checklist"
+        name: "Release Checklist / 发布清单"
         command: /release-checklist
         required: true
-        description: "Pre-release validation across all departments: code, content, store, legal"
+        description: "Pre-release validation across all departments: code, content, store, legal / 跨所有部门的预发布验证：代码、内容、商店、法律"
 
       - id: patch-notes
-        name: "Patch Notes"
+        name: "Patch Notes / 补丁说明"
         command: /patch-notes
         required: false
-        description: "Generate player-facing patch notes from git history and sprint data"
+        description: "Generate player-facing patch notes from git history and sprint data / 从git历史和冲刺数据生成面向玩家的补丁说明"
 
       - id: changelog
-        name: "Changelog"
+        name: "Changelog / 变更日志"
         command: /changelog
         required: false
-        description: "Auto-generate internal changelog from commits, sprints, and design docs"
+        description: "Auto-generate internal changelog from commits, sprints, and design docs / 从提交、冲刺和设计文档自动生成内部变更日志"
 
       - id: launch-checklist
-        name: "Launch Checklist"
+        name: "Launch Checklist / 上线清单"
         command: /launch-checklist
         required: true
-        description: "Final launch readiness — last gate before shipping to players"
+        description: "Final launch readiness — last gate before shipping to players / 最终上线就绪 — 发送给玩家前的最后一道门控"

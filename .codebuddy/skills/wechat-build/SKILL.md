@@ -1,6 +1,6 @@
 ---
 name: wechat-build
-description: "Builds, packages, and prepares a WeChat Mini Game for submission to the WeChat platform. Validates package size, optimizes assets, and generates submission checklist."
+description: "Builds, packages, and prepares a WeChat Mini Game for submission to the WeChat platform. Validates package size, optimizes assets, and generates submission checklist. / 构建、打包并准备微信小游戏提交到微信平台。验证包大小、优化资产生成提交清单。"
 argument-hint: "[release|preview|test]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Bash

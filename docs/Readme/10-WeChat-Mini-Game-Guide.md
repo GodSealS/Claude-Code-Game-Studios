@@ -1,6 +1,8 @@
-# 微信小游戏开发指南
+# WeChat Mini Game Guide / 微信小游戏指南
 
-本指南介绍如何在 Claude Code Game Studios 架构下开发微信小游戏（WeChat Mini Games）。
+This guide introduces how to develop WeChat Mini Games under the Claude Code Game Studios architecture.
+
+> **中文翻译**：本指南介绍如何在 Claude Code Game Studios 架构下开发微信小游戏（WeChat Mini Games）。
 
 ---
 

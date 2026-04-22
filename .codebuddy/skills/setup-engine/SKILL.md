@@ -1,6 +1,6 @@
 ---
 name: setup-engine
-description: "Configure the project's game engine and version. Pins the engine in CODEBUDDY.md, detects knowledge gaps, and populates engine reference docs via WebSearch when the version is beyond the LLM's training data."
+description: "Configure the project's game engine and version. Pins the engine in CODEBUDDY.md, detects knowledge gaps, and populates engine reference docs via WebSearch when the version is beyond the LLM's training data. / 配置项目的游戏引擎和版本。在 CODEBUDDY.md 中固定引擎，检测知识差距，当版本超出 LLM 训练数据时通过 WebSearch 填充引擎参考文档。"
 argument-hint: "[engine] | [engine version] | refresh | upgrade [old-version] [new-version] | no args for guided selection"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch, Task, AskUserQuestion

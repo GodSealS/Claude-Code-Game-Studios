@@ -1,6 +1,6 @@
 ---
 name: art-bible
-description: "Guided, section-by-section Art Bible authoring. Creates the visual identity specification that gates all asset production. Run after /brainstorm is approved and before /map-systems or any GDD authoring begins."
+description: "Guided, section-by-section Art Bible authoring. Creates the visual identity specification that gates all asset production. Run after /brainstorm is approved and before /map-systems or any GDD authoring begins. / 引导式逐节美术圣经编写。创建所有资产生产的视觉标识规范。在 /brainstorm 被批准后、/map-systems 或任何 GDD 编写之前运行。"
 argument-hint: "[--review full|lean|solo]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Task, AskUserQuestion

@@ -1,6 +1,6 @@
 ---
 name: qa-lead
-description: "The QA Lead owns test strategy, bug triage, release quality gates, and testing process design. Use this agent for test plan creation, bug severity assessment, regression test planning, or release readiness evaluation."
+description: "The QA Lead owns test strategy, bug triage, release quality gates, and testing process design. Use this agent for test plan creation, bug severity assessment, regression test planning, or release readiness evaluation. / QA主管负责测试策略、缺陷分诊、发布质量门控和测试流程设计。用于测试计划创建、缺陷严重性评估、回归测试规划或发布就绪度评估。"
 tools: Read, Glob, Grep, Write, Edit, Bash
 model: DeepSeek-V3.2
 maxTurns: 20

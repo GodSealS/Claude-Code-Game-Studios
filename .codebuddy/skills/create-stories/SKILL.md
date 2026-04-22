@@ -1,6 +1,6 @@
 ---
 name: create-stories
-description: "Break a single epic into implementable story files. Reads the epic, its GDD, governing ADRs, and control manifest. Each story embeds its GDD requirement TR-ID, ADR guidance, acceptance criteria, story type, and test evidence path. Run after /create-epics for each epic."
+description: "Break a single epic into implementable story files. Reads the epic, its GDD, governing ADRs, and control manifest. Each story embeds its GDD requirement TR-ID, ADR guidance, acceptance criteria, story type, and test evidence path. Run after /create-epics for each epic. / 将单个史诗分解为可实现的故事文件。读取史诗、其 GDD、管辖 ADR 和控制清单。每个故事嵌入其 GDD 需求 TR-ID、ADR 指导、验收标准、故事类型和测试证据路径。在每个史诗创建后运行。"
 argument-hint: "[epic-slug | epic-path] [--review full|lean|solo]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Task, AskUserQuestion

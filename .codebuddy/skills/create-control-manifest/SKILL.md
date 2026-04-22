@@ -1,6 +1,6 @@
 ---
 name: create-control-manifest
-description: "After architecture is complete, produces a flat actionable rules sheet for programmers — what you must do, what you must never do, per system and per layer. Extracted from all Accepted ADRs, technical preferences, and engine reference docs. More immediately actionable than ADRs (which explain why)."
+description: "After architecture is complete, produces a flat actionable rules sheet for programmers — what you must do, what you must never do, per system and per layer. Extracted from all Accepted ADRs, technical preferences, and engine reference docs. More immediately actionable than ADRs (which explain why). / 架构完成后，为程序员生成扁平化的可操作规则表 — 每个系统和每层必须做什么、绝不能做什么。从所有已接受 ADR、技术偏好和引擎参考文档中提取。比 ADR（解释原因）更直接可操作。"
 argument-hint: "[update — regenerate from current ADRs]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Task

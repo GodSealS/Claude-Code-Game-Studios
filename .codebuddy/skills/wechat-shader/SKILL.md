@@ -1,6 +1,6 @@
 ---
 name: /wechat-shader
-description: Initialize WebGL shader pipeline for WeChat Mini Games, convert shaders from Unity/Unreal/Godot to WebGL GLSL, optimize for mobile performance, and manage render pipeline standards.
+description: Initialize WebGL shader pipeline for WeChat Mini Games, convert shaders from Unity/Unreal/Godot to WebGL GLSL, optimize for mobile performance, and manage render pipeline standards. / 初始化微信小游戏 WebGL 着色器管线，将 Unity/Unreal/Godot 着色器转换为 WebGL GLSL，针对移动端性能优化，并管理渲染管线标准。
 agent: wechat-shader-specialist
 ---
 

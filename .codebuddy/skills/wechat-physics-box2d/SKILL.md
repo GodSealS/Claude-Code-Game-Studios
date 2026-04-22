@@ -1,6 +1,6 @@
 ---
 name: /wechat-physics-box2d
-description: "Initialize Box2D WASM physics engine for WeChat Mini Games, create 2D physics world, configure rigid bodies, collisions, and joints via the unified IPhysicsWorld interface."
+description: "Initialize Box2D WASM physics engine for WeChat Mini Games, create 2D physics world, configure rigid bodies, collisions, and joints via the unified IPhysicsWorld interface. / 初始化微信小游戏 Box2D WASM 物理引擎，创建 2D 物理世界，通过统一 IPhysicsWorld 接口配置刚体、碰撞和关节。"
 agent: wechat-minigame-specialist
 ---
 

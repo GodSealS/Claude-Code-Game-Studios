@@ -1,6 +1,6 @@
 ---
 name: gate-check
-description: "Validate readiness to advance between development phases. Produces a PASS/CONCERNS/FAIL verdict with specific blockers and required artifacts. Use when user says 'are we ready to move to X', 'can we advance to production', 'check if we can start the next phase', 'pass the gate'."
+description: "Validate readiness to advance between development phases. Produces a PASS/CONCERNS/FAIL verdict with specific blockers and required artifacts. Use when user says 'are we ready to move to X', 'can we advance to production', 'check if we can start the next phase', 'pass the gate'. / 验证在开发阶段之间推进的准备度。生成 PASS/CONCERNS/FAIL 裁决及具体阻塞因素和必需工件。当用户说'我们准备好进入X了吗'、'我们可以进入生产吗'、'检查我们能否开始下一阶段'、'通过门控'时使用。"
 argument-hint: "[target-phase: systems-design | technical-setup | pre-production | production | polish | release] [--review full|lean|solo]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Bash, Write, Task, AskUserQuestion

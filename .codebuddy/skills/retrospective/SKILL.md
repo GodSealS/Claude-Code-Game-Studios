@@ -1,6 +1,6 @@
 ---
 name: retrospective
-description: "Generates a sprint or milestone retrospective by analyzing completed work, velocity, blockers, and patterns. Produces actionable insights for the next iteration."
+description: "Generates a sprint or milestone retrospective by analyzing completed work, velocity, blockers, and patterns. Produces actionable insights for the next iteration. / 通过分析已完成工作、速度、阻塞因素和模式生成冲刺或里程碑回顾。为下一次迭代产生可操作的洞察。"
 argument-hint: "[sprint-N|milestone-name]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write

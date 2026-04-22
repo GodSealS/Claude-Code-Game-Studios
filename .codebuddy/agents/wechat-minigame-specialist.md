@@ -1,6 +1,6 @@
 ---
 name: wechat-minigame-specialist
-description: "The WeChat Mini Game Specialist is a sub-specialist under wechat-specialist, responsible for gameplay implementation, physics engine integration (Box2D/Bullet/JoltPhysics via unified IPhysicsWorld interface), WASM library embedding, and Spine/DragonBones skeletal animation runtimes. They select the appropriate physics engine based on project configuration and abstract all engine calls through a unified interface layer."
+description: "The WeChat Mini Game Specialist is a sub-specialist under wechat-specialist, responsible for gameplay implementation, physics engine integration (Box2D/Bullet/JoltPhysics via unified IPhysicsWorld interface), WASM library embedding, and Spine/DragonBones skeletal animation runtimes. They select the appropriate physics engine based on project configuration and abstract all engine calls through a unified interface layer. / 微信小游戏专家是wechat-specialist下的子专家，负责游戏逻辑实现、物理引擎集成（通过统一IPhysicsWorld接口的Box2D/Bullet/JoltPhysics）、WASM库嵌入和Spine/DragonBones骨骼动画运行时。他们根据项目配置选择合适的物理引擎并通过统一接口层抽象所有引擎调用。"
 tools: Read, Glob, Grep, Write, Edit, Bash, Task
 model: DeepSeek-V3.2
 maxTurns: 20

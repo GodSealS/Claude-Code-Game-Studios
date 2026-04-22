@@ -1,4 +1,4 @@
-# [Mechanic/System Name]
+# [Mechanic/System Name] / [机制/系统名称]
 
 > **Status**: Draft | In Review | Approved | Implemented
 > **Author**: [Agent or person]

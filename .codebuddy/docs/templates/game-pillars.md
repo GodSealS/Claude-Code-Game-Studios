@@ -1,4 +1,4 @@
-# Game Pillars: [Game Title]
+# Game Pillars: [Game Title] / 游戏支柱：[游戏名称]
 
 ## Document Status
 - **Version**: 1.0

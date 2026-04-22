@@ -1,6 +1,6 @@
 ---
 name: tech-debt
-description: "Track, categorize, and prioritize technical debt across the codebase. Scans for debt indicators, maintains a debt register, and recommends repayment scheduling."
+description: "Track, categorize, and prioritize technical debt across the codebase. Scans for debt indicators, maintains a debt register, and recommends repayment scheduling. / 跟踪、分类和优先排序整个代码库的技术债务。扫描债务指标，维护债务登记册，并推荐偿还计划。"
 argument-hint: "[scan|add|prioritize|report]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write

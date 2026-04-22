@@ -1,6 +1,6 @@
 ---
 name: start
-description: "First-time onboarding — asks where you are, then guides you to the right workflow. No assumptions."
+description: "First-time onboarding — asks where you are, then guides you to the right workflow. No assumptions. / 首次引导入门 — 询问你当前的状态，然后引导你到正确的工作流。不做任何假设。"
 argument-hint: "[no arguments]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, AskUserQuestion

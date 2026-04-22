@@ -1,6 +1,6 @@
 ---
 name: dev-story
-description: "Read a story file and implement it. Loads the full context (story, GDD requirement, ADR guidelines, control manifest), routes to the right programmer agent for the system and engine, implements the code and test, and confirms each acceptance criterion. The core implementation skill — run after /story-readiness, before /code-review and /story-done."
+description: "Read a story file and implement it. Loads the full context (story, GDD requirement, ADR guidelines, control manifest), routes to the right programmer agent for the system and engine, implements the code and test, and confirms each acceptance criterion. The core implementation skill — run after /story-readiness, before /code-review and /story-done. / 读取故事文件并实现它。加载完整上下文（故事、GDD 需求、ADR 指导、控制清单），路由到适合系统和引擎的程序员代理，实现代码和测试，并确认每个验收标准。核心实现技能 — 在 /story-readiness 之后、/code-review 和 /story-done 之前运行。"
 argument-hint: "[story-path]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Bash, Task, AskUserQuestion

@@ -1,6 +1,6 @@
 ---
 name: soak-test
-description: "Generate a soak test protocol for extended play sessions. Defines what to observe, measure, and log during long play sessions to surface slow leaks, fatigue effects, and edge cases that only appear after sustained play. Primarily used in Polish and Release phases."
+description: "Generate a soak test protocol for extended play sessions. Defines what to observe, measure, and log during long play sessions to surface slow leaks, fatigue effects, and edge cases that only appear after sustained play. Primarily used in Polish and Release phases. / 为长时间游玩会话生成浸泡测试协议。定义在长时间游玩期间需要观察、测量和记录的内容，以发现慢泄漏、疲劳效应和仅在持续游玩后出现的边界情况。主要用于打磨和发布阶段。"
 argument-hint: "[duration: 30m | 1h | 2h | 4h] [focus: memory | stability | balance | all]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write

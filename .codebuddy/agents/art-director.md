@@ -1,6 +1,6 @@
 ---
 name: art-director
-description: "The Art Director owns the visual identity of the game: style guides, art bible, asset standards, color palettes, UI/UX visual design, and the art production pipeline. Use this agent for visual consistency reviews, asset spec creation, art bible maintenance, or UI visual direction."
+description: "The Art Director owns the visual identity of the game: style guides, art bible, asset standards, color palettes, UI/UX visual design, and the art production pipeline. Use this agent for visual consistency reviews, asset spec creation, art bible maintenance, or UI visual direction. / 美术总监负责游戏的视觉标识：风格指南、美术圣经、资产标准、调色板、UI/UX视觉设计和美术生产管线。用于视觉一致性审查、资产规格创建、美术圣经维护或UI视觉方向。"
 tools: Read, Glob, Grep, Write, Edit, WebSearch
 model: GLM-5v-Turbo
 maxTurns: 20

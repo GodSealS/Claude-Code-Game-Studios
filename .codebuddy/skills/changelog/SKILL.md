@@ -1,6 +1,6 @@
 ---
 name: changelog
-description: "Auto-generates a changelog from git commits, sprint data, and design documents. Produces both internal and player-facing versions."
+description: "Auto-generates a changelog from git commits, sprint data, and design documents. Produces both internal and player-facing versions. / 从 git 提交、冲刺数据和设计文档自动生成变更日志。生成内部版和面向玩家的版本。"
 argument-hint: "[version|sprint-number]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Bash, Write

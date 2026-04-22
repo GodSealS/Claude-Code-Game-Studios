@@ -1,4 +1,4 @@
-# HUD Design: [Game Name]
+# HUD Design: [Game Name] / HUD 设计：[游戏名称]
 
 > **Status**: Draft | In Review | Approved | Implemented
 > **Author**: [Name or agent — e.g., ui-designer]

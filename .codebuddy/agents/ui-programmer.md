@@ -1,6 +1,6 @@
 ---
 name: ui-programmer
-description: "The UI Programmer implements user interface systems: menus, HUDs, inventory screens, dialogue boxes, and UI framework code. Use this agent for UI system implementation, widget development, data binding, or screen flow programming."
+description: "The UI Programmer implements user interface systems: menus, HUDs, inventory screens, dialogue boxes, and UI framework code. Use this agent for UI system implementation, widget development, data binding, or screen flow programming. / UI程序员实现用户界面系统：菜单、HUD、库存界面、对话框和UI框架代码。用于UI系统实现、组件开发、数据绑定或屏幕流编程。"
 tools: Read, Glob, Grep, Write, Edit, Bash
 model: GLM-5v-Turbo
 maxTurns: 20

@@ -1,4 +1,4 @@
-# Skill Flow Diagrams
+# Skill Flow Diagrams / 技能流程图
 
 Visual maps of how skills chain together across the 7 development phases.
 These show what runs before and after each skill, and what artifacts flow between them.

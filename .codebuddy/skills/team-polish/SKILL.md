@@ -1,6 +1,6 @@
 ---
 name: team-polish
-description: "Orchestrate the polish team: coordinates performance-analyst, technical-artist, sound-designer, and qa-tester to optimize, polish, and harden a feature or area for release quality."
+description: "Orchestrate the polish team: coordinates performance-analyst, technical-artist, sound-designer, and qa-tester to optimize, polish, and harden a feature or area for release quality. / 编排打磨团队：协调 performance-analyst、technical-artist、sound-designer 和 qa-tester 优化、打磨和加固功能或区域至发布质量。"
 argument-hint: "[feature or area to polish]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Bash, Task, AskUserQuestion, TodoWrite

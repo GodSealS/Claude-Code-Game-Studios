@@ -1,6 +1,6 @@
 ---
 name: balance-check
-description: "Analyzes game balance data files, formulas, and configuration to identify outliers, broken progressions, degenerate strategies, and economy imbalances. Use after modifying any balance-related data or design. Use when user says 'balance report', 'check game balance', 'run a balance check'."
+description: "Analyzes game balance data files, formulas, and configuration to identify outliers, broken progressions, degenerate strategies, and economy imbalances. Use after modifying any balance-related data or design. Use when user says 'balance report', 'check game balance', 'run a balance check'. / 分析游戏平衡数据文件、公式和配置，识别异常值、破坏性进度、退化策略和经济失衡。修改任何平衡相关数据或设计后使用。当用户说'平衡报告'、'检查游戏平衡'、'运行平衡检查'时使用。"
 argument-hint: "[system-name|path-to-data-file]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep

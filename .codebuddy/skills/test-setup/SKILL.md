@@ -1,6 +1,6 @@
 ---
 name: test-setup
-description: "Scaffold the test framework and CI/CD pipeline for the project's engine. Creates the tests/ directory structure, engine-specific test runner configuration, and GitHub Actions workflow. Run once during Technical Setup phase before the first sprint begins."
+description: "Scaffold the test framework and CI/CD pipeline for the project's engine. Creates the tests/ directory structure, engine-specific test runner configuration, and GitHub Actions workflow. Run once during Technical Setup phase before the first sprint begins. / 为项目的引擎搭建测试框架和 CI/CD 管线。创建 tests/ 目录结构、引擎特定的测试运行器配置和 GitHub Actions 工作流。在技术设置阶段首次冲刺开始前运行一次。"
 argument-hint: "[force]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Bash, Write

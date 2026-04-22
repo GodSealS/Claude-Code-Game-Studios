@@ -1,4 +1,4 @@
-# Systems Index: [Game Title]
+# Systems Index: [Game Title] / 系统索引：[游戏名称]
 
 > **Status**: [Draft / Under Review / Approved]
 > **Created**: [Date]

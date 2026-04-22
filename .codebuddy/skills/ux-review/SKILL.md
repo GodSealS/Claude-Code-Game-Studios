@@ -1,6 +1,6 @@
 ---
 name: ux-review
-description: "Validates a UX spec, HUD design, or interaction pattern library for completeness, accessibility compliance, GDD alignment, and implementation readiness. Produces APPROVED / NEEDS REVISION / MAJOR REVISION NEEDED verdict with specific gaps."
+description: "Validates a UX spec, HUD design, or interaction pattern library for completeness, accessibility compliance, GDD alignment, and implementation readiness. Produces APPROVED / NEEDS REVISION / MAJOR REVISION NEEDED verdict with specific gaps. / 验证 UX 规格、HUD 设计或交互模式库的完整性、无障碍合规性、GDD 一致性和实现就绪度。生成 APPROVED / NEEDS REVISION / MAJOR REVISION NEEDED 裁决及具体差距。"
 argument-hint: "[file-path or 'all' or 'hud' or 'patterns']"
 user-invocable: true
 allowed-tools: Read, Glob, Grep

@@ -1,6 +1,6 @@
 ---
 name: /wechat-physics-jolt
-description: "Initialize JoltPhysics WASM physics engine for WeChat Mini Games, create high-performance 3D physics world, configure rigid bodies, constraints, and character controllers via the unified IPhysicsWorld interface."
+description: "Initialize JoltPhysics WASM physics engine for WeChat Mini Games, create high-performance 3D physics world, configure rigid bodies, constraints, and character controllers via the unified IPhysicsWorld interface. / 初始化微信小游戏 JoltPhysics WASM 物理引擎，创建高性能 3D 物理世界，通过统一 IPhysicsWorld 接口配置刚体、约束和角色控制器。"
 agent: wechat-minigame-specialist
 ---
 

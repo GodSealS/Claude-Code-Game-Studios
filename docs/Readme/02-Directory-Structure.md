@@ -1,6 +1,8 @@
-# 目录结构详解
+# Directory Structure / 目录结构详解
 
-本文档详细解释项目中每个目录的用途、包含的文件以及提供的功能。
+This document explains the purpose, contents, and features of each directory in the project.
+
+> **中文翻译**：本文档详细解释项目中每个目录的用途、包含的文件以及提供的功能。
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: content-audit
-description: "Audit GDD-specified content counts against implemented content. Identifies what's planned vs built."
+description: "Audit GDD-specified content counts against implemented content. Identifies what's planned vs built. / 审计 GDD 指定的内容数量与已实现内容的对比。识别计划与已构建的内容。"
 argument-hint: "[system-name | --summary | (no arg = full audit)]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write

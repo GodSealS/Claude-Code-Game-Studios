@@ -1,4 +1,4 @@
-# What's New in [Version]
+# What's New in [Version] / [版本]的新功能
 
 **Release Date**: [Date]
 

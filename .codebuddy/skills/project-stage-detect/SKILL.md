@@ -1,6 +1,6 @@
 ---
 name: project-stage-detect
-description: "Automatically analyze project state, detect stage, identify gaps, and recommend next steps based on existing artifacts. Use when user asks 'where are we in development', 'what stage are we in', 'full project audit'."
+description: "Automatically analyze project state, detect stage, identify gaps, and recommend next steps based on existing artifacts. Use when user asks 'where are we in development', 'what stage are we in', 'full project audit'. / 自动分析项目状态，检测阶段，识别差距，并基于现有工件推荐下一步。当用户问'我们开发到哪了'、'我们处于什么阶段'、'全面项目审计'时使用。"
 argument-hint: "[optional: role filter like 'programmer' or 'designer']"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Bash, Write

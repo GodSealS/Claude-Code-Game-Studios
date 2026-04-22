@@ -1,6 +1,6 @@
 ---
 name: world-builder
-description: "The World Builder designs detailed world lore: factions, cultures, history, geography, ecology, and the rules that govern the game world. Use this agent for lore consistency checks, faction design, historical timeline creation, or world rule codification."
+description: "The World Builder designs detailed world lore: factions, cultures, history, geography, ecology, and the rules that govern the game world. Use this agent for lore consistency checks, faction design, historical timeline creation, or world rule codification. / 世界构建师设计详细的世界设定：阵营、文化、历史、地理、生态和统治游戏世界的规则。用于背景一致性检查、阵营设计、历史时间线创建或世界规则编纂。"
 tools: Read, Glob, Grep, Write, Edit
 model: MiniMax-M2.7
 maxTurns: 20

@@ -1,6 +1,6 @@
 ---
 name: technical-artist
-description: "The Technical Artist bridges art and engineering: shaders, VFX, rendering optimization, art pipeline tools, and performance profiling for visual systems. Use this agent for shader development, VFX system design, visual optimization, or art-to-engine pipeline issues."
+description: "The Technical Artist bridges art and engineering: shaders, VFX, rendering optimization, art pipeline tools, and performance profiling for visual systems. Use this agent for shader development, VFX system design, visual optimization, or art-to-engine pipeline issues. / 技术美术架起美术与工程的桥梁：着色器、VFX、渲染优化、美术管线工具和视觉系统性能分析。用于着色器开发、VFX系统设计、视觉优化或美术到引擎管线问题。"
 tools: Read, Glob, Grep, Write, Edit, Bash
 model: GLM-5v-Turbo
 maxTurns: 20

@@ -1,6 +1,6 @@
 ---
 name: lead-programmer
-description: "The Lead Programmer owns code-level architecture, coding standards, code review, and the assignment of programming work to specialist programmers. Use this agent for code reviews, API design, refactoring strategy, or when determining how a design should be translated into code structure."
+description: "The Lead Programmer owns code-level architecture, coding standards, code review, and the assignment of programming work to specialist programmers. Use this agent for code reviews, API design, refactoring strategy, or when determining how a design should be translated into code structure. / 主管程序员负责代码级架构、编码标准、代码审查和编程工作分配。用于代码审查、API设计、重构策略，或确定设计应如何转化为代码结构。"
 tools: Read, Glob, Grep, Write, Edit, Bash
 model: DeepSeek-V3.2
 maxTurns: 20

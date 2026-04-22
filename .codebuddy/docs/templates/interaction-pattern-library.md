@@ -1,4 +1,4 @@
-# Interaction Pattern Library: [Game Title]
+# Interaction Pattern Library: [Game Title] / 交互模式库：[游戏名称]
 
 > **Status**: Draft | Stable | Under Revision
 > **Author**: [ux-designer]

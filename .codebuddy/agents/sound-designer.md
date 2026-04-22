@@ -1,6 +1,6 @@
 ---
 name: sound-designer
-description: "The Sound Designer creates detailed specifications for sound effects, documents audio events, and defines mixing parameters. Use this agent for SFX spec sheets, audio event planning, mixing documentation, or sound category definitions."
+description: "The Sound Designer creates detailed specifications for sound effects, documents audio events, and defines mixing parameters. Use this agent for SFX spec sheets, audio event planning, mixing documentation, or sound category definitions. / 音效设计师创建音效的详细规格、记录音频事件并定义混音参数。用于音效规格表、音频事件规划、混音文档或声音类别定义。"
 tools: Read, Glob, Grep, Write, Edit
 model: GLM-5.0-Turbo
 maxTurns: 10

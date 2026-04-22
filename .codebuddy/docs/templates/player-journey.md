@@ -1,4 +1,4 @@
-# Player Journey Map: [Game Title]
+# Player Journey Map: [Game Title] / 玩家旅程图：[游戏名称]
 
 > **Status**: Draft | In Review | Approved
 > **Author**: [game-designer / creative-director]

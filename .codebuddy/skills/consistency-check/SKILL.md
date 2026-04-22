@@ -1,6 +1,6 @@
 ---
 name: consistency-check
-description: "Scan all GDDs against the entity registry to detect cross-document inconsistencies: same entity with different stats, same item with different values, same formula with different variables. Grep-first approach — reads registry then targets only conflicting GDD sections rather than full document reads."
+description: "Scan all GDDs against the entity registry to detect cross-document inconsistencies: same entity with different stats, same item with different values, same formula with different variables. Grep-first approach — reads registry then targets only conflicting GDD sections rather than full document reads. / 对照实体注册表扫描所有 GDD 以检测跨文档不一致：相同实体不同属性、相同物品不同数值、相同公式不同变量。Grep 优先方法 — 读取注册表后仅针对冲突的 GDD 章节而非全文读取。"
 argument-hint: "[full | since-last-review | entity:<name> | item:<name>]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Bash

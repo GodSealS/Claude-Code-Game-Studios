@@ -1,6 +1,6 @@
 ---
 name: onboard
-description: "Generates a contextual onboarding document for a new contributor or agent joining the project. Summarizes project state, architecture, conventions, and current priorities relevant to the specified role or area."
+description: "Generates a contextual onboarding document for a new contributor or agent joining the project. Summarizes project state, architecture, conventions, and current priorities relevant to the specified role or area. / 为加入项目的新贡献者或代理生成上下文入职文档。总结项目状态、架构、约定和与指定角色或领域相关的当前优先级。"
 argument-hint: "[role|area]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write

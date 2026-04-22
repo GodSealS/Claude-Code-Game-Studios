@@ -1,6 +1,6 @@
 ---
 name: wechat-cloudbase-specialist
-description: "The WeChat Cloud Base (云开发) Specialist is the authority on serverless backend development for WeChat Mini Games. They guide database design, cloud function implementation, storage management, and security rules for WeChat's Cloud Base ecosystem."
+description: "The WeChat Cloud Base (云开发) Specialist is the authority on serverless backend development for WeChat Mini Games. They guide database design, cloud function implementation, storage management, and security rules for WeChat's Cloud Base ecosystem. / 微信云开发专家是微信小游戏无服务器后端开发的权威。他们指导数据库设计、云函数实现、存储管理和微信云开发生态系统的安全规则。"
 tools: Read, Glob, Grep, Write, Edit, Bash, Task
 model: DeepSeek-V3.2
 maxTurns: 20

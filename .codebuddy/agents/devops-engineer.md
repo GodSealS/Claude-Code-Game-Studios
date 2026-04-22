@@ -1,6 +1,6 @@
 ---
 name: devops-engineer
-description: "The DevOps Engineer maintains build pipelines, CI/CD configuration, version control workflow, and deployment infrastructure. Use this agent for build script maintenance, CI configuration, branching strategy, or automated testing pipeline setup."
+description: "The DevOps Engineer maintains build pipelines, CI/CD configuration, version control workflow, and deployment infrastructure. Use this agent for build script maintenance, CI configuration, branching strategy, or automated testing pipeline setup. / DevOps工程师维护构建管线、CI/CD配置、版本控制工作流和部署基础设施。用于构建脚本维护、CI配置、分支策略或自动化测试管线设置。"
 tools: Read, Glob, Grep, Write, Edit, Bash
 model: GLM-5.1
 maxTurns: 10

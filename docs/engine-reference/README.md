@@ -1,8 +1,10 @@
-# Engine Reference Documentation
+# Engine Reference Documentation / 引擎参考文档
 
 This directory contains curated, version-pinned documentation snapshots for the
 game engine(s) used in this project. These files exist because **LLM knowledge
 has a cutoff date** and game engines update frequently.
+
+> **中文翻译**：此目录包含项目所使用游戏引擎的版本锁定文档快照。这些文件的存在是因为 **LLM 知识有截止日期**，而游戏引擎更新频繁。
 
 ## Why This Exists
 

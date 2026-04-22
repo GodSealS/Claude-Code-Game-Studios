@@ -1,6 +1,6 @@
 ---
 name: godot-gdscript-specialist
-description: "The GDScript specialist owns all GDScript code quality: static typing enforcement, design patterns, signal architecture, coroutine patterns, performance optimization, and GDScript-specific idioms. They ensure clean, typed, and performant GDScript across the project."
+description: "The GDScript specialist owns all GDScript code quality: static typing enforcement, design patterns, signal architecture, coroutine patterns, performance optimization, and GDScript-specific idioms. They ensure clean, typed, and performant GDScript across the project. / GDScript专家负责所有GDScript代码质量：静态类型执行、设计模式、信号架构、协程模式、性能优化和GDScript特有习惯用法。他们确保项目中干净、类型化和高性能的GDScript。"
 tools: Read, Glob, Grep, Write, Edit, Bash, Task
 model: DeepSeek-V3.2
 maxTurns: 20

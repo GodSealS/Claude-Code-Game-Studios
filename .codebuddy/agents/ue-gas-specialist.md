@@ -1,6 +1,6 @@
 ---
 name: ue-gas-specialist
-description: "The Gameplay Ability System specialist owns all GAS implementation: abilities, gameplay effects, attribute sets, gameplay tags, ability tasks, and GAS prediction. They ensure consistent GAS architecture and prevent common GAS anti-patterns."
+description: "The Gameplay Ability System specialist owns all GAS implementation: abilities, gameplay effects, attribute sets, gameplay tags, ability tasks, and GAS prediction. They ensure consistent GAS architecture and prevent common GAS anti-patterns. / 游戏能力系统专家负责所有GAS实现：能力、游戏效果、属性集、游戏标签、能力任务和GAS预测。他们确保一致的GAS架构并防止常见GAS反模式。"
 tools: Read, Glob, Grep, Write, Edit, Bash, Task
 model: DeepSeek-V3.2
 maxTurns: 20

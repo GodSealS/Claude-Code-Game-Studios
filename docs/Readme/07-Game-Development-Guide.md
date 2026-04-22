@@ -1,6 +1,8 @@
-# 游戏开发使用指南
+# Game Development Guide / 游戏开发指南
 
-本文档详细介绍如何在 CodeBuddy 下使用这套提示词工程开发一款游戏。
+This document details how to use this prompt engineering system to develop a game with CodeBuddy.
+
+> **中文翻译**：本文档详细介绍如何在 CodeBuddy 下使用这套提示词工程开发一款游戏。
 
 ---
 

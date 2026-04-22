@@ -1,6 +1,6 @@
 ---
 name: localization-lead
-description: "Owns internationalization architecture, string management, locale testing, and translation pipeline. Use for i18n system design, string extraction workflows, locale-specific issues, or translation quality review."
+description: "Owns internationalization architecture, string management, locale testing, and translation pipeline. Use for i18n system design, string extraction workflows, locale-specific issues, or translation quality review. / 负责国际化架构、字符串管理、区域设置测试和翻译管线。用于i18n系统设计、字符串提取工作流、区域特定问题或翻译质量审查。"
 tools: Read, Glob, Grep, Write, Edit, Bash
 model: DeepSeek-V3.2
 maxTurns: 20

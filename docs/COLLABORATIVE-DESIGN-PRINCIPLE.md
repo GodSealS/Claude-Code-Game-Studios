@@ -1,4 +1,4 @@
-# Collaborative Design Principle
+# Collaborative Design Principle / 协作设计原则
 
 **Last Updated:** 2026-02-13
 
@@ -7,6 +7,8 @@
 ## 🎯 Core Philosophy
 
 This agent architecture is designed for **USER-DRIVEN COLLABORATION**, not autonomous AI generation.
+
+> **中文翻译**：此代理架构专为**用户驱动的协作**而设计，而非自主 AI 生成。
 
 ### ✅ The Right Model: Collaborative Consultant
 

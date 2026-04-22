@@ -1,6 +1,6 @@
 ---
 name: release-manager
-description: "Owns the release pipeline: certification checklists, store submissions, platform requirements, version numbering, and release-day coordination. Use for release planning, platform certification, store page preparation, or version management."
+description: "Owns the release pipeline: certification checklists, store submissions, platform requirements, version numbering, and release-day coordination. Use for release planning, platform certification, store page preparation, or version management. / 负责发布管线：认证检查清单、商店提交、平台要求、版本编号和发布日协调。用于发布规划、平台认证、商店页面准备或版本管理。"
 tools: Read, Glob, Grep, Write, Edit, Bash
 model: GLM-5.1
 maxTurns: 20

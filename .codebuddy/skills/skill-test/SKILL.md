@@ -1,6 +1,6 @@
 ---
 name: skill-test
-description: "Validate skill files for structural compliance and behavioral correctness. Three modes: static (linter), spec (behavioral), audit (coverage report)."
+description: "Validate skill files for structural compliance and behavioral correctness. Three modes: static (linter), spec (behavioral), audit (coverage report). / 验证技能文件的结构合规性和行为正确性。三种模式：静态（代码检查器）、规格（行为测试）、审计（覆盖率报告）。"
 argument-hint: "static [skill-name | all] | spec [skill-name] | category [skill-name | all] | audit"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write

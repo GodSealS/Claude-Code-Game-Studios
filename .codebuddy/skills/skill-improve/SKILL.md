@@ -1,6 +1,6 @@
 ---
 name: skill-improve
-description: "Improve a skill using a test-fix-retest loop. Runs static checks, proposes targeted fixes, rewrites the skill, re-tests, and keeps or reverts based on score change."
+description: "Improve a skill using a test-fix-retest loop. Runs static checks, proposes targeted fixes, rewrites the skill, re-tests, and keeps or reverts based on score change. / 使用测试-修复-重测循环改进技能。运行静态检查，提出针对性修复，重写技能，重新测试，并根据分数变化决定保留或回滚。"
 argument-hint: "[skill-name]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Bash

@@ -1,6 +1,6 @@
 ---
 name: team-live-ops
-description: "Orchestrate the live-ops team for post-launch content planning: coordinates live-ops-designer, economy-designer, analytics-engineer, community-manager, writer, and narrative-director to design and plan a season, event, or live content update."
+description: "Orchestrate the live-ops team for post-launch content planning: coordinates live-ops-designer, economy-designer, analytics-engineer, community-manager, writer, and narrative-director to design and plan a season, event, or live content update. / 编排活跃运营团队进行发布后内容规划：协调 live-ops-designer、economy-designer、analytics-engineer、community-manager、writer 和 narrative-director 设计和规划赛季、活动或线上内容更新。"
 argument-hint: "[season name or event description]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Bash, Task, AskUserQuestion, TodoWrite

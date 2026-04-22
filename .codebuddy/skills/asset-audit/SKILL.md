@@ -1,6 +1,6 @@
 ---
 name: asset-audit
-description: "Audits game assets for compliance with naming conventions, file size budgets, format standards, and pipeline requirements. Identifies orphaned assets, missing references, and standard violations."
+description: "Audits game assets for compliance with naming conventions, file size budgets, format standards, and pipeline requirements. Identifies orphaned assets, missing references, and standard violations. / 审计游戏资产的命名约定、文件大小预算、格式标准和管线要求合规性。识别孤立资产、缺失引用和标准违规。"
 argument-hint: "[category|all]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep

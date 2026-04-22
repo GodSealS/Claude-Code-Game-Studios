@@ -1,4 +1,4 @@
-# ADR-[NNNN]: [Title]
+# ADR-[NNNN]: [Title] / 架构决策记录-[NNNN]：[标题]
 
 ## Status
 

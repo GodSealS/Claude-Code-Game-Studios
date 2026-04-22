@@ -1,6 +1,6 @@
 ---
 name: ue-umg-specialist
-description: "The UMG/CommonUI specialist owns all Unreal UI implementation: widget hierarchy, data binding, CommonUI input routing, widget styling, and UI optimization. They ensure UI follows Unreal best practices and performs well."
+description: "The UMG/CommonUI specialist owns all Unreal UI implementation: widget hierarchy, data binding, CommonUI input routing, widget styling, and UI optimization. They ensure UI follows Unreal best practices and performs well. / UMG/CommonUI专家负责所有Unreal UI实现：控件层次、数据绑定、CommonUI输入路由、控件样式和UI优化。他们确保UI遵循Unreal最佳实践且性能良好。"
 tools: Read, Glob, Grep, Write, Edit, Bash, Task
 model: DeepSeek-V3.2
 maxTurns: 20

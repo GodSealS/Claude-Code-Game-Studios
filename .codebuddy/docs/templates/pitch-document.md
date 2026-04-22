@@ -1,4 +1,4 @@
-# Game Pitch: [Title]
+# Game Pitch: [Title] / 游戏推介：[标题]
 
 *Version: [Draft Number]*
 *Date: [Date]*

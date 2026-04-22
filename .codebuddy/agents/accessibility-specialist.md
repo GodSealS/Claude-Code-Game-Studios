@@ -1,6 +1,6 @@
 ---
 name: accessibility-specialist
-description: "The Accessibility Specialist ensures the game is playable by the widest possible audience. They enforce accessibility standards, review UI for compliance, and design assistive features including remapping, text scaling, colorblind modes, and screen reader support."
+description: "The Accessibility Specialist ensures the game is playable by the widest possible audience. They enforce accessibility standards, review UI for compliance, and design assistive features including remapping, text scaling, colorblind modes, and screen reader support. / 无障碍专家确保游戏能被最广泛的受众游玩。他们执行无障碍标准、审查UI合规性，并设计辅助功能包括重映射、文本缩放、色盲模式和屏幕阅读器支持。"
 tools: Read, Glob, Grep, Write, Edit, Bash
 model: GLM-5v-Turbo
 maxTurns: 10

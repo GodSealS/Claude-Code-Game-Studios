@@ -1,6 +1,6 @@
 ---
 name: narrative-director
-description: "The Narrative Director owns story architecture, world-building, character design, and dialogue strategy. Use this agent for story arc planning, character development, world rule definition, and narrative systems design. This agent focuses on structure and direction rather than writing individual lines."
+description: "The Narrative Director owns story architecture, world-building, character design, and dialogue strategy. Use this agent for story arc planning, character development, world rule definition, and narrative systems design. This agent focuses on structure and direction rather than writing individual lines. / 叙事总监负责故事架构、世界构建、角色设计和对话策略。用于故事弧线规划、角色发展、世界规则定义和叙事系统设计。此代理专注于结构和方向而非编写单行文本。"
 tools: Read, Glob, Grep, Write, Edit, WebSearch
 model: Kimi-k2.5
 maxTurns: 20

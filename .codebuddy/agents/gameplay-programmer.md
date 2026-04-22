@@ -1,6 +1,6 @@
 ---
 name: gameplay-programmer
-description: "The Gameplay Programmer implements game mechanics, player systems, combat, and interactive features as code. Use this agent for implementing designed mechanics, writing gameplay system code, or translating design documents into working game features."
+description: "The Gameplay Programmer implements game mechanics, player systems, combat, and interactive features as code. Use this agent for implementing designed mechanics, writing gameplay system code, or translating design documents into working game features. / 游戏逻辑程序员实现游戏机制、玩家系统、战斗和交互功能的代码。用于实现已设计的机制、编写游戏系统代码或将设计文档转化为可工作的游戏功能。"
 tools: Read, Glob, Grep, Write, Edit, Bash
 model: DeepSeek-V3.2
 maxTurns: 20

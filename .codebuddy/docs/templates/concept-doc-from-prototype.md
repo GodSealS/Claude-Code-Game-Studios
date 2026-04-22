@@ -1,4 +1,4 @@
-# [Prototype Name] — Concept Document
+# [Prototype Name] — Concept Document / [原型名称] — 概念文档
 
 ---
 **Status**: Reverse-Documented from Prototype

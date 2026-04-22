@@ -1,6 +1,6 @@
 ---
 name: sprint-plan
-description: "Generates a new sprint plan or updates an existing one based on the current milestone, completed work, and available capacity. Pulls context from production documents and design backlogs."
+description: "Generates a new sprint plan or updates an existing one based on the current milestone, completed work, and available capacity. Pulls context from production documents and design backlogs. / 基于当前里程碑、已完成工作和可用容量生成新的冲刺计划或更新现有计划。从生产文档和设计积压中拉取上下文。"
 argument-hint: "[new|update|status] [--review full|lean|solo]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Task, AskUserQuestion

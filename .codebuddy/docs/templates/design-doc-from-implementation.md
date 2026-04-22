@@ -1,4 +1,4 @@
-# [System Name] — Design Document
+# [System Name] — Design Document / [系统名称] — 设计文档
 
 ---
 **Status**: Reverse-Documented

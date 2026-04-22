@@ -1,6 +1,6 @@
 ---
 name: bug-report
-description: "Creates a structured bug report from a description, or analyzes code to identify potential bugs. Ensures every bug report has full reproduction steps, severity assessment, and context."
+description: "Creates a structured bug report from a description, or analyzes code to identify potential bugs. Ensures every bug report has full reproduction steps, severity assessment, and context. / 从描述创建结构化缺陷报告，或分析代码识别潜在缺陷。确保每个缺陷报告包含完整的复现步骤、严重性评估和上下文。"
 argument-hint: "[description] | analyze [path-to-file]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write

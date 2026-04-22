@@ -1,6 +1,6 @@
 ---
 name: test-evidence-review
-description: "Quality review of test files and manual evidence documents. Goes beyond existence checks — evaluates assertion coverage, edge case handling, naming conventions, and evidence completeness. Produces ADEQUATE/INCOMPLETE/MISSING verdict per story. Run before QA sign-off or on demand."
+description: "Quality review of test files and manual evidence documents. Goes beyond existence checks — evaluates assertion coverage, edge case handling, naming conventions, and evidence completeness. Produces ADEQUATE/INCOMPLETE/MISSING verdict per story. Run before QA sign-off or on demand. / 测试文件和手动证据文档的质量审查。超越存在性检查 — 评估断言覆盖率、边界情况处理、命名约定和证据完整性。每个故事生成 ADEQUATE/INCOMPLETE/MISSING 裁决。在 QA 签署前或按需运行。"
 argument-hint: "[story-path | sprint | system-name]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write

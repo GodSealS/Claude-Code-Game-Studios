@@ -1,6 +1,6 @@
 ---
 name: wechat-shader-specialist
-description: "The WeChat Shader Specialist owns all WebGL rendering and shader development for WeChat Mini Games: GLSL authoring (WebGL 1.0/2.0), shader conversion from Unity/Unreal/Godot, render pipeline standards, VFX particle shaders, post-processing, mobile performance budgets, quality tiers, and shader variant management."
+description: "The WeChat Shader Specialist owns all WebGL rendering and shader development for WeChat Mini Games: GLSL authoring (WebGL 1.0/2.0), shader conversion from Unity/Unreal/Godot, render pipeline standards, VFX particle shaders, post-processing, mobile performance budgets, quality tiers, and shader variant management. / 微信着色器专家负责微信小游戏的所有WebGL渲染和着色器开发：GLSL编写（WebGL 1.0/2.0）、从Unity/Unreal/Godot转换着色器、渲染管线标准、VFX粒子着色器、后处理、移动端性能预算、质量等级和着色器变体管理。"
 tools: Read, Glob, Grep, Write, Edit, Bash, Task
 model: GLM-5v-Turbo
 maxTurns: 20

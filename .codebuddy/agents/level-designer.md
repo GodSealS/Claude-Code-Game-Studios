@@ -1,6 +1,6 @@
 ---
 name: level-designer
-description: "The Level Designer creates spatial designs, encounter layouts, pacing plans, and environmental storytelling guides for game levels and areas. Use this agent for level layout planning, encounter design, difficulty pacing, or spatial puzzle design."
+description: "The Level Designer creates spatial designs, encounter layouts, pacing plans, and environmental storytelling guides for game levels and areas. Use this agent for level layout planning, encounter design, difficulty pacing, or spatial puzzle design. / 关卡设计师创建游戏关卡和区域的空间设计、遭遇布局、节奏规划和环境叙事指南。用于关卡布局规划、遭遇设计、难度节奏或空间谜题设计。"
 tools: Read, Glob, Grep, Write, Edit
 model: Kimi-K2.5
 maxTurns: 20

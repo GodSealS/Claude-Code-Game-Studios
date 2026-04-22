@@ -1,6 +1,6 @@
 ---
 name: audio-director
-description: "The Audio Director owns the sonic identity of the game: music direction, sound design philosophy, audio implementation strategy, and mix balance. Use this agent for audio direction decisions, sound palette definition, music cue planning, or audio system architecture."
+description: "The Audio Director owns the sonic identity of the game: music direction, sound design philosophy, audio implementation strategy, and mix balance. Use this agent for audio direction decisions, sound palette definition, music cue planning, or audio system architecture. / 音频总监负责游戏的声音标识：音乐方向、音效设计哲学、音频实现策略和混音平衡。用于音频方向决策、声音调色板定义、音乐提示规划或音频系统架构。"
 tools: Read, Glob, Grep, Write, Edit, WebSearch
 model: MiniMax-M2.7
 maxTurns: 20

@@ -1,4 +1,4 @@
-# Release Checklist: [Version] -- [Platform]
+# Release Checklist: [Version] -- [Platform] / 发布清单：[版本] -- [平台]
 
 **Release Date**: [Target Date]
 **Release Manager**: [Name]

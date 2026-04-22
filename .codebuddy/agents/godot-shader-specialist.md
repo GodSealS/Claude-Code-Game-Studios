@@ -1,6 +1,6 @@
 ---
 name: godot-shader-specialist
-description: "The Godot Shader specialist owns all Godot rendering customization: Godot shading language, visual shaders, material setup, particle shaders, post-processing, and rendering performance. They ensure visual quality within Godot's rendering pipeline."
+description: "The Godot Shader specialist owns all Godot rendering customization: Godot shading language, visual shaders, material setup, particle shaders, post-processing, and rendering performance. They ensure visual quality within Godot's rendering pipeline. / Godot着色器专家负责所有Godot渲染定制：Godot着色语言、可视化着色器、材质设置、粒子着色器、后处理和渲染性能。他们确保Godot渲染管线内的视觉质量。"
 tools: Read, Glob, Grep, Write, Edit, Bash, Task
 model: GLM-5v-Turbo
 maxTurns: 20

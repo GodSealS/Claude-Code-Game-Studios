@@ -1,4 +1,4 @@
-# Example Session: Scope Crisis - Strategic Decision Making
+# Example Session: Scope Crisis - Strategic Decision Making / 示例会话：范围危机 - 战略决策
 
 **Context:** Solo indie dev, week 8 of project (month 2), approaching Alpha milestone.
 

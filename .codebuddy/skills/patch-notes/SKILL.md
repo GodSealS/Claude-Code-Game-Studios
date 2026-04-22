@@ -1,6 +1,6 @@
 ---
 name: patch-notes
-description: "Generate player-facing patch notes from git history, sprint data, and internal changelogs. Translates developer language into clear, engaging player communication."
+description: "Generate player-facing patch notes from git history, sprint data, and internal changelogs. Translates developer language into clear, engaging player communication. / 从 git 历史、冲刺数据和内部变更日志生成面向玩家的补丁说明。将开发者语言翻译为清晰、有吸引力的玩家沟通。"
 argument-hint: "[version] [--style brief|detailed|full]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Bash

@@ -1,6 +1,6 @@
 ---
 name: security-audit
-description: "Audit the game for security vulnerabilities: save tampering, cheat vectors, network exploits, data exposure, and input validation gaps. Produces a prioritised security report with remediation guidance. Run before any public release or multiplayer launch."
+description: "Audit the game for security vulnerabilities: save tampering, cheat vectors, network exploits, data exposure, and input validation gaps. Produces a prioritised security report with remediation guidance. Run before any public release or multiplayer launch. / 审计游戏安全漏洞：存档篡改、作弊向量、网络利用、数据暴露和输入验证缺口。生成带修复指导的优先级安全报告。在任何公开发布或多玩家上线前运行。"
 argument-hint: "[full | network | save | input | quick]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Bash, Write, Task

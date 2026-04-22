@@ -1,4 +1,4 @@
-# Risk: [Short Title]
+# Risk: [Short Title] / 风险：[简短标题]
 
 ## Identification
 

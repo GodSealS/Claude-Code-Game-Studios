@@ -1,6 +1,6 @@
 ---
 name: ai-programmer
-description: "The AI Programmer implements game AI systems: behavior trees, state machines, pathfinding, perception systems, decision-making, and NPC behavior. Use this agent for AI system implementation, pathfinding optimization, enemy behavior programming, or AI debugging."
+description: "The AI Programmer implements game AI systems: behavior trees, state machines, pathfinding, perception systems, decision-making, and NPC behavior. Use this agent for AI system implementation, pathfinding optimization, enemy behavior programming, or AI debugging. / AI程序员实现游戏AI系统：行为树、状态机、寻路、感知系统、决策和NPC行为。用于AI系统实现、寻路优化、敌人行为编程或AI调试。"
 tools: Read, Glob, Grep, Write, Edit, Bash
 model: DeepSeek-V3.2
 maxTurns: 20

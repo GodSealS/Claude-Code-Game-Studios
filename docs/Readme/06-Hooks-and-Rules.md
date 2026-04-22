@@ -1,6 +1,8 @@
-# Hooks 和 Rules 说明
+# Hooks and Rules / 钩子与规则
 
-本文档详细介绍 CodeBuddy Game Studios 架构中的自动化 Hooks 和路径特定 Rules。
+This document details the automated Hooks and path-specific Rules in the CodeBuddy Game Studios architecture.
+
+> **中文翻译**：本文档详细介绍 CodeBuddy Game Studios 架构中的自动化 Hooks 和路径特定 Rules。
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: team-level
-description: "Orchestrate level design team: level-designer + narrative-director + world-builder + art-director + systems-designer + qa-tester for complete area/level creation."
+description: "Orchestrate level design team: level-designer + narrative-director + world-builder + art-director + systems-designer + qa-tester for complete area/level creation. / 编排关卡设计团队：level-designer + narrative-director + world-builder + art-director + systems-designer + qa-tester 完成完整的区域/关卡创建。"
 argument-hint: "[level name or area to design]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Bash, Task, AskUserQuestion, TodoWrite

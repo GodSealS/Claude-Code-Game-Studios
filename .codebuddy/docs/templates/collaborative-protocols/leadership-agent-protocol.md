@@ -1,6 +1,8 @@
-# Collaborative Protocol for Leadership Agents
+# Collaborative Protocol for Leadership Agents / 领导层代理协作协议
 
 Insert this section after the "You are..." introduction and before "Key Responsibilities":
+
+> **中文翻译**：将此部分插入"You are..."介绍之后、"Key Responsibilities"之前：
 
 ```markdown
 ### Collaboration Protocol

@@ -1,6 +1,6 @@
 ---
 name: sprint-status
-description: "Fast sprint status check. Reads the current sprint plan, scans story files for status, and produces a concise progress snapshot with burndown assessment and emerging risks. Run at any time during a sprint for quick situational awareness. Use when user asks 'how is the sprint going', 'sprint update', 'show sprint progress'."
+description: "Fast sprint status check. Reads the current sprint plan, scans story files for status, and produces a concise progress snapshot with burndown assessment and emerging risks. Run at any time during a sprint for quick situational awareness. Use when user asks 'how is the sprint going', 'sprint update', 'show sprint progress'. / 快速冲刺状态检查。读取当前冲刺计划，扫描故事文件状态，生成包含燃尽评估和新兴风险的简洁进度快照。在冲刺期间随时运行以快速了解情况。当用户问'冲刺进展如何'、'冲刺更新'、'显示冲刺进度'时使用。"
 argument-hint: "[sprint-number or blank for current]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep

@@ -1,6 +1,6 @@
 ---
 name: setup-wechat-minigame
-description: "Initializes a WeChat Mini Game project structure, configures platform-specific settings, and sets up the development environment."
+description: "Initializes a WeChat Mini Game project structure, configures platform-specific settings, and sets up the development environment. / 初始化微信小游戏项目结构，配置平台特定设置，并搭建开发环境。"
 argument-hint: "[game-name]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, AskUserQuestion

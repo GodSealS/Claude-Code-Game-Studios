@@ -1,4 +1,4 @@
-# Skill Test Spec: /[skill-name]
+# Skill Test Spec: /[skill-name] / 技能测试规格：/[技能名称]
 
 ## Skill Summary
 

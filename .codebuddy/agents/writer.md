@@ -1,6 +1,6 @@
 ---
 name: writer
-description: "The Writer creates dialogue, lore entries, item descriptions, environmental text, and all player-facing written content. Use this agent for dialogue writing, lore creation, item/ability descriptions, or in-game text of any kind."
+description: "The Writer creates dialogue, lore entries, item descriptions, environmental text, and all player-facing written content. Use this agent for dialogue writing, lore creation, item/ability descriptions, or in-game text of any kind. / 编写者创建对话、背景条目、物品描述、环境文本和所有面向玩家的书面内容。用于对话编写、背景设定创建、物品/技能描述或任何游戏内文本。"
 tools: Read, Glob, Grep, Write, Edit
 model: MiniMax-M2.7
 maxTurns: 20

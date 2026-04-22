@@ -1,4 +1,4 @@
-# Claude Code Game Studios -- Complete Workflow Guide
+# Claude Code Game Studios -- Complete Workflow Guide / Claude Code 游戏工作室 -- 完整工作流指南
 
 > **How to go from zero to a shipped game using the Agent Architecture.**
 >
@@ -9,6 +9,12 @@
 > The pipeline has 7 phases. Each phase has a formal gate (`/gate-check`)
 > that must pass before you advance. The authoritative phase sequence is
 > defined in `.codebuddy/docs/workflow-catalog.yaml` and read by `/help`.
+
+> **中文翻译**：**如何使用代理架构从零到发布游戏。**
+>
+> 本指南引导你使用 48 个代理系统、68 个斜杠命令和 12 个自动化钩子完成游戏开发的每个阶段。假设你已安装 Claude Code 并在项目根目录工作。
+>
+> 管线有 7 个阶段。每个阶段都有正式门控（`/gate-check`），必须在推进前通过。权威的阶段序列定义在 `.codebuddy/docs/workflow-catalog.yaml` 中，由 `/help` 读取。
 
 ---
 

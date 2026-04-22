@@ -1,6 +1,6 @@
 ---
 name: hotfix
-description: "Emergency fix workflow that bypasses normal sprint processes with a full audit trail. Creates hotfix branch, tracks approvals, and ensures the fix is backported correctly."
+description: "Emergency fix workflow that bypasses normal sprint processes with a full audit trail. Creates hotfix branch, tracks approvals, and ensures the fix is backported correctly. / 绕过正常冲刺流程的紧急修复工作流，保留完整审计追踪。创建热修分支，跟踪审批，并确保修复正确回移。"
 argument-hint: "[bug-id or description]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Bash, Task

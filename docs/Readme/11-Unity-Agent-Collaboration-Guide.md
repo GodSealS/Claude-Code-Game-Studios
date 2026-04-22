@@ -1,6 +1,8 @@
-# Unity Agent 协作指南
+# Unity Agent Collaboration Guide / Unity 代理协作指南
 
-本指南介绍 Unity 引擎下各 Agent 之间的协作模式、工作流程和最佳实践。
+This guide introduces the collaboration patterns, workflows, and best practices among Agents under the Unity engine.
+
+> **中文翻译**：本指南介绍 Unity 引擎下各 Agent 之间的协作模式、工作流程和最佳实践。
 
 ---
 

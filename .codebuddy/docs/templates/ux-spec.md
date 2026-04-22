@@ -1,4 +1,4 @@
-# UX Specification: [Screen / Flow Name]
+# UX Specification: [Screen / Flow Name] / UX 规格：[界面 / 流程名称]
 
 > **Status**: Draft | In Review | Approved | Implemented
 > **Author**: [Name or agent — e.g., ui-designer]

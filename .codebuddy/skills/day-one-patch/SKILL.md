@@ -1,6 +1,6 @@
 ---
 name: day-one-patch
-description: "Prepare a day-one patch for a game launch. Scopes, prioritises, implements, and QA-gates a focused patch addressing known issues discovered after gold master but before or immediately after public launch. Treats the patch as a mini-sprint with its own QA gate and rollback plan."
+description: "Prepare a day-one patch for a game launch. Scopes, prioritises, implements, and QA-gates a focused patch addressing known issues discovered after gold master but before or immediately after public launch. Treats the patch as a mini-sprint with its own QA gate and rollback plan. / 为游戏发布准备首日补丁。范围界定、优先排序、实现和 QA 门控一个针对性补丁，解决在金版之后但在公开发布之前或之后发现的已知问题。将补丁视为一个带有自己 QA 门控和回滚计划的迷你冲刺。"
 argument-hint: "[scope: known-bugs | cert-feedback | all]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Bash, Task, AskUserQuestion

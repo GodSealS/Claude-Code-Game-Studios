@@ -1,6 +1,6 @@
 ---
 name: launch-checklist
-description: "Complete launch readiness validation covering every department: code, content, store, marketing, community, infrastructure, legal, and go/no-go sign-offs."
+description: "Complete launch readiness validation covering every department: code, content, store, marketing, community, infrastructure, legal, and go/no-go sign-offs. / 完整的发布就绪验证，涵盖每个部门：代码、内容、商店、营销、社区、基础设施、法律和继续/停止签署。"
 argument-hint: "[launch-date or 'dry-run']"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write

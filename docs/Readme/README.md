@@ -1,6 +1,8 @@
-# CodeBuddy Game Studios - 文档索引
+# CodeBuddy Game Studios - README / 自述文件
 
-欢迎来到 CodeBuddy Game Studios 的完整文档目录。本文档集提供了对项目架构、工作流程和使用方法的全面介绍。
+Welcome to the complete documentation directory for CodeBuddy Game Studios. This document set provides a comprehensive introduction to the project architecture, workflow, and usage.
+
+> **中文翻译**：欢迎来到 CodeBuddy Game Studios 的完整文档目录。本文档集提供了对项目架构、工作流程和使用方法的全面介绍。
 
 ---
 

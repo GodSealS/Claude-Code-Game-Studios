@@ -1,6 +1,8 @@
-# Docs Directory
+# Docs Directory / 文档目录
 
 When authoring or editing files in this directory, follow these standards.
+
+> **中文翻译**：在编写或编辑此目录中的文件时，请遵循以下标准。
 
 ## Architecture Decision Records (`docs/architecture/`)
 

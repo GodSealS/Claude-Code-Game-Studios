@@ -1,6 +1,6 @@
 ---
 name: regression-suite
-description: "Map test coverage to GDD critical paths, identify fixed bugs without regression tests, flag coverage drift from new features, and maintain tests/regression-suite.md. Run after implementing a bug fix or before a release gate."
+description: "Map test coverage to GDD critical paths, identify fixed bugs without regression tests, flag coverage drift from new features, and maintain tests/regression-suite.md. Run after implementing a bug fix or before a release gate. / 将测试覆盖率映射到 GDD 关键路径，识别没有回归测试的已修复缺陷，标记新功能的覆盖漂移，并维护 tests/regression-suite.md。在实现缺陷修复后或发布门控前运行。"
 argument-hint: "[update | audit | report]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit

@@ -1,6 +1,8 @@
-# Agents 参考手册
+# Agents Reference / 代理参考
 
-本文档详细介绍 CodeBuddy Game Studios 架构中所有 49 个 Agent 的职责、能力和使用场景。
+This document details the responsibilities, capabilities, and use cases of all 49 Agents in the CodeBuddy Game Studios architecture.
+
+> **中文翻译**：本文档详细介绍 CodeBuddy Game Studios 架构中所有 49 个 Agent 的职责、能力和使用场景。
 
 ---
 

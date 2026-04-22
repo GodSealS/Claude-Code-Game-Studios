@@ -1,6 +1,6 @@
 ---
 name: review-all-gdds
-description: "Holistic cross-GDD consistency and game design review. Reads all system GDDs simultaneously and checks for contradictions between them, stale references, ownership conflicts, formula incompatibilities, and game design theory violations (dominant strategies, economic imbalance, cognitive overload, pillar drift). Run after all MVP GDDs are written, before architecture begins."
+description: "Holistic cross-GDD consistency and game design review. Reads all system GDDs simultaneously and checks for contradictions between them, stale references, ownership conflicts, formula incompatibilities, and game design theory violations (dominant strategies, economic imbalance, cognitive overload, pillar drift). Run after all MVP GDDs are written, before architecture begins. / 全局跨 GDD 一致性和游戏设计审查。同时读取所有系统 GDD 并检查之间的矛盾、过时引用、所有权冲突、公式不兼容和游戏设计理论违规（主导策略、经济失衡、认知超载、支柱偏移）。在所有 MVP GDD 编写完成后、架构开始前运行。"
 argument-hint: "[focus: full | consistency | design-theory | since-last-review]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Bash, AskUserQuestion, Task

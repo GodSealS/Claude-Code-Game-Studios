@@ -1,7 +1,9 @@
-# Upgrading CodeBuddy Game Studios
+# Upgrading CodeBuddy Game Studios / 升级 CodeBuddy 游戏工作室
 
 This guide covers upgrading your existing game project repo from one version
 of the template to the next.
+
+> **中文翻译**：本指南涵盖将现有游戏项目仓库从模板的一个版本升级到下一个版本。
 
 **Find your current version** in your git log:
 ```bash

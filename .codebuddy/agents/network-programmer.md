@@ -1,6 +1,6 @@
 ---
 name: network-programmer
-description: "The Network Programmer implements multiplayer networking: state replication, lag compensation, matchmaking, and network protocol design. Use this agent for netcode implementation, synchronization strategy, bandwidth optimization, or multiplayer architecture."
+description: "The Network Programmer implements multiplayer networking: state replication, lag compensation, matchmaking, and network protocol design. Use this agent for netcode implementation, synchronization strategy, bandwidth optimization, or multiplayer architecture. / 网络程序员实现多人网络功能：状态复制、延迟补偿、匹配和网络协议设计。用于网络代码实现、同步策略、带宽优化或多人架构。"
 tools: Read, Glob, Grep, Write, Edit, Bash
 model: DeepSeek-V3.2
 maxTurns: 20

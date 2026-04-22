@@ -1,4 +1,4 @@
-# Example Session: UX Pipeline — /ux-design → /ux-review → /team-ui
+# Example Session: UX Pipeline — /ux-design → /ux-review → /team-ui / 示例会话：UX 管线 — /ux-design → /ux-review → /team-ui
 
 **Context:** Solo indie dev, Pre-Production phase. The HUD and inventory screen are the first UI to design. The game has a player journey doc and GDDs for inventory and combat.
 

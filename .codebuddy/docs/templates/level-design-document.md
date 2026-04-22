@@ -1,4 +1,4 @@
-# Level: [Level Name]
+# Level: [Level Name] / 关卡：[关卡名称]
 
 ## Quick Reference
 

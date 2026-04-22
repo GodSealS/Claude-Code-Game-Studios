@@ -1,4 +1,4 @@
-# Sprint [N] -- [Start Date] to [End Date]
+# Sprint [N] -- [Start Date] to [End Date] / 冲刺 [N] -- [开始日期] 至 [结束日期]
 
 ## Sprint Goal
 

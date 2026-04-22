@@ -1,4 +1,4 @@
-# Art Bible: [Game Title]
+# Art Bible: [Game Title] / 美术圣经：[游戏名称]
 
 ## Document Status
 - **Version**: 1.0

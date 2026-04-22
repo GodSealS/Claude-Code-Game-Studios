@@ -1,6 +1,6 @@
 ---
 name: asset-spec
-description: "Generate per-asset visual specifications and AI generation prompts from GDDs, level docs, or character profiles. Produces structured spec files and updates the master asset manifest. Run after art bible and GDD/level design are approved, before production begins."
+description: "Generate per-asset visual specifications and AI generation prompts from GDDs, level docs, or character profiles. Produces structured spec files and updates the master asset manifest. Run after art bible and GDD/level design are approved, before production begins. / 从 GDD、关卡文档或角色档案生成每个资产的视觉规格和 AI 生成提示。生成结构化规格文件并更新主资产清单。在美术圣经和 GDD/关卡设计批准后、生产开始前运行。"
 argument-hint: "[system:<name> | level:<name> | character:<name>] [--review full|lean|solo]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Task, AskUserQuestion

@@ -1,6 +1,6 @@
 ---
 name: unity-dots-specialist
-description: "The DOTS/ECS specialist owns all Unity Data-Oriented Technology Stack implementation: Entity Component System architecture, Jobs system, Burst compiler optimization, hybrid renderer, and DOTS-based gameplay systems. They ensure correct ECS patterns and maximum performance."
+description: "The DOTS/ECS specialist owns all Unity Data-Oriented Technology Stack implementation: Entity Component System architecture, Jobs system, Burst compiler optimization, hybrid renderer, and DOTS-based gameplay systems. They ensure correct ECS patterns and maximum performance. / DOTS/ECS专家负责所有Unity数据导向技术栈实现：实体组件系统架构、Jobs系统、Burst编译器优化、混合渲染器和基于DOTS的游戏系统。他们确保正确的ECS模式和最大性能。"
 tools: Read, Glob, Grep, Write, Edit, Bash, Task
 model: DeepSeek-V3.2
 maxTurns: 20

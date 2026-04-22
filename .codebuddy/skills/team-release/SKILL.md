@@ -1,6 +1,6 @@
 ---
 name: team-release
-description: "Orchestrate the release team: coordinates release-manager, qa-lead, devops-engineer, and producer to execute a release from candidate to deployment."
+description: "Orchestrate the release team: coordinates release-manager, qa-lead, devops-engineer, and producer to execute a release from candidate to deployment. / 编排发布团队：协调 release-manager、qa-lead、devops-engineer 和 producer 从候选版本到部署执行发布。"
 argument-hint: "[version number or 'next']"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Bash, Task, AskUserQuestion, TodoWrite

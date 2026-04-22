@@ -1,4 +1,4 @@
-# Example Session: /adopt — Brownfield Project Onboarding
+# Example Session: /adopt — Brownfield Project Onboarding / 示例会话：/adopt — 棕地项目引导入门
 
 **Context:** Developer has been building a game for 3 months before discovering this agent system. They have code, some design docs, and rough notes — but nothing in the right format for the skills to use.
 

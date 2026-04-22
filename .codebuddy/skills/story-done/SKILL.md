@@ -1,6 +1,6 @@
 ---
 name: story-done
-description: "End-of-story completion review. Reads the story file, verifies each acceptance criterion against the implementation, checks for GDD/ADR deviations, prompts code review, updates story status to Complete, and surfaces the next ready story from the sprint."
+description: "End-of-story completion review. Reads the story file, verifies each acceptance criterion against the implementation, checks for GDD/ADR deviations, prompts code review, updates story status to Complete, and surfaces the next ready story from the sprint. / 故事完成审查。读取故事文件，根据实现验证每个验收标准，检查 GDD/ADR 偏差，提示代码审查，更新故事状态为完成，并展示冲刺中下一个就绪的故事。"
 argument-hint: "[story-file-path] [--review full|lean|solo]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Bash, Edit, AskUserQuestion, Task

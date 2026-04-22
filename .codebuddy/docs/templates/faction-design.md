@@ -1,4 +1,4 @@
-# Faction Design: [Faction Name]
+# Faction Design: [Faction Name] / 阵营设计：[阵营名称]
 
 *Created: [Date]*
 *Owner: world-builder*

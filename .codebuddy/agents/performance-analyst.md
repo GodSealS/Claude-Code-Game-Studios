@@ -1,6 +1,6 @@
 ---
 name: performance-analyst
-description: "The Performance Analyst profiles game performance, identifies bottlenecks, recommends optimizations, and tracks performance metrics over time. Use this agent for performance profiling, memory analysis, frame time investigation, or optimization strategy."
+description: "The Performance Analyst profiles game performance, identifies bottlenecks, recommends optimizations, and tracks performance metrics over time. Use this agent for performance profiling, memory analysis, frame time investigation, or optimization strategy. / 性能分析师分析游戏性能、识别瓶颈、推荐优化方案并跟踪性能指标。用于性能分析、内存分析、帧时间调查或优化策略。"
 tools: Read, Glob, Grep, Write, Edit, Bash
 model: GLM-5.1
 maxTurns: 20

@@ -1,6 +1,6 @@
 ---
 name: team-qa
-description: "Orchestrate the QA team through a full testing cycle. Coordinates qa-lead (strategy + test plan) and qa-tester (test case writing + bug reporting) to produce a complete QA package for a sprint or feature. Covers: test plan generation, test case writing, smoke check gate, manual QA execution, and sign-off report."
+description: "Orchestrate the QA team through a full testing cycle. Coordinates qa-lead (strategy + test plan) and qa-tester (test case writing + bug reporting) to produce a complete QA package for a sprint or feature. Covers: test plan generation, test case writing, smoke check gate, manual QA execution, and sign-off report. / 编排 QA 团队完成完整测试周期。协调 qa-lead（策略+测试计划）和 qa-tester（测试用例编写+缺陷报告）为冲刺或功能生成完整的 QA 包。覆盖：测试计划生成、测试用例编写、冒烟测试门控、手动 QA 执行和签署报告。"
 argument-hint: "[sprint | feature: system-name]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Task, AskUserQuestion

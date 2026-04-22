@@ -1,6 +1,6 @@
 ---
 name: /wechat-physics-bullet
-description: "Initialize Bullet (ammo.js) WASM physics engine for WeChat Mini Games, create 3D physics world, configure rigid bodies, soft bodies, and collision detection via the unified IPhysicsWorld interface."
+description: "Initialize Bullet (ammo.js) WASM physics engine for WeChat Mini Games, create 3D physics world, configure rigid bodies, soft bodies, and collision detection via the unified IPhysicsWorld interface. / 初始化微信小游戏 Bullet (ammo.js) WASM 物理引擎，创建 3D 物理世界，通过统一 IPhysicsWorld 接口配置刚体、软体和碰撞检测。"
 agent: wechat-minigame-specialist
 ---
 

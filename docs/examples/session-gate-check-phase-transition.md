@@ -1,4 +1,4 @@
-# Example Session: /gate-check Phase Transition — Systems Design → Technical Setup
+# Example Session: /gate-check Phase Transition — Systems Design → Technical Setup / 示例会话：/gate-check 阶段过渡 — 系统设计 → 技术设置
 
 **Context:** Solo indie dev, end of week 5. The Systems Design phase feels complete — 6 MVP GDDs written, cross-review done, engine set up. User wants to formally advance to Technical Setup.
 

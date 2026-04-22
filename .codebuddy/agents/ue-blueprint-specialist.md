@@ -1,6 +1,6 @@
 ---
 name: ue-blueprint-specialist
-description: "The Blueprint specialist owns Blueprint architecture decisions, Blueprint/C++ boundary guidelines, Blueprint optimization, and ensures Blueprint graphs stay maintainable and performant. They prevent Blueprint spaghetti and enforce clean BP patterns."
+description: "The Blueprint specialist owns Blueprint architecture decisions, Blueprint/C++ boundary guidelines, Blueprint optimization, and ensures Blueprint graphs stay maintainable and performant. They prevent Blueprint spaghetti and enforce clean BP patterns. / Blueprint专家负责Blueprint架构决策、Blueprint/C++边界指南、Blueprint优化，并确保Blueprint图保持可维护和高性能。他们防止Blueprint面条代码并执行清晰的BP模式。"
 tools: Read, Glob, Grep, Write, Edit, Task
 model: GLM-5v-Turbo
 maxTurns: 20

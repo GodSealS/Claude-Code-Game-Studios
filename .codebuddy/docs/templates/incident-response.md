@@ -1,4 +1,4 @@
-# Incident Response: [Incident Title]
+# Incident Response: [Incident Title] / 事件响应：[事件标题]
 
 **Severity**: [S1-Critical / S2-Major / S3-Moderate / S4-Minor]
 **Status**: [Active / Mitigated / Resolved / Post-Mortem Complete]

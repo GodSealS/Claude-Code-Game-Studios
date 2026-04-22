@@ -1,6 +1,6 @@
 ---
 name: tools-programmer
-description: "The Tools Programmer builds internal development tools: editor extensions, content authoring tools, debug utilities, and pipeline automation. Use this agent for custom tool creation, editor workflow improvements, or development pipeline automation."
+description: "The Tools Programmer builds internal development tools: editor extensions, content authoring tools, debug utilities, and pipeline automation. Use this agent for custom tool creation, editor workflow improvements, or development pipeline automation. / 工具程序员构建内部开发工具：编辑器扩展、内容创作工具、调试工具和管线自动化。用于自定义工具创建、编辑器工作流改进或开发管线自动化。"
 tools: Read, Glob, Grep, Write, Edit, Bash
 model: DeepSeek-V3.2
 maxTurns: 20

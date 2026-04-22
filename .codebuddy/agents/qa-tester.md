@@ -1,6 +1,6 @@
 ---
 name: qa-tester
-description: "The QA Tester writes detailed test cases, bug reports, and test checklists. Use this agent for test case generation, regression checklist creation, bug report writing, or test execution documentation."
+description: "The QA Tester writes detailed test cases, bug reports, and test checklists. Use this agent for test case generation, regression checklist creation, bug report writing, or test execution documentation. / QA测试员编写详细的测试用例、缺陷报告和测试检查清单。用于测试用例生成、回归检查清单创建、缺陷报告编写或测试执行文档。"
 tools: Read, Glob, Grep, Write, Edit, Bash
 model: DeepSeek-V3.2
 maxTurns: 10

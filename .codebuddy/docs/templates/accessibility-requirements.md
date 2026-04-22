@@ -1,4 +1,4 @@
-# Accessibility Requirements: [Game Title]
+# Accessibility Requirements: [Game Title] / 无障碍要求：[游戏名称]
 
 > **Status**: Draft | Committed | Audited | Certified
 > **Author**: [ux-designer / producer]

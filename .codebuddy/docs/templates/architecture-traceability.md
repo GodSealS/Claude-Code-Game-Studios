@@ -1,4 +1,4 @@
-# Architecture Traceability Index
+# Architecture Traceability Index / 架构可追溯性索引
 
 <!-- Living document — updated by /architecture-review after each review run.
      Do not edit manually unless correcting an error. -->

@@ -1,6 +1,6 @@
 ---
 name: economy-designer
-description: "The Economy Designer specializes in resource economies, loot systems, progression curves, and in-game market design. Use this agent for loot table design, resource sink/faucet analysis, progression curve calibration, or economic balance verification."
+description: "The Economy Designer specializes in resource economies, loot systems, progression curves, and in-game market design. Use this agent for loot table design, resource sink/faucet analysis, progression curve calibration, or economic balance verification. / 经济设计师专注于资源经济、掉落系统、进度曲线和游戏内市场设计。用于掉落表设计、资源汇入/汇出分析、进度曲线校准或经济平衡验证。"
 tools: Read, Glob, Grep, Write, Edit
 model: DeepSeek-V3.2
 maxTurns: 20

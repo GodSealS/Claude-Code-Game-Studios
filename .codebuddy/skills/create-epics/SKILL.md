@@ -1,6 +1,6 @@
 ---
 name: create-epics
-description: "Translate approved GDDs + architecture into epics — one epic per architectural module. Defines scope, governing ADRs, engine risk, and untraced requirements. Does NOT break into stories — run /create-stories [epic-slug] after each epic is created."
+description: "Translate approved GDDs + architecture into epics — one epic per architectural module. Defines scope, governing ADRs, engine risk, and untraced requirements. Does NOT break into stories — run /create-stories [epic-slug] after each epic is created. / 将已批准的 GDD + 架构翻译为史诗 — 每个架构模块一个史诗。定义范围、管辖 ADR、引擎风险和未追溯需求。不分解为故事 — 每个史诗创建后运行 /create-stories [epic-slug]。"
 argument-hint: "[system-name | layer: foundation|core|feature|presentation | all] [--review full|lean|solo]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Task, AskUserQuestion

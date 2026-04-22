@@ -1,4 +1,4 @@
-# Example Session: Implementing Combat Damage Calculation
+# Example Session: Implementing Combat Damage Calculation / 示例会话：实现战斗伤害计算
 
 **Context:** Solo indie dev, week 4 of project, implementing gameplay systems.
 

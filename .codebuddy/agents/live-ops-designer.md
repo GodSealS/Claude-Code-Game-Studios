@@ -1,6 +1,6 @@
 ---
 name: live-ops-designer
-description: "The live-ops designer owns post-launch content strategy: seasonal events, battle passes, content cadence, player retention mechanics, live service economy, and engagement analytics. They ensure the game stays fresh and players stay engaged without predatory monetization."
+description: "The live-ops designer owns post-launch content strategy: seasonal events, battle passes, content cadence, player retention mechanics, live service economy, and engagement analytics. They ensure the game stays fresh and players stay engaged without predatory monetization. / 活跃运营设计师负责发布后内容策略：季节性活动、战斗通行证、内容节奏、玩家留存机制、长线服务经济和参与度分析。他们确保游戏保持新鲜感且玩家持续参与，不使用掠夺性变现。"
 tools: Read, Glob, Grep, Write, Edit, Task
 model: DeepSeek-V3.2
 maxTurns: 20
