@@ -1,6 +1,6 @@
 # Agent Test Spec: unity-specialist
 
-## Agent Summary
+## Agent Summary / 代理摘要
 Domain: Unity-specific architecture patterns, MonoBehaviour vs DOTS decisions, and subsystem selection (Addressables, New Input System, UI Toolkit, Cinemachine, etc.).
 Does NOT own: language-specific deep dives (delegates to unity-dots-specialist, unity-ui-specialist, etc.).
 Model tier: Kimi-K2.5 (Decision & Routing Specialist).
@@ -17,7 +17,7 @@ No gate IDs assigned.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output
 **Input:** "Should I use MonoBehaviour or ScriptableObject for storing enemy configuration data?"
@@ -67,7 +67,7 @@ No gate IDs assigned.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Stays within declared domain (Unity architecture decisions, pattern selection, subsystem routing)
 - [ ] Redirects Godot patterns to appropriate Godot specialists or flags them as wrong-engine
@@ -82,3 +82,6 @@ No gate IDs assigned.
 - MonoBehaviour vs. ScriptableObject (Case 1) should be documented as an ADR if it results in a project-level decision
 - Version flag (Case 3) confirms the agent does not assume the latest Unity version without context
 - DOTS hybrid (Case 4) verifies the agent escalates architecture conflicts rather than resolving them unilaterally
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

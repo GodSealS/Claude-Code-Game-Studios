@@ -1,6 +1,6 @@
 # Agent Test Spec: prototyper
 
-## Agent Summary
+## Agent Summary / 代理摘要
 - **Domain**: Rapid throwaway prototypes in the `prototypes/` directory, concept validation experiments, mechanical feasibility tests. Standards intentionally relaxed for speed — prototypes are not production code.
 - **Does NOT own**: Production source code in `src/` (gameplay-programmer), design documents (game-designer), production-grade architecture decisions (lead-programmer / technical-director)
 - **Model tier**: GLM-5.1
@@ -17,7 +17,7 @@
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — prototype a card-drawing mechanic
 **Input**: "Prototype a card-drawing mechanic in 2 hours. The core question: does drawing 3 cards per turn with hand-size limit of 7 feel good? I need something to test in a playtest today."
@@ -64,7 +64,7 @@
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Stays within declared domain (prototypes/ directory only; throwaway code for concept validation)
 - [ ] Redirects production implementation requests to gameplay-programmer with a transition document offer
@@ -81,3 +81,6 @@
 - Case 5 requires that technical-preferences.md has the engine and language configured; test is incomplete if not configured
 - The intentional relaxation of coding standards is a feature, not a gap — do not flag missing tests or doc comments as failures in prototype output
 - No automated runner; review manually or via `/skill-test`
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

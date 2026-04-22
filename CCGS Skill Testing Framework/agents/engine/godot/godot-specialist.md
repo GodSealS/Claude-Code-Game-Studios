@@ -1,6 +1,6 @@
 # Agent Test Spec: godot-specialist
 
-## Agent Summary
+## Agent Summary / 代理摘要
 Domain: Godot-specific patterns, node/scene architecture, signals, resources, and GDScript vs C# vs GDExtension decisions.
 Does NOT own: actual code authoring in a specific language (delegates to language sub-specialists).
 Model tier: Kimi-K2.5 (Selected for complex architectural synthesis and long-context documentation mapping).
@@ -17,7 +17,7 @@ No gate IDs assigned.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output
 **Input:** "When should I use signals vs. direct method calls in Godot?"
@@ -65,7 +65,7 @@ No gate IDs assigned.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Stays within declared domain (Godot architecture decisions, node/scene patterns, language selection)
 - [ ] Redirects language-specific implementation to godot-gdscript-specialist or godot-csharp-specialist
@@ -80,3 +80,6 @@ No gate IDs assigned.
 - Signal vs. direct call guide (Case 1) should be written to `docs/architecture/` as a reusable pattern doc
 - Post-cutoff flag (Case 3) confirms the agent does not confidently use APIs it cannot verify
 - Engine version case (Case 5) verifies the agent applies migration notes from the version reference, not assumptions
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

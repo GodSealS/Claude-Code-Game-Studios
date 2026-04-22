@@ -1,6 +1,6 @@
 # Skill Test Spec: /project-stage-detect
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/project-stage-detect` automatically analyzes project artifacts to determine
 the current development stage. It runs on the Haiku model (read-only) and
@@ -36,7 +36,7 @@ gates apply.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: stage.txt Exists — Reads directly and cross-checks artifacts
 
@@ -163,7 +163,7 @@ gates apply.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Reads stage.txt if present; falls back to artifact inference if absent
 - [ ] Always reports a confidence level (HIGH / MEDIUM / LOW)
@@ -181,3 +181,6 @@ gates apply.
 - The Polish and Release stages are not fixture-tested here; they follow the
   same high-confidence (stage.txt present) or inference logic.
 - Confidence levels are advisory — the skill does not gate any actions on them.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

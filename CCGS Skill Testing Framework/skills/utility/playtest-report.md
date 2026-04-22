@@ -1,6 +1,6 @@
 # Skill Test Spec: /playtest-report
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/playtest-report` generates a structured playtest report from session notes or
 user input. The report is organized into four sections: Feel/Accessibility,
@@ -34,7 +34,7 @@ separate invocation and not part of this skill.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — User provides playtest notes, structured report produced
 
@@ -158,7 +158,7 @@ separate invocation and not part of this skill.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Structures output into all 4 sections (Feel, Bugs, Design Feedback, Next Steps)
 - [ ] Labels majority vs. minority opinions when multiple testers are involved
@@ -176,3 +176,6 @@ separate invocation and not part of this skill.
   text-only document.
 - The case where a tester's identity is unknown (anonymous feedback) follows
   the same aggregation pattern as Case 3 without tester labels.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

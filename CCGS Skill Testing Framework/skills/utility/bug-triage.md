@@ -1,6 +1,6 @@
 # Skill Test Spec: /bug-triage
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/bug-triage` reads all open bug reports in `production/bugs/` and produces a
 prioritized triage table sorted by severity (CRITICAL → HIGH → MEDIUM → LOW).
@@ -33,7 +33,7 @@ None. `/bug-triage` is a read-only advisory skill. No director gates apply.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — 5 bugs of varying severity, sorted table produced
 
@@ -152,7 +152,7 @@ None. `/bug-triage` is a read-only advisory skill. No director gates apply.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Reads all files in `production/bugs/` before generating the table
 - [ ] Sorts by severity (CRITICAL → HIGH → MEDIUM → LOW)
@@ -172,3 +172,6 @@ None. `/bug-triage` is a read-only advisory skill. No director gates apply.
   bug-triage is read-only.
 - The duplicate detection heuristic (title similarity + same system) is
   approximate; exact matching logic is defined in the skill body.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

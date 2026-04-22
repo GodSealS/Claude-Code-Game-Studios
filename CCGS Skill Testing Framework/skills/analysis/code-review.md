@@ -1,6 +1,6 @@
 # Skill Test Spec: /code-review
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/code-review` performs an architectural code review of source files in `src/`,
 checking coding standards from `CLAUDE.md` (doc comments on public APIs,
@@ -28,7 +28,7 @@ None. Code review is a read-only advisory skill; no gates are invoked.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Source file follows all coding standards
 
@@ -154,7 +154,7 @@ None. Code review is a read-only advisory skill; no gates are invoked.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Reads source file(s) and coding standards before reviewing
 - [ ] Lists each coding standard check in findings output
@@ -170,3 +170,6 @@ None. Code review is a read-only advisory skill; no gates are invoked.
   is assumed to apply the same checks file by file and aggregate the verdict.
 - Test coverage checks (verifying corresponding test files exist) are a stretch
   goal not tested here; that is primarily the domain of `/test-evidence-review`.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

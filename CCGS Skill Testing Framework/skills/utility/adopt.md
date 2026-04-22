@@ -1,6 +1,6 @@
 # Skill Test Spec: /adopt
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/adopt` audits an existing project's artifacts — GDDs, ADRs, stories, infrastructure
 files, and `technical-preferences.md` — for format compliance with the template's
@@ -33,7 +33,7 @@ None. `/adopt` is a brownfield audit utility. No director gates apply.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — All GDDs compliant, no gaps, COMPLIANT
 
@@ -189,7 +189,7 @@ None. `/adopt` is a brownfield audit utility. No director gates apply.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Emits "Scanning project artifacts..." before silent read phase
 - [ ] Reads all artifacts silently before presenting any results
@@ -212,3 +212,6 @@ None. `/adopt` is a brownfield audit utility. No director gates apply.
   that triggers an immediate fix offer before writing the plan; not separately tested.
 - The review-mode.txt prompt (Phase 6b) runs after plan writing if `production/review-mode.txt`
   does not exist; not separately tested here.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

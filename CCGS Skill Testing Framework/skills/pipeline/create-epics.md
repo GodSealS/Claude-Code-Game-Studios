@@ -1,6 +1,6 @@
 # Skill Test Spec: /create-epics
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/create-epics` reads all approved GDDs and translates them into EPIC.md files,
 one per system. Epics are organized by layer (Foundation → Core → Feature →
@@ -39,7 +39,7 @@ In `solo` mode: PR-EPIC is skipped. Output notes: "PR-EPIC skipped — solo mode
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Two approved GDDs create two EPIC files
 
@@ -169,7 +169,7 @@ In `solo` mode: PR-EPIC is skipped. Output notes: "PR-EPIC skipped — solo mode
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Epic drafts shown to user before any "May I write" ask
 - [ ] "May I write" asked per-epic, not once for the entire batch
@@ -188,3 +188,6 @@ In `solo` mode: PR-EPIC is skipped. Output notes: "PR-EPIC skipped — solo mode
   validated implicitly via Case 1's fixture structure.
 - The `layer: [name]` and `[system-name]` argument modes follow the same approval
   pattern as the default (all systems) mode.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

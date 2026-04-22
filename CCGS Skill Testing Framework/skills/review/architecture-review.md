@@ -1,6 +1,6 @@
 # Skill Test Spec: /architecture-review
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/architecture-review` is an Opus-tier skill that validates a technical architecture
 document against the project's 8 required architecture sections and checks that it
@@ -40,7 +40,7 @@ In `solo` mode: both gates are skipped with equivalent notes.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Complete architecture doc in full mode
 
@@ -171,7 +171,7 @@ In `solo` mode: both gates are skipped with equivalent notes.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Does NOT write any files (read-only skill)
 - [ ] Presents section completeness check before issuing verdict
@@ -190,3 +190,6 @@ In `solo` mode: both gates are skipped with equivalent notes.
   is part of Case 1's happy path but not independently fixture-tested.
 - RTM (requirement traceability matrix) mode is a separate concern covered by
   the `/architecture-review` skill's own `rtm` argument mode, not tested here.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

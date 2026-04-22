@@ -1,6 +1,6 @@
 # Skill Test Spec: /skill-test
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/skill-test` validates skill files for structural correctness, behavioral
 compliance, and category-rubric scoring. It operates in three modes:
@@ -38,7 +38,7 @@ None. `/skill-test` is a meta-utility skill. No director gates apply.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Static Mode — Well-formed skill, all 7 checks pass, COMPLIANT
 
@@ -166,7 +166,7 @@ None. `/skill-test` is a meta-utility skill. No director gates apply.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Static mode checks exactly 7 structural assertions
 - [ ] Spec mode evaluates each test case from the spec file individually
@@ -186,3 +186,6 @@ None. `/skill-test` is a meta-utility skill. No director gates apply.
   (May I write) is individually tested here because it has the most nuanced logic.
 - Audit mode counts are approximate — the exact number of skills and agents will
   change as the system grows; assertions use "all" rather than fixed counts.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

@@ -1,6 +1,6 @@
 # Agent Test Spec: lead-programmer
 
-## Agent Summary
+## Agent Summary / 代理摘要
 **Domain owned:** Code architecture decisions, LP-FEASIBILITY gate, LP-CODE-REVIEW gate, coding standards enforcement, tech stack decisions within the approved engine.
 **Does NOT own:** Game design decisions (game-designer), creative direction (creative-director), production scheduling (producer), visual art direction (art-director).
 **Model tier:** DeepSeek-V3.2 (implementation-level analysis of individual systems).
@@ -19,7 +19,7 @@ Verified by reading the agent's `.codebuddy/agents/lead-programmer.md` frontmatt
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output format
 **Scenario:** A new `CombatSystem` implementation is submitted for code review. The system uses dependency injection for all external references, has doc comments on all public APIs, follows the project's naming conventions, and includes unit tests for all public methods. Request is tagged LP-CODE-REVIEW.
@@ -67,7 +67,7 @@ Verified by reading the agent's `.codebuddy/agents/lead-programmer.md` frontmatt
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Returns LP-CODE-REVIEW verdicts using APPROVE / CONCERNS / REJECT vocabulary only
 - [ ] Returns LP-FEASIBILITY verdicts using FEASIBLE / CONCERNS / INFEASIBLE vocabulary only
@@ -84,3 +84,6 @@ Verified by reading the agent's `.codebuddy/agents/lead-programmer.md` frontmatt
 - Tech debt assessment and prioritization are not covered here — deferred to /tech-debt skill integration.
 - Coding standards document updates (adding a new forbidden pattern) are not covered.
 - Interaction with qa-lead on what constitutes a testable unit (LP vs QL boundary) is not covered.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

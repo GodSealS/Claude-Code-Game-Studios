@@ -1,6 +1,6 @@
 # Agent Test Spec: ui-programmer
 
-## Agent Summary
+## Agent Summary / 代理摘要
 - **Domain**: Menu screens, HUDs, inventory screens, dialogue boxes, UI framework code, and data binding.
 - **Does NOT own**: UX flow design (ux-designer), visual style direction (art-director / technical-artist).
 - **Model tie**r: DeepSeek-V3.2 (default).
@@ -20,7 +20,7 @@ direction
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output
 **Input:** "Implement the inventory screen from the UX spec in `design/ux/inventory-flow.md`."
@@ -66,7 +66,7 @@ direction
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Stays within declared domain (menus, HUDs, UI framework, data binding)
 - [ ] Redirects UX flow design to ux-designer
@@ -83,3 +83,6 @@ direction
 - Inventory implementation (Case 1) should have a UI interaction test or manual walkthrough doc in `production/qa/evidence/`
 - Animation coordination (Case 3) confirms the agent does not invent feel parameters without a spec
 - Ambiguous spec (Case 4) verifies the agent routes spec gaps back to the authoring agent rather than guessing
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

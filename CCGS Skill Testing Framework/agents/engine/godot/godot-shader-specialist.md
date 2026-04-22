@@ -1,6 +1,6 @@
 # Agent Test Spec: godot-shader-specialist
 
-## Agent Summary
+## Agent Summary / 代理摘要
 Domain: Godot shading language (GLSL-derivative), visual shaders (VisualShader graph), material setup, particle shaders, and post-processing effects.
 Does NOT own: gameplay code, art style direction.
 Model tier: GLM-5v-Turbo (Selected for multi-modal visual-to-code synthesis; handles reference image interpretation).
@@ -18,7 +18,7 @@ Verified by reading the agent's `.codebuddy/agents/godot-shader-specialist.md` f
 - [ ] Agent definition references `docs/engine-reference/godot/VERSION.md` for API changes
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output
 **Input:** "Write a dissolve effect shader for enemy death in Godot."
@@ -68,7 +68,7 @@ Verified by reading the agent's `.codebuddy/agents/godot-shader-specialist.md` f
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Stays within declared domain (Godot shading language, materials, VFX shaders, post-processing)
 - [ ] Redirects gameplay code requests to gameplay-programmer
@@ -83,3 +83,6 @@ Verified by reading the agent's `.codebuddy/agents/godot-shader-specialist.md` f
 - Dissolve shader (Case 1) should be paired with a visual test screenshot in `production/qa/evidence/`
 - Texture API flag (Case 3) confirms the agent checks VERSION.md before using APIs that changed post-4.3
 - Glow rework (Case 5) is a Godot 4.6-specific test — verifies the agent applies the most recent migration notes
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

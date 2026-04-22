@@ -1,6 +1,6 @@
 # Agent Test Spec: localization-lead
 
-## Agent Summary
+## Agent Summary / 代理摘要
 - **Domain**: Internationalization (i18n) architecture, string extraction workflows and tooling configuration, locale testing methodology, translation pipeline design (extraction → TMS → import), string quality standards, locale-specific formatting rules (plurals, RTL, date/number formats)
 - **Does NOT own**: Game narrative content and dialogue writing (writer), code implementation of i18n calls (gameplay-programmer), translation work itself (external translators)
 - **Model tier**: DeepSeek-V3.2
@@ -18,7 +18,7 @@
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — string extraction pipeline for a Unity project
 **Input**: "Set up a string extraction pipeline for our Unity game. We need to get all localizable strings into a format translators can work with."
@@ -65,7 +65,7 @@
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] **Standard Verdicts**: Returns APPROVE / CONCERNS / REJECT for all architectural audits.
 - [ ] **Rule Enforcement**: Specifically identifies missing CLDR plural forms for complex languages (RU, AR, PL) as REJECT.
@@ -83,3 +83,6 @@
 - Case 4 (key naming conflict) is a pipeline hygiene test — duplicate keys cause ongoing translator confusion and cost
 - Case 5 requires the target locale list to be in context; if not provided, agent should ask before designing the pipeline
 - No automated runner; review manually or via `/skill-test`
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

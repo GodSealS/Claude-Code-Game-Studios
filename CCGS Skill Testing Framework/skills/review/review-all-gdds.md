@@ -1,6 +1,6 @@
 # Skill Test Spec: /review-all-gdds
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/review-all-gdds` is an Opus-tier skill that performs a holistic cross-GDD review
 across all files in `design/gdd/`. It runs two complementary review phases in
@@ -37,7 +37,7 @@ review; delegating to a director gate would create a circular dependency.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Clean GDD set with no conflicts
 
@@ -158,7 +158,7 @@ review; delegating to a director gate would create a circular dependency.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Phase 1 (consistency) and Phase 2 (design theory) spawned in parallel — not sequentially
 - [ ] Does NOT write any files without "May I write" approval
@@ -176,3 +176,6 @@ review; delegating to a director gate would create a circular dependency.
   cognitive overload are not individually fixture-tested — they follow the same
   pattern as consistency checks and are validated via the pillar drift case structure.
 - The `since-last-review` scoping mode is not tested here — it is a runtime concern.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

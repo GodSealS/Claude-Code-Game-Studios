@@ -1,6 +1,6 @@
 # Agent Test Spec: systems-designer
 
-## Agent Summary
+## Agent Summary / 代理摘要
 - **Domain**: Combat formulas, progression curves, crafting economy, and numerical balance.
 - **Model tier**: DeepSeek-V3.2
 - **Gate IDs handled**: SD-FORMULA-REVIEW, SD-ECONOMY-BALANCE, SD-PHASE-GATE
@@ -19,7 +19,7 @@ Verified by reading the agent's `.codebuddy/agents/systems-designer.md` frontmat
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output format
 **Scenario:** A damage formula is submitted for review: `damage = base_attack * (1 + strength_modifier * 0.1) - defense * 0.5`, with defined ranges: base_attack [10–100], strength_modifier [0–20], defense [0–50]. The formula produces positive damage across all valid input ranges, scales smoothly, and has no division-by-zero or overflow risk within the defined value bounds.
@@ -67,7 +67,7 @@ Verified by reading the agent's `.codebuddy/agents/systems-designer.md` frontmat
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Returns verdicts using APPROVED / NEEDS REVISION vocabulary only
 - [ ] Stays within declared systems and formula domain
@@ -82,3 +82,6 @@ Verified by reading the agent's `.codebuddy/agents/systems-designer.md` frontmat
 - Economy model review (resource generation and sink rates, inflation prevention) is not covered.
 - Status effect interaction matrix (stacking rules, priority, immunity interactions) is not covered.
 - Cross-system formula dependency review (e.g., crafting formula that feeds into combat formula) is not covered — deferred to integration tests.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

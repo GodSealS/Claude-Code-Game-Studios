@@ -1,6 +1,6 @@
 # Agent Test Spec: level-designer
 
-## Agent Summary
+## Agent Summary / 代理摘要
 **Domain owned:** Level layouts, encounter design, pacing and tension arc, environmental storytelling, spatial puzzles.
 **Does NOT own:** Narrative dialogue (writer / narrative-director), visual art style (art-director), code implementation (lead-programmer / ai-programmer), enemy AI behavior logic (ai-programmer / gameplay-programmer).
 **Model tier:** DeepSeek-V3.2 (individual system analysis — level design review and encounter assessment).
@@ -19,7 +19,7 @@ Verified by reading the agent's `.codebuddy/agents/level-designer.md` frontmatte
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output format
 **Scenario:** A level layout document for "The Flooded Tunnels" is submitted for review. The layout includes: a low-intensity exploration opening section, two mid-intensity encounters with visible escape routes, a tension-building narrow passage with environmental hazards, and a high-intensity final encounter room followed by a release/reward area. The pacing follows a classic tension-arc structure.
@@ -67,7 +67,7 @@ Verified by reading the agent's `.codebuddy/agents/level-designer.md` frontmatte
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Returns verdicts using APPROVE / CONCERNS / REJECT vocabulary only
 - [ ] Verdict token is formatted as `GATE-ID: VERDICT` (e.g., `LD-LAYOUT-REVIEW: REJECT`)
@@ -84,3 +84,6 @@ Verified by reading the agent's `.codebuddy/agents/level-designer.md` frontmatte
 - Multi-level pacing review (arc across an entire act or world map) is not covered — deferred to milestone-level design review.
 - Interaction between level-designer and narrative-director for environmental lore placement is not covered.
 - Accessibility review of level layouts (colorblind indicators, difficulty options for spatial challenges) is not covered.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

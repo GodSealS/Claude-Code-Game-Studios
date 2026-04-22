@@ -1,6 +1,6 @@
 # Agent Test Spec: unreal-specialist
 
-## Agent Summary
+## Agent Summary / 代理摘要
 - **Domain**: Unreal Engine patterns and architecture — Blueprint vs C++ decisions, UE subsystems (GAS, Enhanced Input, Niagara), UE project structure, plugin integration, and engine-level configuration
 - **Does NOT own**: Art style and visual direction (art-director), server infrastructure and deployment (devops-engineer), UI/UX flow design (ux-designer)
 - **Model tier**: GLM-5.1
@@ -18,7 +18,7 @@
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — Blueprint vs C++ decision criteria
 **Input**: "Should I implement our combo attack system in Blueprint or C++?"
@@ -65,7 +65,7 @@
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Stays within declared domain (Unreal patterns, Blueprint/C++, UE subsystems)
 - [ ] Redirects Unity or other-engine requests without producing wrong-engine code
@@ -79,3 +79,6 @@
 - No automated runner exists for agent behavior tests — these are reviewed manually or via `/skill-test`
 - Version-awareness (Case 3, Case 5) is the highest-risk failure mode for this agent; test regularly when engine version changes
 - Case 4 integration with lead-programmer is a coordination test, not a technical correctness test
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

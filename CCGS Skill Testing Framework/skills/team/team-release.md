@@ -1,6 +1,6 @@
 # Skill Test Spec: /team-release
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 Orchestrates the release team through a 7-phase pipeline from release candidate to
 deployment and post-release monitoring. Coordinates release-manager, qa-lead,
@@ -28,7 +28,7 @@ NO-GO. Closes with a post-release monitoring plan.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path (Single-Player) — All phases complete, version deployed
 
@@ -192,7 +192,7 @@ NO-GO. Closes with a post-release monitoring plan.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] `AskUserQuestion` used at each phase transition gate (post-Phase 1, post-Phase 2, post-Phase 3/4 if issues, post-Phase 5 go/no-go)
 - [ ] Phase 3 agents are always issued as parallel Task calls — qa-lead and devops-engineer are never sequential
@@ -213,3 +213,6 @@ NO-GO. Closes with a post-release monitoring plan.
 - The parallel Phase 4 path (localization + performance + analytics simultaneously with Phase 3) is a documented option in the skill ("can run in parallel with Phase 3 if resources available"). Case 4 tests Phase 4 as a sequential gate; the parallel variant is left to the skill's implementation judgment.
 - The `network-programmer` sign-off path for multiplayer is validated as part of Case 3 rather than a separate case, as it follows the same parallel-spawn pattern as security-engineer.
 - The "override NO-GO with documented rationale" path in Case 2 is referenced but not exhaustively tested — it is an escape hatch that the skill must support, and its existence is validated by the AskUserQuestion options assertion in Case 2.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

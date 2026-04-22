@@ -1,6 +1,6 @@
 # Agent Test Spec: sound-designer
 
-## Agent Summary
+## Agent Summary / 代理摘要
 - **Domain**: SFX specs, audio events, mixing parameters, and sound category definitions.
 - **Does NOT own**: music composition direction (audio-director), code implementation of audio systems.
 - **Model tier**: DeepSeek-V3.2 (default).
@@ -16,7 +16,7 @@
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output
 **Input:** "Create an SFX spec for a sword swing attack."
@@ -67,7 +67,7 @@
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Every SFX spec must include a defined "Resource Path" relative to the project root (e.g., "audio/sfx/combat/").
 - [ ] Stays within declared domain (SFX specs, event definitions, mixing parameters)
@@ -83,3 +83,6 @@
 - SFX spec format (Case 1) should match whatever event schema the audio middleware (Wwise/FMOD/built-in) requires
 - Falloff curve (Case 3) verifies the agent produces implementation-ready parameter specs
 - Style guide compliance (Case 5) confirms the agent reads provided context and constrains output accordingly
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

@@ -1,6 +1,6 @@
 # Skill Test Spec: /test-flakiness
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/test-flakiness` detects non-deterministic tests by analyzing test history logs
 (if available) or scanning test source code for common flakiness patterns (random
@@ -29,7 +29,7 @@ are invoked.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Clean test history, no flakiness
 
@@ -155,7 +155,7 @@ are invoked.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Reads test history logs when available; falls back to source analysis when not
 - [ ] Notes clearly which analysis mode is being used (history vs. source-only)
@@ -175,3 +175,6 @@ are invoked.
 - Tests that fail due to environment issues (missing assets, wrong platform) are
   not flakiness — the skill distinguishes environment failures from non-determinism
   in the test itself; this distinction is not explicitly tested here.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

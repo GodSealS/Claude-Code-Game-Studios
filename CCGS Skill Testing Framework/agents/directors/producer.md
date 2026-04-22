@@ -1,6 +1,6 @@
 # Agent Test Spec: producer
 
-## Agent Summary
+## Agent Summary / 代理摘要
 **Domain owned:** Scope management, sprint planning validation, milestone tracking, epic prioritization, production phase gate.
 **Does NOT own:** Game design decisions (creative-director / game-designer), technical architecture (technical-director), creative direction.
 **Model tier:** GLM-5.1 (multi-document synthesis, high-stakes phase gate verdicts).
@@ -19,7 +19,7 @@ Verified by reading the agent's `.codebuddy/agents/producer.md` frontmatter:
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output format
 **Scenario:** A sprint plan is submitted for Sprint 7. The plan includes 12 story points across 4 team members over 2 weeks. Historical velocity from the last 3 sprints averages 11.5 points. Request is tagged PR-SPRINT.
@@ -67,7 +67,7 @@ Verified by reading the agent's `.codebuddy/agents/producer.md` frontmatter:
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Returns verdicts using REALISTIC / CONCERNS / UNREALISTIC vocabulary only
 - [ ] Stays within declared production domain
@@ -82,3 +82,6 @@ Verified by reading the agent's `.codebuddy/agents/producer.md` frontmatter:
 - PR-MILESTONE (milestone health review) is not covered — deferred to integration with /milestone-review skill.
 - PR-PHASE-GATE (full production phase advancement) involving synthesis of multiple sub-gate results is deferred.
 - Multi-sprint burn-down and velocity trend analysis are not covered here.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

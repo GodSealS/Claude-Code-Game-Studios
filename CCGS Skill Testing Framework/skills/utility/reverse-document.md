@@ -1,6 +1,6 @@
 # Skill Test Spec: /reverse-document
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/reverse-document` generates design or architecture documentation from existing
 source code. It reads the specified source file(s), infers design intent from
@@ -33,7 +33,7 @@ None. `/reverse-document` is a documentation utility. No director gates apply.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Well-Structured Source — Accurate design doc skeleton produced
 
@@ -157,7 +157,7 @@ None. `/reverse-document` is a documentation utility. No director gates apply.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Reads source file(s) before generating any content
 - [ ] Produces all 8 required GDD sections when target is a gameplay system
@@ -178,3 +178,6 @@ None. `/reverse-document` is a documentation utility. No director gates apply.
   a near-empty skeleton with a PARTIAL verdict.
 - C# and Blueprint source files follow the same inference pattern as GDScript;
   language-specific differences are handled in the skill body.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

@@ -1,6 +1,6 @@
 # Skill Test Spec: /perf-profile
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/perf-profile` is a structured performance profiling workflow that identifies
 bottlenecks and recommends optimizations. If profiler data or performance logs
@@ -29,7 +29,7 @@ None. Performance profiling is an advisory analysis skill; no gates are invoked.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Frame data provided, draw call spike found
 
@@ -152,7 +152,7 @@ None. Performance profiling is an advisory analysis skill; no gates are invoked.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Reads profiler data when provided; outputs checklist when not
 - [ ] Reads `technical-preferences.md` for target platform frame budget
@@ -169,3 +169,6 @@ None. Performance profiling is an advisory analysis skill; no gates are invoked.
   the checklist output in Case 2 would be platform-specific in practice.
 - The delta comparison in Case 4 assumes reports cover the same scene; cross-scene
   comparisons are not explicitly handled.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

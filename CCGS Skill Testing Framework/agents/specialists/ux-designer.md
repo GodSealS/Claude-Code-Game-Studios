@@ -1,6 +1,6 @@
 # Agent Test Spec: ux-designer
 
-## Agent Summary
+## Agent Summary / 代理摘要
 Domain: User experience flows, interaction design, information architecture, input handling design, and onboarding UX.
 Does NOT own: visual art style (art-director), UI implementation code (ui-programmer).
 Model tier: DeepSeek-V3.2 (default).
@@ -17,7 +17,7 @@ No gate IDs assigned.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output
 **Input:** "Design the inventory management flow for a survival game."
@@ -62,7 +62,7 @@ No gate IDs assigned.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Stays within declared domain (UX flows, interaction design, IA, onboarding)
 - [ ] Redirects code implementation to ui-programmer, visual style to art-director
@@ -77,3 +77,6 @@ No gate IDs assigned.
 - Inventory flow (Case 1) should be written to `design/ux/` as a spec for ui-programmer to implement against
 - Mental model case (Case 5) verifies the agent applies research evidence, not intuition
 - Accessibility coordination (Case 4) confirms the agent does not override accessibility requirements for UX aesthetics
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

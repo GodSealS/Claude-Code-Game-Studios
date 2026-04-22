@@ -1,6 +1,6 @@
 # Skill Test Spec: /design-system
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/design-system` guides the user through section-by-section authoring of a Game
 Design Document (GDD) for a single game system. All 8 required sections must be
@@ -45,7 +45,7 @@ In `solo` mode: CD-GDD-ALIGN is skipped. Output notes:
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — New GDD, skeleton-first, CD-GDD-ALIGN in lean mode
 
@@ -170,7 +170,7 @@ In `solo` mode: CD-GDD-ALIGN is skipped. Output notes:
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Skeleton file created with all 8 headers before any content is written
 - [ ] CD-GDD-ALIGN runs in both full AND lean mode (not just full)
@@ -190,3 +190,6 @@ In `solo` mode: CD-GDD-ALIGN is skipped. Output notes:
   not independently tested — the order follows the standard GDD template.
 - Pillar alignment checking within CD-GDD-ALIGN is evaluated holistically by
   the gate agent — specific pillar checks are not fixture-tested here.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

@@ -1,6 +1,6 @@
 # Skill Test Spec: /start
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/start` is the first-time onboarding skill for new projects. It guides the
 user through naming the project, choosing a game engine, and setting up the
@@ -35,7 +35,7 @@ point this skill runs.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Fresh repo, no engine, full onboarding flow
 
@@ -152,7 +152,7 @@ point this skill runs.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Asks for project name before any file is written
 - [ ] Presents engine options as a structured choice (not free text)
@@ -171,3 +171,6 @@ point this skill runs.
   concern outside the skill boundary.
 - Solo vs. lean mode behavior is not applicable — this skill has no gates and
   mode selection is irrelevant.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

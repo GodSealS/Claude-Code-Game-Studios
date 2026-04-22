@@ -1,6 +1,6 @@
 # Skill Test Spec: /help
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/help` analyzes what has been done and what comes next in the project workflow.
 It runs on the Haiku model (read-only, formatting task) and reads `production/stage.txt`,
@@ -32,7 +32,7 @@ None. `/help` is a read-only navigation skill. No director gates apply.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Production stage with active sprint
 
@@ -152,7 +152,7 @@ None. `/help` is a read-only navigation skill. No director gates apply.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Reads stage, sprint, and session state before generating suggestions
 - [ ] Suggestions are specific to the current project state (not generic)
@@ -170,3 +170,6 @@ None. `/help` is a read-only navigation skill. No director gates apply.
   it assumes standard skill catalog availability.
 - Stage detection fallback (when stage.txt is absent) delegates to the same
   logic as `/project-stage-detect` and is not re-tested here in detail.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

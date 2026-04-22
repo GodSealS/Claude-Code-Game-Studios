@@ -1,6 +1,6 @@
 # Agent Test Spec: qa-lead
 
-## Agent Summary
+## Agent Summary / 代理摘要
 **Domain owned:** Test strategy, QL-STORY-READY gate, QL-TEST-COVERAGE gate, bug severity triage, release quality gates.
 **Does NOT own:** Feature implementation (programmers), game design decisions, creative direction, production scheduling.
 **Model tier:** DeepSeek-V3.2 (individual system analysis — story readiness and coverage assessment).
@@ -19,7 +19,7 @@ Verified by reading the agent's `.codebuddy/agents/qa-lead.md` frontmatter:
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output format
 **Scenario:** A story for "Player takes damage from hazard tiles" is submitted for readiness check. The story has three acceptance criteria: (1) Player health decreases by the hazard's damage value, (2) A damage visual feedback plays, (3) Player cannot take damage again for 0.5 seconds (invincibility window). All three ACs are measurable and specific. Request is tagged QL-STORY-READY.
@@ -67,7 +67,7 @@ Verified by reading the agent's `.codebuddy/agents/qa-lead.md` frontmatter:
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Returns QL-STORY-READY verdicts using ADEQUATE / GAPS / INADEQUATE only
 - [ ] Returns QL-TEST-COVERAGE verdicts using ADEQUATE / GAPS / INADEQUATE only (or PASS / FAIL for release gates)
@@ -84,3 +84,6 @@ Verified by reading the agent's `.codebuddy/agents/qa-lead.md` frontmatter:
 - Bug severity triage (P0/P1/P2 classification) is not covered here — deferred to /bug-triage skill integration.
 - Release quality gate behavior (PASS / FAIL vocabulary variant) is not covered.
 - Interaction between QL-STORY-READY and story Done criteria (/story-done skill) is not covered.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

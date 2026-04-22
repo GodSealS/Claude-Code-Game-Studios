@@ -1,6 +1,6 @@
 # Skill Test Spec: /consistency-check
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/consistency-check` scans all GDDs in `design/gdd/` and checks for internal
 conflicts across documents. It produces a structured findings table with columns:
@@ -35,7 +35,7 @@ required as part of the scan itself.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — 4 GDDs with no conflicts
 
@@ -155,7 +155,7 @@ required as part of the scan itself.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Reads all GDDs before producing the findings table
 - [ ] Findings table shown in full before any write ask (if report is requested)
@@ -174,3 +174,6 @@ required as part of the scan itself.
   informal descriptions of the same mechanic may not be detected.
 - The conflict severity rubric (HIGH / MEDIUM / LOW) is defined in the skill body
   and not re-enumerated here.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

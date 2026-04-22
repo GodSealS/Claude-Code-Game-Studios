@@ -1,6 +1,6 @@
 # Agent Test Spec: technical-artist
 
-## Agent Summary
+## Agent Summary / 代理摘要
 - **Domain**: Shaders, VFX, rendering optimization, art pipeline tools, and visual performance.
 - **Does NOT own**: art style decisions or color palette (art-director), gameplay code (gameplay-programmer).
 - **Model tier**: DeepSeek-V3.2 (default).
@@ -17,7 +17,7 @@
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output
 **Input:** "Create a dissolve effect shader for enemy death sequences."
@@ -62,7 +62,7 @@
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Stays within declared domain (shaders, VFX, rendering optimization, art pipeline)
 - [ ] Redirects art style decisions to art-director
@@ -79,3 +79,6 @@
 - Dissolve shader (Case 1) should include a visual test reference in `production/qa/evidence/`
 - Engine version check (Case 4) confirms the agent treats VERSION.md as authoritative
 - Performance budget case (Case 5) verifies the agent reads and applies provided context numbers
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

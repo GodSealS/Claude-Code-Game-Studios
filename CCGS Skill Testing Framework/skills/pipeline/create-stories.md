@@ -1,6 +1,6 @@
 # Skill Test Spec: /create-stories
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/create-stories` breaks a single epic into developer-ready story files. It reads
 the EPIC.md, the corresponding GDD, governing ADRs, the control manifest, and the
@@ -42,7 +42,7 @@ In `solo` mode: QL-STORY-READY is skipped with equivalent notes.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Epic with 3 stories, all ADRs Accepted
 
@@ -169,7 +169,7 @@ In `solo` mode: QL-STORY-READY is skipped with equivalent notes.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] All context (EPIC, GDD, ADRs, manifest, TR registry) loaded before drafting stories
 - [ ] Story drafts shown in full before any "May I write" ask
@@ -189,3 +189,6 @@ In `solo` mode: QL-STORY-READY is skipped with equivalent notes.
   Case 1's multi-story fixture.
 - The story sizing rule (splitting large requirement groups) is not tested here
   — it is addressed in the `/create-stories` skill's internal logic.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

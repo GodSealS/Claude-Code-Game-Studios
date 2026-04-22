@@ -1,6 +1,6 @@
 # Skill Test Spec: /team-polish
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 Orchestrates the polish team through a six-phase pipeline: performance assessment
 (performance-analyst) → optimization (performance-analyst, optionally with
@@ -30,7 +30,7 @@ identifies engine-level root causes. Verdict is READY FOR RELEASE or NEEDS MORE 
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Full pipeline completes, READY FOR RELEASE verdict
 
@@ -185,7 +185,7 @@ identifies engine-level root causes. Verdict is READY FOR RELEASE or NEEDS MORE 
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Phase 1 (assessment) must complete before any other phase begins
 - [ ] `AskUserQuestion` is used after every phase output before the next phase launches
@@ -216,3 +216,6 @@ identifies engine-level root causes. Verdict is READY FOR RELEASE or NEEDS MORE 
   qa-tester output. Case 5 focuses on the regression detection aspect of Phase 5.
 - The "minimum spec hardware" test path in Phase 5 is not separately tested — it follows
   the same qa-tester delegation pattern when the hardware is available.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

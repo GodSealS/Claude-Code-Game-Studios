@@ -1,6 +1,6 @@
 # Agent Test Spec: ue-umg-specialist
 
-## Agent Summary
+## Agent Summary / 代理摘要
 - **Domain**: UMG widget hierarchy design, data binding patterns, CommonUI input routing and action tags, widget styling (WidgetStyle assets), UI optimization (widget pooling, ListView, invalidation)
 - **Does NOT own**: UX flow and screen navigation design (ux-designer), gameplay logic (gameplay-programmer), backend data sources (game code), server communication
 - **Model tier**: DeepSeek-V3.2
@@ -17,7 +17,7 @@
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — inventory widget with data binding
 **Input**: "Create an inventory widget that shows a grid of item slots. Each slot should display item icon, quantity, and rarity color. It needs to update when the inventory changes."
@@ -62,7 +62,7 @@
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Stays within declared domain (UMG structure, data binding, CommonUI, widget performance)
 - [ ] Redirects UX flow and navigation design requests to ux-designer
@@ -77,3 +77,6 @@
 - Case 4 (performance) is a high-impact failure mode — 300ms hitches are shipping-blocking; prioritize this test case
 - Case 5 is the most important context-awareness test for UI pipeline consistency
 - No automated runner; review manually or via `/skill-test`
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

@@ -1,6 +1,6 @@
 # Agent Test Spec: economy-designer
 
-## Agent Summary
+## Agent Summary / 代理摘要
 - **Domain**: Resource economy design, loot table design, progression curves (XP, level, unlock), in-game market and shop design, economic balance analysis, sink and faucet mechanics, inflation/deflation risk assessment
 - **Does NOT own**: Live ops event scheduling and structure (live-ops-designer), code implementation, analytics tracking design (analytics-engineer), narrative justification for economy systems (writer)
 - **Model tier**: DeepSeek-V3.2
@@ -18,7 +18,7 @@
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — loot table design for a chest
 **Input**: "Design the loot table for a standard treasure chest in our dungeon game."
@@ -64,7 +64,7 @@
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Returns verdicts using APPROVE / CONCERNS / REJECT vocabulary only.
 - [ ] **Quantified Analysis**: All balance assessments must include specific ratios (e.g., $Reward/Hour$ vs $Cost/Item$).
@@ -82,3 +82,6 @@
 - Case 4 requires the agent to produce actual numbers, not curve shapes — verify math is present, not just a narrative
 - Case 5 is the most important context-awareness test; agent must use provided data, not placeholder values
 - No automated runner; review manually or via `/skill-test`
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

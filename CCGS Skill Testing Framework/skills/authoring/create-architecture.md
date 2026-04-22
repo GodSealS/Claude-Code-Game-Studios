@@ -1,6 +1,6 @@
 # Skill Test Spec: /create-architecture
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/create-architecture` guides the user through section-by-section authoring of a
 technical architecture document. It uses a skeleton-first approach — the file is
@@ -43,7 +43,7 @@ In `solo` mode: both gates are skipped with equivalent notes.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — New architecture doc, skeleton-first, full mode gates approve
 
@@ -165,7 +165,7 @@ In `solo` mode: both gates are skipped with equivalent notes.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Skeleton file created with all section headers before any content is written
 - [ ] "May I write [section]?" asked per section during authoring
@@ -185,3 +185,6 @@ In `solo` mode: both gates are skipped with equivalent notes.
 - The retrofit mode for updating multiple sections in one session follows the
   same per-section approval pattern — not independently tested for multi-section
   retrofits.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

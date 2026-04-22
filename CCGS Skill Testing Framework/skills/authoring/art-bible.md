@@ -1,6 +1,6 @@
 # Skill Test Spec: /art-bible
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/art-bible` is a guided, section-by-section art bible authoring skill. It
 produces a comprehensive visual direction document covering: Visual Style overview,
@@ -37,7 +37,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Full mode, art bible drafted, AD-ART-BIBLE approves
 
@@ -163,7 +163,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Creates skeleton file immediately with all section headers
 - [ ] Discusses and drafts one section at a time
@@ -183,3 +183,6 @@ Verified automatically by `/skill-test static` — no fixture needed.
   specific content requirements are not assertion-tested here.
 - The art bible feeds into `/asset-spec` — this relationship is noted in the
   handoff but not tested as part of this skill's spec.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

@@ -1,6 +1,6 @@
 # Agent Test Spec: audio-director
 
-## Agent Summary
+## Agent Summary / 代理摘要
 **Domain owned:** Music direction and palette, sound design philosophy, audio implementation strategy, mix balance, audio aspects of phase gates.
 **Does NOT own:** Visual design (art-director), code implementation (lead-programmer), narrative story content (narrative-director), UX interaction flows (ux-designer).
 **Model tier:** Kimi-K2.5 (individual system analysis — audio direction and spec review).
@@ -19,7 +19,7 @@ Verified by reading the agent's `.codebuddy/agents/audio-director.md` frontmatte
 - [ ] Agent definition does not claim authority over visual design, code implementation, or narrative content
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output format
 **Scenario:** An audio specification document is submitted for the game's "Exploration" music layer. The spec defines a generative ambient system using layered stems that shift based on environmental density, designed to reinforce the pillar "lived-in world." The tone palette (sparse, organic, slightly melancholic) matches the established design pillars.
@@ -67,7 +67,7 @@ Verified by reading the agent's `.codebuddy/agents/audio-director.md` frontmatte
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Returns verdicts using APPROVED / NEEDS REVISION vocabulary only
 - [ ] Stays within declared audio domain
@@ -82,3 +82,6 @@ Verified by reading the agent's `.codebuddy/agents/audio-director.md` frontmatte
 - Audio implementation strategy review (middleware choice, streaming approach) is not covered.
 - Interaction between audio-director and the audio specialist agent (if one exists) for implementation delegation is not covered.
 - Localization audio implications (VO recording direction, language-specific music timing) are not covered.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

@@ -1,6 +1,6 @@
 # Agent Test Spec: devops-engineer
 
-## Agent Summary
+## Agent Summary / 代理摘要
 - **Domain**: CI/CD pipeline configuration, build scripts, version control workflow enforcement, deployment infrastructure, branching strategy, environment management, automated test integration in CI
 - **Does NOT own**: Game logic or gameplay systems, security audits (security-engineer), QA test strategy (qa-lead), game networking logic (network-programmer)
 - **Model tier**: DeepSeek-V3.2​
@@ -18,7 +18,7 @@
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — CI setup for a Godot project
 **Input**: "Set up a CI pipeline for our Godot 4 project. It should run tests on every push to main and every pull request, and fail the build if tests fail."
@@ -64,7 +64,7 @@
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Stays within declared domain (CI/CD, build scripts, version control, deployment)
 - [ ] Redirects game logic and networking requests to appropriate programmers
@@ -79,3 +79,6 @@
 - Case 4 (branching strategy) is a convention-enforcement test — agent must know the project convention, not just give neutral advice
 - Case 5 requires that project's target platforms are documented (in `technical-preferences.md` or equivalent)
 - No automated runner; review manually or via `/skill-test`
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

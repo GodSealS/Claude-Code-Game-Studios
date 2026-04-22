@@ -4,7 +4,7 @@
 > **Category**: [director | lead | specialist | engine | operations | creative]
 > **Spec written**: [YYYY-MM-DD]
 
-## Agent Summary
+## Agent Summary / 代理摘要
 
 [One paragraph describing this agent's domain, what decisions it owns, and what it
 delegates vs. handles directly. Include which gates it triggers (if any).]
@@ -15,7 +15,7 @@ delegates vs. handles directly. Include which gates it triggers (if any).]
 
 ---
 
-## Static Assertions
+## Static Assertions / 静态断言
 
 - [ ] Agent file exists at `.codebuddy/agents/[name].md`
 - [ ] Frontmatter has `name`, `description`, `model`, `tools` fields
@@ -25,7 +25,7 @@ delegates vs. handles directly. Include which gates it triggers (if any).]
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-Domain Request — [brief name]
 
@@ -134,7 +134,7 @@ delegates vs. handles directly. Include which gates it triggers (if any).]
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Stays within declared domain — no unilateral cross-domain changes
 - [ ] Escalates conflicts to correct parent
@@ -148,3 +148,6 @@ delegates vs. handles directly. Include which gates it triggers (if any).]
 
 [Any gaps in coverage, known edge cases not tested, or behaviors that require
 a live agent invocation to verify.]
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

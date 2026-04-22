@@ -1,6 +1,6 @@
 # Agent Test Spec: creative-director
 
-## Agent Summary
+## Agent Summary / 代理摘要
 **Domain owned:** Creative vision, game pillars, GDD alignment, systems decomposition feedback, narrative direction, playtest feedback interpretation, phase gate (creative aspect).
 **Does NOT own:** Technical architecture or implementation details (delegates to technical-director), production scheduling (producer), visual art style execution (delegates to art-director).
 **Model tier:** GLM-5v-Turbo (multi-document synthesis, high-stakes phase gate verdicts).
@@ -19,7 +19,7 @@ Verified by reading the agent's `.codebuddy/agents/creative-director.md` frontma
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output format
 **Scenario:** A game concept document is submitted for pillar review. The concept describes a narrative survival game built around three pillars: "emergent stories," "meaningful sacrifice," and "lived-in world." Request is tagged CD-PILLARS.
@@ -67,7 +67,7 @@ Verified by reading the agent's `.codebuddy/agents/creative-director.md` frontma
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Returns verdicts using APPROVE / CONCERNS / REJECT vocabulary only
 - [ ] Stays within declared creative domain
@@ -82,3 +82,6 @@ Verified by reading the agent's `.codebuddy/agents/creative-director.md` frontma
 - CD-PHASE-GATE (full phase advancement) involves synthesizing multiple sub-gate results; this complex case is deferred.
 - Playtest report interpretation (CD-PLAYTEST) is not covered — a dedicated case should be added when the playtest-report skill produces structured output.
 - Interaction with art-director on visual-pillar alignment is not covered.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

@@ -1,6 +1,6 @@
 # Agent Test Spec: security-engineer
 
-## Agent Summary
+## Agent Summary / 代理摘要
 - **Domain**: Anti-cheat systems, save data security, network security, vulnerability assessment, and data privacy compliance.
 - **Does NOT own**: game logic design (gameplay-programmer), server infrastructure (devops-engineer).
 - **Model tier**: DeepSeek-V3.2 (default).
@@ -18,7 +18,7 @@
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output
 **Input:** "Review the save data system for security issues."
@@ -63,7 +63,7 @@
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] **Standard Verdicts**: Returns APPROVE / CONCERNS / REJECT vocabulary only.
 - [ ] **Escalation Trigger**: Specifically tags `@technical-director` for any finding labeled as $CRITICAL$ or $HIGH$.
@@ -81,3 +81,6 @@
 - Save data audit (Case 1) confirms the agent produces actionable, prioritized findings not generic advice
 - CRITICAL vulnerability escalation (Case 3) verifies the agent's severity classification and escalation path
 - Performance trade-off (Case 4) confirms the agent does not silently drop security measures to hit a budget
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

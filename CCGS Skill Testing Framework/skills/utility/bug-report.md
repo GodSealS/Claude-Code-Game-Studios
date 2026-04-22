@@ -1,6 +1,6 @@
 # Skill Test Spec: /bug-report
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/bug-report` creates a structured bug report document from a user description.
 It produces a report with the following required fields: Title, Repro Steps,
@@ -34,7 +34,7 @@ None. `/bug-report` is an operational documentation skill. No director gates app
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — User describes a crash, full report produced
 
@@ -153,7 +153,7 @@ None. `/bug-report` is an operational documentation skill. No director gates app
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Collects all 7 required fields before drafting the report
 - [ ] Asks follow-up questions for any missing required fields
@@ -172,3 +172,6 @@ None. `/bug-report` is an operational documentation skill. No director gates app
   this is accepted as a valid value and not tested separately.
 - Report slug generation (sanitizing the title into a filename) is an
   implementation detail not assertion-tested here.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

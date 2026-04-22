@@ -1,6 +1,6 @@
 # Agent Test Spec: network-programmer
 
-## Agent Summary
+## Agent Summary / 代理摘要
 - **Domain**: Multiplayer networking, state replication, lag compensation, matchmaking protocol design, and network message schemas.
 - **Does NOT own**: gameplay logic (only the networking of it), server infrastructure and deployment (devops-engineer).
 - **Model tier**: DeepSeek-V3.2 (default).
@@ -16,7 +16,7 @@
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output
 **Input:** "Design state replication for player position in a 4-player co-op game."
@@ -64,7 +64,7 @@
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Stays within declared domain (replication, lag compensation, protocol design, matchmaking)
 - [ ] Redirects server deployment to devops-engineer
@@ -81,3 +81,6 @@
 - Replication strategy (Case 1) should include a bandwidth calculation reviewable by technical-director
 - Rollback/reconciliation (Case 3) must document the engine-programmer interface contract clearly
 - Anti-cheat conflict (Case 4) confirms the agent escalates rather than unilaterally deciding security trade-offs
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

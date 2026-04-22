@@ -88,7 +88,7 @@ All testing is driven by two skills already in the framework:
 
 ---
 
-## Skill categories
+## Skill categories / 技能类别
 
 | Category | Skills | Key metrics |
 |----------|--------|-------------|
@@ -104,7 +104,7 @@ All testing is driven by two skills already in the framework:
 
 ---
 
-## Agent tiers
+## Agent tiers / 代理层级
 
 | Tier | Agents |
 |------|--------|
@@ -150,3 +150,6 @@ rm -rf "CCGS Skill Testing Framework"
 The skills `/skill-test` and `/skill-improve` will still function — they'll simply
 report that `catalog.yaml` is missing and suggest running `/skill-test audit` to
 initialize it.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

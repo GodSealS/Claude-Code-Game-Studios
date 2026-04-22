@@ -1,6 +1,6 @@
 # Agent Test Spec: ai-programmer
 
-## Agent Summary
+## Agent Summary / 代理摘要
 - **Domain**: NPC behavior, state machines, pathfinding, perception systems, UE 5.5 NPC Systems (StateTree/MassAI), Perception (EQS), Pathfinding (NavMesh), and AI decision-making.
 - **Does NOT own**: player mechanics (gameplay-programmer), rendering or engine internals (engine-programmer).
 - **Exclusion**: No authority over Player Mechanics (`gameplay-programmer`) or low-level NavMesh generators (`engine-programmer`).
@@ -19,7 +19,7 @@
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output
 **Input:** "Implement a patrol-and-alert behavior tree for a guard NPC: patrol between waypoints, detect the player within 10 units, then enter an alert state and pursue."
@@ -64,7 +64,7 @@
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Uses Mermaid.js or text-based state transition tables for behavior specifications.
 - [ ] All performance metrics must use LaTeX for quantitative expressions (e.g., "Expected complexity: $O(\log n)$").
@@ -84,3 +84,6 @@
 - Behavior tree output (Case 1) should be validated by a unit test in `tests/unit/ai/`
 - Level-layout context (Case 5) verifies the agent reads and applies provided documents rather than inventing
 - Performance escalation (Case 4) confirms the agent recognizes the engine-programmer boundary
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

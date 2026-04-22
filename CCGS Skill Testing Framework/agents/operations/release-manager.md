@@ -1,6 +1,6 @@
 # Agent Test Spec: release-manager
 
-## Agent Summary
+## Agent Summary / 代理摘要
 - **Domain**: Release pipeline management, platform certification checklists (Nintendo, Sony, Microsoft, Apple, Google), store submission workflows, platform technical requirements compliance, semantic version numbering, release branch management
 - **Does NOT own**: Game design decisions, QA test strategy or test case design (qa-lead), QA test execution (qa-tester), build infrastructure (devops-engineer)
 - **Model tier**: DeepSeek-V3.2
@@ -18,7 +18,7 @@
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — platform certification checklist for Nintendo Switch
 **Input**: "Generate the certification checklist for our Nintendo Switch submission."
@@ -64,7 +64,7 @@
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] **Standard Verdicts**: Returns APPROVE / CONCERNS / REJECT only.
 - [ ] **Blocking Authority**: Issues REJECT for any certification failure or versioning conflict.
@@ -82,3 +82,6 @@
 - Case 5 requires current date and release date context; verify the agent uses actual dates, not placeholder estimates
 - Certification requirements change over time — flag if the agent produces specific requirement IDs that may be outdated
 - No automated runner; review manually or via `/skill-test`
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

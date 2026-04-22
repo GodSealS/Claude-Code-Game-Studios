@@ -1,6 +1,6 @@
 # Skill Test Spec: /smoke-check
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/smoke-check` is the gate between implementation and QA hand-off. It detects the
 test environment, runs the automated test suite (via Bash), scans test coverage
@@ -35,7 +35,7 @@ None. `/smoke-check` is a pre-QA utility skill. No director gates apply.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Automated tests pass, manual items confirmed, PASS
 
@@ -170,7 +170,7 @@ None. `/smoke-check` is a pre-QA utility skill. No director gates apply.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Uses `AskUserQuestion` for all manual smoke check batches (Batch 1, Batch 2, Batch 3)
 - [ ] Runs automated tests via Bash before asking any manual questions
@@ -191,3 +191,6 @@ None. `/smoke-check` is a pre-QA utility skill. No director gates apply.
   per-platform verdict table; not separately tested here.
 - The case where the engine binary is not on PATH (NOT RUN) follows the PASS WITH
   WARNINGS pattern and is covered by the protocol compliance assertions above.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

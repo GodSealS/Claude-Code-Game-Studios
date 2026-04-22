@@ -1,6 +1,6 @@
 # Skill Test Spec: /regression-suite
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/regression-suite` maps test coverage to GDD requirements: it reads the
 acceptance criteria from story files in the current sprint (or a specified epic),
@@ -34,7 +34,7 @@ None. `/regression-suite` is a QA analysis utility. No director gates apply.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Full Coverage — All ACs in sprint have corresponding tests
 
@@ -151,7 +151,7 @@ None. `/regression-suite` is a QA analysis utility. No director gates apply.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Reads story ACs from sprint files before scanning tests
 - [ ] Matches ACs to tests by system name and scenario (not file name alone)
@@ -170,3 +170,6 @@ None. `/regression-suite` is a QA analysis utility. No director gates apply.
   distinction in verdicts is made between the two.
 - This skill does not run the tests — it maps AC text to test assertions. Test
   execution is handled by the CI pipeline.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

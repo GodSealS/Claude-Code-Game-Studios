@@ -1,6 +1,6 @@
 # Skill Test Spec: /story-readiness
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/story-readiness` validates that a story file is ready for a developer to
 pick up and implement. It checks four dimensions: Design (embedded GDD
@@ -23,7 +23,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Fully ready story
 
@@ -174,7 +174,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Does NOT use Write or Edit tools (read-only skill)
 - [ ] Presents complete check results before verdict
@@ -193,3 +193,6 @@ Verified automatically by `/skill-test static` — no fixture needed.
   which is hard to fixture reliably.
 - Stories with multiple ADR references are not tested; behavior is assumed to
   be additive (all ADRs must be Accepted for READY verdict).
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

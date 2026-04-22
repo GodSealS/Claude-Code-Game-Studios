@@ -1,18 +1,25 @@
 #!/bin/bash
 # Hook: detect-gaps.sh
+# 钩子： detect-gaps.sh
 # Event: SessionStart
+# 事件： SessionStart
 # Purpose: Detect missing documentation when code/prototypes exist
+# 目的： 检测代码/原型存在时缺失的文档
 # Cross-platform: Windows Git Bash compatible (uses grep -E, not -P)
+# 跨平台： Windows Git Bash 兼容（使用 grep -E，而非 -P）
 
 # Exit on error for debugging (but don't fail the session)
+#   调试时出错退出（但不会使会话失败）
 set +e
 
 echo "=== Checking for Documentation Gaps ==="
 
 # --- Check 0: Fresh project detection (suggests /start) ---
+#   --- 检查 0：新项目检测（建议 /start）---
 FRESH_PROJECT=true
 
 # Check if engine is configured
+#   检查引擎是否已配置
 if [ -f ".codebuddy/docs/technical-preferences.md" ]; then
   ENGINE_LINE=$(grep -E "^\- \*\*Engine\*\*:" .codebuddy/docs/technical-preferences.md 2>/dev/null)
   if [ -n "$ENGINE_LINE" ] && ! echo "$ENGINE_LINE" | grep -q "TO BE CONFIGURED" 2>/dev/null; then
@@ -21,11 +28,13 @@ if [ -f ".codebuddy/docs/technical-preferences.md" ]; then
 fi
 
 # Check if game concept exists
+#   检查游戏概念是否存在
 if [ -f "design/gdd/game-concept.md" ]; then
   FRESH_PROJECT=false
 fi
 
 # Check if source code exists
+#   检查源代码是否存在
 if [ -d "src" ]; then
   SRC_CHECK=$(find src -type f \( -name "*.gd" -o -name "*.cs" -o -name "*.cpp" -o -name "*.c" -o -name "*.h" -o -name "*.hpp" -o -name "*.rs" -o -name "*.py" -o -name "*.js" -o -name "*.ts" \) 2>/dev/null | head -1)
   if [ -n "$SRC_CHECK" ]; then
@@ -44,6 +53,7 @@ if [ "$FRESH_PROJECT" = true ]; then
 fi
 
 # --- Check 1: Substantial codebase but sparse design docs ---
+#   --- 检查 1：有大量代码但设计文档稀疏 ---
 if [ -d "src" ]; then
   # Count source files (cross-platform, handles Windows paths)
   SRC_FILES=$(find src -type f \( -name "*.gd" -o -name "*.cs" -o -name "*.cpp" -o -name "*.c" -o -name "*.h" -o -name "*.hpp" -o -name "*.rs" -o -name "*.py" -o -name "*.js" -o -name "*.ts" \) 2>/dev/null | wc -l)

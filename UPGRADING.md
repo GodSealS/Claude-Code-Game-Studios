@@ -13,7 +13,7 @@ Or check `README.md` for the version badge.
 
 ---
 
-## Table of Contents
+## Table of Contents / 目录
 
 - [Upgrade Strategies](#upgrade-strategies)
 - [v0.4.x → v1.0](#v04x--v10)
@@ -24,12 +24,12 @@ Or check `README.md` for the version badge.
 
 ---
 
-## Upgrade Strategies
+## Upgrade Strategies / 升级策略
 
 There are three ways to pull in template updates. Choose based on how your
 repo is set up.
 
-### Strategy A — Git Remote Merge (recommended)
+### Strategy A — Git Remote Merge (recommended) / 策略A — Git远程合并（推荐）
 
 Best when: you cloned the template and have your own commits on top of it.
 
@@ -54,7 +54,7 @@ your engine and project settings. Keep your content; accept the structural chang
 
 ---
 
-### Strategy B — Cherry-pick specific commits
+### Strategy B — Cherry-pick specific commits / 策略B — 精选特定提交
 
 Best when: you only want one specific feature (e.g., just the new skill, not
 the full update).
@@ -71,7 +71,7 @@ Commit SHAs for each version are listed in the version sections below.
 
 ---
 
-### Strategy C — Manual file copy
+### Strategy C — Manual file copy / 策略C — 手动文件复制
 
 Best when: you didn't use git to set up the template (just downloaded a zip).
 
@@ -87,7 +87,7 @@ Best when: you didn't use git to set up the template (just downloaded a zip).
 **Released:** 2026-04-02
 **Key themes:** Art direction integration, asset specification pipeline
 
-### What Changed
+### What Changed / 变更内容
 
 | Category | Changes |
 |----------|---------|
@@ -101,7 +101,7 @@ Best when: you didn't use git to set up the template (just downloaded a zip).
 | **`/design-system` update** | Routing table expanded with art-director + technical-artist for Combat, UI, Dialogue, Animation/VFX, Character categories. Visual/Audio section now mandatory (with art-director Task spawn) for 7 system categories. |
 | **`workflow-catalog.yaml`** | `/art-bible` added to Technical Setup (required). `/asset-spec` added to Pre-Production (optional, repeatable). |
 
-### Files: Safe to Overwrite
+### Files: Safe to Overwrite / 文件：可安全覆盖
 
 **New files to add:**
 ```
@@ -122,7 +122,7 @@ README.md
 UPGRADING.md
 ```
 
-### Files: Merge Carefully
+### Files: Merge Carefully / 文件：需谨慎合并
 
 None — all changes are to infrastructure files with no user content.
 
@@ -134,7 +134,7 @@ None — all changes are to infrastructure files with no user content.
 **Commit range:** `6c041ac..HEAD`
 **Key themes:** Director gates system, gate intensity modes, Godot C# specialist
 
-### What Changed
+### What Changed / 变更内容
 
 | Category | Changes |
 |----------|---------|
@@ -148,7 +148,7 @@ None — all changes are to infrastructure files with no user content.
 
 ---
 
-### Files: Safe to Overwrite
+### Files: Safe to Overwrite / 文件：可安全覆盖
 
 **New files to add:**
 ```
@@ -181,15 +181,15 @@ UPGRADING.md
 
 ---
 
-### Files: Merge Carefully
+### Files: Merge Carefully / 文件：需谨慎合并
 
 No files require manual merging in this release. All changes are to infrastructure files with no user content.
 
 ---
 
-### New Features
+### New Features / 新功能
 
-#### Director Gates System
+#### Director Gates System / 总监门控系统
 
 All major workflow skills now reference named gate checkpoints defined in
 `.codebuddy/docs/director-gates.md`. Gates are identified by domain prefix and name
@@ -201,7 +201,7 @@ Skills spawn gates using `Task` with the gate ID and documented inputs, rather
 than embedding director prompts inline. This keeps skill bodies clean and makes
 gate behavior consistent across all workflow phases.
 
-#### Gate Intensity Modes
+#### Gate Intensity Modes / 门控强度模式
 
 Three modes let you control how much director review you get:
 
@@ -220,7 +220,7 @@ individual run with `--review [mode]` on any gate-using skill:
 
 ---
 
-### After Upgrading
+### After Upgrading / 升级后
 
 1. Run `/start` once to set your preferred review mode — or create `production/review-mode.txt` manually with `full`, `lean`, or `solo`.
 2. If you're mid-project, review `.codebuddy/docs/director-gates.md` to understand which gates apply to your current phase.
@@ -234,7 +234,7 @@ individual run with `--review [mode]` on any gate-using skill:
 **Commit range:** `04ed5d5..HEAD`
 **Key themes:** Genre-agnostic agents, new skills, skill fixes
 
-### What Changed
+### What Changed / 变更内容
 
 | Category | Changes |
 |----------|---------|
@@ -244,7 +244,7 @@ individual run with `--review [mode]` on any gate-using skill:
 
 ---
 
-### Files: Safe to Overwrite
+### Files: Safe to Overwrite / 文件：可安全覆盖
 
 **New files to add:**
 ```
@@ -273,13 +273,13 @@ individual run with `--review [mode]` on any gate-using skill:
 
 ---
 
-### Files: Merge Carefully
+### Files: Merge Carefully / 文件：需谨慎合并
 
 No files require manual merging in this release. All changes are to infrastructure files with no user content.
 
 ---
 
-### After Upgrading
+### After Upgrading / 升级后
 
 1. Run `/skill-test catalog` to verify all skills are indexed.
 2. Run `/skill-test lint [skill-name]` after any skill edits to check structural compliance.
@@ -293,7 +293,7 @@ No files require manual merging in this release. All changes are to infrastructu
 **Commit range:** `b1cad29..HEAD`
 **Key themes:** Full UX/UI pipeline, complete story lifecycle, brownfield adoption, comprehensive QA/testing framework, pipeline integrity, 29 new skills
 
-### What Changed
+### What Changed / 变更内容
 
 | Category | Changes |
 |----------|---------|
@@ -316,7 +316,7 @@ No files require manual merging in this release. All changes are to infrastructu
 
 ---
 
-### Files: Safe to Overwrite
+### Files: Safe to Overwrite / 文件：可安全覆盖
 
 **New files to add:**
 ```
@@ -400,7 +400,7 @@ UPGRADING.md
 
 ---
 
-### Files: Merge Carefully
+### Files: Merge Carefully / 文件：需谨慎合并
 
 #### `.codebuddy/settings.json`
 
@@ -411,15 +411,15 @@ Four new hooks are registered in this version. If you haven't customized `settin
 - `post-compact.sh` — `PostCompact` event (session recovery reminder)
 - `validate-skill-change.sh` — `PostToolUse` event filtered to `.codebuddy/skills/` writes
 
-#### Customized agent files
+#### Customized agent files / 自定义代理文件
 
 If you've added project-specific knowledge to agent `.md` files, do a diff and manually add the `memory: project` line to the YAML frontmatter where appropriate. Creative and technical director agents intentionally keep `memory: user` — only specialist agents get `memory: project`.
 
 ---
 
-### New Features
+### New Features / 新功能
 
-#### Complete Story Lifecycle
+#### Complete Story Lifecycle / 完整故事生命周期
 
 Stories now have a formal lifecycle enforced by two skills:
 
@@ -434,7 +434,7 @@ Flow: `/story-readiness` → implement → `/story-done` → next story
 - **`/ux-review`** — validates UX specs against GDD alignment, accessibility tier, and pattern library. Verdict: APPROVED / NEEDS REVISION / MAJOR REVISION.
 - **`/team-ui`** updated: Phase 1 now runs `/ux-design` + `/ux-review` as a hard gate before visual design begins.
 
-#### Brownfield Adoption
+#### Brownfield Adoption / 棕地采纳
 
 **`/adopt`** onboards existing projects to the template format. Audits internal structure of GDDs, ADRs, stories, systems-index, and infra. Classifies gaps (BLOCKING/HIGH/MEDIUM/LOW). Builds an ordered migration plan. Never regenerates existing artifacts — only fills gaps.
 
@@ -442,7 +442,7 @@ Argument modes: `full | gdds | adrs | stories | infra`
 
 Also: `/design-system retrofit [path]` and `/architecture-decision retrofit [path]` detect existing files and add only missing sections.
 
-#### Sprint Tracking YAML
+#### Sprint Tracking YAML / 冲刺跟踪YAML
 
 `production/sprint-status.yaml` is now the authoritative story tracking format:
 - Written by `/sprint-plan` (initializes all stories) and `/story-done` (sets status to `done`)
@@ -454,7 +454,7 @@ Also: `/design-system retrofit [path]` and `/architecture-decision retrofit [pat
 
 `/help` reads your current stage and in-progress work, checks which artifacts are complete, and tells you exactly what to do next — one primary required step, plus optional opportunities. Distinct from `/start` (first-time only) and `/project-stage-detect` (full audit).
 
-#### Comprehensive QA and Testing Framework
+#### Comprehensive QA and Testing Framework / 综合QA和测试框架
 
 Nine new QA/testing skills covering the full testing lifecycle:
 
@@ -479,22 +479,22 @@ Also new: **`/bug-triage`** re-evaluates all open bugs for priority, severity, a
 
 The new `validate-skill-change.sh` hook reminds you to run `/skill-test` automatically when a skill file is modified.
 
-#### Team Live-Ops and Team QA Orchestration
+#### Team Live-Ops and Team QA Orchestration / 团队活跃运营和团队QA编排
 
 - **`/team-live-ops`** — coordinates live-ops-designer + economy-designer + community-manager + analytics-engineer for post-launch content planning (seasonal events, battle pass, retention)
 - **`/team-qa`** — orchestrates qa-lead + qa-tester + gameplay-programmer + producer through a full QA cycle: strategy, execution, coverage, and sign-off
 
-#### Model Tier Routing
+#### Model Tier Routing / 模型层级路由
 
 Skills are now explicitly assigned to Haiku, Sonnet, or Opus tiers based on task complexity. Read-only status checks use Haiku; complex multi-document synthesis uses Opus; everything else defaults to Sonnet. Tier assignments are documented in `.codebuddy/docs/coordination-rules.md`.
 
-#### Directory CLAUDE.md Files
+#### Directory CLAUDE.md Files / 目录CLAUDE.md文件
 
 Three new directory-scoped CLAUDE.md files (`design/`, `src/`, `docs/`) provide path-specific instructions to agents working in those directories. These load automatically when Claude Code reads files in that directory.
 
 ---
 
-### After Upgrading
+### After Upgrading / 升级后
 
 1. **Verify new hooks** are registered in `.codebuddy/settings.json` — check for all four: `log-agent-stop.sh`, `notify.sh`, `post-compact.sh`, `validate-skill-change.sh`.
 
@@ -517,7 +517,7 @@ Three new directory-scoped CLAUDE.md files (`design/`, `src/`, `docs/`) provide 
 **Commit range:** `e289ce9..HEAD`
 **Key themes:** `/design-system` GDD authoring, `/map-systems` rename, custom status line
 
-### Breaking Changes
+### Breaking Changes / 破坏性变更
 
 #### `/design-systems` renamed to `/map-systems`
 
@@ -527,7 +527,7 @@ The `/design-systems` skill was renamed to `/map-systems` for clarity
 **Action required:** Update any documentation, notes, or scripts that invoke
 `/design-systems`. The new invocation is `/map-systems`.
 
-### What Changed
+### What Changed / 变更内容
 
 | Category | Changes |
 |----------|---------|
@@ -541,7 +541,7 @@ The `/design-systems` skill was renamed to `/map-systems` for clarity
 
 ---
 
-### Files: Safe to Overwrite
+### Files: Safe to Overwrite / 文件：可安全覆盖
 
 **New files to add:**
 ```
@@ -572,7 +572,7 @@ UPGRADING.md
 
 ---
 
-### Files: Merge Carefully
+### Files: Merge Carefully / 文件：需谨慎合并
 
 #### `.codebuddy/settings.json`
 
@@ -588,9 +588,9 @@ is safe. Otherwise, add this block manually:
 
 ---
 
-### New Features
+### New Features / 新功能
 
-#### Custom Status Line
+#### Custom Status Line / 自定义状态行
 
 `.codebuddy/statusline.sh` displays a 7-stage production pipeline breadcrumb in
 the terminal status line:
@@ -617,7 +617,7 @@ future sessions without requiring manual file edits.
 
 ---
 
-### After Upgrading
+### After Upgrading / 升级后
 
 1. **Delete the old skill directory:**
    ```bash
@@ -641,7 +641,7 @@ future sessions without requiring manual file edits.
 **Commit range:** `ad540fe..e289ce9`
 **Key themes:** Context Resilience, AskUserQuestion integration, `/map-systems` skill
 
-### What Changed
+### What Changed / 变更内容
 
 | Category | Changes |
 |----------|---------|
@@ -657,7 +657,7 @@ future sessions without requiring manual file edits.
 
 ---
 
-### Files: Safe to Overwrite
+### Files: Safe to Overwrite / 文件：可安全覆盖
 
 These are pure infrastructure — you have not customized them. Copy the new
 versions directly with no risk to your project content.
@@ -733,7 +733,7 @@ If you *have* customized agent prompts, see "Merge carefully" below.
 
 ---
 
-### Files: Merge Carefully
+### Files: Merge Carefully / 文件：需谨慎合并
 
 These files contain both template structure and your project-specific content.
 Do **not** overwrite them — merge the changes manually.
@@ -771,7 +771,7 @@ Check whether the new version adds any permission rules you want. The change
 was minor (schema update). If you haven't customized your `settings.json`,
 overwriting is safe.
 
-#### Customized agent files
+#### Customized agent files / 自定义代理文件
 
 If you've added project-specific knowledge or custom behavior to any agent
 `.md` file, do a diff and manually add the new AskUserQuestion integration
@@ -780,7 +780,7 @@ collaborative protocol block at the end of the system prompt.
 
 ---
 
-### Files: Delete
+### Files: Delete / 文件：删除
 
 These files were removed in v0.2.0. If present in your repo, you can safely
 delete them — they're replaced by better-organized alternatives.
@@ -792,7 +792,7 @@ docs/MULTI-STAGE-DOCUMENT-WORKFLOW.md → content merged into context-management
 
 ---
 
-### After Upgrading
+### After Upgrading / 升级后
 
 1. **Run `/project-stage-detect`** to verify the system reads your project
    correctly with the new detection logic.

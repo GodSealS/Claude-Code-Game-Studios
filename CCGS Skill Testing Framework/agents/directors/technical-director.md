@@ -1,6 +1,6 @@
 # Agent Test Spec: technical-director
 
-## Agent Summary
+## Agent Summary / 代理摘要
 **Domain owned:** System architecture decisions, technical feasibility assessment, ADR oversight and approval, engine risk evaluation, technical phase gate.
 **Does NOT own:** Game design decisions (creative-director / game-designer), creative direction, visual art style, production scheduling (producer).
 **Model tier:** DeepSeek-V3.2 (multi-document synthesis, high-stakes architecture logic and phase gate verdicts).
@@ -19,7 +19,7 @@ Verified by reading the agent's `.codebuddy/agents/technical-director.md` frontm
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output format
 **Scenario:** An architecture document for the "Combat System" is submitted. It describes a layered design: input layer → game logic layer → presentation layer, with clearly defined interfaces between each. Request is tagged TD-ARCHITECTURE.
@@ -67,7 +67,7 @@ Verified by reading the agent's `.codebuddy/agents/technical-director.md` frontm
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Returns verdicts using APPROVE / CONCERNS / REJECT vocabulary only
 - [ ] Stays within declared technical domain
@@ -82,3 +82,6 @@ Verified by reading the agent's `.codebuddy/agents/technical-director.md` frontm
 - TD-ENGINE-RISK assessment for specific engine versions (e.g., Godot 4.6 post-cutoff APIs) is not covered — deferred to engine-specialist integration tests.
 - TD-PHASE-GATE (full technical phase advancement) involving synthesis of multiple sub-gate results is deferred.
 - Multi-domain architecture reviews (e.g., touching both TD-ARCHITECTURE and TD-ENGINE-RISK simultaneously) are not covered here.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

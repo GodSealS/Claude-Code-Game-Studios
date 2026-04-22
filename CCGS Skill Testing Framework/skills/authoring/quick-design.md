@@ -1,6 +1,6 @@
 # Skill Test Spec: /quick-design
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/quick-design` produces a lightweight design spec for features too small to
 warrant a full 8-section GDD. The target scope is under 4 hours of design time
@@ -37,7 +37,7 @@ Full GDD review is not needed for sub-4-hour single-system features.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Small UI change produces a 3-section spec
 
@@ -154,7 +154,7 @@ Full GDD review is not needed for sub-4-hour single-system features.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Scope check runs before drafting (redirects to `/design-system` if scope too large)
 - [ ] 3-section format used (Overview, Rules, Acceptance Criteria) — NOT the 8-section GDD format
@@ -174,3 +174,6 @@ Full GDD review is not needed for sub-4-hour single-system features.
   exist — this filesystem behavior is not independently tested here.
 - Integration with the story pipeline (can a quick-design generate a story
   directly?) is out of scope for this spec — quick-designs are standalone.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

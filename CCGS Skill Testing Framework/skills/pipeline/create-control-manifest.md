@@ -1,6 +1,6 @@
 # Skill Test Spec: /create-control-manifest
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/create-control-manifest` reads all Accepted ADRs from `docs/architecture/` and
 generates a control manifest — a summary document that captures all architectural
@@ -36,7 +36,7 @@ review gate is needed.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — 4 Accepted ADRs create a correct manifest
 
@@ -154,7 +154,7 @@ review gate is needed.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Reads all ADR files before drafting manifest
 - [ ] Only Accepted ADRs included — Proposed ones noted as excluded
@@ -173,3 +173,6 @@ review gate is needed.
   version numbering format is not fixture-locked.
 - ADR parsing (extracting Required/Forbidden Patterns) depends on consistent ADR
   structure — tested implicitly via Case 1's fixture.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

@@ -1,6 +1,6 @@
 # Agent Test Spec: game-designer
 
-## Agent Summary
+## Agent Summary / 代理摘要
 **Domain owned:** Core loop design, progression systems, combat mechanics rules, economy design, player-facing rules and interactions.
 **Does NOT own:** Code implementation (lead-programmer / gameplay-programmer), visual art (art-director), narrative lore and story (narrative-director — coordinates with), balance formula math (systems-designer — collaborates with).
 **Model tier:** DeepSeek-V3.2 (individual system design authoring and review).
@@ -19,7 +19,7 @@ Verified by reading the agent's `.codebuddy/agents/game-designer.md` frontmatter
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output format
 **Scenario:** A mechanic spec for a "Stamina-Based Dodge" system is submitted for review. The spec defines: the player has a stamina pool (100 units), each dodge costs 25 stamina, stamina regenerates at 20 units/second when not dodging, and the dodge grants 0.3 seconds of invincibility. The core loop interaction is clearly described, rules are unambiguous, and edge cases (stamina at 0, dodge during regen) are addressed.
@@ -67,7 +67,7 @@ Verified by reading the agent's `.codebuddy/agents/game-designer.md` frontmatter
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Returns verdicts using APPROVED / NEEDS REVISION vocabulary only
 - [ ] Stays within declared game design domain
@@ -82,3 +82,6 @@ Verified by reading the agent's `.codebuddy/agents/game-designer.md` frontmatter
 - Progression system review (XP curves, unlock gates, player power trajectory) is not covered.
 - Core loop validation across multiple interconnected systems (not just a single mechanic) is not covered — deferred to /review-all-gdds integration.
 - Coordination protocol with systems-designer on formula ownership boundary could benefit from additional cases.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

@@ -1,6 +1,6 @@
 # Agent Test Spec: godot-gdscript-specialist
 
-## Agent Summary
+## Agent Summary / 代理摘要
 Domain: GDScript static typing, design patterns in GDScript, signal architecture, coroutine/await patterns, and GDScript performance.
 Does NOT own: shader code (godot-shader-specialist), GDExtension bindings (godot-gdextension-specialist).
 Model tier: DeepSeek-V3.2 (default).
@@ -17,7 +17,7 @@ No gate IDs assigned.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output
 **Input:** "Review this GDScript file for type annotation coverage."
@@ -65,7 +65,7 @@ No gate IDs assigned.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Stays within declared domain (GDScript — typing, patterns, signals, coroutines, performance)
 - [ ] Redirects shader requests to godot-shader-specialist
@@ -80,3 +80,6 @@ No gate IDs assigned.
 - Type annotation review (Case 1) output is suitable as a code review checklist
 - Async loading (Case 3) should produce testable code verifiable with a unit test in `tests/unit/`
 - Post-cutoff @abstract (Case 5) confirms the agent flags version uncertainty rather than silently using unverified APIs
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

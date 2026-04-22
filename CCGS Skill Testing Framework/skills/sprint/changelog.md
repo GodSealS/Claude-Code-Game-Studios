@@ -1,6 +1,6 @@
 # Skill Test Spec: /changelog
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/changelog` is a Haiku-tier skill that auto-generates a developer-facing
 changelog by reading git commit history and closed sprint stories since the
@@ -28,7 +28,7 @@ None. Changelog generation is a fast compilation task; no gates are invoked.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Multiple sprints since last release tag
 
@@ -149,7 +149,7 @@ None. Changelog generation is a fast compilation task; no gates are invoked.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Reads git log and sprint story files before compiling
 - [ ] Always asks "May I write" before writing changelog
@@ -167,3 +167,6 @@ None. Changelog generation is a fast compilation task; no gates are invoked.
   these tests; implementation detail of the git log parsing phase.
 - The `/patch-notes` skill should be run after `/changelog` for player-facing
   output; that handoff is verified in the patch-notes spec.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

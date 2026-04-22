@@ -1,4 +1,4 @@
-# Design Directory
+# Design Directory / 设计目录
 
 When authoring or editing files in this directory, follow these standards.
 
@@ -36,3 +36,6 @@ Use `/quick-design` to author.
 - Accessibility requirements: `design/ux/accessibility-requirements.md`
 
 Use `/ux-design` to author. Validate with `/ux-review` before passing to `/team-ui`.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

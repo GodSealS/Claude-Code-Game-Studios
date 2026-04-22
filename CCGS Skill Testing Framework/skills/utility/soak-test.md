@@ -1,6 +1,6 @@
 # Skill Test Spec: /soak-test
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/soak-test` generates a structured soak test protocol — an extended runtime
 test plan designed to surface memory leaks, performance drift, and stability
@@ -34,7 +34,7 @@ None. `/soak-test` is a QA planning utility. No director gates apply.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Online gameplay feature, 2-hour soak protocol
 
@@ -156,7 +156,7 @@ None. `/soak-test` is a QA planning utility. No director gates apply.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Collects system, duration, and conditions before generating protocol
 - [ ] Includes monitoring checkpoints at regular intervals
@@ -176,3 +176,6 @@ None. `/soak-test` is a QA planning utility. No director gates apply.
   too short for meaningful results.
 - Automated execution of the soak test protocol is outside this skill's scope —
   this skill generates the plan, not the runner.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

@@ -9,9 +9,9 @@ A metric is WARN when the instructions partially address the criterion.
 
 ---
 
-## Skill Categories
+## Skill Categories / 技能类别
 
-### `gate`
+### `gate` / 门控
 
 **Skills**: gate-check
 
@@ -28,7 +28,7 @@ auto-advancing stage and must respect the three review modes.
 
 ---
 
-### `review`
+### `review` / 审查
 
 **Skills**: design-review, architecture-review, review-all-gdds
 
@@ -49,7 +49,7 @@ read-only and must not trigger director gates during the analysis phase.
 
 ---
 
-### `authoring`
+### `authoring` / 创作
 
 **Skills**: design-system, quick-design, architecture-decision, ux-design, ux-review, art-bible, create-architecture
 
@@ -71,7 +71,7 @@ a single-draft pattern appropriate to their smaller scope.
 
 ---
 
-### `readiness`
+### `readiness` / 就绪
 
 **Skills**: story-readiness, story-done
 
@@ -88,7 +88,7 @@ multi-dimensional verdicts and integrate correctly with director gate mode.
 
 ---
 
-### `pipeline`
+### `pipeline` / 管线
 
 **Skills**: create-epics, create-stories, dev-story, create-control-manifest, propagate-design-change, map-systems
 
@@ -105,7 +105,7 @@ with correct schema, respect layer/priority ordering, and gate before writing.
 
 ---
 
-### `analysis`
+### `analysis` / 分析
 
 **Skills**: consistency-check, balance-check, content-audit, code-review, tech-debt,
 scope-check, estimate, perf-profile, asset-audit, security-audit, test-evidence-review, test-flakiness
@@ -122,7 +122,7 @@ analysis and must ask before recommending any file writes.
 
 ---
 
-### `team`
+### `team` / 团队
 
 **Skills**: team-combat, team-narrative, team-audio, team-level, team-ui, team-qa,
 team-release, team-polish, team-live-ops
@@ -140,7 +140,7 @@ spawn the right agents, run independent ones in parallel, and surface blocks imm
 
 ---
 
-### `sprint`
+### `sprint` / 冲刺
 
 **Skills**: sprint-plan, sprint-status, milestone-review, retrospective, changelog, patch-notes
 
@@ -156,7 +156,7 @@ They have a PR-SPRINT or PR-MILESTONE gate at specific mode thresholds.
 
 ---
 
-### `utility`
+### `utility` / 实用
 
 **Skills**: start, help, brainstorm, onboard, adopt, hotfix, prototype, localize,
 launch-checklist, release-checklist, smoke-check, soak-test, test-setup, test-helpers,
@@ -174,11 +174,11 @@ gates, the gate mode logic must also be correct.
 
 ---
 
-## Agent Categories
+## Agent Categories / 代理类别
 
 Used to validate agent spec files in `tests/agents/`.
 
-### `director`
+### `director` / 总监
 
 **Agents**: creative-director, technical-director, art-director, producer
 
@@ -189,7 +189,7 @@ Used to validate agent spec files in `tests/agents/`.
 | **D3 — Conflict escalation** | When two departments conflict, escalates to correct parent (creative-director or technical-director) rather than unilaterally deciding |
 | **D4 — Opus model tier** | Agent is assigned Opus model per coordination-rules.md |
 
-### `lead`
+### `lead` / 主管
 
 **Agents**: lead-programmer, qa-lead, narrative-director, audio-director, game-designer,
 systems-designer, level-designer
@@ -200,7 +200,7 @@ systems-designer, level-designer
 | **L2 — Escalates to shared parent** | Out-of-domain conflicts escalate to creative-director (design) or technical-director (tech) |
 | **L3 — Sonnet model tier** | Agent is assigned Sonnet model (default) per coordination-rules.md |
 
-### `specialist`
+### `specialist` / 专家
 
 **Agents**: gameplay-programmer, ai-programmer, technical-artist, sound-designer,
 engine-programmer, tools-programmer, network-programmer, security-engineer,
@@ -213,7 +213,7 @@ qa-tester, writer, world-builder
 | **S2 — No binding cross-domain decisions** | Does not unilaterally decide matters owned by another specialist |
 | **S3 — Defers correctly** | Out-of-domain requests are redirected to the correct agent, not refused silently |
 
-### `engine`
+### `engine` / 引擎
 
 **Agents**: godot-specialist, godot-gdscript-specialist, godot-csharp-specialist,
 godot-shader-specialist, godot-gdextension-specialist, unity-specialist, unity-ui-specialist,
@@ -227,7 +227,7 @@ ue-replication-specialist
 | **E2 — File routing** | Routes file types to the correct sub-specialist (e.g., `.gdshader` → godot-shader-specialist, not godot-gdscript-specialist) |
 | **E3 — Engine-specific patterns** | Enforces engine-specific idioms (e.g., GDScript static typing, C# attribute exports, Blueprint function libraries) |
 
-### `qa`
+### `qa` / QA
 
 **Agents**: qa-tester, qa-lead, security-engineer, accessibility-specialist
 
@@ -237,7 +237,7 @@ ue-replication-specialist
 | **Q2 — Evidence format** | Test cases follow the project's test evidence format (unit/integration/visual/UI per coding-standards.md) |
 | **Q3 — No scope creep** | Does not propose new features; flags gaps for humans to decide |
 
-### `operations`
+### `operations` / 运维
 
 **Agents**: devops-engineer, release-manager, live-ops-designer, community-manager,
 analytics-engineer, economy-designer, localization-lead
@@ -247,3 +247,6 @@ analytics-engineer, economy-designer, localization-lead
 | **O1 — Domain ownership clear** | Agent description clearly states what it owns (pipeline, releases, economy, etc.) |
 | **O2 — Defers implementation** | Does not write game logic or engine code; delegates to appropriate specialist |
 | **O3 — Toolset matches role** | `allowed-tools` in frontmatter matches the operational (not coding) nature of the role |
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

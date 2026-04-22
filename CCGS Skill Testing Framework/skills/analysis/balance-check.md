@@ -1,6 +1,6 @@
 # Skill Test Spec: /balance-check
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/balance-check` reads balance data files (JSON or YAML in `assets/data/`) and
 checks each value against the design formulas defined in GDDs under `design/gdd/`.
@@ -29,7 +29,7 @@ None. Balance check is a read-only analysis skill; no gates are invoked.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — All balance values within formula tolerances
 
@@ -153,7 +153,7 @@ None. Balance check is a read-only analysis skill; no gates are invoked.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Reads both balance data files and GDD formulas before analysis
 - [ ] Findings table shows Value, Formula, Deviation, and Severity columns
@@ -170,3 +170,6 @@ None. Balance check is a read-only analysis skill; no gates are invoked.
 - Tolerance thresholds (±10%, ±20%) are implementation details of the skill;
   the tests verify that deviations are detected and classified, not the
   exact threshold values.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

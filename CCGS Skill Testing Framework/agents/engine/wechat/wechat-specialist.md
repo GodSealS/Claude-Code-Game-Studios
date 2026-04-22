@@ -1,6 +1,6 @@
 # Agent Test Spec: wechat-specialist
 
-## Agent Summary
+## Agent Summary / 代理摘要
 Domain: WeChat Mini Game platform architecture decisions, wx.* API best practices, package size management (4MB limit), game loop optimization, state/resource management, audio systems, and coordination of WeChat sub-specialists.
 Does NOT own: Gameplay implementation (delegates to wechat-minigame-specialist), shader code (wechat-shader-specialist), UI design/implementation (wechat-ui-specialist), cloud functions (wechat-cloudbase-specialist).
 Model tier: Kimi-K2.5 (Selected for complex architectural synthesis and platform-specific constraints analysis).
@@ -18,7 +18,7 @@ No gate IDs assigned.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — MVC vs ECS architecture decision
 **Input:** "Should I use MVC or ECS architecture for this puzzle game targeting WeChat Mini Games?"
@@ -131,7 +131,7 @@ No gate IDs assigned.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Stays within declared domain (WeChat platform architecture, wx.* APIs, package size management, sub-specialist coordination)
 - [ ] Redirects wrong-engine requests to appropriate engine specialists or flags them as wrong-engine
@@ -153,3 +153,5 @@ No gate IDs assigned.
 - Social feature implementation (Case 7) ensures WeChat-native APIs are used instead of generic solutions
 - Version awareness (Case 4) confirms the agent does not confidently use APIs it cannot verify
 - Device constraints (Case 6) verifies the agent applies performance optimization for target hardware
+
+<!-- 中文翻译标记 / Chinese translation marker -->

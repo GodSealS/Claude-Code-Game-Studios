@@ -1,6 +1,6 @@
 # Skill Test Spec: /estimate
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/estimate` estimates task or story effort using a relative-size scale (S / M /
 L / XL) based on story complexity, acceptance criteria count, and historical
@@ -28,7 +28,7 @@ None. Estimation is an advisory informational skill; no gates are invoked.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Clear story with known tech stack
 
@@ -148,7 +148,7 @@ None. Estimation is an advisory informational skill; no gates are invoked.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Reads story file before estimating
 - [ ] Reads sprint velocity history when available
@@ -166,3 +166,6 @@ None. Estimation is an advisory informational skill; no gates are invoked.
   and the quality of the reasoning, not a binary outcome.
 - Team-specific velocity calibration (what "M" means for this team) is an
   implementation detail not tested here; it is configured via sprint history.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

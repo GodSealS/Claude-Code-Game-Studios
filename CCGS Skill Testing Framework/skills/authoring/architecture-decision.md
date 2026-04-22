@@ -1,6 +1,6 @@
 # Skill Test Spec: /architecture-decision
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/architecture-decision` guides the user through section-by-section authoring of
 a new Architecture Decision Record (ADR). Required sections are: Status, Context,
@@ -44,7 +44,7 @@ In `solo` mode: both gates are skipped. ADR is written with Status: Proposed.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — New ADR for rendering approach, full mode, gates approve
 
@@ -175,7 +175,7 @@ In `solo` mode: both gates are skipped. ADR is written with Status: Proposed.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] All 6 required sections authored before gate review
 - [ ] Engine version stamped in ADR from `docs/engine-reference/`
@@ -195,3 +195,6 @@ In `solo` mode: both gates are skipped. ADR is written with Status: Proposed.
   via Case 4 but not all link types are individually verified.
 - The TR-registry update (when new TR-IDs are defined in the ADR) is part of the
   write phase — tested implicitly via Case 1.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

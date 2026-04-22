@@ -1,6 +1,6 @@
 # Skill Test Spec: /gate-check
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/gate-check` validates whether the project is ready to advance to the next
 development phase. It checks for required artifacts, runs quality checks, asks
@@ -23,7 +23,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — All Concept artifacts present, advancing to Systems Design
 
@@ -178,7 +178,7 @@ treat this confirmation as a failure.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Uses "May I write" before updating `production/stage.txt`
 - [ ] Presents the full checklist report before asking for write approval
@@ -198,3 +198,6 @@ treat this confirmation as a failure.
 - The Vertical Slice validation block (Pre-Production → Production gate) is not
   covered because it requires a playable build context that cannot be expressed
   as a document fixture.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

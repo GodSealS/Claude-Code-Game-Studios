@@ -1,6 +1,6 @@
 # Skill Test Spec: /launch-checklist
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/launch-checklist` generates and evaluates a complete launch readiness checklist
 covering: legal compliance (EULA, privacy policy, ESRB/PEGI ratings), platform
@@ -35,7 +35,7 @@ is managed by `/team-release`.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — All Checklist Items Verified, LAUNCH READY
 
@@ -159,7 +159,7 @@ is managed by `/team-release`.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Checks all required categories (legal, platform, store, build, analytics, UX)
 - [ ] LAUNCH BLOCKED for hard failures (uncompleted certifications, missing legal docs)
@@ -178,3 +178,6 @@ is managed by `/team-release`.
   presence of files in `production/store/`; it cannot verify visual quality.
 - Build reproducibility check validates the presence of a version tag and build
   configuration but does not execute the build process.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

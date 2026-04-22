@@ -1,6 +1,6 @@
 # Skill Test Spec: /asset-audit
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/asset-audit` audits the `assets/` directory for naming convention compliance,
 missing metadata, and format/size issues. It reads asset files against the
@@ -28,7 +28,7 @@ None. Asset auditing is a read-only analysis skill; no gates are invoked.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — All assets follow naming conventions
 
@@ -150,7 +150,7 @@ None. Asset auditing is a read-only analysis skill; no gates are invoked.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Reads `technical-preferences.md` for naming conventions, formats, and size budgets
 - [ ] Scans `assets/` directory recursively
@@ -168,3 +168,6 @@ None. Asset auditing is a read-only analysis skill; no gates are invoked.
 - The interaction between `/asset-audit` and `/content-audit` (both check GDD
   references vs. assets) is intentional overlap; `/asset-audit` focuses on
   compliance while `/content-audit` focuses on completeness.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

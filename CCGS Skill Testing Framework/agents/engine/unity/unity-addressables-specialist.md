@@ -1,6 +1,6 @@
 # Agent Test Spec: unity-addressables-specialist
 
-## Agent Summary
+## Agent Summary / 代理摘要
 Domain: Addressable Asset System — groups, async loading/unloading, handle lifecycle management, memory budgeting, content catalogs, and remote content delivery.
 Does NOT own: rendering systems (engine-programmer), game logic that uses the loaded assets (gameplay-programmer).
 Model tier: GLM-5.1 (default).
@@ -17,7 +17,7 @@ No gate IDs assigned.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output
 **Input:** "Load a character texture asynchronously and release it when the character is destroyed."
@@ -70,7 +70,7 @@ No gate IDs assigned.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Stays within declared domain (Addressables loading, handle lifecycle, memory, catalogs, remote delivery)
 - [ ] Redirects rendering and gameplay asset-use code to engine-programmer and gameplay-programmer
@@ -85,3 +85,6 @@ No gate IDs assigned.
 - Handle lifecycle (Case 1) must include a test verifying memory is reclaimed after release
 - Handle leak diagnosis (Case 3) should produce a findings report suitable for a bug ticket
 - Platform memory case (Case 5) verifies the agent applies hard constraints from context, not default assumptions
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

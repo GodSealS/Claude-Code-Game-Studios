@@ -1,6 +1,6 @@
 # Skill Test Spec: /hotfix
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/hotfix` manages an emergency fix workflow: it creates a hotfix branch from
 main, applies a targeted fix to the identified file(s), runs `/smoke-check` to
@@ -34,7 +34,7 @@ post-hoc step. No gate is invoked within this skill.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Critical crash bug fixed, smoke check passes
 
@@ -152,7 +152,7 @@ post-hoc step. No gate is invoked within this skill.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Creates hotfix branch before making any code changes
 - [ ] Asks "May I write" before modifying any source files
@@ -171,3 +171,6 @@ post-hoc step. No gate is invoked within this skill.
   the handoff but not tested as part of this skill's execution.
 - Conflict resolution during the merge (if main has diverged) is not tested;
   the skill would surface the conflict and ask the user to resolve it manually.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

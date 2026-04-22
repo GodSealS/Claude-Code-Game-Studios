@@ -1,6 +1,6 @@
 # Skill Test Spec: /ux-review
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/ux-review` validates an existing UX spec or HUD design document against
 accessibility and interaction standards. It checks for required sections
@@ -36,7 +36,7 @@ gates are invoked within this skill.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Complete UX spec with all required sections, APPROVED
 
@@ -153,7 +153,7 @@ gates are invoked within this skill.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Checks all 4 required sections (User Flows, Interaction States, Wireframe,
      Accessibility Notes)
@@ -174,3 +174,6 @@ gates are invoked within this skill.
   mentioned as a capability but not separately fixture-tested.
 - The case where an existing spec was written for a now-renamed screen is
   not tested; the skill would review the file by path regardless of the name.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

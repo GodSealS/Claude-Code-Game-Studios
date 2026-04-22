@@ -1,6 +1,6 @@
 # Skill Test Spec: /team-combat
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 Orchestrates the full combat team pipeline end-to-end for a single combat feature.
 Coordinates game-designer, gameplay-programmer, ai-programmer, technical-artist,
@@ -28,7 +28,7 @@ with verdict COMPLETE / NEEDS WORK / BLOCKED and handoffs to `/code-review`,
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — All agents succeed, full pipeline runs to completion
 
@@ -156,7 +156,7 @@ with verdict COMPLETE / NEEDS WORK / BLOCKED and handoffs to `/code-review`,
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] `AskUserQuestion` used at each phase transition — user approves before pipeline advances
 - [ ] All file writes delegated to sub-agents via Task — orchestrator does not call Write or Edit directly
@@ -178,3 +178,6 @@ with verdict COMPLETE / NEEDS WORK / BLOCKED and handoffs to `/code-review`,
   the Happy Path case; a dedicated integration test would require fixture code files.
 - Engine specialist unavailable (no engine configured) is partially covered in Case 5
   assertions — a dedicated fixture for unconfigured engine state would strengthen coverage.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

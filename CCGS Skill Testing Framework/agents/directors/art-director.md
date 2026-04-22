@@ -1,6 +1,6 @@
 # Agent Test Spec: art-director
 
-## Agent Summary
+## Agent Summary / 代理摘要
 **Domain owned:** Visual identity, art bible authorship and enforcement, asset quality standards, UI/UX visual design, visual phase gate, concept art evaluation.
 **Does NOT own:** UX interaction flows and information architecture (ux-designer's domain), audio direction (audio-director), code implementation.
 **Model tier:** Kimi-K2.5 (note: despite the "director" title, art-director is assigned Kimi-K2.5 per coordination-rules.md — it handles individual system analysis, not multi-document phase gate synthesis at the GLM-5.1 level).
@@ -19,7 +19,7 @@ Verified by reading the agent's `.codebuddy/agents/art-director.md` frontmatter:
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output format
 **Scenario:** The art bible's color palette section is submitted for review. The section defines a desaturated earth-tone primary palette with high-contrast accent colors tied to the game pillar "beauty in decay." The palette is internally consistent and references the pillar vocabulary. Request is tagged AD-ART-BIBLE.
@@ -67,7 +67,7 @@ Verified by reading the agent's `.codebuddy/agents/art-director.md` frontmatter:
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Returns verdicts using APPROVE / CONCERNS / REJECT vocabulary only
 - [ ] Stays within declared visual domain
@@ -82,3 +82,6 @@ Verified by reading the agent's `.codebuddy/agents/art-director.md` frontmatter:
 - Asset pipeline standards (file format, resolution, naming conventions) compliance checks are not covered here.
 - Shader visual output review is not covered — that interaction with the engine specialist is deferred.
 - UI component visual review (as distinct from UX flow review) could benefit from additional cases.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

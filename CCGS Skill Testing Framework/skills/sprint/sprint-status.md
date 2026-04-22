@@ -1,6 +1,6 @@
 # Skill Test Spec: /sprint-status
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/sprint-status` is a Haiku-tier read-only skill that reads the current active
 sprint file and the session state to produce a concise sprint health summary.
@@ -29,7 +29,7 @@ None. `/sprint-status` is a read-only reporting skill; no gates are invoked.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Mixed sprint, AT RISK with named blocker
 
@@ -147,7 +147,7 @@ None. `/sprint-status` is a read-only reporting skill; no gates are invoked.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Does NOT use Write or Edit tools (read-only skill)
 - [ ] Presents story count breakdown before emitting verdict
@@ -165,3 +165,6 @@ None. `/sprint-status` is a read-only reporting skill; no gates are invoked.
   count-by-status output implies them.
 - The `solo` mode review-mode variant is not separately tested; gate
   behavior in Case 5 applies to all modes equally.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

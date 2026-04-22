@@ -1,6 +1,6 @@
 # Skill Test Spec: /security-audit
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/security-audit` audits the game for security risks including save data
 integrity, network communication, anti-cheat exposure, and data privacy. It
@@ -29,7 +29,7 @@ None. Security audit is a read-only advisory skill; no gates are invoked.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Save data encrypted, no hardcoded credentials
 
@@ -147,7 +147,7 @@ None. Security audit is a read-only advisory skill; no gates are invoked.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Reads source files in `src/` before auditing
 - [ ] Checks save data encryption, hardcoded credentials, exposed internals, auth guards
@@ -165,3 +165,6 @@ None. Security audit is a read-only advisory skill; no gates are invoked.
   depending on severity.
 - Data privacy compliance (GDPR, COPPA) is out of scope for this spec; those
   require legal review beyond code scanning.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

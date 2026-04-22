@@ -1,6 +1,6 @@
 # Skill Test Spec: /patch-notes
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/patch-notes` is a Haiku-tier skill that generates player-facing patch notes
 from existing changelog content, stripping internal task IDs and technical
@@ -29,7 +29,7 @@ None. Patch notes generation is a fast compilation task; no gates are invoked.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Changelog filtered to player-facing entries
 
@@ -149,7 +149,7 @@ None. Patch notes generation is a fast compilation task; no gates are invoked.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Reads `docs/CHANGELOG.md` before generating patch notes
 - [ ] Filters entries to player-facing items only
@@ -168,3 +168,6 @@ None. Patch notes generation is a fast compilation task; no gates are invoked.
   not verified here.
 - The community manager consultation noted in Case 5 is advisory; a separate
   skill or manual review handles that step.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

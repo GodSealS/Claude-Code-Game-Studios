@@ -1,6 +1,6 @@
 # Agent Test Spec: unity-shader-specialist
 
-## Agent Summary
+## Agent Summary / 代理摘要
 Domain: Unity Shader Graph, custom HLSL, VFX Graph, URP/HDRP pipeline customization, and post-processing effects.
 Does NOT own: gameplay code, art style direction.
 Model tier: GLM-5v-Turbo (default).
@@ -17,7 +17,7 @@ No gate IDs assigned.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output
 **Input:** "Create an outline effect for characters using Shader Graph in URP."
@@ -66,7 +66,7 @@ No gate IDs assigned.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Stays within declared domain (Shader Graph, HLSL, VFX Graph, URP/HDRP customization)
 - [ ] Redirects gameplay and UI code to appropriate agents
@@ -82,3 +82,6 @@ No gate IDs assigned.
 - Outline effect (Case 1) should be paired with a visual screenshot test in `production/qa/evidence/`
 - HDRP CustomPass (Case 3) confirms the agent produces the correct Unity pattern, not a generic post-process approach
 - Pipeline separation (Case 5) verifies the agent never assumes the render pipeline without context
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

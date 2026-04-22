@@ -1,6 +1,6 @@
 # Skill Test Spec: /design-review
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/design-review` reads a game design document (GDD) and evaluates it against
 the project's 8-section design standard (Overview, Player Fantasy, Detailed
@@ -24,7 +24,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Complete GDD, all 8 sections present
 
@@ -151,7 +151,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Does NOT use Write or Edit tools (read-only skill)
 - [ ] Presents complete findings before any verdict
@@ -168,3 +168,6 @@ Verified automatically by `/skill-test static` — no fixture needed.
 - The skill's `context: fork` behavior (running as a subagent) is not tested
   at the spec level — this is a runtime behavior verified manually.
 - Performance and edge cases involving very large GDD files are not in scope.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

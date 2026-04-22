@@ -1,6 +1,6 @@
 # Skill Test Spec: /content-audit
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/content-audit` reads GDDs in `design/gdd/` and checks whether all content
 items specified there (enemies, items, levels, etc.) are accounted for in
@@ -28,7 +28,7 @@ None. Content audit is a read-only analysis skill; no gates are invoked.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — All specified content present
 
@@ -145,7 +145,7 @@ None. Content audit is a read-only analysis skill; no gates are invoked.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Reads GDDs and asset directory before producing gap table
 - [ ] Gap table shows Content Type, Specified Count, Found Count, Missing Items
@@ -162,3 +162,6 @@ None. Content audit is a read-only analysis skill; no gates are invoked.
   but follows the same detection path.
 - The case where `assets/` directory does not exist is not tested; the skill
   would produce a MISSING CRITICAL CONTENT verdict for all specified items.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

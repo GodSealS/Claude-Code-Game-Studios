@@ -1,6 +1,6 @@
 # Skill Test Spec: /milestone-review
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/milestone-review` generates a comprehensive review of a completed milestone:
 what shipped, velocity metrics, deferred items, risks surfaced, and retrospective
@@ -31,7 +31,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Nearly complete milestone with one deferred story
 
@@ -152,7 +152,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Shows compiled review draft before invoking PR-MILESTONE or asking to write
 - [ ] Always asks "May I write" before writing review document
@@ -169,3 +169,6 @@ Verified automatically by `/skill-test static` — no fixture needed.
   have been planned.
 - Velocity calculation specifics (story points vs. story count) are not
   verified here; they are implementation details of the review compilation phase.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

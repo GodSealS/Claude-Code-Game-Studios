@@ -1,6 +1,6 @@
 # Skill Test Spec: /ux-design
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/ux-design` is a guided, section-by-section UX spec authoring skill. It produces
 user flow diagrams (described textually), interaction state definitions, wireframe
@@ -35,7 +35,7 @@ review skill invoked after this skill completes.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — New HUD spec, all sections authored and written
 
@@ -155,7 +155,7 @@ review skill invoked after this skill completes.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Creates skeleton file with all section headers before discussing content
 - [ ] Discusses and drafts one section at a time
@@ -174,3 +174,6 @@ review skill invoked after this skill completes.
   added manually by a designer after the fact.
 - Responsive layout concerns (different screen sizes) are noted as optional
   content and not assertion-tested here.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

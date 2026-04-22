@@ -1,6 +1,6 @@
 # Agent Test Spec: community-manager
 
-## Agent Summary
+## Agent Summary / 代理摘要
 - **Domain**: Player-facing communications — patch notes text (player-friendly), social media post drafts, community update announcements, crisis communication response plans, bug triage and routing from player reports (not fixing)
 - **Does NOT own**: Technical patch content (devops-engineer), QA verification and test execution (qa-lead), bug fixes (programmers), brand strategy direction (creative-director)
 - **Model tier**: Kimi-K2.5​
@@ -18,7 +18,7 @@
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — patch notes for a bug fix
 **Input**: "Write player-facing patch notes for this fix: 'JIRA-4821: Fixed NullReferenceException in InventoryManager.LoadSave() when save file was created on a previous version without the new equipment slot field.'"
@@ -64,7 +64,7 @@
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] **Technical Anonymization**: Automatically strips JIRA IDs, class names, and stack traces from public logs.
 - [ ] **Escalation Pathing**: Flags all design-rollback requests directly to `@creative-director`.
@@ -83,3 +83,6 @@
 - Case 4 requires a brand voice document to be in context; test is incomplete without it
 - Case 5 is the most important context-awareness test for tone consistency
 - No automated runner; review manually or via `/skill-test`
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

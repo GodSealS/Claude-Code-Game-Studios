@@ -1,6 +1,6 @@
 # Agent Test Spec: unity-ui-specialist
 
-## Agent Summary
+## Agent Summary / 代理摘要
 Domain: Unity UI Toolkit (UXML/USS), UGUI (Canvas), data binding, runtime UI performance, and UI input event handling.
 Does NOT own: UX flow design (ux-designer), visual art style (art-director).
 Model tier: DeepSeek-V3.2 (Logic-optimized for UI architecture).
@@ -17,7 +17,7 @@ No gate IDs assigned.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output
 **Input:** "Implement an inventory UI screen using Unity UI Toolkit."
@@ -65,7 +65,7 @@ No gate IDs assigned.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Stays within declared domain (UI Toolkit, UGUI, data binding, UI performance)
 - [ ] Redirects UX flow design to ux-designer
@@ -80,3 +80,6 @@ No gate IDs assigned.
 - Inventory UI (Case 1) should have a manual walkthrough doc in `production/qa/evidence/`
 - Dynamic list binding (Case 3) should have an integration test or automated interaction test
 - Canvas overdraw (Case 4) verifies the agent knows the correct Unity UI performance patterns
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

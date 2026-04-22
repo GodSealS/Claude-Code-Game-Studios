@@ -1,6 +1,6 @@
 # Agent Test Spec: live-ops-designer
 
-## Agent Summary
+## Agent Summary / 代理摘要
 - **Domain**: Post-launch content strategy, seasonal events (design and structure), battle pass design, content cadence planning, player retention mechanic design, live service feature roadmaps
 - **Does NOT own**: Economy math and reward value calculations (economy-designer), analytics tracking implementation (analytics-engineer), narrative content within events (writer), code implementation
 - **Model tier**: GLM-5.1
@@ -18,7 +18,7 @@
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — summer event design
 **Input**: "Design a summer event for our game. It should run for 3 weeks and give players reasons to log in daily."
@@ -65,7 +65,7 @@
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Returns verdicts using APPROVE / CONCERNS / REJECT vocabulary only.
 - [ ] **Value Isolation**: Strictly forbids assigning specific currency numbers; uses `[TO BE BALANCED BY ECONOMY-DESIGNER]` placeholders.
@@ -83,3 +83,6 @@
 - Case 4 (escalation behavior) is a coordination test — verify the agent actually escalates rather than deciding independently
 - Case 5 is the most important context-awareness test; agent must target the specific drop-off point, not a generic solution
 - No automated runner; review manually or via `/skill-test`
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

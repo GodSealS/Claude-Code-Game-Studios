@@ -1,6 +1,6 @@
 # Agent Test Spec: narrative-director
 
-## Agent Summary
+## Agent Summary / 代理摘要
 **Domain owned:** Story architecture, character design direction, world-building oversight, ND-CONSISTENCY gate, dialogue quality review.
 **Does NOT own:** Visual art style (art-director), technical systems or code (lead-programmer), production scheduling (producer), game mechanics rules (game-designer).
 **Model tier:** GLM-5.1 (individual system analysis — narrative consistency and lore review).
@@ -19,7 +19,7 @@ Verified by reading the agent's `.codebuddy/agents/narrative-director.md` frontm
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output format
 **Scenario:** A new lore document for "The Sunken Archive" location is submitted. The document establishes that the Archive was flooded 200 years ago during the Great Collapse, consistent with the established timeline in the world-bible. All named characters referenced are consistent with their established backstories. Request is tagged ND-CONSISTENCY.
@@ -67,7 +67,7 @@ Verified by reading the agent's `.codebuddy/agents/narrative-director.md` frontm
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Returns verdicts using APPROVE / CONCERNS / REJECT vocabulary only
 - [ ] Verdict token is formatted as `ND-CONSISTENCY: REJECT` (e.g., when timeline conflicts occur)
@@ -83,3 +83,6 @@ Verified by reading the agent's `.codebuddy/agents/narrative-director.md` frontm
 - Multi-document consistency check across a full chapter set is not covered — deferred to /review-all-gdds integration.
 - Narrative impact of mechanical changes (e.g., a game mechanic that undermines story tension) requires coordination with game-designer and is not covered here.
 - Character arc review (progression, motivation coherence over time) is not covered.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

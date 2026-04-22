@@ -1,6 +1,6 @@
 # Agent Test Spec: gameplay-programmer
 
-## Agent Summary
+## Agent Summary / 代理摘要
 Domain: Game mechanics code, player systems, combat implementation, and interactive features.
 Does NOT own: UI implementation (ui-programmer), AI behavior trees (ai-programmer), engine/rendering systems (engine-programmer).
 Model tier: DeepSeek-V3.2 (default).
@@ -17,7 +17,7 @@ No gate IDs assigned.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output
 **Input:** "Implement a melee combo system where three consecutive light attacks chain into a finisher."
@@ -62,7 +62,7 @@ No gate IDs assigned.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 [ ] Prioritizes local ADR files over model's internal training data for architectural patterns.
 - [ ] Stays within declared domain (mechanics, player systems, combat)
@@ -79,3 +79,6 @@ No gate IDs assigned.
 - Threading escalation (Case 3) verifies the agent does not over-reach into engine territory
 - ADR conflict (Case 4) confirms the agent respects the architecture governance process
 - Cases 1 and 5 together verify the agent implements to spec rather than improvising
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

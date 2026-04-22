@@ -1,6 +1,6 @@
 # Agent Test Spec: qa-tester
 
-## Agent Summary
+## Agent Summary / 代理摘要
 - **Domain**: Detailed test case authoring, bug reports (structured format), test execution documentation, regression checklists, smoke check execution docs, test evidence recording per the project's coding standards
 - **Does NOT own**: Test strategy and test plan design (qa-lead), implementation fixes for found bugs (appropriate programmer), QA process architecture (qa-lead)
 - **Category**: qa
@@ -19,7 +19,7 @@
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — test cases for a save system
 **Input**: "Write test cases for our save system. It must save and load player position, inventory, and quest state."
@@ -70,7 +70,7 @@
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] **Ambiguity Guard**: Specifically identifies subjective terms like "intuitive" or "fun" as $UNTESTABLE$ and tags `@qa-lead`.
 - [ ] **Evidence Mapping**: Automatically matches the output location to `production/qa/evidence/` based on story type.
@@ -89,3 +89,6 @@
 - Case 5 requires coding-standards.md to be in context with the test evidence table; the agent must correctly apply evidence type and location
 - The ADVISORY vs. BLOCKING gate level (Case 5) is a detail that affects story completion — verify the agent reports it
 - No automated runner; review manually or via `/skill-test`
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

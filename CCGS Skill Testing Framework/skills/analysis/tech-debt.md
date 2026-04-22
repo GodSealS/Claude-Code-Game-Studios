@@ -1,6 +1,6 @@
 # Skill Test Spec: /tech-debt
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/tech-debt` tracks, categorizes, and prioritizes technical debt across the
 codebase. It reads `docs/tech-debt-register.md` for the existing debt register
@@ -30,7 +30,7 @@ invoked.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Inline TODOs plus existing register items merged
 
@@ -151,7 +151,7 @@ invoked.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Reads `docs/tech-debt-register.md` and scans `src/` before compiling
 - [ ] Deduplicates inline comments against existing register items
@@ -169,3 +169,6 @@ invoked.
   still be read and presented.
 - TODO comments without severity tags are treated as LOW severity by default;
   this classification detail is an implementation concern, not tested here.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

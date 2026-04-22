@@ -1,5 +1,5 @@
 # Agent Test Spec: engine-programmer
-## Agent Summary
+## Agent Summary / 代理摘要
 - **Domain**: Rendering pipeline, physics integration, memory management, resource loading, and core engine framework.
 
 - **Does NOT own**: gameplay mechanics (gameplay-programmer), editor/debug tool UI (tools-programmer).
@@ -18,7 +18,7 @@
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output
 **Input:** "Implement a custom object pool for projectiles to avoid per-frame allocation."
@@ -63,7 +63,7 @@
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] **Standard Verdicts**: Returns APPROVE / CONCERNS / REJECT for all architectural audits.
 - [ ] **Memory Quantization**: All memory audit findings must include specific values (e.g., "leak detected: $\approx 50MB$ per level").
@@ -81,3 +81,6 @@
 - Object pool (Case 1) must include a unit test in `tests/unit/engine/`
 - Memory leak diagnosis (Case 3) should produce evidence artifacts in `production/qa/evidence/`
 - Engine version check (Case 5) confirms the agent treats VERSION.md as authoritative, not LLM training data
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

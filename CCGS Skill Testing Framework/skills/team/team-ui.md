@@ -1,6 +1,6 @@
 # Skill Test Spec: /team-ui
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 Orchestrates the UI team through the full UX pipeline for a single UI feature.
 Coordinates ux-designer, ui-programmer, art-director, the engine UI specialist,
@@ -31,7 +31,7 @@ with verdict COMPLETE / BLOCKED and handoffs to `/ux-review`, `/code-review`,
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Full pipeline from UX spec through polish succeeds
 
@@ -175,7 +175,7 @@ with verdict COMPLETE / BLOCKED and handoffs to `/ux-review`, `/code-review`,
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] `AskUserQuestion` used at each phase transition — user approves before pipeline advances
 - [ ] UX Review Gate (Phase 1c) is blocking — Phase 2 cannot begin without APPROVED or explicit user override
@@ -199,3 +199,6 @@ with verdict COMPLETE / BLOCKED and handoffs to `/ux-review`, `/code-review`,
   configured"; this path is asserted in Case 1 but not given a dedicated fixture.
 - The NEEDS REVISION acceptance-risk override (Case 2 option b) requires the override to be
   explicitly documented in the report; this is asserted but not further tested for downstream effects.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

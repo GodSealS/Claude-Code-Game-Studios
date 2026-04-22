@@ -1,6 +1,6 @@
 # Agent Test Spec: writer
 
-## Agent Summary
+## Agent Summary / 代理摘要
 - **Domain**: In-game written content — NPC dialogue (including branching trees), lore codex entries, item and ability descriptions, environmental text (signs, books, notes), quest text, tutorial text, in-world written documents
 - **Does NOT own**: Story architecture and narrative structure (narrative-director), world lore and world rules (world-builder), UX copy and UI labels (ux-designer), patch notes (community-manager)
 - **Model tier**: GLM-5.1
@@ -18,7 +18,7 @@
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — NPC merchant dialogue
 **Input**: "Write dialogue for Mira, a traveling merchant NPC. She sells general supplies. Players can ask her about her wares, the road ahead, and rumors."
@@ -65,7 +65,7 @@
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Stays within declared domain (dialogue, lore entries, item descriptions, in-game text)
 - [ ] Redirects world history and world rule requests to world-builder without producing unauthorized lore
@@ -80,3 +80,6 @@
 - Case 4 (dependency gap) tests whether the agent writes descriptions that could set wrong player expectations — a subtle but important quality issue
 - Case 5 is the most important context-awareness test; voice guide compliance must be checked rule-by-rule, not holistically
 - No automated runner; review manually or via `/skill-test`
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

@@ -1,6 +1,6 @@
 # Skill Test Spec: /map-systems
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/map-systems` decomposes a game concept into a systems index. It reads the
 approved game concept and pillars, enumerates both explicit and implicit systems,
@@ -43,7 +43,7 @@ In `solo` mode: both gates are skipped with equivalent notes.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Game concept exists, 5-8 systems identified
 
@@ -175,7 +175,7 @@ In `solo` mode: both gates are skipped with equivalent notes.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Reads game-concept.md and game-pillars.md before any decomposition
 - [ ] "May I write `design/systems-index.md`?" asked before writing
@@ -194,3 +194,6 @@ In `solo` mode: both gates are skipped with equivalent notes.
   collaborative workflow rather than independently.
 - The `next` argument mode (handing off the highest-priority undesigned system to
   `/design-system`) is not tested here — it is a post-index-creation convenience.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

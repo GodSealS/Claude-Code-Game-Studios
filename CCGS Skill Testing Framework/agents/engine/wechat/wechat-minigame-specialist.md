@@ -1,6 +1,6 @@
 # Agent Test Spec: wechat-minigame-specialist
 
-## Agent Summary
+## Agent Summary / 代理摘要
 Domain: WeChat Mini Game gameplay implementation, physics engine integration (Box2D/Bullet/JoltPhysics via unified IPhysicsWorld interface), WASM library embedding, and Spine/DragonBones skeletal animation runtimes.
 Does NOT own: Architecture decisions (MVC vs ECS, engine choice) — defers to wechat-specialist, shader code (wechat-shader-specialist), UI design/implementation (wechat-ui-specialist), cloud functions (wechat-cloudbase-specialist).
 Model tier: DeepSeek-V3.2 (default for implementation specialists).
@@ -18,7 +18,7 @@ No gate IDs assigned.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — physics engine selection and configuration
 **Input:** "We're building a 2D platformer. Which physics engine should we use and how do we configure it?"
@@ -181,7 +181,7 @@ No gate IDs assigned.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Stays within declared domain (gameplay implementation, physics engines, WASM, skeletal animation)
 - [ ] Redirects architecture decisions to wechat-specialist
@@ -203,3 +203,5 @@ No gate IDs assigned.
 - Skeletal animation (Case 5) verifies integration of third-party runtime libraries in WeChat environment
 - Sprite sheets (Case 6) covers asset production workflow, not just code implementation
 - Context awareness (Case 7) demonstrates adaptation to game type and target hardware
+
+<!-- 中文翻译标记 / Chinese translation marker -->

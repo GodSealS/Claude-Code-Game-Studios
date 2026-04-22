@@ -1,6 +1,6 @@
 # Skill Test Spec: /localize
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/localize` manages the full localization pipeline: it extracts all player-facing
 strings from source files, manages translation files in `assets/localization/`,
@@ -35,7 +35,7 @@ lead agent may review separately but is not invoked within this skill.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: New Language — String Extraction and Locale Skeleton Created
 
@@ -155,7 +155,7 @@ lead agent may review separately but is not invoked within this skill.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Extracts strings from source before operating on locale files
 - [ ] Creates new locale files with all keys as empty values (not auto-translated)
@@ -174,3 +174,6 @@ lead agent may review separately but is not invoked within this skill.
   handled by the skill body; `.csv` is used as the canonical format in tests.
 - The case where source strings change at a very high rate (continuous integration
   of new UI text) is not tested; the diff logic handles this case.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

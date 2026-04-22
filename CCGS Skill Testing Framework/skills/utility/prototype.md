@@ -1,6 +1,6 @@
 # Skill Test Spec: /prototype
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/prototype` manages a rapid prototyping workflow for validating a game mechanic
 before committing to full production implementation. Prototypes are created in
@@ -34,7 +34,7 @@ None. Prototypes are throwaway validation artifacts. No director gates apply.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Mechanic concept prototyped, findings documented
 
@@ -157,7 +157,7 @@ None. Prototypes are throwaway validation artifacts. No director gates apply.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Asks "May I write to `prototypes/[name]/`?" before creating any files
 - [ ] Creates all files under `prototypes/` (not `src/`)
@@ -176,3 +176,6 @@ None. Prototypes are throwaway validation artifacts. No director gates apply.
   not assertion-tested in detail.
 - Engine-specific prototype scaffolding (GDScript scenes vs. C# MonoBehaviour)
   follows the same flow with engine-appropriate file types.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

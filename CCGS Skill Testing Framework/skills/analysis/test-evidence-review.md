@@ -1,6 +1,6 @@
 # Skill Test Spec: /test-evidence-review
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/test-evidence-review` performs a quality review of test files in `tests/`,
 checking test naming conventions, determinism, isolation, and absence of
@@ -30,7 +30,7 @@ is a separate skill invocation and is NOT triggered here.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Tests follow all standards
 
@@ -157,7 +157,7 @@ is a separate skill invocation and is NOT triggered here.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Reads `coding-standards.md` test standards before reviewing test files
 - [ ] Checks naming, Arrange/Act/Assert structure, determinism, isolation, no hardcoded data
@@ -173,3 +173,6 @@ is a separate skill invocation and is NOT triggered here.
   is assumed to apply the same checks file by file and aggregate the verdict.
 - The QL-TEST-COVERAGE director gate (which checks test coverage percentage) is
   a separate concern and is intentionally NOT invoked by this skill.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

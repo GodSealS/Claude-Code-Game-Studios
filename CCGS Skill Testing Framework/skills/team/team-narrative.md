@@ -1,6 +1,6 @@
 # Skill Test Spec: /team-narrative
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 Orchestrates the narrative team through a five-phase pipeline: narrative direction
 (narrative-director) → world foundation + dialogue drafting (world-builder and writer
@@ -30,7 +30,7 @@ is unresolved.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — All five phases complete, narrative doc delivered
 
@@ -181,7 +181,7 @@ is unresolved.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] `AskUserQuestion` is used after every phase output before the next phase launches
 - [ ] Parallel spawning: Phase 2 (world-builder + writer) and Phase 5 (writer + localization-lead + world-builder) issue all Task calls before waiting for results
@@ -207,3 +207,6 @@ is unresolved.
   follow the same pattern but do not change the verdict.
 - The writer's "all lines under 120 characters" and "string keys not raw strings" checks
   in Phase 5 are covered implicitly by Case 4's localization compliance scenario.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

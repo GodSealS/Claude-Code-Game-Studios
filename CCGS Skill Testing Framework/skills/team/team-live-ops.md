@@ -1,6 +1,6 @@
 # Skill Test Spec: /team-live-ops
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 Orchestrates the live-ops team through a 7-phase planning pipeline to produce a
 season or event plan. Coordinates live-ops-designer, economy-designer,
@@ -25,7 +25,7 @@ season plan requiring user approval before handoff to production.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — All 7 phases complete, season plan produced
 
@@ -156,7 +156,7 @@ season plan requiring user approval before handoff to production.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] `AskUserQuestion` used at every phase transition — user approves before the next phase begins
 - [ ] Phases 3 and 4 are always spawned in parallel, not sequentially
@@ -176,3 +176,6 @@ season plan requiring user approval before handoff to production.
 - The "economy-rules.md absent" edge case is not separately tested — it would surface as a BLOCKED result from economy-designer and follow the standard error recovery path tested implicitly in Case 4.
 - The full content writing pipeline (Phase 5 output validation) is validated implicitly by the Case 1 happy path consolidated summary check.
 - Community manager communication calendar format (pre-launch, launch day, mid-season, final week) is validated implicitly by Case 1; no separate edge case is needed.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

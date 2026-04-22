@@ -1,6 +1,6 @@
 # Skill Test Spec: /team-audio
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 Orchestrates the audio team through a four-step pipeline: audio direction
 (audio-director) → sound design + accessibility review in parallel (sound-designer
@@ -33,7 +33,7 @@ engine is configured.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — All steps complete, audio design document saved
 
@@ -180,7 +180,7 @@ engine is configured.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Context gathering (GDDs, sound bible, asset list) runs before any agent is spawned
 - [ ] `AskUserQuestion` is used after every step output before the next step launches
@@ -208,3 +208,6 @@ engine is configured.
 - Engine specialist validation logic (idiomatic integration, version-specific changes) is
   tested only for the configured and unconfigured states. The specific content of the
   engine specialist's output is out of scope for this behavioral spec.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

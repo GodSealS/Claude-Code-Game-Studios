@@ -1,6 +1,6 @@
 # Skill Test Spec: /propagate-design-change
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/propagate-design-change` handles GDD revision cascades. When a GDD is updated,
 the skill traces all downstream artifacts that reference it: ADRs, TR-registry
@@ -36,7 +36,7 @@ director review is required at the analysis stage.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — GDD revision affects 2 stories and 1 epic
 
@@ -153,7 +153,7 @@ director review is required at the analysis stage.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Reads revised GDD and all potentially affected artifacts before producing impact report
 - [ ] Impact report shown in full before any "May I write" ask
@@ -173,3 +173,6 @@ director review is required at the analysis stage.
   of the analysis phase but not independently fixture-tested.
 - The git diff comparison method (detecting what changed in the GDD) is a runtime
   concern — fixtures use pre-arranged content differences.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

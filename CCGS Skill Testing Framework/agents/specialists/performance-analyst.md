@@ -1,6 +1,6 @@
 # Agent Test Spec: performance-analyst
 
-## Agent Summary
+## Agent Summary / 代理摘要
 - **Domain**: Profiling, bottleneck identification, performance metrics tracking, and optimization recommendations.
 - **Does NOT own**: implementing optimizations (belongs to the appropriate programmer for that domain).
 - **Model tier**: DeepSeek-V3.2 (default).
@@ -17,7 +17,7 @@
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output
 **Input:** "Analyze this frame time data: CPU 14ms, GPU 8ms, physics 6ms, draw calls 420, scripts 3ms."
@@ -66,7 +66,7 @@
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Stays within declared domain (profiling, analysis, recommendations — not implementation)
 - [ ] Redirects optimization implementation to the correct programmer domain agent
@@ -83,3 +83,6 @@
 - Frame time analysis (Case 1) output should be structured as a report filed in `production/qa/evidence/`
 - Regression case (Case 3) confirms the agent investigates cause, not just measures symptoms
 - Code quality trade-off (Case 4) verifies the agent does not recommend optimizations that violate coding standards without flagging the conflict
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

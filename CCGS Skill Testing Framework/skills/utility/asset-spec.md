@@ -1,6 +1,6 @@
 # Skill Test Spec: /asset-spec
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/asset-spec` generates per-asset visual specification documents from design
 requirements. It reads the relevant GDD, art bible, and design system to produce
@@ -34,7 +34,7 @@ review specs separately but this is not a gate within this skill.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Enemy sprite spec with full GDD and art bible
 
@@ -158,7 +158,7 @@ review specs separately but this is not a gate within this skill.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Reads GDD, art bible, and design system before generating spec
 - [ ] Includes all 6 spec components (dimensions, animations, palette, style, tech, checklist)
@@ -177,3 +177,6 @@ review specs separately but this is not a gate within this skill.
   state requirements aligned to the UX spec.
 - The case where GDD is also missing (neither GDD nor art bible exists) is not
   separately tested; spec would be generated with both dependency gaps flagged.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

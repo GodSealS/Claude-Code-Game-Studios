@@ -1,6 +1,6 @@
 # Agent Test Spec: wechat-cloudbase-specialist
 
-## Agent Summary
+## Agent Summary / 代理摘要
 Domain: WeChat Cloud Base (云开发) serverless backend development, NoSQL database design optimized for query patterns, cloud functions (Node.js) with anti-cheat validation, security rules for data access control, cloud storage management, real-time data synchronization with database.watch(), quota optimization, and compliance with Chinese data regulations.
 Does NOT own: Architecture decisions (Cloud Base vs self-hosted, overall backend strategy) — defers to wechat-specialist, gameplay implementation (wechat-minigame-specialist), shader code (wechat-shader-specialist), UI design/implementation (wechat-ui-specialist).
 Model tier: DeepSeek-V3.2 (default for implementation specialists).
@@ -18,7 +18,7 @@ No gate IDs assigned.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: NoSQL database design for common query patterns
 **Input:** "Design a database schema for a multiplayer game with player profiles, inventory, and match history."
@@ -552,7 +552,7 @@ No gate IDs assigned.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Stays within declared domain (Cloud Base development, database design, cloud functions, security rules, storage management)
 - [ ] Redirects architecture decisions (Cloud Base vs self-hosted, overall backend strategy) to wechat-specialist
@@ -578,3 +578,5 @@ No gate IDs assigned.
 - Quota optimization (Case 6) addresses cost control and performance scaling concerns
 - Version compatibility (Case 7) ensures graceful degradation across WeChat versions
 - Error handling (Case 8) provides comprehensive user experience for failure scenarios
+
+<!-- 中文翻译标记 / Chinese translation marker -->

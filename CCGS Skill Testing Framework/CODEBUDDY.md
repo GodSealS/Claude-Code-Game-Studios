@@ -3,7 +3,7 @@
 This folder is the quality assurance layer for the Claude Code Game Studios skill/agent
 framework. It is self-contained and separate from any game project.
 
-## Key files
+## Key files / 关键文件
 
 | File | Purpose |
 |------|---------|
@@ -15,7 +15,7 @@ framework. It is self-contained and separate from any game project.
 | `templates/agent-test-spec.md` | Template for writing new agent spec files. |
 | `results/` | Written by `/skill-test spec` when results are saved. Gitignored. |
 
-## Path conventions
+## Path conventions / 路径约定
 
 - Skill specs: `CCGS Skill Testing Framework/skills/[category]/[name].md`
 - Agent specs: `CCGS Skill Testing Framework/agents/[tier]/[name].md`
@@ -25,7 +25,7 @@ framework. It is self-contained and separate from any game project.
 The `spec:` field in `catalog.yaml` is the authoritative path for each skill/agent spec.
 Always read it rather than guessing the path.
 
-## Skill categories
+## Skill categories / 技能类别
 
 ```
 gate        → gate-check
@@ -45,7 +45,7 @@ sprint      → sprint-plan, sprint-status, milestone-review, retrospective,
 utility     → all remaining skills
 ```
 
-## Agent tiers
+## Agent tiers / 代理层级
 
 ```
 directors   → creative-director, technical-director, producer, art-director
@@ -66,7 +66,7 @@ creative    → writer, world-builder, game-designer, economy-designer,
               systems-designer, prototyper
 ```
 
-## Workflow for testing a skill
+## Workflow for testing a skill / 技能测试工作流
 
 1. Read `catalog.yaml` to get the skill's `spec:` path and `category:`
 2. Read the skill at `.codebuddy/skills/[name]/SKILL.md`
@@ -74,20 +74,23 @@ creative    → writer, world-builder, game-designer, economy-designer,
 4. Evaluate assertions case by case
 5. Offer to write results to `results/` and update `catalog.yaml`
 
-## Workflow for improving a skill
+## Workflow for improving a skill / 技能改进工作流
 
 Use `/skill-improve [name]`. It handles the full loop:
 test → diagnose → propose fix → rewrite → retest → keep or revert.
 
-## Spec validity note
+## Spec validity note / 规格有效性说明
 
 Specs in this folder describe **current behavior**, not ideal behavior. They were
 written by reading the skills, so they may encode bugs. When a skill misbehaves in
 practice, correct the skill first, then update the spec to match the fixed behavior.
 Treat spec failures as "this needs investigation," not "the skill is definitively wrong."
 
-## This folder is deletable
+## This folder is deletable / 此文件夹可删除
 
 Nothing in `.codebuddy/` imports from here. Deleting this folder has no effect on the
 CCGS skills or agents themselves. `/skill-test` and `/skill-improve` will report that
 `catalog.yaml` is missing and guide the user to initialize it.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

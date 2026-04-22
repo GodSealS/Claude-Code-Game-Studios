@@ -1,6 +1,6 @@
 # Agent Test Spec: ue-blueprint-specialist
 
-## Agent Summary
+## Agent Summary / 代理摘要
 - **Domain**: Blueprint architecture, the Blueprint/C++ boundary, Blueprint graph quality, Blueprint performance optimization, Blueprint Function Library design
 - **Does NOT own**: C++ implementation (engine-programmer or gameplay-programmer), art assets or shaders, UI/UX flow design (ux-designer)
 - **Model tier**: DeepSeek-V3.2
@@ -17,7 +17,7 @@
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — Blueprint graph performance review
 **Input**: "Review our AI behavior Blueprint. It has tick-based logic running every frame that checks line-of-sight for 30 NPCs simultaneously."
@@ -64,7 +64,7 @@
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Stays within declared domain (Blueprint architecture, performance, graph quality)
 - [ ] Redirects C++ implementation requests to engine-programmer or gameplay-programmer
@@ -78,3 +78,6 @@
 - Case 3 (null pointer safety) is a safety-critical test — this is a common source of shipping crashes
 - Case 5 requires that project conventions include a stated node budget; if none is configured, the agent should note the absence and recommend setting one
 - No automated runner; review manually or via `/skill-test`
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

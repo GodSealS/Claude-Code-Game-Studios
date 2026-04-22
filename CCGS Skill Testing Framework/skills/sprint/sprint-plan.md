@@ -1,6 +1,6 @@
 # Skill Test Spec: /sprint-plan
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/sprint-plan` reads the current milestone file and backlog stories, then
 generates a new numbered sprint with stories prioritized by implementation layer
@@ -32,7 +32,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Backlog with stories generates sprint
 
@@ -156,7 +156,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Shows draft sprint before invoking PR-SPRINT gate or asking to write
 - [ ] Always asks "May I write" before writing sprint file
@@ -175,3 +175,6 @@ Verified automatically by `/skill-test static` — no fixture needed.
   required) and is not separately tested.
 - Parallel story selection algorithms are not tested here; those are unit
   concerns for the sprint-plan subagent.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

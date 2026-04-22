@@ -1,6 +1,6 @@
 # Skill Test Spec: /team-qa
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 Orchestrates the QA team through a 7-phase structured testing cycle. Coordinates
 qa-lead (strategy, test plan, sign-off report) and qa-tester (test case writing,
@@ -28,7 +28,7 @@ independent stories.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — All stories pass manual QA, APPROVED verdict
 
@@ -182,7 +182,7 @@ independent stories.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] `AskUserQuestion` used at Phase 2 (strategy review), Phase 5 (test case approval per group), and Phase 6 (per-story manual QA result)
 - [ ] Phase 4 smoke check is a hard gate: FAIL halts the pipeline at Phase 4 with no exceptions
@@ -202,3 +202,6 @@ independent stories.
 - The `feature: [system-name]` argument form is not separately tested — it follows the same Phase 1 logic as the sprint form, using glob instead of directory read. The no-argument inference path (Case 4) provides sufficient coverage of the detection logic.
 - Logic stories with passing automated tests do not need manual QA — this is validated implicitly by Case 5 (Story A) where the Logic story receives no manual QA phase.
 - Parallel qa-tester spawning in Phase 5 is validated implicitly by Case 1 (multiple Visual/Feel stories issued simultaneously); no dedicated parallelism case is required beyond the Static Assertions check.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

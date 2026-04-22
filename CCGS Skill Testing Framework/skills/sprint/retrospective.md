@@ -1,6 +1,6 @@
 # Skill Test Spec: /retrospective
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/retrospective` generates a structured sprint or milestone retrospective
 covering three categories: what went well, what didn't, and action items.
@@ -31,7 +31,7 @@ None. Retrospectives are team self-reflection documents; no gates are invoked.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Sprint with mixed outcomes
 
@@ -150,7 +150,7 @@ None. Retrospectives are team self-reflection documents; no gates are invoked.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Always shows retrospective draft before asking to write
 - [ ] Always asks "May I write" before writing retrospective file
@@ -167,3 +167,6 @@ None. Retrospectives are team self-reflection documents; no gates are invoked.
   separately tested here.
 - The case where session logs are empty is similar to Case 2 (no data);
   the skill falls back to manual input in both situations.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

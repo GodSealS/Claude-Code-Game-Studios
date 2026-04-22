@@ -1,6 +1,6 @@
 # Skill Test Spec: /team-level
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 Orchestrates the full level design team for a single level or area. Coordinates
 narrative-director, world-builder, level-designer, systems-designer, art-director,
@@ -30,7 +30,7 @@ with verdict COMPLETE / BLOCKED and handoffs to `/design-review`, `/dev-story`,
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — All team members produce outputs, document compiled and saved
 
@@ -179,7 +179,7 @@ with verdict COMPLETE / BLOCKED and handoffs to `/design-review`, `/dev-story`,
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] `AskUserQuestion` used at each step transition — user approves before pipeline advances
 - [ ] All file writes delegated to sub-agents via Task — orchestrator does not call Write or Edit directly
@@ -207,3 +207,6 @@ with verdict COMPLETE / BLOCKED and handoffs to `/design-review`, `/dev-story`,
 - The level doc slug convention (argument → filename) is implicitly tested by Case 1
   (`forest dungeon` → `forest-dungeon.md`); multi-word slugification edge cases (special
   characters, very long names) are not covered.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

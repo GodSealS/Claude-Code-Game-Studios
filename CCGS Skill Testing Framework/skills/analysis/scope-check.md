@@ -1,6 +1,6 @@
 # Skill Test Spec: /scope-check
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/scope-check` is a Haiku-tier read-only skill that analyzes a feature, sprint,
 or story for scope creep risk. It reads sprint and story files and compares them
@@ -28,7 +28,7 @@ None. Scope check is a read-only advisory skill; no gates are invoked.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Sprint stories align with milestone goals
 
@@ -148,7 +148,7 @@ None. Scope check is a read-only advisory skill; no gates are invoked.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Reads milestone goals and sprint/story files before analysis
 - [ ] Maps each story to a milestone goal (or flags as unmapped)
@@ -166,3 +166,6 @@ None. Scope check is a read-only advisory skill; no gates are invoked.
 - Partial scope overlap (story touches a milestone goal but also introduces
   new scope) is not explicitly tested; implementation may classify this as
   CONCERNS rather than SCOPE CREEP DETECTED.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

@@ -1,6 +1,6 @@
 # Skill Test Spec: /day-one-patch
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/day-one-patch` prepares a day-one patch plan for issues that are known at
 launch but deferred from the v1.0 release. It reads open bug reports in
@@ -33,7 +33,7 @@ None. `/day-one-patch` is a release planning utility. No director gates apply.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — 3 Known Issues, Patch Plan With Fix Estimates
 
@@ -153,7 +153,7 @@ None. `/day-one-patch` is a release planning utility. No director gates apply.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Reads open bugs from `production/bugs/` before generating the plan
 - [ ] Scans story files for deferred AC notes
@@ -173,3 +173,6 @@ None. `/day-one-patch` is a release planning utility. No director gates apply.
   based on severity, not actual team velocity.
 - The patch notes player communication document (`/patch-notes`) is a separate
   skill invoked after the patch plan is executed.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

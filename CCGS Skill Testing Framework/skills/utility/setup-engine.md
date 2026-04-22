@@ -1,6 +1,6 @@
 # Skill Test Spec: /setup-engine
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/setup-engine` configures the project's engine, language, rendering backend,
 physics engine, specialist agent assignments, and naming conventions by
@@ -34,7 +34,7 @@ None. `/setup-engine` is a technical configuration skill. No director gates appl
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Godot 4 + GDScript — Full engine configuration
 
@@ -160,7 +160,7 @@ None. `/setup-engine` is a technical configuration skill. No director gates appl
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Presents draft configuration before asking to write
 - [ ] Asks "May I write to `technical-preferences.md`?" before writing
@@ -180,3 +180,6 @@ None. `/setup-engine` is a technical configuration skill. No director gates appl
   from VERSION.md) is surfaced by the skill but not assertion-tested here.
 - Performance budget defaults per engine are noted as engine-specific but
   exact default values are not assertion-tested.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

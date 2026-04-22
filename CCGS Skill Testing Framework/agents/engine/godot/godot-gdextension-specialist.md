@@ -1,6 +1,6 @@
 # Agent Test Spec: godot-gdextension-specialist
 
-## Agent Summary
+## Agent Summary / 代理摘要
 Domain: GDExtension API, godot-cpp C++ bindings, godot-rust bindings, native library integration, and native performance optimization.
 Does NOT own: GDScript code (gdscript-specialist), shader code (godot-shader-specialist).
 Model tier: DeepSeek-V3.2 (default).
@@ -17,7 +17,7 @@ No gate IDs assigned.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output
 **Input:** "Expose a C++ rigid-body physics simulation library to GDScript via GDExtension."
@@ -68,7 +68,7 @@ No gate IDs assigned.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Stays within declared domain (GDExtension, godot-cpp, godot-rust, native bindings)
 - [ ] Redirects GDScript authoring to godot-gdscript-specialist
@@ -84,3 +84,6 @@ No gate IDs assigned.
 - Binding pattern (Case 1) should include a smoke test verifying the extension loads and the method is callable from GDScript
 - ABI risk (Case 3) is a critical escalation path — the agent must not approve shipping an unverified extension binary
 - Memory management (Case 4) verifies the agent applies Godot-specific patterns, not generic C++ RAII
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

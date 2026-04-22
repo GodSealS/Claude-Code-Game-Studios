@@ -1,6 +1,6 @@
 # Agent Test Spec: wechat-ui-specialist
 
-## Agent Summary
+## Agent Summary / 代理摘要
 Domain: WeChat Mini Game UI design and implementation using FairyGUI, responsive data binding (GameState → ViewModel → UI), screen management stack (push/pop/replace), adaptive layouts for portrait-first design, and WeChat-specific UI patterns.
 Does NOT own: Gameplay implementation (wechat-minigame-specialist), shader code (wechat-shader-specialist), architecture decisions (wechat-specialist).
 Model tier: DeepSeek-V3.2 (default for implementation specialists).
@@ -18,7 +18,7 @@ No gate IDs assigned.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — FairyGUI component creation
 **Input:** "Create a responsive button component in FairyGUI that changes state on touch."
@@ -406,7 +406,7 @@ No gate IDs assigned.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Stays within declared domain (FairyGUI, data binding, screen management, adaptive layouts)
 - [ ] Redirects gameplay implementation to wechat-minigame-specialist
@@ -429,3 +429,5 @@ No gate IDs assigned.
 - Performance optimization (Case 6) confirms mobile UI performance awareness
 - Accessibility (Case 7) demonstrates inclusive design principles
 - Design-to-code workflow (Case 8) bridges design and development processes
+
+<!-- 中文翻译标记 / Chinese translation marker -->

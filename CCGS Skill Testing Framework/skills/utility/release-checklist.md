@@ -1,6 +1,6 @@
 # Skill Test Spec: /release-checklist
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/release-checklist` generates an internal release readiness checklist covering:
 sprint story completion, open bug severity, QA sign-off status, build stability,
@@ -33,7 +33,7 @@ is managed by `/gate-check`.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — All Sprint Stories Complete, QA Passed, RELEASE READY
 
@@ -153,7 +153,7 @@ is managed by `/gate-check`.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Checks sprint story completion status
 - [ ] Checks open bug severity (CRITICAL/HIGH = BLOCKED; MEDIUM/LOW = CONCERNS)
@@ -175,3 +175,6 @@ is managed by `/gate-check`.
 - Stories with `Status: In Review` (not Done) are treated as incomplete
   and result in RELEASE BLOCKED; this edge case follows the same pattern
   as the HIGH bug case.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

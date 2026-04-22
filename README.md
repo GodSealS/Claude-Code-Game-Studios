@@ -20,7 +20,7 @@
 
 ---
 
-## Why This Exists
+## Why This Exists / 为什么存在
 
 Building a game solo with AI is powerful — but a single chat session has no structure. No one stops you from hardcoding magic numbers, skipping design docs, or writing spaghetti code. There's no QA pass, no design review, no one asking "does this actually fit the game's vision?"
 
@@ -30,7 +30,7 @@ The result: you still make every decision, but now you have a team that asks the
 
 ---
 
-## Table of Contents
+## Table of Contents / 目录
 
 - [What's Included](#whats-included)
 - [Studio Hierarchy](#studio-hierarchy)
@@ -48,7 +48,7 @@ The result: you still make every decision, but now you have a team that asks the
 
 ---
 
-## What's Included
+## What's Included / 包含内容
 
 | Category | Count | Description |
 |----------|-------|-------------|
@@ -58,7 +58,7 @@ The result: you still make every decision, but now you have a team that asks the
 | **Rules** | 11 | Path-scoped coding standards enforced when editing gameplay, engine, AI, UI, network code, and more |
 | **Templates** | 39 | Document templates for GDDs, UX specs, ADRs, sprint plans, HUD design, accessibility, and more |
 
-## Studio Hierarchy
+## Studio Hierarchy / 工作室层级
 
 Agents are organized into three tiers, matching how real studios operate:
 
@@ -92,7 +92,7 @@ The template includes agent sets for all three major engines. Use the set that m
 | **Unity** | `unity-specialist` | DOTS/ECS, Shaders/VFX, Addressables, UI Toolkit |
 | **Unreal Engine 5** | `unreal-specialist` | GAS, Blueprints, Replication, UMG/CommonUI |
 
-## Slash Commands
+## Slash Commands / 斜杠命令
 
 Type `/` in Claude Code to access all 72 skills:
 
@@ -132,9 +132,9 @@ Type `/` in Claude Code to access all 72 skills:
 **Team Orchestration** (coordinate multiple agents on a single feature)
 `/team-combat` `/team-narrative` `/team-ui` `/team-release` `/team-polish` `/team-audio` `/team-level` `/team-live-ops` `/team-qa`
 
-## Getting Started
+## Getting Started / 快速入门
 
-### Prerequisites
+### Prerequisites / 前置条件
 
 - [Git](https://git-scm.com/)
 - [Claude Code](https://docs.anthropic.com/en/docs/claude-code) (`npm install -g @anthropic-ai/claude-code`)
@@ -163,13 +163,13 @@ All hooks fail gracefully if optional tools are missing — nothing breaks, you 
    - `/setup-engine godot 4.6` — configure your engine if you already know
    - `/project-stage-detect` — analyze an existing project
 
-## Upgrading
+## Upgrading / 升级
 
 Already using an older version of this template? See [UPGRADING.md](UPGRADING.md)
 for step-by-step migration instructions, a breakdown of what changed between
 versions, and which files are safe to overwrite vs. which need a manual merge.
 
-## Project Structure
+## Project Structure / 项目结构
 
 ```
 CLAUDE.md                           # Master configuration
@@ -193,7 +193,7 @@ prototypes/                         # Throwaway prototypes (isolated from src/)
 production/                         # Sprint plans, milestones, release tracking
 ```
 
-## How It Works
+## How It Works / 工作原理
 
 ### Agent Coordination
 
@@ -255,7 +255,7 @@ Coding standards are automatically enforced based on file location:
 | `tests/**` | Test naming, coverage requirements, fixture patterns |
 | `prototypes/**` | Relaxed standards, README required, hypothesis documented |
 
-## Design Philosophy
+## Design Philosophy / 设计哲学
 
 This template is grounded in professional game development practices:
 
@@ -265,7 +265,7 @@ This template is grounded in professional game development practices:
 - **Bartle Player Types** — Audience targeting and validation
 - **Verification-Driven Development** — Tests first, then implementation
 
-## Customization
+## Customization / 自定义
 
 This is a **template**, not a locked framework. Everything is meant to be customized:
 
@@ -277,18 +277,18 @@ This is a **template**, not a locked framework. Everything is meant to be custom
 - **Pick your engine** — use the Godot, Unity, or Unreal agent set (or none)
 - **Set review intensity** — `full` (all director gates), `lean` (phase gates only), or `solo` (none). Set during `/start` or edit `production/review-mode.txt`. Override per-run with `--review solo` on any skill.
 
-## Platform Support
+## Platform Support / 平台支持
 
 Tested on **Windows 10** with Git Bash. All hooks use POSIX-compatible patterns (`grep -E`, not `grep -P`) and include fallbacks for missing tools. Works on macOS and Linux without modification.
 
-## Community
+## Community / 社区
 
 - **Discussions** — [GitHub Discussions](https://github.com/Donchitos/Claude-Code-Game-Studios/discussions) for questions, ideas, and showcasing what you've built
 - **Issues** — [Bug reports and feature requests](https://github.com/Donchitos/Claude-Code-Game-Studios/issues)
 
 ---
 
-## Supporting This Project
+## Supporting This Project / 支持此项目
 
 Claude Code Game Studios is free and open source. If it saves you time or helps you ship your game, consider supporting continued development:
 
@@ -307,7 +307,7 @@ Sponsorships help fund time spent maintaining skills, adding new agents, keeping
 
 *Built for CodeBuddy. Maintained and extended — contributions welcome via [GitHub Discussions](https://github.com/Donchitos/Claude-Code-Game-Studios/discussions).*
 
-## License
+## License / 许可证
 
 MIT License. See [LICENSE](LICENSE) for details.
 

@@ -1,6 +1,6 @@
 # Agent Test Spec: wechat-shader-specialist
 
-## Agent Summary
+## Agent Summary / 代理摘要
 Domain: WebGL shader development for WeChat Mini Games, shader conversion from other engines (Unity/Unreal/Godot → GLSL), rendering optimization, WebGL 1.0 vs 2.0 decisions, and shader performance/quality tiers.
 Does NOT own: Gameplay implementation (wechat-minigame-specialist), UI design/implementation (wechat-ui-specialist), architecture decisions (wechat-specialist).
 Model tier: DeepSeek-V3.2 (default for technical specialists).
@@ -18,7 +18,7 @@ No gate IDs assigned.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — WebGL 1.0 vs 2.0 decision
 **Input:** "Should we target WebGL 1.0 or 2.0 for our WeChat Mini Game?"
@@ -194,7 +194,7 @@ No gate IDs assigned.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Stays within declared domain (WebGL shaders, rendering optimization, shader conversion)
 - [ ] Redirects gameplay implementation to wechat-minigame-specialist
@@ -216,3 +216,5 @@ No gate IDs assigned.
 - Post-processing (Case 5) balances visual quality with mobile performance constraints
 - Debugging workflow (Case 7) provides practical troubleshooting for WeChat environment
 - VFX particles (Case 8) covers real-time effects within mobile GPU limitations
+
+<!-- 中文翻译标记 / Chinese translation marker -->

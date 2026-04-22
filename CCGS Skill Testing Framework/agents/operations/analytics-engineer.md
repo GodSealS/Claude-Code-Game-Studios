@@ -1,6 +1,6 @@
 # Agent Test Spec: analytics-engineer
 
-## Agent Summary
+## Agent Summary / 代理摘要
 - **Domain**: Telemetry architecture and event schema design, A/B test framework design, player behavior analysis methodology, analytics dashboard specification, event naming conventions, data pipeline design (schema → ingestion → dashboard)
 - **Does NOT own**: Game implementation of event tracking (appropriate programmer), economy design decisions informed by analytics (economy-designer), live ops event design (live-ops-designer)
 - **Model tier**: DeepSeek-V3.2
@@ -17,7 +17,7 @@
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — tutorial event tracking design
 **Input**: "Design the analytics event tracking for our tutorial. We want to know where players drop off and which steps they complete."
@@ -66,7 +66,7 @@
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Returns verdicts using APPROVE / CONCERNS / REJECT vocabulary only.
 - [ ] **Data Integrity Guard**: Specifically flags overlapping experiments as REJECT with a "Mutual Exclusion Violation" tag.
@@ -84,3 +84,6 @@
 - Case 4 (mutual exclusion) is a data integrity test — overlapping tests produce unusable results; this must be caught
 - Case 5 is the most important context-awareness test; naming convention drift across schemas causes dashboard breakage
 - No automated runner; review manually or via `/skill-test`
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

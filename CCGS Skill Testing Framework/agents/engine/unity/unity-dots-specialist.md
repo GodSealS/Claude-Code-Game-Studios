@@ -1,6 +1,6 @@
 # Agent Test Spec: unity-dots-specialist
 
-## Agent Summary
+## Agent Summary / 代理摘要
 Domain: ECS architecture (IComponentData, ISystem, SystemAPI), Jobs system (IJob, IJobEntity, Burst), Burst compiler constraints, DOTS gameplay systems, and hybrid renderer.
 Does NOT own: MonoBehaviour gameplay code (gameplay-programmer), UI implementation (unity-ui-specialist).
 Model tier: DeepSeek-V3.2 (default).
@@ -17,7 +17,7 @@ No gate IDs assigned.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output
 **Input:** "Convert the player movement system to ECS."
@@ -70,7 +70,7 @@ No gate IDs assigned.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Stays within declared domain (ECS, Jobs, Burst, DOTS gameplay systems)
 - [ ] Redirects MonoBehaviour-only gameplay to gameplay-programmer
@@ -85,3 +85,6 @@ No gate IDs assigned.
 - ECS conversion (Case 1) must include a unit test using the ECS test framework (`World`, `EntityManager`)
 - Burst incompatibility (Case 3) is safety-critical — the agent must catch this before the code is written
 - Chunk layout (Case 5) verifies the agent applies quantitative performance reasoning to architecture decisions
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

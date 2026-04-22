@@ -1,6 +1,6 @@
 # Agent Test Spec: godot-csharp-specialist
 
-## Agent Summary
+## Agent Summary / 代理摘要
 Domain: C# patterns in Godot 4, .NET idioms applied to Godot, [Export] attribute usage, signal delegates, and async/await patterns.
 Does NOT own: GDScript code (gdscript-specialist), GDExtension C/C++ bindings (gdextension-specialist).
 Model tier: DeepSeek-V3.2 (default).
@@ -17,7 +17,7 @@ No gate IDs assigned.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output
 **Input:** "Create an export property for enemy health with validation that clamps it between 1 and 1000."
@@ -63,7 +63,7 @@ No gate IDs assigned.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Stays within declared domain (C# in Godot 4 — patterns, exports, signals, async)
 - [ ] Redirects GDScript requests to godot-gdscript-specialist
@@ -79,3 +79,6 @@ No gate IDs assigned.
 - Export property with validation (Case 1) should have a unit test verifying the clamp behavior
 - Threading conflict (Case 4) is safety-critical: the agent must identify and fix this without prompting
 - Async signal (Case 3) verifies the agent applies .NET idioms correctly within Godot's single-thread constraint
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

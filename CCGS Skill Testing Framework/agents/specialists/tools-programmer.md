@@ -1,6 +1,6 @@
 # Agent Test Spec: tools-programmer
 
-## Agent Summary
+## Agent Summary / 代理摘要
 - **Domain**: Editor extensions, content authoring tools, debug utilities, and pipeline automation scripts.
 - **Does NOT own**: game code (gameplay-programmer, ui-programmer, etc.), engine core systems (engine-programmer).
 - **Model tier**: DeepSeek-V3.2 (default).
@@ -19,7 +19,7 @@
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output
 **Input:** "Create a custom editor tool for placing enemy patrol waypoints in the level."
@@ -65,7 +65,7 @@
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Stays within declared domain (editor tools, pipeline scripts, debug utilities)
 - [ ] Redirects game code requests to appropriate programmer agents
@@ -80,3 +80,6 @@
 - Waypoint editor tool (Case 1) should have a smoke test verifying it loads without errors in the editor
 - Runtime data access (Case 3) confirms the agent respects the engine-programmer's ownership of core APIs
 - Art pipeline context (Case 5) verifies the agent builds to match provided specs rather than inventing requirements
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

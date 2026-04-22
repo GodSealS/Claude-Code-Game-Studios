@@ -1,6 +1,6 @@
 # Skill Test Spec: /skill-improve
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/skill-improve` runs an automated test-fix-retest improvement loop on a skill
 file. It invokes `/skill-test static` (and optionally `/skill-test category`) to
@@ -34,7 +34,7 @@ None. `/skill-improve` is a meta-utility skill. No director gates apply.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Skill With 2 Static Failures, Both Fixed, IMPROVED
 
@@ -164,7 +164,7 @@ None. `/skill-improve` is a meta-utility skill. No director gates apply.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Always establishes a baseline score before proposing any changes
 - [ ] Shows before/after score comparison in the output
@@ -183,3 +183,6 @@ None. `/skill-improve` is a meta-utility skill. No director gates apply.
   improvement loop — only structural (static) and category scores are automated.
 - The case where the skill file cannot be read (permissions error or missing file)
   is not tested; this would result in an error before the baseline is established.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

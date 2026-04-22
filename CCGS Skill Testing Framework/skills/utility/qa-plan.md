@@ -1,6 +1,6 @@
 # Skill Test Spec: /qa-plan
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/qa-plan` generates a structured QA test plan for a feature or sprint milestone.
 It reads story files for the specified sprint, extracts acceptance criteria from
@@ -34,7 +34,7 @@ None. `/qa-plan` is a planning utility. Story readiness gates are separate.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Sprint with 4 stories generates full test plan
 
@@ -153,7 +153,7 @@ None. `/qa-plan` is a planning utility. Story readiness gates are separate.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Reads coding-standards.md test evidence table before assigning test types
 - [ ] Assigns BLOCKING or ADVISORY gate level per story type
@@ -173,3 +173,6 @@ None. `/qa-plan` is a planning utility. Story readiness gates are separate.
   for one sprint at a time.
 - Config/data story type (balance tuning → smoke check) follows the same
   assignment pattern as other types in Case 1 and is not separately tested.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

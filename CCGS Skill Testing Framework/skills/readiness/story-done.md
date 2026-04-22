@@ -1,6 +1,6 @@
 # Skill Test Spec: /story-done
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/story-done` closes the loop between design and implementation. Run at the
 end of implementing a story, it reads the story file and verifies each
@@ -24,7 +24,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — All acceptance criteria met, no deviations
 
@@ -186,7 +186,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Uses "May I write" before updating the story file
 - [ ] Uses "May I write" before adding entries to `docs/tech-debt-register.md`
@@ -207,3 +207,6 @@ Verified automatically by `/skill-test static` — no fixture needed.
 - The `sprint-status.yaml` update (Phase 7 in the skill) is implied by Case 1
   but not the primary assertion; assumed to follow the same "May I write" pattern.
 - Stories with multiple TR-IDs or multiple ADRs are not explicitly tested.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

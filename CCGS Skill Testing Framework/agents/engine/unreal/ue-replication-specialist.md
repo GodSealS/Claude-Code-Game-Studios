@@ -1,6 +1,6 @@
 # Agent Test Spec: ue-replication-specialist
 
-## Agent Summary
+## Agent Summary / 代理摘要
 - **Domain**: Property replication (UPROPERTY Replicated/ReplicatedUsing), RPCs (Server/Client/NetMulticast), client prediction and reconciliation, net relevancy and always-relevant settings, net serialization (FArchive/NetSerialize), bandwidth optimization and replication frequency tuning
 - **Does NOT own**: Gameplay logic being replicated (gameplay-programmer), server infrastructure and hosting (devops-engineer), GAS-specific prediction (ue-gas-specialist handles GAS net prediction)
 - **Model tier**: DeepSeek-V3.2
@@ -18,7 +18,7 @@
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — replicated player health with client prediction
 **Input**: "Set up replicated player health that clients can predict locally (e.g., when taking self-inflicted damage) and have corrected by the server."
@@ -66,7 +66,7 @@
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Stays within declared domain (property replication, RPCs, client prediction, bandwidth)
 - [ ] Redirects server infrastructure requests to devops-engineer without producing infrastructure design
@@ -81,3 +81,6 @@
 - Case 5 is the most important context-awareness test; agent must use actual budget numbers, not generic advice
 - Case 1 GAS branch: if GAS is configured, agent should detect it and defer to ue-gas-specialist for GAS-managed attributes
 - No automated runner; review manually or via `/skill-test`
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

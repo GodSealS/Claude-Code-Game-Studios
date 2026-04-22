@@ -1,6 +1,6 @@
 # Agent Test Spec: accessibility-specialist
 
-## Agent Summary
+## Agent Summary / 代理摘要
 - **Domain**: Input remapping, text scaling, colorblind modes, screen reader support, and accessibility standards compliance (WCAG, platform certifications).
 - **Does NOT own**: overall UX flow design (ux-designer), visual art style direction (art-director).
 - **Model tier**: DeepSeek-V3.2 (default).
@@ -18,7 +18,7 @@
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: In-domain request — appropriate output
 **Input:** "Review the player HUD for accessibility."
@@ -65,7 +65,7 @@
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] **Standard Verdicts**: Returns APPROVE / CONCERNS / REJECT for all audits.
 - [ ] **Standard Alignment**: Specifically references WCAG 2.1 success criteria by ID (e.g., SC 1.4.3).
@@ -83,3 +83,6 @@
 - HUD audit (Case 1) should produce findings trackable as accessibility stories in the sprint backlog
 - Colorblind conflict (Case 3) confirms the agent respects art-director's authority over the palette
 - WCAG criteria (Case 5) verifies the agent uses standards precisely, not generically
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

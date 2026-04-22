@@ -1,6 +1,6 @@
 # Skill Test Spec: /brainstorm
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/brainstorm` facilitates guided game concept ideation. It presents 2-4 concept
 options with pros/cons, lets the user choose and refine a concept, and produces
@@ -43,7 +43,7 @@ In `solo` mode: all 4 gates are skipped. Output notes all 4 as: "[GATE-ID] skipp
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Full mode, 3 concepts, user picks one, all 4 directors approve
 
@@ -167,7 +167,7 @@ In `solo` mode: all 4 gates are skipped. Output notes all 4 as: "[GATE-ID] skipp
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Presents 2-4 concept options with pros/cons before user commits
 - [ ] User confirms concept direction before director gates are invoked
@@ -187,3 +187,6 @@ In `solo` mode: all 4 gates are skipped. Output notes all 4 as: "[GATE-ID] skipp
   the option selection phase.
 - The game-concept.md document structure (required sections) is defined in the
   skill body and not re-enumerated in test assertions.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

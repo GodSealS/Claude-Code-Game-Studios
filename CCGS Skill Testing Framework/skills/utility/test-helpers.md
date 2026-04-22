@@ -1,6 +1,6 @@
 # Skill Test Spec: /test-helpers
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/test-helpers` generates engine-specific test helper utilities for the project's
 test suite. Helpers include factory functions (for creating test entities with
@@ -32,7 +32,7 @@ None. `/test-helpers` is a scaffolding utility. No director gates apply.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Player factory helper generated for Godot/GDScript
 
@@ -154,7 +154,7 @@ None. `/test-helpers` is a scaffolding utility. No director gates apply.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Reads engine before generating any helper (helpers are engine-specific)
 - [ ] Reads GDD for default values when available
@@ -173,3 +173,6 @@ None. `/test-helpers` is a scaffolding utility. No director gates apply.
   same logic as Case 1 with language-appropriate output.
 - The case where the requested helper type is not recognized is not tested;
   the skill would ask the user to clarify the helper type.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->

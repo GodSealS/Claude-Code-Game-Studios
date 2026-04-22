@@ -1,6 +1,6 @@
 # Skill Test Spec: /dev-story
 
-## Skill Summary
+## Skill Summary / 技能摘要
 
 `/dev-story` reads a story file, loads all required context (referenced ADR,
 TR-ID from the registry, control manifest, engine preferences), implements the
@@ -41,7 +41,7 @@ In `solo` mode: LP-CODE-REVIEW is skipped with equivalent notes.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
 ### Case 1: Happy Path — Story implemented and marked Complete (full mode)
 
@@ -184,7 +184,7 @@ In `solo` mode: LP-CODE-REVIEW is skipped with equivalent notes.
 
 ---
 
-## Protocol Compliance
+## Protocol Compliance / 协议合规
 
 - [ ] Does NOT write source code directly — delegates to specialist agents
 - [ ] Reads all context (story, TR-ID, ADR, manifest, engine prefs) before implementation
@@ -203,3 +203,6 @@ In `solo` mode: LP-CODE-REVIEW is skipped with equivalent notes.
   evidence requirements and are not covered in these cases.
 - Integration story type follows the same pattern as Logic but with a different
   evidence path — not independently fixture-tested.
+
+
+<!-- 中文翻译标记 / Chinese translation marker -->
