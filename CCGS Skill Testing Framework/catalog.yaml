@@ -1063,6 +1063,61 @@ agents:
     last_spec_result: ""
     category: engine
 
+  # Engine Specialists — Cocos Creator
+  - name: cocos-specialist
+    spec: CCGS Skill Testing Framework/agents/engine/cocos/cocos-specialist.md
+    last_spec: ""
+    last_spec_result: ""
+    category: engine
+
+  - name: cocos_2d-expert
+    spec: CCGS Skill Testing Framework/agents/engine/cocos/cocos_2d-expert.md
+    last_spec: ""
+    last_spec_result: ""
+    category: engine
+
+  - name: cocos_3d-expert
+    spec: CCGS Skill Testing Framework/agents/engine/cocos/cocos_3d-expert.md
+    last_spec: ""
+    last_spec_result: ""
+    category: engine
+
+  - name: cocos_gfx-expert
+    spec: CCGS Skill Testing Framework/agents/engine/cocos/cocos_gfx-expert.md
+    last_spec: ""
+    last_spec_result: ""
+    category: engine
+
+  - name: cocos_core-expert
+    spec: CCGS Skill Testing Framework/agents/engine/cocos/cocos_core-expert.md
+    last_spec: ""
+    last_spec_result: ""
+    category: engine
+
+  - name: cocos_physics-expert
+    spec: CCGS Skill Testing Framework/agents/engine/cocos/cocos_physics-expert.md
+    last_spec: ""
+    last_spec_result: ""
+    category: engine
+
+  - name: cocos_physics-2d-expert
+    spec: CCGS Skill Testing Framework/agents/engine/cocos/cocos_physics-2d-expert.md
+    last_spec: ""
+    last_spec_result: ""
+    category: engine
+
+  - name: cocos_animation-expert
+    spec: CCGS Skill Testing Framework/agents/engine/cocos/cocos_animation-expert.md
+    last_spec: ""
+    last_spec_result: ""
+    category: engine
+
+  - name: cocos_rendering-expert
+    spec: CCGS Skill Testing Framework/agents/engine/cocos/cocos_rendering-expert.md
+    last_spec: ""
+    last_spec_result: ""
+    category: engine
+
   # Operations
   - name: devops-engineer
     spec: CCGS Skill Testing Framework/agents/operations/devops-engineer.md

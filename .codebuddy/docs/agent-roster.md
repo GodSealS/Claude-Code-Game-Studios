@@ -63,6 +63,8 @@ domain lead) should delegate to specialists.
 | `unity-specialist` | Unity | DeepSeek-V3.2 | MonoBehaviour vs DOTS, Addressables, URP/HDRP, Unity optimization |
 | `godot-specialist` | Godot 4 | DeepSeek-V3.2 | GDScript patterns, node/scene architecture, signals, Godot optimization |
 | `wechat-specialist` | WeChat Mini Game | DeepSeek-V3.2 | WeChat platform architecture (MVC/ECS), wx.* APIs, game loop optimization, state/resource management, audio systems, sub-specialist coordination |
+| `cocos-specialist` | Cocos Creator | DeepSeek-V3.2 | Component system, scene graph, rendering pipeline, Cocos optimization |
+
 
 ### Unreal Engine Sub-Specialists
 
@@ -89,6 +91,19 @@ domain lead) should delegate to specialists.
 | `godot-gdscript-specialist` | GDScript | DeepSeek-V3.2 | Static typing, design patterns, signals, coroutines, GDScript performance |
 | `godot-shader-specialist` | Shaders/Rendering | GLM-5v-Turbo | Godot shading language, visual shaders, particles, post-processing |
 | `godot-gdextension-specialist` | GDExtension | DeepSeek-V3.2 | C++/Rust bindings, native performance, custom nodes, build systems |
+
+### Cocos Creator Sub-Specialists
+
+| Agent | Subsystem | Model | When to Use |
+| ---- | ---- | ---- | ---- |
+| `cocos_2d-expert` | 2D Rendering | DeepSeek-V3.2 | Sprite, UI components, 2D graphics, text rendering, mask effects |
+| `cocos_3d-expert` | 3D Rendering | DeepSeek-V3.2 | Mesh rendering, skinned animation, model management, LOD |
+| `cocos_animation-expert` | Animation System | DeepSeek-V3.2 | Animation clips, skeletal animation, state machines, blending |
+| `cocos_core-expert` | Core Engine | DeepSeek-V3.2 | Component system, scene graph, lifecycle management, event system |
+| `cocos_gfx-expert` | Graphics API | DeepSeek-V3.2 | Shaders, GPU resources, cross-platform backends, rendering pipeline |
+| `cocos_physics-expert` | 3D Physics | DeepSeek-V3.2 | Rigid bodies, collision detection, raycasting, joints |
+| `cocos_physics-2d-expert` | 2D Physics | DeepSeek-V3.2 | Box2D integration, 2D collision detection, physics events |
+| `cocos_rendering-expert` | Rendering Pipeline | DeepSeek-V3.2 | Camera system, lighting, shadows, post-processing, optimization |
 
 ---
 
