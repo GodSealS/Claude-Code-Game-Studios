@@ -6,7 +6,7 @@ user-invocable: true
 allowed-tools: Read, Glob, Grep, Bash, Write, AskUserQuestion
 ---
 
-# Smoke Check
+# Smoke Check / 冒烟测试
 
 This skill is the gate between "implementation done" and "ready for QA
 hand-off". It runs the automated test suite, checks for test coverage gaps,
@@ -16,19 +16,21 @@ report.
 The rule is simple: **a build that fails smoke check does not go to QA.**
 Handing a broken build to QA wastes their time and demoralises the team.
 
+> **中文翻译**：此技能是"实现完成"与"准备好 QA 交接"之间的门控。它运行自动化测试套件，检查测试覆盖缺口，与开发者批量验证关键路径，并生成 PASS/FAIL 报告。规则很简单：**冒烟测试失败的构建不进入 QA。** 将损坏的构建交给 QA 会浪费他们的时间并打击团队士气。
+
 **Output:** `production/qa/smoke-[date].md`
 
 ---
 
-## Parse Arguments
+## Parse Arguments / 解析参数
 
-Arguments can be combined: `/smoke-check sprint --platform console`
+Arguments can be combined: `/smoke-check sprint --platform console` / 参数可以组合：`/smoke-check sprint --platform console`
 
-**Base mode** (first argument, default: `sprint`):
-- `sprint` — full smoke check against the current sprint's stories
-- `quick` — skip coverage scan (Phase 3) and Batch 3; use for rapid re-checks
+**Base mode** (first argument, default: `sprint`): / **基础模式**（第一个参数，默认：`sprint`）：
+- `sprint` — full smoke check against the current sprint's stories / 针对当前冲刺故事的完整冒烟测试
+- `quick` — skip coverage scan (Phase 3) and Batch 3; use for rapid re-checks / 跳过覆盖扫描（阶段3）和批次3；用于快速重新检查
 
-**Platform flag** (`--platform`, default: none):
+**Platform flag** (`--platform`, default: none): / **平台标志**（`--platform`，默认：无）：
 - `--platform pc` — add PC-specific checks (keyboard, mouse, windowed mode)
 - `--platform console` — add console-specific checks (gamepad, TV safe zones,
   platform certification requirements)
@@ -41,7 +43,7 @@ Phase 5 outputs a per-platform verdict table in addition to the overall verdict.
 
 ---
 
-## Phase 1: Detect Test Setup
+## Phase 1: Detect Test Setup / 第 1 阶段：检测测试设置
 
 Before running anything, understand the environment:
 
@@ -72,7 +74,7 @@ Report findings before proceeding: "Environment: [engine]. Test directory:
 
 ---
 
-## Phase 2: Run Automated Tests
+## Phase 2: Run Automated Tests / 第 2 阶段：运行自动化测试
 
 Attempt to run the test suite via Bash. Select the command based on the engine
 detected in Phase 1:
@@ -129,7 +131,7 @@ Parse runner output and extract:
 
 ---
 
-## Phase 3: Check Test Coverage
+## Phase 3: Check Test Coverage / 第 3 阶段：检查测试覆盖
 
 Draw the story list from, in priority order:
 1. The QA plan found in Phase 1 (its Test Summary table lists expected test
@@ -153,6 +155,7 @@ Assign a coverage status to each story:
 
 | Status | Meaning |
 |--------|---------|
+| / 状态 | 含义 |
 | **COVERED** | A test file was found matching this story's system and scope |
 | **MANUAL** | Story type is Visual/Feel or UI; a test evidence document was found |
 | **MISSING** | Logic or Integration story with no matching test file |
@@ -165,7 +168,7 @@ fully close those stories.
 
 ---
 
-## Phase 4: Run Manual Smoke Checks
+## Phase 4: Run Manual Smoke Checks / 第 4 阶段：运行手动冒烟检查
 
 Draw the smoke test checklist from, in priority order:
 1. The QA plan's "Smoke Test Scope" section (if QA plan was found in Phase 1)
@@ -179,7 +182,7 @@ sprint's stories.
 
 Use `AskUserQuestion` to batch-verify. Keep to at most 3 calls.
 
-**Batch 1 — Core stability (always run):**
+**Batch 1 — Core stability (always run):** / **批次 1 — 核心稳定性（始终运行）：**
 ```
 question: "Smoke check — Batch 1: Core stability. Please verify each:"
 options:
@@ -191,7 +194,7 @@ options:
   - "Main menu responds to all inputs — FAIL"
 ```
 
-**Batch 2 — Sprint mechanic and regression (always run):**
+**Batch 2 — Sprint mechanic and regression (always run):** / **批次 2 — 冲刺机制和回归（始终运行）：**
 ```
 question: "Smoke check — Batch 2: This sprint's changes and regression check:"
 options:
@@ -203,7 +206,7 @@ options:
   - "Previous sprint's features — regression found: [brief description]"
 ```
 
-**Batch 3 — Data integrity and performance (run unless `quick` argument):**
+**Batch 3 — Data integrity and performance (run unless `quick` argument):** / **批次 3 — 数据完整性和性能（除非使用 `quick` 参数否则运行）：**
 ```
 question: "Smoke check — Batch 3: Data integrity and performance:"
 options:
@@ -217,7 +220,7 @@ options:
 
 Record each response verbatim for the Phase 5 report.
 
-**Platform Batches** *(run only if `--platform` argument was provided)*:
+**Platform Batches** *(run only if `--platform` argument was provided)*: / **平台批次** *（仅在提供 `--platform` 参数时运行）*：
 
 **PC platform** (`--platform pc` or `--platform all`):
 ```
@@ -263,7 +266,7 @@ options:
 
 ---
 
-## Phase 5: Generate Report
+## Phase 5: Generate Report / 第 5 阶段：生成报告
 
 Assemble the full smoke check report:
 
@@ -277,7 +280,7 @@ Assemble the full smoke check report:
 
 ---
 
-### Automated Tests
+### Automated Tests / 自动化测试
 
 **Status**: [PASS ([N] tests, [N] passing) | FAIL ([N] failures) |
 NOT RUN ([reason])]
@@ -291,7 +294,7 @@ will determine whether the automated test row contributes to a FAIL verdict."
 
 ---
 
-### Test Coverage
+### Test Coverage / 测试覆盖
 
 | Story | Type | Test File | Coverage Status |
 |-------|------|-----------|----------------|
@@ -304,7 +307,7 @@ will determine whether the automated test row contributes to a FAIL verdict."
 
 ---
 
-### Manual Smoke Checks
+### Manual Smoke Checks / 手动冒烟检查
 
 - [x] Game launches without crash — PASS
 - [x] New game starts — PASS
@@ -315,7 +318,7 @@ will determine whether the automated test row contributes to a FAIL verdict."
 
 ---
 
-### Missing Test Evidence
+### Missing Test Evidence / 缺失测试证据
 
 Stories that must have test evidence before they can be marked COMPLETE via
 `/story-done`:
@@ -327,7 +330,7 @@ Stories that must have test evidence before they can be marked COMPLETE via
 
 ---
 
-### Platform-Specific Results *(only if `--platform` was provided)*
+### Platform-Specific Results *(only if `--platform` was provided)* / 平台特定结果 *（仅在提供 `--platform` 时）*
 
 | Platform | Checks Run | Passed | Failed | Platform Verdict |
 |----------|-----------|--------|--------|-----------------|
@@ -363,7 +366,7 @@ Any platform with one or more FAIL checks contributes to the overall FAIL verdic
 
 ---
 
-## Phase 6: Write and Gate
+## Phase 6: Write and Gate / 第 6 阶段：写入和门控
 
 Present the full report in conversation, then ask:
 
@@ -401,17 +404,17 @@ agent to begin manual verification."
 
 ---
 
-## Collaborative Protocol
+## Collaborative Protocol / 协作协议
 
 - **Never treat NOT RUN as automatic FAIL** — record it as NOT RUN and let
   the developer confirm status manually. Unconfirmed NOT RUN contributes to
-  PASS WITH WARNINGS, not FAIL.
+  PASS WITH WARNINGS, not FAIL. / **绝不将 NOT RUN 视为自动 FAIL** — 记录为 NOT RUN 并让开发者手动确认状态。未确认的 NOT RUN 贡献于 PASS WITH WARNINGS，而非 FAIL。
 - **Never auto-fix failures** — report them and state what must be resolved.
-  Do not attempt to edit source code or test files.
+  Do not attempt to edit source code or test files. / **绝不自动修复失败** — 报告它们并说明必须解决什么。不要尝试编辑源代码或测试文件。
 - **PASS WITH WARNINGS does not block QA hand-off** — it records advisory
-  gaps for `/story-done` to follow up on.
+  gaps for `/story-done` to follow up on. / **PASS WITH WARNINGS 不阻塞 QA 交接** — 它记录建议性缺口供 `/story-done` 后续跟进。
 - **`quick` argument** skips Phase 3 (coverage scan) and Phase 4 Batch 3.
-  Use it for rapid re-checks after fixing a specific failure.
-- Use `AskUserQuestion` for all manual smoke check verification.
+  Use it for rapid re-checks after fixing a specific failure. / **`quick` 参数**跳过阶段3（覆盖扫描）和阶段4批次3。用于修复特定失败后的快速重新检查。
+- Use `AskUserQuestion` for all manual smoke check verification. / 对所有手动冒烟检查验证使用 `AskUserQuestion`。
 - **Never write the report without asking** — Phase 6 requires explicit
-  approval before any file is created.
+  approval before any file is created. / **未经询问绝不写入报告** — 阶段6要求在创建任何文件前获得明确批准。

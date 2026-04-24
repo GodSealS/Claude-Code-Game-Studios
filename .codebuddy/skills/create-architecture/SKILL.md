@@ -8,27 +8,46 @@ agent: technical-director
 ---
 
 # Create Architecture
+> **中文翻译**：# 创建架构
 
-This skill produces `docs/architecture/architecture.md` — the master architecture
-document that translates all approved GDDs into a concrete technical blueprint.
-It sits between design and implementation, and must exist before sprint planning begins.
 
-**Distinct from `/architecture-decision`**: ADRs record individual point decisions.
-This skill creates the whole-system blueprint that gives ADRs their context.
+This skill produces `docs/architecture/architecture.md` — the master architecture document that translates all approved GDDs into a concrete technical blueprint. It sits between design and implementation, and must exist before sprint planning begins.
+> **中文翻译**：这项技能生成“docs/architecture/architecture.md”——将所有批准的 GDD 转化为具体技术蓝图的主架构文档。它位于设计和实现之间，并且必须在冲刺计划开始之前存在。
+
+
+**Distinct from `/architecture-decision`**: ADRs record individual point decisions. This skill creates the whole-system blueprint that gives ADRs their context.
+> **中文翻译**：**与“/architecture-decision”不同**：ADR 记录各个点的决策。这项技能创建了整个系统蓝图，为 ADR 提供了背景。
+
 
 Resolve the review mode (once, store for all gate spawns this run):
+> **中文翻译**：解决审查模式（一次，存储本次运行的所有门生成）：
+
 1. If `--review [full|lean|solo]` was passed → use that
+  > **中文翻译**：如果通过了 `--review [full|lean|solo]` → 使用它
 2. Else read `production/review-mode.txt` → use that value
+  > **中文翻译**：否则阅读 `product/review-mode.txt` → 使用该值
 3. Else → default to `lean`
+  > **中文翻译**：否则→默认为“精益”
+
 
 See `.codebuddy/docs/director-gates.md` for the full check pattern.
+> **中文翻译**：有关完整的检查模式，请参阅“.codebuddy/docs/director-gates.md”。
+
 
 **Argument modes:**
+> **中文翻译**：**论证模式：**
+
 - **No argument / `full`**: Full guided walkthrough — all sections, start to finish
+  > **中文翻译**：**无参数/“完整”**：完整的指导演练 - 所有部分，从头到尾
 - **`layers`**: Focus on the system layer diagram only
+  > **中文翻译**：**`layers`**：仅关注系统层图
 - **`data-flow`**: Focus on data flow between modules only
+  > **中文翻译**：**`data-flow`**：仅关注模块之间的数据流
 - **`api-boundaries`**: Focus on API boundary definitions only
+  > **中文翻译**：**`api-boundaries`**：仅关注 API 边界定义
 - **`adr-audit`**: Audit existing ADRs for engine compatibility gaps only
+  > **中文翻译**：**`adr-audit`**：仅审核现有 ADR 的引擎兼容性差距
+
 
 ---
 
@@ -123,9 +142,12 @@ continue building the architecture with these warnings flagged throughout?"
 ---
 
 ## Phase 1: System Layer Mapping
+> **中文翻译**：## 第一阶段：系统层映射
 
-Map every system from `systems-index.md` into an architecture layer. The standard
-game architecture layers are:
+
+Map every system from `systems-index.md` into an architecture layer. The standard game architecture layers are:
+> **中文翻译**：将“systems-index.md”中的每个系统映射到架构层。标准游戏架构层是：
+
 
 ```
 ┌─────────────────────────────────────────────┐
@@ -143,16 +165,23 @@ game architecture layers are:
 ```
 
 For each GDD system, ask:
+> **中文翻译**：对于每个 GDD 系统，询问：
+
 - Which layer does it belong to?
+  > **中文翻译**：它属于哪一层？
 - What are its module boundaries?
+  > **中文翻译**：它的模块边界是什么？
 - What does it own exclusively? (data, state, behaviour)
+  > **中文翻译**：它独家拥有什么？ （数据、状态、行为）
 
-Present the proposed layer assignment and ask for approval before proceeding to
-the next section. Write the approved layer map immediately to the skeleton file.
 
-**Engine awareness check**: For each system assigned to the Core and Foundation
-layers, flag if it touches a HIGH or MEDIUM risk engine domain. Show the relevant
-engine reference excerpt inline.
+Present the proposed layer assignment and ask for approval before proceeding to the next section. Write the approved layer map immediately to the skeleton file.
+> **中文翻译**：在继续下一部分之前，提出建议的图层分配并请求批准。将批准的图层图立即写入骨架文件。
+
+
+**Engine awareness check**: For each system assigned to the Core and Foundation layers, flag if it touches a HIGH or MEDIUM risk engine domain. Show the relevant engine reference excerpt inline.
+> **中文翻译**：**引擎意识检查**：对于分配给核心层和基础层的每个系统，如果它涉及高风险或中风险引擎域，则进行标记。内嵌显示相关引擎参考摘录。
+
 
 ---
 
@@ -182,21 +211,39 @@ Get user approval on the ownership map before writing.
 ---
 
 ## Phase 3: Data Flow
+> **中文翻译**：## 第 3 阶段：数据流
+
 
 Define how data moves between modules during key game scenarios. Cover at minimum:
+> **中文翻译**：定义在关键游戏场景期间数据如何在模块之间移动。至少覆盖：
+
 
 1. **Frame update path**: Input → Core systems → State → Rendering
+  > **中文翻译**：**帧更新路径**：输入→核心系统→状态→渲染
 2. **Event/signal path**: How systems communicate without tight coupling
+  > **中文翻译**：**事件/信号路径**：系统如何在没有紧密耦合的情况下进行通信
 3. **Save/load path**: What state is serialised, which module owns serialisation
+  > **中文翻译**：**保存/加载路径**：序列化什么状态，哪个模块拥有序列化
 4. **Initialisation order**: Which modules must boot before others
+  > **中文翻译**：**初始化顺序**：哪些模块必须先于其他模块启动
+
 
 Use ASCII sequence diagrams where helpful. For each data flow:
+> **中文翻译**：如果有帮助，请使用 ASCII 序列图。对于每个数据流：
+
 - Name the data being transferred
+  > **中文翻译**：命名正在传输的数据
 - Identify the producer and consumer
+  > **中文翻译**：识别生产者和消费者
 - State whether this is synchronous call, signal/event, or shared state
+  > **中文翻译**：说明这是同步调用、信号/事件还是共享状态
 - Flag any data flows that cross thread boundaries
+  > **中文翻译**：标记任何跨越线程边界的数据流
+
 
 Get user approval per scenario before writing.
+> **中文翻译**：在编写之前获得每个场景的用户批准。
+
 
 ---
 
@@ -219,48 +266,96 @@ exists and has not changed signature in the target engine version.
 ---
 
 ## Phase 5: ADR Audit + Traceability Check
+> **中文翻译**：## 第 5 阶段：ADR 审核 + 可追溯性检查
 
-Review all existing ADRs from Phase 0c against both the architecture built in
-Phases 1-4 AND the Technical Requirements Baseline from Phase 0b.
+
+Review all existing ADRs from Phase 0c against both the architecture built in Phases 1-4 AND the Technical Requirements Baseline from Phase 0b.
+> **中文翻译**：对照阶段 1-4 中构建的架构和阶段 0b 的技术要求基线，审查阶段 0c 的所有现有 ADR。
+
 
 ### ADR Quality Check
+> **中文翻译**：### ADR 质量检查
+
 
 For each ADR:
+> **中文翻译**：对于每个 ADR：
+
 - [ ] Does it have an Engine Compatibility section?
+  > **中文翻译**：[ ] 有引擎兼容性部分吗？
 - [ ] Is the engine version recorded?
+  > **中文翻译**：[ ] 是否记录了引擎版本？
 - [ ] Are post-cutoff APIs flagged?
+  > **中文翻译**：[ ] 截止后 API 是否被标记？
 - [ ] Does it have a "GDD Requirements Addressed" section?
+  > **中文翻译**：[ ] 是否有“满足 GDD 要求”部分？
 - [ ] Does it conflict with the layer/ownership decisions made in this session?
+  > **中文翻译**：[ ] 它与本次会议中做出的层/所有权决策是否冲突？
 - [ ] Is it still valid for the pinned engine version?
+  > **中文翻译**：[ ] 对于固定的引擎版本仍然有效吗？
+
 
 | ADR | Engine Compat | Version | GDD Linkage | Conflicts | Valid |
+  <!-- 翻译: 美国存托凭证 -->
+  <!-- 翻译: 发动机兼容性 -->
+  <!-- 翻译: 版本 -->
+  <!-- 翻译: GDD联动 -->
+  <!-- 翻译: 冲突 -->
+  <!-- 翻译: 有效的 -->
 |-----|--------------|---------|-------------|-----------|-------|
 | ADR-0001: [title] | ✅/❌ | ✅/❌ | ✅/❌ | None/[conflict] | ✅/⚠️ |
+  <!-- 翻译: ADR-0001：[标题] -->
+  <!-- 翻译: 无/[冲突] -->
+
 
 ### Traceability Coverage Check
+> **中文翻译**：### 可追溯性覆盖范围检查
 
-Map every requirement from the Technical Requirements Baseline to existing ADRs.
-For each requirement, check if any ADR's "GDD Requirements Addressed" section
-or decision text covers it:
+
+Map every requirement from the Technical Requirements Baseline to existing ADRs. For each requirement, check if any ADR's "GDD Requirements Addressed" section or decision text covers it:
+> **中文翻译**：将技术要求基线中的每项要求映射到现有 ADR。对于每项要求，检查任何 ADR 的“GDD 要求已解决”部分或决策文本是否涵盖该要求：
+
 
 | Req ID | Requirement | ADR Coverage | Status |
+  <!-- 翻译: 请求 ID -->
+  <!-- 翻译: 要求 -->
+  <!-- 翻译: ADR 覆盖范围 -->
+  <!-- 翻译: 地位 -->
 |--------|-------------|--------------|--------|
 | TR-combat-001 | Hitbox detection per-frame | ADR-0003 | ✅ |
+  <!-- 翻译: TR-战斗-001 -->
+  <!-- 翻译: 每帧的 Hitbox 检测 -->
+  <!-- 翻译: ADR-0003 -->
 | TR-combat-002 | Combo state machine | — | ❌ GAP |
+  <!-- 翻译: TR-战斗-002 -->
+  <!-- 翻译: 组合状态机 -->
+  <!-- 翻译: ❌ 差距 -->
+
 
 Count: X covered, Y gaps. For each gap, it becomes a **Required New ADR**.
+> **中文翻译**：计数：X 已覆盖，Y 是间隙。对于每个差距，它都成为**必需的新 ADR**。
+
 
 ### Required New ADRs
+> **中文翻译**：### 需要新的 ADR
 
-List all decisions made during this architecture session (Phases 1-4) that do
-not yet have a corresponding ADR, PLUS all uncovered Technical Requirements.
-Group by layer — Foundation first:
+
+List all decisions made during this architecture session (Phases 1-4) that do not yet have a corresponding ADR, PLUS all uncovered Technical Requirements. Group by layer — Foundation first:
+> **中文翻译**：列出本架构会议（第 1-4 阶段）期间做出的尚未有相应 ADR 的所有决策，以及所有未涵盖的技术要求。逐层分组——基础优先：
+
 
 **Foundation Layer (must create before any coding):**
+> **中文翻译**：**基础层（必须在任何编码之前创建）：**
+
 - `/architecture-decision [title]` → covers: TR-[id], TR-[id]
+  > **中文翻译**：`/architecture-decision [title]` → 涵盖：TR-[id]、TR-[id]
+
 
 **Core Layer:**
+> **中文翻译**：**核心层：**
+
 - `/architecture-decision [title]` → covers: TR-[id]
+  > **中文翻译**：`/architecture-decision [title]` → 涵盖：TR-[id]
+
 
 ---
 
@@ -282,13 +377,20 @@ but don't yet. Group by priority:
 ---
 
 ## Phase 7: Write the Master Architecture Document
+> **中文翻译**：## 第 7 阶段：编写主架构文档
 
-Once all sections are approved, write the complete document to
-`docs/architecture/architecture.md`.
+
+Once all sections are approved, write the complete document to `docs/architecture/architecture.md`.
+> **中文翻译**：所有部分获得批准后，将完整的文档写入“docs/architecture/architecture.md”。
+
 
 Ask: "May I write the master architecture document to `docs/architecture/architecture.md`?"
+> **中文翻译**：问：“我可以将主架构文档写入`docs/architecture/architecture.md`吗？”
+
 
 The document structure:
+> **中文翻译**：文档结构：
+
 
 ```markdown
 # [Game Name] — Master Architecture
@@ -368,13 +470,24 @@ Ask: "May I update the Document Status section in `docs/architecture/architectur
 ---
 
 ## Phase 8: Handoff
+> **中文翻译**：## 第 8 阶段：移交
+
 
 After writing the document, provide a clear handoff:
+> **中文翻译**：编写文档后，提供清晰的交接：
+
 
 1. **Run these ADRs next** (from Phase 6, prioritised): list the top 3
+  > **中文翻译**：**接下来运行这些 ADR**（从第 6 阶段开始，优先）：列出前 3 个
 2. **Gate check**: "The master architecture document is complete. Run `/gate-check
+  > **中文翻译**：**gate check**: "主架构文档已完成。运行`/gate-check
+
    pre-production` when all required ADRs are also written."
+> **中文翻译**：预生产`，所有必需的 ADR 也已编写完毕。”
+
 3. **Update session state**: Write a summary to `production/session-state/active.md`
+  > **中文翻译**：**更新会话状态**：将摘要写入 `product/session-state/active.md`
+
 
 ---
 
@@ -396,7 +509,13 @@ unsure, present 2-4 options with pros/cons before asking them to decide.
 ---
 
 ## Recommended Next Steps
+> **中文翻译**：## 建议的后续步骤
+
 
 - Run `/architecture-decision [title]` for each required ADR listed in Phase 6 — Foundation layer ADRs first
+  > **中文翻译**：为第 6 阶段列出的每个必需的 ADR 运行“/architecture-decision [title]”——首先是基础层 ADR
 - Run `/create-control-manifest` once the required ADRs are written to produce the layer rules manifest
+  > **中文翻译**：写入所需的 ADR 以生成层规则清单后，运行“/create-control-manifest”
 - Run `/gate-check pre-production` when all required ADRs are written and the architecture is signed off
+  > **中文翻译**：当所有必需的 ADR 都已写入并且架构已签署时，运行“/gate-check pre-production”
+

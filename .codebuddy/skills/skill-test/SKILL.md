@@ -6,16 +6,19 @@ user-invocable: true
 allowed-tools: Read, Glob, Grep, Write
 ---
 
-# Skill Test
+# Skill Test / 技能测试
 
 Validates `.codebuddy/skills/*/SKILL.md` files for structural compliance and
 behavioral correctness. No external dependencies — runs entirely within the
 existing skill/hook/template architecture.
 
-**Four modes:**
+> **中文翻译**：验证 `.codebuddy/skills/*/SKILL.md` 文件的结构合规性和行为正确性。无外部依赖——完全在现有的技能/钩子/模板架构内运行。
+
+**Four modes:** / **四种模式：**
 
 | Mode | Command | Purpose | Token Cost |
 |------|---------|---------|------------|
+| / 模式 | 命令 | 用途 | 令牌成本 |
 | `static` | `/skill-test static [name\|all]` | Structural linter — 7 compliance checks per skill | Low (~1k/skill) |
 | `spec` | `/skill-test spec [name]` | Behavioral verifier — evaluates assertions in test spec | Medium (~5k/skill) |
 | `category` | `/skill-test category [name\|all]` | Category rubric — checks skill against its category-specific metrics | Low (~2k/skill) |
@@ -23,7 +26,7 @@ existing skill/hook/template architecture.
 
 ---
 
-## Phase 1: Parse Arguments
+## Phase 1: Parse Arguments / 第 1 阶段：解析参数
 
 Determine mode from the first argument:
 
@@ -38,11 +41,11 @@ If argument is missing or unrecognized, output usage and stop.
 
 ---
 
-## Phase 2A: Static Mode — Structural Linter
+## Phase 2A: Static Mode — Structural Linter / 第 2A 阶段：静态模式 — 结构检查器
 
 For each skill being tested, read its `SKILL.md` fully and run all 7 checks:
 
-### Check 1 — Required Frontmatter Fields
+### Check 1 — Required Frontmatter Fields / 检查 1 — 必需的 Frontmatter 字段
 The file must contain all of these in the YAML frontmatter block:
 - `name:`
 - `description:`
@@ -52,7 +55,7 @@ The file must contain all of these in the YAML frontmatter block:
 
 **FAIL** if any are absent.
 
-### Check 2 — Multiple Phases
+### Check 2 — Multiple Phases / 检查 2 — 多阶段
 The skill must have ≥2 numbered phase headings. Look for patterns like:
 - `## Phase N` or `## Phase N:`
 - `## N.` (numbered top-level sections)
@@ -60,13 +63,13 @@ The skill must have ≥2 numbered phase headings. Look for patterns like:
 
 **FAIL** if fewer than 2 phase-like headings are found.
 
-### Check 3 — Verdict Keywords
+### Check 3 — Verdict Keywords / 检查 3 — 裁决关键词
 The skill must contain at least one of: `PASS`, `FAIL`, `CONCERNS`, `APPROVED`,
 `BLOCKED`, `COMPLETE`, `READY`, `COMPLIANT`, `NON-COMPLIANT`
 
 **FAIL** if none are present.
 
-### Check 4 — Collaborative Protocol Language
+### Check 4 — Collaborative Protocol Language / 检查 4 — 协作协议语言
 The skill must contain ask-before-write language. Look for:
 - `"May I write"` (canonical form)
 - `"before writing"` or `"approval"` near file-write instructions
@@ -75,7 +78,7 @@ The skill must contain ask-before-write language. Look for:
 **WARN** if absent (some read-only skills legitimately skip this).
 **FAIL** if `allowed-tools` includes `Write` or `Edit` but no ask-before-write language is found.
 
-### Check 5 — Next-Step Handoff
+### Check 5 — Next-Step Handoff / 检查 5 — 下一步交接
 The skill must end with a recommended next action or follow-up path. Look for:
 - A final section mentioning another skill (e.g., `/story-done`, `/gate-check`)
 - "Recommended next" or "next step" phrasing
@@ -83,14 +86,14 @@ The skill must end with a recommended next action or follow-up path. Look for:
 
 **WARN** if absent.
 
-### Check 6 — Fork Context Complexity
+### Check 6 — Fork Context Complexity / 检查 6 — Fork 上下文复杂度
 If frontmatter contains `context: fork`, the skill should have ≥5 phase headings
 (`##` level or numbered Phase N headers). Fork context is for complex multi-phase
 skills; simple skills should not use it.
 
 **WARN** if `context: fork` is set but fewer than 5 phases found.
 
-### Check 7 — Argument Hint Plausibility
+### Check 7 — Argument Hint Plausibility / 检查 7 — 参数提示合理性
 `argument-hint` must be non-empty. If the skill body mentions multiple modes
 (e.g., "Mode A | Mode B"), the hint should reflect them. Cross-reference the
 hint against the first phase's "Parse Arguments" section.
@@ -99,7 +102,7 @@ hint against the first phase's "Parse Arguments" section.
 
 ---
 
-### Static Mode Output Format
+### Static Mode Output Format / 静态模式输出格式
 
 For a single skill:
 ```
@@ -134,9 +137,9 @@ Aggregate Verdict: N WARNINGS / N FAILURES
 
 ---
 
-## Phase 2B: Spec Mode — Behavioral Verifier
+## Phase 2B: Spec Mode — Behavioral Verifier / 第 2B 阶段：规格模式 — 行为验证器
 
-### Step 1 — Locate Files
+### Step 1 — Locate Files / 步骤 1 — 定位文件
 
 Find skill at `.codebuddy/skills/[name]/SKILL.md`.
 Look up the spec path from `CCGS Skill Testing Framework/catalog.yaml` — use the
@@ -148,11 +151,11 @@ If either is missing:
 - Spec file not found at path: "Spec file missing at [path]. Run `/skill-test audit`
   to see coverage gaps."
 
-### Step 2 — Read Both Files
+### Step 2 — Read Both Files / 步骤 2 — 读取两个文件
 
 Read the skill file and test spec file completely.
 
-### Step 3 — Evaluate Assertions
+### Step 3 — Evaluate Assertions / 步骤 3 — 评估断言
 
 For each **Test Case** in the spec:
 
@@ -175,7 +178,7 @@ For **Protocol Compliance** assertions (always present):
 - Check whether the skill ends with a recommended next step
 - Check whether the skill avoids auto-creating files without approval
 
-### Step 4 — Build Report
+### Step 4 — Build Report / 步骤 4 — 构建报告
 
 ```
 === Skill Spec Test: /[name] ===
@@ -202,7 +205,7 @@ Protocol Compliance:
 Overall Verdict: FAIL (1 case failed, 1 warning)
 ```
 
-### Step 5 — Offer to Write Results
+### Step 5 — Offer to Write Results / 步骤 5 — 提议写入结果
 
 "May I write these results to `CCGS Skill Testing Framework/results/skill-test-spec-[name]-[date].md`
 and update `CCGS Skill Testing Framework/catalog.yaml`?"
@@ -215,9 +218,9 @@ If yes:
 
 ---
 
-## Phase 2D: Category Mode — Rubric Evaluation
+## Phase 2D: Category Mode — Rubric Evaluation / 第 2D 阶段：类别模式 — 评分标准评估
 
-### Step 1 — Locate Skill and Category
+### Step 1 — Locate Skill and Category / 步骤 1 — 定位技能和类别
 
 Find skill at `.codebuddy/skills/[name]/SKILL.md`.
 Look up `category:` field in `CCGS Skill Testing Framework/catalog.yaml`.
@@ -230,16 +233,16 @@ For `category all`: collect all skills with a `category:` field and process each
 `category: utility` skills are evaluated against U1 (static checks pass) and U2
 (gate mode correct if applicable) only — skip to the static mode for U1.
 
-### Step 2 — Read Rubric Section
+### Step 2 — Read Rubric Section / 步骤 2 — 读取评分标准部分
 
 Read `CCGS Skill Testing Framework/quality-rubric.md`.
 Extract the section matching the skill's category (e.g., `### gate`, `### team`).
 
-### Step 3 — Read Skill
+### Step 3 — Read Skill / 步骤 3 — 读取技能
 
 Read the skill's `SKILL.md` fully.
 
-### Step 4 — Evaluate Rubric Metrics
+### Step 4 — Evaluate Rubric Metrics / 步骤 4 — 评估评分标准指标
 
 For each metric in the category's rubric table:
 1. Check whether the skill's written instructions clearly satisfy the criterion
@@ -247,7 +250,7 @@ For each metric in the category's rubric table:
 3. For FAIL/WARN, identify the exact gap in the skill text (quote the relevant section
    or note its absence)
 
-### Step 5 — Output Report
+### Step 5 — Output Report / 步骤 5 — 输出报告
 
 ```
 === Skill Category Check: /[name] ([category]) ===
@@ -264,21 +267,21 @@ Fix: Add TD-PHASE-GATE, PR-PHASE-GATE, and AD-PHASE-GATE to the full-mode direct
      panel in Phase 3.
 ```
 
-### Step 6 — Offer to Update Catalog
+### Step 6 — Offer to Update Catalog / 步骤 6 — 提议更新目录
 
 "May I update `CCGS Skill Testing Framework/catalog.yaml` to record this category check
 (`last_category`, `last_category_result`) for [name]?"
 
 ---
 
-## Phase 2C: Audit Mode — Coverage Report
+## Phase 2C: Audit Mode — Coverage Report / 第 2C 阶段：审计模式 — 覆盖率报告
 
-### Step 1 — Read Catalog
+### Step 1 — Read Catalog / 步骤 1 — 读取目录
 
 Read `CCGS Skill Testing Framework/catalog.yaml`. If missing, note that catalog doesn't exist
 yet (first-run state).
 
-### Step 2 — Enumerate All Skills and Agents
+### Step 2 — Enumerate All Skills and Agents / 步骤 2 — 枚举所有技能和代理
 
 Glob `.codebuddy/skills/*/SKILL.md` to get the complete list of skills.
 Extract skill name from each path (directory name).
@@ -286,7 +289,7 @@ Extract skill name from each path (directory name).
 Also read the `agents:` section from `CCGS Skill Testing Framework/catalog.yaml` to get the
 complete list of agents.
 
-### Step 3 — Build Skill Coverage Table
+### Step 3 — Build Skill Coverage Table / 步骤 3 — 构建技能覆盖表
 
 For each skill:
 - Check if a spec file exists (use the `spec:` path from catalog, or glob `CCGS Skill Testing Framework/skills/*/[name].md`)
@@ -295,13 +298,13 @@ For each skill:
   "never" / "—" if not in catalog)
 - Priority comes from catalog `priority:` field (critical/high/medium/low)
 
-### Step 3b — Build Agent Coverage Table
+### Step 3b — Build Agent Coverage Table / 步骤 3b — 构建代理覆盖表
 
 For each agent in catalog's `agents:` section:
 - Check if a spec file exists (use the `spec:` path from catalog, or glob `CCGS Skill Testing Framework/agents/*/[name].md`)
 - Look up `last_spec`, `last_spec_result`, `category` from catalog
 
-### Step 4 — Output Report
+### Step 4 — Output Report / 步骤 4 — 输出报告
 
 ```
 === Skill Test Coverage Audit ===
@@ -340,7 +343,7 @@ checks? Or `/skill-test spec [name]` to run a specific behavioral test?"
 
 ---
 
-## Phase 3: Recommended Next Steps
+## Phase 3: Recommended Next Steps / 第 3 阶段：建议的下一步
 
 After any mode completes, offer contextual follow-up:
 

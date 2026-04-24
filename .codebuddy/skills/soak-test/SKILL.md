@@ -6,7 +6,7 @@ user-invocable: true
 allowed-tools: Read, Glob, Grep, Write
 ---
 
-# Soak Test
+# Soak Test / 浸泡测试
 
 A soak test (also called an endurance test) is an extended play session run
 with specific observation goals. Unlike a smoke check (broad critical path,
@@ -21,35 +21,37 @@ minutes to several hours** to surface:
   repetitive over extended play
 - **Content exhaustion** — the point where players run out of novel content
 
+> **中文翻译**：浸泡测试（也称耐久测试）是带有特定观察目标的扩展游玩会话。与冒烟测试（广泛关键路径，约10分钟）或单功能试玩（约30分钟）不同，浸泡测试运行**30分钟到数小时**以发现：内存泄漏、性能漂移、状态累积缺陷、趣味疲劳、内容耗尽。
+
 **This skill generates the observation protocol and analysis harness — the
-human does the actual playing.**
+human does the actual playing.** / **此技能生成观察协议和分析框架——由人类进行实际游玩。**
 
 **Output:** `production/qa/soak-test-[date]-[duration].md`
 
-**When to run:**
-- Polish phase — before `/gate-check release`
-- After fixing a memory or stability issue (regression soak)
-- When extended play has not been formally tracked
+**When to run:** / **何时运行：**
+- Polish phase — before `/gate-check release` / 打磨阶段 — 在 `/gate-check release` 之前
+- After fixing a memory or stability issue (regression soak) / 修复内存或稳定性问题后（回归浸泡）
+- When extended play has not been formally tracked / 当扩展游玩尚未被正式跟踪时
 
 ---
 
-## 1. Parse Arguments
+## 1. Parse Arguments / 1. 解析参数
 
-**Duration** (default: `1h`):
-- `30m` — short soak; suitable for testing a single mechanic or scene
-- `1h` — standard soak; covers most common leak categories
-- `2h` — extended soak; recommended for first full Polish soak
-- `4h` — deep soak; required for games with long session design (RPGs, sims)
+**Duration** (default: `1h`): / **持续时间**（默认：`1h`）：
+- `30m` — short soak; suitable for testing a single mechanic or scene / 短浸泡；适合测试单个机制或场景
+- `1h` — standard soak; covers most common leak categories / 标准浸泡；覆盖最常见泄漏类别
+- `2h` — extended soak; recommended for first full Polish soak / 扩展浸泡；推荐用于首次完整打磨浸泡
+- `4h` — deep soak; required for games with long session design (RPGs, sims) / 深度浸泡；适用于长会话设计的游戏（RPG、模拟类）
 
-**Focus** (default: `all`):
-- `memory` — focus on heap size, object count, leak patterns
-- `stability` — focus on crash/freeze/hang detection
-- `balance` — focus on fun fatigue, content exhaustion, difficulty perception
-- `all` — all of the above
+**Focus** (default: `all`): / **焦点**（默认：`all`）：
+- `memory` — focus on heap size, object count, leak patterns / 聚焦堆大小、对象计数、泄漏模式
+- `stability` — focus on crash/freeze/hang detection / 聚焦崩溃/冻结/挂起检测
+- `balance` — focus on fun fatigue, content exhaustion, difficulty perception / 聚焦趣味疲劳、内容耗尽、难度感知
+- `all` — all of the above / 以上全部
 
 ---
 
-## 2. Load Context
+## 2. Load Context / 2. 加载上下文
 
 Read:
 - `.codebuddy/docs/technical-preferences.md` — engine (for engine-specific memory
@@ -68,7 +70,7 @@ Note any performance budget targets from technical-preferences.md:
 
 ---
 
-## 3. Define Observation Checkpoints
+## 3. Define Observation Checkpoints / 3. 定义观察检查点
 
 Based on duration, generate timed checkpoints:
 
@@ -82,9 +84,9 @@ Phase 4.
 
 ---
 
-## 4. Generate the Soak Test Protocol
+## 4. Generate the Soak Test Protocol / 4. 生成浸泡测试协议
 
-### Memory / Stability observation items (if focus = memory or all)
+### Memory / Stability observation items (if focus = memory or all) / 内存/稳定性观察项（如果焦点 = memory 或 all）
 
 Engine-specific monitoring guidance:
 
@@ -107,7 +109,7 @@ Engine-specific monitoring guidance:
 - Record: Physical Memory Used (MB), Physical Memory Available
 - Alert threshold: Physical Memory Used growth > 50MB over the full soak
 
-### Stability observation items (if focus = stability or all)
+### Stability observation items (if focus = stability or all) / 稳定性观察项（如果焦点 = stability 或 all）
 
 At each checkpoint, note:
 - [ ] No crash, hang, or freeze occurred since last checkpoint
@@ -116,7 +118,7 @@ At each checkpoint, note:
 - [ ] All HUD elements still rendering correctly
 - [ ] Input responding as expected (no input loss or lag spike)
 
-### Balance / fatigue observation items (if focus = balance or all)
+### Balance / fatigue observation items (if focus = balance or all) / 平衡/疲劳观察项（如果焦点 = balance 或 all）
 
 Collect subjective observations at each checkpoint:
 - [ ] Core mechanic still feels rewarding (Y/N)
@@ -127,7 +129,7 @@ Collect subjective observations at each checkpoint:
 
 ---
 
-## 5. Generate the Protocol Document
+## 5. Generate the Protocol Document / 5. 生成协议文档
 
 ```markdown
 # Soak Test Protocol
@@ -140,7 +142,7 @@ Collect subjective observations at each checkpoint:
 
 ---
 
-## Pre-Session Setup
+## Pre-Session Setup / 会话前设置
 
 Before starting the soak:
 
@@ -155,7 +157,7 @@ Before starting the soak:
 
 ---
 
-## Baseline (T+0) — Record Before Playing
+## Baseline (T+0) — Record Before Playing / 基线（T+0）— 游玩前记录
 
 | Metric | Baseline Value |
 |--------|---------------|
@@ -166,7 +168,7 @@ Before starting the soak:
 
 ---
 
-## Checkpoint Log
+## Checkpoint Log / 检查点日志
 
 ### T+[N] minutes
 
@@ -201,9 +203,9 @@ Before starting the soak:
 
 ---
 
-## Post-Session Analysis
+## Post-Session Analysis / 会话后分析
 
-### Memory Trend
+### Memory Trend / 内存趋势
 
 | Checkpoint | Memory | Δ/hr extrapolated |
 |------------|--------|-------------------|
@@ -213,20 +215,20 @@ Before starting the soak:
 **Leak detected?** Y / N
 **Estimated time to OOM at current rate**: [N hours / not applicable]
 
-### Stability Summary
+### Stability Summary / 稳定性摘要
 
 Total crashes: [N]
 Total hangs: [N]
 Worst FPS observed: [N] fps at [checkpoint]
 Performance degradation: stable / mild / severe
 
-### Balance / Fatigue Summary
+### Balance / Fatigue Summary / 平衡/疲劳摘要
 
 Fun curve: [engaged throughout / fatigue onset at T+N / repetitive from start]
 Content exhaustion point: [never / at T+N / early]
 Difficulty arc: [appropriate / too easy throughout / difficulty spike at T+N]
 
-### Issues Found
+### Issues Found / 发现的问题
 
 | ID | Severity | Checkpoint | Description |
 |----|----------|------------|-------------|
@@ -250,7 +252,7 @@ Difficulty arc: [appropriate / too easy throughout / difficulty spike at T+N]
 
 ---
 
-## 6. Write Output
+## 6. Write Output / 6. 写入输出
 
 Present the protocol summary in conversation, then ask:
 
@@ -272,12 +274,12 @@ If the verdict is FAIL, run `/smoke-check` again after fixing the issues."
 
 ---
 
-## Collaborative Protocol
+## Collaborative Protocol / 协作协议
 
 - **This skill generates a protocol — humans run it** — never attempt to
-  run a soak test automatically. The observations require a human observer.
+  run a soak test automatically. The observations require a human observer. / **此技能生成协议——由人类运行** — 绝不尝试自动运行浸泡测试。观察需要人类观察者。
 - **Duration should match the game's session design** — a 5-minute game
-  doesn't need a 4h soak; a city-builder might. Use judgment and ask if unclear.
+  doesn't need a 4h soak; a city-builder might. Use judgment and ask if unclear. / **持续时间应匹配游戏的会话设计** — 5分钟的游戏不需要4小时浸泡；城市建造游戏可能需要。使用判断力，如果不清楚则询问。
 - **First soak should be `all` focus** — narrow focus (memory-only) is for
-  regression soaks after a specific fix, not the first pass
-- **Ask before writing** — always confirm before creating the protocol file
+  regression soaks after a specific fix, not the first pass / **首次浸泡应为 `all` 焦点** — 窄焦点（仅内存）用于特定修复后的回归浸泡，而非首次通过
+- **Ask before writing** — always confirm before creating the protocol file / **写入前询问** — 创建协议文件前始终确认

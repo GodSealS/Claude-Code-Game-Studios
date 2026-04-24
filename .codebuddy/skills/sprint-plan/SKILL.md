@@ -8,7 +8,7 @@ context: |
   !ls production/sprints/ 2>/dev/null
 ---
 
-## Phase 0: Parse Arguments
+## Phase 0: Parse Arguments / 第 0 阶段：解析参数
 
 Extract the mode argument (`new`, `update`, or `status`) and resolve the review mode (once, store for all gate spawns this run):
 1. If `--review [full|lean|solo]` was passed → use that
@@ -19,7 +19,7 @@ See `.codebuddy/docs/director-gates.md` for the full check pattern.
 
 ---
 
-## Phase 1: Gather Context
+## Phase 1: Gather Context / 第 1 阶段：收集上下文
 
 1. **Read the current milestone** from `production/milestones/`.
 
@@ -33,7 +33,7 @@ See `.codebuddy/docs/director-gates.md` for the full check pattern.
 
 ---
 
-## Phase 2: Generate Output
+## Phase 2: Generate Output / 第 2 阶段：生成输出
 
 For `new`:
 
@@ -42,40 +42,40 @@ For `new`:
 ```markdown
 # Sprint [N] -- [Start Date] to [End Date]
 
-## Sprint Goal
-[One sentence describing what this sprint achieves toward the milestone]
+## Sprint Goal / 冲刺目标
+[One sentence describing what this sprint achieves toward the milestone] / [一句话描述此冲刺对里程碑的贡献]
 
-## Capacity
+## Capacity / 容量
 - Total days: [X]
 - Buffer (20%): [Y days reserved for unplanned work]
 - Available: [Z days]
 
-## Tasks
+## Tasks / 任务
 
-### Must Have (Critical Path)
+### Must Have (Critical Path) / 必须有（关键路径）
 | ID | Task | Agent/Owner | Est. Days | Dependencies | Acceptance Criteria |
 |----|------|-------------|-----------|-------------|-------------------|
 
-### Should Have
+### Should Have / 应该有
 | ID | Task | Agent/Owner | Est. Days | Dependencies | Acceptance Criteria |
 |----|------|-------------|-----------|-------------|-------------------|
 
-### Nice to Have
+### Nice to Have / 最好有
 | ID | Task | Agent/Owner | Est. Days | Dependencies | Acceptance Criteria |
 |----|------|-------------|-----------|-------------|-------------------|
 
-## Carryover from Previous Sprint
+## Carryover from Previous Sprint / 从上一冲刺结转
 | Task | Reason | New Estimate |
 |------|--------|-------------|
 
-## Risks
+## Risks / 风险
 | Risk | Probability | Impact | Mitigation |
 |------|------------|--------|------------|
 
-## Dependencies on External Factors
+## Dependencies on External Factors / 外部因素依赖
 - [List any external dependencies]
 
-## Definition of Done for this Sprint
+## Definition of Done for this Sprint / 此冲刺的完成定义
 - [ ] All Must Have tasks completed
 - [ ] All tasks pass acceptance criteria
 - [ ] QA plan exists (`production/qa/qa-plan-sprint-[N].md`)
@@ -122,7 +122,7 @@ For `status`:
 
 ---
 
-## Phase 3: Write Sprint Status File
+## Phase 3: Write Sprint Status File / 第 3 阶段：写入冲刺状态文件
 
 After generating a new sprint plan, also write `production/sprint-status.yaml`.
 This is the machine-readable source of truth for story status — read by
@@ -165,7 +165,7 @@ stories that haven't changed, add new stories, remove dropped ones.
 
 ---
 
-## Phase 4: Producer Feasibility Gate
+## Phase 4: Producer Feasibility Gate / 第 4 阶段：制作人可行性门控
 
 **Review mode check** — apply before spawning PR-SPRINT:
 - `solo` → skip. Note: "PR-SPRINT skipped — Solo mode." Proceed to Phase 5 (QA plan gate).
@@ -186,7 +186,7 @@ After writing, add:
 
 ---
 
-## Phase 5: QA Plan Gate
+## Phase 5: QA Plan Gate / 第 5 阶段：QA 计划门控
 
 Before closing the sprint plan, check whether a QA plan exists for this sprint.
 
@@ -217,7 +217,7 @@ If [B]: add a warning block to the sprint plan document:
 
 ---
 
-## Phase 6: Next Steps
+## Phase 6: Next Steps / 第 6 阶段：下一步
 
 After the sprint plan is written and QA plan status is resolved:
 

@@ -6,7 +6,7 @@ user-invocable: true
 allowed-tools: Read, Glob, Grep, Bash, Edit, AskUserQuestion, Task
 ---
 
-# Story Done
+# Story Done / 故事完成
 
 This skill closes the loop between design and implementation. Run it at the end
 of implementing any story. It ensures every acceptance criterion is verified
@@ -14,11 +14,13 @@ before the story is marked done, GDD and ADR deviations are explicitly
 documented rather than silently introduced, code review is prompted rather than
 forgotten, and the story file reflects actual completion status.
 
-**Output:** Updated story file (Status: Complete) + surfaced next story.
+> **中文翻译**：此技能闭合设计与实现之间的循环。在任何故事实现结束时运行。它确保每个验收标准在故事标记完成前被验证，GDD 和 ADR 偏差被明确记录而非静默引入，代码审查被提示而非遗忘，故事文件反映实际完成状态。
+
+**Output:** Updated story file (Status: Complete) + surfaced next story. / **输出：** 更新的故事文件（状态：Complete）+ 显示下一个故事。
 
 ---
 
-## Phase 1: Find the Story
+## Phase 1: Find the Story / 第 1 阶段：查找故事
 
 Resolve the review mode (once, store for all gate spawns this run):
 1. If `--review [full|lean|solo]` was passed → use that
@@ -42,7 +44,7 @@ read that file directly.
 
 ---
 
-## Phase 2: Read the Story
+## Phase 2: Read the Story / 第 2 阶段：读取故事
 
 Read the full story file. Extract and hold in context:
 
@@ -70,12 +72,12 @@ Also read:
 
 ---
 
-## Phase 3: Verify Acceptance Criteria
+## Phase 3: Verify Acceptance Criteria / 第 3 阶段：验证验收标准
 
 For each acceptance criterion in the story, attempt verification using one of
 three methods:
 
-### Automatic verification (run without asking)
+### Automatic verification (run without asking) / 自动验证（无需询问即可运行）
 
 - **File existence check**: `Glob` for files the story said would be created.
 - **Test pass check**: if a test file path is mentioned, run it via `Bash`.
@@ -85,7 +87,7 @@ three methods:
   that should be in localization files.
 - **Dependency check**: if a criterion says "depends on X", check that X exists.
 
-### Manual verification with confirmation (use `AskUserQuestion`)
+### Manual verification with confirmation (use `AskUserQuestion`) / 手动验证与确认（使用 `AskUserQuestion`）
 
 - Criteria about subjective qualities ("feels responsive", "animations play correctly")
 - Criteria about gameplay behaviour ("player takes damage when...", "enemy responds to...")
@@ -98,12 +100,12 @@ question: "Does [criterion]?"
 options: "Yes — passes", "No — fails", "Not tested yet"
 ```
 
-### Unverifiable (flag without blocking)
+### Unverifiable (flag without blocking) / 不可验证（标记但不阻塞）
 
 - Criteria that require a full game build to test (end-to-end gameplay scenarios)
 - Mark as: `DEFERRED — requires playtest session`
 
-### Test-Criterion Traceability
+### Test-Criterion Traceability / 测试-标准可追溯性
 
 After completing the pass/fail/deferred check above, map each acceptance
 criterion to the test that covers it:
@@ -141,9 +143,7 @@ For each acceptance criterion in the story:
 4. For any ADVISORY untested criteria, add to the Completion Notes in Phase 7:
    `"Untested criteria: [AC-N list]. Recommend adding tests in a follow-up story."`
 
-### Test Evidence Requirement
-
-Based on the Story Type extracted in Phase 2, check for required evidence:
+### Test Evidence Requirement / 测试证据要求
 
 | Story Type | Required Evidence | Gate Level |
 |---|---|---|
@@ -183,7 +183,7 @@ Any BLOCKING test evidence gap prevents the COMPLETE verdict in Phase 6.
 
 ---
 
-## Phase 4: Check for Deviations
+## Phase 4: Check for Deviations / 第 4 阶段：检查偏差
 
 Compare the implementation against the design documents.
 
@@ -225,7 +225,7 @@ For each deviation found, categorize:
 
 ---
 
-## Phase 4b: QA Coverage Gate
+## Phase 4b: QA Coverage Gate / 阶段 4b：QA 覆盖门控
 
 **Review mode check** — apply before spawning QL-TEST-COVERAGE:
 - `solo` → skip. Note: "QL-TEST-COVERAGE skipped — Solo mode." Proceed to Phase 5.
@@ -251,7 +251,7 @@ Skip this phase for Config/Data stories (no code tests required).
 
 ---
 
-## Phase 5: Lead Programmer Code Review Gate
+## Phase 5: Lead Programmer Code Review Gate / 第 5 阶段：主管程序员代码审查门控
 
 **Review mode check** — apply before spawning LP-CODE-REVIEW:
 - `solo` → skip. Note: "LP-CODE-REVIEW skipped — Solo mode." Proceed to Phase 6 (completion report).
@@ -270,7 +270,7 @@ If the story has no implementation files yet (verdict is being run before coding
 
 ---
 
-## Phase 6: Present the Completion Report
+## Phase 6: Present the Completion Report / 第 6 阶段：呈现完成报告
 
 Before updating any files, present the full report:
 
@@ -319,7 +319,7 @@ fixed. Offer to help fix the blocking items.
 
 ---
 
-## Phase 7: Update Story Status
+## Phase 7: Update Story Status / 第 7 阶段：更新故事状态
 
 Ask before writing: "May I update the story file to mark it Complete and log
 the completion notes?"
@@ -347,7 +347,7 @@ If yes, edit the story file:
    - Update the top-level `updated` field
    - This is a silent update — no extra approval needed (already approved in step above)
 
-### Session State Update
+### Session State Update / 会话状态更新
 
 After updating the story file, silently append to
 `production/session-state/active.md`:
@@ -363,7 +363,7 @@ Confirm in conversation: "Session state updated."
 
 ---
 
-## Phase 8: Surface the Next Story
+## Phase 8: Surface the Next Story / 第 8 阶段：展示下一个故事
 
 After completion, help the developer keep momentum:
 
@@ -407,7 +407,7 @@ If no more stories are ready but Must Have stories are still In Progress (not Co
 
 ---
 
-## Collaborative Protocol
+## Collaborative Protocol / 协作协议
 
 - **Never mark a story complete without user approval** — Phase 7 requires an
   explicit "yes" before any file is edited.
@@ -421,7 +421,7 @@ If no more stories are ready but Must Have stories are still In Progress (not Co
 
 ---
 
-## Recommended Next Steps
+## Recommended Next Steps / 建议的下一步
 
 - Run `/story-readiness [next-story-path]` to validate the next story before starting implementation
 - If all Must Have stories are complete: run `/smoke-check sprint` → `/team-qa sprint` → `/gate-check`

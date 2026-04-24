@@ -7,19 +7,23 @@ allowed-tools: Read, Glob, Grep
 model: haiku
 ---
 
-# Sprint Status
+# Sprint Status / 冲刺状态
 
 This is a fast situational awareness check, not a sprint review. It reads the
 current sprint plan and story files, scans for status markers, and produces a
 concise snapshot in under 30 lines. For detailed sprint management, use
 `/sprint-plan update` or `/milestone-review`.
 
+> **中文翻译**：这是一个快速态势感知检查，而非冲刺评审。它读取当前冲刺计划和故事文件，扫描状态标记，并在30行内生成简洁快照。如需详细冲刺管理，请使用 `/sprint-plan update` 或 `/milestone-review`。
+
 **This skill is read-only.** It never proposes changes, never asks to write
 files, and makes at most one concrete recommendation.
 
+> **中文翻译**：**此技能是只读的。** 它从不提出更改，从不请求写入文件，最多提出一个具体建议。
+
 ---
 
-## 1. Find the Sprint
+## 1. Find the Sprint / 1. 查找冲刺
 
 **Argument:** `$ARGUMENTS[0]` (blank = use current sprint)
 
@@ -39,7 +43,7 @@ Read the sprint file in full. Extract:
 
 ---
 
-## 2. Calculate Days Remaining
+## 2. Calculate Days Remaining / 2. 计算剩余天数
 
 Using today's date and the sprint end date from the sprint file, calculate:
 - Total sprint days (end minus start)
@@ -52,7 +56,7 @@ found — burndown assessment skipped."
 
 ---
 
-## 3. Scan Story Status
+## 3. Scan Story Status / 3. 扫描故事状态
 
 **First: check for `production/sprint-status.yaml`.**
 
@@ -78,7 +82,7 @@ Optionally (fast check only — do not do a deep scan): grep `src/` for a
 directory or file name that matches the story's system slug to check for
 implementation evidence. This is a hint only, not a definitive status.
 
-### Stale Story Detection
+### Stale Story Detection / 过期故事检测
 
 After collecting status for all stories, check each IN PROGRESS story for staleness:
 
@@ -101,7 +105,7 @@ On Track window. Record this escalation reason: "At Risk — [N] story(ies) with
 
 ---
 
-## 4. Burndown Assessment
+## 4. Burndown Assessment / 4. 燃尽评估
 
 Calculate:
 - Tasks complete (DONE or COMPLETE)
@@ -121,7 +125,7 @@ At Risk / Behind: unknown — sprint dates not found."
 
 ---
 
-## 5. Output
+## 5. Output / 5. 输出
 
 Keep the total output to 30 lines or fewer. Use this format:
 
@@ -164,7 +168,7 @@ stories with no owner. If none, write "None identified."]
 
 ---
 
-## 6. Fast Escalation Rules
+## 6. Fast Escalation Rules / 6. 快速升级规则
 
 Apply these rules before outputting, and place the flag at the TOP of the
 output if triggered (above the status table):
@@ -192,17 +196,19 @@ Run `/story-readiness sprint` to validate story file coverage.
 
 ---
 
-## Collaborative Protocol
+## Collaborative Protocol / 协作协议
 
-This skill is read-only. It reports observed facts from files on disk.
+This skill is read-only. It reports observed facts from files on disk. / 此技能是只读的。它报告从磁盘文件观察到的事实。
 
-- It does not update the sprint plan
-- It does not change story status
-- It does not propose scope cuts (that is `/sprint-plan update`)
-- It makes at most one recommendation per run
+- It does not update the sprint plan / 它不更新冲刺计划
+- It does not change story status / 它不更改故事状态
+- It does not propose scope cuts (that is `/sprint-plan update`) / 它不提议范围削减（那是 `/sprint-plan update` 的职责）
+- It makes at most one recommendation per run / 每次运行最多提出一个建议
 
 For more detail on a specific story, the user can read the story file directly
 or run `/story-readiness [path]`.
 
-For sprint replanning, use `/sprint-plan update`.
-For end-of-sprint retrospective, use `/milestone-review`.
+> **中文翻译**：如需特定故事的更多细节，用户可直接读取故事文件或运行 `/story-readiness [path]`。
+
+For sprint replanning, use `/sprint-plan update`. / 如需冲刺重新规划，使用 `/sprint-plan update`。
+For end-of-sprint retrospective, use `/milestone-review`. / 如需冲刺末回顾，使用 `/milestone-review`。

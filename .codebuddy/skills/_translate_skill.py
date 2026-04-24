@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 为 .codebuddy/skills/ 目录下的 SKILL.md 文件添加全文中文翻译。
-使用 googletrans 进行翻译，保留原文结构。
+使用 deep_translator 进行翻译，保留原文结构。
 """
 
 import os
@@ -9,15 +9,15 @@ import re
 import sys
 from pathlib import Path
 
-# 尝试导入 googletrans
+# 使用 deep_translator
 try:
-    from googletrans import Translator
+    from deep_translator import GoogleTranslator
     TRANSLATOR_AVAILABLE = True
 except ImportError:
     TRANSLATOR_AVAILABLE = False
-    print("警告: googletrans 未安装，将使用占位符翻译")
+    print("警告: deep_translator 未安装，将使用占位符翻译")
 
-def translate_text(text, src='en', dest='zh-cn'):
+def translate_text(text, src='en', dest='zh-CN'):
     """翻译文本，如果翻译器不可用则返回占位符"""
     if not text.strip():
         return ""
@@ -26,9 +26,9 @@ def translate_text(text, src='en', dest='zh-cn'):
         return f"[待翻译: {text[:50]}...]"
     
     try:
-        translator = Translator()
-        result = translator.translate(text, src=src, dest=dest)
-        return result.text
+        translator = GoogleTranslator(source=src, target=dest)
+        result = translator.translate(text)
+        return result
     except Exception as e:
         print(f"翻译出错: {e}")
         return f"[翻译失败: {text[:50]}...]"

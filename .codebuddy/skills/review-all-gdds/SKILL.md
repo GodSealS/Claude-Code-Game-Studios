@@ -7,7 +7,7 @@ allowed-tools: Read, Glob, Grep, Write, Bash, AskUserQuestion, Task
 model: opus
 ---
 
-# Review All GDDs
+# Review All GDDs / 审查所有 GDD
 
 This skill reads every system GDD simultaneously and performs two complementary
 reviews that cannot be done per-GDD in isolation:
@@ -18,14 +18,20 @@ reviews that cannot be done per-GDD in isolation:
    together: dominant strategies, broken economies, cognitive overload, pillar
    drift, competing progression loops
 
+> **中文翻译**：此技能同时读取每个系统 GDD 并执行两种无法单独按 GDD 完成的互补审查：
+> 1. **跨 GDD 一致性** — 文档之间的矛盾、过时引用和所有权冲突
+> 2. **游戏设计整体性** — 只有在同时看到所有系统时才会出现的问题：主导策略、破碎经济、认知超载、支柱偏移、竞争进度循环
+
 **This is distinct from `/design-review`**, which reviews one GDD for internal
 completeness. This skill reviews the *relationships* between all GDDs.
 
-**When to run:**
-- After all MVP-tier GDDs are individually approved
-- After any GDD is significantly revised mid-production
+> **中文翻译**：**这与 `/design-review` 不同**，后者审查单个 GDD 的内部完整性。此技能审查所有 GDD 之间的*关系*。
+
+**When to run:** / **何时运行：**
+- After all MVP-tier GDDs are individually approved / 在所有 MVP 级 GDD 单独批准后
+- After any GDD is significantly revised mid-production / 在任何 GDD 在生产中大幅修订后
 - Before `/create-architecture` begins (architecture built on inconsistent GDDs
-  inherits those inconsistencies)
+  inherits those inconsistencies) / 在 `/create-architecture` 开始之前（基于不一致 GDD 构建的架构会继承这些不一致性）
 
 **Argument modes:**
 
@@ -38,9 +44,9 @@ completeness. This skill reviews the *relationships* between all GDDs.
 
 ---
 
-## Phase 1: Load Everything
+## Phase 1: Load Everything / 第 1 阶段：加载所有内容
 
-### Phase 1a — L0: Summary Scan (fast, low tokens)
+### Phase 1a — L0: Summary Scan (fast, low tokens) / 阶段 1a — L0：摘要扫描（快速，低令牌）
 
 Before reading any full document, use Grep to extract `## Summary` sections
 from all GDD files:
@@ -62,7 +68,7 @@ modified since the last review report file was written. Show the user which
 GDDs are in scope based on summaries before doing any full reads. Only
 proceed to L1 for those GDDs plus any GDDs listed in their "Key deps".
 
-### Phase 1b — Registry Pre-Load (fast baseline)
+### Phase 1b — Registry Pre-Load (fast baseline) / 阶段 1b — 注册表预加载（快速基线）
 
 Before full-reading any GDD, check for the entity registry:
 
@@ -80,7 +86,7 @@ If the registry is empty or absent: proceed without it. Note in the report:
 "Entity registry is empty — consistency checks rely on full GDD reads only.
 Run `/consistency-check` after this review to populate the registry."
 
-### Phase 1c — L1/L2: Full Document Load
+### Phase 1c — L1/L2: Full Document Load / 阶段 1c — L1/L2：完整文档加载
 
 Full-read the in-scope documents:
 
@@ -98,7 +104,7 @@ If fewer than 2 system GDDs exist, stop:
 
 ---
 
-### Parallel Execution
+### Parallel Execution / 并行执行
 
 Phase 2 (Consistency) and Phase 3 (Design Theory) are independent — they read
 the same GDD inputs but produce separate reports. Spawn both as parallel Task
@@ -107,11 +113,11 @@ starting Phase 3. Collect both results before writing the combined report.
 
 ---
 
-## Phase 2: Cross-GDD Consistency
+## Phase 2: Cross-GDD Consistency / 第 2 阶段：跨 GDD 一致性
 
 Work through every pair and group of GDDs to find contradictions and gaps.
 
-### 2a: Dependency Bidirectionality
+### 2a: Dependency Bidirectionality / 2a：依赖双向性
 
 For every GDD's Dependencies section, check that every listed dependency is
 reciprocal:
@@ -126,7 +132,7 @@ reciprocal:
 → One of these documents has a stale dependency section
 ```
 
-### 2b: Rule Contradictions
+### 2b: Rule Contradictions / 2b：规则矛盾
 
 For each game rule, mechanic, or constraint defined in any GDD, check whether
 any other GDD defines a contradicting rule for the same situation:
@@ -148,7 +154,7 @@ Categories to scan:
 → These rules directly contradict. Which GDD is authoritative?
 ```
 
-### 2c: Stale References
+### 2c: Stale References / 2c：过时引用
 
 For every cross-document reference (GDD-A mentions a mechanic, value, or
 system name from GDD-B), verify the referenced element still exists in GDD-B
@@ -170,7 +176,7 @@ movement.md (written later): Defines no encumbrance formula — uses a flat
 → inventory.md references a formula that doesn't exist
 ```
 
-### 2d: Data and Tuning Knob Ownership Conflicts
+### 2d: Data and Tuning Knob Ownership Conflicts / 2d：数据和调节旋钮所有权冲突
 
 Two GDDs should not both claim to own the same data or tuning knob. Scan all
 Tuning Knobs sections across all GDDs and flag duplicates:
@@ -183,7 +189,7 @@ Tuning Knobs sections across all GDDs and flag duplicates:
   This will produce either a double-application bug or a design conflict.
 ```
 
-### 2e: Formula Compatibility
+### 2e: Formula Compatibility / 2e：公式兼容性
 
 For GDDs whose formulas are connected (output of one feeds input of another),
 check that the output range of the upstream formula is within the expected
@@ -205,7 +211,7 @@ Flag incompatibilities as CONCERNS (design judgment needed, not necessarily wron
   Is this intentional? If not, either [system-a]'s ceiling or [system-b]'s ceiling needs adjustment.
 ```
 
-### 2f: Acceptance Criteria Cross-Check
+### 2f: Acceptance Criteria Cross-Check / 2f：验收标准交叉检查
 
 Scan Acceptance Criteria sections across all GDDs for contradictions:
 
@@ -215,13 +221,13 @@ These acceptance criteria cannot both pass simultaneously.
 
 ---
 
-## Phase 3: Game Design Holism
+## Phase 3: Game Design Holism / 第 3 阶段：游戏设计整体性
 
 Review all GDDs together through the lens of game design theory and player
 psychology. These are issues that individual GDD reviews cannot catch because
 they require seeing all systems at once.
 
-### 3a: Progression Loop Competition
+### 3a: Progression Loop Competition / 3a：进度循环竞争
 
 A game should have one dominant progression loop that players feel is "the
 point" of the game, with supporting loops that feed into it. When multiple
@@ -243,7 +249,7 @@ exploration.md: Awards XP, unlocks map areas, described as "the main driver"
   Consider: one primary loop with the others as support systems.
 ```
 
-### 3b: Player Attention Budget
+### 3b: Player Attention Budget / 3b：玩家注意力预算
 
 Count how many systems require active player attention simultaneously during
 a typical session. Each actively-managed system costs attention:
@@ -268,7 +274,7 @@ Simultaneously active systems during [core loop moment]:
   Consider: which of these can be made passive or simplified?
 ```
 
-### 3c: Dominant Strategy Detection
+### 3c: Dominant Strategy Detection / 3c：主导策略检测
 
 A dominant strategy makes other strategies irrelevant — players discover it,
 use it exclusively, and find the rest of the game boring. Look for:
@@ -290,7 +296,7 @@ combat.md: Melee attacks deal 100% damage but require close range
   damage. Consider what melee offers that ranged cannot.
 ```
 
-### 3d: Economic Loop Analysis
+### 3d: Economic Loop Analysis / 3d：经济循环分析
 
 Identify all resources across all GDDs (gold, XP, crafting materials, stamina,
 health, mana, etc.). For each resource, map its **sources** (how players gain
@@ -300,6 +306,7 @@ Flag dangerous economic conditions:
 
 | Condition | Sign | Risk |
 |-----------|------|------|
+| / 条件 | 迹象 | 风险 |
 | **Infinite source, no sink** | Resource accumulates indefinitely | Late game becomes trivially easy |
 | **Sink, no source** | Resource drains to zero | System becomes unavailable |
 | **Source >> Sink** | Surplus accumulates | Resource becomes meaningless |
@@ -317,7 +324,7 @@ gold economy:
   Add ongoing gold sinks (upkeep, consumables, cosmetics, gambling).
 ```
 
-### 3e: Difficulty Curve Consistency
+### 3e: Difficulty Curve Consistency / 3e：难度曲线一致性
 
 When multiple systems scale with player progression, they must scale in
 compatible directions and at compatible rates. Mismatched scaling curves
@@ -339,7 +346,7 @@ progression.md: Player damage scales linearly with level (+10% per level)
   unless the curves are reconciled.
 ```
 
-### 3f: Pillar Alignment
+### 3f: Pillar Alignment / 3f：支柱对齐
 
 Every system should clearly serve at least one design pillar. A system that
 serves no pillar is "scope creep by design" — it's in the game but not in
@@ -366,7 +373,7 @@ main-quest.md: Defines a 12-chapter linear story with mandatory sequence
 → This system directly violates the defined anti-pillar.
 ```
 
-### 3g: Player Fantasy Coherence
+### 3g: Player Fantasy Coherence / 3g：玩家幻想一致性
 
 The player fantasies across all systems should be compatible — they should
 reinforce a consistent identity for what the player IS in this game. Conflicting
@@ -384,13 +391,13 @@ exploration.md: "You are a reckless adventurer — diving in without a plan"
 
 ---
 
-## Phase 4: Cross-System Scenario Walkthrough
+## Phase 4: Cross-System Scenario Walkthrough / 第 4 阶段：跨系统场景演练
 
 Walk through the game from the player's perspective to find problems that only
 appear at the interaction boundary between multiple systems — things static
 analysis of individual GDDs cannot surface.
 
-### 4a: Identify Key Multi-System Moments
+### 4a: Identify Key Multi-System Moments / 4a：识别关键多系统时刻
 
 Scan all GDDs and identify the 3–5 most important player-facing moments where
 multiple systems activate simultaneously. Look specifically for:
@@ -407,7 +414,7 @@ multiple systems activate simultaneously. Look specifically for:
 
 List each identified scenario with a one-line description before proceeding.
 
-### 4b: Walk Through Each Scenario
+### 4b: Walk Through Each Scenario / 4b：演练每个场景
 
 For each scenario, step through the sequence explicitly:
 
@@ -450,7 +457,7 @@ Trigger: Player lands killing blow on elite enemy
   pre-update stat baseline?
 ```
 
-### 4c: Flag Scenario Issues
+### 4c: Flag Scenario Issues / 4c：标记场景问题
 
 For each problem found during the walkthrough, categorize severity:
 
@@ -467,7 +474,7 @@ step where the issue occurs, and the nature of the failure mode.
 
 ---
 
-## Phase 5: Output the Review Report
+## Phase 5: Output the Review Report / 第 5 阶段：输出审查报告
 
 ```
 ## Cross-GDD Review Report
@@ -477,21 +484,21 @@ Systems Covered: [list]
 
 ---
 
-### Consistency Issues
+### Consistency Issues / 一致性问题
 
-#### Blocking (must resolve before architecture begins)
+#### Blocking (must resolve before architecture begins) / 阻塞性（架构开始前必须解决）
 🔴 [Issue title]
 [What GDDs are involved, what the contradiction is, what needs to change]
 
-#### Warnings (should resolve, but won't block)
+#### Warnings (should resolve, but won't block) / 警告（应解决，但不阻塞）
 ⚠️  [Issue title]
 [What GDDs are involved, what the concern is]
 
 ---
 
-### Game Design Issues
+### Game Design Issues / 游戏设计问题
 
-#### Blocking
+#### Blocking / 阻塞性
 🔴 [Issue title]
 [What the problem is, which GDDs are involved, design recommendation]
 
@@ -501,12 +508,12 @@ Systems Covered: [list]
 
 ---
 
-### Cross-System Scenario Issues
+### Cross-System Scenario Issues / 跨系统场景问题
 
 Scenarios walked: [N]
 [List scenario names]
 
-#### Blockers
+#### Blockers / 阻塞项
 🔴 [Scenario name] — [Systems involved]
 [Step where failure occurs, nature of the failure mode, what must be resolved]
 
@@ -514,16 +521,17 @@ Scenarios walked: [N]
 ⚠️  [Scenario name] — [Systems involved]
 [What the unintended outcome is, recommendation]
 
-#### Info
+#### Info / 信息
 ℹ️  [Scenario name] — [Systems involved]
 [Minor ordering ambiguity or note]
 
 ---
 
-### GDDs Flagged for Revision
+### GDDs Flagged for Revision / 标记需修订的 GDD
 
 | GDD | Reason | Type | Priority |
 |-----|--------|------|----------|
+| / GDD | 原因 | 类型 | 优先级 |
 | [system-a].md | Rule contradiction with [system-b].md | Consistency | Blocking |
 | [system-c].md | Stale reference to nonexistent mechanic | Consistency | Blocking |
 | [system-d].md | No pillar alignment | Design Theory | Warning |
@@ -536,13 +544,13 @@ PASS: No blocking issues. Warnings present but don't prevent architecture.
 CONCERNS: Warnings present that should be resolved but are not blocking.
 FAIL: One or more blocking issues must be resolved before architecture begins.
 
-### If FAIL — required actions before re-running:
+### If FAIL — required actions before re-running: / 如果 FAIL — 重新运行前必须执行的操作：
 [Specific list of what must change in which GDD]
 ```
 
 ---
 
-## Phase 6: Write Report and Flag GDDs
+## Phase 6: Write Report and Flag GDDs / 第 6 阶段：写入报告并标记 GDD
 
 Use `AskUserQuestion` for write permission:
 - Prompt: "May I write this review to `design/gdd/gdd-cross-review-[date].md`?"
@@ -555,7 +563,7 @@ If any GDDs are flagged for revision, use a second `AskUserQuestion`:
   (Do NOT append parentheticals to the status value — other skills match "Needs Revision"
   as an exact string and parentheticals break that match.)
 
-### Session State Update
+### Session State Update / 会话状态更新
 
 After writing the report (and updating systems index if approved), silently
 append to `production/session-state/active.md`:
@@ -573,7 +581,7 @@ Confirm in conversation: "Session state updated."
 
 ---
 
-## Phase 7: Handoff
+## Phase 7: Handoff / 第 7 阶段：交接
 
 After all file writes are complete, use `AskUserQuestion` for a closing widget.
 
@@ -599,7 +607,7 @@ Never end the skill with plain text. Always close with this widget.
 
 ---
 
-## Error Recovery Protocol
+## Error Recovery Protocol / 错误恢复协议
 
 If any spawned agent returns BLOCKED, errors, or fails to complete:
 
@@ -613,16 +621,16 @@ If any spawned agent returns BLOCKED, errors, or fails to complete:
 
 ---
 
-## Collaborative Protocol
+## Collaborative Protocol / 协作协议
 
-1. **Read silently** — load all GDDs before presenting anything
+1. **Read silently** — load all GDDs before presenting anything / **静默阅读** — 在呈现任何内容前加载所有 GDD
 2. **Show everything** — present the full consistency and design theory analysis
-   before asking for any action
+   before asking for any action / **展示所有内容** — 在请求任何操作前呈现完整的一致性和设计理论分析
 3. **Distinguish blocking from advisory** — not every issue needs to block
-   architecture; be clear about which do
+   architecture; be clear about which do / **区分阻塞和建议** — 并非每个问题都需要阻塞架构；明确哪些需要
 4. **Don't make design decisions** — flag contradictions and options, but never
-   unilaterally decide which GDD is "right"
+   unilaterally decide which GDD is "right" / **不做设计决策** — 标记矛盾和选项，但绝不单方面决定哪个 GDD 是"正确的"
 5. **Ask before writing** — confirm before writing the report or updating the
-   systems index
+   systems index / **写入前询问** — 在写入报告或更新系统索引前确认
 6. **Be specific** — every issue must cite the exact GDD, section, and text
-   involved; no vague warnings
+   involved; no vague warnings / **具体明确** — 每个问题必须引用确切的 GDD、章节和文本；不含模糊警告

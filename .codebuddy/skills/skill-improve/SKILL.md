@@ -6,14 +6,16 @@ user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Bash
 ---
 
-# Skill Improve
+# Skill Improve / 技能改进
 
 Runs an improvement loop on a single skill:
 test → fix → retest → keep or revert.
 
+> **中文翻译**：对单个技能运行改进循环：测试 → 修复 → 重测 → 保留或回滚。
+
 ---
 
-## Phase 1: Parse Argument
+## Phase 1: Parse Argument / 第 1 阶段：解析参数
 
 Read the skill name from the first argument. If missing, output usage and stop:
 
@@ -27,7 +29,7 @@ Verify `.codebuddy/skills/[name]/SKILL.md` exists. If not, stop with:
 
 ---
 
-## Phase 2: Baseline Test
+## Phase 2: Baseline Test / 第 2 阶段：基线测试
 
 Run `/skill-test static [name]` and record the baseline score:
 - Count of FAILs
@@ -42,7 +44,7 @@ Failing: Check 4 (no ask-before-write), Check 5 (no handoff)
 
 If baseline is 0 FAILs and 0 WARNs, note it and proceed to Phase 2b.
 
-### Phase 2b: Category Baseline
+### Phase 2b: Category Baseline / 阶段 2b：类别基线
 
 Look up the skill's `category:` field in `CCGS Skill Testing Framework/catalog.yaml`.
 
@@ -65,7 +67,7 @@ If BOTH static and category baselines are 0 FAILs and 0 WARNs, stop:
 
 ---
 
-## Phase 3: Diagnose
+## Phase 3: Diagnose / 第 3 阶段：诊断
 
 Read the full skill file at `.codebuddy/skills/[name]/SKILL.md`.
 
@@ -91,11 +93,13 @@ Show the full combined diagnosis to the user before proposing any changes.
 
 ---
 
-## Phase 4: Propose Fix
+## Phase 4: Propose Fix / 第 4 阶段：提出修复
 
 Write a targeted fix for each failure and warning. Show the proposed changes
 as clearly marked before/after blocks. Only change what is failing — do not
 rewrite sections that are passing.
+
+> **中文翻译**：为每个失败和警告编写针对性修复。将建议的更改显示为明确标记的前后对比块。仅更改失败的部分——不要重写通过的部分。
 
 Ask: "May I write this improved version to `.codebuddy/skills/[name]/SKILL.md`?"
 
@@ -103,7 +107,7 @@ If the user says no, stop here.
 
 ---
 
-## Phase 5: Write and Retest
+## Phase 5: Write and Retest / 第 5 阶段：写入并重测
 
 Record the current content of the skill file (for revert if needed).
 
@@ -121,24 +125,24 @@ Combined change: improved / no change / worse
 
 ---
 
-## Phase 6: Verdict
+## Phase 6: Verdict / 第 6 阶段：裁决
 
-Count the combined failure total: static FAILs + category FAILs + static WARNs + category WARNs.
+Count the combined failure total: static FAILs + category FAILs + static WARNs + category WARNs. / 计算合并失败总数：静态 FAIL + 类别 FAIL + 静态 WARN + 类别 WARN。
 
-**If combined score improved (combined failure count is lower than baseline):**
-Report: "Score improved. Changes kept."
-Show a summary of what was fixed in each dimension.
+**If combined score improved (combined failure count is lower than baseline):** / **如果合并分数改善（合并失败计数低于基线）：**
+Report: "Score improved. Changes kept." / 报告："分数改善。更改已保留。"
+Show a summary of what was fixed in each dimension. / 显示每个维度修复内容的摘要。
 
-**If combined score is the same or worse:**
-Report: "Combined score did not improve."
-Show what changed and why it may not have helped.
-Ask: "May I revert `.codebuddy/skills/[name]/SKILL.md` using git checkout?"
-If yes: run `git checkout -- .codebuddy/skills/[name]/SKILL.md`
+**If combined score is the same or worse:** / **如果合并分数相同或更差：**
+Report: "Combined score did not improve." / 报告："合并分数未改善。"
+Show what changed and why it may not have helped. / 显示更改内容及为何可能没有帮助。
+Ask: "May I revert `.codebuddy/skills/[name]/SKILL.md` using git checkout?" / 询问："我可以使用 git checkout 回滚 `.codebuddy/skills/[name]/SKILL.md` 吗？"
+If yes: run `git checkout -- .codebuddy/skills/[name]/SKILL.md` / 如果是：运行 `git checkout -- .codebuddy/skills/[name]/SKILL.md`
 
 ---
 
-## Phase 7: Next Steps
+## Phase 7: Next Steps / 第 7 阶段：下一步
 
-- Run `/skill-test static all` to find the next skill with failures.
-- Run `/skill-improve [next-name]` to continue the loop on another skill.
-- Run `/skill-test audit` to see overall coverage progress.
+- Run `/skill-test static all` to find the next skill with failures. / 运行 `/skill-test static all` 查找下一个有失败的技能。
+- Run `/skill-improve [next-name]` to continue the loop on another skill. / 运行 `/skill-improve [next-name]` 继续改进另一个技能。
+- Run `/skill-test audit` to see overall coverage progress. / 运行 `/skill-test audit` 查看整体覆盖进度。
