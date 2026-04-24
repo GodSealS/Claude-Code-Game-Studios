@@ -1,12 +1,16 @@
 #!/bin/bash
 # CodeBuddy SessionStart hook: Load project context at session start
+# CodeBuddy SessionStart钩子：在会话开始时加载项目上下文
 # Outputs context information that CodeBuddy sees when a session begins
+# 输出CodeBuddy在会话开始时看到的上下文信息
 #
 # Input schema (SessionStart): No stdin input
+# 输入模式（SessionStart）：无标准输入
 
 echo "=== CodeBuddy Game Studios — Session Context ==="
 
 # Current branch
+# 当前分支
 BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
 if [ -n "$BRANCH" ]; then
     echo "Branch: $BRANCH"
@@ -20,6 +24,7 @@ if [ -n "$BRANCH" ]; then
 fi
 
 # Current sprint (find most recent sprint file)
+# 当前冲刺（查找最新的冲刺文件）
 LATEST_SPRINT=$(ls -t production/sprints/sprint-*.md 2>/dev/null | head -1)
 if [ -n "$LATEST_SPRINT" ]; then
     echo ""
@@ -27,12 +32,14 @@ if [ -n "$LATEST_SPRINT" ]; then
 fi
 
 # Current milestone
+# 当前里程碑
 LATEST_MILESTONE=$(ls -t production/milestones/*.md 2>/dev/null | head -1)
 if [ -n "$LATEST_MILESTONE" ]; then
     echo "Active milestone: $(basename "$LATEST_MILESTONE" .md)"
 fi
 
 # Open bug count
+# 开放缺陷数量
 BUG_COUNT=0
 for dir in tests/playtest production; do
     if [ -d "$dir" ]; then
@@ -45,6 +52,7 @@ if [ "$BUG_COUNT" -gt 0 ]; then
 fi
 
 # Code health quick check
+# 代码健康快速检查
 if [ -d "src" ]; then
     TODO_COUNT=$(grep -r "TODO" src/ 2>/dev/null | wc -l)
     FIXME_COUNT=$(grep -r "FIXME" src/ 2>/dev/null | wc -l)
@@ -55,6 +63,7 @@ if [ -d "src" ]; then
 fi
 
 # --- Active session state recovery ---
+# --- 活动会话状态恢复 ---
 STATE_FILE="production/session-state/active.md"
 if [ -f "$STATE_FILE" ]; then
     echo ""

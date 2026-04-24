@@ -1,12 +1,16 @@
 #!/bin/bash
 # CodeBuddy PreCompact hook: Dump session state before context compression
+# CodeBuddy PreCompact钩子：在上下文压缩前转储会话状态
 # This output appears in the conversation right before compaction, ensuring
+# 此输出出现在压缩前的对话中，确保
 # critical state survives the summarization process.
+# 关键状态在摘要过程中得以保留。
 
 echo "=== SESSION STATE BEFORE COMPACTION ==="
 echo "Timestamp: $(date)"
 
 # --- Active session state file ---
+# --- 活动会话状态文件 ---
 STATE_FILE="production/session-state/active.md"
 if [ -f "$STATE_FILE" ]; then
     echo ""
@@ -25,8 +29,10 @@ else
 fi
 
 # --- Files modified this session (unstaged + staged + untracked) ---
+# --- 本次会话中修改的文件（未暂存 + 已暂存 + 未跟踪）---
 echo ""
 echo "## Files Modified (git working tree)"
+echo "## 文件修改情况（git工作树）"
 
 CHANGED=$(git diff --name-only 2>/dev/null)
 STAGED=$(git diff --staged --name-only 2>/dev/null)
@@ -49,8 +55,10 @@ if [ -z "$CHANGED" ] && [ -z "$STAGED" ] && [ -z "$UNTRACKED" ]; then
 fi
 
 # --- Work-in-progress design docs ---
+# --- 进行中的设计文档 ---
 echo ""
 echo "## Design Docs — Work In Progress"
+echo "## 设计文档 — 进行中"
 
 WIP_FOUND=false
 for f in design/gdd/*.md; do
@@ -68,6 +76,7 @@ if [ "$WIP_FOUND" = false ]; then
 fi
 
 # --- Log compaction event ---
+# --- 记录压缩事件 ---
 SESSION_LOG_DIR="production/session-logs"
 mkdir -p "$SESSION_LOG_DIR" 2>/dev/null
 echo "Context compaction occurred at $(date)." \

@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # post-compact.sh — fires after conversation compaction
+# post-compact.sh——在对话压缩后触发
 # Reminds CodeBuddy to restore session state from the file-backed checkpoint.
+# 提醒CodeBuddy从文件备份的检查点恢复会话状态。
 
 ACTIVE="production/session-state/active.md"
 
