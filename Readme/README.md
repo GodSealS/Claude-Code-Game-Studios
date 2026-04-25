@@ -20,6 +20,9 @@ Welcome to the complete documentation directory for CodeBuddy Game Studios. This
 | 08 | [Open Spec 集成指南](./08-Open-Spec-Integration.md) | 与 Open Spec 的集成方法 | 高级用户、架构师 |
 | 09 | [流程图和组织结构图](./09-Diagrams-and-Charts.md) | 项目架构图、流程图、决策树 | 视觉学习者 |
 | 10 | [微信小游戏开发指南](./10-WeChat-Mini-Game-Guide.md) | 微信小游戏专用开发指南 | 微信小游戏开发者 |
+| 11 | [Unity 代理协作指南](./11-Unity-Agent-Collaboration-Guide.md) | Unity 引擎专家的协作方法与示例 | Unity 开发者 |
+| 12 | [WeChat 代理协作指南](./12-WeChat-Agent-Collaboration-Guide.md) | WeChat 小游戏专家的协作方法与示例 | WeChat 开发者 |
+| 13 | [Cocos Creator 引擎使用指南](./cocos-creator-guide.md) | Cocos Creator 引擎提示词激活与使用方法 | Cocos Creator 开发者 |
 
 ---
 

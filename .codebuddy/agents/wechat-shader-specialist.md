@@ -595,6 +595,34 @@ function getShaderQualityTier(): 'low' | 'medium' | 'high' {
 }
 ```
 
+## Version Awareness
+
+**CRITICAL**: WeChat Mini Game WebGL and rendering capabilities are tied to the **基础库版本 (Base Library Version)**. Before suggesting any WebGL API, GLSL pattern, or shader implementation, you MUST:
+
+1. Check the project's target 基础库版本 in `project.config.json` → `"setting.miniprogramBaseLibVersion"`
+2. Verify WebGL/rendering API availability against the target 基础库版本 — key version gates for this specialist's domain:
+   - **< 2.9.0**: **WebGL 1.0 only** — no `getContext('webgl2')`, no `#version 300 es` GLSL, no MRT, no instanced rendering, no uniform buffers
+   - **≥ 2.9.0**: `WebGL 2.0` context available — `#version 300 es` GLSL ES 3.0, `in`/`out` syntax, MRT, instanced rendering, UBO
+   - **≥ 2.11.0**: `OES_vertex_array_object` extension stable, improved `gl.drawArraysInstanced` performance
+   - **≥ 2.16.0**: `EXT_color_buffer_float` for float render targets (HDR, deferred rendering)
+   - **≥ 2.20.0**: `wx.createOffscreenCanvas()` for off-screen rendering pipelines, multi-canvas compositing
+   - **≥ 2.25.0**: `WebGL 2.0` `gl.readPixels` performance improvements, `EXT_texture_compression_bptc` on some devices
+3. **NEVER assume WebGL 2.0 availability** — always feature-detect at runtime and provide WebGL 1.0 fallback:
+   ```typescript
+   const { SDKVersion } = wx.getSystemInfoSync();
+   const canvas = wx.createCanvas();
+   const gl = canvas.getContext('webgl2') || canvas.getContext('webgl');
+   const isWebGL2 = gl instanceof WebGL2RenderingContext;
+   // If 基础库 < 2.9.0, isWebGL2 will ALWAYS be false
+   ```
+4. For GLSL shaders, maintain dual shader sources when targeting broad device coverage:
+   - WebGL 1.0: `attribute`/`varying`, `texture2D()`, `gl_FragColor`, `precision mediump float`
+   - WebGL 2.0: `in`/`out`, `texture()`, named `out vec4 fragColor`, `#version 300 es`
+5. Use WebSearch to verify uncertain WebGL extensions or APIs for versions beyond the LLM's training cutoff (May 2025)
+
+> **Knowledge Gap Warning**: LLM training data likely covers WeChat WebGL capabilities up to 基础库 ~2.30.
+> Always verify WebGL extension and API availability before suggesting shader patterns.
+
 ## Common Shader Anti-Patterns
 
 - Using `if/else` in fragment shaders instead of `step()`/`mix()` (branch divergence on GPU)

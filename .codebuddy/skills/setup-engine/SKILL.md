@@ -1,116 +1,123 @@
 ---
 name: setup-engine
-description: "Configure the project's game engine and version. Pins the engine in CODEBUDDY.md, detects knowledge gaps, and populates engine reference docs via WebSearch when the version is beyond the LLM's training data. / 配置项目的游戏引擎和版本。在 CODEBUDDY.md 中固定引擎，检测知识差距，当版本超出 LLM 训练数据时通过 WebSearch 填充引擎参考文档。"
+description: "Configure the project's game engine and version. Pins the engine in CODEBUDDY.md, detects knowledge gaps, and populates engine reference docs via WebSearch when the version is beyond the LLM's training data."
 argument-hint: "[engine] | [engine version] | refresh | upgrade [old-version] [new-version] | no args for guided selection"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch, Task, AskUserQuestion
 ---
 
-When this skill is invoked: / 当此技能被调用时：
+When this skill is invoked:
 
-## 1. Parse Arguments / 1. 解析参数
+## 1. Parse Arguments
 
-Four modes: / 四种模式：
+Four modes:
 
-- **Full spec**: `/setup-engine godot 4.6` — engine and version provided / **完整规格**：`/setup-engine godot 4.6` — 提供引擎和版本
-- **Engine only**: `/setup-engine unity` — engine provided, version will be looked up / **仅引擎**：`/setup-engine unity` — 提供引擎，将查找版本
-- **No args**: `/setup-engine` — fully guided mode (engine recommendation + version) / **无参数**：`/setup-engine` — 完全引导模式（引擎推荐 + 版本）
-- **Refresh**: `/setup-engine refresh` — update reference docs (see Section 10) / **刷新**：`/setup-engine refresh` — 更新参考文档（见第 10 节）
-- **Upgrade**: `/setup-engine upgrade [old-version] [new-version]` — migrate to a new engine version (see Section 11) / **升级**：`/setup-engine upgrade [旧版本] [新版本]` — 迁移到新的引擎版本（见第 11 节）
+- **Full spec**: `/setup-engine godot 4.6` — engine and version provided
+- **Engine only**: `/setup-engine unity` — engine provided, version will be looked up
+- **No args**: `/setup-engine` — fully guided mode (engine recommendation + version)
+- **Refresh**: `/setup-engine refresh` — update reference docs (see Section 10)
+- **Upgrade**: `/setup-engine upgrade [old-version] [new-version]` — migrate to a new engine version (see Section 11)
 
 ---
 
-## 2. Guided Mode (No Arguments) / 2. 引导模式（无参数）
+## 2. Guided Mode (No Arguments)
 
-If no engine is specified, run an interactive engine selection process: / 如果未指定引擎，运行交互式引擎选择过程：
+If no engine is specified, run an interactive engine selection process:
 
-### Check for existing game concept / 检查现有游戏概念
+### Check for existing game concept
 - Read `design/gdd/game-concept.md` if it exists — extract genre, scope, platform
-  targets, art style, team size, and any engine recommendation from `/brainstorm` / 如果存在则读取 `design/gdd/game-concept.md` — 提取类型、范围、平台目标、美术风格、团队规模，以及来自 `/brainstorm` 的任何引擎推荐
-- If no concept exists, inform the user: / 如果概念不存在，通知用户：
+  targets, art style, team size, and any engine recommendation from `/brainstorm`
+- If no concept exists, inform the user:
   > "No game concept found. Consider running `/brainstorm` first to discover what
   > you want to build — it will also recommend an engine. Or tell me about your
   > game and I can help you pick."
-  > **中文翻译**："未找到游戏概念。考虑先运行 `/brainstorm` 来发现你想构建什么——它也会推荐引擎。或者告诉我你的游戏，我可以帮你选择。"
 
-### If the user wants to pick without a concept, ask in this order: / 如果用户想在没有概念的情况下选择，按此顺序询问：
+### If the user wants to pick without a concept, ask in this order:
 
-**Question 1 — Prior experience** (ask this first, always, via `AskUserQuestion`): / **问题 1 — 先前经验**（始终首先通过 `AskUserQuestion` 询问）：
-- Prompt: "Have you worked in any of these engines before?" / 提示："你以前使用过这些引擎中的任何一个吗？"
-- Options: `Godot` / `Unity` / `Unreal Engine 5` / `Multiple — I'll explain` / `None of them` / 选项：`Godot` / `Unity` / `Unreal Engine 5` / `多个 — 我会解释` / `都没有`
-- If they pick a specific engine → recommend that engine. Prior experience outweighs all other factors. Confirm with them and skip the matrix. / 如果他们选择了特定引擎 → 推荐该引擎。先前经验压倒所有其他因素。与他们确认并跳过矩阵。
-- If "None" or "Multiple" → continue to the questions below. / 如果"都没有"或"多个" → 继续下面的问题。
+**Question 1 — Prior experience** (ask this first, always, via `AskUserQuestion`):
+- Prompt: "Have you worked in any of these engines before?"
+- Options: `Godot` / `Unity` / `Unreal Engine 5` / `Cocos Creator` / `Multiple — I'll explain` / `None of them`
+- If they pick a specific engine → recommend that engine. Prior experience outweighs all other factors. Confirm with them and skip the matrix.
+- If "None" or "Multiple" → continue to the questions below.
 
-**Questions 2-6 — Decision matrix inputs** (only if no prior engine experience): / **问题 2-6 — 决策矩阵输入**（仅当没有先前引擎经验时）：
+**Questions 2-6 — Decision matrix inputs** (only if no prior engine experience):
 
-**Question 2 — Target platform** (ask this second, always, via `AskUserQuestion` — platform eliminates or heavily weights engines before any other factor): / **问题 2 — 目标平台**（始终第二，通过 `AskUserQuestion` 询问 — 平台在其他任何因素之前消除或严重加权引擎）：
-- Prompt: "What platforms are you targeting for this game?" / 提示："你的游戏面向哪些平台？"
-- Options: `PC (Steam / Epic)` / `Mobile (iOS / Android)` / `Console` / `Web / Browser` / `Multiple platforms` / 选项：`PC (Steam / Epic)` / `移动端 (iOS / Android)` / `主机` / `Web / 浏览器` / `多个平台`
-- Platform rules that feed directly into the recommendation: / 直接影响推荐的平台规则：
-  - Mobile → Unity strongly preferred; Unreal is a poor fit; Godot is viable for simple mobile / 移动端 → Unity 强烈推荐；Unreal 不适合；Godot 适合简单移动端
-  - Console → Unity or Unreal; Godot console support requires third-party publishers or significant extra work / 主机 → Unity 或 Unreal；Godot 主机支持需要第三方发布商或大量额外工作
-  - Web → Godot exports cleanly to web; Unity WebGL is functional; Unreal has poor web support / Web → Godot 干净导出到 Web；Unity WebGL 功能正常；Unreal Web 支持差
-  - PC only → all engines viable; other factors decide / 仅 PC → 所有引擎都可行；其他因素决定
-  - Multiple → Unity is the most portable across PC/mobile/console / 多个平台 → Unity 在 PC/移动端/主机之间最具可移植性
+**Question 2 — Target platform** (ask this second, always, via `AskUserQuestion` — platform eliminates or heavily weights engines before any other factor):
+- Prompt: "What platforms are you targeting for this game?"
+- Options: `PC (Steam / Epic)` / `Mobile (iOS / Android)` / `Console` / `Web / Browser` / `Multiple platforms`
+- Platform rules that feed directly into the recommendation:
+  - Mobile → Unity strongly preferred; Cocos Creator excellent for 2D/mini games; Unreal is a poor fit; Godot is viable for simple mobile
+  - Console → Unity or Unreal; Godot console support requires third-party publishers or significant extra work; Cocos Creator not suitable
+  - Web / Mini Game → Cocos Creator strongly preferred; Godot exports cleanly to web; Unity WebGL is functional; Unreal has poor web support
+  - PC only → all engines viable; other factors decide
+  - Multiple → Unity is the most portable across PC/mobile/console
 
-1. **What kind of game?** (2D, 3D, or both?) / **是什么类型的游戏？**（2D、3D 还是两者兼有？）
-2. **Primary input method?** (keyboard/mouse, gamepad, touch, or mixed?) / **主要输入方式？**（键盘/鼠标、手柄、触摸还是混合？）
-3. **Team size and experience?** (solo beginner, solo experienced, small team?) / **团队规模和经验？**（单人新手、单人经验丰富、小团队？）
-4. **Any strong language preferences?** (GDScript, C#, C++, visual scripting?) / **有无强烈的语言偏好？**（GDScript、C#、C++、可视化脚本？）
-5. **Budget for engine licensing?** (free only, or commercial licenses OK?) / **引擎许可预算？**（仅免费，还是允许商业许可？）
+1. **What kind of game?** (2D, 3D, or both?)
+2. **Primary input method?** (keyboard/mouse, gamepad, touch, or mixed?)
+3. **Team size and experience?** (solo beginner, solo experienced, small team?)
+4. **Any strong language preferences?** (GDScript, C#, C++, visual scripting?)
+5. **Budget for engine licensing?** (free only, or commercial licenses OK?)
 
-### Produce a recommendation / 生成推荐
+### Produce a recommendation
 
-Do NOT use a simple scoring matrix that eliminates engines. Instead, reason through the user's profile against the honest tradeoffs below, then present 1-2 recommendations with full context. Always end with the user choosing — never force a verdict. / **不要**使用消除引擎的简单评分矩阵。而是根据用户的配置文件与下面诚实的权衡进行推理，然后提供 1-2 个具有完整上下文的推荐。始终以用户选择结束 — 绝不强制执行裁决。
+Do NOT use a simple scoring matrix that eliminates engines. Instead, reason through the user's profile against the honest tradeoffs below, then present 1-2 recommendations with full context. Always end with the user choosing — never force a verdict.
 
-**Engine honest tradeoffs:** / **引擎诚实的权衡：**
+**Engine honest tradeoffs:**
 
-**Godot 4** / **Godot 4**
-- Genuine strengths: 2D (best in class), stylized/indie 3D, rapid iteration, free forever (MIT), open source, gentlest learning curve, best for solo devs who want full control / 真正优势：2D（同类最佳）、风格化/独立 3D、快速迭代、永久免费（MIT）、开源、最平缓的学习曲线、最适合想要完全控制的单人开发者
-- Real limitations: 3D ecosystem is thin compared to Unity/Unreal (fewer tutorials, assets, community answers for 3D-specific problems); large open-world 3D is very hard and largely untested in Godot; console export requires third-party publishers or significant extra work; smaller professional job market / 真正限制：与 Unity/Unreal 相比 3D 生态系统薄弱（3D 特定问题的教程、资产、社区答案较少）；大型开放世界 3D 非常困难且在 Godot 中基本上未经测试；主机导出需要第三方发布商或大量额外工作；专业就业市场较小
-- Licensing reality: Truly free with no revenue thresholds ever. MIT license means you own everything. / 许可现实：真正免费，无收入门槛。MIT 许可证意味着你拥有所有内容。
-- Best fit: 2D games of any scope; stylized/atmospheric 3D; contained 3D worlds (not open-world); first game projects where learning curve matters; projects where budget is a hard constraint at any scale / 最佳适用：任何范围的 2D 游戏；风格化/氛围 3D；封闭 3D 世界（非开放世界）；学习曲线重要的第一个游戏项目；预算在任何规模下都是硬性约束的项目
+**Godot 4**
+- Genuine strengths: 2D (best in class), stylized/indie 3D, rapid iteration, free forever (MIT), open source, gentlest learning curve, best for solo devs who want full control
+- Real limitations: 3D ecosystem is thin compared to Unity/Unreal (fewer tutorials, assets, community answers for 3D-specific problems); large open-world 3D is very hard and largely untested in Godot; console export requires third-party publishers or significant extra work; smaller professional job market
+- Licensing reality: Truly free with no revenue thresholds ever. MIT license means you own everything.
+- Best fit: 2D games of any scope; stylized/atmospheric 3D; contained 3D worlds (not open-world); first game projects where learning curve matters; projects where budget is a hard constraint at any scale
 
-**Unity** / **Unity**
-- Genuine strengths: Industry standard for mid-scope 3D and mobile; massive asset store and tutorial ecosystem; C# is a professional language; best console certification support for indie; strong community for almost every genre / 真正优势：中等范围 3D 和移动端的行业标准；庞大的资产商店和教程生态系统；C# 是专业语言；最佳的主机独立游戏认证支持；几乎所有类型的强大社区
-- Real limitations: Licensing controversy in 2023 damaged trust (runtime fee was proposed then walked back — the risk of policy changes remains real); C# has a steeper initial curve than GDScript; heavier editor than Godot for simple projects / 真正限制：2023 年的许可争议损害了信任（提出了运行时费用后又撤回 — 政策变更的风险仍然存在）；C# 比 GDScript 有更陡峭的初始学习曲线；对于简单项目比 Godot 编辑器更重
-- Licensing reality: Free under $200K revenue AND 200K installs (Unity Personal/Plus). Only becomes costly if the game is genuinely successful — most indie games never hit this threshold. The 2023 controversy is worth knowing about but the actual current terms are reasonable for most indie developers. / 许可现实：收入低于 20 万美元且安装量低于 20 万时免费（Unity Personal/Plus）。只有当游戏真正成功时才会变得昂贵 — 大多数独立游戏从未达到此阈值。2023 年的争议值得了解，但实际的当前条款对大多数独立开发者来说是合理的。
-- Best fit: Mobile games; mid-scope 3D; games targeting console; developers with C# background; projects needing large asset store; teams of 2-5 / 最佳适用：移动游戏；中等范围 3D；面向主机的游戏；有 C# 背景的开发者；需要大型资产商店的项目；2-5 人团队
+**Unity**
+- Genuine strengths: Industry standard for mid-scope 3D and mobile; massive asset store and tutorial ecosystem; C# is a professional language; best console certification support for indie; strong community for almost every genre
+- Real limitations: Licensing controversy in 2023 damaged trust (runtime fee was proposed then walked back — the risk of policy changes remains real); C# has a steeper initial curve than GDScript; heavier editor than Godot for simple projects
+- Licensing reality: Free under $200K revenue AND 200K installs (Unity Personal/Plus). Only becomes costly if the game is genuinely successful — most indie games never hit this threshold. The 2023 controversy is worth knowing about but the actual current terms are reasonable for most indie developers.
+- Best fit: Mobile games; mid-scope 3D; games targeting console; developers with C# background; projects needing large asset store; teams of 2-5
 
-**Unreal Engine 5** / **Unreal Engine 5**
-- Genuine strengths: Best-in-class 3D visuals (Lumen, Nanite, Chaos physics); industry standard for AAA and photorealistic 3D; large open-world support is mature and production-tested; Blueprint visual scripting lowers C++ barrier; strong for games targeting high-end PC or console / 真正优势：同类最佳的 3D 视觉效果（Lumen、Nanite、Chaos 物理）；AAA 和照片级真实感 3D 的行业标准；大型开放世界支持成熟且经过生产测试；Blueprint 可视化脚本降低 C++ 门槛；针对高端 PC 或主机游戏能力强
-- Real limitations: Steepest learning curve; heaviest editor (slow compile times, large project sizes); overkill for stylized/2D/small-scope games; C++ is genuinely hard; not suitable for mobile or web; 5% royalty past $1M gross revenue / 真正限制：最陡峭的学习曲线；最重的编辑器（编译时间长，项目大小大）；对于风格化/2D/小范围游戏是过度杀伤；C++ 确实困难；不适合移动端或 Web；超过 100 万美元总收入后 5% 版税
-- Licensing reality: 5% royalty only applies AFTER $1M gross revenue per title. For a first game or any game that doesn't reach $1M, it costs nothing. This threshold is high enough that most indie developers will never pay it. / 许可现实：5% 版税仅适用于每个游戏总收入超过 100 万美元之后。对于第一款游戏或任何未达到 100 万美元的游戏，完全免费。此阈值足够高，大多数独立开发者永远不会支付。
-- Best fit: AAA-quality 3D; large open-world games; photorealistic visuals; developers with C++ experience or willing to use Blueprint; games targeting high-end PC/console where visual fidelity is a core selling point / 最佳适用：AAA 质量 3D；大型开放世界游戏；照片级真实感视觉效果；有 C++ 经验或愿意使用 Blueprint 的开发者；面向高端 PC/主机的游戏，其中视觉保真度是核心卖点
+**Unreal Engine 5**
+- Genuine strengths: Best-in-class 3D visuals (Lumen, Nanite, Chaos physics); industry standard for AAA and photorealistic 3D; large open-world support is mature and production-tested; Blueprint visual scripting lowers C++ barrier; strong for games targeting high-end PC or console
+- Real limitations: Steepest learning curve; heaviest editor (slow compile times, large project sizes); overkill for stylized/2D/small-scope games; C++ is genuinely hard; not suitable for mobile or web; 5% royalty past $1M gross revenue
+- Licensing reality: 5% royalty only applies AFTER $1M gross revenue per title. For a first game or any game that doesn't reach $1M, it costs nothing. This threshold is high enough that most indie developers will never pay it.
+- Best fit: AAA-quality 3D; large open-world games; photorealistic visuals; developers with C++ experience or willing to use Blueprint; games targeting high-end PC/console where visual fidelity is a core selling point
 
-**Genre-specific guidance** (factor this into the recommendation): / **类型特定指导**（将其纳入推荐）：
-- 2D any style → Godot strongly preferred / 2D 任何风格 → Godot 强烈推荐
-- 3D stylized / atmospheric / contained world → Godot viable, Unity solid alternative / 3D 风格化/氛围/封闭世界 → Godot 可行，Unity 是可靠的替代方案
-- 3D open world (large, seamless) → Unity or Unreal; Godot is not production-proven for this / 3D 开放世界（大型，无缝）→ Unity 或 Unreal；Godot 未经生产验证
-- 3D photorealistic / AAA-quality → Unreal / 3D 照片级真实感/AAA 质量 → Unreal
-- Mobile-first → Unity strongly preferred / 移动优先 → Unity 强烈推荐
-- Console-first → Unity or Unreal; Godot console support requires extra work / 主机优先 → Unity 或 Unreal；Godot 主机支持需要额外工作
-- Horror / narrative / walking sim → any engine; match to art style and team experience / 恐怖/叙事/步行模拟 → 任何引擎；与美术风格和团队经验匹配
-- Action RPG / Soulslike → Unity or Unreal for 3D; community support and assets matter here / 动作 RPG/Soulslike → Unity 或 Unreal（3D）；社区支持和资产在此重要
-- Platformer 2D → Godot / 平台游戏 2D → Godot
-- Strategy / top-down / RTS → Godot or Unity depending on 2D vs 3D / 策略/俯视角/RTS → Godot 或 Unity，取决于 2D 还是 3D
+**Cocos Creator**
+- Genuine strengths: Best-in-class 2D and lightweight 3D for mobile/web; excellent WeChat Mini Game and HTML5 support; TypeScript-first with modern tooling; small package size ideal for instant games; strong in China/Asia markets; free and open source (MIT)
+- Real limitations: 3D capabilities behind Unity/Unreal; smaller Western community and asset ecosystem; console support is non-native (via web wrappers); desktop PC market penetration is low outside Asia
+- Licensing reality: Truly free (MIT). No revenue thresholds, no royalties.
+- Best fit: Mobile games (2D/3D); WeChat Mini Games; HTML5/web games; lightweight 2D games of any scope; projects targeting China/Asia markets; developers with TypeScript/JavaScript background
 
-**Recommendation format:** / **推荐格式：**
-1. Show a comparison table with the user's specific factors as rows / 展示一个比较表格，以用户的具体因素为行
-2. Give a primary recommendation with honest reasoning / 提供主要推荐并附上诚实的推理
-3. Name the best alternative and when to choose it instead / 命名最佳替代方案以及何时选择它
-4. Explicitly state: "This is a starting point, not a verdict — you can always migrate engines, and many developers switch between projects." / 明确说明："这是一个起点，不是最终裁决 — 你总是可以迁移引擎，许多开发者在项目之间切换。"
-5. Use `AskUserQuestion` to confirm: "Does this recommendation feel right, or would you like to explore a different engine?" / 使用 `AskUserQuestion` 确认："这个推荐感觉对吗，或者你想探索不同的引擎吗？"
-   - Options: `[Primary engine] (Recommended)` / `[Alternative engine]` / `[Third engine]` / `Explore further` / `Type something` / 选项：`[主要引擎]（推荐）` / `[替代引擎]` / `[第三引擎]` / `进一步探索` / `输入内容`
+**Genre-specific guidance** (factor this into the recommendation):
+- 2D any style → Godot strongly preferred
+- 3D stylized / atmospheric / contained world → Godot viable, Unity solid alternative
+- 3D open world (large, seamless) → Unity or Unreal; Godot is not production-proven for this
+- 3D photorealistic / AAA-quality → Unreal
+- Mobile-first → Unity strongly preferred; Cocos Creator excellent for 2D/mini games
+- Console-first → Unity or Unreal; Godot console support requires extra work; Cocos Creator not suitable
+- Web / Mini Game → Cocos Creator strongly preferred; Godot viable; Unity WebGL functional
+- Horror / narrative / walking sim → any engine; match to art style and team experience
+- Action RPG / Soulslike → Unity or Unreal for 3D; community support and assets matter here
+- Platformer 2D → Godot or Cocos Creator
+- Strategy / top-down / RTS → Godot or Unity depending on 2D vs 3D
+- Casual / hyper-casual mobile → Cocos Creator or Unity
 
-**If the user picks "Explore further":** / **如果用户选择"进一步探索"：**
-Use `AskUserQuestion` with concept-specific deep-dive topics. Always generate these options from the user's actual concept — do not use generic options. Always include at minimum: / 使用 `AskUserQuestion` 提出特定概念的深入主题。始终从用户的实际概念生成这些选项 — 不要使用通用选项。始终至少包括：
-- The primary engine's specific limitations for this concept (e.g., "How far can Godot 3D actually go for [genre]?") / 主要引擎对此概念的具体限制（例如，"Godot 3D 对于 [类型] 能走多远？"）
-- The alternative engine's specific tradeoffs for this concept / 替代引擎对此概念的具体权衡
-- Language choice impact on this concept's technical challenges / 语言选择对此概念技术挑战的影响
-- Any concept-specific technical concern (e.g., adaptive audio, open-world streaming, multiplayer netcode) / 任何特定概念的技术关注点（例如，自适应音频、开放世界流式传输、多人网络代码）
+**Recommendation format:**
+1. Show a comparison table with the user's specific factors as rows
+2. Give a primary recommendation with honest reasoning
+3. Name the best alternative and when to choose it instead
+4. Explicitly state: "This is a starting point, not a verdict — you can always migrate engines, and many developers switch between projects."
+5. Use `AskUserQuestion` to confirm: "Does this recommendation feel right, or would you like to explore a different engine?"
+   - Options: `[Primary engine] (Recommended)` / `[Alternative engine]` / `[Third engine]` / `Explore further` / `Type something`
 
-The user can select multiple topics. Answer each selected topic in depth before returning to the engine confirmation question. / 用户可以选择多个主题。在返回到引擎确认问题之前，深入回答每个选定的主题。
+**If the user picks "Explore further":**
+Use `AskUserQuestion` with concept-specific deep-dive topics. Always generate these options from the user's actual concept — do not use generic options. Always include at minimum:
+- The primary engine's specific limitations for this concept (e.g., "How far can Godot 3D actually go for [genre]?")
+- The alternative engine's specific tradeoffs for this concept
+- Language choice impact on this concept's technical challenges
+- Any concept-specific technical concern (e.g., adaptive audio, open-world streaming, multiplayer netcode)
+
+The user can select multiple topics. Answer each selected topic in depth before returning to the engine confirmation question.
 
 ---
 
@@ -168,6 +175,14 @@ Update the Technology Stack section, replacing the `[CHOOSE]` placeholders with 
 - **Asset Pipeline**: Unreal Content Pipeline
 ```
 
+**For Cocos Creator:**
+```markdown
+- **Engine**: Cocos Creator [version]
+- **Language**: TypeScript (primary), JavaScript (legacy support)
+- **Build System**: Cocos Creator Build Panel + platform-specific build tools
+- **Asset Pipeline**: Cocos Asset Manager + Asset Bundles + platform-specific compression
+```
+
 ---
 
 ## 5. Populate Technical Preferences
@@ -196,6 +211,15 @@ engine-appropriate defaults. Read the existing template first, then fill in:
 - Functions: PascalCase (e.g., `TakeDamage()`)
 - Booleans: `b` prefix (e.g., `bIsAlive`)
 - Files: Match class without prefix (e.g., `PlayerController.h`)
+
+**For Cocos Creator (TypeScript):**
+- Classes: PascalCase (e.g., `PlayerController`)
+- Variables/fields: camelCase (e.g., `moveSpeed`)
+- Methods: camelCase (e.g., `takeDamage()`)
+- Files: PascalCase matching class (e.g., `PlayerController.ts`)
+- Constants: UPPER_SNAKE_CASE (e.g., `MAX_HEALTH`)
+- Decorators: `@ccclass`, `@property`, `@menu` — required for component classes
+- Component class suffix: `Component` (e.g., `PlayerMovementComponent`)
 
 ### Input & Platform Section
 
@@ -246,6 +270,34 @@ Example filled section:
 Also populate the `## Engine Specialists` section in `technical-preferences.md` with the correct routing for the chosen engine:
 
 **For Godot** — see **Appendix A** for the routing table matching the language chosen.
+
+**For Cocos Creator:**
+```markdown
+## Engine Specialists
+- **Primary**: cocos-specialist
+- **Language/Code Specialist**: cocos-specialist (TypeScript/JavaScript review — primary covers it)
+- **2D Specialist**: cocos_2d-expert (2D rendering, sprite, text, mask, UI components)
+- **3D Specialist**: cocos_3d-expert (3D mesh rendering, skinned mesh, model loading)
+- **Animation Specialist**: cocos_animation-expert (animation clips, skeletal animation, state machines, crossFade)
+- **Core Specialist**: cocos_core-expert (components, nodes, scene graph, lifecycle, events, object pool)
+- **Graphics Specialist**: cocos_gfx-expert (shaders, GPU buffers/textures, custom rendering pipelines)
+- **Physics Specialist**: cocos_physics-expert (3D rigid bodies, colliders, raycast, physics simulation)
+- **Physics 2D Specialist**: cocos_physics-2d-expert (2D rigid bodies, Box2D, 2D collision detection)
+- **Rendering Specialist**: cocos_rendering-expert (rendering pipeline, camera, lighting, shadows, post-processing)
+- **Routing Notes**: Invoke primary for architecture decisions and general TypeScript code review. Invoke subsystem specialists for deep work in their respective domains. The primary specialist delegates to sub-specialists automatically via Task tool.
+
+### File Extension Routing
+
+| File Extension / Type | Specialist to Spawn |
+|-----------------------|---------------------|
+| Game code (.ts files) | cocos-specialist |
+| Legacy JavaScript (.js files) | cocos-specialist |
+| Scene files (.scene) | cocos-specialist |
+| Prefab files (.prefab) | cocos-specialist |
+| Shader files (.effect) | cocos_gfx-expert |
+| UI layout files | cocos_2d-expert |
+| General architecture review | cocos-specialist |
+```
 
 **For Unity:**
 ```markdown
@@ -311,6 +363,7 @@ Check whether the engine version is likely beyond the LLM's training data.
 - Godot: training data likely covers up to ~4.3
 - Unity: training data likely covers up to ~2023.x / early 6000.x
 - Unreal: training data likely covers up to ~5.3 / early 5.4
+- Cocos Creator: training data likely covers up to ~3.6
 
 Compare the user's chosen version against these baselines:
 
