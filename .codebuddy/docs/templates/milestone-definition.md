@@ -1,79 +1,82 @@
 # Milestone: [Name] / 里程碑：[名称]
 
-## Overview
+## Overview / 概述
 
-- **Target Date**: [Date]
-- **Type**: [Prototype | Vertical Slice | Alpha | Beta | Gold | Post-Launch]
-- **Duration**: [N weeks]
-- **Number of Sprints**: [N]
+- **Target Date**: [Date] / **目标日期**：[日期]
+- **Type**: [Prototype | Vertical Slice | Alpha | Beta | Gold | Post-Launch] / **类型**：[原型 | 垂直切片 | Alpha | Beta | Gold | 发布后]
+- **Duration**: [N weeks] / **持续时间**：[N周]
+- **Number of Sprints**: [N] / **冲刺数量**：[N]
 
-## Milestone Goal
+## Milestone Goal / 里程碑目标
 
 [2-3 sentences describing what this milestone achieves and why it matters.
-What can we demonstrate or evaluate at the end of this milestone?]
+What can we demonstrate or evaluate at the end of this milestone? / 
+2-3句话描述这个里程碑实现什么以及为什么重要。
+在这个里程碑结束时，我们可以展示或评估什么？]
 
-## Success Criteria
+## Success Criteria / 成功标准
 
 [Specific, measurable criteria. The milestone is complete ONLY when all of
-these are met.]
+these are met. / 
+具体、可衡量的标准。只有在所有这些都满足时，里程碑才算完成。]
 
-- [ ] [Criterion 1 -- specific and testable]
-- [ ] [Criterion 2]
-- [ ] [Criterion 3]
-- [ ] All S1 and S2 bugs resolved
-- [ ] Performance within budget on target hardware
-- [ ] Build stable for [X] consecutive days
+- [ ] [Criterion 1 -- specific and testable] / [ ] [标准1 -- 具体且可测试]
+- [ ] [Criterion 2] / [ ] [标准2]
+- [ ] [Criterion 3] / [ ] [标准3]
+- [ ] All S1 and S2 bugs resolved / [ ] 所有S1和S2级别缺陷已解决
+- [ ] Performance within budget on target hardware / [ ] 在目标硬件上的性能在预算范围内
+- [ ] Build stable for [X] consecutive days / [ ] 构建稳定 [X] 天
 
-## Feature List
+## Feature List / 功能列表
 
-### Must Ship (Milestone Fails Without These)
+### Must Ship (Milestone Fails Without These) / 必须发布（没有这些里程碑将失败）
 
-| Feature | Design Doc | Owner | Sprint Target | Status |
+| Feature / 功能 | Design Doc / 设计文档 | Owner / 负责人 | Sprint Target / 冲刺目标 | Status / 状态 |
 |---------|-----------|-------|--------------|--------|
 
-### Should Ship (Planned but Cuttable)
+### Should Ship (Planned but Cuttable) / 应该发布（计划中但可削减）
 
-| Feature | Design Doc | Owner | Sprint Target | Cut Impact | Status |
+| Feature / 功能 | Design Doc / 设计文档 | Owner / 负责人 | Sprint Target / 冲刺目标 | Cut Impact / 削减影响 | Status / 状态 |
 |---------|-----------|-------|--------------|-----------|--------|
 
-### Stretch Goals (Only if Ahead of Schedule)
+### Stretch Goals (Only if Ahead of Schedule) / 延伸目标（仅在进度超前时）
 
-| Feature | Design Doc | Owner | Value Add |
+| Feature / 功能 | Design Doc / 设计文档 | Owner / 负责人 | Value Add / 价值增加 |
 |---------|-----------|-------|----------|
 
-## Quality Gates
+## Quality Gates / 质量门限
 
-| Gate | Threshold | Measurement Method |
+| Gate / 门限 | Threshold / 阈值 | Measurement Method / 测量方法 |
 |------|-----------|-------------------|
-| Crash rate | < [X] per hour | Automated crash reporting |
-| Frame rate | > [X] FPS on min spec | Performance profiling |
-| Load time | < [X] seconds | Automated timing |
-| Critical bugs | 0 open S1 | Bug tracker |
-| Major bugs | < [X] open S2 | Bug tracker |
-| Test coverage | > [X]% | Test framework report |
+| Crash rate / 崩溃率 | < [X] per hour / < [X] 每小时 | Automated crash reporting / 自动崩溃报告 |
+| Frame rate / 帧率 | > [X] FPS on min spec / > [X] FPS（最低配置） | Performance profiling / 性能分析 |
+| Load time / 加载时间 | < [X] seconds / < [X] 秒 | Automated timing / 自动计时 |
+| Critical bugs / 关键缺陷 | 0 open S1 / 0个开放的S1级别 | Bug tracker / 缺陷跟踪器 |
+| Major bugs / 主要缺陷 | < [X] open S2 / < [X]个开放的S2级别 | Bug tracker / 缺陷跟踪器 |
+| Test coverage / 测试覆盖率 | > [X]% / > [X]% | Test framework report / 测试框架报告 |
 
-## Risk Register
+## Risk Register / 风险登记表
 
-| Risk | Probability | Impact | Mitigation | Owner | Status |
+| Risk / 风险 | Probability / 概率 | Impact / 影响 | Mitigation / 缓解措施 | Owner / 负责人 | Status / 状态 |
 |------|------------|--------|-----------|-------|--------|
 
-## Dependencies
+## Dependencies / 依赖项
 
-### Internal Dependencies
+### Internal Dependencies / 内部依赖
 
-| Feature | Depends On | Owner of Dependency | Status |
+| Feature / 功能 | Depends On / 依赖于 | Owner of Dependency / 依赖项负责人 | Status / 状态 |
 |---------|-----------|-------------------|--------|
 
-### External Dependencies
+### External Dependencies / 外部依赖
 
-| Dependency | Provider | Status | Risk if Delayed |
+| Dependency / 依赖项 | Provider / 提供方 | Status / 状态 | Risk if Delayed / 延迟风险 |
 |-----------|---------|--------|----------------|
 
-## Review Schedule
+## Review Schedule / 评审计划
 
-| Date | Review Type | Attendees |
+| Date / 日期 | Review Type / 评审类型 | Attendees / 参会人员 |
 |------|-----------|-----------|
-| [Week 2] | Early progress check | Producer, Directors |
-| [Midpoint] | Mid-milestone review | Full team |
-| [Week N-1] | Pre-milestone review | Full team |
-| [Target Date] | Milestone review | Full team |
+| [Week 2] / [第2周] | Early progress check / 早期进度检查 | Producer, Directors / 制作人、总监 |
+| [Midpoint] / [中点] | Mid-milestone review / 里程碑中期评审 | Full team / 全体团队 |
+| [Week N-1] / [第N-1周] | Pre-milestone review / 里程碑前评审 | Full team / 全体团队 |
+| [Target Date] / [目标日期] | Milestone review / 里程碑评审 | Full team / 全体团队 |

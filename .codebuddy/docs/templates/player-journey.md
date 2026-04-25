@@ -1,66 +1,66 @@
 # Player Journey Map: [Game Title] / 玩家旅程图：[游戏名称]
 
-> **Status**: Draft | In Review | Approved
-> **Author**: [game-designer / creative-director]
-> **Last Updated**: [Date]
-> **Links To**: `design/gdd/game-concept.md`, `design/gdd/game-pillars.md`
+> **Status** / **状态**: Draft | In Review | Approved / 草案 | 审核中 | 已批准
+> **Author** / **作者**: [game-designer / creative-director] / [游戏设计师 / 创意总监]
+> **Last Updated** / **最后更新**: [Date] / [日期]
+> **Links To** / **链接到**: `design/gdd/game-concept.md`, `design/gdd/game-pillars.md`
 
 ---
 
-## Journey Overview
+## Journey Overview / 旅程概述
 
-[One paragraph capturing the full emotional arc from first launch to long-term
-play. This is the player's story, not the game's feature list. Describe the
-journey in emotional terms: where do they start (curious, skeptical, cautious),
-how does the relationship with the game deepen, what is the peak emotional
-experience, and what sustains them afterward?
+[One paragraph capturing the full emotional arc from first launch to long-term / [一段话，捕捉从首次启动到长期
+play. This is the player's story, not the game's feature list. Describe the / 游玩的全过程情感弧线。这是玩家的故事，不是游戏的功能列表。用情感术语描述
+journey in emotional terms: where do they start (curious, skeptical, cautious), / 旅程：他们从哪里开始（好奇、怀疑、谨慎），
+how does the relationship with the game deepen, what is the peak emotional / 他们与游戏的关系如何加深，巅峰情感
+experience, and what sustains them afterward? / 体验是什么，之后是什么让他们持续下去？
 
-Example: "The player arrives skeptical and slightly overwhelmed, is quickly
-disarmed by an early moment of unexpected delight, spends the middle hours
-discovering that the systems run deeper than they first appeared, and eventually
-reaches a state of confident mastery where they generate their own challenges and
-share their discoveries with others."
+Example / 示例: "The player arrives skeptical and slightly overwhelmed, is quickly / "玩家带着怀疑和略微不知所措的态度到来，很快
+disarmed by an early moment of unexpected delight, spends the middle hours / 被早期意外的喜悦所征服，中间几个小时
+discovering that the systems run deeper than they first appeared, and eventually / 发现系统比最初看起来更加深入，最终
+reaches a state of confident mastery where they generate their own challenges and / 达到自信掌握的状态，他们会自己创造挑战并
+share their discoveries with others." / 与他人分享发现。"
 
-If this arc cannot be described in one paragraph, the emotional design is not
-yet clear enough — resolve that ambiguity before filling in the phases below.]
-
----
-
-## Target Player Archetype
-
-[3-4 lines describing the player's MINDSET and gaming literacy, not their
-demographics. Demographics answer "who are they" — this answers "how do they
-approach games."
-
-Describe: What expectations do they carry from other games? How patient are
-they with systems that don't explain themselves? Do they read tooltips or ignore
-them? Do they lean into challenge or route around it? Are they here for a story,
-a power trip, a creative outlet, or a test of skill?
-
-Example: "A player who has finished at least one other game in this genre and
-arrived with a specific hypothesis about what to expect. They are willing to
-invest 30+ minutes before judging the game, they read item descriptions, and they
-find emergent mastery more satisfying than scripted victories. They feel respected
-when the game trusts them to figure things out."]
+If this arc cannot be described in one paragraph, the emotional design is not / 如果这段弧线不能用一段话描述，情感设计还
+yet clear enough — resolve that ambiguity before filling in the phases below.] / 不够清晰——在填写下面的阶段之前解决这种模糊性。]
 
 ---
 
-## Journey Phases
+## Target Player Archetype / 目标玩家原型
 
-> **Guidance**: The six phases below are the standard template. Not all phases
-> apply to all games. A short narrative game may not have Habitual Play or
-> Long-Term Engagement. A puzzle game may compress Orientation into First Contact.
-> Delete or merge phases that genuinely do not apply — do not fill them with
-> placeholder values to make the template look complete.
+[3-4 lines describing the player's MINDSET and gaming literacy, not their / [3-4行描述玩家的心态和游戏素养，而不是他们的
+demographics. Demographics answer "who are they" — this answers "how do they / 人口统计数据。人口统计数据回答"他们是谁"——这部分回答"他们如何
+approach games." / 接近游戏。"
+
+Describe / 描述：What expectations do they carry from other games? How patient are / 他们从其他游戏中带来了什么期望？他们对不自我解释的系统
+they with systems that don't explain themselves? Do they read tooltips or ignore / 有多大耐心？他们阅读工具提示还是忽略
+them? Do they lean into challenge or route around it? Are they here for a story, / 它们？他们倾向于挑战还是绕过挑战？他们来这里是为了故事、
+a power trip, a creative outlet, or a test of skill? / 权力体验、创意表达，还是技能测试？
+
+Example / 示例: "A player who has finished at least one other game in this genre and / "一个至少完成了这个类型中其他一款游戏的玩家，
+arrived with a specific hypothesis about what to expect. They are willing to / 对预期有具体的假设。他们愿意
+invest 30+ minutes before judging the game, they read item descriptions, and they / 在评判游戏前投入30分钟以上，他们阅读物品描述，并且
+find emergent mastery more satisfying than scripted victories. They feel respected / 认为涌现式掌握比脚本式胜利更令人满意。当游戏信任他们
+when the game trusts them to figure things out."] / 去解决问题时，他们感到受尊重。"
 
 ---
 
-### Phase 1: First Contact (0-5 minutes)
+## Journey Phases / 旅程阶段
 
-**Emotional state on arrival**: [What is the player feeling before they touch
-the game? They may be skeptical (purchased on impulse), curious (followed
-recommendations), or expectant (been waiting for it). This state is your
-starting condition — your design must meet them there.]
+> **Guidance** / **指导**：The six phases below are the standard template. Not all phases / 下面的六个阶段是标准模板。不是所有阶段
+> apply to all games. A short narrative game may not have Habitual Play or / 都适用于所有游戏。短篇叙事游戏可能没有习惯性游玩或
+> Long-Term Engagement. A puzzle game may compress Orientation into First Contact. / 长期参与。解谜游戏可能将定向阶段压缩到首次接触中。
+> Delete or merge phases that genuinely do not apply — do not fill them with / 删除或合并真正不适用的阶段——不要用
+> placeholder values to make the template look complete. / 占位值来让模板看起来完整。
+
+---
+
+### Phase 1: First Contact (0-5 minutes) / 阶段1：首次接触（0-5分钟）
+
+**Emotional state on arrival** / **到达时的情感状态**: [What is the player feeling before they touch / [玩家在接触游戏前感受如何？
+the game? They may be skeptical (purchased on impulse), curious (followed / 他们可能怀疑（冲动购买）、好奇（听从
+recommendations), or expectant (been waiting for it). This state is your / 推荐），或期待（一直在等待）。这种状态是你的
+starting condition — your design must meet them there.] / 起点条件——你的设计必须在这里与他们相遇。]
 
 **Primary question the player is asking**: [e.g., "Is this worth my time?",
 "Will this be too hard?", "Do I understand what I'm supposed to do?"]

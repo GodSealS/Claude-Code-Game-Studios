@@ -171,7 +171,7 @@ If the user declines: Verdict: **COMPLETE** — changelog generated. / 如果用
 
 ---
 
-## Phase 7: Next Steps / 后续步骤
+## Phase 7: Next Steps / 第 7 阶段：后续步骤
 
 - Use `/patch-notes [version]` to generate a styled, saved version for public release. / 使用 `/patch-notes [version]` 生成用于公开发布的样式化保存版本。
 - Use `/release-checklist` before publishing the changelog externally. / 在外部发布变更日志之前使用 `/release-checklist`。

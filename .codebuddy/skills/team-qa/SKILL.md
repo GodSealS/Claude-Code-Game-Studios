@@ -8,62 +8,68 @@ agent: qa-lead
 ---
 
 When this skill is invoked, orchestrate the QA team through a structured testing cycle.
+> **中文翻译**：当此技能被调用时，通过结构化测试周期编排 QA 团队。
 
 **Decision Points:** At each phase transition, use `AskUserQuestion` to present
 the user with the subagent's proposals as selectable options. Write the agent's
 full analysis in conversation, then capture the decision with concise labels.
 The user must approve before moving to the next phase.
+> **中文翻译**：**决策点：** 在每个阶段转换时，使用 `AskUserQuestion` 向用户展示子代理的提案作为可选选项。在对话中写入代理的完整分析，然后用简洁的标签捕获决策。用户必须在进入下一阶段之前批准。
 
-## Team Composition
+## Team Composition / 团队组成
 
-- **qa-lead** — QA strategy, test plan generation, story classification, sign-off report
-- **qa-tester** — Test case writing, bug report writing, manual QA documentation
+- **qa-lead** — QA strategy, test plan generation, story classification, sign-off report / QA 策略、测试计划生成、故事分类、签署报告
+- **qa-tester** — Test case writing, bug report writing, manual QA documentation / 测试用例编写、缺陷报告编写、手动 QA 文档
 
-## How to Delegate
+## How to Delegate / 如何委托
 
 Use the Task tool to spawn each team member as a subagent:
-- `subagent_type: qa-lead` — Strategy, planning, classification, sign-off
-- `subagent_type: qa-tester` — Test case writing and bug report writing
+> **中文翻译**：使用 Task 工具将每个团队成员作为子代理派生：
+
+- `subagent_type: qa-lead` — Strategy, planning, classification, sign-off / 策略、规划、分类、签署
+- `subagent_type: qa-tester` — Test case writing and bug report writing / 测试用例编写和缺陷报告编写
 
 Always provide full context in each agent's prompt (story file paths, QA plan path, scope constraints). Launch independent qa-tester tasks in parallel where possible (e.g., multiple stories in Phase 5 can be scaffolded simultaneously).
+> **中文翻译**：始终在每个代理的提示中提供完整上下文（故事文件路径、QA 计划路径、范围约束）。在可能的情况下并行启动独立的 qa-tester 任务（如第 5 阶段的多个故事可同时搭建）。
 
-## Pipeline
+## Pipeline / 管线
 
-### Phase 1: Load Context
+### Phase 1: Load Context / 第 1 阶段：加载上下文
 
-Before doing anything else, gather the full scope:
+Before doing anything else, gather the full scope: / 在开始之前，收集完整范围：
 
-1. Detect the current sprint or feature scope from the argument:
-   - If argument is a sprint identifier (e.g., `sprint-03`): read all story files in `production/sprints/[sprint]/`
-   - If argument is `feature: [system-name]`: glob story files tagged for that system
-   - If no argument: read `production/session-state/active.md` and `production/sprint-status.yaml` (if present) to infer the active sprint
+1. Detect the current sprint or feature scope from the argument: / 从参数检测当前冲刺或功能范围：
+   - If argument is a sprint identifier (e.g., `sprint-03`): read all story files in `production/sprints/[sprint]/` / 如果参数是冲刺标识符（如 `sprint-03`）：读取 `production/sprints/[sprint]/` 中的所有故事文件
+   - If argument is `feature: [system-name]`: glob story files tagged for that system / 如果参数是 `feature: [system-name]`：全局搜索标记为该系统的故事文件
+   - If no argument: read `production/session-state/active.md` and `production/sprint-status.yaml` (if present) to infer the active sprint / 如果无参数：读取 `production/session-state/active.md` 和 `production/sprint-status.yaml`（如存在）推断当前冲刺
 
-2. Read `production/stage.txt` to confirm the current project phase.
+2. Read `production/stage.txt` to confirm the current project phase. / 读取 `production/stage.txt` 确认当前项目阶段。
 
-3. Count stories found and report to the user:
+3. Count stories found and report to the user: / 统计找到的故事并向用户报告：
    > "QA cycle starting for [sprint/feature]. Found [N] stories. Current stage: [stage]. Ready to begin QA strategy?"
+   > **中文翻译**：> "QA 周期开始于 [冲刺/功能]。找到 [N] 个故事。当前阶段：[阶段]。准备开始 QA 策略吗？"
 
-### Phase 2: QA Strategy (qa-lead)
+### Phase 2: QA Strategy (qa-lead) / 第 2 阶段：QA 策略（qa-lead）
 
-Spawn `qa-lead` via Task to review all in-scope stories and produce a QA strategy.
+Spawn `qa-lead` via Task to review all in-scope stories and produce a QA strategy. / 通过 Task 派生 `qa-lead` 审查所有范围内故事并生成 QA 策略。
 
-Prompt the qa-lead to:
-- Read each story file
-- Classify each story by type: **Logic** / **Integration** / **Visual/Feel** / **UI** / **Config/Data**
-- Identify which stories require automated test evidence vs. manual QA
-- Flag any stories with missing acceptance criteria or missing test evidence that would block QA
-- Estimate manual QA effort (number of test sessions needed)
-- Check `tests/smoke/` for smoke test scenarios; for each, assess whether it can be verified given the current build. Produce a smoke check verdict: **PASS** / **PASS WITH WARNINGS [list]** / **FAIL [list of failures]**
-- Produce a strategy summary table and smoke check result:
+Prompt the qa-lead to: / 提示 qa-lead：
+- Read each story file / 读取每个故事文件
+- Classify each story by type: **Logic** / **Integration** / **Visual/Feel** / **UI** / **Config/Data** / 按类型分类每个故事：**逻辑** / **集成** / **视觉/感觉** / **UI** / **配置/数据**
+- Identify which stories require automated test evidence vs. manual QA / 识别哪些故事需要自动化测试证据 vs 手动 QA
+- Flag any stories with missing acceptance criteria or missing test evidence that would block QA / 标记任何缺少验收标准或缺少测试证据会阻塞 QA 的故事
+- Estimate manual QA effort (number of test sessions needed) / 估算手动 QA 工作量（需要的测试会话数）
+- Check `tests/smoke/` for smoke test scenarios; for each, assess whether it can be verified given the current build. Produce a smoke check verdict: **PASS** / **PASS WITH WARNINGS [list]** / **FAIL [list of failures]** / 检查 `tests/smoke/` 中的冒烟测试场景；对每个场景，评估是否可以在当前构建下验证。产生冒烟检查裁决：**PASS** / **PASS WITH WARNINGS [列表]** / **FAIL [失败列表]**
+- Produce a strategy summary table and smoke check result: / 生成策略摘要表和冒烟检查结果：
 
   | Story | Type | Automated Required | Manual Required | Blocker? |
   |-------|------|--------------------|-----------------|----------|
 
-  **Smoke Check**: [PASS / PASS WITH WARNINGS / FAIL] — [details if not PASS]
+  **Smoke Check**: [PASS / PASS WITH WARNINGS / FAIL] — [details if not PASS] / **冒烟检查**：[PASS / PASS WITH WARNINGS / FAIL] — [若非 PASS 则详情]
 
-If the smoke check result is **FAIL**, the qa-lead must list the failures prominently. QA cannot proceed past the strategy phase with a failed smoke check.
+If the smoke check result is **FAIL**, the qa-lead must list the failures prominently. QA cannot proceed past the strategy phase with a failed smoke check. / 如果冒烟检查结果为 **FAIL**，qa-lead 必须醒目列出失败项。QA 无法在冒烟检查失败的情况下通过策略阶段。
 
-Present the qa-lead's full strategy to the user, then use `AskUserQuestion`:
+Present the qa-lead's full strategy to the user, then use `AskUserQuestion`: / 向用户展示 qa-lead 的完整策略，然后使用 `AskUserQuestion`：
 
 ```
 question: "QA Strategy Review"
@@ -72,11 +78,18 @@ options:
   - "Adjust story types before proceeding"
   - "Skip blocked stories and proceed with the rest"
   - "Smoke check failed — fix issues and re-run /team-qa"
+> **中文翻译**：
+> 问题："QA 策略审查"
+> 选项：
+>   - "看起来不错 — 继续到测试计划"
+>   - "继续前调整故事类型"
+>   - "跳过被阻塞的故事，继续处理其余部分"
+>   - "冒烟检查失败 — 修复问题并重新运行 /team-qa"
   - "Cancel — resolve blockers first"
 ```
 
-If smoke check **FAIL**: do not proceed to Phase 3. Surface the failures and stop. The user must fix them and re-run `/team-qa`.
-If smoke check **PASS WITH WARNINGS**: note the warnings for the sign-off report and continue.
+If smoke check **FAIL**: do not proceed to Phase 3. Surface the failures and stop. The user must fix them and re-run `/team-qa`. / 如果冒烟检查 **FAIL**：不要继续到第 3 阶段。展示失败项并停止。用户必须修复它们并重新运行 `/team-qa`。
+If smoke check **PASS WITH WARNINGS**: note the warnings for the sign-off report and continue. / 如果冒烟检查 **PASS WITH WARNINGS**：记录警告用于签署报告并继续。
 If blockers are present: list them explicitly. The user may choose to skip blocked stories or cancel the cycle.
 
 ### Phase 3: Test Plan Generation

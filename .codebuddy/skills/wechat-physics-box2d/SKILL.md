@@ -6,25 +6,25 @@ agent: wechat-minigame-specialist
 
 # /wechat-physics-box2d
 
-Initialize and configure the Box2D physics engine (via WASM) for 2D physics simulation in WeChat Mini Games. All physics interactions are abstracted through the unified `IPhysicsWorld` interface.
+Initialize and configure the Box2D physics engine (via WASM) for 2D physics simulation in WeChat Mini Games. All physics interactions are abstracted through the unified `IPhysicsWorld` interface. / 初始化并配置 Box2D 物理引擎（通过 WASM）用于微信小游戏中的 2D 物理模拟。所有物理交互都通过统一的 `IPhysicsWorld` 接口进行抽象。
 
-## When to Use
+## When to Use / 何时使用
 
-- Creating a 2D game that requires physics (platformers, puzzle games, ragdoll)
-- Setting up collision detection and response
-- Implementing 2D rigid body dynamics
-- Need a lightweight physics solution (~500KB WASM)
-- Following the unified physics interface pattern
+- Creating a 2D game that requires physics (platformers, puzzle games, ragdoll) / 创建需要物理的 2D 游戏（平台游戏、益智游戏、布娃娃）
+- Setting up collision detection and response / 设置碰撞检测和响应
+- Implementing 2D rigid body dynamics / 实现 2D 刚体动力学
+- Need a lightweight physics solution (~500KB WASM) / 需要轻量级物理解决方案（约 500KB WASM）
+- Following the unified physics interface pattern / 遵循统一的物理接口模式
 
-## What It Does
+## What It Does / 功能
 
-1. **Loads Box2D WASM module** — Fetches and initializes the compiled Box2D WebAssembly binary
-2. **Creates IPhysicsWorld** — Instantiates `Box2DPhysicsWorld` implementing the unified interface
-3. **Configures physics world** — Sets up gravity, iteration counts, and collision categories
-4. **Provides body factory** — Creates static, dynamic, and kinematic bodies via `IPhysicsBody`
-5. **Sets up joint system** — Configures distance, revolute, prismatic, and weld joints via `IPhysicsJoint`
+1. **Loads Box2D WASM module** — Fetches and initializes the compiled Box2D WebAssembly binary / **加载 Box2D WASM 模块** — 获取并初始化编译的 Box2D WebAssembly 二进制文件
+2. **Creates IPhysicsWorld** — Instantiates `Box2DPhysicsWorld` implementing the unified interface / **创建 IPhysicsWorld** — 实例化实现统一接口的 `Box2DPhysicsWorld`
+3. **Configures physics world** — Sets up gravity, iteration counts, and collision categories / **配置物理世界** — 设置重力、迭代次数和碰撞类别
+4. **Provides body factory** — Creates static, dynamic, and kinematic bodies via `IPhysicsBody` / **提供刚体工厂** — 通过 `IPhysicsBody` 创建静态、动态和运动刚体
+5. **Sets up joint system** — Configures distance, revolute, prismatic, and weld joints via `IPhysicsJoint` / **设置关节系统** — 通过 `IPhysicsJoint` 配置距离关节、旋转关节、棱柱关节和焊接关节
 
-## Usage
+## Usage / 用法
 
 ```
 /wechat-physics-box2d init [gravity-x] [gravity-y]
@@ -32,18 +32,18 @@ Initialize and configure the Box2D physics engine (via WASM) for 2D physics simu
 /wechat-physics-box2d joint [type] [body-a] [body-b]
 ```
 
-## Example
+## Example / 示例
 
 ```
 /wechat-physics-box2d init 0 -9.8
 ```
 
-This will:
-- Load Box2D WASM module from `libs/box2d.wasm`
-- Create a `Box2DPhysicsWorld` with gravity (0, -9.8)
-- Register the world with the physics factory
-- Create TypeScript interface files for `IPhysicsWorld`, `IPhysicsBody`, `IPhysicsJoint`
-- Add boilerplate for contact listener and collision filtering
+This will: / 这将：
+- Load Box2D WASM module from `libs/box2d.wasm` / 从 `libs/box2d.wasm` 加载 Box2D WASM 模块
+- Create a `Box2DPhysicsWorld` with gravity (0, -9.8) / 创建重力为 (0, -9.8) 的 `Box2DPhysicsWorld`
+- Register the world with the physics factory / 将世界注册到物理工厂
+- Create TypeScript interface files for `IPhysicsWorld`, `IPhysicsBody`, `IPhysicsJoint` / 为 `IPhysicsWorld`、`IPhysicsBody`、`IPhysicsJoint` 创建 TypeScript 接口文件
+- Add boilerplate for contact listener and collision filtering / 为接触监听器和碰撞过滤添加样板代码
 
 ## Output
 

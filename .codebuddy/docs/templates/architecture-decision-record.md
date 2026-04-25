@@ -1,33 +1,33 @@
 # ADR-[NNNN]: [Title] / 架构决策记录-[NNNN]：[标题]
 
-## Status
+## Status / 状态
 
-[Proposed | Accepted | Deprecated | Superseded by ADR-XXXX]
+[Proposed | Accepted | Deprecated | Superseded by ADR-XXXX] / [提议 | 已接受 | 已弃用 | 被ADR-XXXX取代]
 
-## Date
+## Date / 日期
 
-[YYYY-MM-DD — when this ADR was written]
+[YYYY-MM-DD — when this ADR was written] / [YYYY-MM-DD — 当此ADR被编写时]
 
-## Last Verified
+## Last Verified / 最后验证
 
-[YYYY-MM-DD — when this ADR was last confirmed accurate against the current
-engine version and design. Update this date when you re-read and confirm it
-is still correct, even if nothing changed.]
+[YYYY-MM-DD — when this ADR was last confirmed accurate against the current / [YYYY-MM-DD — 当此ADR最后被确认与当前引擎版本和设计一致时。
+engine version and design. Update this date when you re-read and confirm it / 当您重新阅读并确认它仍然正确时，请更新此日期，
+is still correct, even if nothing changed.] / 即使没有任何变化。]
 
-## Decision Makers
+## Decision Makers / 决策者
 
-[Who was involved in this decision]
+[Who was involved in this decision] / [谁参与了此决策]
 
-## Summary
+## Summary / 摘要
 
-[2 sentences: what problem this ADR solves, and what was decided. Written for
-tiered context loading — a skill scanning 20 ADRs uses this to decide whether
-to read the full decision. Be specific: name the system, the problem, and the
-chosen approach.]
+[2 sentences: what problem this ADR solves, and what was decided. Written for / [2句话：此ADR解决了什么问题，以及决定了什么。为
+tiered context loading — a skill scanning 20 ADRs uses this to decide whether / 分层上下文加载而编写——一个扫描20个ADR的技能使用此来
+to read the full decision. Be specific: name the system, the problem, and the / 决定是否阅读完整决策。要具体：命名系统、问题以及
+chosen approach.] / 选择的方法。]
 
-## Engine Compatibility
+## Engine Compatibility / 引擎兼容性
 
-| Field | Value |
+| Field / 字段 | Value / 值 |
 |-------|-------|
 | **Engine** | [e.g. Godot 4.6 / Unity 6 / Unreal Engine 5.4] |
 | **Domain** | [Physics / Rendering / UI / Audio / Navigation / Animation / Networking / Core / Input / Scripting] |
@@ -36,12 +36,12 @@ chosen approach.]
 | **Post-Cutoff APIs Used** | [Specific APIs from post-cutoff engine versions this decision depends on, or "None"] |
 | **Verification Required** | [Concrete behaviours to test against the target engine version before shipping, or "None"] |
 
-> **Note**: If Knowledge Risk is MEDIUM or HIGH, this ADR must be re-validated if the
-> project upgrades engine versions. Flag it as "Superseded" and write a new ADR.
+> **Note**: If Knowledge Risk is MEDIUM or HIGH, this ADR must be re-validated if the / > **注意**: 如果知识风险为中或高，如果项目升级引擎版本，必须重新验证此ADR。
+> project upgrades engine versions. Flag it as "Superseded" and write a new ADR. / 将其标记为"被取代"并编写新的ADR。
 
 ## ADR Dependencies
 
-| Field | Value |
+| Field / 字段 | Value / 值 |
 |-------|-------|
 | **Depends On** | [ADR-NNNN (must be Accepted before this can be implemented), or "None"] |
 | **Enables** | [ADR-NNNN (this ADR unlocks that decision), or "None"] |

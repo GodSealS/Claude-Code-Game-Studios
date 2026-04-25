@@ -6,24 +6,24 @@ agent: wechat-minigame-specialist
 
 # /wechat-physics-jolt
 
-Initialize and configure the JoltPhysics engine (via WASM) for high-performance 3D physics simulation in WeChat Mini Games. All physics interactions are abstracted through the unified `IPhysicsWorld` interface.
+Initialize and configure the JoltPhysics engine (via WASM) for high-performance 3D physics simulation in WeChat Mini Games. All physics interactions are abstracted through the unified `IPhysicsWorld` interface. / 初始化并配置 JoltPhysics 引擎（通过 WASM）用于微信小游戏中的高性能 3D 物理模拟。所有物理交互都通过统一的 `IPhysicsWorld` 接口进行抽象。
 
-## When to Use
+## When to Use / 何时使用
 
-- Creating a 3D game requiring high-fidelity physics (vehicle simulation, character controllers, large-scale worlds)
-- Need deterministic physics simulation for networked multiplayer
-- Standard Bullet performance is insufficient for your scene complexity
-- Need built-in character controller support
-- Following the unified physics interface pattern
+- Creating a 3D game requiring high-fidelity physics (vehicle simulation, character controllers, large-scale worlds) / 创建需要高保真物理的 3D 游戏（车辆模拟、角色控制器、大型世界）
+- Need deterministic physics simulation for networked multiplayer / 需要用于网络多人游戏的可确定性物理模拟
+- Standard Bullet performance is insufficient for your scene complexity / 标准的 Bullet 性能不足以满足你的场景复杂度
+- Need built-in character controller support / 需要内置的角色控制器支持
+- Following the unified physics interface pattern / 遵循统一的物理接口模式
 
-## What It Does
+## What It Does / 功能
 
-1. **Loads JoltPhysics WASM module** — Fetches and initializes the compiled JoltPhysics WebAssembly binary
-2. **Creates IPhysicsWorld** — Instantiates `JoltPhysicsWorld` implementing the unified interface
-3. **Configures physics world** — Sets up gravity, broadphase layers, object layers, and broadphase layer interface
-4. **Provides body factory** — Creates static, dynamic, and kinematic bodies via `IPhysicsBody`
-5. **Sets up constraint system** — Configures point, distance, hinge, slider, cone, and swing-twist constraints via `IPhysicsJoint`
-6. **Character controller support** — Built-in character controller with slide, stair climbing
+1. **Loads JoltPhysics WASM module** — Fetches and initializes the compiled JoltPhysics WebAssembly binary / **加载 JoltPhysics WASM 模块** — 获取并初始化编译的 JoltPhysics WebAssembly 二进制文件
+2. **Creates IPhysicsWorld** — Instantiates `JoltPhysicsWorld` implementing the unified interface / **创建 IPhysicsWorld** — 实例化实现统一接口的 `JoltPhysicsWorld`
+3. **Configures physics world** — Sets up gravity, broadphase layers, object layers, and broadphase layer interface / **配置物理世界** — 设置重力、宽相层、对象层和宽相层接口
+4. **Provides body factory** — Creates static, dynamic, and kinematic bodies via `IPhysicsBody` / **提供刚体工厂** — 通过 `IPhysicsBody` 创建静态、动态和运动刚体
+5. **Sets up constraint system** — Configures point, distance, hinge, slider, cone, and swing-twist constraints via `IPhysicsJoint` / **设置约束系统** — 通过 `IPhysicsJoint` 配置点约束、距离约束、铰链约束、滑动约束、锥形约束和摆动扭曲约束
+6. **Character controller support** — Built-in character controller with slide, stair climbing / **角色控制器支持** — 具有滑动和爬楼梯功能的内置角色控制器
 
 ## Usage
 

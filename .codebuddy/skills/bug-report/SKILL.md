@@ -6,8 +6,7 @@ user-invocable: true
 allowed-tools: Read, Glob, Grep, Write
 ---
 
-## Phase 1: Parse Arguments
-> **中文翻译**：## 第一阶段：解析参数
+## Phase 1: Parse Arguments / 第 1 阶段：解析参数
 
 
 Determine the mode from the argument:
@@ -30,7 +29,7 @@ If no argument is provided, ask the user for a bug description before proceeding
 
 ---
 
-## Phase 2A: Description Mode
+## Phase 2A: Description Mode / 第 2A 阶段：描述模式
 
 1. **Parse the description** for key information: what broke, when, how to reproduce it, and what the expected behavior is.
 
@@ -90,8 +89,7 @@ If no argument is provided, ask the user for a bug description before proceeding
 
 ---
 
-## Phase 2B: Analyze Mode
-> **中文翻译**：## 阶段 2B：分析模式
+## Phase 2B: Analyze Mode / 第 2B 阶段：分析模式
 
 
 1. **Read the target file(s)** specified in the argument.

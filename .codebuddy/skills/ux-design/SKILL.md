@@ -7,11 +7,11 @@ allowed-tools: Read, Glob, Grep, Write, Edit, AskUserQuestion, Task
 agent: ux-designer
 ---
 
-When this skill is invoked:
+When this skill is invoked: / 当调用此技能时：
 
-## 1. Parse Arguments & Determine Mode
+## 1. Parse Arguments & Determine Mode / 第 1 步：解析参数和确定模式
 
-Three authoring modes exist based on the argument:
+Three authoring modes exist based on the argument: / 基于参数有三种创作模式：
 
 | Argument | Mode | Output file |
 |----------|------|-------------|
@@ -20,109 +20,109 @@ Three authoring modes exist based on the argument:
 | Any other value (e.g., `main-menu`, `inventory`) | UX spec for a screen or flow | `design/ux/[argument].md` |
 | No argument | Ask the user | (see below) |
 
-**If no argument is provided**, do not fail — ask instead. Use `AskUserQuestion`:
-- "What are we designing today?"
-  - Options: "A specific screen or flow (I'll name it)", "The game HUD", "The interaction pattern library", "I'm not sure — help me figure it out"
+**If no argument is provided**, do not fail — ask instead. Use `AskUserQuestion`: / **如果未提供参数**，不要失败，而是询问。使用 `AskUserQuestion`：
+- "What are we designing today?" / "我们今天要设计什么？"
+  - Options: "A specific screen or flow (I'll name it)", "The game HUD", "The interaction pattern library", "I'm not sure — help me figure it out" / 选项："特定的屏幕或流程（我会命名）"、"游戏 HUD"、"交互模式库"、"我不确定 - 帮我搞清楚"
 
-If the user selects "I'll name it" or types a screen name, normalize it to kebab-case
-for the filename (e.g., "Main Menu" becomes `main-menu`).
+If the user selects "I'll name it" or types a screen name, normalize it to kebab-case / 如果用户选择"我会命名"或输入屏幕名称，将其规范化为 kebab-case
+for the filename (e.g., "Main Menu" becomes `main-menu`). / 用于文件名（例如，"Main Menu" 变成 `main-menu`）
 
 ---
 
-## 2. Gather Context (Read Phase)
+## 2. Gather Context (Read Phase) / 第 2 步：收集上下文（阅读阶段）
 
-Read all relevant context **before** asking the user anything. The skill's value
-comes from arriving informed.
+Read all relevant context **before** asking the user anything. The skill's value / 在询问用户任何问题之前，**先**阅读所有相关上下文。此技能的价值
+comes from arriving informed. / 在于了解情况后开始工作
 
-### 2a: Required Reads
+### 2a: Required Reads / 必需阅读
 
-- **Game concept**: Read `design/gdd/game-concept.md` — if missing, warn:
-  > "No game concept found. Run `/brainstorm` first to establish the game's
-  > foundation before designing UX."
-  > Continue anyway if the user asks.
+- **Game concept**: Read `design/gdd/game-concept.md` — if missing, warn: / **游戏概念**：阅读 `design/gdd/game-concept.md` — 如果缺失，警告：
+  > "No game concept found. Run `/brainstorm` first to establish the game's / > "未找到游戏概念。请先运行 `/brainstorm` 来建立游戏的
+  > foundation before designing UX." / > 基础，然后再进行 UX 设计"
+  > Continue anyway if the user asks. / > 如果用户要求，无论如何继续
 
-### 2b: Player Journey
+### 2b: Player Journey / 玩家旅程
 
-Read `design/player-journey.md` if it exists. For each relevant section, extract:
-- Which journey phase(s) does this screen appear in?
-- What is the player's emotional state on arrival at this screen?
-- What player need is this screen serving in the journey?
-- What critical moments (from the journey map) does this screen deliver?
+Read `design/player-journey.md` if it exists. For each relevant section, extract: / 如果存在，阅读 `design/player-journey.md`。对于每个相关部分，提取：
+- Which journey phase(s) does this screen appear in? / 此屏幕出现在哪个旅程阶段？
+- What is the player's emotional state on arrival at this screen? / 玩家到达此屏幕时的情感状态是什么？
+- What player need is this screen serving in the journey? / 此屏幕在旅程中满足玩家的什么需求？
+- What critical moments (from the journey map) does this screen deliver? / 此屏幕提供哪些关键时刻（来自旅程地图）？
 
-If the player journey file does not exist, note the gap and proceed:
-> "No player journey map found at `design/player-journey.md`. Designing without it
-> means we'll be making assumptions about player context. Consider running a player
-> journey session after this spec is drafted."
+If the player journey file does not exist, note the gap and proceed: / 如果玩家旅程文件不存在，记录差距并继续：
+> "No player journey map found at `design/player-journey.md`. Designing without it / > "在 `design/player-journey.md` 未找到玩家旅程地图。没有它进行设计
+> means we'll be making assumptions about player context. Consider running a player / > 意味着我们将对玩家上下文做出假设。考虑在此规范草案完成后
+> journey session after this spec is drafted." / > 运行一个玩家旅程会话"
 
-### 2c: GDD UI Requirements
+### 2c: GDD UI Requirements / GDD UI 要求
 
-Glob `design/gdd/*.md` and grep for `UI Requirements` sections. Read any GDD whose
-UI Requirements section references this screen by name or category.
+Glob `design/gdd/*.md` and grep for `UI Requirements` sections. Read any GDD whose / Glob `design/gdd/*.md` 并 grep 查找 `UI Requirements` 部分。阅读任何
+UI Requirements section references this screen by name or category. / UI Requirements 部分按名称或类别引用此屏幕的 GDD
 
-These GDD UI Requirements are the **requirements input** to this spec. Collect them
-as a list of constraints the spec must satisfy.
+These GDD UI Requirements are the **requirements input** to this spec. Collect them / 这些 GDD UI 要求是此规范的**需求输入**。将它们收集起来
+as a list of constraints the spec must satisfy. / 作为规范必须满足的约束条件列表
 
-If designing the HUD, read ALL GDD UI Requirements sections — the HUD aggregates
-requirements from every system.
+If designing the HUD, read ALL GDD UI Requirements sections — the HUD aggregates / 如果设计 HUD，阅读所有 GDD UI 要求部分 — HUD 聚合了
+requirements from every system. / 来自每个系统的要求
 
-### 2d: Existing UX Specs
+### 2d: Existing UX Specs / 现有 UX 规范
 
-Glob `design/ux/*.md` and note which screens already have specs. For screens that
-will link to or from the current screen, read their navigation/flow sections to
-find the entry and exit points this spec must match.
+Glob `design/ux/*.md` and note which screens already have specs. For screens that / Glob `design/ux/*.md` 并记录哪些屏幕已有规范。对于将链接到
+will link to or from the current screen, read their navigation/flow sections to / 或从此当前屏幕链接的屏幕，阅读它们的导航/流程部分以
+find the entry and exit points this spec must match. / 找到此规范必须匹配的入口和出口点
 
-### 2e: Interaction Pattern Library
+### 2e: Interaction Pattern Library / 交互模式库
 
-If `design/ux/interaction-patterns.md` exists, read the pattern catalog index
-(the list of pattern names and their one-line descriptions). Do not read full
-pattern details — just the catalog. This tells you which patterns already exist
-so you can reference them rather than reinvent them.
+If `design/ux/interaction-patterns.md` exists, read the pattern catalog index / 如果 `design/ux/interaction-patterns.md` 存在，阅读模式目录索引
+(the list of pattern names and their one-line descriptions). Do not read full / （模式名称及其一行描述的列表）。不要阅读完整的
+pattern details — just the catalog. This tells you which patterns already exist / 模式细节 — 只需目录。这告诉你哪些模式已经存在
+so you can reference them rather than reinvent them. / 以便你可以引用它们而不是重新发明它们
 
-### 2f: Art Bible
+### 2f: Art Bible / 艺术圣经
 
-Check for `design/art/art-bible.md`. If found, read the visual direction
-section. UX layout must align with the aesthetic commitments already made.
+Check for `design/art/art-bible.md`. If found, read the visual direction / 检查 `design/art/art-bible.md`。如果找到，阅读视觉方向
+section. UX layout must align with the aesthetic commitments already made. / 部分。UX 布局必须与已做出的美学承诺保持一致
 
-### 2g: Accessibility Requirements
+### 2g: Accessibility Requirements / 可访问性要求
 
-Check for `design/accessibility-requirements.md`. If found, read it. The spec
-must satisfy the accessibility tier committed to there.
+Check for `design/accessibility-requirements.md`. If found, read it. The spec / 检查 `design/accessibility-requirements.md`。如果找到，阅读它。规范
+must satisfy the accessibility tier committed to there. / 必须满足那里承诺的可访问性层级
 
-### 2h: Input Method (from Project Config)
+### 2h: Input Method (from Project Config) / 输入方法（来自项目配置）
 
-Read `.codebuddy/docs/technical-preferences.md` and extract the `## Input & Platform`
-section. Store these values for use throughout the skill — they drive the
-Interaction Map and inform accessibility requirements:
+Read `.codebuddy/docs/technical-preferences.md` and extract the `## Input & Platform` / 阅读 `.codebuddy/docs/technical-preferences.md` 并提取 `## Input & Platform`
+section. Store these values for use throughout the skill — they drive the / 部分。存储这些值以在整个技能中使用 — 它们驱动
+Interaction Map and inform accessibility requirements: / 交互地图并告知可访问性要求：
 
-- **Input Methods** — e.g., Keyboard/Mouse, Gamepad, Touch, Mixed
-- **Primary Input** — the dominant input for this game
-- **Gamepad Support** — Full / Partial / None
-- **Touch Support** — Full / Partial / None
-- **Target Platforms** — for safe zone and aspect ratio decisions
+- **Input Methods** — e.g., Keyboard/Mouse, Gamepad, Touch, Mixed / **输入方法** — 例如，键盘/鼠标、游戏手柄、触摸、混合
+- **Primary Input** — the dominant input for this game / **主要输入** — 此游戏的主要输入
+- **Gamepad Support** — Full / Partial / None / **游戏手柄支持** — 完全 / 部分 / 无
+- **Touch Support** — Full / Partial / None / **触摸支持** — 完全 / 部分 / 无
+- **Target Platforms** — for safe zone and aspect ratio decisions / **目标平台** — 用于安全区域和宽高比决策
 
-If the section is unconfigured (`[TO BE CONFIGURED]`), ask once:
-> "Input methods aren't configured yet. What does this game target?"
-> Options: "Keyboard/Mouse only", "Gamepad only", "Both (PC + Console)", "Touch (mobile)", "All of the above"
+If the section is unconfigured (`[TO BE CONFIGURED]`), ask once: / 如果该部分未配置（`[TO BE CONFIGURED]`），询问一次：
+> "Input methods aren't configured yet. What does this game target?" / > "输入方法尚未配置。此游戏的目标是什么？"
+> Options: "Keyboard/Mouse only", "Gamepad only", "Both (PC + Console)", "Touch (mobile)", "All of the above" / > 选项："仅键盘/鼠标"、"仅游戏手柄"、"两者都有（PC + 主机）"、"触摸（移动端）"、"以上所有"
 >
-> (Run `/setup-engine` to save this permanently so you won't be asked again.)
+> (Run `/setup-engine` to save this permanently so you won't be asked again.) / > （运行 `/setup-engine` 永久保存此设置，这样你就不会再被询问）
 
-Store the answer for the rest of this session. Do **not** ask again per section
-or per screen.
+Store the answer for the rest of this session. Do **not** ask again per section / 存储答案用于此会话的其余部分。每个部分或每个屏幕**不要**再次询问
+or per screen. / 
 
-### 2i: Present Context Summary
+### 2i: Present Context Summary / 呈现上下文摘要
 
-Before any design work, present a brief summary to the user:
+Before any design work, present a brief summary to the user: / 在任何设计工作之前，向用户呈现简要摘要：
 
-> **Designing: [Screen/Flow Name]**
-> - Mode: [UX Spec / HUD Design / Pattern Library]
-> - Journey phase(s): [from player-journey.md, or "unknown — no journey map"]
-> - GDD requirements feeding this spec: [count and names, or "none found"]
-> - Related screens already specced: [list, or "none yet"]
-> - Known patterns available: [count, or "no pattern library yet"]
-> - Accessibility tier: [from requirements doc, or "not yet defined"]
-> - Input methods: [from technical-preferences.md, or "asked above"]
+> **Designing: [Screen/Flow Name]** / > **设计：[屏幕/流程名称]**
+> - Mode: [UX Spec / HUD Design / Pattern Library] / > - 模式：[UX 规范 / HUD 设计 / 模式库]
+> - Journey phase(s): [from player-journey.md, or "unknown — no journey map"] / > - 旅程阶段：[来自 player-journey.md，或"未知 — 无旅程地图"]
+> - GDD requirements feeding this spec: [count and names, or "none found"] / > - 提供此规范的 GDD 要求：[计数和名称，或"未找到"]
+> - Related screens already specced: [list, or "none yet"] / > - 已规范的关联屏幕：[列表，或"尚无"]
+> - Known patterns available: [count, or "no pattern library yet"] / > - 可用的已知模式：[计数，或"尚无模式库"]
+> - Accessibility tier: [from requirements doc, or "not yet defined"] / > - 可访问性层级：[来自要求文档，或"尚未定义"]
+> - Input methods: [from technical-preferences.md, or "asked above"] / > - 输入方法：[来自 technical-preferences.md，或"上面询问过"]
 
-Then ask: "Anything else I should read before we start, or shall we proceed?"
+Then ask: "Anything else I should read before we start, or shall we proceed?" / 然后询问："在我们开始之前，还有其他我应该阅读的内容吗，或者我们可以继续了吗？"
 
 ---
 

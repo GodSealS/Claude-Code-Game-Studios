@@ -1,17 +1,17 @@
 # Release Notes: [Game Title] v[Version] / 发布说明：[游戏名称] v[版本]
 
-*Released: [Date]*
+*Released: [Date]* / *发布于：[日期]*
 
 ---
 
 ## Headline
 
-> [One compelling sentence summarizing the most exciting part of this release.
-> This is what appears in store update notifications and social media.]
+> [One compelling sentence summarizing the most exciting part of this release. / [一句话总结本次发布最令人兴奋的部分。
+> This is what appears in store update notifications and social media.] / 这将出现在商店更新通知和社交媒体中。]
 
 ---
 
-## What's New
+## What's New / 新增内容
 
 ### [Major Feature 1 Name]
 [2-4 sentences describing the feature. Focus on what players can DO, not
@@ -22,13 +22,13 @@ how it works internally. Include a screenshot or GIF reference if applicable.]
 
 ---
 
-## Gameplay Changes
+## Gameplay Changes / 玩法更改
 
-### Balance Adjustments
+### Balance Adjustments / 平衡调整
 
-| Target | Change | Before | After | Context |
+| Target / 目标 | Change / 更改 | Before / 之前 | After / 之后 | Context / 背景 |
 | ---- | ---- | ---- | ---- | ---- |
-| [Weapon/Ability/Item] | [What changed] | [Old value] | [New value] | [Why — 1 sentence] |
+| [Weapon/Ability/Item] / [武器/技能/物品] | [What changed] / [更改内容] | [Old value] / [旧值] | [New value] / [新值] | [Why — 1 sentence] / [为什么—1句话] |
 | | | | | |
 
 ### Mechanic Changes

@@ -6,29 +6,29 @@ user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Bash
 ---
 
-# WeChat Mini Game Build and Package
+# WeChat Mini Game Build and Package / 微信小游戏构建和打包
 
-This skill builds and packages a WeChat Mini Game for submission. It validates package size, optimizes assets, checks configuration, and generates a submission checklist.
+This skill builds and packages a WeChat Mini Game for submission. It validates package size, optimizes assets, checks configuration, and generates a submission checklist. / 此技能构建和打包微信小游戏以供提交。它验证包大小、优化资产、检查配置并生成提交清单。
 
 ---
 
-## Phase 1: Validate Project
+## Phase 1: Validate Project / 第 1 阶段：验证项目
 
-### Check Project Structure
+### Check Project Structure / 检查项目结构
 
-Verify the WeChat Mini Game project exists:
+Verify the WeChat Mini Game project exists: / 验证微信小游戏项目是否存在：
 
 ```bash
-# Check for required files
+# Check for required files / 检查必需文件
 Read("miniprogram/game.json")
 Read("miniprogram/app.json")
 Read("miniprogram/game.js")
 ```
 
-If files don't exist, inform the user:
-> "WeChat Mini Game project not found. Run `/setup-wechat-minigame` first to initialize the project."
+If files don't exist, inform the user: / 如果文件不存在，通知用户：
+> "WeChat Mini Game project not found. Run `/setup-wechat-minigame` first to initialize the project." / > "未找到微信小游戏项目。请先运行 `/setup-wechat-minigame` 来初始化项目。"
 
-### Read Configuration
+### Read Configuration / 读取配置
 
 ```bash
 Read("miniprogram/game.json")
@@ -39,11 +39,11 @@ Read(".codebuddy/docs/technical-preferences.md")
 
 ---
 
-## Phase 2: Package Size Analysis
+## Phase 2: Package Size Analysis / 第 2 阶段：包大小分析
 
-### Calculate Package Size
+### Calculate Package Size / 计算包大小
 
-Check the total size of the main package:
+Check the total size of the main package: / 检查主包的总大小：
 
 ```bash
 # Calculate sizes
@@ -53,9 +53,9 @@ Bash("find miniprogram/images -type f 2>/dev/null | xargs du -ch | grep total")
 Bash("find miniprogram/audio -type f 2>/dev/null | xargs du -ch | grep total")
 ```
 
-### Size Report
+### Size Report / 大小报告
 
-Generate a size report:
+Generate a size report: / 生成大小报告：
 
 ```
 📦 Package Size Analysis

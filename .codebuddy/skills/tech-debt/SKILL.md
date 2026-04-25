@@ -6,16 +6,16 @@ user-invocable: true
 allowed-tools: Read, Glob, Grep, Write
 ---
 
-## Phase 1: Parse Subcommand
+## Phase 1: Parse Subcommand / 第 1 阶段：解析子命令
 
 Determine the mode from the argument:
 
-- `scan` — Scan the codebase for tech debt indicators
-- `add` — Add a new tech debt entry manually
-- `prioritize` — Re-prioritize the existing debt register
-- `report` — Generate a summary report of current debt status
+- `scan` — Scan the codebase for tech debt indicators / 扫描代码库以查找技术债务指标
+- `add` — Add a new tech debt entry manually / 手动添加新技术债务条目
+- `prioritize` — Re-prioritize the existing debt register / 重新优先排序现有债务登记册
+- `report` — Generate a summary report of current debt status / 生成当前债务状态摘要报告
 
-If no subcommand is provided, output usage and stop. Verdict: **FAIL** — missing required subcommand.
+If no subcommand is provided, output usage and stop. Verdict: **FAIL** — missing required subcommand. / 如果未提供子命令，输出用法并停止。裁决：**FAIL** — 缺少必需子命令。
 
 ---
 

@@ -1,0 +1,124 @@
+{
+  "name": "_auto_437c8e0300184e2a8477edf440535b73",
+  "leadAgentId": "437c8e0300184e2a8477edf440535b73",
+  "workspacePath": "e:\\Work\\Claude-Code-Game-Studios",
+  "createdAt": "2026-04-23T14:19:10.252Z",
+  "options": {
+    "workspacePath": "e:\\Work\\Claude-Code-Game-Studios",
+    "isAutoTeam": true
+  },
+  "members": [
+    {
+      "memberId": "team-lead@_auto_437c8e0300184e2a8477edf440535b73",
+      "name": "team-lead",
+      "role": "Team Lead - coordinates the team and interacts with the user"
+    },
+    {
+      "memberId": "wechat-agents@_auto_437c8e0300184e2a8477edf440535b73",
+      "name": "wechat-agents",
+      "role": "Bilingualize wechat agents"
+    },
+    {
+      "memberId": "ue-agents@_auto_437c8e0300184e2a8477edf440535b73",
+      "name": "ue-agents",
+      "role": "Bilingualize UE agents"
+    },
+    {
+      "memberId": "unity-agents@_auto_437c8e0300184e2a8477edf440535b73",
+      "name": "unity-agents",
+      "role": "Bilingualize Unity agents"
+    },
+    {
+      "memberId": "agents-batch1@_auto_437c8e0300184e2a8477edf440535b73",
+      "name": "agents-batch1",
+      "role": "Bilingualize other agents batch1"
+    },
+    {
+      "memberId": "skills-batch1@_auto_437c8e0300184e2a8477edf440535b73",
+      "name": "skills-batch1",
+      "role": "Bilingualize skills batch 1"
+    },
+    {
+      "memberId": "skills-batch2@_auto_437c8e0300184e2a8477edf440535b73",
+      "name": "skills-batch2",
+      "role": "Bilingualize skills batch 2"
+    },
+    {
+      "memberId": "skills-batch3@_auto_437c8e0300184e2a8477edf440535b73",
+      "name": "skills-batch3",
+      "role": "Bilingualize skills batch 3"
+    },
+    {
+      "memberId": "skills-batch4@_auto_437c8e0300184e2a8477edf440535b73",
+      "name": "skills-batch4",
+      "role": "Bilingualize skills batch 4"
+    },
+    {
+      "memberId": "skills-batch5@_auto_437c8e0300184e2a8477edf440535b73",
+      "name": "skills-batch5",
+      "role": "Bilingualize skills batch 5"
+    },
+    {
+      "memberId": "skills-batch6@_auto_437c8e0300184e2a8477edf440535b73",
+      "name": "skills-batch6",
+      "role": "Bilingualize skills batch 6"
+    },
+    {
+      "memberId": "skills-batch7@_auto_437c8e0300184e2a8477edf440535b73",
+      "name": "skills-batch7",
+      "role": "Bilingualize skills batch 7"
+    },
+    {
+      "memberId": "skills-batch8@_auto_437c8e0300184e2a8477edf440535b73",
+      "name": "skills-batch8",
+      "role": "Bilingualize skills batch 8"
+    },
+    {
+      "memberId": "skills-batch9@_auto_437c8e0300184e2a8477edf440535b73",
+      "name": "skills-batch9",
+      "role": "Bilingualize skills batch 9"
+    },
+    {
+      "memberId": "skills-batch10@_auto_437c8e0300184e2a8477edf440535b73",
+      "name": "skills-batch10",
+      "role": "Bilingualize skills batch 10"
+    },
+    {
+      "memberId": "skills-batch11@_auto_437c8e0300184e2a8477edf440535b73",
+      "name": "skills-batch11",
+      "role": "Bilingualize skills batch 11"
+    },
+    {
+      "memberId": "skills-batch12@_auto_437c8e0300184e2a8477edf440535b73",
+      "name": "skills-batch12",
+      "role": "Bilingualize skills batch 12"
+    },
+    {
+      "memberId": "skills-batch13@_auto_437c8e0300184e2a8477edf440535b73",
+      "name": "skills-batch13",
+      "role": "Bilingualize skills batch 13"
+    },
+    {
+      "memberId": "docs-bilingualizer@_auto_437c8e0300184e2a8477edf440535b73",
+      "name": "docs-bilingualizer",
+      "role": "Bilingualize docs files"
+    },
+    {
+      "memberId": "templates-batch1@_auto_437c8e0300184e2a8477edf440535b73",
+      "name": "templates-batch1",
+      "role": "Bilingualize docs templates batch1"
+    },
+    {
+      "memberId": "templates-batch2@_auto_437c8e0300184e2a8477edf440535b73",
+      "name": "templates-batch2",
+      "role": "Bilingualize docs templates batch2"
+    }
+  ],
+  "isAutoTeam": true
+}emplates-batch3@_auto_437c8e0300184e2a8477edf440535b73",
+      "name": "templates-batch3",
+      "role": "Bilingualize docs templates batch3"
+    }
+  ],
+  "isAutoTeam": true
+}

@@ -7,8 +7,7 @@ allowed-tools: Read, Glob, Grep
 agent: economy-designer
 ---
 
-## Phase 1: Identify Balance Domain
-> **中文翻译**：## 第 1 阶段：确定平衡域
+## Phase 1: Identify Balance Domain / 第 1 阶段：确定平衡域
 
 
 Determine the balance domain from `$ARGUMENTS[0]`:
@@ -43,8 +42,7 @@ Note every file read — they will appear in the Data Sources section of the rep
 
 ---
 
-## Phase 3: Read Design Document
-> **中文翻译**：## 第 3 阶段：阅读设计文档
+## Phase 3: Read Design Document / 第 3 阶段：阅读设计文档
 
 
 Read the GDD for the system from `design/gdd/` to understand intended design targets, tuning knobs, and expected value ranges. This is the baseline for "correct" behaviour.
@@ -87,8 +85,7 @@ Run domain-specific checks:
 
 ---
 
-## Phase 5: Output the Analysis
-> **中文翻译**：## 第 5 阶段：输出分析
+## Phase 5: Output the Analysis / 第 5 阶段：输出分析
 
 
 ```

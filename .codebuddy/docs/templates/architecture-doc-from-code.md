@@ -17,52 +17,52 @@
 
 ---
 
-## Context
+## Context / 背景
 
-**Problem Statement**: [What problem did this implementation solve?]
+**Problem Statement**: [What problem did this implementation solve? / 问题陈述：这个实现解决了什么问题？]
 
 **Background** (inferred from code):
 - [Context 1 — why this problem needed solving]
 - [Context 2 — constraints at the time]
 - [Context 3 — alternatives that were likely considered]
 
-**System Scope**: [What parts of the codebase does this affect?]
+**System Scope**: [What parts of the codebase does this affect? / 系统范围：这影响代码库的哪些部分？]
 
-**Stakeholders**:
-- [Role 1]: [Their concern or requirement]
-- [Role 2]: [Their concern or requirement]
+**Stakeholders** / 利益相关者：
+- [Role 1 / 角色1]: [Their concern or requirement / 他们的关注点或需求]
+- [Role 2 / 角色2]: [Their concern or requirement / 他们的关注点或需求]
 
 ---
 
-## Decision
+## Decision / 决策
 
-**Approach Taken** (as implemented):
+**Approach Taken** (as implemented) / 采用的方法（已实现）：
 
 [Describe the architectural approach found in the code]
 
-**Key Implementation Details**:
+**Key Implementation Details** / 关键实现细节：
 - [Detail 1]: [How it works]
 - [Detail 2]: [Pattern or structure used]
 - [Detail 3]: [Notable design choice]
 
-**Clarified Rationale** (from user):
+**Clarified Rationale** (from user) / 澄清的理由（来自用户）：
 - [Reason 1 — why this approach was chosen]
 - [Reason 2 — what problem it solves]
 - [Reason 3 — what benefit it provides]
 
-**Code Locations**:
-- `[file/path 1]`: [What's there]
-- `[file/path 2]`: [What's there]
+**Code Locations** / 代码位置：
+- `[file/path 1]`: [What's there / 内容说明]
+- `[file/path 2]`: [What's there / 内容说明]
 
 ---
 
-## Alternatives Considered
+## Alternatives Considered / 考虑的替代方案
 
-*(These may be inferred or clarified with user)*
+*(These may be inferred or clarified with user / 这些可能根据推断或与用户澄清确定)*
 
-### Alternative 1: [Approach Name]
+### Alternative 1: [Approach Name / 替代方案1名称]
 
-**Description**: [What this alternative would have been]
+**Description**: [What this alternative would have been / 描述：这个替代方案会是怎样的]
 
 **Pros**:
 - ✅ [Advantage 1]
@@ -74,9 +74,9 @@
 
 **Why Not Chosen**: [Reason — from user clarification or inference]
 
-### Alternative 2: [Approach Name]
+### Alternative 2: [Approach Name / 替代方案2名称]
 
-**Description**: [What this alternative would have been]
+**Description**: [What this alternative would have been / 描述：这个替代方案会是怎样的]
 
 **Pros**:
 - ✅ [Advantage 1]
@@ -86,9 +86,9 @@
 - ❌ [Disadvantage 1]
 - ❌ [Disadvantage 2]
 
-**Why Not Chosen**: [Reason]
+**Why Not Chosen**: [Reason / 未选择的原因]
 
-### Alternative 3: [Status Quo / No Change]
+### Alternative 3: [Status Quo / No Change / 替代方案3：维持现状/无变更]
 
 **Description**: [What "doing nothing" would mean]
 
@@ -96,9 +96,9 @@
 
 ---
 
-## Consequences
+## Consequences / 后果
 
-### Positive Consequences (Benefits Realized)
+### Positive Consequences (Benefits Realized) / 积极后果（已实现的收益）
 
 ✅ **[Benefit 1]**: [How the implementation provides this]
 
@@ -106,7 +106,7 @@
 
 ✅ **[Benefit 3]**: [Impact]
 
-### Negative Consequences (Trade-offs Accepted)
+### Negative Consequences (Trade-offs Accepted) / 消极后果（接受的权衡）
 
 ⚠️ **[Trade-off 1]**: [What was sacrificed or made harder]
 
@@ -114,7 +114,7 @@
 
 ⚠️ **[Trade-off 3]**: [Complexity or maintenance burden]
 
-### Neutral Consequences (Observations)
+### Neutral Consequences (Observations) / 中性后果（观察）
 
 ℹ️ **[Observation 1]**: [Emergent property or side effect]
 
@@ -122,7 +122,7 @@
 
 ---
 
-## Implementation Notes
+## Implementation Notes / 实现说明
 
 **Patterns Used**:
 - [Pattern 1]: [Where and why]
@@ -146,7 +146,7 @@
 
 ---
 
-## Validation
+## Validation / 验证
 
 **How We Know This Works**:
 - ✅ [Evidence 1 — e.g., "6 months in production without issues"]
@@ -163,7 +163,7 @@
 
 ---
 
-## Open Questions
+## Open Questions / 未决问题
 
 **Unresolved During Reverse-Documentation**:
 1. **[Question 1]**: [What's unclear about the decision or implementation?]
@@ -174,7 +174,7 @@
 
 ---
 
-## Follow-Up Work
+## Follow-Up Work / 后续工作
 
 **Immediate**:
 - [ ] [Task 1 — e.g., "Add missing unit tests"]
@@ -189,7 +189,7 @@
 
 ---
 
-## Related Decisions
+## Related Decisions / 相关决策
 
 **Depends On** (ADRs this builds upon):
 - [ADR-XXX]: [Related decision]
@@ -205,7 +205,7 @@
 
 ---
 
-## References
+## References / 参考
 
 **Code Locations**:
 - `[path/file 1]`: [Primary implementation]
@@ -220,7 +220,7 @@
 
 ---
 
-## Version History
+## Version History / 版本历史
 
 | Date | Author | Changes |
 |------|--------|---------|
@@ -229,7 +229,7 @@
 
 ---
 
-## Status Legend
+## Status Legend / 状态图例
 
 - **Proposed**: Under discussion, not implemented
 - **Accepted**: Decided, implementation in progress
@@ -247,7 +247,7 @@
 
 ---
 
-## Appendix: Code Snippets
+## Appendix: Code Snippets / 附录：代码片段
 
 **Key Implementation Pattern**:
 

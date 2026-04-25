@@ -11,57 +11,56 @@
 > - `docs/accessibility-requirements.md` — accessibility commitments per feature
 > - `docs/ux/ux-spec-[screen].md` — individual screen specs that reference patterns
 
-> **Why this document exists**: Every UI screen spec should be able to say
-> "uses Button (Primary) pattern" rather than re-specifying hover states,
-> press animations, focus behavior, keyboard handling, and screen reader
-> announcements from scratch. This library is the single source of truth for
-> reusable interaction behaviors. When a screen spec references a pattern name,
-> the programmer looks it up here. When the behavior changes, it changes here
-> and applies everywhere.
+> **Why this document exists** / **本文档存在的原因**：Every UI screen spec should be able to say / 每个UI界面规范都应该能够说
+> "uses Button (Primary) pattern" rather than re-specifying hover states, / "使用主按钮模式"而不是重新定义悬停状态、
+> press animations, focus behavior, keyboard handling, and screen reader / 按下动画、焦点行为、键盘处理以及屏幕阅读器
+> announcements from scratch. This library is the single source of truth for / 提示。这个库是可重用交互行为的单一可信源。When a screen spec references a pattern name, / 当界面规范引用模式名称时，
+> the programmer looks it up here. When the behavior changes, it changes here / 程序员可以在这里查找。当行为发生变化时，在这里更改
+> and applies everywhere. / 并应用到所有地方。
 >
-> This is a living document. Patterns are added as new screens are designed —
-> do not design a new interaction without checking here first. If a new pattern
-> is needed, add it here (or propose it to the ux-designer) before writing the
-> first screen spec that uses it.
+> This is a living document / 这是一个活文档。Patterns are added as new screens are designed — / 随着新界面的设计，模式会被添加进来——
+> do not design a new interaction without checking here first. If a new pattern / 在首先检查这里之前，不要设计新的交互。如果需要一个新模式，
+> is needed, add it here (or propose it to the ux-designer) before writing the / 在这里添加（或向用户体验设计师提出），然后才编写
+> first screen spec that uses it. / 第一个使用它的界面规范。
 >
-> **Status definitions**:
-> - **Draft**: Interaction specified but not yet implemented or validated
-> - **Stable**: Implemented, tested, and validated in at least one shipped screen
-> - **Deprecated**: Being phased out — existing uses will be migrated, do not use in new screens
+> **Status definitions** / **状态定义**：
+> - **Draft** / **草案**：Interaction specified but not yet implemented or validated / 交互已定义但尚未实现或验证
+> - **Stable** / **稳定**：Implemented, tested, and validated in at least one shipped screen / 已实现、测试并在至少一个已发布界面中验证
+> - **Deprecated** / **已弃用**：Being phased out — existing uses will be migrated, do not use in new screens / 正在逐步淘汰——现有使用将被迁移，不要在新界面中使用
 
 ---
 
-## How to Use This Library
+## How to Use This Library / 如何使用这个库
 
-**If you are designing a screen**: Browse the Pattern Catalog Index below before
-inventing new interactions. When a standard pattern fits, reference it by name
-in the screen spec (e.g., "The confirm button uses Button (Primary) pattern").
-When no existing pattern fits, propose a new one — document it here alongside
-or before the screen spec that introduces it.
+**If you are designing a screen** / **如果你正在设计一个界面**：Browse the Pattern Catalog Index below before / 在发明新的交互之前，浏览下面的模式目录索引。
+inventing new interactions. When a standard pattern fits, reference it by name / 当标准模式适用时，在界面规范中按名称引用它
+in the screen spec (e.g., "The confirm button uses Button (Primary) pattern"). / （例如，"确认按钮使用主按钮模式"）。
+When no existing pattern fits, propose a new one — document it here alongside / 当没有现有模式适用时，提出一个新的模式——在这里记录它，
+or before the screen spec that introduces it. / 或者在使用它的界面规范之前记录它。
 
-**If you are implementing a screen**: When a screen spec says "use [PatternName]
-pattern," find it in this document for the complete specification. The
-implementation notes section contains engine-specific guidance. The accessibility
-section contains the requirements that are non-negotiable.
+**If you are implementing a screen** / **如果你正在实现一个界面**：When a screen spec says "use [PatternName] / 当界面规范说"使用[PatternName]
+pattern," find it in this document for the complete specification. The / 模式"时，请在此文档中找到完整的规范。
+implementation notes section contains engine-specific guidance. The accessibility / 实现说明部分包含引擎特定的指导。无障碍性
+section contains the requirements that are non-negotiable. / 部分包含不可协商的要求。
 
-**If you are reviewing a screen spec**: Verify that all interactive elements
-reference a pattern from this library or include their own full interaction
-specification. "Standard button" or "the usual way" is not a valid reference.
+**If you are reviewing a screen spec** / **如果你正在审查界面规范**：Verify that all interactive elements / 验证所有交互元素
+reference a pattern from this library or include their own full interaction / 引用了本库中的模式，或者包含了它们自己完整的交互
+specification. "Standard button" or "the usual way" is not a valid reference. / 规范。"标准按钮"或"通常方式"不是有效的引用。
 
-**If you are updating a pattern**: Changing a Stable pattern affects every screen
-that uses it. Before changing, audit all usages (search screen specs for the
-pattern name), determine the impact, get approval from the ux-designer, and
-update this document before or simultaneously with any implementation change.
+**If you are updating a pattern** / **如果你正在更新一个模式**：Changing a Stable pattern affects every screen / 更改一个稳定模式会影响每一个使用它的界面。
+that uses it. Before changing, audit all usages (search screen specs for the / 在更改之前，审核所有使用情况（在界面规范中搜索
+pattern name), determine the impact, get approval from the ux-designer, and / 模式名称），确定影响，获得用户体验设计师的批准，
+update this document before or simultaneously with any implementation change. / 并在任何实现更改之前或同时更新本文档。
 
 ---
 
-## Pattern Catalog Index
+## Pattern Catalog Index / 模式目录索引
 
-> Add a row here every time a new pattern is added to this document.
-> The "Used In" column is the usages audit trail — update it when new screens
-> adopt the pattern.
+> Add a row here every time a new pattern is added to this document. / 每次向本文档添加新模式时，请在此处添加一行。
+> The "Used In" column is the usages audit trail — update it when new screens / "用于"列是使用审核记录——当新界面
+> adopt the pattern. / 采用该模式时更新它。
 
-| Pattern Name | Category | Description | Used In (Screens) | Status |
+| Pattern Name / 模式名称 | Category / 类别 | Description / 描述 | Used In (Screens) / 用于（界面） | Status / 状态 |
 |-------------|----------|-------------|------------------|--------|
 | Button (Primary) | Input | Main call-to-action. High visual weight. One per screen. | [Main Menu, Pause Menu, Settings] | Draft |
 | Button (Secondary) | Input | Alternative action or cancel. Lower visual weight than Primary. | [All modal dialogs, settings screens] | Draft |
@@ -104,7 +103,7 @@ update this document before or simultaneously with any implementation change.
 
 ---
 
-## Standard Control Patterns
+## Standard Control Patterns / 标准控件模式
 
 ---
 
@@ -690,7 +689,7 @@ setting it directly.]
 
 ---
 
-## Game-Specific UI Patterns
+## Game-Specific UI Patterns / 游戏特定UI模式
 
 ---
 
@@ -862,7 +861,7 @@ with `EASE_OUT` on scale followed by linear settle.]
 
 ---
 
-## Navigation Patterns
+## Navigation Patterns / 导航模式
 
 ---
 
@@ -936,7 +935,7 @@ Store the "return focus" element reference before pushing so it can be restored 
 
 ---
 
-## Feedback and Loading Patterns
+## Feedback and Loading Patterns / 反馈和加载模式
 
 ---
 
@@ -994,7 +993,7 @@ Store the "return focus" element reference before pushing so it can be restored 
 
 ---
 
-## Animation Standards
+## Animation Standards / 动画标准
 
 > These timing values apply to ALL patterns in this library. When a pattern says
 > "150ms ease-out," the easing function is defined here. Consistency in timing
@@ -1025,7 +1024,7 @@ Store the "return focus" element reference before pushing so it can be restored 
 
 ---
 
-## Sound Standards
+## Sound Standards / 声音标准
 
 > Every interactive event should have audio feedback. Sound is a primary feedback
 > channel, not a decoration. The sounds defined here are event categories — the
@@ -1061,7 +1060,7 @@ Store the "return focus" element reference before pushing so it can be restored 
 
 ---
 
-## Open Questions
+## Open Questions / 开放问题
 
 | Question | Owner | Deadline | Resolution |
 |----------|-------|----------|-----------|

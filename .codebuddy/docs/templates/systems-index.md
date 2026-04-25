@@ -1,9 +1,9 @@
 # Systems Index: [Game Title] / 系统索引：[游戏名称]
 
-> **Status**: [Draft / Under Review / Approved]
-> **Created**: [Date]
-> **Last Updated**: [Date]
-> **Source Concept**: design/gdd/game-concept.md
+> **Status**: [Draft / Under Review / Approved] / **状态**: [草稿 / 评审中 / 已批准]
+> **Created**: [Date] / **创建**: [日期]
+> **Last Updated**: [Date] / **最后更新**: [日期]
+> **Source Concept**: design/gdd/game-concept.md / **来源概念**: design/gdd/game-concept.md
 
 ---
 
@@ -17,7 +17,7 @@ team member understand the "big picture" of what needs to be designed and built.
 
 ## Systems Enumeration
 
-| # | System Name | Category | Priority | Status | Design Doc | Depends On |
+| # / 序号 | System Name / 系统名称 | Category / 类别 | Priority / 优先级 | Status / 状态 | Design Doc / 设计文档 | Depends On / 依赖 |
 |---|-------------|----------|----------|--------|------------|------------|
 | 1 | [e.g., Player Controller] | Core | MVP | [Not Started / In Design / In Review / Approved / Implemented] | [design/gdd/player-controller.md or "—"] | [e.g., Input System, Physics] |
 | 2 | [e.g., Camera System] | Core | MVP | Not Started | — | Player Controller |

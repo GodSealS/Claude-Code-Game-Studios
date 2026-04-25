@@ -6,7 +6,7 @@
 
 ---
 
-## Identity
+## Identity / 身份
 
 | Aspect | Detail |
 | ---- | ---- |
@@ -20,59 +20,59 @@
 
 ---
 
-## Overview
+## Overview / 概述
 
 [2-3 paragraphs describing who this faction is, what they want, and why they
 matter to the game world. Write as if briefing someone who knows nothing.]
 
 ---
 
-## History
+## History / 历史
 
-### Origin
+### Origin / 起源
 [How did this faction form? What event or need brought them together?]
 
-### Key Historical Events
+### Key Historical Events / 关键历史事件
 1. **[Event Name]** ([Date/Era]): [What happened and how it shaped the faction]
 2. **[Event Name]** ([Date/Era]): [Impact]
 3. **[Event Name]** ([Date/Era]): [Impact]
 
-### Current State
+### Current State / 当前状态
 [Where is this faction now? Are they ascendant, declining, stable, fractured?]
 
 ---
 
-## Beliefs and Values
+## Beliefs and Values / 信仰与价值观
 
-### Core Beliefs
+### Core Beliefs / 核心信仰
 - [Belief 1 — what they hold as fundamental truth]
 - [Belief 2]
 - [Belief 3]
 
-### What They Value
+### What They Value / 他们所珍视的
 - [Value 1 — what they reward and respect]
 - [Value 2]
 
-### What They Despise
+### What They Despise / 他们所鄙视的
 - [Thing 1 — what they punish or reject]
 - [Thing 2]
 
 ---
 
-## Structure and Leadership
+## Structure and Leadership / 结构与领导
 
-### Hierarchy
+### Hierarchy / 等级制度
 [How is the faction organized? Military ranks? Council of elders? Meritocracy?
 Describe the power structure.]
 
-### Key Figures
+### Key Figures / 关键人物
 | Name | Role | Personality | Motivation |
 | ---- | ---- | ---- | ---- |
 | [Leader] | [Title] | [2-3 adjectives] | [What drives them] |
 | [Second] | [Title] | [Personality] | [Motivation] |
 | [Notable] | [Title] | [Personality] | [Motivation] |
 
-### Membership
+### Membership / 成员资格
 - **How to join**: [Birth? Initiation? Purchase? Invitation?]
 - **How to leave**: [Can they? What happens?]
 - **Population**: [Rough size and composition]
@@ -118,38 +118,38 @@ Technology level?]
 
 ---
 
-## Gameplay Role
+## Gameplay Role / 玩法角色
 
-### Player Interaction
+### Player Interaction / 玩家交互
 [How does the player encounter and interact with this faction? Quests?
 Trading? Combat? Diplomacy?]
 
-### Unique Mechanics
+### Unique Mechanics / 独特机制
 [Does this faction introduce any unique gameplay mechanics? Crafting recipes?
 Combat styles? Magic systems?]
 
-### Questlines
+### Questlines / 任务线
 [Brief overview of the major questlines associated with this faction.]
 
 ---
 
-## Aesthetic Guide
+## Aesthetic Guide / 美学指南
 
-### Architecture
+### Architecture / 建筑
 [What do their buildings look like? Materials, shapes, scale.]
 
-### Clothing/Armor
+### Clothing/Armor / 服装/护甲
 [What do members wear? Identifying visual elements.]
 
-### Technology/Magic Level
+### Technology/Magic Level / 科技/魔法水平
 [What tools, weapons, and abilities do they use?]
 
-### Audio Palette
+### Audio Palette / 音频调色板
 [What sounds are associated with this faction? Musical themes, ambient sounds.]
 
 ---
 
-## Lore Consistency Notes
+## Lore Consistency Notes / 背景一致性说明
 
 - **Canon level**: [Core / Extended / Flavor — how important is this to the main story?]
 - **Contradictions to watch**: [Any potential conflicts with other lore]
@@ -158,7 +158,7 @@ Combat styles? Magic systems?]
 
 ---
 
-## Dependencies
+## Dependencies / 依赖关系
 
 - Related factions: [List factions that interact with this one]
 - Related areas: [Levels/regions where this faction appears]

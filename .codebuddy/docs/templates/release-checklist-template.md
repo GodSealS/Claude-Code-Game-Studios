@@ -1,45 +1,45 @@
 # Release Checklist: [Version] -- [Platform] / 发布清单：[版本] -- [平台]
 
-**Release Date**: [Target Date]
-**Release Manager**: [Name]
-**Status**: [ ] GO / [ ] NO-GO
+**Release Date** / **发布日期**: [Target Date] / [目标日期]
+**Release Manager** / **发布经理**: [Name] / [姓名]
+**Status** / **状态**: [ ] GO / [ ] NO-GO / [ ] 进行 / [ ] 不进行
 
 ---
 
-## Build Verification
+## Build Verification / 构建验证
 
-- [ ] Clean build succeeds on all target platforms
-- [ ] No compiler warnings (zero-warning policy)
-- [ ] Build version number set correctly: `[version]`
-- [ ] Build is reproducible from tagged commit: `[commit hash]`
-- [ ] Build size within budget: [actual] / [budget]
-- [ ] All assets included and loading correctly
-- [ ] No debug/development features enabled in release build
+- [ ] Clean build succeeds on all target platforms / 在所有目标平台上干净构建成功
+- [ ] No compiler warnings (zero-warning policy) / 没有编译器警告（零警告策略）
+- [ ] Build version number set correctly: `[version]` / 构建版本号正确设置：`[version]`
+- [ ] Build is reproducible from tagged commit: `[commit hash]` / 构建可从标记提交重现：`[commit hash]`
+- [ ] Build size within budget: [actual] / [budget] / 构建大小在预算内：[实际] / [预算]
+- [ ] All assets included and loading correctly / 所有资产已包含并正确加载
+- [ ] No debug/development features enabled in release build / 在发布构建中没有启用调试/开发功能
 
 ---
 
-## Quality Gates
+## Quality Gates / 质量关卡
 
-### Critical Bugs
-- [ ] Zero S1 (Critical) bugs open
-- [ ] Zero S2 (Major) bugs -- or documented exceptions below:
+### Critical Bugs / 严重错误
+- [ ] Zero S1 (Critical) bugs open / 零个S1（严重）错误开放
+- [ ] Zero S2 (Major) bugs -- or documented exceptions below: / 零个S2（主要）错误——或以下记录的例外情况：
 
-| Bug ID | Description | Exception Rationale | Approved By |
+| Bug ID / 错误ID | Description / 描述 | Exception Rationale / 例外理由 | Approved By / 批准人 |
 | ---- | ---- | ---- | ---- |
 | | | | |
 
-### Test Coverage
-- [ ] All critical path features tested and signed off
-- [ ] Full regression suite passed: [pass rate]%
-- [ ] Soak test passed (4+ hours continuous play)
-- [ ] Edge case testing complete
+### Test Coverage / 测试覆盖
+- [ ] All critical path features tested and signed off / 所有关键路径功能已测试并签署
+- [ ] Full regression suite passed: [pass rate]% / 完整回归测试套件通过：[通过率]%
+- [ ] Soak test passed (4+ hours continuous play) / 浸泡测试通过（4小时以上连续游玩）
+- [ ] Edge case testing complete / 边界情况测试完成
 
-### Performance
-- [ ] Target FPS met on minimum spec: [actual] / [target] FPS
-- [ ] Memory usage within budget: [actual] / [budget] MB
-- [ ] Load times within budget: [actual] / [target] seconds
-- [ ] No memory leaks over extended play (soak test)
-- [ ] No frame drops below [threshold] in normal gameplay
+### Performance / 性能
+- [ ] Target FPS met on minimum spec: [actual] / [target] FPS / 在最低配置下达到目标FPS：[实际] / [目标] FPS
+- [ ] Memory usage within budget: [actual] / [budget] MB / 内存使用在预算内：[实际] / [预算] MB
+- [ ] Load times within budget: [actual] / [target] seconds / 加载时间在预算内：[实际] / [目标] 秒
+- [ ] No memory leaks over extended play (soak test) / 长时间游玩无内存泄漏（浸泡测试）
+- [ ] No frame drops below [threshold] in normal gameplay / 正常游玩中帧率不低于[阈值]
 
 ---
 

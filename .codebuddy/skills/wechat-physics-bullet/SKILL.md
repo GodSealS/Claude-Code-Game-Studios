@@ -6,24 +6,24 @@ agent: wechat-minigame-specialist
 
 # /wechat-physics-bullet
 
-Initialize and configure the Bullet physics engine (via ammo.js WASM) for 3D physics simulation in WeChat Mini Games. All physics interactions are abstracted through the unified `IPhysicsWorld` interface.
+Initialize and configure the Bullet physics engine (via ammo.js WASM) for 3D physics simulation in WeChat Mini Games. All physics interactions are abstracted through the unified `IPhysicsWorld` interface. / 初始化并配置 Bullet 物理引擎（通过 ammo.js WASM）用于微信小游戏中的 3D 物理模拟。所有物理交互都通过统一的 `IPhysicsWorld` 接口进行抽象。
 
-## When to Use
+## When to Use / 何时使用
 
-- Creating a 3D game that requires physics (3D platformers, vehicle physics, ragdoll)
-- Setting up 3D collision detection and response
-- Implementing rigid body and soft body dynamics
-- Need a full-featured 3D physics solution (~1.5MB WASM)
-- Following the unified physics interface pattern
+- Creating a 3D game that requires physics (3D platformers, vehicle physics, ragdoll) / 创建需要物理的 3D 游戏（3D 平台游戏、车辆物理、布娃娃）
+- Setting up 3D collision detection and response / 设置 3D 碰撞检测和响应
+- Implementing rigid body and soft body dynamics / 实现刚体和软体动力学
+- Need a full-featured 3D physics solution (~1.5MB WASM) / 需要功能齐全的 3D 物理解决方案（约 1.5MB WASM）
+- Following the unified physics interface pattern / 遵循统一的物理接口模式
 
-## What It Does
+## What It Does / 功能
 
-1. **Loads ammo.js WASM module** — Fetches and initializes the compiled Bullet WebAssembly binary
-2. **Creates IPhysicsWorld** — Instantiates `BulletPhysicsWorld` implementing the unified interface
-3. **Configures physics world** — Sets up gravity, broadphase, solver, and collision configuration
-4. **Provides body factory** — Creates static, dynamic, and kinematic bodies via `IPhysicsBody`
-5. **Sets up constraint system** — Configures point-to-point, hinge, slider, and cone-twist constraints via `IPhysicsJoint`
-6. **Soft body support** — Creates cloth, rope, and deformable objects
+1. **Loads ammo.js WASM module** — Fetches and initializes the compiled Bullet WebAssembly binary / **加载 ammo.js WASM 模块** — 获取并初始化编译的 Bullet WebAssembly 二进制文件
+2. **Creates IPhysicsWorld** — Instantiates `BulletPhysicsWorld` implementing the unified interface / **创建 IPhysicsWorld** — 实例化实现统一接口的 `BulletPhysicsWorld`
+3. **Configures physics world** — Sets up gravity, broadphase, solver, and collision configuration / **配置物理世界** — 设置重力、宽相、求解器和碰撞配置
+4. **Provides body factory** — Creates static, dynamic, and kinematic bodies via `IPhysicsBody` / **提供刚体工厂** — 通过 `IPhysicsBody` 创建静态、动态和运动刚体
+5. **Sets up constraint system** — Configures point-to-point, hinge, slider, and cone-twist constraints via `IPhysicsJoint` / **设置约束系统** — 通过 `IPhysicsJoint` 配置点对点约束、铰链约束、滑动约束和锥形扭曲约束
+6. **Soft body support** — Creates cloth, rope, and deformable objects / **软体支持** — 创建布料、绳索和可变形物体
 
 ## Usage
 

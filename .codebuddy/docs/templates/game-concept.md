@@ -1,33 +1,35 @@
 # Game Concept: [Working Title] / 游戏概念：[工作标题]
 
-*Created: [Date]*
-*Status: [Draft / Under Review / Approved]*
+*Created: [Date] / 创建日期：[日期]*
+*Status: [Draft / Under Review / Approved] / 状态：[草稿 / 审阅中 / 已批准]*
 
 ---
 
-## Elevator Pitch
+## Elevator Pitch / 电梯推介
 
 > [1-2 sentences that capture the entire game. Should be compelling enough to
 > make someone want to hear more. Format: "It's a [genre] where you [core
-> action] in a [setting] to [goal]."
+> action] in a [setting] to [goal]."]
+> / [1-2句话概括整个游戏。应该足够吸引人让人想了解更多。格式："这是一款[类型]游戏，你在[场景]中[核心动作]以达成[目标]。"]
 >
 > Test: Can someone who has never heard of this game understand what they'd
-> be doing in 10 seconds? If not, simplify.]
+> be doing in 10 seconds? If not, simplify.
+> / 测试：从未听说过这款游戏的人能在10秒内理解他们将要做什么吗？如果不能，简化。]
 
 ---
 
-## Core Identity
+## Core Identity / 核心身份
 
 | Aspect | Detail |
 | ---- | ---- |
-| **Genre** | [Primary genre + subgenre(s)] |
-| **Platform** | [PC / Console / Mobile / Cross-platform] |
-| **Target Audience** | [See Player Profile section below] |
-| **Player Count** | [Single-player / Co-op / Multiplayer / MMO] |
-| **Session Length** | [Typical play session: 10 min / 30 min / 1 hr / 2+ hr] |
-| **Monetization** | [Premium / F2P / Subscription / none yet] |
-| **Estimated Scope** | [Small (1-3 months) / Medium (3-9 months) / Large (9+ months)] |
-| **Comparable Titles** | [2-3 existing games in the same space] |
+| **Genre** / **类型** | [Primary genre + subgenre(s) / 主类型 + 子类型] |
+| **Platform** / **平台** | [PC / Console / Mobile / Cross-platform / 主机 / 移动 / 跨平台] |
+| **Target Audience** / **目标受众** | [See Player Profile section below / 见下方玩家画像] |
+| **Player Count** / **玩家数** | [Single-player / Co-op / Multiplayer / MMO / 单人 / 合作 / 多人 / 大型多人] |
+| **Session Length** / **会话时长** | [Typical play session: 10 min / 30 min / 1 hr / 2+ hr / 典型游玩时长] |
+| **Monetization** / **变现方式** | [Premium / F2P / Subscription / none yet / 买断 / 免费 / 订阅 / 未定] |
+| **Estimated Scope** / **预估规模** | [Small (1-3 months) / Medium (3-9 months) / Large (9+ months) / 小 / 中 / 大] |
+| **Comparable Titles** / **竞品** | [2-3 existing games in the same space / 同领域2-3款现有游戏] |
 
 ---
 
@@ -48,20 +50,22 @@ Examples of strong core fantasies:
 
 ---
 
-## Unique Hook
+## Unique Hook / 独特卖点
 
 [What makes this game different from everything else in its genre? This is
 the single most important differentiator.
+/ 什么让这款游戏与同类型其他游戏不同？这是最重要的差异化因素。
 
 A strong hook passes the "and also" test: "It's like [comparable game],
 AND ALSO [unique thing]." If the "and also" doesn't spark curiosity, the
 hook needs work.
+/ 强力卖点通过"而且还有"测试："它像[同类游戏]，而且还有[独特之处]。"如果"而且还有"不能激发好奇心，卖点就需要改进。
 
-The hook should be:
-- Explainable in one sentence
-- Genuinely novel (not just a combination of existing features)
-- Connected to the core fantasy (not a gimmick bolted on)
-- Something that affects gameplay, not just aesthetics]
+The hook should be / 卖点应该：
+- Explainable in one sentence / 能用一句话解释
+- Genuinely novel (not just a combination of existing features) / 真正新颖（不只是现有功能的组合）
+- Connected to the core fantasy (not a gimmick bolted on) / 与核心幻想相连（而非生硬附加的噱头）
+- Something that affects gameplay, not just aesthetics / 影响玩法的东西，而不仅仅是美学]
 
 ---
 

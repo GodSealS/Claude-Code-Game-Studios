@@ -6,69 +6,69 @@ user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, AskUserQuestion
 ---
 
-# WeChat Mini Game Project Setup
+# WeChat Mini Game Project Setup / 微信小游戏项目设置
 
-This skill initializes a complete WeChat Mini Game project structure. It creates all necessary configuration files, directory structure, and boilerplate code.
+This skill initializes a complete WeChat Mini Game project structure. It creates all necessary configuration files, directory structure, and boilerplate code. / 此技能初始化完整的微信小游戏项目结构。它创建所有必要的配置文件、目录结构和样板代码。
 
 ---
 
-## Phase 1: Validate and Gather Information
+## Phase 1: Validate and Gather Information / 第 1 阶段：验证和收集信息
 
-### Check Existing Setup
+### Check Existing Setup / 检查现有设置
 
-First, check if a WeChat Mini Game project already exists:
+First, check if a WeChat Mini Game project already exists: / 首先，检查微信小游戏项目是否已存在：
 
 ```bash
-# Check for existing WeChat Mini Game files
+# Check for existing WeChat Mini Game files / 检查现有的微信小游戏文件
 Glob("miniprogram/game.json")
 Glob("miniprogram/app.json")
 Glob("src/wechat/**/*")
 ```
 
-If WeChat Mini Game files exist, inform the user and offer to:
-- Update existing configuration
-- Migrate from another engine/framework
-- Start fresh (backup existing first)
+If WeChat Mini Game files exist, inform the user and offer to: / 如果微信小游戏文件存在，通知用户并提供以下选项：
+- Update existing configuration / 更新现有配置
+- Migrate from another engine/framework / 从其他引擎/框架迁移
+- Start fresh (backup existing first) / 重新开始（先备份现有内容）
 
-### Ask User Questions
+### Ask User Questions / 询问用户问题
 
-Use `AskUserQuestion` to gather required information:
+Use `AskUserQuestion` to gather required information: / 使用 `AskUserQuestion` 收集所需信息：
 
-**Prompt**: "Let's set up your WeChat Mini Game project. I need a few details:"
+**Prompt**: "Let's set up your WeChat Mini Game project. I need a few details:" / **提示**："让我们设置你的微信小游戏项目。我需要一些详细信息："
 
-**Questions**:
+**Questions**: / **问题**：
 
-1. **Game Engine/Framework**:
-   - `Pure WeChat API` — Use raw WeChat Mini Game APIs (Canvas 2D/WebGL)
-   - `Cocos Creator` — Use Cocos Creator with WeChat adapter
-   - `LayaAir` — Use LayaAir Engine
-   - `Phaser` — Use Phaser with WeChat plugin
-   - `Unity (WebGL)` — Export Unity WebGL for WeChat
-   - `Godot (Web Export)` — Export Godot HTML5 for WeChat
+1. **Game Engine/Framework**: / **游戏引擎/框架**：
+   - `Pure WeChat API` — Use raw WeChat Mini Game APIs (Canvas 2D/WebGL) / `纯微信 API` — 使用原生微信小游戏 API（Canvas 2D/WebGL）
+   - `Cocos Creator` — Use Cocos Creator with WeChat adapter / `Cocos Creator` — 使用带微信适配器的 Cocos Creator
+   - `LayaAir` — Use LayaAir Engine / `LayaAir` — 使用 LayaAir 引擎
+   - `Phaser` — Use Phaser with WeChat plugin / `Phaser` — 使用带微信插件的 Phaser
+   - `Unity (WebGL)` — Export Unity WebGL for WeChat / `Unity (WebGL)` — 导出 Unity WebGL 用于微信
+   - `Godot (Web Export)` — Export Godot HTML5 for WeChat / `Godot (Web Export)` — 导出 Godot HTML5 用于微信
 
-2. **Language**:
+2. **Language**: / **语言**：
    - `JavaScript (ES6+)`
-   - `TypeScript` (recommended)
+   - `TypeScript` (recommended) / （推荐）
 
-3. **Cloud Base (Backend)**:
-   - `Yes` — Enable WeChat Cloud Base (serverless database + functions)
-   - `No` — Use external backend or no backend
+3. **Cloud Base (Backend)**: / **云开发（后端）**：
+   - `Yes` — Enable WeChat Cloud Base (serverless database + functions) / `是` — 启用微信云开发（无服务器数据库+函数）
+   - `No` — Use external backend or no backend / `否` — 使用外部后端或无需后端
 
-4. **Game Name**: (text input)
-   - Must be unique in WeChat ecosystem
-   - 4-30 characters recommended
+4. **Game Name**: (text input) / **游戏名称**：（文本输入）
+   - Must be unique in WeChat ecosystem / 必须在微信生态系统中唯一
+   - 4-30 characters recommended / 推荐 4-30 个字符
 
-5. **Orientation**:
-   - `Portrait` — Vertical (most common for mobile games)
-   - `Landscape` — Horizontal
+5. **Orientation**: / **方向**：
+   - `Portrait` — Vertical (most common for mobile games) / `竖屏` — 垂直（移动游戏最常见）
+   - `Landscape` — Horizontal / `横屏` — 水平
 
 ---
 
-## Phase 2: Create Project Structure
+## Phase 2: Create Project Structure / 第 2 阶段：创建项目结构
 
-### Directory Structure
+### Directory Structure / 目录结构
 
-Create the following directory structure:
+Create the following directory structure: / 创建以下目录结构：
 
 ```
 miniprogram/                    # WeChat Mini Game root

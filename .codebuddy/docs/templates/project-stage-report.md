@@ -1,43 +1,43 @@
 # Project Stage Analysis Report / 项目阶段分析报告
 
-**Generated**: [DATE]
-**Stage**: [Concept | Systems Design | Technical Setup | Pre-Production | Production | Polish | Release]
-**Analysis Scope**: [Full project | Specific role: programmer/designer/producer]
+**Generated** / **生成于**: [DATE] / [日期]
+**Stage** / **阶段**: [Concept | Systems Design | Technical Setup | Pre-Production | Production | Polish | Release] / [概念 | 系统设计 | 技术设置 | 预生产 | 生产 | 打磨 | 发布]
+**Analysis Scope** / **分析范围**: [Full project | Specific role: programmer/designer/producer] / [完整项目 | 特定角色：程序员/设计师/制作人]
 
 ---
 
-## Executive Summary
+## Executive Summary / 执行摘要
 
-[1-2 paragraph overview of project state, primary gaps, and recommended priority]
+[1-2 paragraph overview of project state, primary gaps, and recommended priority] / [关于项目状态、主要差距和推荐优先级的1-2段概述]
 
-**Current Focus**: [What the project is actively working on]
-**Blocking Issues**: [Critical gaps preventing progress]
-**Estimated Time to Next Stage**: [If applicable]
+**Current Focus** / **当前重点**: [What the project is actively working on] / [项目正在积极进行的工作]
+**Blocking Issues** / **阻塞问题**: [Critical gaps preventing progress] / [阻碍进展的关键差距]
+**Estimated Time to Next Stage** / **到下一阶段的估计时间**: [If applicable] / [如果适用]
 
 ---
 
-## Completeness Overview
+## Completeness Overview / 完成度概览
 
-### Design Documentation
-- **Status**: [X%] complete
-- **Files Found**: [N] documents in `design/`
-  - GDD sections: [N] files in `design/gdd/`
-  - Narrative docs: [N] files in `design/narrative/`
-  - Level designs: [N] files in `design/levels/`
-- **Key Gaps**:
-  - [ ] [Missing doc 1 + why it matters]
-  - [ ] [Missing doc 2 + why it matters]
+### Design Documentation / 设计文档
+- **Status** / **状态**: [X%] complete / [X%] 完成
+- **Files Found** / **找到的文件**: [N] documents in `design/` / [N] 个文档在 `design/` 中
+  - GDD sections: [N] files in `design/gdd/` / GDD部分：[N] 个文件在 `design/gdd/` 中
+  - Narrative docs: [N] files in `design/narrative/` / 叙事文档：[N] 个文件在 `design/narrative/` 中
+  - Level designs: [N] files in `design/levels/` / 关卡设计：[N] 个文件在 `design/levels/` 中
+- **Key Gaps** / **关键差距**:
+  - [ ] [Missing doc 1 + why it matters] / [缺失的文档1 + 为什么重要]
+  - [ ] [Missing doc 2 + why it matters] / [缺失的文档2 + 为什么重要]
 
-### Source Code
-- **Status**: [X%] complete
-- **Files Found**: [N] source files in `src/`
-- **Major Systems Identified**:
-  - ✅ [System 1] (`src/path/`) — [brief status]
-  - ✅ [System 2] (`src/path/`) — [brief status]
-  - ⚠️  [System 3] (`src/path/`) — [issue or incomplete]
-- **Key Gaps**:
-  - [ ] [Missing system 1 + impact]
-  - [ ] [Missing system 2 + impact]
+### Source Code / 源代码
+- **Status** / **状态**: [X%] complete / [X%] 完成
+- **Files Found** / **找到的文件**: [N] source files in `src/` / [N] 个源文件在 `src/` 中
+- **Major Systems Identified** / **识别的主要系统**:
+  - ✅ [System 1] (`src/path/`) — [brief status] / [系统1] (`src/path/`) — [简要状态]
+  - ✅ [System 2] (`src/path/`) — [brief status] / [系统2] (`src/path/`) — [简要状态]
+  - ⚠️  [System 3] (`src/path/`) — [issue or incomplete] / [系统3] (`src/path/`) — [问题或不完整]
+- **Key Gaps** / **关键差距**:
+  - [ ] [Missing system 1 + impact] / [缺失的系统1 + 影响]
+  - [ ] [Missing system 2 + impact] / [缺失的系统2 + 影响]
 
 ### Architecture Documentation
 - **Status**: [X%] complete

@@ -1,43 +1,43 @@
 # Game Pillars: [Game Title] / 游戏支柱：[游戏名称]
 
-## Document Status
-- **Version**: 1.0
-- **Last Updated**: [Date]
-- **Approved By**: creative-director
-- **Status**: [Draft / Under Review / Approved]
+## Document Status / 文档状态
+- **Version**: 1.0 / **版本**: 1.0
+- **Last Updated**: [Date] / **最后更新**: [日期]
+- **Approved By**: creative-director / **批准人**: creative-director
+- **Status**: [Draft / Under Review / Approved] / **状态**: [草稿 / 评审中 / 已批准]
 
 ---
 
-## What Are Game Pillars?
+## What Are Game Pillars? / 什么是游戏支柱？
 
-Pillars are the 3-5 non-negotiable principles that define this game's identity.
-Every design, art, audio, narrative, and technical decision must serve at least
-one pillar. If a feature doesn't serve a pillar, it doesn't belong in the game.
+Pillars are the 3-5 non-negotiable principles that define this game's identity. / 支柱是定义游戏身份的3-5个不可协商的原则。
+Every design, art, audio, narrative, and technical decision must serve at least / 每一个设计、美术、音频、叙事和技术决策必须至少服务于
+one pillar. If a feature doesn't serve a pillar, it doesn't belong in the game. / 一个支柱。如果一个功能不服务于任何支柱，它就不属于这个游戏。
 
-**Why pillars matter**: In a typical development cycle, the team makes thousands
-of small creative decisions. Pillars ensure all those decisions push in the same
-direction, creating a coherent player experience rather than a collection of
-disconnected features.
+**Why pillars matter**: In a typical development cycle, the team makes thousands / **为什么支柱重要**：在一个典型的开发周期中，团队会做出数千个
+of small creative decisions. Pillars ensure all those decisions push in the same / 小的创意决策。支柱确保所有这些决策朝着同一个方向推进，
+direction, creating a coherent player experience rather than a collection of / 创造一致的用户体验，而不是
+disconnected features. / 互不关联的功能集合。
 
-### What Makes a Good Pillar
+### What Makes a Good Pillar / 什么造就一个好的支柱
 
-A good pillar is:
-- **Falsifiable**: "Fun gameplay" is not a pillar. "Combat rewards patience over
-  aggression" is — it makes a testable claim about design choices.
-- **Constraining**: If a pillar never forces you to say no to something, it's
-  too vague. Good pillars eliminate options.
-- **Cross-departmental**: A pillar that only constrains game design but says
-  nothing about art, audio, or narrative is incomplete. Real pillars shape
-  every discipline.
-- **Memorable**: The team should be able to recite the pillars from memory.
-  If they can't, the pillars are too numerous or too complex.
+A good pillar is: / 一个好的支柱应该：
+- **Falsifiable**: "Fun gameplay" is not a pillar. "Combat rewards patience over / **可证伪性**："有趣的玩法"不是一个支柱。"战斗奖励耐心而非
+  aggression" is — it makes a testable claim about design choices. / 攻击性"才是——它提出了关于设计选择的可测试主张。
+- **Constraining**: If a pillar never forces you to say no to something, it's / **约束性**：如果一个支柱从未迫使你对某事说"不"，
+  too vague. Good pillars eliminate options. / 那就太模糊了。好的支柱会消除选项。
+- **Cross-departmental**: A pillar that only constrains game design but says / **跨部门性**：一个仅约束游戏设计但
+  nothing about art, audio, or narrative is incomplete. Real pillars shape / 对美术、音频或叙事没有任何约束的支柱是不完整的。真正的支柱
+  every discipline. / 塑造每一个学科。
+- **Memorable**: The team should be able to recite the pillars from memory. / **可记忆性**：团队应该能够背诵支柱。
+  If they can't, the pillars are too numerous or too complex. / 如果不能，支柱就太多或太复杂了。
 
 ### Real AAA Examples
 
-These studios publicly shared their game pillars, showing how concrete and
-specific effective pillars can be:
+These studios publicly shared their game pillars, showing how concrete and / 这些工作室公开分享了他们的游戏支柱，展示了有效支柱如何
+specific effective pillars can be: / 具体而明确：
 
-| Game | Pillars | Why They Work |
+| Game / 游戏 | Pillars / 支柱 | Why They Work / 为何有效 |
 | ---- | ---- | ---- |
 | **God of War (2018)** | Visceral combat; Father-son emotional journey; Continuous camera (no cuts); Norse mythology reimagined | "Continuous camera" is radical — it cut a standard cinematic tool. "Father-son journey" constrains narrative, level design, AND combat (Atreus as companion). |
 | **Hades** | Fast fluid combat; Story depth through repetition; Every run teaches something new | "Story through repetition" justified the roguelike structure narratively — death IS the story. "Every run teaches" constrains level and encounter design. |
@@ -48,77 +48,77 @@ specific effective pillars can be:
 
 ---
 
-## Core Fantasy
+## Core Fantasy / 核心幻想
 
-> [What power, experience, or feeling does the player get from this game? What
-> can they do here that they can't do anywhere else? The core fantasy is the
-> emotional promise — the answer to "why would someone choose THIS game?"
+> [What power, experience, or feeling does the player get from this game? What / [玩家从这款游戏中获得什么样的力量、体验或感觉？他们在这里能做什么
+> can they do here that they can't do anywhere else? The core fantasy is the / 而其他地方做不到的事情？核心幻想是
+> emotional promise — the answer to "why would someone choose THIS game?" / 情感承诺——回答"为什么有人会选择这款游戏？"
 >
-> Strong core fantasies are visceral and immediate:
-> - "You are a lone survivor building a new life in a hostile wilderness"
-> - "You command a civilization across millennia"
-> - "You explore a vast, beautiful world at your own pace"
-> - "You master intricate combat and overcome impossible odds"]
+> Strong core fantasies are visceral and immediate: / 强烈的核心幻想是深刻且即时的：
+> - "You are a lone survivor building a new life in a hostile wilderness" / - "你是一个在敌对荒野中建立新生活的孤独幸存者"
+> - "You command a civilization across millennia" / - "你指挥一个跨越千年的文明"
+> - "You explore a vast, beautiful world at your own pace" / - "你以你自己的节奏探索一个广阔而美丽的世界"
+> - "You master intricate combat and overcome impossible odds"] / - "你掌握复杂的战斗并克服不可能的困难"]
 
 ---
 
-## Target MDA Aesthetics
+## Target MDA Aesthetics / 目标MDA美学
 
-[Rank the aesthetic goals this game serves, from the MDA Framework. This ranking
-guides every pillar — your pillars should collectively deliver your top 2-3
-aesthetics.]
+[Rank the aesthetic goals this game serves, from the MDA Framework. This ranking / [从MDA框架中为本游戏服务的美学目标排序。这个排序
+guides every pillar — your pillars should collectively deliver your top 2-3 / 指导每一个支柱——你的支柱应该共同实现你的前2-3个
+aesthetics.] / 美学目标。]
 
-| Rank | Aesthetic | How Our Game Delivers It |
+| Rank / 排名 | Aesthetic / 美学 | How Our Game Delivers It / 我们的游戏如何实现它 |
 | ---- | ---- | ---- |
-| 1 | [e.g., Challenge] | [Specific delivery mechanism] |
-| 2 | [e.g., Discovery] | [Specific delivery mechanism] |
-| 3 | [e.g., Fantasy] | [Specific delivery mechanism] |
-| 4 | [e.g., Narrative] | [Specific delivery mechanism] |
-| N/A | [Aesthetics not targeted] | [Why this isn't a priority] |
+| 1 | [e.g., Challenge] | [Specific delivery mechanism / 具体的实现机制] |
+| 2 | [e.g., Discovery] | [Specific delivery mechanism / 具体的实现机制] |
+| 3 | [e.g., Fantasy] | [Specific delivery mechanism / 具体的实现机制] |
+| 4 | [e.g., Narrative] | [Specific delivery mechanism / 具体的实现机制] |
+| N/A | [Aesthetics not targeted / 不针对的美学] | [Why this isn't a priority / 为什么这不是优先事项] |
 
-**Aesthetics reference** (Hunicke, LeBlanc, Zubek):
-- **Sensation**: Sensory pleasure (visual beauty, satisfying audio, haptic feedback)
-- **Fantasy**: Make-believe, inhabiting a role or world
-- **Narrative**: Drama, story arcs, emotional plot progression
-- **Challenge**: Obstacle course, skill mastery, overcoming difficulty
-- **Fellowship**: Social connection, cooperation, shared experience
-- **Discovery**: Exploration, uncovering secrets, understanding hidden systems
-- **Expression**: Self-expression, creativity, personal identity
-- **Submission**: Relaxation, comfort, meditative play
+**Aesthetics reference** (Hunicke, LeBlanc, Zubek): / **美学参考** (Hunicke, LeBlanc, Zubek):
+- **Sensation**: Sensory pleasure (visual beauty, satisfying audio, haptic feedback) / - **感觉**: 感官愉悦（视觉美感、令人满意的音频、触觉反馈）
+- **Fantasy**: Make-believe, inhabiting a role or world / - **幻想**: 假装、扮演角色或世界
+- **Narrative**: Drama, story arcs, emotional plot progression / - **叙事**: 戏剧、故事弧线、情感情节进展
+- **Challenge**: Obstacle course, skill mastery, overcoming difficulty / - **挑战**: 障碍课程、技能掌握、克服困难
+- **Fellowship**: Social connection, cooperation, shared experience / - **友谊**: 社会连接、合作、共享体验
+- **Discovery**: Exploration, uncovering secrets, understanding hidden systems / - **发现**: 探索、揭示秘密、理解隐藏系统
+- **Expression**: Self-expression, creativity, personal identity / - **表达**: 自我表达、创造力、个人身份
+- **Submission**: Relaxation, comfort, meditative play / - **顺从**: 放松、舒适、冥想式游戏
 
 ---
 
-## The Pillars
+## The Pillars / 支柱
 
-### Pillar 1: [Name]
+### Pillar 1: [Name] / 支柱1：[名称]
 
-**One-Sentence Definition**: [A clear, falsifiable statement of what this pillar
-means. Must be specific enough that two people would reach the same conclusion
-when applying it to a design question.]
+**One-Sentence Definition**: [A clear, falsifiable statement of what this pillar / **一句话定义**: [关于这个支柱含义的清晰、可证伪的陈述。
+means. Must be specific enough that two people would reach the same conclusion / 必须足够具体，以至于两个人在将其应用于设计问题时
+when applying it to a design question.] / 会得出相同的结论。]
 
-**Target Aesthetics Served**: [Which MDA aesthetics from the ranking above does
-this pillar primarily deliver?]
+**Target Aesthetics Served**: [Which MDA aesthetics from the ranking above does / **服务的目标美学**: [该支柱主要实现上面排名中的哪些MDA美学？
+this pillar primarily deliver?] / ]
 
-**Design Test**: [A concrete decision this pillar resolves. "If we're debating
-between X and Y, this pillar says we choose __."]
+**Design Test**: [A concrete decision this pillar resolves. "If we're debating / **设计测试**: [该支柱解决的具体决策。"如果我们正在争论
+between X and Y, this pillar says we choose __."] / X和Y，这个支柱说我们选择__。"]
 
-#### What This Means for Each Department
+#### What This Means for Each Department / 这对每个部门意味着什么
 
-| Department | This Pillar Says... | Example |
+| Department / 部门 | This Pillar Says... / 这个支柱说... | Example / 示例 |
 | ---- | ---- | ---- |
-| **Game Design** | [How this constrains and inspires mechanics] | [Concrete example] |
-| **Art** | [How this constrains and inspires visuals] | [Concrete example] |
-| **Audio** | [How this constrains and inspires sound/music] | [Concrete example] |
-| **Narrative** | [How this constrains and inspires story/writing] | [Concrete example] |
-| **Engineering** | [Technical implications and priorities] | [Concrete example] |
+| **Game Design** | [How this constrains and inspires mechanics / 如何约束和启发机制] | [Concrete example / 具体示例] |
+| **Art** | [How this constrains and inspires visuals / 如何约束和启发视觉效果] | [Concrete example / 具体示例] |
+| **Audio** | [How this constrains and inspires sound/music / 如何约束和启发声音/音乐] | [Concrete example / 具体示例] |
+| **Narrative** | [How this constrains and inspires story/writing / 如何约束和启发故事/写作] | [Concrete example / 具体示例] |
+| **Engineering** | [Technical implications and priorities / 技术含义和优先级] | [Concrete example / 具体示例] |
 
-#### Serving This Pillar
-- [Concrete example of a feature/decision that embodies this pillar]
-- [Another example]
+#### Serving This Pillar / 服务这个支柱
+- [Concrete example of a feature/decision that embodies this pillar / 体现这个支柱的具体功能/决策示例]
+- [Another example / 另一个示例]
 
-#### Violating This Pillar
-- [Concrete example of what would betray this pillar — things we must never do]
-- [Another example]
+#### Violating This Pillar / 违反这个支柱
+- [Concrete example of what would betray this pillar — things we must never do / 背叛这个支柱的具体示例——我们绝不能做的事情]
+- [Another example / 另一个示例]
 
 ---
 

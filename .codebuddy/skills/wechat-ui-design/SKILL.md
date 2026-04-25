@@ -6,28 +6,28 @@ agent: wechat-ui-specialist
 
 # /wechat-ui-design
 
-Design and implement user interfaces for WeChat Mini Games following platform standards, with data binding, screen management, portrait-first layout, and performance optimization.
+Design and implement user interfaces for WeChat Mini Games following platform standards, with data binding, screen management, portrait-first layout, and performance optimization. / 为微信小游戏设计和实现用户界面，遵循平台标准，包含数据绑定、屏幕管理、竖屏优先布局和性能优化。
 
-## When to Use
+## When to Use / 何时使用
 
-- Creating UI prototypes for a new WeChat Mini Game
-- Designing visual assets and sprite sheets
-- Building adaptive UI layouts in FairyGUI with data binding
-- Implementing WeChat design system compliance
-- Setting up interaction feedback and animations
-- Creating screen navigation stack
-- Optimizing UI performance (virtual lists, object pooling)
-- Implementing accessibility features
+- Creating UI prototypes for a new WeChat Mini Game / 为新微信小游戏创建 UI 原型
+- Designing visual assets and sprite sheets / 设计视觉资产和精灵图集
+- Building adaptive UI layouts in FairyGUI with data binding / 在 FairyGUI 中构建具有数据绑定的自适应 UI 布局
+- Implementing WeChat design system compliance / 实现微信设计系统合规性
+- Setting up interaction feedback and animations / 设置交互反馈和动画
+- Creating screen navigation stack / 创建屏幕导航堆栈
+- Optimizing UI performance (virtual lists, object pooling) / 优化 UI 性能（虚拟列表、对象池）
+- Implementing accessibility features / 实现可访问性功能
 
-## What It Does
+## What It Does / 功能
 
-1. **Creates design structure** — Figma/Sketch project setup with design tokens
-2. **Produces assets** — Sliced images, sprite sheets, icons at multiple resolutions
-3. **Builds FairyGUI project** — Components, screens, adaptive layouts with data binding
-4. **Defines interactions** — Button states, loading states, transitions, screen navigation
-5. **Documents specs** — Style guide, naming conventions, export settings
-6. **Sets up data binding** — GameState → ViewModel → UI reactive pipeline
-7. **Creates screen manager** — Stack-based navigation with transitions and lifecycle
+1. **Creates design structure** — Figma/Sketch project setup with design tokens / **创建设计结构** — 带有设计令牌的 Figma/Sketch 项目设置
+2. **Produces assets** — Sliced images, sprite sheets, icons at multiple resolutions / **生成资产** — 切片图像、精灵图集、多分辨率图标
+3. **Builds FairyGUI project** — Components, screens, adaptive layouts with data binding / **构建 FairyGUI 项目** — 组件、屏幕、具有数据绑定的自适应布局
+4. **Defines interactions** — Button states, loading states, transitions, screen navigation / **定义交互** — 按钮状态、加载状态、过渡效果、屏幕导航
+5. **Documents specs** — Style guide, naming conventions, export settings / **文档规范** — 风格指南、命名约定、导出设置
+6. **Sets up data binding** — GameState → ViewModel → UI reactive pipeline / **设置数据绑定** — GameState → ViewModel → UI 响应式管道
+7. **Creates screen manager** — Stack-based navigation with transitions and lifecycle / **创建屏幕管理器** — 基于堆栈的导航，具有过渡效果和生命周期
 
 ## Usage
 
@@ -130,29 +130,29 @@ viewModel.bind(scoreText, 'score', (v: number) => v.toString());
 viewModel.bind(healthBar, 'health', (v: number) => v / 100);
 ```
 
-## Screen Management
+## Screen Management / 屏幕管理
 
 ```typescript
-// Stack-based navigation
+// Stack-based navigation / 基于堆栈的导航
 screenManager.push('ShopScreen', { category: 'weapons' });
-screenManager.pop(); // Return to previous screen
+screenManager.pop(); // Return to previous screen / 返回上一个屏幕
 screenManager.replace('GameOverScreen', { score: 1000 });
 
-// Screen lifecycle
+// Screen lifecycle / 屏幕生命周期
 interface IScreen {
   onEnter(params?: Record<string, any>): void;
   onExit(): void;
-  onPause(): void;  // When another screen pushed on top
-  onResume(): void; // When top screen popped
+  onPause(): void;  // When another screen pushed on top / 当另一个屏幕推到顶部时
+  onResume(): void; // When top screen popped / 当顶部屏幕弹出时
 }
 ```
 
-## Performance Standards
+## Performance Standards / 性能标准
 
 | Metric | Budget | Notes |
 |--------|--------|-------|
-| UI CPU time per frame | < 2ms | Measured on mid-range device |
-| Virtual list item render | < 0.5ms | Per visible item |
-| Screen transition | < 300ms | Including animation |
-| Texture memory (UI) | < 8MB | All UI atlases combined |
-| Draw calls per screen | < 10 | Batch by atlas |
+| UI CPU time per frame | < 2ms | Measured on mid-range device / 在中档设备上测量 |
+| Virtual list item render | < 0.5ms | Per visible item / 每个可见项 |
+| Screen transition | < 300ms | Including animation / 包括动画 |
+| Texture memory (UI) | < 8MB | All UI atlases combined / 所有 UI 图集合计 |
+| Draw calls per screen | < 10 | Batch by atlas / 按图集批处理 |

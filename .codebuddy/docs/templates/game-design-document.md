@@ -1,28 +1,28 @@
 # [Mechanic/System Name] / [机制/系统名称]
 
-> **Status**: Draft | In Review | Approved | Implemented
-> **Author**: [Agent or person]
-> **Last Updated**: [Date]
-> **Last Verified**: [Date — when this doc was last confirmed accurate against current design]
-> **Implements Pillar**: [Which game pillar this supports]
+> **Status**: Draft | In Review | Approved | Implemented / **状态**: 草稿 | 评审中 | 已批准 | 已实现
+> **Author**: [Agent or person] / **作者**: [代理或人员]
+> **Last Updated**: [Date] / **最后更新**: [日期]
+> **Last Verified**: [Date — when this doc was last confirmed accurate against current design] / **最后验证**: [日期——当本文档最后确认与当前设计一致时]
+> **Implements Pillar**: [Which game pillar this supports] / **实现的支柱**: [该文档支持的游戏支柱]
 
-## Summary
+## Summary / 摘要
 
-[2–3 sentences: what this system is, what it does for the player, and why it
-exists in this game. Written for tiered context loading — a skill scanning
-20 GDDs uses this section to decide whether to read further. No jargon.]
+[2–3 sentences: what this system is, what it does for the player, and why it / [2-3句话：这个系统是什么，它为玩家做什么，以及为什么它
+exists in this game. Written for tiered context loading — a skill scanning / 存在于这个游戏中。为分层上下文加载而编写——一个扫描
+20 GDDs uses this section to decide whether to read further. No jargon.] / 20个GDD的技能使用此部分来决定是否继续阅读。避免使用术语。]
 
-> **Quick reference** — Layer: `[Foundation | Core | Feature | Presentation]` · Priority: `[MVP | Vertical Slice | Alpha | Full Vision]` · Key deps: `[System names or "None"]`
+> **Quick reference** — Layer: `[Foundation | Core | Feature | Presentation]` · Priority: `[MVP | Vertical Slice | Alpha | Full Vision]` · Key deps: `[System names or "None"]` / > **快速参考** — 层级: `[基础 | 核心 | 功能 | 表现]` · 优先级: `[MVP | 垂直切片 | Alpha | 完整愿景]` · 关键依赖: `[系统名称或"无"]`
 
-## Overview
+## Overview / 概述
 
-[One paragraph that explains this mechanic to someone who knows nothing about
-the project. What is it, what does the player do, and why does it exist?]
+[One paragraph that explains this mechanic to someone who knows nothing about / [一段话，向对该项目一无所知的人解释这个机制。它是什么，
+the project. What is it, what does the player做什么，以及它为什么存在？] / 玩家做什么，以及它为什么存在？]
 
-## Player Fantasy
+## Player Fantasy / 玩家幻想
 
-[What should the player FEEL when engaging with this mechanic? What is the
-emotional or power fantasy being served? This section guides all detail
+[What should the player FEEL when engaging with this mechanic? What is the / [玩家参与这个机制时应该感受到什么？正在提供的是什么样的
+emotional or power fantasy being served? This section guides all detail / 情感或力量幻想？此部分指导下面所有的细节决策。]
 decisions below.]
 
 ## Detailed Design

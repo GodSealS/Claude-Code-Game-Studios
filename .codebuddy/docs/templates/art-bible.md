@@ -1,10 +1,10 @@
 # Art Bible: [Game Title] / 美术圣经：[游戏名称]
 
-## Document Status
-- **Version**: 1.0
-- **Last Updated**: [Date]
-- **Owned By**: art-director
-- **Status**: [Draft / Under Review / Approved]
+## Document Status / 文档状态
+- **Version**: 1.0 / **版本**: 1.0
+- **Last Updated**: [Date] / **最后更新**: [日期]
+- **Owned By**: art-director / **归属**: art-director
+- **Status**: [Draft / Under Review / Approved] / **状态**: [草稿 / 评审中 / 已批准]
 
 ## Visual Identity Summary
 [2-3 sentences describing the overall visual identity]

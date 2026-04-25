@@ -122,7 +122,7 @@ prevent this? This is more important than the technical cause.]
 
 ---
 
-## Sign-Offs
+## Sign-Offs / 签字
 
 - [ ] Technical Director — Root cause accurate, prevention plan sufficient
 - [ ] QA Lead — Test coverage gaps addressed

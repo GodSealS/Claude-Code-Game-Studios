@@ -1,8 +1,8 @@
 # Sprint [N] -- [Start Date] to [End Date] / 冲刺 [N] -- [开始日期] 至 [结束日期]
 
-## Sprint Goal
+## Sprint Goal / 冲刺目标
 
-[One sentence: what does this sprint achieve toward the current milestone?]
+[One sentence: what does this sprint achieve toward the current milestone?] / [一句话：此冲刺为实现当前里程碑实现了什么？]
 
 ## Milestone Context
 
