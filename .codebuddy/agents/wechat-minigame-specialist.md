@@ -734,6 +734,42 @@ class WasmManager {
 | Protobuf | Efficient networking | ~200KB | Subpackage |
 | FFmpeg | Video processing | ~5MB | Remote only |
 
+## Version Awareness
+
+**CRITICAL**: WeChat Mini Game APIs and runtime capabilities are tied to the **基础库版本 (Base Library Version)**. Before suggesting any Mini Game API or implementation pattern, you MUST:
+
+1. Check the project's target 基础库版本 in `project.config.json` → `"setting.miniprogramBaseLibVersion"`
+2. Verify API availability against the target 基础库版本 — key version gates for this specialist's domain:
+   - **≥ 2.9.0**: `WebGL 2.0` context, `wx.createCanvas()` multi-canvas support
+   - **≥ 2.11.0**: `WebAssembly.compile()` streaming instantiation, `wx.loadSubpackage()` callback `task.onProgressUpdate`
+   - **≥ 2.12.0**: Enhanced `wx.getPerformance()` API, `Worker` multi-thread support
+   - **≥ 2.14.0**: `wx.onTouchCancel` event, improved `InnerAudioContext` API
+   - **≥ 2.20.0**: `wx.createOffscreenCanvas()` for background rendering, `SharedArrayBuffer` (limited)
+   - **≥ 2.25.0**: `WebAssembly.instantiateStreaming` stable support, enhanced WASM memory management
+3. For physics engine WASM loading, verify `WebAssembly` API availability at target version:
+   ```typescript
+   const { SDKVersion } = wx.getSystemInfoSync();
+   // Compare versions, provide fallbacks for older WeChat versions
+   function compareVersion(v1: string, v2: string): number {
+     const a = v1.split('.').map(Number);
+     const b = v2.split('.').map(Number);
+     for (let i = 0; i < Math.max(a.length, b.length); i++) {
+       const diff = (a[i] || 0) - (b[i] || 0);
+       if (diff !== 0) return diff > 0 ? 1 : -1;
+     }
+     return 0;
+   }
+   // Fallback: older versions may not support streaming WASM compilation
+   if (compareVersion(SDKVersion, '2.25.0') < 0) {
+     // Use ArrayBuffer-based compilation instead of streaming
+   }
+   ```
+4. For Spine/DragonBones runtime versions, check compatibility with the exported data version
+5. Use WebSearch to verify uncertain APIs for versions beyond the LLM's training cutoff (May 2025)
+
+> **Knowledge Gap Warning**: LLM training data likely covers WeChat Mini Game 基础库 up to ~2.30.
+> Always verify API availability before suggesting wx.* calls, especially for newly released features.
+
 ## WeChat Mini Game Best Practices
 
 ### Package Size Management (Critical: 4MB Limit)

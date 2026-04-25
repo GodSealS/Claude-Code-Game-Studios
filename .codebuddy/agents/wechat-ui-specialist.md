@@ -398,6 +398,36 @@ class UIObjectPool {
 - **Reduced motion**: respect `wx.getSystemInfoSync().reduceMotion` setting — disable non-essential animations
 - **Subtitle widget**: configurable size, background opacity, and speaker labels for audio cues
 
+## Version Awareness
+
+**CRITICAL**: WeChat Mini Game UI-related APIs are tied to the **基础库版本 (Base Library Version)**. Before suggesting any UI API, layout pattern, or FairyGUI integration code, you MUST:
+
+1. Check the project's target 基础库版本 in `project.config.json` → `"setting.miniprogramBaseLibVersion"`
+2. Verify UI-related API availability against the target 基础库版本 — key version gates for this specialist's domain:
+   - **≥ 2.7.0**: `wx.onKeyboardHeightChange` for keyboard avoidance in input fields
+   - **≥ 2.8.0**: `wx.getMenuButtonBoundingClientRect()` for custom navigation bar layout (avoids overlap with WeChat capsule button)
+   - **≥ 2.9.0**: `wx.onWindowResize` for orientation change detection, multi-canvas UI layering
+   - **≥ 2.12.0**: `wx.getSystemInfoSync().safeArea` stable across all devices, `reduceMotion` preference available
+   - **≥ 2.14.0**: `wx.onTouchCancel` for proper gesture cancellation handling
+   - **≥ 2.16.0**: `wx.getSystemInfoSync().statusBarHeight` reliable, `screenTop` for custom title bar positioning
+   - **≥ 2.20.0**: `wx.createOffscreenCanvas()` for off-screen UI rendering, virtual list performance improvements
+   - **≥ 2.25.0**: `wx.getSystemInfoSync().devicePixelRatio` consistently accurate, `windowWidth`/`windowHeight` includes safe area
+3. For FairyGUI integration, verify FairyGUI SDK version compatibility:
+   - FairyGUI-Canvas vs FairyGUI-WebGL renderer selection depends on WebGL availability (基础库 ≥ 2.9.0)
+   - FairyGUI virtual list performance characteristics vary with canvas rendering backend
+4. For adaptive layout, always use safe area APIs with version fallback:
+   ```typescript
+   const systemInfo = wx.getSystemInfoSync();
+   const { SDKVersion, safeArea, statusBarHeight } = systemInfo;
+   // Before 基础库 2.12.0, safeArea may be undefined on some devices
+   const safeAreaTop = safeArea?.top ?? statusBarHeight ?? 20;
+   const safeAreaBottom = safeArea ? (systemInfo.screenHeight - safeArea.bottom) : 0;
+   ```
+5. Use WebSearch to verify uncertain APIs for versions beyond the LLM's training cutoff (May 2025)
+
+> **Knowledge Gap Warning**: LLM training data likely covers WeChat UI APIs up to 基础库 ~2.30.
+> Always verify UI API availability before suggesting wx.* layout or interaction calls.
+
 ## Common UI Anti-Patterns
 
 - UI directly modifying game state (buttons changing health values) — use commands instead

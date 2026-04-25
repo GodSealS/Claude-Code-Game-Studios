@@ -20,7 +20,15 @@ Each agent owns a specific domain, enforcing separation of concerns and quality.
 
 ## Engine Version Reference
 
-@docs/engine-reference/godot/VERSION.md
+The `@` import below points to the pinned engine version. Update it after
+running `/setup-engine` to match your chosen engine:
+
+- Godot: `@docs/engine-reference/godot/VERSION.md`
+- Unity: `@docs/engine-reference/unity/VERSION.md`
+- Unreal: `@docs/engine-reference/unreal/VERSION.md`
+- Cocos Creator: `@docs/engine-reference/cocos/VERSION.md`
+
+Current project engine:
 
 ## Technical Preferences
 

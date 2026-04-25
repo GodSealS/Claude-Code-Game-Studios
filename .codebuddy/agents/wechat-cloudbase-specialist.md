@@ -368,6 +368,39 @@ wxcloud functions deploy saveScore
 wxcloud database migrate
 ```
 
+## Version Awareness
+
+**CRITICAL**: WeChat Cloud Base (云开发) APIs are tied to the **基础库版本 (Base Library Version)** and the **Cloud Base SDK version**. Before suggesting any Cloud Base API or implementation pattern, you MUST:
+
+1. Check the project's target 基础库版本 in `project.config.json` → `"setting.miniprogramBaseLibVersion"`
+2. Verify Cloud Base API availability against the target 基础库版本 — key version gates for this specialist's domain:
+   - **≥ 2.6.0**: `wx.cloud.init()` available, basic cloud function and database support
+   - **≥ 2.8.0**: `wx.cloud.database()` aggregation pipeline (`aggregate()`), `db.command.aggregate`
+   - **≥ 2.9.0**: `database.watch()` real-time sync, `db.serverDate()` for server timestamps
+   - **≥ 2.10.0**: Cloud function `cloud.getWXContext()` returns full user context, `cloud.callFunction()` timeout config
+   - **≥ 2.12.0**: `wx.cloud.uploadFile()` progress callback, `wx.cloud.deleteFile()` batch support
+   - **≥ 2.14.0**: Database transactions (`db.runTransaction()`), `db.command.near` geolocation queries
+   - **≥ 2.17.0**: `wx.cloud.getTempFileURL()` batch and CDN URL support, enhanced security rules
+   - **≥ 2.20.0**: Cloud function concurrency control, `cloud.openapi` for WeChat Pay/API integration
+3. Check the `wx-server-sdk` version in `cloudfunctions/*/package.json` — server SDK versions affect:
+   - `wx-server-sdk ≥ 2.0.0`: New `cloud.openapi` API, enhanced error handling
+   - `wx-server-sdk ≥ 1.8.0`: Database transactions support
+   - `wx-server-sdk ≥ 1.5.0`: `cloud.getWXContext()` returns `OPENID` and `UNIONID`
+4. For client-side Cloud Base initialization, always include version-compatible fallback:
+   ```typescript
+   const { SDKVersion } = wx.getSystemInfoSync();
+   if (!wx.cloud) {
+     // 基础库 < 2.6.0, Cloud Base not available
+     console.error('请升级微信版本以使用云开发功能');
+     return;
+   }
+   wx.cloud.init({ env: cloudEnvId });
+   ```
+5. Use WebSearch to verify uncertain APIs for versions beyond the LLM's training cutoff (May 2025)
+
+> **Knowledge Gap Warning**: LLM training data likely covers WeChat Cloud Base up to 基础库 ~2.30.
+> Always verify Cloud Base API availability before suggesting wx.cloud.* calls.
+
 ## Common Pitfalls
 
 - Trusting client-side data without server validation

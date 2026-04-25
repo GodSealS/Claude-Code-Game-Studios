@@ -36,7 +36,7 @@ If no engine is specified, run an interactive engine selection process:
 
 **Question 1 — Prior experience** (ask this first, always, via `AskUserQuestion`):
 - Prompt: "Have you worked in any of these engines before?"
-- Options: `Godot` / `Unity` / `Unreal Engine 5` / `Multiple — I'll explain` / `None of them`
+- Options: `Godot` / `Unity` / `Unreal Engine 5` / `Cocos Creator` / `Multiple — I'll explain` / `None of them`
 - If they pick a specific engine → recommend that engine. Prior experience outweighs all other factors. Confirm with them and skip the matrix.
 - If "None" or "Multiple" → continue to the questions below.
 
@@ -46,9 +46,9 @@ If no engine is specified, run an interactive engine selection process:
 - Prompt: "What platforms are you targeting for this game?"
 - Options: `PC (Steam / Epic)` / `Mobile (iOS / Android)` / `Console` / `Web / Browser` / `Multiple platforms`
 - Platform rules that feed directly into the recommendation:
-  - Mobile → Unity strongly preferred; Unreal is a poor fit; Godot is viable for simple mobile
-  - Console → Unity or Unreal; Godot console support requires third-party publishers or significant extra work
-  - Web → Godot exports cleanly to web; Unity WebGL is functional; Unreal has poor web support
+  - Mobile → Unity strongly preferred; Cocos Creator excellent for 2D/mini games; Unreal is a poor fit; Godot is viable for simple mobile
+  - Console → Unity or Unreal; Godot console support requires third-party publishers or significant extra work; Cocos Creator not suitable
+  - Web / Mini Game → Cocos Creator strongly preferred; Godot exports cleanly to web; Unity WebGL is functional; Unreal has poor web support
   - PC only → all engines viable; other factors decide
   - Multiple → Unity is the most portable across PC/mobile/console
 
@@ -82,17 +82,25 @@ Do NOT use a simple scoring matrix that eliminates engines. Instead, reason thro
 - Licensing reality: 5% royalty only applies AFTER $1M gross revenue per title. For a first game or any game that doesn't reach $1M, it costs nothing. This threshold is high enough that most indie developers will never pay it.
 - Best fit: AAA-quality 3D; large open-world games; photorealistic visuals; developers with C++ experience or willing to use Blueprint; games targeting high-end PC/console where visual fidelity is a core selling point
 
+**Cocos Creator**
+- Genuine strengths: Best-in-class 2D and lightweight 3D for mobile/web; excellent WeChat Mini Game and HTML5 support; TypeScript-first with modern tooling; small package size ideal for instant games; strong in China/Asia markets; free and open source (MIT)
+- Real limitations: 3D capabilities behind Unity/Unreal; smaller Western community and asset ecosystem; console support is non-native (via web wrappers); desktop PC market penetration is low outside Asia
+- Licensing reality: Truly free (MIT). No revenue thresholds, no royalties.
+- Best fit: Mobile games (2D/3D); WeChat Mini Games; HTML5/web games; lightweight 2D games of any scope; projects targeting China/Asia markets; developers with TypeScript/JavaScript background
+
 **Genre-specific guidance** (factor this into the recommendation):
 - 2D any style → Godot strongly preferred
 - 3D stylized / atmospheric / contained world → Godot viable, Unity solid alternative
 - 3D open world (large, seamless) → Unity or Unreal; Godot is not production-proven for this
 - 3D photorealistic / AAA-quality → Unreal
-- Mobile-first → Unity strongly preferred
-- Console-first → Unity or Unreal; Godot console support requires extra work
+- Mobile-first → Unity strongly preferred; Cocos Creator excellent for 2D/mini games
+- Console-first → Unity or Unreal; Godot console support requires extra work; Cocos Creator not suitable
+- Web / Mini Game → Cocos Creator strongly preferred; Godot viable; Unity WebGL functional
 - Horror / narrative / walking sim → any engine; match to art style and team experience
 - Action RPG / Soulslike → Unity or Unreal for 3D; community support and assets matter here
-- Platformer 2D → Godot
+- Platformer 2D → Godot or Cocos Creator
 - Strategy / top-down / RTS → Godot or Unity depending on 2D vs 3D
+- Casual / hyper-casual mobile → Cocos Creator or Unity
 
 **Recommendation format:**
 1. Show a comparison table with the user's specific factors as rows
@@ -167,6 +175,14 @@ Update the Technology Stack section, replacing the `[CHOOSE]` placeholders with 
 - **Asset Pipeline**: Unreal Content Pipeline
 ```
 
+**For Cocos Creator:**
+```markdown
+- **Engine**: Cocos Creator [version]
+- **Language**: TypeScript (primary), JavaScript (legacy support)
+- **Build System**: Cocos Creator Build Panel + platform-specific build tools
+- **Asset Pipeline**: Cocos Asset Manager + Asset Bundles + platform-specific compression
+```
+
 ---
 
 ## 5. Populate Technical Preferences
@@ -195,6 +211,15 @@ engine-appropriate defaults. Read the existing template first, then fill in:
 - Functions: PascalCase (e.g., `TakeDamage()`)
 - Booleans: `b` prefix (e.g., `bIsAlive`)
 - Files: Match class without prefix (e.g., `PlayerController.h`)
+
+**For Cocos Creator (TypeScript):**
+- Classes: PascalCase (e.g., `PlayerController`)
+- Variables/fields: camelCase (e.g., `moveSpeed`)
+- Methods: camelCase (e.g., `takeDamage()`)
+- Files: PascalCase matching class (e.g., `PlayerController.ts`)
+- Constants: UPPER_SNAKE_CASE (e.g., `MAX_HEALTH`)
+- Decorators: `@ccclass`, `@property`, `@menu` — required for component classes
+- Component class suffix: `Component` (e.g., `PlayerMovementComponent`)
 
 ### Input & Platform Section
 
@@ -245,6 +270,34 @@ Example filled section:
 Also populate the `## Engine Specialists` section in `technical-preferences.md` with the correct routing for the chosen engine:
 
 **For Godot** — see **Appendix A** for the routing table matching the language chosen.
+
+**For Cocos Creator:**
+```markdown
+## Engine Specialists
+- **Primary**: cocos-specialist
+- **Language/Code Specialist**: cocos-specialist (TypeScript/JavaScript review — primary covers it)
+- **2D Specialist**: cocos_2d-expert (2D rendering, sprite, text, mask, UI components)
+- **3D Specialist**: cocos_3d-expert (3D mesh rendering, skinned mesh, model loading)
+- **Animation Specialist**: cocos_animation-expert (animation clips, skeletal animation, state machines, crossFade)
+- **Core Specialist**: cocos_core-expert (components, nodes, scene graph, lifecycle, events, object pool)
+- **Graphics Specialist**: cocos_gfx-expert (shaders, GPU buffers/textures, custom rendering pipelines)
+- **Physics Specialist**: cocos_physics-expert (3D rigid bodies, colliders, raycast, physics simulation)
+- **Physics 2D Specialist**: cocos_physics-2d-expert (2D rigid bodies, Box2D, 2D collision detection)
+- **Rendering Specialist**: cocos_rendering-expert (rendering pipeline, camera, lighting, shadows, post-processing)
+- **Routing Notes**: Invoke primary for architecture decisions and general TypeScript code review. Invoke subsystem specialists for deep work in their respective domains. The primary specialist delegates to sub-specialists automatically via Task tool.
+
+### File Extension Routing
+
+| File Extension / Type | Specialist to Spawn |
+|-----------------------|---------------------|
+| Game code (.ts files) | cocos-specialist |
+| Legacy JavaScript (.js files) | cocos-specialist |
+| Scene files (.scene) | cocos-specialist |
+| Prefab files (.prefab) | cocos-specialist |
+| Shader files (.effect) | cocos_gfx-expert |
+| UI layout files | cocos_2d-expert |
+| General architecture review | cocos-specialist |
+```
 
 **For Unity:**
 ```markdown
@@ -310,6 +363,7 @@ Check whether the engine version is likely beyond the LLM's training data.
 - Godot: training data likely covers up to ~4.3
 - Unity: training data likely covers up to ~2023.x / early 6000.x
 - Unreal: training data likely covers up to ~5.3 / early 5.4
+- Cocos Creator: training data likely covers up to ~3.6
 
 Compare the user's chosen version against these baselines:
 

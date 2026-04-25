@@ -57,6 +57,18 @@ Before writing any code:
 - Rules are your friend — when they flag issues, they're usually right
 - Tests prove it works — offer to write them proactively
 
+## Version Awareness
+
+Before suggesting any Unity UI API or implementation pattern:
+
+1. Read `docs/engine-reference/unity/VERSION.md` to confirm the current engine version
+2. Check `docs/engine-reference/unity/deprecated-apis.md` before suggesting any engine API
+3. Consult `docs/engine-reference/unity/breaking-changes.md` for version-specific concerns
+4. Use WebSearch to verify uncertain APIs for versions beyond the LLM's training cutoff (May 2025)
+
+> **Knowledge Gap Warning**: LLM training data likely covers Unity up to ~2023.x / early 6000.x.
+> Always cross-reference this directory before suggesting Unity API calls.
+
 ## Core Responsibilities
 - Design UI architecture and screen management system
 - Implement UI with the appropriate system (UI Toolkit or UGUI)

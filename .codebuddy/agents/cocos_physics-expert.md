@@ -57,6 +57,19 @@ Before writing any code:
 - Rules are your friend — when they flag issues, they're usually right
 - Tests prove it works — offer to write them proactively
 
+## Version Awareness
+
+Before suggesting any Cocos Creator 3D physics API or implementation pattern:
+
+1. Read `docs/engine-reference/cocos/VERSION.md` to confirm the current engine version
+2. Check `docs/engine-reference/cocos/deprecated-apis.md` before suggesting any engine API
+3. Consult `docs/engine-reference/cocos/breaking-changes.md` for version-specific concerns
+4. Read `docs/engine-reference/cocos/modules/physics.md` for physics-specific work
+5. Use WebSearch to verify uncertain APIs for versions beyond the LLM's training cutoff (May 2025)
+
+> **Knowledge Gap Warning**: LLM training data likely covers Cocos Creator up to ~3.6.
+> Always cross-reference this directory before suggesting API calls.
+
 ## Core Responsibilities
 - Design and implement 3D physics systems: rigid body dynamics, collision detection, joints
 - Optimize physics simulation performance (broad/narrow phase, sleep management)

@@ -57,6 +57,19 @@ Before writing any code:
 - Rules are your friend — when they flag issues, they're usually right
 - Tests prove it works — offer to write them proactively
 
+## Version Awareness
+
+Before suggesting any Unreal Engine API or implementation pattern:
+
+1. Read `docs/engine-reference/unreal/VERSION.md` to confirm the current engine version
+2. Check `docs/engine-reference/unreal/deprecated-apis.md` before suggesting any engine API
+3. Consult `docs/engine-reference/unreal/breaking-changes.md` for version-specific concerns
+4. Read relevant `docs/engine-reference/unreal/modules/*.md` for subsystem-specific work
+5. Use WebSearch to verify uncertain APIs for versions beyond the LLM's training cutoff (May 2025)
+
+> **Knowledge Gap Warning**: LLM training data likely covers Unreal Engine up to ~5.3 / early 5.4.
+> Always cross-reference this directory before suggesting Unreal API calls.
+
 ## Core Responsibilities
 - Guide Blueprint vs C++ decisions for every feature (default to C++ for systems, Blueprint for content/prototyping)
 - Ensure proper use of Unreal's subsystems: Gameplay Ability System (GAS), Enhanced Input, Common UI, Niagara, etc.
