@@ -60,6 +60,9 @@ unity       → unity-specialist, unity-ui-specialist, unity-shader-specialist,
               unity-dots-specialist, unity-addressables-specialist
 unreal      → unreal-specialist, ue-gas-specialist, ue-replication-specialist,
               ue-umg-specialist, ue-blueprint-specialist
+cocos       → cocos-specialist, cocos_2d-expert, cocos_3d-expert, cocos_gfx-expert,
+              cocos_core-expert, cocos_physics-expert, cocos_physics-2d-expert,
+              cocos_animation-expert, cocos_rendering-expert
 operations  → devops-engineer, security-engineer, performance-analyst,
               analytics-engineer, community-manager
 creative    → writer, world-builder, game-designer, economy-designer,

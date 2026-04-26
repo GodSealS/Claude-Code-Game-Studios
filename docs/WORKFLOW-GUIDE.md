@@ -1385,6 +1385,15 @@ Reads existing code and generates GDD-format design documentation from it.
 | Unreal Blueprints | `ue-blueprint-specialist` | 3 |
 | Unreal replication | `ue-replication-specialist` | 3 |
 | Unreal UMG/CommonUI | `ue-umg-specialist` | 3 |
+| Cocos Creator help | `cocos-specialist` | 3 |
+| Cocos 2D rendering | `cocos_2d-expert` | 3 |
+| Cocos 3D rendering | `cocos_3d-expert` | 3 |
+| Cocos animation | `cocos_animation-expert` | 3 |
+| Cocos core/Node lifecycle | `cocos_core-expert` | 3 |
+| Cocos shaders/pipeline | `cocos_gfx-expert` | 3 |
+| Cocos 3D physics | `cocos_physics-expert` | 3 |
+| Cocos 2D physics/Box2D | `cocos_physics-2d-expert` | 3 |
+| Cocos rendering pipeline | `cocos_rendering-expert` | 3 |
 
 ### Agent Hierarchy
 

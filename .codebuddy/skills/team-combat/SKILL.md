@@ -53,7 +53,7 @@ Delegate to **gameplay-programmer** (with **ai-programmer** if AI is involved):
 - Output: architecture sketch with file list and interface definitions
 
 Then spawn the **primary engine specialist** to validate the proposed architecture:
-- Is the class/node/component structure idiomatic for the pinned engine? (e.g., Godot node hierarchy, Unity MonoBehaviour vs DOTS, Unreal Actor/Component design)
+- Is the class/node/component structure idiomatic for the pinned engine? (e.g., Godot node hierarchy, Unity MonoBehaviour vs DOTS, Unreal Actor/Component design, Cocos Creator Node/Component architecture)
 - Are there engine-native systems that should be used instead of custom implementations?
 - Any proposed APIs that are deprecated or changed in the pinned engine version?
 - Output: engine architecture notes — incorporate into the architecture before Phase 3 begins

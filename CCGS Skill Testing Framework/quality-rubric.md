@@ -219,7 +219,9 @@ qa-tester, writer, world-builder
 godot-shader-specialist, godot-gdextension-specialist, unity-specialist, unity-ui-specialist,
 unity-shader-specialist, unity-dots-specialist, unity-addressables-specialist,
 unreal-specialist, ue-blueprint-specialist, ue-gas-specialist, ue-umg-specialist,
-ue-replication-specialist
+ue-replication-specialist, cocos-specialist, cocos_2d-expert, cocos_3d-expert,
+cocos_animation-expert, cocos_core-expert, cocos_gfx-expert, cocos_physics-expert,
+cocos_physics-2d-expert, cocos_rendering-expert
 
 | Metric | PASS criteria |
 |---|---|

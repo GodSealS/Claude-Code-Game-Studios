@@ -107,6 +107,13 @@ Engine-specific monitoring guidance:
 - Record: Physical Memory Used (MB), Physical Memory Available
 - Alert threshold: Physical Memory Used growth > 50MB over the full soak
 
+**Cocos Creator:**
+- Open Chrome DevTools → Memory tab (for web builds) or use `cc.profiler` API
+- Record: JS Heap Size (MB), Node Count, Component Count at each checkpoint
+- Alert threshold: JS Heap Size growth > 20% from T+0 after the first 15 minutes
+- Use `cc.profiler.getStats()` to programmatically capture memory snapshots
+- For native builds, use platform-specific profilers (Xcode Instruments, Android Profiler)
+
 ### Stability observation items (if focus = stability or all)
 
 At each checkpoint, note:

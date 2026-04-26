@@ -298,6 +298,92 @@ namespace GameTestHelpers
 
 ---
 
+### Cocos Creator (TypeScript / Jest)
+
+**Base helper** (`tests/helpers/game-assertions.ts`):
+
+```typescript
+/**
+ * Game-specific assertion utilities for [Project Name] tests.
+ * Extends Jest's expect with domain-specific helpers.
+ *
+ * Usage:
+ *   import { assertInRange } from '../helpers/game-assertions';
+ *   assertInRange(entity.health, 0, entity.maxHealth, 'health');
+ */
+
+/**
+ * Assert a value is within the inclusive range [min, max].
+ * Use for any formula output that has defined bounds in a GDD.
+ */
+export function assertInRange(
+    value: number,
+    min: number,
+    max: number,
+    label: string = 'value'
+): void {
+    expect(value).toBeGreaterThanOrEqual(min);
+    expect(value).toBeLessThanOrEqual(max);
+    if (value < min || value > max) {
+        throw new Error(
+            `${label} (${value.toFixed(2)}) is outside expected range [${min.toFixed(2)}, ${max.toFixed(2)}]`
+        );
+    }
+}
+
+/**
+ * Assert that a cc.Node has a specific component attached.
+ */
+export function assertHasComponent<T extends cc.Component>(
+    node: cc.Node,
+    componentClass: new (...args: any[]) => T
+): void {
+    const component = node.getComponent(componentClass);
+    expect(component).not.toBeNull();
+}
+
+/**
+ * Assert that a cc.Node exists as a child at the given path.
+ */
+export function assertChildExists(parent: cc.Node, childName: string): void {
+    const child = parent.getChildByName(childName);
+    expect(child).not.toBeNull();
+}
+```
+
+**Factory helper** (`tests/helpers/game-factory.ts`):
+
+```typescript
+/**
+ * Factory functions for creating test game objects.
+ * Returns minimal cc.Node objects configured for unit testing.
+ *
+ * Usage: const player = GameFactory.makePlayer({ health: 100 });
+ */
+
+export class GameFactory {
+    /**
+     * Create a minimal cc.Node with a named component for testing.
+     */
+    static makeNode(name: string = 'TestNode'): cc.Node {
+        const node = new cc.Node(name);
+        return node;
+    }
+
+    /**
+     * Create a minimal player-like node for testing.
+     * Override properties as needed.
+     */
+    static makePlayer(options: { health?: number } = {}): cc.Node {
+        const node = new cc.Node('TestPlayer');
+        // Add custom component or use setProperty for test metadata
+        return node;
+    }
+}
+```
+
+---
+
 ## 5. Generate System-Specific Helpers
 
 For `[system-name]` or `all` modes, generate a helper per system:

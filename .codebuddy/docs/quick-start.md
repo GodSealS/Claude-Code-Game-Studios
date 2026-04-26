@@ -6,7 +6,7 @@ This is a complete CodeBuddy agent architecture for game development. It
 organizes 48 specialized AI agents into a studio hierarchy that mirrors
 real game development teams, with defined responsibilities, delegation
 rules, and coordination protocols. It includes engine-specialist agents
-for Godot, Unity, and Unreal — each with dedicated sub-specialists for
+for Godot, Unity, Unreal, and Cocos Creator — each with dedicated sub-specialists for
 major engine subsystems. All design agents and templates are grounded in
 established game design theory (MDA Framework, Self-Determination Theory,
 Flow State, Bartle Player Types). Use whichever engine set matches your project.
@@ -56,6 +56,7 @@ Ask yourself: "What department would handle this in a real studio?"
 | Get Unreal Engine advice | `unreal-specialist` |
 | Get Unity advice | `unity-specialist` |
 | Get Godot advice | `godot-specialist` |
+| Get Cocos Creator advice | `cocos-specialist` |
 | Design GAS abilities/effects | `ue-gas-specialist` |
 | Define BP/C++ boundaries | `ue-blueprint-specialist` |
 | Implement UE replication | `ue-replication-specialist` |
@@ -67,6 +68,14 @@ Ask yourself: "What department would handle this in a real studio?"
 | Write idiomatic GDScript | `godot-gdscript-specialist` |
 | Create Godot shaders | `godot-shader-specialist` |
 | Build GDExtension modules | `godot-gdextension-specialist` |
+| Optimize 2D rendering | `cocos_2d-expert` |
+| Load/render 3D models | `cocos_3d-expert` |
+| Implement animation systems | `cocos_animation-expert` |
+| Manage Node/Component lifecycle | `cocos_core-expert` |
+| Create custom shaders/pipeline | `cocos_gfx-expert` |
+| Implement 3D physics/collision | `cocos_physics-expert` |
+| Implement 2D physics/Box2D | `cocos_physics-2d-expert` |
+| Configure rendering pipeline | `cocos_rendering-expert` |
 | Plan live events and seasons | `live-ops-designer` |
 | Write patch notes for players | `community-manager` |
 | Brainstorm a new game idea | Use `/brainstorm` skill |

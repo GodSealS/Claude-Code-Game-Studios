@@ -1,6 +1,6 @@
 # Agent Spec: [agent-name]
 
-> **Tier**: [directors | leads | specialists | godot | unity | unreal | operations | creative]
+> **Tier**: [directors | leads | specialists | godot | unity | unreal | cocos | operations | creative]
 > **Category**: [director | lead | specialist | engine | operations | creative]
 > **Spec written**: [YYYY-MM-DD]
 

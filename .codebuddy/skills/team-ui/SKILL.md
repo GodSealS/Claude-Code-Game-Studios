@@ -89,7 +89,7 @@ Delegate to **art-director**:
 ### Phase 3: Implementation
 
 Before implementation begins, spawn the **engine UI specialist** (from `.codebuddy/docs/technical-preferences.md` Engine Specialists → UI Specialist) to review the UX spec and visual design spec for engine-specific implementation guidance:
-- Which engine UI framework should be used for this screen? (e.g., UI Toolkit vs UGUI in Unity, Control nodes vs CanvasLayer in Godot, UMG vs CommonUI in Unreal)
+- Which engine UI framework should be used for this screen? (e.g., UI Toolkit vs UGUI in Unity, Control nodes vs CanvasLayer in Godot, UMG vs CommonUI in Unreal, cc.Widget/cc.Layout/cc.ScrollView in Cocos Creator)
 - Any engine-specific gotchas for the proposed layout or interaction patterns?
 - Recommended widget/node structure for the engine?
 - Output: engine UI implementation notes to hand off to ui-programmer before they begin

@@ -34,7 +34,7 @@ visual quality, performance, and cross-platform compatibility.
 ## Cross-Platform
 - Test shaders on minimum spec target hardware
 - Provide fallback/simplified versions for lower quality tiers
-- Document which render pipeline the shader targets (Forward/Deferred, URP/HDRP, Forward+/Mobile/Compatibility)
+- Document which render pipeline the shader targets (Forward/Deferred, URP/HDRP, Forward+/Mobile/Compatibility, Cocos Creator ForwardPipeline/CustomPipeline)
 - Do not mix shaders from different render pipelines in the same directory
 
 ## Variant Management

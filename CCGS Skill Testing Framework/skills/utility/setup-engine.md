@@ -109,6 +109,38 @@ None. `/setup-engine` is a technical configuration skill. No director gates appl
 5. Skill asks "May I write" and writes on approval; verdict is COMPLETE
 
 **Assertions:**
+- [ ] Engine field is set to Unreal Engine 5 (not Godot or Unity)
+- [ ] Primary language is Blueprint or C++
+- [ ] Routing table includes `.uasset` and `.umap` entries
+- [ ] Verdict is COMPLETE
+
+---
+
+### Case 4: Cocos Creator + TypeScript — Cocos-specific configuration
+
+**Fixture:**
+- `technical-preferences.md` contains only placeholders
+- Engine argument provided: `cocos`
+
+**Input:** `/setup-engine cocos`
+
+**Expected behavior:**
+1. Skill sets engine to Cocos Creator 3.x, language to TypeScript
+2. Naming conventions are TypeScript-appropriate (PascalCase for classes, camelCase for methods)
+3. Specialist assignments reference cocos-specialist, cocos_core-expert, cocos_2d-expert, etc.
+4. Routing table: `.ts` → cocos_core-expert, `.effect` → cocos_gfx-expert,
+   `.scene` → cocos-specialist
+5. Skill asks "May I write to `technical-preferences.md`?" and writes on approval
+
+**Assertions:**
+- [ ] Engine field is set to Cocos Creator 3.x (not Godot, Unity, or Unreal)
+- [ ] Language field is set to TypeScript
+- [ ] Naming conventions reflect TypeScript conventions
+- [ ] Routing table includes `.ts`, `.effect`, and `.scene` entries
+- [ ] Specialists are assigned (cocos-specialist and sub-specialists)
+- [ ] Verdict is COMPLETE
+
+**Assertions:**
 - [ ] Engine field is set to Unreal Engine 5
 - [ ] Routing table includes `.uasset` and `.umap` entries
 - [ ] Blueprint specialist is assigned

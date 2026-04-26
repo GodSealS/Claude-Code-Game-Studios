@@ -129,6 +129,23 @@ bool F[SystemName]Test::RunTest(const FString& Parameters)
 }
 ```
 
+#### Cocos Creator (TypeScript / Jest)
+
+```typescript
+describe('[SystemName]', () => {
+    it('[scenario]_[expected]', () => {
+        // Arrange
+        const subject = new [ClassName]();
+
+        // Act
+        const result = subject.[method]([args]);
+
+        // Assert
+        expect(result).toBeCloseTo([expected], 3);
+    });
+});
+```
+
 **What to test for every Logic story formula:**
 1. Normal case (typical inputs → expected output)
 2. Zero/null input (should not crash; minimum output)

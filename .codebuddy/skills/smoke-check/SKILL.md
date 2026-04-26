@@ -105,6 +105,17 @@ ls -t Saved/Logs/ 2>/dev/null | grep -i "test\|automation" | head -5
 If no matching log found: "UE automation tests must be run via the Session
 Frontend or CI pipeline. Please confirm test status manually."
 
+**Cocos Creator:**
+```bash
+npm test 2>&1 || npx jest 2>&1
+```
+If `npm test` is not configured, check for test scripts:
+```bash
+cat package.json | grep -A5 '"scripts"'
+```
+If no test script found: "Cocos Creator test runner not configured. Add a
+`test` script to `package.json` (e.g., `jest` or `mocha`) and re-run."
+
 **Unknown engine / not configured:**
 "Engine not configured in `.codebuddy/docs/technical-preferences.md`. Run
 `/setup-engine` to specify the engine, then re-run `/smoke-check`."

@@ -166,6 +166,8 @@ None. `/test-setup` is a scaffolding utility. No director gates apply.
 
 - Unreal Engine test scaffolding (headless runner with `-nullrhi`) follows the
   same pattern as Cases 1 and 2 and is not separately fixture-tested.
+- Cocos Creator test scaffolding (Jest/Mocha + TypeScript with cc module mocks)
+  follows the same pattern as Cases 1 and 2 and is not separately fixture-tested.
 - CI integration file generation (e.g., `.github/workflows/test.yml`) is
   referenced but not assertion-tested here — it may be a separate skill concern.
 - The case where tests/ exists but is from a different engine (e.g., Unity tests
