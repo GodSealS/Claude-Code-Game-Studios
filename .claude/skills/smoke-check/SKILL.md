@@ -105,6 +105,17 @@ ls -t Saved/Logs/ 2>/dev/null | grep -i "test\|automation" | head -5
 If no matching log found: "UE automation tests must be run via the Session
 Frontend or CI pipeline. Please confirm test status manually."
 
+**Cocos Creator:**
+```bash
+npx jest --config jest.config.ts 2>&1
+```
+If `jest.config.ts` does not exist, try:
+```bash
+npx jest 2>&1
+```
+If neither works: "Cocos Creator test runner not found — confirm Jest is
+configured or use the Cocos Creator editor test runner."
+
 **Unknown engine / not configured:**
 "Engine not configured in `.claude/docs/technical-preferences.md`. Run
 `/setup-engine` to specify the engine, then re-run `/smoke-check`."

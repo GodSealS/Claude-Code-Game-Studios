@@ -55,6 +55,9 @@ by default.
 For Unreal projects: automation logs go to `Saved/Logs/`. Grep for
 `Result: Success` and `Result: Fail` patterns.
 
+For Cocos Creator projects: Jest outputs JUnit XML to `test-results/`
+by default when configured with `jest-junit` reporter.
+
 ### Option B — Local log files
 
 If a path argument is provided, read that file directly.

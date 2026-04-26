@@ -3,11 +3,11 @@
 ## What Is This?
 
 This is a complete Claude Code agent architecture for game development. It
-organizes 48 specialized AI agents into a studio hierarchy that mirrors
+organizes 58 specialized AI agents into a studio hierarchy that mirrors
 real game development teams, with defined responsibilities, delegation
 rules, and coordination protocols. It includes engine-specialist agents
-for Godot, Unity, and Unreal — each with dedicated sub-specialists for
-major engine subsystems. All design agents and templates are grounded in
+for Godot, Unity, Unreal, and Cocos Creator — each with dedicated
+sub-specialists for major engine subsystems. All design agents and templates are grounded in
 established game design theory (MDA Framework, Self-Determination Theory,
 Flow State, Bartle Player Types). Use whichever engine set matches your project.
 
@@ -56,6 +56,7 @@ Ask yourself: "What department would handle this in a real studio?"
 | Get Unreal Engine advice | `unreal-specialist` |
 | Get Unity advice | `unity-specialist` |
 | Get Godot advice | `godot-specialist` |
+| Get Cocos Creator advice | `cocos-specialist` |
 | Design GAS abilities/effects | `ue-gas-specialist` |
 | Define BP/C++ boundaries | `ue-blueprint-specialist` |
 | Implement UE replication | `ue-replication-specialist` |
@@ -67,6 +68,14 @@ Ask yourself: "What department would handle this in a real studio?"
 | Write idiomatic GDScript | `godot-gdscript-specialist` |
 | Create Godot shaders | `godot-shader-specialist` |
 | Build GDExtension modules | `godot-gdextension-specialist` |
+| Build Cocos 2D systems | `cocos_2d-expert` |
+| Build Cocos 3D systems | `cocos_3d-expert` |
+| Optimize Cocos core engine | `cocos_core-expert` |
+| Create Cocos animations | `cocos_animation-expert` |
+| Write Cocos shaders/effects | `cocos_gfx-expert` |
+| Configure Cocos rendering | `cocos_rendering-expert` |
+| Implement Cocos 3D physics | `cocos_physics-expert` |
+| Implement Cocos 2D physics | `cocos_physics-2d-expert` |
 | Plan live events and seasons | `live-ops-designer` |
 | Write patch notes for players | `community-manager` |
 | Brainstorm a new game idea | Use `/brainstorm` skill |
@@ -266,8 +275,8 @@ If you have design docs, prototypes, or code already:
 CLAUDE.md                          -- Master config (read this first, ~60 lines)
 .claude/
   settings.json                    -- Claude Code hooks and project settings
-  agents/                          -- 48 agent definitions (YAML frontmatter)
-  skills/                          -- 68 slash command definitions (YAML frontmatter)
+  agents/                          -- 58 agent definitions (YAML frontmatter)
+  skills/                          -- 80 slash command definitions (YAML frontmatter)
   hooks/                           -- 12 hook scripts (.sh) wired by settings.json
   rules/                           -- 11 path-specific rule files
   docs/

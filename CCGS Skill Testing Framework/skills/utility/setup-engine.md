@@ -116,6 +116,31 @@ None. `/setup-engine` is a technical configuration skill. No director gates appl
 
 ---
 
+### Case 3b: Cocos Creator + TypeScript — Cocos-specific configuration
+
+**Fixture:**
+- `technical-preferences.md` contains only placeholders
+- Engine argument provided: `cocos`
+
+**Input:** `/setup-engine cocos`
+
+**Expected behavior:**
+1. Skill sets engine to Cocos Creator 3.8, primary language to TypeScript
+2. Naming conventions are TypeScript-appropriate (camelCase for functions/variables, PascalCase for classes)
+3. Specialist assignments reference cocos-specialist and sub-specialists
+4. Routing table: `.ts` → cocos-specialist, `.effect` → cocos_gfx-expert,
+   `.scene` → cocos-specialist
+5. Skill asks "May I write to `technical-preferences.md`?" and writes on approval
+
+**Assertions:**
+- [ ] Engine field is set to Cocos Creator 3.8 (not Godot, Unity, or Unreal)
+- [ ] Language field is set to TypeScript
+- [ ] Naming conventions reflect TypeScript conventions (camelCase, PascalCase)
+- [ ] Routing table includes `.ts`, `.effect`, and `.scene` entries
+- [ ] Verdict is COMPLETE
+
+---
+
 ### Case 4: Engine Already Configured — Offers to reconfigure specific sections
 
 **Fixture:**

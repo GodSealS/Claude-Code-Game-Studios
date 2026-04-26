@@ -47,6 +47,16 @@
       godot-gdscript-specialist    -- GDScript: static typing, patterns, signals, performance
       godot-shader-specialist      -- Shaders: Godot shading language, visual shaders, VFX
       godot-gdextension-specialist -- Native: C++/Rust bindings, GDExtension, build systems
+
+    cocos-specialist   -- Cocos Creator 3.8 lead: TypeScript, Node/UINode, component system
+      cocos_2d-expert          -- 2D: Sprite, TiledMap, Spine/DragonBones, 2D physics
+      cocos_3d-expert          -- 3D: Mesh, SkinnedMeshRenderer, Terrain, 3D scene graph
+      cocos_core-expert        -- Core: Director, Node lifecycle, Scheduler, EventTarget, asset pipeline
+      cocos_animation-expert   -- Animation: AnimationClip, SkeletalAnimation, state machine, blend
+      cocos_gfx-expert         -- GFX: Pipeline states, shaders (.effect), render pipeline (Forward/Deferred)
+      cocos_rendering-expert   -- Rendering: Lighting, shadows, post-processing, render pipeline config
+      cocos_physics-expert     -- Physics 3D: Rigidbody, Collider, raycast, physics world
+      cocos_physics-2d-expert  -- Physics 2D: RigidBody2D, Collider2D, joints, 2D physics world
 ```
 
 ### Legend

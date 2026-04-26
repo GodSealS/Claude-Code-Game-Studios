@@ -201,6 +201,43 @@ Test class naming: F[SystemName]Test
 Test category naming: "MyGame.[System].[Feature]"
 ```
 
+#### Cocos Creator (`Engine: Cocos Creator` or `Engine: Cocos`)
+
+Create `jest.config.ts`:
+
+```typescript
+import type { Config } from 'jest';
+
+const config: Config = {
+    preset: 'ts-jest',
+    testEnvironment: 'node',
+    roots: ['<rootDir>/tests/unit', '<rootDir>/tests/integration'],
+    testMatch: ['**/*.test.ts'],
+    moduleFileExtensions: ['ts', 'js', 'json'],
+    collectCoverageFrom: [
+        'src/**/*.ts',
+        '!src/**/*.d.ts',
+    ],
+    coverageDirectory: 'coverage',
+};
+
+export default config;
+```
+
+Create `tests/unit/.gitkeep` with content:
+`// Unit tests go here — one subdirectory per system (e.g., tests/unit/combat/)`
+
+Create `tests/integration/.gitkeep` with content:
+`// Integration tests go here — one subdirectory per system`
+
+Note in the README: **Setting up Jest for Cocos Creator**
+```
+1. npm install --save-dev jest ts-jest @types/jest
+2. Configure jest.config.ts (created above)
+3. Run tests: npx jest --config jest.config.ts
+4. For Cocos Creator editor integration, use the built-in test runner panel
+```
+
 ---
 
 ## Phase 4: Create CI/CD Workflow
@@ -339,6 +376,51 @@ jobs:
 
 Note: UE CI requires a self-hosted runner with Unreal Editor installed.
 Set the `UE_EDITOR_PATH` environment variable on the runner.
+
+### Cocos Creator
+
+Create `.github/workflows/tests.yml`:
+
+```yaml
+name: Automated Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: Run Jest Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Tests
+        run: npx jest --config jest.config.ts --ci --coverage
+
+      - name: Upload Coverage
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage/
+```
+
+Note: Cocos Creator CI uses Node.js + Jest. Ensure `package.json` includes
+`jest`, `ts-jest`, and `@types/jest` as devDependencies.
 
 ---
 

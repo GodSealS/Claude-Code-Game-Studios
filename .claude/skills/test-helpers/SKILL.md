@@ -298,6 +298,119 @@ namespace GameTestHelpers
 
 ---
 
+### Cocos Creator (Jest / TypeScript)
+
+**Base helper** (`tests/helpers/gameAssertions.ts`):
+
+```typescript
+/**
+ * Game-specific assertion utilities for [Project Name] tests.
+ * Extends Jest's expect with domain-specific helpers.
+ *
+ * Usage:
+ *   import { assertInRange } from '../helpers/gameAssertions';
+ *   assertInRange(entity.health, 0, entity.maxHealth);
+ */
+
+/**
+ * Assert a value is within the inclusive range [min, max].
+ * Use for any formula output that has defined bounds in a GDD.
+ */
+export function assertInRange(
+    value: number,
+    min: number,
+    max: number,
+    label: string = 'value'
+): void {
+    expect(value).toBeGreaterThanOrEqual(min);
+    expect(value).toBeLessThanOrEqual(max);
+    if (value < min || value > max) {
+        throw new Error(
+            `${label} (${value.toFixed(2)}) is outside expected range [${min.toFixed(2)}, ${max.toFixed(2)}]`
+        );
+    }
+}
+
+/**
+ * Assert that a node emits a specific event during an action.
+ */
+export async function assertEventEmitted(
+    emitter: { once: (event: string, callback: (...args: any[]) => void) => void },
+    eventName: string,
+    action: () => void | Promise<void>
+): Promise<void> {
+    let emitted = false;
+    emitter.once(eventName, () => { emitted = true; });
+    await action();
+    expect(emitted).toBe(true);
+}
+
+/**
+ * Assert a child node exists at the given path under a parent.
+ */
+export function assertNodeExists(parent: { getChildByName: (name: string) => any }, childName: string): void {
+    const child = parent.getChildByName(childName);
+    expect(child).not.toBeNull();
+}
+```
+
+**Factory helper** (`tests/helpers/gameFactory.ts`):
+
+```typescript
+import { Node } from 'cc';
+
+/**
+ * Factory functions for creating test game objects.
+ * Returns minimal objects configured for unit testing.
+ *
+ * Usage: const player = GameFactory.makePlayer({ health: 100 });
+ */
+
+export class GameFactory {
+    /**
+     * Create a minimal player-like Node for testing.
+     * Override properties as needed via the options parameter.
+     */
+    static makePlayer(options: { health?: number; maxHealth?: number } = {}): Node {
+        const { health = 100, maxHealth = 100 } = options;
+        const node = new Node('TestPlayer');
+        (node as any).health = health;
+        (node as any).maxHealth = maxHealth;
+        return node;
+    }
+}
+```
+
+**Scene helper** (`tests/helpers/sceneRunnerHelper.ts`):
+
+```typescript
+import { director, Node } from 'cc';
+
+/**
+ * Utilities for scene-based integration tests.
+ */
+export class SceneRunnerHelper {
+    /**
+     * Load a scene by name and wait one frame for onLoad/start to complete.
+     */
+    static async loadSceneAndWait(sceneName: string): Promise<Node> {
+        return new Promise((resolve) => {
+            director.loadScene(sceneName, () => {
+                const scene = director.getScene();
+                if (scene) {
+                    // Wait one frame for lifecycle methods
+                    setTimeout(() => resolve(scene), 0);
+                } else {
+                    throw new Error(`Failed to load scene: ${sceneName}`);
+                }
+            });
+        });
+    }
+}
+```
+
+---
+
 ## 5. Generate System-Specific Helpers
 
 For `[system-name]` or `all` modes, generate a helper per system:
@@ -372,7 +485,8 @@ After writing: Verdict: **COMPLETE** — helper files created.
 "Helper files created. To use them in a test:
 - Godot: `class_name` is auto-imported — no explicit import needed
 - Unity: Add `using` directive or reference the test assembly
-- Unreal: `#include \"tests/helpers/GameTestHelpers.h\"`"
+- Unreal: `#include \"tests/helpers/GameTestHelpers.h\"`
+- Cocos Creator: `import { assertInRange } from '../helpers/gameAssertions';`"
 
 ---
 

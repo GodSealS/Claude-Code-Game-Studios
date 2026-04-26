@@ -60,6 +60,7 @@ domain lead) should delegate to specialists.
 | `unreal-specialist` | Unreal Engine 5 | Sonnet | Blueprint vs C++, GAS overview, UE subsystems, Unreal optimization |
 | `unity-specialist` | Unity | Sonnet | MonoBehaviour vs DOTS, Addressables, URP/HDRP, Unity optimization |
 | `godot-specialist` | Godot 4 | Sonnet | GDScript patterns, node/scene architecture, signals, Godot optimization |
+| `cocos-specialist` | Cocos Creator 3.8 | Sonnet | TypeScript, Node/UINode, component system, Cocos optimization |
 
 ### Unreal Engine Sub-Specialists
 
@@ -86,3 +87,16 @@ domain lead) should delegate to specialists.
 | `godot-gdscript-specialist` | GDScript | Sonnet | Static typing, design patterns, signals, coroutines, GDScript performance |
 | `godot-shader-specialist` | Shaders/Rendering | Sonnet | Godot shading language, visual shaders, particles, post-processing |
 | `godot-gdextension-specialist` | GDExtension | Sonnet | C++/Rust bindings, native performance, custom nodes, build systems |
+
+### Cocos Creator Sub-Specialists
+
+| Agent | Subsystem | Model | When to Use |
+| ---- | ---- | ---- | ---- |
+| `cocos_2d-expert` | 2D Systems | Sonnet | Sprite, TiledMap, Spine/DragonBones, 2D rendering, UI layout |
+| `cocos_3d-expert` | 3D Systems | Sonnet | Mesh rendering, SkinnedMeshRenderer, Terrain, 3D scene graph, camera |
+| `cocos_core-expert` | Core Engine | Sonnet | Director, Node lifecycle, Scheduler, EventTarget, asset pipeline, TypeScript patterns |
+| `cocos_animation-expert` | Animation | Sonnet | AnimationClip, SkeletalAnimation, state machine, blend, Spine integration |
+| `cocos_gfx-expert` | GFX / Shaders | Sonnet | Pipeline states, .effect files, shader programming, render pipeline (Forward/Deferred) |
+| `cocos_rendering-expert` | Rendering | Sonnet | Lighting, shadows, post-processing, render pipeline config, mobile optimization |
+| `cocos_physics-expert` | Physics 3D | Sonnet | RigidBody, Collider3D, raycast, physics materials, triggers |
+| `cocos_physics-2d-expert` | Physics 2D | Sonnet | RigidBody2D, Collider2D, joints, 2D physics world, contact callbacks |
