@@ -1,19 +1,27 @@
-# Godot Navigation — Quick Reference
+# Godot Navigation — Quick Reference / Godot导航模块
+
+
+> **中文翻译**：本文档为Godot引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 Last verified: 2026-02-12 | Engine: Godot 4.6
 
+<!-- 自 ~4.3 以来的变化（LLM 训练截止） -->
 ## What Changed Since ~4.3 (LLM Cutoff)
 
+<!-- 中文翻译 -->
 ### 4.5 Changes
 - **Dedicated 2D navigation server**: No longer a proxy to 3D NavigationServer
   - Reduces export binary size for 2D-only games
   - API remains the same for both 2D and 3D
 
+<!-- 中文翻译 -->
 ### 4.3 Changes (in training data)
 - **`NavigationRegion2D`**: Removed `avoidance_layers` and `constrain_avoidance` properties
 
+<!-- 当前 API 模式 -->
 ## Current API Patterns
 
+<!-- 中文翻译 -->
 ### NavigationAgent3D (Preferred for Most Cases)
 ```gdscript
 @onready var nav_agent: NavigationAgent3D = %NavigationAgent3D
@@ -38,6 +46,7 @@ func _on_velocity_computed(safe_velocity: Vector3) -> void:
     move_and_slide()
 ```
 
+<!-- 中文翻译 -->
 ### NavigationAgent2D
 ```gdscript
 @onready var nav_agent: NavigationAgent2D = %NavigationAgent2D
@@ -54,6 +63,7 @@ func _physics_process(delta: float) -> void:
     move_and_slide()
 ```
 
+<!-- 中文翻译 -->
 ### Low-Level Path Query (3D)
 ```gdscript
 # Direct server query for custom pathfinding logic
@@ -68,6 +78,7 @@ NavigationServer3D.query_path(query, result)
 var path: PackedVector3Array = result.path
 ```
 
+<!-- 中文翻译 -->
 ### Avoidance
 ```gdscript
 # Enable RVO2-based local avoidance
@@ -83,6 +94,7 @@ nav_agent.velocity_computed.connect(_on_velocity_computed)
 nav_agent.velocity = desired_velocity
 ```
 
+<!-- 中文翻译 -->
 ### Navigation Layers
 ```gdscript
 # Use layers to separate walkable areas by agent type
@@ -93,6 +105,7 @@ nav_agent.navigation_layers = 1  # Ground only
 nav_agent.navigation_layers = 1 | 2  # Ground + Flying
 ```
 
+<!-- 常见错误 -->
 ## Common Mistakes
 - Calling `get_next_path_position()` without checking `is_navigation_finished()`
 - Not setting `velocity` on the agent when avoidance is enabled (required for RVO2)

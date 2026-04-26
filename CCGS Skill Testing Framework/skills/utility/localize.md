@@ -16,6 +16,7 @@ least one locale is missing string keys).
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -28,6 +29,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. `/localize` is a pipeline utility. No director gates apply. Localization
@@ -37,6 +39,7 @@ lead agent may review separately but is not invoked within this skill.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: New Language — String Extraction and Locale Skeleton Created
 
 **Fixture:**
@@ -62,6 +65,7 @@ lead agent may review separately but is not invoked within this skill.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Existing Locale Diff — Additions, Removals, and Changes Listed
 
 **Fixture:**
@@ -89,6 +93,7 @@ lead agent may review separately but is not invoked within this skill.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: String Missing in One Locale — GAPS FOUND With Missing Key List
 
 **Fixture:**
@@ -113,6 +118,7 @@ lead agent may review separately but is not invoked within this skill.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Translation File Has Syntax Error — Error With Line Reference
 
 **Fixture:**
@@ -136,6 +142,7 @@ lead agent may review separately but is not invoked within this skill.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate Check — No gate; localization is a pipeline utility
 
 **Fixture:**
@@ -166,6 +173,7 @@ lead agent may review separately but is not invoked within this skill.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - LOCALIZATION COMPLETE is only achievable when all locale files have all keys

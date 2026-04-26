@@ -1,6 +1,9 @@
-# Agent Test Spec: cocos-specialist
+# Agent Test Spec: cocos-specialist / Cocos Creator引擎专家代理测试规范
 
-## Agent Summary
+> **中文翻译**：此文件为Cocos Creator引擎专家代理的测试规范。所有测试断言和用例保持英文原文以确保可执行性。
+
+
+## Agent Summary / 代理摘要
 Domain: Cocos Creator-specific patterns, component-based architecture, scene node hierarchy, subsystem integration (rendering, animation, physics), and TypeScript best practices.
 Does NOT own: actual implementation of specific subsystems (delegates to sub-experts).
 Model tier: Kimi-K2.5 (Selected for complex architectural synthesis and long-context documentation mapping).
@@ -8,7 +11,7 @@ No gate IDs assigned.
 
 ---
 
-## Static Assertions (Structural)
+## Static Assertions (Structural) / 静态断言（结构）
 
 - [ ] `description:` field is present and domain-specific (references Cocos Creator architecture / component patterns / engine decisions)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep, Task
@@ -17,8 +20,9 @@ No gate IDs assigned.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出 -->
 ### Case 1: In-domain request — appropriate output
 **Input:** "When should I use a component-based approach vs. inheritance in Cocos Creator?"
 **Expected behavior:**
@@ -29,6 +33,7 @@ No gate IDs assigned.
 - Does NOT produce raw code for both patterns — refers to cocos_core-expert for implementation details
 - Notes Cocos Creator's preference for composition over inheritance for gameplay logic
 
+<!-- 用例 2：错误引擎重定向 -->
 ### Case 2: Wrong-engine redirect
 **Input:** "Write a MonoBehaviour that runs on Start() and subscribes to a UnityEvent."
 **Expected behavior:**
@@ -37,6 +42,7 @@ No gate IDs assigned.
 - Provides the Cocos Creator equivalent: a Component script using `onLoad()` instead of `Start()`, and Cocos Creator events/signals instead of UnityEvent
 - Confirms the project is Cocos Creator-based and redirects the conceptual mapping
 
+<!-- 中文翻译 -->
 ### Case 3: Post-cutoff API risk
 **Input:** "Use the new Cocos Creator 3.8.2 @property decorator for serialization."
 **Expected behavior:**
@@ -45,6 +51,7 @@ No gate IDs assigned.
 - Directs the user to verify against `docs/engine-reference/cocos/VERSION.md` and the official Cocos Creator documentation
 - Provides best-effort guidance based on known patterns while clearly marking it as unverified
 
+<!-- 中文翻译 -->
 ### Case 4: Subsystem delegation
 **Input:** "Implement a 2D sprite animation system with texture atlas support."
 **Expected behavior:**
@@ -54,6 +61,7 @@ No gate IDs assigned.
 - Refers to cocos_animation-expert for animation system design
 - Coordinates the delegation and ensures both sub-experts are aware of the dependency
 
+<!-- 用例 5：性能优化指导 -->
 ### Case 5: Performance optimization guidance
 **Input:** "Our game has high draw calls in complex UI scenes. How should we optimize?"
 **Expected behavior:**
@@ -63,6 +71,7 @@ No gate IDs assigned.
 - Recommends profiling with Cocos Creator's built-in tools before optimization
 - Does NOT provide low-level GPU optimization details (delegates to cocos_gfx-expert)
 
+<!-- 中文翻译 -->
 ### Case 6: Cross-platform considerations
 **Input:** "We need to support Web, iOS, and Android. What Cocos Creator features should we be cautious about?"
 **Expected behavior:**
@@ -74,6 +83,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 协议合规性 -->
 ## Protocol Compliance
 
 - [ ] Stays within declared domain (Cocos Creator architecture decisions, component patterns, subsystem coordination)

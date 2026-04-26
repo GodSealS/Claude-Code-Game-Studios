@@ -8,6 +8,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references GDExtension / godot-cpp / native bindings)
@@ -19,6 +20,7 @@ No gate IDs assigned.
 
 ## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出 -->
 ### Case 1: In-domain request — appropriate output
 **Input:** "Expose a C++ rigid-body physics simulation library to GDScript via GDExtension."
 **Expected behavior:**
@@ -30,6 +32,7 @@ No gate IDs assigned.
 - Notes the `.gdextension` manifest file format required
 - Does NOT produce the GDScript usage code (that belongs to gdscript-specialist)
 
+<!-- 用例 2：域外重定向 -->
 ### Case 2: Out-of-domain redirect
 **Input:** "Write the GDScript that calls the physics simulation from Case 1."
 **Expected behavior:**
@@ -38,6 +41,7 @@ No gate IDs assigned.
 - Redirects to `godot-gdscript-specialist`
 - May describe the API surface the GDScript should call (method names, parameter types) as a handoff spec
 
+<!-- 中文翻译 -->
 ### Case 3: ABI compatibility risk — minor version update
 **Input:** "We're upgrading from Godot 4.5 to 4.6. Will our existing GDExtension still work?"
 **Expected behavior:**
@@ -47,6 +51,7 @@ No gate IDs assigned.
 - Notes that the `.gdextension` manifest may need a `compatibility_minimum` version update
 - Provides the recompilation checklist
 
+<!-- 中文翻译 -->
 ### Case 4: Memory management — RAII for Godot objects
 **Input:** "How should we manage the lifecycle of Godot objects created inside C++ GDExtension code?"
 **Expected behavior:**
@@ -57,6 +62,7 @@ No gate IDs assigned.
 - Notes object ownership rules: who is responsible for freeing a node added to the scene tree
 - Provides a concrete example managing a `CollisionShape3D` created in C++
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — Godot 4.6 GDExtension API check
 **Input:** Engine version context: Godot 4.6 (upgrading from 4.5). Request: "Check if any GDExtension APIs changed from 4.5 to 4.6."
 **Expected behavior:**
@@ -80,6 +86,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Binding pattern (Case 1) should include a smoke test verifying the extension loads and the method is callable from GDScript
 - ABI risk (Case 3) is a critical escalation path — the agent must not approve shipping an unverified extension binary

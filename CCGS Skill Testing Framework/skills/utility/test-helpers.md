@@ -14,6 +14,7 @@ apply. The verdict is COMPLETE when helper files are written.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -26,6 +27,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. `/test-helpers` is a scaffolding utility. No director gates apply.
@@ -34,6 +36,7 @@ None. `/test-helpers` is a scaffolding utility. No director gates apply.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Player factory helper generated for Godot/GDScript
 
 **Fixture:**
@@ -62,6 +65,7 @@ None. `/test-helpers` is a scaffolding utility. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: No Test Setup Exists — Redirects to /test-setup
 
 **Fixture:**
@@ -83,6 +87,7 @@ None. `/test-helpers` is a scaffolding utility. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Helper Already Exists — Offers to extend rather than replace
 
 **Fixture:**
@@ -109,6 +114,7 @@ None. `/test-helpers` is a scaffolding utility. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: System Has No GDD — Notes missing design context in helper
 
 **Fixture:**
@@ -135,6 +141,7 @@ None. `/test-helpers` is a scaffolding utility. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate Check — No gate; test-helpers is a scaffolding utility
 
 **Fixture:**
@@ -165,6 +172,7 @@ None. `/test-helpers` is a scaffolding utility. No director gates apply.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - Mock/stub helper generation (for dependencies like save systems or audio buses)

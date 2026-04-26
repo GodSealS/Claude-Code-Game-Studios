@@ -15,6 +15,7 @@ The verdict is always COMPLETE.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -27,6 +28,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. `/day-one-patch` is a release planning utility. No director gates apply.
@@ -35,6 +37,7 @@ None. `/day-one-patch` is a release planning utility. No director gates apply.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — 3 Known Issues, Patch Plan With Fix Estimates
 
 **Fixture:**
@@ -61,6 +64,7 @@ None. `/day-one-patch` is a release planning utility. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Critical Issue Discovered Post-Ship — P0, Triggers /hotfix Guidance
 
 **Fixture:**
@@ -86,6 +90,7 @@ None. `/day-one-patch` is a release planning utility. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Deferred AC From Story-Done — Pulled Into Patch Plan Automatically
 
 **Fixture:**
@@ -110,6 +115,7 @@ None. `/day-one-patch` is a release planning utility. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: No Known Issues — Empty Plan With Template Note
 
 **Fixture:**
@@ -134,6 +140,7 @@ None. `/day-one-patch` is a release planning utility. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate Check — No gate; day-one-patch is a planning utility
 
 **Fixture:**
@@ -164,6 +171,7 @@ None. `/day-one-patch` is a release planning utility. No director gates apply.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The case where multiple CRITICAL bugs exist is handled the same as Case 2;

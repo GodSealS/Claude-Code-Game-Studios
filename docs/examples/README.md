@@ -6,6 +6,7 @@ This directory contains realistic, end-to-end session transcripts showing how th
 
 ---
 
+<!-- 中文翻译 -->
 ## Visual Reference
 
 **New to the system? Start here:**
@@ -13,8 +14,10 @@ This directory contains realistic, end-to-end session transcripts showing how th
 
 ---
 
+<!-- 中文翻译 -->
 ## 📚 **Available Examples**
 
+<!-- 中文翻译 -->
 ### CORE WORKFLOW
 
 ### [Skill Flow Diagrams](skill-flow-diagrams.md)
@@ -147,6 +150,7 @@ Dev has 3 months of existing code and rough design notes but nothing in the righ
 
 ---
 
+<!-- 中文翻译 -->
 ### FOUNDATIONAL EXAMPLES
 
 ### [Session: Designing the Crafting System](session-design-crafting-system.md)
@@ -237,6 +241,7 @@ Developer built a skill tree system but never wrote a design doc. Agent reads th
 
 ---
 
+<!-- 中文翻译 -->
 ## 🎯 **What These Examples Demonstrate**
 
 All examples follow the **collaborative workflow pattern:**
@@ -251,6 +256,7 @@ Question → Options → Decision → Draft → Approval
 > The pattern is **Explain → Capture**: agents explain their analysis in
 > conversation first, then present a structured UI picker for the user's decision.
 
+<!-- 中文翻译 -->
 ### ✅ **Collaborative Behaviors Shown:**
 
 1. **Agents Ask Before Assuming**
@@ -280,14 +286,17 @@ Question → Options → Decision → Draft → Approval
 
 ---
 
+<!-- 中文翻译 -->
 ## 📖 **How to Use These Examples**
 
+<!-- 中文翻译 -->
 ### For New Users:
 Read these examples BEFORE your first session. They show realistic expectations for how agents work:
 - Agents are consultants, not autonomous executors
 - You make all creative/strategic decisions
 - Agents provide expert guidance and options
 
+<!-- 中文翻译 -->
 ### For Understanding Specific Workflows:
 - **New to the system?** → Read skill-flow-diagrams.md first
 - **Running /design-system for the first time?** → Read session-design-system-skill.md
@@ -299,6 +308,7 @@ Read these examples BEFORE your first session. They show realistic expectations 
 - **Implementing code?** → Read session-implement-combat-damage.md
 - **Making strategic decisions?** → Read session-scope-crisis-decision.md
 
+<!-- 中文翻译 -->
 ### For Training:
 If you're teaching someone to use this system, walk through one example turn-by-turn to show:
 - What good questions look like
@@ -308,24 +318,29 @@ If you're teaching someone to use this system, walk through one example turn-by-
 
 ---
 
+<!-- 中文翻译 -->
 ## 🔍 **Common Patterns Across All Examples**
 
+<!-- 中文翻译 -->
 ### Turn 1-2: **Understand Before Acting**
 - Agent reads context (design docs, specs, constraints)
 - Agent asks clarifying questions
 - No assumptions or guesses
 
+<!-- 中文翻译 -->
 ### Turn 3-5: **Present Options with Reasoning**
 - 2-4 distinct approaches
 - Pros/cons for each
 - Theory/precedent supporting the analysis
 - Recommendation made, decision deferred to user
 
+<!-- 中文翻译 -->
 ### Turn 6-8: **Iterate on Drafts**
 - Show work incrementally
 - Incorporate feedback immediately
 - Flag edge cases or ambiguities proactively
 
+<!-- 中文翻译 -->
 ### Turn 9-10: **Approval and Completion**
 - "May I write to [file]?"
 - User: "Yes"
@@ -334,6 +349,7 @@ If you're teaching someone to use this system, walk through one example turn-by-
 
 ---
 
+<!-- 中文翻译 -->
 ## 🚀 **Try It Yourself**
 
 After reading these examples, try this exercise:
@@ -351,6 +367,7 @@ If the agent skips any of these, remind it:
 
 ---
 
+<!-- 中文翻译 -->
 ## 📝 **Additional Resources**
 
 - **Full Principle Documentation:** [docs/COLLABORATIVE-DESIGN-PRINCIPLE.md](../COLLABORATIVE-DESIGN-PRINCIPLE.md)

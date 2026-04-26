@@ -16,6 +16,7 @@ LAUNCH READY, LAUNCH BLOCKED, or CONCERNS.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -28,6 +29,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. `/launch-checklist` is a readiness audit utility. The full release pipeline
@@ -37,6 +39,7 @@ is managed by `/team-release`.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — All Checklist Items Verified, LAUNCH READY
 
 **Fixture:**
@@ -63,6 +66,7 @@ is managed by `/team-release`.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Platform Certification Not Submitted — LAUNCH BLOCKED
 
 **Fixture:**
@@ -86,6 +90,7 @@ is managed by `/team-release`.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Manual Check Required — CONCERNS Verdict
 
 **Fixture:**
@@ -111,6 +116,7 @@ is managed by `/team-release`.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Previous Checklist Exists — Delta Comparison
 
 **Fixture:**
@@ -140,6 +146,7 @@ is managed by `/team-release`.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate Check — No gate; launch-checklist is an audit utility
 
 **Fixture:**
@@ -170,6 +177,7 @@ is managed by `/team-release`.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - Region-specific compliance (GDPR data handling, COPPA for under-13 audiences)

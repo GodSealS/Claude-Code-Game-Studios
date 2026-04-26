@@ -1,6 +1,9 @@
-# Agent Test Spec: cocos_2d-expert
+# Agent Test Spec: cocos_2d-expert / Cocos Creator 2D渲染专家代理测试规范
 
-## Agent Summary
+> **中文翻译**：此文件为Cocos Creator 2D渲染专家代理的测试规范。所有测试断言和用例保持英文原文以确保可执行性。
+
+
+## Agent Summary / 代理摘要
 Domain: Cocos Creator 2D rendering systems: sprites, UI components, text rendering, 2D graphics, masks, clipping, and 2D performance optimization.
 Does NOT own: 3D rendering (cocos_3d-expert), animation systems (cocos_animation-expert), core engine (cocos_core-expert).
 Model tier: DeepSeek-V3.2 (default).
@@ -8,7 +11,7 @@ No gate IDs assigned.
 
 ---
 
-## Static Assertions (Structural)
+## Static Assertions (Structural) / 静态断言（结构）
 
 - [ ] `description:` field is present and domain-specific (references Cocos Creator 2D rendering, sprites, UI, text)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
@@ -18,8 +21,9 @@ No gate IDs assigned.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出 -->
 ### Case 1: In-domain request — appropriate output
 **Input:** "Create a UI button with normal/hover/pressed states using sprite frames."
 **Expected behavior:**
@@ -30,6 +34,7 @@ No gate IDs assigned.
 - Includes proper import statements for `cc` modules
 - Uses `@property` decorator for serializable sprite frame references
 
+<!-- 用例 2：错误域重定向 -->
 ### Case 2: Wrong-domain redirect
 **Input:** "Set up a 3D skinned mesh animation for the player character."
 **Expected behavior:**
@@ -39,6 +44,7 @@ No gate IDs assigned.
 - Refers to cocos_animation-expert for animation systems
 - May provide conceptual mapping if relevant (e.g., "2D sprite animation uses different patterns")
 
+<!-- 中文翻译 -->
 ### Case 3: Performance optimization
 **Input:** "Our 2D game has too many draw calls due to many separate sprites. How to batch them?"
 **Expected behavior:**
@@ -48,6 +54,7 @@ No gate IDs assigned.
 - Mentions Cocos Creator's draw call profiler tool
 - Provides TypeScript code example for manual batching if complex case
 
+<!-- 中文翻译 -->
 ### Case 4: Text rendering with custom font
 **Input:** "Implement a label using a custom TTF font with outline effect."
 **Expected behavior:**
@@ -57,6 +64,7 @@ No gate IDs assigned.
 - Includes multi-resolution adaptation for text size
 - Follows project's asset pipeline conventions
 
+<!-- 中文翻译 -->
 ### Case 5: Mask and clipping system
 **Input:** "Create a circular mask for a sprite to show only a circular portion."
 **Expected behavior:**
@@ -66,6 +74,7 @@ No gate IDs assigned.
 - Provides example of animated mask (e.g., expanding circle)
 - Notes performance considerations for complex masks
 
+<!-- 中文翻译 -->
 ### Case 6: 2D graphics drawing
 **Input:** "Draw a dynamic progress bar with rounded corners using Graphics component."
 **Expected behavior:**
@@ -77,6 +86,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 协议合规性 -->
 ## Protocol Compliance
 
 - [ ] Stays within declared domain (Cocos Creator 2D rendering, UI, sprites, text, graphics)

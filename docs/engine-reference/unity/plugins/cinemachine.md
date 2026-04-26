@@ -1,4 +1,7 @@
-# Unity 6.3 — Cinemachine
+# Unity 6.3 — Cinemachine / UnityCinemachine（虚拟相机）插件
+
+
+> **中文翻译**：本文档为Unity引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 **Last verified:** 2026-02-13
 **Status:** Production-Ready
@@ -6,6 +9,7 @@
 
 ---
 
+<!-- 概述 -->
 ## Overview
 
 **Cinemachine** is Unity's virtual camera system that enables professional, dynamic camera
@@ -23,8 +27,10 @@ Many API names and components changed.
 
 ---
 
+<!-- 安装 -->
 ## Installation
 
+<!-- 中文翻译 -->
 ### Install via Package Manager
 
 1. `Window > Package Manager`
@@ -33,17 +39,21 @@ Many API names and components changed.
 
 ---
 
+<!-- 核心概念 -->
 ## Core Concepts
 
+<!-- 中文翻译 -->
 ### 1. **Virtual Cameras**
 - Define camera behavior (position, rotation, lens)
 - Multiple virtual cameras can exist; only one is "live" at a time
 
+<!-- 中文翻译 -->
 ### 2. **Cinemachine Brain**
 - Component on main Camera
 - Blends between virtual cameras
 - Applies virtual camera settings to Unity Camera
 
+<!-- 中文翻译 -->
 ### 3. **Priorit**ies**
 - Virtual cameras have priority values
 - Highest priority camera is active
@@ -51,8 +61,10 @@ Many API names and components changed.
 
 ---
 
+<!-- 中文翻译 -->
 ## Basic Setup
 
+<!-- 中文翻译 -->
 ### 1. Add Cinemachine Brain to Main Camera
 
 ```csharp
@@ -60,6 +72,7 @@ Many API names and components changed.
 // Or manually: Add Component > Cinemachine Brain
 ```
 
+<!-- 中文翻译 -->
 ### 2. Create Virtual Camera
 
 `GameObject > Cinemachine > Cinemachine Camera`
@@ -68,8 +81,10 @@ This creates a **CinemachineCamera** GameObject with default settings.
 
 ---
 
+<!-- 中文翻译 -->
 ## Virtual Camera Components
 
+<!-- 中文翻译 -->
 ### CinemachineCamera (Unity 6 / Cinemachine 3.0+)
 
 ```csharp
@@ -93,8 +108,10 @@ public class CameraController : MonoBehaviour {
 
 ---
 
+<!-- 中文翻译 -->
 ## Follow Modes (Body Component)
 
+<!-- 中文翻译 -->
 ### 3rd Person Follow (Orbital Follow)
 
 ```csharp
@@ -107,6 +124,7 @@ public class CameraController : MonoBehaviour {
 // - Vertical Damping: 0.5 (smooth up/down)
 ```
 
+<!-- 中文翻译 -->
 ### Framing Transposer (Smooth Follow)
 
 ```csharp
@@ -118,6 +136,7 @@ public class CameraController : MonoBehaviour {
 // - Damping: Smooth following
 ```
 
+<!-- 中文翻译 -->
 ### Hard Lock (Exact Follow)
 
 ```csharp
@@ -127,8 +146,10 @@ public class CameraController : MonoBehaviour {
 
 ---
 
+<!-- 中文翻译 -->
 ## Aim Modes (Aim Component)
 
+<!-- 中文翻译 -->
 ### Composer (Frame Target)
 
 ```csharp
@@ -140,6 +161,7 @@ public class CameraController : MonoBehaviour {
 // - Dead Zone: Don't rotate if target within zone
 ```
 
+<!-- 中文翻译 -->
 ### Look At Target
 
 ```csharp
@@ -149,8 +171,10 @@ public class CameraController : MonoBehaviour {
 
 ---
 
+<!-- 中文翻译 -->
 ## Blending Between Cameras
 
+<!-- 中文翻译 -->
 ### Priority-Based Blending
 
 ```csharp
@@ -168,6 +192,7 @@ void StopAiming() {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Custom Blend Times
 
 ```csharp
@@ -181,8 +206,10 @@ void StopAiming() {
 
 ---
 
+<!-- 中文翻译 -->
 ## Camera Shake
 
+<!-- 中文翻译 -->
 ### Impulse Source (Trigger Shake)
 
 ```csharp
@@ -198,6 +225,7 @@ public class ExplosionShake : MonoBehaviour {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Impulse Listener (Receive Shake)
 
 ```csharp
@@ -209,8 +237,10 @@ public class ExplosionShake : MonoBehaviour {
 
 ---
 
+<!-- 中文翻译 -->
 ## Freelook Camera (Third Person with Mouse Look)
 
+<!-- 中文翻译 -->
 ### Cinemachine Free Look
 
 ```csharp
@@ -225,8 +255,10 @@ public class ExplosionShake : MonoBehaviour {
 
 ---
 
+<!-- 中文翻译 -->
 ## State-Driven Camera (Anim ator-Based)
 
+<!-- 中文翻译 -->
 ### Cinemachine State-Driven Camera
 
 ```csharp
@@ -242,8 +274,10 @@ public class ExplosionShake : MonoBehaviour {
 
 ---
 
+<!-- 中文翻译 -->
 ## Dolly Tracks (Cutscenes)
 
+<!-- 中文翻译 -->
 ### Cinemachine Dolly Track
 
 ```csharp
@@ -259,8 +293,10 @@ public class ExplosionShake : MonoBehaviour {
 
 ---
 
+<!-- 常见模式 -->
 ## Common Patterns
 
+<!-- 中文翻译 -->
 ### Third-Person Follow Camera
 
 ```csharp
@@ -272,6 +308,7 @@ public class ExplosionShake : MonoBehaviour {
 
 ---
 
+<!-- 中文翻译 -->
 ### Aiming Camera (Zoom In)
 
 ```csharp
@@ -290,6 +327,7 @@ void StartAiming() {
 
 ---
 
+<!-- 中文翻译 -->
 ### Cutscene Camera Sequence
 
 ```csharp
@@ -302,8 +340,10 @@ void StartAiming() {
 
 ---
 
+<!-- 中文翻译 -->
 ## Migration from Cinemachine 2.x (Unity 2021)
 
+<!-- 中文翻译 -->
 ### API Changes (Unity 6 / Cinemachine 3.0)
 
 ```csharp
@@ -324,6 +364,7 @@ vcam.Follow = target; // Cleaner API
 
 ---
 
+<!-- 性能提示 -->
 ## Performance Tips
 
 - Limit active virtual cameras (only activate when needed)
@@ -332,8 +373,10 @@ vcam.Follow = target; // Cleaner API
 
 ---
 
+<!-- 调试 -->
 ## Debugging
 
+<!-- 中文翻译 -->
 ### Cinemachine Debug
 
 ```csharp
@@ -343,6 +386,7 @@ vcam.Follow = target; // Cleaner API
 
 ---
 
+<!-- 来源 -->
 ## Sources
 - https://docs.unity3d.com/Packages/com.unity.cinemachine@3.0/manual/index.html
 - https://learn.unity.com/tutorial/cinemachine

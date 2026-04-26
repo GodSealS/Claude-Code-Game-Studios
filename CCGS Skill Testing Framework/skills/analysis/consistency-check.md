@@ -14,6 +14,7 @@ user requests it, but the skill asks "May I write" before doing so.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -27,6 +28,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 No director gates — this skill spawns no director gate agents. Consistency
@@ -37,6 +39,7 @@ required as part of the scan itself.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — 4 GDDs with no conflicts
 
 **Fixture:**
@@ -63,6 +66,7 @@ required as part of the scan itself.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Failure Path — Two GDDs with conflicting damage formulas
 
 **Fixture:**
@@ -88,6 +92,7 @@ required as part of the scan itself.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Partial Path — GDD references a system with no GDD
 
 **Fixture:**
@@ -111,6 +116,7 @@ required as part of the scan itself.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Edge Case — No GDDs found
 
 **Fixture:**
@@ -133,6 +139,7 @@ required as part of the scan itself.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate — No gate spawned; no review-mode.txt read
 
 **Fixture:**
@@ -166,6 +173,7 @@ required as part of the scan itself.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - This skill checks for structural consistency between GDDs. Deep design theory

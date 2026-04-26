@@ -1,10 +1,14 @@
-# Unity 6.3 — Audio Module Reference
+# Unity 6.3 — Audio Module Reference / Unity音频模块
+
+
+> **中文翻译**：本文档为Unity引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 **Last verified:** 2026-02-13
 **Knowledge Gap:** Unity 6 audio mixer improvements
 
 ---
 
+<!-- 概述 -->
 ## Overview
 
 Unity 6.3 audio systems:
@@ -14,8 +18,10 @@ Unity 6.3 audio systems:
 
 ---
 
+<!-- 中文翻译 -->
 ## Basic Audio Playback
 
+<!-- 中文翻译 -->
 ### AudioSource Component
 
 ```csharp
@@ -38,6 +44,7 @@ audioSource.Pause();
 audioSource.UnPause();
 ```
 
+<!-- 中文翻译 -->
 ### Play Sound at Position (Static Method)
 
 ```csharp
@@ -50,8 +57,10 @@ AudioSource.PlayClipAtPoint(clip, transform.position, 0.7f);
 
 ---
 
+<!-- 中文翻译 -->
 ## 3D Spatial Audio
 
+<!-- 中文翻译 -->
 ### AudioSource 3D Settings
 
 ```csharp
@@ -69,6 +78,7 @@ source.maxDistance = 50f;  // Inaudible beyond this distance
 source.rolloffMode = AudioRolloffMode.Logarithmic; // Natural falloff
 ```
 
+<!-- 中文翻译 -->
 ### Volume Rolloff Curves
 - **Logarithmic**: Natural, realistic (RECOMMENDED)
 - **Linear**: Steady decrease
@@ -76,14 +86,17 @@ source.rolloffMode = AudioRolloffMode.Logarithmic; // Natural falloff
 
 ---
 
+<!-- 中文翻译 -->
 ## Audio Mixer (Advanced Mixing)
 
+<!-- 中文翻译 -->
 ### Setup Audio Mixer
 
 1. `Assets > Create > Audio Mixer`
 2. Open mixer: `Window > Audio > Audio Mixer`
 3. Create groups: Master > SFX, Music, Dialogue
 
+<!-- 中文翻译 -->
 ### Assign AudioSource to Mixer Group
 
 ```csharp
@@ -97,6 +110,7 @@ void Start() {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Control Mixer from Code
 
 ```csharp
@@ -115,6 +129,7 @@ float volumeDB = Mathf.Log10(volumeLinear) * 20f;
 audioMixer.SetFloat("MusicVolume", volumeDB);
 ```
 
+<!-- 中文翻译 -->
 ### Expose Mixer Parameters
 In Audio Mixer window:
 1. Right-click parameter (e.g., Volume)
@@ -123,8 +138,10 @@ In Audio Mixer window:
 
 ---
 
+<!-- 中文翻译 -->
 ## Audio Effects
 
+<!-- 中文翻译 -->
 ### Add Effects to Mixer Groups
 
 In Audio Mixer:
@@ -132,6 +149,7 @@ In Audio Mixer:
 - Click "Add Effect"
 - Choose: Reverb, Echo, Low Pass, High Pass, Distortion, etc.
 
+<!-- 中文翻译 -->
 ### Duck Music During Dialogue (Sidechain)
 
 ```csharp
@@ -156,8 +174,10 @@ void RestoreMusic() {
 
 ---
 
+<!-- 中文翻译 -->
 ## Audio Performance
 
+<!-- 中文翻译 -->
 ### Optimize Audio Loading
 
 ```csharp
@@ -173,6 +193,7 @@ void RestoreMusic() {
 // - Vorbis/MP3: High compression, good for music (RECOMMENDED for music)
 ```
 
+<!-- 中文翻译 -->
 ### Preload Audio
 
 ```csharp
@@ -187,8 +208,10 @@ if (audioSource.clip.loadState == AudioDataLoadState.Loaded) {
 
 ---
 
+<!-- 中文翻译 -->
 ## Music Systems
 
+<!-- 中文翻译 -->
 ### Crossfade Between Tracks
 
 ```csharp
@@ -210,6 +233,7 @@ public IEnumerator CrossfadeMusic(AudioSource from, AudioSource to, float durati
 }
 ```
 
+<!-- 中文翻译 -->
 ### Seamless Music Looping
 
 ```csharp
@@ -220,8 +244,10 @@ audioSource.loop = true;
 
 ---
 
+<!-- 常见模式 -->
 ## Common Patterns
 
+<!-- 中文翻译 -->
 ### Random Pitch Variation (Avoid Repetition)
 
 ```csharp
@@ -232,6 +258,7 @@ void PlaySoundWithVariation(AudioClip clip) {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Footstep Sounds (Random from Array)
 
 ```csharp
@@ -243,6 +270,7 @@ void PlayFootstep() {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Check if Sound is Playing
 
 ```csharp
@@ -253,8 +281,10 @@ if (audioSource.isPlaying) {
 
 ---
 
+<!-- 中文翻译 -->
 ## Audio Listener
 
+<!-- 中文翻译 -->
 ### Single Listener Rule
 - Only ONE `AudioListener` should be active at a time
 - Usually attached to Main Camera
@@ -267,18 +297,22 @@ listener.enabled = false;
 
 ---
 
+<!-- 调试 -->
 ## Debugging
 
+<!-- 中文翻译 -->
 ### Audio Window
 - `Window > Audio > Audio Mixer`
 - Visualize levels, test snapshots
 
+<!-- 中文翻译 -->
 ### Audio Settings
 - `Edit > Project Settings > Audio`
 - Global volume, DSP buffer size, speaker mode
 
 ---
 
+<!-- 来源 -->
 ## Sources
 - https://docs.unity3d.com/6000.0/Documentation/Manual/Audio.html
 - https://docs.unity3d.com/6000.0/Documentation/Manual/AudioMixer.html

@@ -8,6 +8,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references WebGL shaders, GLSL, rendering optimization, shader conversion)
@@ -20,6 +21,7 @@ No gate IDs assigned.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: In-domain request — WebGL 1.0 vs 2.0 decision
 **Input:** "Should we target WebGL 1.0 or 2.0 for our WeChat Mini Game?"
 **Expected behavior:**
@@ -39,6 +41,7 @@ No gate IDs assigned.
 - Suggests progressive enhancement: build for WebGL 1.0, add WebGL 2.0 optimizations where available
 - Considers WeChat version distribution data for compatibility decisions
 
+<!-- 中文翻译 -->
 ### Case 2: Shader conversion from Unity Shader Graph
 **Input:** "Convert this Unity Shader Graph node setup to GLSL for WeChat Mini Games."
 **Input includes:** Unity Shader Graph screenshot or node description.
@@ -58,6 +61,7 @@ No gate IDs assigned.
   ```
 - Notes limitations: Some Unity Shader Graph features may not have direct WebGL equivalents
 
+<!-- 中文翻译 -->
 ### Case 3: Performance optimization for mobile devices
 **Input:** "Our fragment shader is causing performance issues on low-end Android devices. How do we optimize it?"
 **Expected behavior:**
@@ -72,6 +76,7 @@ No gate IDs assigned.
 - Recommends profiling with `EXT_disjoint_timer_query` if available
 - Notes WeChat-specific constraints: limited GPU memory, thermal throttling on mobile
 
+<!-- 中文翻译 -->
 ### Case 4: Shader quality tier system
 **Input:** "How should we implement different shader quality levels for different device tiers?"
 **Expected behavior:**
@@ -101,6 +106,7 @@ No gate IDs assigned.
   ```
 - Emphasizes the importance of testing on actual WeChat devices
 
+<!-- 中文翻译 -->
 ### Case 5: Post-processing effects for WeChat Mini Games
 **Input:** "Implement a simple bloom effect for our game."
 **Expected behavior:**
@@ -127,6 +133,7 @@ No gate IDs assigned.
   - Includes performance caveats: post-processing expensive on mobile, consider disabling on low-end devices
 - Provides WebGL 1.0 fallbacks for devices without floating point texture support
 
+<!-- 中文翻译 -->
 ### Case 6: Wrong-domain request — gameplay implementation
 **Input:** "Write the character movement physics code."
 **Expected behavior:**
@@ -136,6 +143,7 @@ No gate IDs assigned.
 - May note if shaders are involved in character rendering (e.g., outline effects, dissolve effects)
 - Does NOT overstep domain boundaries
 
+<!-- 中文翻译 -->
 ### Case 7: Shader debugging and validation
 **Input:** "Our shader compiles but produces black screen. How do we debug it?"
 **Expected behavior:**
@@ -152,6 +160,7 @@ No gate IDs assigned.
   - Frame capture for analysis
 - Recommends gradual shader development: start with simple shader, add features incrementally
 
+<!-- 中文翻译 -->
 ### Case 8: VFX particle shaders
 **Input:** "Create a particle shader for fire effects that works in WeChat Mini Games."
 **Expected behavior:**
@@ -207,6 +216,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - WebGL version decision (Case 1) demonstrates understanding of WeChat device fragmentation

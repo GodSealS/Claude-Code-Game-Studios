@@ -24,7 +24,7 @@ Initialize and configure the Box2D physics engine (via WASM) for 2D physics simu
 4. **Provides body factory** — Creates static, dynamic, and kinematic bodies via `IPhysicsBody` / **提供刚体工厂** — 通过 `IPhysicsBody` 创建静态、动态和运动刚体
 5. **Sets up joint system** — Configures distance, revolute, prismatic, and weld joints via `IPhysicsJoint` / **设置关节系统** — 通过 `IPhysicsJoint` 配置距离关节、旋转关节、棱柱关节和焊接关节
 
-## Usage / 用法
+## Usage / 用法 / 用法
 
 ```
 /wechat-physics-box2d init [gravity-x] [gravity-y]
@@ -45,9 +45,9 @@ This will: / 这将：
 - Create TypeScript interface files for `IPhysicsWorld`, `IPhysicsBody`, `IPhysicsJoint` / 为 `IPhysicsWorld`、`IPhysicsBody`、`IPhysicsJoint` 创建 TypeScript 接口文件
 - Add boilerplate for contact listener and collision filtering / 为接触监听器和碰撞过滤添加样板代码
 
-## Output
+## Output / 输出
 
-Creates the following structure:
+Creates the following structure: / 创建以下结构：
 
 ```
 src/physics/
@@ -66,7 +66,7 @@ src/physics/
 └── index.ts                   # Public API exports
 ```
 
-## Box2D Physics World Initialization
+## Box2D Physics World Initialization / Box2D 物理世界初始化
 
 ```typescript
 // src/physics/box2d/Box2DInitializer.ts
@@ -109,7 +109,7 @@ export async function initBox2D(): Promise<Box2DModule> {
 }
 ```
 
-## Box2D IPhysicsWorld Implementation
+## Box2D IPhysicsWorld Implementation / Box2D IPhysicsWorld 实现
 
 ```typescript
 // src/physics/box2d/Box2DPhysicsWorld.ts
@@ -212,7 +212,7 @@ export class Box2DPhysicsWorld implements IPhysicsWorld {
 }
 ```
 
-## Physics Factory Registration
+## Physics Factory Registration / 物理工厂注册
 
 ```typescript
 // src/physics/PhysicsFactory.ts
@@ -239,7 +239,7 @@ export function createPhysicsWorld(
 }
 ```
 
-## Configuration in game.json
+## Configuration in game.json / game.json 配置
 
 ```json
 {
@@ -253,16 +253,16 @@ export function createPhysicsWorld(
 }
 ```
 
-## Performance Considerations
+## Performance Considerations / 性能考虑
 
-- Box2D WASM size: ~500KB — suitable for 4MB package limit
-- Fixed timestep recommended (1/60s) with interpolation
-- Use collision categories for filtering (max 16 categories in Box2D)
-- Keep body count under 500 for mobile performance
-- Use `SetAutoSleep(true)` for inactive bodies
-- Destroy bodies outside viewport to save computation
+- Box2D WASM size: ~500KB — suitable for 4MB package limit / Box2D WASM 大小：约 500KB — 适合 4MB 包限制
+- Fixed timestep recommended (1/60s) with interpolation / 推荐固定时间步长（1/60秒）并配合插值
+- Use collision categories for filtering (max 16 categories in Box2D) / 使用碰撞类别进行过滤（Box2D中最多16个类别）
+- Keep body count under 500 for mobile performance / 在移动设备上保持刚体数量低于 500 以获得良好性能
+- Use `SetAutoSleep(true)` for inactive bodies / 对非活动刚体使用 `SetAutoSleep(true)`
+- Destroy bodies outside viewport to save computation / 销毁视口外的刚体以节省计算资源
 
-## Box2D Feature Support
+## Box2D Feature Support / Box2D 功能支持
 
 | Feature | Supported | Notes |
 |---------|-----------|-------|

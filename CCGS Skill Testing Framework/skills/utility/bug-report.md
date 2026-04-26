@@ -16,6 +16,7 @@ ask. No director gates are used — bug reporting is an operational utility.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -28,6 +29,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. `/bug-report` is an operational documentation skill. No director gates apply.
@@ -36,6 +38,7 @@ None. `/bug-report` is an operational documentation skill. No director gates app
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — User describes a crash, full report produced
 
 **Fixture:**
@@ -62,6 +65,7 @@ None. `/bug-report` is an operational documentation skill. No director gates app
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Minimal Input — Skill asks follow-up questions for missing fields
 
 **Fixture:**
@@ -87,6 +91,7 @@ None. `/bug-report` is an operational documentation skill. No director gates app
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Possible Duplicate — Offers to link rather than create new
 
 **Fixture:**
@@ -111,6 +116,7 @@ None. `/bug-report` is an operational documentation skill. No director gates app
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Multi-System Bug — Report created with multiple system tags
 
 **Fixture:**
@@ -134,6 +140,7 @@ None. `/bug-report` is an operational documentation skill. No director gates app
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate Check — No gate; bug reporting is operational
 
 **Fixture:**
@@ -163,6 +170,7 @@ None. `/bug-report` is an operational documentation skill. No director gates app
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The case where the user provides a severity that seems too low for the

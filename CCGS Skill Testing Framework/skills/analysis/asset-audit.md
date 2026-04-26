@@ -10,6 +10,7 @@ WARNINGS, or NON-COMPLIANT.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -22,6 +23,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. Asset auditing is a read-only analysis skill; no gates are invoked.
@@ -30,6 +32,7 @@ None. Asset auditing is a read-only analysis skill; no gates are invoked.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — All assets follow naming conventions
 
 **Fixture:**
@@ -56,6 +59,7 @@ None. Asset auditing is a read-only analysis skill; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Non-Compliant — Textures exceed size budget
 
 **Fixture:**
@@ -80,6 +84,7 @@ None. Asset auditing is a read-only analysis skill; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Format Issue — Audio in wrong format
 
 **Fixture:**
@@ -104,6 +109,7 @@ None. Asset auditing is a read-only analysis skill; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Missing Asset — Asset referenced by GDD but absent from assets/
 
 **Fixture:**
@@ -126,6 +132,7 @@ None. Asset auditing is a read-only analysis skill; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Gate Compliance — No gate; technical-artist may be consulted separately
 
 **Fixture:**
@@ -161,6 +168,7 @@ None. Asset auditing is a read-only analysis skill; no gates are invoked.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - Metadata checks (e.g., missing texture import settings in Godot `.import` files)

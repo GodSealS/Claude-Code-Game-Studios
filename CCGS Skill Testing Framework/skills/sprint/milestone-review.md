@@ -11,6 +11,7 @@ before persisting. Verdicts: MILESTONE COMPLETE or MILESTONE INCOMPLETE.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -23,6 +24,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 | Gate ID       | Trigger condition              | Mode guard              |
@@ -33,6 +35,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Nearly complete milestone with one deferred story
 
 **Fixture:**
@@ -60,6 +63,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Blocked Milestone — Multiple blocked stories
 
 **Fixture:**
@@ -85,6 +89,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Full Mode — PR-MILESTONE returns CONCERNS
 
 **Fixture:**
@@ -107,6 +112,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Edge Case — No milestone file found for specified milestone
 
 **Fixture:**
@@ -129,6 +135,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Lean/Solo Mode — PR-MILESTONE gate skipped
 
 **Fixture:**
@@ -162,6 +169,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The case where the milestone has zero stories is not tested; it follows the

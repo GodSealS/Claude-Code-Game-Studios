@@ -12,6 +12,7 @@ the story file and optionally to `docs/tech-debt-register.md`.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -26,6 +27,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — All acceptance criteria met, no deviations
 
 **Fixture:**
@@ -65,6 +67,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Blocked Path — Acceptance criterion cannot be verified
 
 **Fixture:**
@@ -92,6 +95,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Blocked Path — GDD deviation detected
 
 **Fixture:**
@@ -120,6 +124,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Edge Case — No argument, auto-detect current story
 
 **Fixture:**
@@ -144,6 +149,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate — LP-CODE-REVIEW behavior across review modes
 
 **Fixture:**
@@ -197,6 +203,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The full 8-phase flow of the skill is exercised across Cases 1-3; not all

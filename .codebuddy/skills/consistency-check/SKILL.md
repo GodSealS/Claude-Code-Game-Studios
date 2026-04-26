@@ -37,6 +37,7 @@ Detects cross-document inconsistencies by comparing all GDDs against the entity 
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 1: Parse Arguments and Load Registry
 
 **Modes:**
@@ -71,6 +72,7 @@ Scope: [full | since-last-review | entity:name]
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 2: Locate In-Scope GDDs
 > **中文翻译**：## 第 2 阶段：找到范围内的 GDD
 
@@ -99,6 +101,7 @@ Report the in-scope GDD list before scanning.
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 3: Grep-First Conflict Scan
 
 For each registered entry, grep every in-scope GDD for the entry's name.
@@ -109,6 +112,7 @@ This is the core optimization: instead of reading 10 GDDs × 400 lines each
 (4,000 lines), you grep 50 entity names × 10 GDDs (50 targeted searches,
 each returning ~10 lines on a hit).
 
+<!-- 中文翻译 -->
 ### 3a: Entity Scan
 
 For each entity in entity_map:
@@ -130,6 +134,7 @@ Compare extracted values against the registry entry.
 - Registry says `[item_name].[attribute] = [value_A]`. GDD says `[item_name] is [value_B]`. → **CONFLICT**
 - GDD mentions `[entity_name]` but doesn't specify the attribute. → **NOTE** (no conflict, just unverifiable)
 
+<!-- 中文翻译 -->
 ### 3b: Item Scan
 
 For each item in item_map, grep all GDDs for the item name. Extract:
@@ -140,6 +145,7 @@ For each item in item_map, grep all GDDs for the item name. Extract:
 
 Compare against registry entry values.
 
+<!-- 中文翻译 -->
 ### 3c: Formula Scan
 
 For each formula in formula_map, grep all GDDs for the formula name. Extract:
@@ -150,6 +156,7 @@ Compare against registry entry:
 - Different variable names → **CONFLICT**
 - Output range stated differently → **CONFLICT**
 
+<!-- 中文翻译 -->
 ### 3d: Constant Scan
 
 For each constant in constant_map, grep all GDDs for the constant name. Extract:
@@ -160,6 +167,7 @@ Compare against registry value:
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 4: Deep Investigation (Conflicts Only)
 > **中文翻译**：## 第 4 阶段：深入调查（仅限冲突）
 
@@ -221,6 +229,7 @@ For each conflict, classify:
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 5: Output Report
 
 ```
@@ -277,6 +286,7 @@ Verdict: PASS | CONFLICTS FOUND
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 6: Registry Corrections
 
 If stale registry entries were found, ask:
@@ -299,6 +309,7 @@ from all GDDs.
 After writing: Verdict: **COMPLETE** — consistency check finished.
 If conflicts remain unresolved: Verdict: **BLOCKED** — [N] conflicts need manual resolution before architecture begins.
 
+<!-- 中文翻译 -->
 ### 6b: Append to Reflexion Log
 
 If any 🔴 CONFLICT entries were found (regardless of whether they were resolved),
@@ -319,6 +330,7 @@ skip this step silently — do not create the file from this skill.
 
 ---
 
+<!-- 后续步骤 -->
 ## Next Steps
 
 - **If PASS**: Run `/review-all-gdds` for holistic design-theory review, or

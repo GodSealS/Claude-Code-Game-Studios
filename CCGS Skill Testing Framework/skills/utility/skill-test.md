@@ -20,6 +20,7 @@ system differs by mode.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -32,6 +33,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. `/skill-test` is a meta-utility skill. No director gates apply.
@@ -40,6 +42,7 @@ None. `/skill-test` is a meta-utility skill. No director gates apply.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Static Mode — Well-formed skill, all 7 checks pass, COMPLIANT
 
 **Fixture:**
@@ -69,6 +72,7 @@ None. `/skill-test` is a meta-utility skill. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Static Mode — Skill Missing "May I Write" Despite Write Tool in allowed-tools
 
 **Fixture:**
@@ -93,6 +97,7 @@ None. `/skill-test` is a meta-utility skill. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Spec Mode — gate-check Skill Evaluated Against Spec
 
 **Fixture:**
@@ -116,6 +121,7 @@ None. `/skill-test` is a meta-utility skill. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Audit Mode — Coverage Table of All Skills and Agents
 
 **Fixture:**
@@ -142,6 +148,7 @@ None. `/skill-test` is a meta-utility skill. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Category Mode — Gate Skill Evaluated Against Quality Rubric
 
 **Fixture:**
@@ -177,6 +184,7 @@ None. `/skill-test` is a meta-utility skill. No director gates apply.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The skill-test skill is self-referential (it can test itself). The static

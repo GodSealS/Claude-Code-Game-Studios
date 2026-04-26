@@ -1,10 +1,14 @@
-# Unity 6.3 — Physics Module Reference
+# Unity 6.3 — Physics Module Reference / Unity物理模块
+
+
+> **中文翻译**：本文档为Unity引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 **Last verified:** 2026-02-13
 **Knowledge Gap:** Unity 6 physics improvements, solver changes
 
 ---
 
+<!-- 概述 -->
 ## Overview
 
 Unity 6.3 uses **PhysX 5.1** (improved from PhysX 4.x in 2022 LTS):
@@ -14,8 +18,10 @@ Unity 6.3 uses **PhysX 5.1** (improved from PhysX 4.x in 2022 LTS):
 
 ---
 
+<!-- 自 2022 LTS 以来的关键变化 -->
 ## Key Changes from 2022 LTS
 
+<!-- 中文翻译 -->
 ### Default Solver Iterations Increased
 Unity 6 increased default solver iterations for better stability:
 
@@ -24,6 +30,7 @@ Unity 6 increased default solver iterations for better stability:
 Physics.defaultSolverIterations = 8; // Check if relying on old behavior
 ```
 
+<!-- 中文翻译 -->
 ### Enhanced Collision Detection
 
 ```csharp
@@ -34,8 +41,10 @@ rigidbody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
 
 ---
 
+<!-- 中文翻译 -->
 ## Core Physics Components
 
+<!-- 中文翻译 -->
 ### Rigidbody
 
 ```csharp
@@ -47,6 +56,7 @@ rb.AddForce(Vector3.forward * 10f, ForceMode.Impulse);
 rb.velocity = new Vector3(0, 10, 0); // Only use when necessary
 ```
 
+<!-- 中文翻译 -->
 ### Colliders
 
 ```csharp
@@ -58,8 +68,10 @@ rb.velocity = new Vector3(0, 10, 0); // Only use when necessary
 
 ---
 
+<!-- 中文翻译 -->
 ## Raycasting
 
+<!-- 中文翻译 -->
 ### Efficient Raycasting (Avoid Allocations)
 
 ```csharp
@@ -79,6 +91,7 @@ for (int i = 0; i < hitCount; i++) {
 RaycastHit[] hits = Physics.RaycastAll(origin, direction); // GC allocation!
 ```
 
+<!-- 中文翻译 -->
 ### LayerMask for Selective Raycasting
 
 ```csharp
@@ -89,8 +102,10 @@ Physics.Raycast(origin, direction, out RaycastHit hit, maxDistance, layerMask);
 
 ---
 
+<!-- 中文翻译 -->
 ## Physics Queries
 
+<!-- 中文翻译 -->
 ### OverlapSphere (Check for nearby objects)
 
 ```csharp
@@ -102,6 +117,7 @@ for (int i = 0; i < count; i++) {
 }
 ```
 
+<!-- 中文翻译 -->
 ### SphereCast (Thick raycast)
 
 ```csharp
@@ -113,8 +129,10 @@ if (Physics.SphereCast(origin, radius, direction, out RaycastHit hit, maxDistanc
 
 ---
 
+<!-- 中文翻译 -->
 ## Collision Events
 
+<!-- 中文翻译 -->
 ### OnCollisionEnter / Stay / Exit
 
 ```csharp
@@ -129,6 +147,7 @@ void OnCollisionEnter(Collision collision) {
 }
 ```
 
+<!-- 中文翻译 -->
 ### OnTriggerEnter / Stay / Exit
 
 ```csharp
@@ -142,8 +161,10 @@ void OnTriggerEnter(Collider other) {
 
 ---
 
+<!-- 中文翻译 -->
 ## Character Controllers
 
+<!-- 中文翻译 -->
 ### CharacterController Component
 
 ```csharp
@@ -162,8 +183,10 @@ controller.Move(velocity * Time.deltaTime);
 
 ---
 
+<!-- 中文翻译 -->
 ## Physics Materials
 
+<!-- 中文翻译 -->
 ### Friction & Bounciness
 
 ```csharp
@@ -180,8 +203,10 @@ controller.Move(velocity * Time.deltaTime);
 
 ---
 
+<!-- 中文翻译 -->
 ## Joints
 
+<!-- 中文翻译 -->
 ### Fixed Joint (Attach two rigidbodies)
 
 ```csharp
@@ -189,6 +214,7 @@ FixedJoint joint = gameObject.AddComponent<FixedJoint>();
 joint.connectedBody = otherRigidbody;
 ```
 
+<!-- 中文翻译 -->
 ### Hinge Joint (Door, wheel)
 
 ```csharp
@@ -200,27 +226,33 @@ hinge.limits = new JointLimits { min = -90, max = 90 };
 
 ---
 
+<!-- 性能优化 -->
 ## Performance Optimization
 
+<!-- 中文翻译 -->
 ### Physics Layer Collision Matrix
 `Edit > Project Settings > Physics > Layer Collision Matrix`
 - Disable unnecessary collision checks between layers
 - Massive performance gain
 
+<!-- 中文翻译 -->
 ### Fixed Timestep
 `Edit > Project Settings > Time > Fixed Timestep`
 - Default: 0.02 (50 FPS physics)
 - Lower = more accurate, higher CPU cost
 - Match game's target framerate if possible
 
+<!-- 中文翻译 -->
 ### Simplified Collision Geometry
 - Use primitive colliders (box, sphere, capsule) over mesh colliders
 - Bake mesh colliders at build time, not runtime
 
 ---
 
+<!-- 常见模式 -->
 ## Common Patterns
 
+<!-- 中文翻译 -->
 ### Ground Check (Character Controller)
 
 ```csharp
@@ -230,6 +262,7 @@ bool IsGrounded() {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Apply Explosion Force
 
 ```csharp
@@ -246,12 +279,15 @@ void ApplyExplosion(Vector3 explosionPos, float radius, float force) {
 
 ---
 
+<!-- 调试 -->
 ## Debugging
 
+<!-- 中文翻译 -->
 ### Physics Debugger (Unity 6+)
 - `Window > Analysis > Physics Debugger`
 - Visualize colliders, contacts, queries
 
+<!-- 中文翻译 -->
 ### Gizmos
 
 ```csharp
@@ -263,6 +299,7 @@ void OnDrawGizmos() {
 
 ---
 
+<!-- 来源 -->
 ## Sources
 - https://docs.unity3d.com/6000.0/Documentation/Manual/PhysicsOverview.html
 - https://docs.unity3d.com/ScriptReference/Physics.html

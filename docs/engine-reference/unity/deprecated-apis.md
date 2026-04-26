@@ -1,4 +1,7 @@
-# Unity 6.3 LTS — Deprecated APIs
+# Unity 6.3 LTS — Deprecated APIs / 已弃用API
+
+
+> **中文翻译**：本文档为Unity引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 **Last verified:** 2026-02-13
 
@@ -7,6 +10,7 @@ Format: **Don't use X** → **Use Y instead**
 
 ---
 
+<!-- 中文翻译 -->
 ## Input
 
 | Deprecated | Replacement | Notes |
@@ -21,6 +25,7 @@ Format: **Don't use X** → **Use Y instead**
 
 ---
 
+<!-- UI -->
 ## UI
 
 | Deprecated | Replacement | Notes |
@@ -33,6 +38,7 @@ Format: **Don't use X** → **Use Y instead**
 
 ---
 
+<!-- 中文翻译 -->
 ## DOTS/Entities
 
 | Deprecated | Replacement | Notes |
@@ -47,6 +53,7 @@ Format: **Don't use X** → **Use Y instead**
 
 ---
 
+<!-- 中文翻译 -->
 ## Rendering
 
 | Deprecated | Replacement | Notes |
@@ -57,6 +64,7 @@ Format: **Don't use X** → **Use Y instead**
 
 ---
 
+<!-- 中文翻译 -->
 ## Physics
 
 | Deprecated | Replacement | Notes |
@@ -66,6 +74,7 @@ Format: **Don't use X** → **Use Y instead**
 
 ---
 
+<!-- 中文翻译 -->
 ## Asset Loading
 
 | Deprecated | Replacement | Notes |
@@ -75,6 +84,7 @@ Format: **Don't use X** → **Use Y instead**
 
 ---
 
+<!-- 中文翻译 -->
 ## Animation
 
 | Deprecated | Replacement | Notes |
@@ -84,6 +94,7 @@ Format: **Don't use X** → **Use Y instead**
 
 ---
 
+<!-- 中文翻译 -->
 ## Particles
 
 | Deprecated | Replacement | Notes |
@@ -92,6 +103,7 @@ Format: **Don't use X** → **Use Y instead**
 
 ---
 
+<!-- 中文翻译 -->
 ## Scripting
 
 | Deprecated | Replacement | Notes |
@@ -101,8 +113,10 @@ Format: **Don't use X** → **Use Y instead**
 
 ---
 
+<!-- 中文翻译 -->
 ## Platform-Specific
 
+<!-- 中文翻译 -->
 ### WebGL
 | Deprecated | Replacement | Notes |
 |------------|-------------|-------|
@@ -110,8 +124,10 @@ Format: **Don't use X** → **Use Y instead**
 
 ---
 
+<!-- 中文翻译 -->
 ## Quick Migration Patterns
 
+<!-- 中文翻译 -->
 ### Input Example
 ```csharp
 // ❌ Deprecated
@@ -126,6 +142,7 @@ if (Keyboard.current.spaceKey.wasPressedThisFrame) {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Asset Loading Example
 ```csharp
 // ❌ Deprecated
@@ -137,6 +154,7 @@ await handle.Task;
 var prefab = handle.Result;
 ```
 
+<!-- 中文翻译 -->
 ### UI Example
 ```csharp
 // ❌ Deprecated (UGUI)

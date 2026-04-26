@@ -1,10 +1,14 @@
-# Unreal Engine 5.7 — UI Module Reference
+# Unreal Engine 5.7 — UI Module Reference / Unreal EngineUI模块
+
+
+> **中文翻译**：本文档为Unreal Engine引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 **Last verified:** 2026-02-13
 **Knowledge Gap:** UE 5.7 UMG and CommonUI improvements
 
 ---
 
+<!-- 概述 -->
 ## Overview
 
 UE 5.7 UI systems:
@@ -14,8 +18,10 @@ UE 5.7 UI systems:
 
 ---
 
+<!-- 中文翻译 -->
 ## UMG (Unreal Motion Graphics)
 
+<!-- 中文翻译 -->
 ### Create Widget Blueprint
 
 1. Content Browser > User Interface > Widget Blueprint
@@ -24,8 +30,10 @@ UE 5.7 UI systems:
 
 ---
 
+<!-- 中文翻译 -->
 ## Basic UMG Setup in C++
 
+<!-- 中文翻译 -->
 ### Create and Display Widget
 
 ```cpp
@@ -45,6 +53,7 @@ void AMyCharacter::BeginPlay() {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Remove Widget
 
 ```cpp
@@ -53,8 +62,10 @@ HealthBarWidget->RemoveFromParent();
 
 ---
 
+<!-- 中文翻译 -->
 ## Access Widget Elements from C++
 
+<!-- 中文翻译 -->
 ### Bind to Widget Elements
 
 ```cpp
@@ -79,8 +90,10 @@ public:
 
 ---
 
+<!-- 中文翻译 -->
 ## Common UMG Widgets
 
+<!-- 中文翻译 -->
 ### Text Block
 
 ```cpp
@@ -91,6 +104,7 @@ ScoreText->SetText(FText::FromString(TEXT("Score: 100")));
 ScoreText->SetColorAndOpacity(FLinearColor::Green);
 ```
 
+<!-- 中文翻译 -->
 ### Button
 
 ```cpp
@@ -110,6 +124,7 @@ void OnPlayClicked() {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Image
 
 ```cpp
@@ -120,6 +135,7 @@ PlayerAvatar->SetBrushFromTexture(AvatarTexture);
 PlayerAvatar->SetColorAndOpacity(FLinearColor::White);
 ```
 
+<!-- 中文翻译 -->
 ### Progress Bar
 
 ```cpp
@@ -130,6 +146,7 @@ HealthBar->SetPercent(0.75f); // 75%
 HealthBar->SetFillColorAndOpacity(FLinearColor::Red);
 ```
 
+<!-- 中文翻译 -->
 ### Slider
 
 ```cpp
@@ -148,6 +165,7 @@ void OnVolumeChanged(float Value) {
 }
 ```
 
+<!-- 中文翻译 -->
 ### EditableTextBox (Input Field)
 
 ```cpp
@@ -167,8 +185,10 @@ void OnNameChanged(const FText& Text) {
 
 ---
 
+<!-- 中文翻译 -->
 ## UMG Animations
 
+<!-- 中文翻译 -->
 ### Play Animation
 
 ```cpp
@@ -180,6 +200,7 @@ void ShowUI() {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Stop Animation
 
 ```cpp
@@ -188,8 +209,10 @@ StopAnimation(FadeInAnimation);
 
 ---
 
+<!-- 中文翻译 -->
 ## Canvas Panel (Layout)
 
+<!-- 中文翻译 -->
 ### Canvas Panel (Absolute Positioning)
 
 ```cpp
@@ -197,18 +220,21 @@ StopAnimation(FadeInAnimation);
 // Anchor widgets to corners/edges for responsive UI
 ```
 
+<!-- 中文翻译 -->
 ### Vertical Box (Stack Vertically)
 
 ```cpp
 // Auto-stacks children vertically
 ```
 
+<!-- 中文翻译 -->
 ### Horizontal Box (Stack Horizontally)
 
 ```cpp
 // Auto-stacks children horizontally
 ```
 
+<!-- 中文翻译 -->
 ### Grid Panel (Grid Layout)
 
 ```cpp
@@ -217,8 +243,10 @@ StopAnimation(FadeInAnimation);
 
 ---
 
+<!-- 中文翻译 -->
 ## World Space UI (3D UI)
 
+<!-- 中文翻译 -->
 ### Widget Component (3D UI in World)
 
 ```cpp
@@ -233,8 +261,10 @@ HealthBarWidget->SetDrawSize(FVector2D(200, 50));
 
 ---
 
+<!-- 中文翻译 -->
 ## Input Handling in UMG
 
+<!-- 中文翻译 -->
 ### Override Keyboard Input
 
 ```cpp
@@ -256,8 +286,10 @@ public:
 
 ---
 
+<!-- 中文翻译 -->
 ## CommonUI (Cross-Platform Input)
 
+<!-- 中文翻译 -->
 ### Enable CommonUI Plugin
 
 ```cpp
@@ -265,6 +297,7 @@ public:
 // Restart editor
 ```
 
+<!-- 中文翻译 -->
 ### Use CommonUI Widgets
 
 ```cpp
@@ -274,6 +307,7 @@ public:
 // - CommonTextBlock: Text with styling
 ```
 
+<!-- 中文翻译 -->
 ### CommonActivatableWidget Example
 
 ```cpp
@@ -296,8 +330,10 @@ public:
 
 ---
 
+<!-- 中文翻译 -->
 ## HUD Class (Alternative to UMG)
 
+<!-- 中文翻译 -->
 ### Create HUD
 
 ```cpp
@@ -320,8 +356,10 @@ public:
 
 ---
 
+<!-- 性能提示 -->
 ## Performance Tips
 
+<!-- 中文翻译 -->
 ### Optimize UMG
 
 ```cpp
@@ -335,8 +373,10 @@ SetVisibility(ESlateVisibility::Collapsed); // Collapsed = not rendered
 
 ---
 
+<!-- 调试 -->
 ## Debugging
 
+<!-- 中文翻译 -->
 ### UI Debug Commands
 
 ```cpp
@@ -348,6 +388,7 @@ SetVisibility(ESlateVisibility::Collapsed); // Collapsed = not rendered
 
 ---
 
+<!-- 来源 -->
 ## Sources
 - https://docs.unrealengine.com/5.7/en-US/umg-ui-designer-for-unreal-engine/
 - https://docs.unrealengine.com/5.7/en-US/commonui-plugin-for-advanced-user-interfaces-in-unreal-engine/

@@ -10,6 +10,7 @@ season plan requiring user approval before handoff to production.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] Has required frontmatter fields: `name`, `description`, `argument-hint`, `user-invocable`, `allowed-tools`
@@ -27,6 +28,7 @@ season plan requiring user approval before handoff to production.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — All 7 phases complete, season plan produced
 
 **Fixture:**
@@ -60,6 +62,7 @@ season plan requiring user approval before handoff to production.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Ethics Violation Found — Reward element violates ethics policy
 
 **Fixture:**
@@ -86,6 +89,7 @@ season plan requiring user approval before handoff to production.
 
 ---
 
+<!-- 用例 3：无参数 — 显示用法指导 -->
 ### Case 3: No Argument — Usage guidance shown
 
 **Fixture:**
@@ -106,6 +110,7 @@ season plan requiring user approval before handoff to production.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Parallel Phase Validation — Phases 3 and 4 run simultaneously
 
 **Fixture:**
@@ -130,6 +135,7 @@ season plan requiring user approval before handoff to production.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Missing Ethics Policy — `design/live-ops/ethics-policy.md` does not exist
 
 **Fixture:**
@@ -170,6 +176,7 @@ season plan requiring user approval before handoff to production.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - Phase 5 parallel spawning (narrative-director + writer) follows the same pattern as Phases 3/4 but is not separately tested here — it uses the same parallel Task protocol validated in Case 4.

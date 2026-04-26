@@ -1,19 +1,26 @@
-# Godot Animation — Quick Reference
+# Godot Animation — Quick Reference / Godot动画模块
+
+
+> **中文翻译**：本文档为Godot引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 Last verified: 2026-02-12 | Engine: Godot 4.6
 
+<!-- 自 ~4.3 以来的变化（LLM 训练截止） -->
 ## What Changed Since ~4.3 (LLM Cutoff)
 
+<!-- 中文翻译 -->
 ### 4.6 Changes
 - **IK system fully restored**: Complete inverse kinematics for 3D skeletons
   - CCDIK, FABRIK, Jacobian IK, Spline IK, TwoBoneIK
   - Applied via `SkeletonModifier3D` nodes (not the old IK approach)
 - **Animation editor QoL**: Solo/hide/lock/delete for Bezier node groups; draggable timeline
 
+<!-- 中文翻译 -->
 ### 4.5 Changes
 - **BoneConstraint3D**: Bind bones to other bones with modifiers
   - `AimModifier3D`, `CopyTransformModifier3D`, `ConvertTransformModifier3D`
 
+<!-- 中文翻译 -->
 ### 4.3 Changes (in training data)
 - **AnimationMixer**: Base class for both AnimationPlayer and AnimationTree
   - `method_call_mode` → `callback_mode_method`
@@ -21,8 +28,10 @@ Last verified: 2026-02-12 | Engine: Godot 4.6
   - `bone_pose_updated` signal → `skeleton_updated`
 - **`Skeleton3D.add_bone()`**: Now returns `int32` (was `void`)
 
+<!-- 当前 API 模式 -->
 ## Current API Patterns
 
+<!-- 中文翻译 -->
 ### AnimationPlayer (unchanged API, new base class)
 ```gdscript
 @onready var anim_player: AnimationPlayer = %AnimationPlayer
@@ -32,6 +41,7 @@ func play_attack() -> void:
     await anim_player.animation_finished
 ```
 
+<!-- 中文翻译 -->
 ### IK Setup (4.6 — NEW)
 ```gdscript
 # Add SkeletonModifier3D-based IK nodes as children of Skeleton3D
@@ -50,6 +60,7 @@ func play_attack() -> void:
 # 4. IK solver runs automatically each frame
 ```
 
+<!-- 中文翻译 -->
 ### BoneConstraint3D (4.5 — NEW)
 ```gdscript
 # Add as child of Skeleton3D
@@ -59,6 +70,7 @@ func play_attack() -> void:
 # - ConvertTransformModifier3D: Remap transform values
 ```
 
+<!-- 中文翻译 -->
 ### AnimationTree (base class changed in 4.3)
 ```gdscript
 # AnimationTree now extends AnimationMixer (not Node directly)
@@ -69,6 +81,7 @@ func _ready() -> void:
     anim_tree.active = true  # NOT playback_active (deprecated 4.3)
 ```
 
+<!-- 常见错误 -->
 ## Common Mistakes
 - Using `playback_active` instead of `active` (deprecated since 4.3)
 - Using `bone_pose_updated` signal instead of `skeleton_updated` (renamed in 4.3)

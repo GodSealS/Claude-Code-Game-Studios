@@ -15,6 +15,7 @@ has no director gates. The skill asks "May I write" before writing
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -28,6 +29,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 No director gates — this skill spawns no director gate agents. The control
@@ -38,6 +40,7 @@ review gate is needed.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — 4 Accepted ADRs create a correct manifest
 
 **Fixture:**
@@ -65,6 +68,7 @@ review gate is needed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Failure Path — No ADRs found
 
 **Fixture:**
@@ -86,6 +90,7 @@ review gate is needed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Mixed ADR Statuses — Only Accepted ADRs included
 
 **Fixture:**
@@ -108,6 +113,7 @@ review gate is needed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Edge Case — Manifest already exists
 
 **Fixture:**
@@ -131,6 +137,7 @@ review gate is needed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate — No gate spawned; no review-mode.txt read
 
 **Fixture:**
@@ -165,6 +172,7 @@ review gate is needed.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The exact section structure of the generated manifest (constraint tables, pattern

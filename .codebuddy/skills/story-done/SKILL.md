@@ -352,6 +352,7 @@ If yes, edit the story file:
 After updating the story file, silently append to
 `production/session-state/active.md`:
 
+    <!-- 中文翻译 -->
     ## Session Extract — /story-done [date]
     - Verdict: [COMPLETE / COMPLETE WITH NOTES / BLOCKED]
     - Story: [story file path] — [story title]

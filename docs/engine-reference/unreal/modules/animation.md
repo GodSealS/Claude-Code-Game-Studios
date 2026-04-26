@@ -1,10 +1,14 @@
-# Unreal Engine 5.7 — Animation Module Reference
+# Unreal Engine 5.7 — Animation Module Reference / Unreal Engine动画模块
+
+
+> **中文翻译**：本文档为Unreal Engine引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 **Last verified:** 2026-02-13
 **Knowledge Gap:** UE 5.7 animation authoring improvements, Control Rig 2.0
 
 ---
 
+<!-- 概述 -->
 ## Overview
 
 UE 5.7 animation systems:
@@ -15,14 +19,17 @@ UE 5.7 animation systems:
 
 ---
 
+<!-- 中文翻译 -->
 ## Animation Blueprint
 
+<!-- 中文翻译 -->
 ### Create Animation Blueprint
 
 1. Content Browser > Right Click > Animation > Animation Blueprint
 2. Select parent class: `AnimInstance`
 3. Select skeleton
 
+<!-- 中文翻译 -->
 ### Animation State Machine
 
 ```cpp
@@ -37,8 +44,10 @@ AnimInstance->Montage_Play(AttackMontage);
 
 ---
 
+<!-- 中文翻译 -->
 ## Play Animation Montages
 
+<!-- 中文翻译 -->
 ### Animation Montage
 
 ```cpp
@@ -53,6 +62,7 @@ AnimInstance->Montage_Stop(0.2f, AttackMontage);
 bool bIsPlaying = AnimInstance->Montage_IsPlaying(AttackMontage);
 ```
 
+<!-- 中文翻译 -->
 ### Montage Notify Events
 
 ```cpp
@@ -74,8 +84,10 @@ public:
 
 ---
 
+<!-- 中文翻译 -->
 ## Blend Spaces
 
+<!-- 中文翻译 -->
 ### 1D Blend Space (Speed Blending)
 
 ```cpp
@@ -88,6 +100,7 @@ public:
 // - Feed into Blend Space
 ```
 
+<!-- 中文翻译 -->
 ### 2D Blend Space (Directional Movement)
 
 ```cpp
@@ -99,14 +112,17 @@ public:
 
 ---
 
+<!-- 中文翻译 -->
 ## Control Rig (Procedural Animation)
 
+<!-- 中文翻译 -->
 ### Create Control Rig
 
 1. Content Browser > Animation > Control Rig
 2. Select skeleton
 3. Build rig hierarchy (bones, controls, IK)
 
+<!-- 中文翻译 -->
 ### Use Control Rig in Animation Blueprint
 
 ```cpp
@@ -115,6 +131,7 @@ public:
 // Procedurally modify bones at runtime
 ```
 
+<!-- 中文翻译 -->
 ### Control Rig in C++
 
 ```cpp
@@ -127,8 +144,10 @@ ControlRig->SetControlValue<FVector>(TEXT("IK_Hand_R"), TargetLocation);
 
 ---
 
+<!-- 中文翻译 -->
 ## IK Rig & Retargeting (UE5)
 
+<!-- 中文翻译 -->
 ### Create IK Rig
 
 1. Content Browser > Animation > IK Rig
@@ -136,6 +155,7 @@ ControlRig->SetControlValue<FVector>(TEXT("IK_Hand_R"), TargetLocation);
 3. Add IK goals (hands, feet)
 4. Set up solver chains
 
+<!-- 中文翻译 -->
 ### Retarget Animations
 
 1. Create IK Rig for source skeleton
@@ -144,6 +164,7 @@ ControlRig->SetControlValue<FVector>(TEXT("IK_Hand_R"), TargetLocation);
 4. Assign source and target IK Rigs
 5. Batch retarget animations
 
+<!-- 中文翻译 -->
 ### Retargeting in C++
 
 ```cpp
@@ -153,8 +174,10 @@ ControlRig->SetControlValue<FVector>(TEXT("IK_Hand_R"), TargetLocation);
 
 ---
 
+<!-- 中文翻译 -->
 ## Animation Notify States
 
+<!-- 中文翻译 -->
 ### Custom Notify State (Duration-Based Events)
 
 ```cpp
@@ -179,8 +202,10 @@ public:
 
 ---
 
+<!-- 中文翻译 -->
 ## Skeletal Mesh & Sockets
 
+<!-- 中文翻译 -->
 ### Attach Objects to Sockets
 
 ```cpp
@@ -193,8 +218,10 @@ Weapon->SetupAttachment(GetMesh(), TEXT("hand_r_socket"));
 
 ---
 
+<!-- 中文翻译 -->
 ## Animation Curves
 
+<!-- 中文翻译 -->
 ### Use Animation Curves
 
 ```cpp
@@ -208,8 +235,10 @@ float CurveValue = AnimInstance->GetCurveValue(TEXT("MyCurve"));
 
 ---
 
+<!-- 中文翻译 -->
 ## Root Motion
 
+<!-- 中文翻译 -->
 ### Enable Root Motion
 
 ```cpp
@@ -221,8 +250,10 @@ GetCharacterMovement()->bAllowPhysicsRotationDuringAnimRootMotion = true;
 
 ---
 
+<!-- 中文翻译 -->
 ## Animation Layers (Linked Anim Graphs)
 
+<!-- 中文翻译 -->
 ### Use Linked Anim Layers
 
 ```cpp
@@ -236,13 +267,16 @@ AnimInstance->LinkAnimClassLayers(NewLayerClass);
 
 ---
 
+<!-- 中文翻译 -->
 ## Sequencer (Cinematic Animation)
 
+<!-- 中文翻译 -->
 ### Create Sequence
 
 1. Content Browser > Cinematics > Level Sequence
 2. Add tracks: Camera, Character, Animation, etc.
 
+<!-- 中文翻译 -->
 ### Play Sequence from C++
 
 ```cpp
@@ -255,8 +289,10 @@ SequenceActor->GetSequencePlayer()->Play();
 
 ---
 
+<!-- 性能提示 -->
 ## Performance Tips
 
+<!-- 中文翻译 -->
 ### Animation Optimization
 
 ```cpp
@@ -271,8 +307,10 @@ GetMesh()->VisibilityBasedAnimTickOption = EVisibilityBasedAnimTickOption::OnlyT
 
 ---
 
+<!-- 调试 -->
 ## Debugging
 
+<!-- 中文翻译 -->
 ### Animation Debug Visualization
 
 ```cpp
@@ -286,6 +324,7 @@ DrawDebugCoordinateSystem(GetWorld(), BoneLocation, BoneRotation, 50.0f, false, 
 
 ---
 
+<!-- 来源 -->
 ## Sources
 - https://docs.unrealengine.com/5.7/en-US/animation-in-unreal-engine/
 - https://docs.unrealengine.com/5.7/en-US/control-rig-in-unreal-engine/

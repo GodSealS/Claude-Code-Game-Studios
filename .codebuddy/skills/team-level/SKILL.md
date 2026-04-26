@@ -8,15 +8,16 @@ allowed-tools: Read, Glob, Grep, Write, Edit, Bash, Task, AskUserQuestion, TodoW
 
 When this skill is invoked:
 
+> **中文翻译**：当此技能被调用时：
+
 **Decision Points:** At each step transition, use `AskUserQuestion` to present
 the user with the subagent's proposals as selectable options. Write the agent's
 full analysis in conversation, then capture the decision with concise labels.
 The user must approve before moving to the next step.
 
-> **中文翻译**：当此技能被调用时：**决策点：** 在每个步骤转换时，使用 `AskUserQuestion` 向用户展示子代理的提案作为可选选项。在对话中写入代理的完整分析，然后用简洁的标签捕获决策。用户必须在进入下一步之前批准。
+> **中文翻译**：**决策点：** 在每个步骤转换时，使用 `AskUserQuestion` 向用户展示子代理的提案作为可选选项。在对话中写入代理的完整分析，然后用简洁的标签捕获决策。用户必须在进入下一步之前批准。
 
-1. **Read the argument** for the target level or area (e.g., `tutorial`,
-   `forest dungeon`, `hub town`, `final boss arena`). / **读取参数**，获取目标关卡或区域（如 `tutorial`、`forest dungeon`、`hub town`、`final boss arena`）。
+1. **Read the argument** for the target level or area (e.g., `tutorial`, `forest dungeon`, `hub town`, `final boss arena`). / **读取参数**，获取目标关卡或区域（如 `tutorial`、`forest dungeon`、`hub town`、`final boss arena`）。
 
 2. **Gather context**: / **收集上下文**：
    - Read the game concept at `design/gdd/game-concept.md` / 读取 `design/gdd/game-concept.md` 中的游戏概念
@@ -147,15 +148,11 @@ Spawn the `qa-tester` agent to: / 派生 `qa-tester` 代理以：
 - Create a playtest checklist for the area / 为该区域创建试玩清单
 - Define acceptance criteria for level completion / 定义关卡完成的验收标准
 
-4. **Compile the level design document** combining all team outputs into the
-   level design template format. / **编译关卡设计文档**，将所有团队输出合并到关卡设计模板格式中。
+4. **Compile the level design document** combining all team outputs into the level design template format. / **编译关卡设计文档**，将所有团队输出合并到关卡设计模板格式中。
 
 5. **Save to** `design/levels/[level-name].md`. / **保存到** `design/levels/[level-name].md`。
 
-6. **Output a summary** with: area overview, encounter count, estimated asset
-   list, narrative beats, any cross-team dependencies or open questions, open
-   cross-level dependencies (adjacent areas referenced but not yet designed, each
-   marked UNRESOLVED), and accessibility concerns with their resolution status. / **输出摘要**，包含：区域概述、遭遇数量、估算资产列表、叙事节奏、任何跨团队依赖或开放问题、开放跨关卡依赖（已引用但尚未设计的相邻区域，每个标记为 UNRESOLVED）和无障碍关注及其解决状态。
+6. **Output a summary** with: area overview, encounter count, estimated asset list, narrative beats, any cross-team dependencies or open questions, open cross-level dependencies (adjacent areas referenced but not yet designed, each marked UNRESOLVED), and accessibility concerns with their resolution status. / **输出摘要**，包含：区域概述、遭遇数量、估算资产列表、叙事节奏、任何跨团队依赖或开放问题、开放跨关卡依赖（已引用但尚未设计的相邻区域，每个标记为 UNRESOLVED）和无障碍关注及其解决状态。
 
 ## File Write Protocol / 文件写入协议
 

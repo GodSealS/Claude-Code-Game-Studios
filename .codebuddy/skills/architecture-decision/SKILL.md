@@ -221,6 +221,7 @@ or explicitly accepted as an intentional exception.
 
 ---
 
+<!-- 第3阶段：协作引导决策 -->
 ## 3. Guide the decision collaboratively / 协作引导决策
 
 Before asking anything, derive the skill's best guesses from the context already
@@ -298,6 +299,7 @@ Record answers in the **ADR Dependencies** section. Write "None" for each field 
 
 ---
 
+<!-- 第4阶段：生成 ADR -->
 ## 4. Generate the ADR / 生成 ADR
 
 Following this format:
@@ -546,6 +548,7 @@ changing, set the old entry to `status: superseded_by: ADR-[NNNN]` and add the n
 
 ---
 
+<!-- 第7阶段：结束后续步骤 -->
 ## 7. Closing Next Steps / 结束后续步骤
 
 After the ADR is written (and registry optionally updated), close with `AskUserQuestion`.

@@ -8,6 +8,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references Unreal Engine)
@@ -20,6 +21,7 @@
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: In-domain request — Blueprint vs C++ decision criteria
 **Input**: "Should I implement our combo attack system in Blueprint or C++?"
 **Expected behavior**:
@@ -29,6 +31,7 @@
 - Does NOT render a final verdict without knowing project context — asks clarifying questions if context is absent
 - Output is structured (criteria table or bullet list), not a freeform opinion
 
+<!-- 中文翻译 -->
 ### Case 2: Out-of-domain request — Unity C# code
 **Input**: "Write me a C# MonoBehaviour that handles player health and fires a Unity event on death."
 **Expected behavior**:
@@ -37,6 +40,7 @@
 - Optionally offers to provide the UE equivalent if requested
 - Does not redirect to a Unity specialist (none exists in the framework)
 
+<!-- 中文翻译 -->
 ### Case 3: Domain boundary — UE5.4 API requirement
 **Input**: "I need to use the new Motion Matching API introduced in UE5.4."
 **Expected behavior**:
@@ -45,6 +49,7 @@
 - Provides best-effort API guidance with explicit uncertainty markers (e.g., "Verify this against UE5.4 release notes")
 - Does NOT silently produce stale or incorrect API signatures without a caveat
 
+<!-- 中文翻译 -->
 ### Case 4: Conflict — Blueprint spaghetti in a core system
 **Input**: "Our replication logic is entirely in a deeply nested Blueprint event graph with 300+ nodes and no functions. It's becoming unmaintainable."
 **Expected behavior**:
@@ -54,6 +59,7 @@
 - Does NOT unilaterally declare "migrate to C++" without surfacing the scope of the refactor to the user
 - Produces a concrete migration recommendation, not a vague suggestion
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — version-appropriate API suggestions
 **Input context**: Project engine-reference file states Unreal Engine 5.3.
 **Input**: "How do I set up Enhanced Input actions for a new character?"
@@ -75,6 +81,7 @@
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - No automated runner exists for agent behavior tests — these are reviewed manually or via `/skill-test`
 - Version-awareness (Case 3, Case 5) is the highest-risk failure mode for this agent; test regularly when engine version changes

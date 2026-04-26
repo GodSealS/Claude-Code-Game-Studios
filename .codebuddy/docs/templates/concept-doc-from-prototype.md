@@ -16,6 +16,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## 1. Prototype Overview
 
 **Original Hypothesis**:
@@ -35,6 +36,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## 2. Core Mechanic
 
 **What the Prototype Does**:
@@ -59,8 +61,10 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## 3. What Worked
 
+<!-- 中文翻译 -->
 ### Mechanic Successes
 
 ✅ **[Success 1]**: [What worked well]
@@ -71,6 +75,7 @@
 - **Why**: [What made this successful]
 - **Keep for Production**: [Should this be preserved?]
 
+<!-- 中文翻译 -->
 ### Technical Successes
 
 ✅ **[Technical win 1]**: [What technical approach worked]
@@ -82,8 +87,10 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## 4. What Didn't Work
 
+<!-- 中文翻译 -->
 ### Mechanic Failures
 
 ❌ **[Failure 1]**: [What didn't work]
@@ -94,6 +101,7 @@
 - **Why**: [Root cause]
 - **Could It Be Fixed**: [Yes/No + how]
 
+<!-- 中文翻译 -->
 ### Technical Failures
 
 ❌ **[Technical issue 1]**: [What caused problems]
@@ -104,6 +112,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## 5. What Needs Refinement
 
 ⚠️ **[Element 1]**: [What showed promise but needs work]
@@ -118,8 +127,10 @@
 
 ---
 
+<!-- 6. 关键经验 -->
 ## 6. Key Learnings
 
+<!-- 中文翻译 -->
 ### Design Insights
 
 💡 **[Insight 1]**: [What we learned about game design]
@@ -128,6 +139,7 @@
 💡 **[Insight 2]**: [Design learning]
 - **Implication**: [Impact on GDD or other systems]
 
+<!-- 中文翻译 -->
 ### Technical Insights
 
 💡 **[Insight 3]**: [Technical learning]
@@ -136,6 +148,7 @@
 💡 **[Insight 4]**: [Technical learning]
 - **Implication**: [Future technical decisions]
 
+<!-- 中文翻译 -->
 ### Player Psychology Insights
 
 💡 **[Insight 5]**: [What we learned about player behavior]
@@ -143,6 +156,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## 7. Production Readiness Assessment
 
 **Should This Become a Full Feature?**: [Yes | No | Needs More Testing | Pivot to Different Approach]
@@ -168,6 +182,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## 8. Design Pillars Alignment
 
 **How This Relates to Game Pillars** (if game pillars are defined):
@@ -182,18 +197,22 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## 9. Next Steps
 
+<!-- 中文翻译 -->
 ### Immediate (If Moving Forward)
 1. **[Task 1]**: [e.g., "Create full design doc for this system"]
 2. **[Task 2]**: [e.g., "Write ADR for technical approach"]
 3. **[Task 3]**: [e.g., "Add to backlog for Sprint X"]
 
+<!-- 中文翻译 -->
 ### Before Production (If Needs More Work)
 1. **[Task 1]**: [e.g., "Build second prototype testing X variation"]
 2. **[Task 2]**: [e.g., "Playtest with 5+ people"]
 3. **[Task 3]**: [e.g., "Investigate technical feasibility of Y"]
 
+<!-- 中文翻译 -->
 ### If Abandoning
 1. **[Task 1]**: [e.g., "Archive prototype with this document"]
 2. **[Task 2]**: [e.g., "Extract reusable code/learnings"]
@@ -201,6 +220,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## 10. Technical Notes
 
 **Prototype Implementation**:
@@ -218,6 +238,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## 11. Playtest Feedback
 
 *(If prototype was playtested)*
@@ -242,6 +263,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## 12. Related Work
 
 **Inspired By** (games/mechanics this was influenced by):
@@ -258,6 +280,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## 13. Open Questions
 
 **Design Questions**:
@@ -270,6 +293,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## 14. Appendix: Prototype Assets
 
 **Code**:
@@ -286,6 +310,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Version History
 
 | Date | Author | Changes |

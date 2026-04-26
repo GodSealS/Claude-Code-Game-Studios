@@ -82,6 +82,7 @@ For Logic and Integration stories, you write the test file (or scaffold it for t
 
 **Pattern per engine:** / **每个引擎的模式：**
 
+<!-- Godot (GDScript / GdUnit4) -->
 #### Godot (GDScript / GdUnit4)
 
 ```gdscript
@@ -98,6 +99,7 @@ func test_[scenario]_[expected]() -> void:
     assert_that(result).is_equal([expected])
 ```
 
+<!-- Unity (C# / NUnit) -->
 #### Unity (C# / NUnit)
 
 ```csharp
@@ -119,6 +121,7 @@ public class [SystemName]Tests
 }
 ```
 
+<!-- Unreal (C++) -->
 #### Unreal (C++)
 
 ```cpp

@@ -8,6 +8,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references shaders / VFX / rendering)
@@ -19,6 +20,7 @@
 
 ## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出 -->
 ### Case 1: In-domain request — appropriate output
 **Input:** "Create a dissolve effect shader for enemy death sequences."
 **Expected behavior:**
@@ -28,6 +30,7 @@
 - Notes edge-lighting technique as an optional enhancement
 - Output is engine-version-aware (checks version reference if post-cutoff APIs are needed)
 
+<!-- 用例 2：域外请求 — 正确重定向 -->
 ### Case 2: Out-of-domain request — redirects correctly
 **Input:** "Define the art bible color palette: primary, secondary, and accent colors for the UI."
 **Expected behavior:**
@@ -36,6 +39,7 @@
 - Redirects the request to `art-director`
 - May note it can later implement a color-grading or palette LUT shader once the palette is decided
 
+<!-- 中文翻译 -->
 ### Case 3: Performance warning — GPU particle count
 **Input:** "The VFX system is triggering a GPU particle count warning at 50,000 particles in the explosion pool."
 **Expected behavior:**
@@ -44,6 +48,7 @@
 - Provides before/after GPU cost estimates where calculable
 - Does NOT change gameplay behavior of the explosion (delegates any gameplay impact to gameplay-programmer)
 
+<!-- 中文翻译 -->
 ### Case 4: Engine version compatibility
 **Input:** "Use the new texture sampler API for the water shader."
 **Expected behavior:**
@@ -52,6 +57,7 @@
 - Provides the correct syntax for the project's pinned engine version
 - If uncertain about post-cutoff behavior, explicitly states the uncertainty and directs to verified docs
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — uses performance budget
 **Input:** Performance budget from `technical-preferences.md` provided in context: 2ms GPU frame budget, max 200 draw calls. Request: "Optimize the forest rendering system."
 **Expected behavior:**
@@ -75,6 +81,7 @@
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Dissolve shader (Case 1) should include a visual test reference in `production/qa/evidence/`
 - Engine version check (Case 4) confirms the agent treats VERSION.md as authoritative

@@ -27,6 +27,7 @@ delegates vs. handles directly. Include which gates it triggers (if any).]
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: In-Domain Request — [brief name]
 
 **Scenario**: A request that is clearly within this agent's domain.
@@ -49,6 +50,7 @@ delegates vs. handles directly. Include which gates it triggers (if any).]
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Out-of-Domain Redirect — [brief name]
 
 **Scenario**: A request that falls outside this agent's domain.
@@ -69,6 +71,7 @@ delegates vs. handles directly. Include which gates it triggers (if any).]
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Gate Verdict — [brief name]
 
 **Scenario**: Agent is invoked as part of a director gate check.
@@ -91,6 +94,7 @@ delegates vs. handles directly. Include which gates it triggers (if any).]
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Conflict Escalation — [brief name]
 
 **Scenario**: This agent's domain conflicts with another agent's decision.
@@ -112,6 +116,7 @@ delegates vs. handles directly. Include which gates it triggers (if any).]
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Context Pass-Through — [brief name]
 
 **Scenario**: Agent receives a task with full context from a parent agent.
@@ -144,6 +149,7 @@ delegates vs. handles directly. Include which gates it triggers (if any).]
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 [Any gaps in coverage, known edge cases not tested, or behaviors that require

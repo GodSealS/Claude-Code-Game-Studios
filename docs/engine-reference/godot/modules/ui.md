@@ -1,9 +1,14 @@
-# Godot UI — Quick Reference
+# Godot UI — Quick Reference / GodotUI模块
+
+
+> **中文翻译**：本文档为Godot引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 Last verified: 2026-02-12 | Engine: Godot 4.6
 
+<!-- 自 ~4.3 以来的变化（LLM 训练截止） -->
 ## What Changed Since ~4.3 (LLM Cutoff)
 
+<!-- 中文翻译 -->
 ### 4.6 Changes
 - **Dual-focus system**: Mouse/touch focus is now SEPARATE from keyboard/gamepad focus
   - Visual feedback differs by input method
@@ -11,6 +16,7 @@ Last verified: 2026-02-12 | Engine: Godot 4.6
 - **TabContainer**: Tab properties editable directly in Inspector
 - **TileMapLayer scene tile rotation**: Scene tiles can be rotated like atlas tiles
 
+<!-- 中文翻译 -->
 ### 4.5 Changes
 - **FoldableContainer**: New accordion-style UI node for collapsible sections
 - **Recursive Control behavior**: Disable mouse/focus for entire node hierarchies
@@ -19,11 +25,14 @@ Last verified: 2026-02-12 | Engine: Godot 4.6
 - **Live translation preview**: Test different locales in-editor
 - **`RichTextLabel.push_meta`**: Added optional `tooltip` parameter (from 4.4)
 
+<!-- 中文翻译 -->
 ### 4.4 Changes
 - **`GraphEdit.connect_node`**: Added optional `keep_alive` parameter
 
+<!-- 当前 API 模式 -->
 ## Current API Patterns
 
+<!-- 中文翻译 -->
 ### Theme and Style (4.6)
 ```gdscript
 # Editor uses new "Modern" theme by default
@@ -33,6 +42,7 @@ theme.set_color(&"font_color", &"Label", Color.WHITE)
 theme.set_font_size(&"font_size", &"Label", 24)
 ```
 
+<!-- 中文翻译 -->
 ### Focus Management (4.6 — CHANGED)
 ```gdscript
 # Keyboard/gamepad focus (grab_focus still works)
@@ -48,6 +58,7 @@ func _ready() -> void:
 %Button1.focus_neighbor_right = %Button3.get_path()
 ```
 
+<!-- 中文翻译 -->
 ### FoldableContainer (4.5 — NEW)
 ```gdscript
 # Accordion-style collapsible container
@@ -56,6 +67,7 @@ func _ready() -> void:
 # Configure via editor properties or code
 ```
 
+<!-- 中文翻译 -->
 ### Recursive Disable (4.5 — NEW)
 ```gdscript
 # Disable all mouse/focus interactions for a hierarchy
@@ -64,6 +76,7 @@ func _ready() -> void:
 # In 4.5+, this can propagate recursively to children
 ```
 
+<!-- 中文翻译 -->
 ### Localization-Ready UI (best practice)
 ```gdscript
 # Use tr() for all visible strings
@@ -75,6 +88,7 @@ label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 # Test with live translation preview in editor (4.5+)
 ```
 
+<!-- 常见错误 -->
 ## Common Mistakes
 - Assuming `grab_focus()` affects mouse focus (keyboard/gamepad only in 4.6)
 - Not testing UI with both mouse and gamepad after upgrading to 4.6

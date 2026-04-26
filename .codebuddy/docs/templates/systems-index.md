@@ -7,6 +7,7 @@
 
 ---
 
+<!-- 概述 -->
 ## Overview
 
 [One paragraph explaining the game's mechanical scope. What kind of systems does
@@ -15,6 +16,7 @@ team member understand the "big picture" of what needs to be designed and built.
 
 ---
 
+<!-- 中文翻译 -->
 ## Systems Enumeration
 
 | # / 序号 | System Name / 系统名称 | Category / 类别 | Priority / 优先级 | Status / 状态 | Design Doc / 设计文档 | Depends On / 依赖 |
@@ -28,6 +30,7 @@ with "(inferred)" in the system name.]
 
 ---
 
+<!-- 中文翻译 -->
 ## Categories
 
 | Category | Description | Typical Systems |
@@ -47,6 +50,7 @@ Add custom categories if needed.]
 
 ---
 
+<!-- 中文翻译 -->
 ## Priority Tiers
 
 | Tier | Definition | Target Milestone | Design Urgency |
@@ -58,33 +62,40 @@ Add custom categories if needed.]
 
 ---
 
+<!-- 中文翻译 -->
 ## Dependency Map
 
 [Systems sorted by dependency order — design and build from top to bottom.
 Systems at the top are foundations; systems at the bottom are wrappers.]
 
+<!-- 中文翻译 -->
 ### Foundation Layer (no dependencies)
 
 1. [System] — [one-line rationale for why this is foundational]
 
+<!-- 中文翻译 -->
 ### Core Layer (depends on foundation)
 
 1. [System] — depends on: [list]
 
+<!-- 中文翻译 -->
 ### Feature Layer (depends on core)
 
 1. [System] — depends on: [list]
 
+<!-- 中文翻译 -->
 ### Presentation Layer (depends on features)
 
 1. [System] — depends on: [list]
 
+<!-- 中文翻译 -->
 ### Polish Layer (depends on everything)
 
 1. [System] — depends on: [list]
 
 ---
 
+<!-- 中文翻译 -->
 ## Recommended Design Order
 
 [Combining dependency sort and priority tiers. Design these systems in this
@@ -101,6 +112,7 @@ A "session" is one focused design conversation producing a complete GDD.]
 
 ---
 
+<!-- 中文翻译 -->
 ## Circular Dependencies
 
 [List any circular dependency chains found during analysis. These require
@@ -113,6 +125,7 @@ or design the systems simultaneously.]
 
 ---
 
+<!-- 中文翻译 -->
 ## High-Risk Systems
 
 [Systems that are technically unproven, design-uncertain, or scope-dangerous.
@@ -124,6 +137,7 @@ These should be prototyped early regardless of priority tier.]
 
 ---
 
+<!-- 中文翻译 -->
 ## Progress Tracker
 
 | Metric | Count |
@@ -137,6 +151,7 @@ These should be prototyped early regardless of priority tier.]
 
 ---
 
+<!-- 后续步骤 -->
 ## Next Steps
 
 - [ ] Review and approve this systems enumeration

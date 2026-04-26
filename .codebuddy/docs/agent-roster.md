@@ -5,6 +5,7 @@ The following agents are available. Each has a dedicated definition file in
 spans multiple domains, the coordinating agent (usually `producer` or the
 domain lead) should delegate to specialists.
 
+<!-- 中文翻译 -->
 ## Tier 1 -- Leadership Agents (GLM-5.1)
 | Agent | Domain | When to Use |
 |-------|--------|-------------|
@@ -12,6 +13,7 @@ domain lead) should delegate to specialists.
 | `technical-director` | Technical vision | Architecture decisions, tech stack choices, performance strategy |
 | `producer` | Production management | Sprint planning, milestone tracking, risk management, coordination |
 
+<!-- 中文翻译 -->
 ## Tier 2 -- Department Lead Agents (DeepSeek-V3.2)
 | Agent | Domain | When to Use |
 |-------|--------|-------------|
@@ -24,6 +26,7 @@ domain lead) should delegate to specialists.
 | `release-manager` | Release pipeline | Build management, versioning, changelogs, deployment, rollbacks |
 | `localization-lead` | Internationalization | String externalization, translation pipeline, locale testing |
 
+<!-- 中文翻译 -->
 ## Tier 3 -- Specialist Agents (Kimi-K2.5 or MiniMax-M2.7)
 | Agent | Domain | Model | When to Use |
 |-------|--------|-------|-------------|
@@ -53,8 +56,10 @@ domain lead) should delegate to specialists.
 | `live-ops-designer` | Live operations | DeepSeek-V3.2 | Seasons, events, battle passes, retention, live economy |
 | `community-manager` | Community | GLM-5.0-Turbo | Patch notes, player feedback, crisis comms, community health |
 
+<!-- 引擎专用代理（使用与你的引擎匹配的集合） -->
 ## Engine-Specific Agents (use the set matching your engine)
 
+<!-- 中文翻译 -->
 ### Engine Leads
 
 | Agent | Engine | Model | When to Use |
@@ -66,6 +71,7 @@ domain lead) should delegate to specialists.
 | `cocos-specialist` | Cocos Creator | DeepSeek-V3.2 | Component system, scene graph, rendering pipeline, Cocos optimization |
 
 
+<!-- 中文翻译 -->
 ### Unreal Engine Sub-Specialists
 
 | Agent | Subsystem | Model | When to Use |
@@ -75,6 +81,7 @@ domain lead) should delegate to specialists.
 | `ue-replication-specialist` | Networking/Replication | GLM-5.1 | Property replication, RPCs, prediction, relevancy, bandwidth |
 | `ue-umg-specialist` | UMG/CommonUI | DeepSeek-V3.2 | Widget hierarchy, data binding, CommonUI input, UI performance |
 
+<!-- 中文翻译 -->
 ### Unity Sub-Specialists
 
 | Agent | Subsystem | Model | When to Use |
@@ -84,6 +91,7 @@ domain lead) should delegate to specialists.
 | `unity-addressables-specialist` | Asset Management | DeepSeek-V3.2 | Addressable groups, async loading, memory, content delivery |
 | `unity-ui-specialist` | UI Toolkit/UGUI | GLM-5v-Turbo | UI Toolkit, UXML/USS, UGUI Canvas, data binding, cross-platform input |
 
+<!-- 中文翻译 -->
 ### Godot Sub-Specialists
 
 | Agent | Subsystem | Model | When to Use |
@@ -92,6 +100,7 @@ domain lead) should delegate to specialists.
 | `godot-shader-specialist` | Shaders/Rendering | GLM-5v-Turbo | Godot shading language, visual shaders, particles, post-processing |
 | `godot-gdextension-specialist` | GDExtension | DeepSeek-V3.2 | C++/Rust bindings, native performance, custom nodes, build systems |
 
+<!-- 中文翻译 -->
 ### Cocos Creator Sub-Specialists
 
 | Agent | Subsystem | Model | When to Use |

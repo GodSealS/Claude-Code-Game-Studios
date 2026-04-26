@@ -43,6 +43,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Content Complete
 
 - [ ] All placeholder assets replaced with final versions
@@ -55,6 +56,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Platform: PC
 
 - [ ] Minimum and recommended specs documented
@@ -67,6 +69,7 @@
 - [ ] Achievements functional
 - [ ] Cloud saves functional
 
+<!-- 中文翻译 -->
 ## Platform: Console (if applicable)
 
 - [ ] TRC/TCR/Lotcheck requirements met
@@ -80,6 +83,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Store and Distribution
 
 - [ ] Store page metadata complete and proofread
@@ -92,6 +96,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Launch Readiness
 
 - [ ] Analytics/telemetry verified and receiving data
@@ -105,6 +110,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Sign-offs
 
 | Role | Name | Status | Date |
@@ -116,6 +122,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Final Decision
 
 **GO / NO-GO**: ____________

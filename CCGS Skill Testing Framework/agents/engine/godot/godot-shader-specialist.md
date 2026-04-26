@@ -8,6 +8,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified by reading the agent's `.codebuddy/agents/godot-shader-specialist.md` frontmatter:
@@ -20,6 +21,7 @@ Verified by reading the agent's `.codebuddy/agents/godot-shader-specialist.md` f
 
 ## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出 -->
 ### Case 1: In-domain request — appropriate output
 **Input:** "Write a dissolve effect shader for enemy death in Godot."
 **Expected behavior:**
@@ -31,6 +33,7 @@ Verified by reading the agent's `.codebuddy/agents/godot-shader-specialist.md` f
 - Optionally adds an edge glow using emission near the dissolve boundary
 - Code is syntactically correct for Godot's shading language
 
+<!-- 中文翻译 -->
 ### Case 2: HLSL redirect
 **Input:** "Write an HLSL compute shader for this dissolve effect."
 **Expected behavior:**
@@ -39,6 +42,7 @@ Verified by reading the agent's `.codebuddy/agents/godot-shader-specialist.md` f
 - Translates the HLSL intent to the equivalent Godot shader approach
 - Notes that RenderingDevice compute shaders are available in Godot 4 but are a low-level API and flags it appropriately if that was the intent
 
+<!-- 中文翻译 -->
 ### Case 3: Post-cutoff API change — texture sampling (Godot 4.4)
 **Input:** "Use `texture()` with a sampler2D to sample the noise texture in the shader."
 **Expected behavior:**
@@ -47,6 +51,7 @@ Verified by reading the agent's `.codebuddy/agents/godot-shader-specialist.md` f
 - Provides the correct syntax for the project's pinned version (4.6) as documented in migration notes
 - Does NOT use pre-4.4 texture sampling syntax without flagging the version risk
 
+<!-- 中文翻译 -->
 ### Case 4: Fragment shader LOD strategy
 **Input:** "The fragment shader for the water surface has 8 texture samples and is causing GPU bottlenecks on mid-range hardware."
 **Expected behavior:**
@@ -58,6 +63,7 @@ Verified by reading the agent's `.codebuddy/agents/godot-shader-specialist.md` f
 - Provides the shader code modification implementing the LOD approach
 - Does NOT change gameplay behavior of the water system
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — Godot 4.6 glow rework
 **Input:** Engine version context: Godot 4.6. Request: "Add a bloom/glow post-processing effect to the scene."
 **Expected behavior:**
@@ -79,6 +85,7 @@ Verified by reading the agent's `.codebuddy/agents/godot-shader-specialist.md` f
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Dissolve shader (Case 1) should be paired with a visual test screenshot in `production/qa/evidence/`
 - Texture API flag (Case 3) confirms the agent checks VERSION.md before using APIs that changed post-4.3

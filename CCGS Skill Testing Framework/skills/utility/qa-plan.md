@@ -16,6 +16,7 @@ is written. No director gates are used — gate-level story readiness is handled
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -28,6 +29,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. `/qa-plan` is a planning utility. Story readiness gates are separate.
@@ -36,6 +38,7 @@ None. `/qa-plan` is a planning utility. Story readiness gates are separate.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Sprint with 4 stories generates full test plan
 
 **Fixture:**
@@ -66,6 +69,7 @@ None. `/qa-plan` is a planning utility. Story readiness gates are separate.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Story With No Acceptance Criteria — Flagged as UNTESTABLE
 
 **Fixture:**
@@ -89,6 +93,7 @@ None. `/qa-plan` is a planning utility. Story readiness gates are separate.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Existing Test Plan Found — Offers update rather than replace
 
 **Fixture:**
@@ -112,6 +117,7 @@ None. `/qa-plan` is a planning utility. Story readiness gates are separate.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: No Stories Found for Sprint — Error with guidance
 
 **Fixture:**
@@ -134,6 +140,7 @@ None. `/qa-plan` is a planning utility. Story readiness gates are separate.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate Check — No gate; QA planning is a utility
 
 **Fixture:**
@@ -164,6 +171,7 @@ None. `/qa-plan` is a planning utility. Story readiness gates are separate.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The case where `coding-standards.md` is missing (skill cannot assign test types)

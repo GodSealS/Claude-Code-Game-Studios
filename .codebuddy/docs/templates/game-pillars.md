@@ -32,6 +32,7 @@ A good pillar is: / 一个好的支柱应该：
 - **Memorable**: The team should be able to recite the pillars from memory. / **可记忆性**：团队应该能够背诵支柱。
   If they can't, the pillars are too numerous or too complex. / 如果不能，支柱就太多或太复杂了。
 
+<!-- 中文翻译 -->
 ### Real AAA Examples
 
 These studios publicly shared their game pillars, showing how concrete and / 这些工作室公开分享了他们的游戏支柱，展示了有效支柱如何
@@ -130,6 +131,7 @@ between X and Y, this pillar says we choose __."] / X和Y，这个支柱说我�
 
 **Design Test**: [Concrete decision it resolves]
 
+<!-- 中文翻译 -->
 #### What This Means for Each Department
 
 | Department | This Pillar Says... | Example |
@@ -140,10 +142,12 @@ between X and Y, this pillar says we choose __."] / X和Y，这个支柱说我�
 | **Narrative** | [Constraint/inspiration] | [Example] |
 | **Engineering** | [Constraint/inspiration] | [Example] |
 
+<!-- 中文翻译 -->
 #### Serving This Pillar
 - [Example]
 - [Example]
 
+<!-- 中文翻译 -->
 #### Violating This Pillar
 - [Example]
 - [Example]
@@ -158,6 +162,7 @@ between X and Y, this pillar says we choose __."] / X和Y，这个支柱说我�
 
 **Design Test**: [Concrete decision it resolves]
 
+<!-- 中文翻译 -->
 #### What This Means for Each Department
 
 | Department | This Pillar Says... | Example |
@@ -168,10 +173,12 @@ between X and Y, this pillar says we choose __."] / X和Y，这个支柱说我�
 | **Narrative** | [Constraint/inspiration] | [Example] |
 | **Engineering** | [Constraint/inspiration] | [Example] |
 
+<!-- 中文翻译 -->
 #### Serving This Pillar
 - [Example]
 - [Example]
 
+<!-- 中文翻译 -->
 #### Violating This Pillar
 - [Example]
 - [Example]
@@ -188,6 +195,7 @@ between X and Y, this pillar says we choose __."] / X和Y，这个支柱说我�
 
 ---
 
+<!-- 中文翻译 -->
 ## Anti-Pillars (What This Game Is NOT)
 
 Anti-pillars are equally important as pillars — they prevent scope creep and
@@ -204,6 +212,7 @@ could plausibly support it.
 
 ---
 
+<!-- 中文翻译 -->
 ## Pillar Conflict Resolution
 
 When two pillars conflict (and they will), use this priority order. The ranking
@@ -227,6 +236,7 @@ reflects which aspects of the experience are most essential to the core fantasy.
 
 ---
 
+<!-- 中文翻译 -->
 ## Player Motivation Alignment
 
 [Verify that the pillars collectively serve the target player's psychological needs.
@@ -245,11 +255,13 @@ SDT needs has the strongest foundation for sustained engagement.
 
 ---
 
+<!-- 中文翻译 -->
 ## Emotional Arc
 
 [Map the intended emotional journey of a play session. This should be a
 deliberate design, not an accident.]
 
+<!-- 中文翻译 -->
 ### Session Emotional Arc
 
 | Phase | Duration | Target Emotion | Pillar(s) Driving It | Mechanics Delivering It |
@@ -260,6 +272,7 @@ deliberate design, not an accident.]
 | Resolution | [e.g., 30-40 min] | [e.g., Satisfaction, reflection] | [Which pillar] | [What the player does] |
 | Hook | [End of session] | [e.g., Curiosity, unfinished business] | [Which pillar] | [What makes them return] |
 
+<!-- 中文翻译 -->
 ### Long-Term Emotional Progression
 
 [How does the emotional experience evolve across the full game? Early game vs
@@ -267,6 +280,7 @@ mid game vs late game vs endgame should each feel distinct.]
 
 ---
 
+<!-- 中文翻译 -->
 ## Reference Games
 
 | Reference | What We Take From It | What We Do Differently | Which Pillar It Validates |
@@ -280,6 +294,7 @@ that inform the tone, world, or feel. Great games pull from outside the medium.]
 
 ---
 
+<!-- 中文翻译 -->
 ## Pillar Validation Checklist
 
 Before finalizing the pillars, verify:
@@ -298,6 +313,7 @@ Before finalizing the pillars, verify:
 
 ---
 
+<!-- 后续步骤 -->
 ## Next Steps
 
 - [ ] Get pillar approval from creative-director

@@ -9,8 +9,10 @@ model: haiku
 
 # Scope Check / 范围检查
 
+<!-- 此技能是只读的 -->
 This skill is read-only — it reports findings but writes no files.
 
+<!-- 比较原始计划与当前状态 -->
 Compares original planned scope against current state to detect, quantify, and triage
 scope creep.
 

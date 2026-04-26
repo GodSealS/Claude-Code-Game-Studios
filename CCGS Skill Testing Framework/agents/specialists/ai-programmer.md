@@ -10,6 +10,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references NPC behavior / AI systems)
@@ -21,6 +22,7 @@
 
 ## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出 -->
 ### Case 1: In-domain request — appropriate output
 **Input:** "Implement a patrol-and-alert behavior tree for a guard NPC: patrol between waypoints, detect the player within 10 units, then enter an alert state and pursue."
 **Expected behavior:**
@@ -30,6 +32,7 @@
 - Waypoints are data-driven (passed as a resource or export), not hardcoded positions
 - Output includes doc comments on public API
 
+<!-- 用例 2：域外请求 — 正确重定向 -->
 ### Case 2: Out-of-domain request — redirects correctly
 **Input:** "Implement player input handling for the WASD movement and dash ability."
 **Expected behavior:**
@@ -38,6 +41,7 @@
 - Redirects the request to `gameplay-programmer`
 - May note that once player position is available via API, AI perception can reference it
 
+<!-- 中文翻译 -->
 ### Case 3: Cross-domain coordination — level constraints
 **Input:** "Design pathfinding for the warehouse level, but the level has narrow corridors that confuse the navmesh."
 **Expected behavior:**
@@ -46,6 +50,7 @@
 - Proposes a pathfinding approach (e.g., navmesh with agent radius tuning, flow fields) conditional on level geometry
 - Documents assumptions and flags blockers clearly
 
+<!-- 中文翻译 -->
 ### Case 4: Performance escalation — custom data structures
 **Input:** "The pathfinding priority queue is the bottleneck; I need a custom binary heap implementation for performance."
 **Expected behavior:**
@@ -54,6 +59,7 @@
 - May provide the algorithmic spec (binary heap interface, expected operations) to guide the engine-programmer
 - Does NOT implement the low-level structure unilaterally if it requires engine memory management
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — uses level layout for pathfinding design
 **Input:** Level layout document provided in context showing two choke points: a doorway at (12, 0) and a bridge at (40, 5). Request: "Design the patrol route and threat response for enemies in this level."
 **Expected behavior:**
@@ -80,6 +86,7 @@
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Behavior tree output (Case 1) should be validated by a unit test in `tests/unit/ai/`
 - Level-layout context (Case 5) verifies the agent reads and applies provided documents rather than inventing

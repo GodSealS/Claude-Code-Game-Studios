@@ -8,6 +8,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified by reading the agent's `.codebuddy/agents/producer.md` frontmatter:
@@ -21,6 +22,7 @@ Verified by reading the agent's `.codebuddy/agents/producer.md` frontmatter:
 
 ## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出格式 -->
 ### Case 1: In-domain request — appropriate output format
 **Scenario:** A sprint plan is submitted for Sprint 7. The plan includes 12 story points across 4 team members over 2 weeks. Historical velocity from the last 3 sprints averages 11.5 points. Request is tagged PR-SPRINT.
 **Expected:** Returns `PR-SPRINT: REALISTIC` with rationale noting the plan is within one standard deviation of historical velocity and capacity appears matched.
@@ -30,6 +32,7 @@ Verified by reading the agent's `.codebuddy/agents/producer.md` frontmatter:
 - [ ] Rationale references the specific story point count and historical velocity figures
 - [ ] Output stays within production scope — does not comment on whether the stories are well-designed or technically sound
 
+<!-- 用例 2：域外请求 — 重定向或升级 -->
 ### Case 2: Out-of-domain request — redirects or escalates
 **Scenario:** Team member asks producer to evaluate whether the game's "weight-based inventory" mechanic feels fun and engaging.
 **Expected:** Agent declines to evaluate game feel and redirects to game-designer or creative-director.
@@ -38,6 +41,7 @@ Verified by reading the agent's `.codebuddy/agents/producer.md` frontmatter:
 - [ ] Explicitly names `game-designer` or `creative-director` as the correct handler
 - [ ] May note if the mechanic's scope has production implications (e.g., dependencies on other systems), but defers all design evaluation
 
+<!-- 用例 3：门控裁决 — 正确词汇 -->
 ### Case 3: Gate verdict — correct vocabulary
 **Scenario:** A new feature proposal adds three new systems (crafting, weather, and faction reputation) to a milestone that was scoped for two systems only. None of these additions appear in the current milestone plan. Request is tagged PR-SCOPE.
 **Expected:** Returns `PR-SCOPE: CONCERNS` with specific identification of the three unplanned systems and their absence from the milestone scope document.
@@ -47,6 +51,7 @@ Verified by reading the agent's `.codebuddy/agents/producer.md` frontmatter:
 - [ ] Rationale names the three specific systems being added out of scope
 - [ ] Does not evaluate whether the systems are good design — only whether they fit the plan
 
+<!-- 用例 4：冲突升级 — 正确上级 -->
 ### Case 4: Conflict escalation — correct parent
 **Scenario:** game-designer wants to add a late-breaking mechanic (dynamic weather affecting all gameplay systems) that technical-director warns will require 3 additional sprints. game-designer and technical-director are in disagreement about whether to proceed.
 **Expected:** Producer does not take a side on whether the mechanic is worth adding (design decision) or feasible (technical decision). Producer quantifies the production impact (3 sprints of delay, milestone slip risk), presents the trade-off to the user, and follows coordination-rules.md conflict resolution: escalate to the shared parent (in this case, surface the conflict for user decision since creative-director and technical-director are both top-tier).
@@ -56,6 +61,7 @@ Verified by reading the agent's `.codebuddy/agents/producer.md` frontmatter:
 - [ ] Surfaces the conflict to the user with the scope implications clearly stated
 - [ ] References coordination-rules.md conflict resolution protocol (escalate to shared parent or user)
 
+<!-- 用例 5：上下文传递 — 使用提供的上下文 -->
 ### Case 5: Context pass — uses provided context
 **Scenario:** Agent receives a gate context block that includes the current milestone deadline (8 weeks away) and velocity data from the last 4 sprints (8, 10, 9, 11 points). A sprint plan is submitted with 14 story points.
 **Expected:** Assessment uses the provided velocity data to project whether 14 points is achievable, and references the 8-week milestone window to assess whether the current sprint's scope leaves adequate buffer.
@@ -77,6 +83,7 @@ Verified by reading the agent's `.codebuddy/agents/producer.md` frontmatter:
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - PR-EPIC (epic-level prioritization) is not covered — a dedicated case should be added when the /create-epics skill produces structured epic documents.
 - PR-MILESTONE (milestone health review) is not covered — deferred to integration with /milestone-review skill.

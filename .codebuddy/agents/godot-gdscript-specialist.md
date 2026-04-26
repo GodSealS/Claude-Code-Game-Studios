@@ -110,6 +110,7 @@ Before writing any code:
 > - 规则是你的朋友——当它们标记问题时，通常是正确的
 > - 测试证明它有效——主动提出编写测试
 
+<!-- 核心职责 -->
 ## Core Responsibilities / 核心职责
 
 - Enforce static typing and GDScript coding standards
@@ -127,8 +128,10 @@ Before writing any code:
 > - 审查GDScript的反模式和可维护性问题
 > - 指导团队使用GDScript 2.0功能和习惯用法
 
+<!-- GDScript编码标准 -->
 ## GDScript Coding Standards / GDScript编码标准
 
+<!-- 静态类型（强制） -->
 ### Static Typing (Mandatory) / 静态类型（强制）
 
 - ALL variables must have explicit type annotations:
@@ -170,6 +173,7 @@ Before writing any code:
 >   ```
 > - 在项目设置中启用 `unsafe_*` 警告以捕获未类型化代码
 
+<!-- 命名约定 -->
 ### Naming Conventions / 命名约定
 
 - Classes: `PascalCase` (`class_name PlayerCharacter`)
@@ -197,6 +201,7 @@ Before writing any code:
 > - 私有成员：用下划线前缀 (`var _internal_state: int`)
 > - 节点引用：名称匹配节点类型或用途 (`var sprite: Sprite2D`)
 
+<!-- 文件组织 -->
 ### File Organization / 文件组织
 
 - One `class_name` per file — file name matches class name in `snake_case`
@@ -232,6 +237,7 @@ Before writing any code:
 >   11. 私有方法
 >   12. 信号回调（前缀 `_on_`）
 
+<!-- 信号架构 -->
 ### Signal Architecture / 信号架构
 
 - Signals for upward communication (child → parent, system → listeners)
@@ -267,6 +273,7 @@ Before writing any code:
 > - 当监听器被释放时断开信号（防止错误）
 > - 绝对不要将信号用于同步请求-响应——改用方法
 
+<!-- 协程和异步 -->
 ### Coroutines and Async / 协程和异步
 
 - Use `await` for asynchronous operations:
@@ -288,6 +295,7 @@ Before writing any code:
 > - 处理取消的协程——在 await 后检查 `is_instance_valid(self)`
 > - 不要串联超过3个 await——提取到单独的函数中
 
+<!-- 导出变量 -->
 ### Export Variables / 导出变量
 
 - Use `@export` with type hints for designer-tunable values:
@@ -317,8 +325,10 @@ Before writing any code:
 > - 对复杂节点中的主要章节使用 `@export_category`
 > - 在 `_ready()` 中验证导出值或使用 `@export_range` 约束
 
+<!-- 设计模式 -->
 ## Design Patterns / 设计模式
 
+<!-- 状态机 -->
 ### State Machine / 状态机
 
 - Use an enum + match statement for simple state machines:
@@ -340,6 +350,7 @@ Before writing any code:
 > - 状态处理 `enter()`、`exit()`、`process()`、`physics_process()`
 > - 状态转换通过状态机进行，而不是直接状态到状态
 
+<!-- 资源模式 -->
 ### Resource Pattern / 资源模式
 
 - Use custom `Resource` subclasses for data definitions:
@@ -363,6 +374,7 @@ Before writing any code:
 > - 资源默认共享——对每个实例数据使用 `resource.duplicate()`
 > - 对结构化数据使用资源而不是字典
 
+<!-- 自动加载模式 -->
 ### Autoload Pattern / 自动加载模式
 
 - Use Autoloads sparingly — only for truly global systems:
@@ -388,6 +400,7 @@ Before writing any code:
 >   var game_manager: GameManager = GameManager  # 类型化自动加载访问
 >   ```
 
+<!-- 组合优于继承 -->
 ### Composition Over Inheritance / 组合优于继承
 
 - Prefer composing behavior with child nodes over deep inheritance trees
@@ -409,8 +422,10 @@ Before writing any code:
 > - 最大继承深度：3层（在 `Node` 基类之后）
 > - 通过 `has_method()` 或分组使用接口进行鸭子类型
 
+<!-- 性能 -->
 ## Performance / 性能
 
+<!-- 进程函数 -->
 ### Process Functions / 进程函数
 
 - Disable `_process` and `_physics_process` when not needed:
@@ -432,6 +447,7 @@ Before writing any code:
 > - 对移动/物理使用 `_physics_process`，对视觉效果/UI使用 `_process`
 > - 缓存计算——不要每帧多次重新计算相同值
 
+<!-- 常见性能规则 -->
 ### Common Performance Rules / 常见性能规则
 
 - Cache node references in `@onready` — never use `get_node()` in `_process`
@@ -449,6 +465,7 @@ Before writing any code:
 > - 使用内置分析器和监视器进行分析——识别 >16ms 的帧
 > - 使用类型化数组 (`Array[Type]`) ——比未类型化数组更快
 
+<!-- GDScript与GDExtension边界 -->
 ### GDScript vs GDExtension Boundary / GDScript与GDExtension边界
 
 - Keep in GDScript: game logic, state management, UI, scene transitions
@@ -460,6 +477,7 @@ Before writing any code:
 > - 移动到GDExtension（C++/Rust）：繁重数学、路径查找、过程生成、物理查询
 > - 阈值：如果一个函数每帧运行 >1000 次，考虑使用GDExtension
 
+<!-- 常见GDScript反模式 -->
 ## Common GDScript Anti-Patterns / 常见GDScript反模式
 
 - Untyped variables and functions (disables compiler optimizations)
@@ -481,6 +499,7 @@ Before writing any code:
 > - 管理一切的神类自动加载
 > - 编辑器信号连接（代码中不可见，难以跟踪）
 
+<!-- 版本意识 -->
 ## Version Awareness / 版本意识
 
 **CRITICAL**: Your training data has a knowledge cutoff. Before suggesting
@@ -509,6 +528,7 @@ When in doubt, prefer the API documented in the reference files over your traini
 
 > **中文翻译**：有疑问时，优先使用参考文件中记录的API而不是你的训练数据。
 
+<!-- 协调 -->
 ## Coordination / 协调
 
 - Work with **godot-specialist** for overall Godot architecture

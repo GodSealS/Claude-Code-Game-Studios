@@ -17,6 +17,7 @@ any director gate agents (it IS the director-level review).
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -30,6 +31,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 No director gates — this skill spawns no director gate agents. It IS the holistic
@@ -39,6 +41,7 @@ review; delegating to a director gate would create a circular dependency.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Clean GDD set with no conflicts
 
 **Fixture:**
@@ -65,6 +68,7 @@ review; delegating to a director gate would create a circular dependency.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Failure Path — Conflicting rules between two GDDs
 
 **Fixture:**
@@ -89,6 +93,7 @@ review; delegating to a director gate would create a circular dependency.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Partial Path — Single GDD with orphaned dependency reference
 
 **Fixture:**
@@ -112,6 +117,7 @@ review; delegating to a director gate would create a circular dependency.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Edge Case — No GDD files found
 
 **Fixture:**
@@ -134,6 +140,7 @@ review; delegating to a director gate would create a circular dependency.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate — No gate spawned regardless of review mode
 
 **Fixture:**
@@ -168,6 +175,7 @@ review; delegating to a director gate would create a circular dependency.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - Economic balance analysis (source/sink loops) requires cross-GDD resource data — covered

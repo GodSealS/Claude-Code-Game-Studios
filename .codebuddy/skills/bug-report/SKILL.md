@@ -132,6 +132,7 @@ If STILL PRESENT: reopen the bug, set Status back to Open, and suggest re-runnin
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 2D: Close Mode
 > **中文翻译**：## 第 2D 阶段：关闭模式
 
@@ -185,6 +186,7 @@ If no, stop here. Verdict: **BLOCKED** — user declined write.
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 4: Next Steps
 > **中文翻译**：## 第 4 阶段：后续步骤
 

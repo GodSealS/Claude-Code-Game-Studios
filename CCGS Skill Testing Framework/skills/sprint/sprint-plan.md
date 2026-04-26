@@ -12,6 +12,7 @@ BLOCKED (cannot proceed due to missing data or gate failure).
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -24,6 +25,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 | Gate ID   | Trigger condition        | Mode guard         |
@@ -34,6 +36,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Backlog with stories generates sprint
 
 **Fixture:**
@@ -63,6 +66,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Blocked Path — Backlog is empty
 
 **Fixture:**
@@ -86,6 +90,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Gate returns CONCERNS — Sprint overloaded, revised before write
 
 **Fixture:**
@@ -109,6 +114,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Lean Mode — PR-SPRINT gate skipped
 
 **Fixture:**
@@ -132,6 +138,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Edge Case — Previous sprint still has open stories
 
 **Fixture:**
@@ -166,6 +173,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The case where no milestone file exists is not explicitly tested; behavior

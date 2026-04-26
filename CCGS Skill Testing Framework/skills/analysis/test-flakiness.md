@@ -10,6 +10,7 @@ SUSPECT TESTS FOUND, or CONFIRMED FLAKY.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -22,6 +23,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. Flakiness detection is an advisory quality skill for the QA lead; no gates
@@ -31,6 +33,7 @@ are invoked.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Clean test history, no flakiness
 
 **Fixture:**
@@ -54,6 +57,7 @@ are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Suspect Tests Found — Test fails intermittently in history
 
 **Fixture:**
@@ -79,6 +83,7 @@ are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Source Pattern — Random number used without seed
 
 **Fixture:**
@@ -107,6 +112,7 @@ are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: No Test History — Source-only analysis with common patterns
 
 **Fixture:**
@@ -132,6 +138,7 @@ are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Gate Compliance — No gate; flakiness report is advisory
 
 **Fixture:**
@@ -167,6 +174,7 @@ are invoked.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The pass-rate threshold for SUSPECT classification (95% suggested above) is an

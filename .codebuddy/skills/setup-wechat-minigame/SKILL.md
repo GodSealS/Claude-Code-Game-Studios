@@ -102,8 +102,10 @@ cloudbase/                      # Cloud Base (if enabled)
     └── config.json
 ```
 
+<!-- 中文翻译 -->
 ### Configuration Files
 
+<!-- 中文翻译 -->
 #### game.json
 
 ```json
@@ -122,6 +124,7 @@ cloudbase/                      # Cloud Base (if enabled)
 }
 ```
 
+<!-- 中文翻译 -->
 #### app.json
 
 ```json
@@ -145,6 +148,7 @@ cloudbase/                      # Cloud Base (if enabled)
 }
 ```
 
+<!-- 中文翻译 -->
 #### project.config.json
 
 ```json
@@ -208,8 +212,10 @@ cloudbase/                      # Cloud Base (if enabled)
 }
 ```
 
+<!-- 中文翻译 -->
 ### Core Game Files
 
+<!-- 中文翻译 -->
 #### game.js (Entry Point)
 
 ```javascript
@@ -234,6 +240,7 @@ const game = new Game();
 game.start();
 ```
 
+<!-- 中文翻译 -->
 #### js/Game.js (Core Game Class)
 
 ```javascript
@@ -351,6 +358,7 @@ export default class Game {
 }
 ```
 
+<!-- 中文翻译 -->
 #### js/scenes/BootScene.js
 
 ```javascript
@@ -420,6 +428,7 @@ export default class BootScene {
 }
 ```
 
+<!-- 中文翻译 -->
 #### js/scenes/MenuScene.js
 
 ```javascript
@@ -509,6 +518,7 @@ export default class MenuScene {
 }
 ```
 
+<!-- 中文翻译 -->
 #### js/scenes/GameScene.js
 
 ```javascript
@@ -593,10 +603,12 @@ export default class GameScene {
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 3: Cloud Base Setup (If Enabled)
 
 If user chose Cloud Base, create:
 
+<!-- 中文翻译 -->
 ### cloudbase/cloudfunctions/config.json
 
 ```json
@@ -610,6 +622,7 @@ If user chose Cloud Base, create:
 }
 ```
 
+<!-- 中文翻译 -->
 ### cloudbase/cloudfunctions/login/index.js
 
 ```javascript
@@ -629,6 +642,7 @@ exports.main = async (event, context) => {
 };
 ```
 
+<!-- 中文翻译 -->
 ### cloudbase/cloudfunctions/login/config.json
 
 ```json
@@ -641,6 +655,7 @@ exports.main = async (event, context) => {
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 4: Update Technical Preferences
 
 Update `.codebuddy/docs/technical-preferences.md`:
@@ -656,6 +671,7 @@ Update `.codebuddy/docs/technical-preferences.md`:
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 5: Documentation
 
 Create `miniprogram/README.md`:
@@ -693,6 +709,7 @@ Cloud Base not enabled.
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 6: Summary
 
 Show the user what was created:
@@ -731,6 +748,7 @@ Show the user what was created:
 
 ---
 
+<!-- 边界情况 -->
 ## Edge Cases
 
 - **Existing project**: Offer to backup and overwrite, or update config only

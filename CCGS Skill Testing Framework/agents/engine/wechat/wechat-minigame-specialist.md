@@ -8,6 +8,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references gameplay implementation, physics engines, WASM, skeletal animation)
@@ -20,6 +21,7 @@ No gate IDs assigned.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: In-domain request — physics engine selection and configuration
 **Input:** "We're building a 2D platformer. Which physics engine should we use and how do we configure it?"
 **Expected behavior:**
@@ -38,6 +40,7 @@ No gate IDs assigned.
 - Notes the need to load Box2D WASM as subpackage to stay under 4MB main limit
 - Does NOT produce low-level Box2D API calls — all examples use the unified interface
 
+<!-- 中文翻译 -->
 ### Case 2: Wrong-domain request — architecture decisions
 **Input:** "Should we use MVC or ECS for this combat system?"
 **Expected behavior:**
@@ -47,6 +50,7 @@ No gate IDs assigned.
 - May provide context about combat system requirements for the architecture decision
 - Does NOT implement either architecture pattern directly
 
+<!-- 中文翻译 -->
 ### Case 3: WASM loading pattern for physics engine
 **Input:** "How do we load the Box2D WASM module in our WeChat Mini Game?"
 **Expected behavior:**
@@ -79,6 +83,7 @@ No gate IDs assigned.
 - Notes that WASM must be loaded before creating physics world
 - Emphasizes subpackage strategy for staying under 4MB limit
 
+<!-- 中文翻译 -->
 ### Case 4: Performance-critical physics loop
 **Input:** "The physics simulation is causing frame drops when we have 100+ entities. How do we optimize it?"
 **Expected behavior:**
@@ -105,6 +110,7 @@ No gate IDs assigned.
   ```
 - Notes WeChat-specific performance constraints (mobile devices, JavaScript execution)
 
+<!-- 中文翻译 -->
 ### Case 5: Skeletal animation runtime integration
 **Input:** "We want to use Spine animations for our character. How do we integrate the Spine runtime?"
 **Expected behavior:**
@@ -133,6 +139,7 @@ No gate IDs assigned.
 - Notes performance considerations: texture atlases, LOD systems for distant characters
 - Provides animation state machine pattern (blending, event handling)
 
+<!-- 中文翻译 -->
 ### Case 6: Sprite sheet production workflow
 **Input:** "We need to create sprite sheets for our UI assets. What's the best workflow?"
 **Expected behavior:**
@@ -160,6 +167,7 @@ No gate IDs assigned.
   ```
 - Notes the importance of texture atlases for reducing draw calls in WeChat environment
 
+<!-- 中文翻译 -->
 ### Case 7: Context pass — game dimension and performance requirements
 **Input:** Project context provided: 3D action game, target high-end mobile devices. Request: "Set up the physics system."
 **Expected behavior:**
@@ -195,6 +203,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - Physics engine selection (Case 1) should provide clear criteria: 2D vs 3D, performance requirements, package size impact

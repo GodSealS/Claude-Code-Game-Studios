@@ -6,6 +6,7 @@ user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Task, AskUserQuestion
 ---
 
+<!-- 中文翻译 -->
 ## Phase 0: Parse Arguments
 > **中文翻译**：## 第 0 阶段：解析参数
 
@@ -28,6 +29,7 @@ Extract `--depth [full|lean|solo]` if present. Default is `full` when no flag is
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 1: Load Documents
 
 Read the target design document in full. Read CODEBUDDY.md to understand project context and standards. Read related design documents referenced or implied by the target doc (check `design/gdd/` for related systems).
@@ -40,6 +42,7 @@ Read the target design document in full. Read CODEBUDDY.md to understand project
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 2: Completeness Check
 > **中文翻译**：## 第 2 阶段：完整性检查
 
@@ -68,6 +71,7 @@ Evaluate against the Design Document Standard checklist:
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 3: Consistency and Implementability
 
 **Internal consistency:**
@@ -87,6 +91,7 @@ Evaluate against the Design Document Standard checklist:
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 3b: Adversarial Specialist Review (full mode only)
 > **中文翻译**：## 第 3b 阶段：对抗性专家审查（仅限完整模式）
 
@@ -103,6 +108,7 @@ Evaluate against the Design Document Standard checklist:
 > **中文翻译**：**在生成任何代理之前**，打印此通知：>“全面审查：并行生成专家代理。这通常需要 8-15 分钟。使用 `--review Lean` 进行更快的单会话分析。”
 
 
+<!-- 中文翻译 -->
 ### Step 1 — Identify all domains the GDD touches
 > **中文翻译**：### 第 1 步 — 确定 GDD 涉及的所有领域
 
@@ -166,6 +172,7 @@ Read the GDD and identify every domain present. A GDD can touch multiple domains
 > **中文翻译**：**始终将“游戏设计者”和“系统设计者”作为最低基线。**每个 GDD 都涉及其领域。
 
 
+<!-- 中文翻译 -->
 ### Step 2 — Spawn all relevant specialists in parallel
 > **中文翻译**：### 步骤 2 — 并行产生所有相关专家
 
@@ -198,6 +205,7 @@ Issue all Task calls simultaneously. Do NOT spawn one at a time.
   > **中文翻译**：**`qa-lead`**：审查每项验收标准。标记任何不可独立测试的内容——诸如“感觉平衡”、“工作正常”、“表现良好”之类的短语不是 AC。针对未通过此测试的任何内容提出具体重写建议。
 
 
+<!-- 中文翻译 -->
 ### Step 3 — Senior lead review
 > **中文翻译**：### 第 3 步 — 高级主管审核
 
@@ -213,6 +221,7 @@ After all specialists respond, spawn `creative-director` as the **senior reviewe
   > **中文翻译**：创意总监的综合结果成为第四阶段的**最终裁决**。
 
 
+<!-- 中文翻译 -->
 ### Step 4 — Surface disagreements
 > **中文翻译**：### 步骤 4 — 表面分歧
 
@@ -227,6 +236,7 @@ Mark every finding with its source: `[game-designer]`, `[economy-designer]`, `[c
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 4: Output Review
 
 ```
@@ -274,6 +284,7 @@ This skill is read-only — no files are written during Phase 4.
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 5: Next Steps
 > **中文翻译**：## 第 5 阶段：后续步骤
 

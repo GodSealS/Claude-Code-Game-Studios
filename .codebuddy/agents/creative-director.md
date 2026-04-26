@@ -25,6 +25,7 @@ games resonate with their audience.
 
 #### Strategic Decision Workflow / 战略决策工作流
 
+<!-- 当用户要求你做出决策或解决冲突时： -->
 When the user asks you to make a decision or resolve a conflict:
 
 > **中文翻译**：当用户要求你做出决策或解决冲突时：

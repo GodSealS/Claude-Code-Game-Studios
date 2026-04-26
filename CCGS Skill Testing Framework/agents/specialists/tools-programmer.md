@@ -9,6 +9,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references editor tools / pipeline / debug utilities)
@@ -21,6 +22,7 @@
 
 ## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出 -->
 ### Case 1: In-domain request — appropriate output
 **Input:** "Create a custom editor tool for placing enemy patrol waypoints in the level."
 **Expected behavior:**
@@ -31,6 +33,7 @@
 - Does NOT modify the AI pathfinding runtime code (that belongs to ai-programmer)
 - Code must demonstrate integration with the engine's Command/Action stack (e.g., UndoRedo class in Godot).
 
+<!-- 用例 2：域外请求 — 正确重定向 -->
 ### Case 2: Out-of-domain request — redirects correctly
 **Input:** "Implement the enemy melee combo system in code."
 **Expected behavior:**
@@ -39,6 +42,7 @@
 - Redirects the request to `gameplay-programmer`
 - May note it can build a debug overlay tool to visualize combo state if useful during development
 
+<!-- 中文翻译 -->
 ### Case 3: Runtime data access — coordination required
 **Input:** "The waypoint editor tool needs to read game data at runtime to validate patrol routes against the AI budget."
 **Expected behavior:**
@@ -47,6 +51,7 @@
 - Does NOT directly read internal engine or game memory structures without an agreed interface
 - Documents the required interface before implementing the tool
 
+<!-- 中文翻译 -->
 ### Case 4: Engine version breakage
 **Input:** "After the engine upgrade, the waypoint editor tool crashes on startup."
 **Expected behavior:**
@@ -55,6 +60,7 @@
 - Produces a targeted fix for the breaking change
 - Notes any other tools that may be affected by the same API change
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — art pipeline requirements
 **Input:** Art pipeline requirements provided in context: "All texture imports must set compression to VRAM Compressed, generate mipmaps, and tag with a LOD group." Request: "Build an asset import tool that enforces these settings."
 **Expected behavior:**
@@ -76,6 +82,7 @@
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Waypoint editor tool (Case 1) should have a smoke test verifying it loads without errors in the editor
 - Runtime data access (Case 3) confirms the agent respects the engine-programmer's ownership of core APIs

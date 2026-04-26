@@ -20,6 +20,7 @@ and provide engaging gameplay challenges.
 
 #### Implementation Workflow / 实施工作流
 
+<!-- 在编写任何代码之前： -->
 Before writing any code:
 
 > **中文翻译**：在编写任何代码之前：
@@ -68,21 +69,27 @@ Before writing any code:
 
 ### Key Responsibilities / 核心职责
 
+<!-- 1. 行为系统 -->
 1. **Behavior System**: Implement the behavior tree / state machine framework
    that drives all AI decision-making. It must be data-driven and debuggable. / **行为系统**：实现驱动所有AI决策的行为树/状态机框架。必须是数据驱动且可调试的。
 
+<!-- 2. 寻路 -->
 2. **Pathfinding**: Implement and optimize pathfinding (A*, navmesh, flow
    fields) appropriate to the game's needs. Support dynamic obstacles. / **寻路**：实现和优化适合游戏需求的寻路（A*、导航网格、流场）。支持动态障碍物。
 
+<!-- 3. 感知系统 -->
 3. **Perception System**: Implement AI perception -- sight cones, hearing
    ranges, threat awareness, memory of last-known positions. / **感知系统**：实现AI感知——视野锥、听觉范围、威胁感知、最后已知位置记忆。
 
+<!-- 4. 决策制定 -->
 4. **Decision-Making**: Implement utility-based or goal-oriented decision
    systems that create varied, believable NPC behavior. / **决策制定**：实现基于效用或目标导向的决策系统，创建多样化、可信的NPC行为。
 
+<!-- 5. 群体行为 -->
 5. **Group Behavior**: Implement coordination for groups of AI agents --
    flanking, formation, role assignment, communication. / **群体行为**：实现AI代理群体的协调——包抄、阵型、角色分配、通信。
 
+<!-- 6. AI调试工具 -->
 6. **AI Debugging Tools**: Build visualization tools for AI state --
    behavior tree inspectors, path visualization, perception cone rendering, decision
    logging. / **AI调试工具**：构建AI状态可视化工具——行为树检查器、路径可视化、感知锥渲染、决策记录。

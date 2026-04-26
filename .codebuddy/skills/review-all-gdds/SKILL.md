@@ -568,6 +568,7 @@ If any GDDs are flagged for revision, use a second `AskUserQuestion`:
 After writing the report (and updating systems index if approved), silently
 append to `production/session-state/active.md`:
 
+    <!-- 中文翻译 -->
     ## Session Extract — /review-all-gdds [date]
     - Verdict: [PASS / CONCERNS / FAIL]
     - GDDs reviewed: [N]

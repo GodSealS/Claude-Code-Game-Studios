@@ -17,11 +17,13 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Turn 1: User Invokes /adopt
 
 **User:**
 > /adopt
 
+<!-- 中文翻译 -->
 ## Turn 2: Agent Detects Project State
 
 **Agent (technical-director, via /adopt, context: fork):**
@@ -67,6 +69,7 @@
 > | No production tracking | MEDIUM | Sprint and story skills won't work, but not needed until production phase |
 > | `design/crafting-ideas.md` — pre-GDD content | LOW | Useful as input; needs full GDD authoring before it blocks anything |
 
+<!-- 中文翻译 -->
 ## Turn 3: Agent Presents the Migration Plan
 
 **Agent:**
@@ -93,6 +96,7 @@
 
 **Agent writes adoption plan.**
 
+<!-- 中文翻译 -->
 ## Turn 4: Agent Offers to Fix the Most Urgent Gap
 
 **Agent:**
@@ -105,6 +109,7 @@
 **User:**
 > Yes, do it.
 
+<!-- 中文翻译 -->
 ## Turn 5: Agent Reads Codebase and Drafts Systems Index
 
 **Agent:**
@@ -144,6 +149,7 @@
 >
 > May I write this to `design/gdd/systems-index.md`?
 
+<!-- 中文翻译 -->
 ## Turn 6: User Approves
 
 **User:**
@@ -151,6 +157,7 @@
 
 **Agent writes `design/gdd/systems-index.md`.**
 
+<!-- 中文翻译 -->
 ## Turn 7: Agent Shows What's Now Unlocked
 
 **Agent:**
@@ -171,6 +178,7 @@
 >
 > After those 3, you'll have 5 of 7 systems with complete GDDs. Then run `/review-all-gdds` to catch cross-system consistency issues before architecture work.
 
+<!-- 中文翻译 -->
 ## Turn 8: User Confirms Plan
 
 **User:**
@@ -186,6 +194,7 @@
 
 ---
 
+<!-- 此示例展示的内容 -->
 ## What This Example Demonstrates
 
 - **FORMAT audit, not existence audit**: `/adopt` doesn't just check whether files exist — it checks whether their internal structure matches what skills expect. A file named `gdd.md` with no template sections is flagged as a gap.

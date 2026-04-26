@@ -190,6 +190,7 @@ After approval, ask: "May I write the epic file to `production/epics/[epic-slug]
 After user confirms, write:
 > **中文翻译**：用户确认后，写入：
 
+<!-- 中文翻译 -->
 ### `production/epics/[epic-slug]/EPIC.md`
 
 ```markdown

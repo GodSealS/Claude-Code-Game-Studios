@@ -26,6 +26,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ## 入门与导航
 
+<!-- 中文翻译 -->
 ### /start
 
 **模型**: MiniMax-M2.7
@@ -43,6 +44,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /help
 
 **模型**: MiniMax-M2.7
@@ -55,6 +57,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /project-stage-detect
 
 **模型**: MiniMax-M2.7
@@ -71,6 +74,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /setup-engine
 
 **功能**: 配置引擎和版本，检测知识缺口，填充版本感知参考文档。
@@ -91,6 +95,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /adopt
 
 **功能**: 现有项目迁移，检查 GDD/ADR/Story 的内部结构合规性，生成迁移计划。
@@ -101,6 +106,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /setup-wechat-minigame
 
 **功能**: 初始化微信小游戏项目，包含平台专属配置、样板代码和目录结构。
@@ -121,6 +127,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /wechat-shader
 
 **Agent**: `wechat-shader-specialist`
@@ -148,6 +155,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /wechat-ui-design
 
 **Agent**: `wechat-ui-specialist`
@@ -181,6 +189,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /wechat-physics-box2d
 
 **Agent**: `wechat-minigame-specialist`
@@ -208,6 +217,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /wechat-physics-bullet
 
 **Agent**: `wechat-minigame-specialist`
@@ -237,6 +247,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /wechat-physics-jolt
 
 **Agent**: `wechat-minigame-specialist`
@@ -269,6 +280,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ## 游戏设计
 
+<!-- 中文翻译 -->
 ### /brainstorm
 
 **功能**: 引导式创意构思，使用专业方法（MDA、玩家心理学、动词优先设计）。
@@ -286,6 +298,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /map-systems
 
 **功能**: 将游戏概念分解为系统，映射依赖关系，确定设计优先级顺序。
@@ -296,6 +309,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /design-system
 
 **功能**: 引导式分节 GDD 编写，用于单个游戏系统。
@@ -323,6 +337,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /quick-design
 
 **功能**: 轻量级设计规范，用于小改动、调整、小的添加。
@@ -333,6 +348,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /review-all-gdds
 
 **模型**: GLM-5.1
@@ -350,6 +366,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /propagate-design-change
 
 **功能**: 当 GDD 被修改时，找到受影响的 ADR 并生成影响报告。
@@ -362,6 +379,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ## UX 设计
 
+<!-- 中文翻译 -->
 ### /ux-design
 
 **功能**: 引导式分节 UX 规范编写（界面/流程、HUD 或模式库）。
@@ -376,6 +394,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /ux-review
 
 **功能**: 验证 UX 规范的 GDD 对齐性、无障碍性和模式合规性。
@@ -386,6 +405,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ## 架构
 
+<!-- 中文翻译 -->
 ### /create-architecture
 
 **功能**: 引导式主架构文档编写。
@@ -396,6 +416,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /architecture-decision
 
 **功能**: 创建架构决策记录（ADR）。
@@ -413,6 +434,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /architecture-review
 
 **模型**: GLM-5.1
@@ -423,6 +445,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /create-control-manifest
 
 **功能**: 从已接受的 ADR 生成程序员规则表。
@@ -435,6 +458,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ## 故事与迭代
 
+<!-- 中文翻译 -->
 ### /create-epics
 
 **功能**: 将 GDD 和 ADR 转换为史诗任务，每个架构模块一个史诗。
@@ -445,6 +469,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /create-stories
 
 **功能**: 将单个史诗分解为可实现的 Story 文件。
@@ -455,6 +480,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /dev-story
 
 **功能**: 读取 Story 并实现它，路由到合适的程序员 Agent。
@@ -469,6 +495,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /sprint-plan
 
 **功能**: 生成或更新迭代计划，初始化 sprint-status.yaml。
@@ -483,6 +510,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /sprint-status
 
 **模型**: MiniMax-M2.7
@@ -495,6 +523,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /story-readiness
 
 **模型**: MiniMax-M2.7
@@ -507,6 +536,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /story-done
 
 **功能**: 实现后的 8 阶段完成审查，更新 Story 文件，显示下一个 Story。
@@ -521,6 +551,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /estimate
 
 **功能**: 结构化工作量估算，包含复杂度、依赖和风险分解。
@@ -537,6 +568,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ## 审查与分析
 
+<!-- 中文翻译 -->
 ### /design-review
 
 **功能**: 审查游戏设计文档的完整性和一致性。
@@ -545,6 +577,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /code-review
 
 **功能**: 代码架构审查。
@@ -553,6 +586,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /balance-check
 
 **功能**: 分析游戏平衡数据、公式和配置，标记异常值。
@@ -561,6 +595,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /asset-audit
 
 **功能**: 审查资源的命名规范、文件大小预算和管道合规性。
@@ -569,6 +604,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /content-audit
 
 **功能**: 审计 GDD 指定的内容计数与已实现内容的对比。
@@ -577,6 +613,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /scope-check
 
 **模型**: MiniMax-M2.7
@@ -587,6 +624,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /perf-profile
 
 **功能**: 结构化性能分析和瓶颈识别。
@@ -595,6 +633,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /tech-debt
 
 **功能**: 扫描、跟踪、优先排序和报告技术债务。
@@ -608,6 +647,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /gate-check
 
 **模型**: GLM-5.1
@@ -628,6 +668,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /consistency-check
 
 **功能**: 扫描所有 GDD，检测跨文档不一致（冲突的数值、名称、规则）。
@@ -636,6 +677,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /reverse-document
 
 **功能**: 从现有实现生成设计或架构文档。
@@ -648,6 +690,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ## QA 与测试
 
+<!-- 中文翻译 -->
 ### /qa-plan
 
 **功能**: 为迭代或功能生成 QA 测试计划。
@@ -658,6 +701,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /smoke-check
 
 **功能**: 在 QA 交接前运行关键路径冒烟测试门。
@@ -668,6 +712,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /soak-test
 
 **功能**: 为长时间游戏会话生成浸泡测试协议。
@@ -676,6 +721,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /regression-suite
 
 **功能**: 将测试覆盖映射到 GDD 关键路径，识别已修复但无回归测试的 Bug。
@@ -684,6 +730,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /test-setup
 
 **功能**: 为项目引擎搭建测试框架和 CI/CD 管道。
@@ -694,6 +741,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /test-helpers
 
 **功能**: 为测试套件生成引擎特定的测试辅助库。
@@ -702,6 +750,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /test-evidence-review
 
 **功能**: 测试文件和手动证据的质量审查。
@@ -712,6 +761,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /test-flakiness
 
 **功能**: 从 CI 运行日志检测非确定性（不稳定）测试。
@@ -720,6 +770,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /skill-test
 
 **功能**: 验证 Skill 文件的结构合规性和行为正确性。
@@ -730,6 +781,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ## 生产管理
 
+<!-- 中文翻译 -->
 ### /milestone-review
 
 **功能**: 审查里程碑进度并生成状态报告。
@@ -738,6 +790,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /retrospective
 
 **功能**: 运行结构化迭代或里程碑回顾。
@@ -746,6 +799,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /bug-report
 
 **功能**: 创建结构化 Bug 报告。
@@ -756,6 +810,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /bug-triage
 
 **功能**: 读取所有打开的 Bug，重新评估优先级 vs 严重性，分配所有者和标签。
@@ -764,6 +819,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /playtest-report
 
 **功能**: 生成结构化游戏测试报告或分析现有测试笔记。
@@ -774,6 +830,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ## 发布
 
+<!-- 中文翻译 -->
 ### /release-checklist
 
 **功能**: 为当前构建生成和验证发布前清单。
@@ -782,6 +839,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /launch-checklist
 
 **功能**: 跨所有部门的完整上线准备验证。
@@ -790,6 +848,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /changelog
 
 **功能**: 从 Git 历史记录和迭代数据自动生成变更日志。
@@ -798,6 +857,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /patch-notes
 
 **功能**: 从 Git 历史和内部数据生成面向玩家的补丁说明。
@@ -806,6 +866,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /hotfix
 
 **功能**: 带审计追踪的紧急修复工作流，绕过正常迭代流程。
@@ -816,6 +877,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ## 创意与内容
 
+<!-- 中文翻译 -->
 ### /prototype
 
 **功能**: 快速可丢弃原型，用于验证机制（宽松标准，隔离工作树）。
@@ -826,6 +888,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /onboard
 
 **功能**: 为新贡献者或 Agent 生成上下文感知的入门文档。
@@ -834,6 +897,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /localize
 
 **功能**: 本地化工作流：字符串提取、验证、翻译准备。
@@ -849,6 +913,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ## 团队协调
 
+<!-- 中文翻译 -->
 ### /team-combat
 
 **协调角色**:
@@ -863,6 +928,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /team-narrative
 
 **协调角色**:
@@ -875,6 +941,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /team-ui
 
 **协调角色**:
@@ -887,6 +954,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /team-release
 
 **协调角色**:
@@ -899,6 +967,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /team-polish
 
 **协调角色**:
@@ -911,6 +980,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /team-audio
 
 **协调角色**:
@@ -923,6 +993,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /team-level
 
 **协调角色**:
@@ -937,6 +1008,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /team-live-ops
 
 **协调角色**:
@@ -949,6 +1021,7 @@ This document details the functionality, use cases, and parameters of all 73 Ski
 
 ---
 
+<!-- 中文翻译 -->
 ### /team-qa
 
 **协调角色**:

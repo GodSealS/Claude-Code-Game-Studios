@@ -25,7 +25,7 @@ Initialize and configure the Bullet physics engine (via ammo.js WASM) for 3D phy
 5. **Sets up constraint system** — Configures point-to-point, hinge, slider, and cone-twist constraints via `IPhysicsJoint` / **设置约束系统** — 通过 `IPhysicsJoint` 配置点对点约束、铰链约束、滑动约束和锥形扭曲约束
 6. **Soft body support** — Creates cloth, rope, and deformable objects / **软体支持** — 创建布料、绳索和可变形物体
 
-## Usage
+## Usage / 用法
 
 ```
 /wechat-physics-bullet init [gravity-x] [gravity-y] [gravity-z]
@@ -34,7 +34,7 @@ Initialize and configure the Bullet physics engine (via ammo.js WASM) for 3D phy
 /wechat-physics-bullet constraint [type] [body-a] [body-b]
 ```
 
-## Example
+## Example / 示例
 
 ```
 /wechat-physics-bullet init 0 -9.8 0
@@ -47,7 +47,14 @@ This will:
 - Create TypeScript interface files for `IPhysicsWorld`, `IPhysicsBody`, `IPhysicsJoint`
 - Add boilerplate for collision callback and debug rendering
 
-## Output
+> **中文翻译**：这将：
+> - 从 `libs/ammo.wasm` 加载 ammo.js WASM 模块
+> - 创建重力为 (0, -9.8, 0) 的 `BulletPhysicsWorld`
+> - 将世界注册到物理工厂
+> - 为 `IPhysicsWorld`、`IPhysicsBody`、`IPhysicsJoint` 创建 TypeScript 接口文件
+> - 添加碰撞回调和调试渲染的样板代码
+
+## Output / 输出
 
 Creates the following structure:
 
@@ -69,7 +76,7 @@ src/physics/
 └── index.ts                   # Public API exports
 ```
 
-## Bullet Physics World Initialization
+## Bullet Physics World Initialization / Bullet 物理世界初始化
 
 ```typescript
 // src/physics/bullet/BulletInitializer.ts
@@ -114,7 +121,7 @@ export async function initBullet(): Promise<AmmoModule> {
 }
 ```
 
-## Bullet IPhysicsWorld Implementation
+## Bullet IPhysicsWorld Implementation / Bullet IPhysicsWorld 实现
 
 ```typescript
 // src/physics/bullet/BulletPhysicsWorld.ts
@@ -225,7 +232,7 @@ export class BulletPhysicsWorld implements IPhysicsWorld {
 }
 ```
 
-## Physics Factory Registration
+## Physics Factory Registration / 物理工厂注册
 
 ```typescript
 // src/physics/PhysicsFactory.ts (updated with Bullet)
@@ -253,7 +260,7 @@ export function createPhysicsWorld(
 }
 ```
 
-## Configuration in game.json
+## Configuration in game.json / game.json 配置
 
 ```json
 {
@@ -268,17 +275,17 @@ export function createPhysicsWorld(
 }
 ```
 
-## Performance Considerations
+## Performance Considerations / 性能考虑
 
-- Bullet (ammo.js) WASM size: ~1.5MB — may require subpackaging for 4MB limit
-- Use LOD collision shapes (simplified convex hulls for dynamic, trimesh only for static)
-- Keep rigid body count under 200 for mobile performance
-- Use `btDbvtBroadphase` for dynamic scenes, `btAxisSweep3` for static
-- Call `setSleepingThresholds()` to enable body sleeping
-- Destroy Ammo objects explicitly to prevent WASM memory leaks
-- Use `Ammo.destroy()` for all temporary objects (vectors, transforms, etc.)
+- Bullet (ammo.js) WASM size: ~1.5MB — may require subpackaging for 4MB limit / Bullet (ammo.js) WASM 大小：约 1.5MB — 可能需要分包以适应 4MB 限制
+- Use LOD collision shapes (simplified convex hulls for dynamic, trimesh only for static) / 使用 LOD 碰撞形状（动态物体使用简化凸包，静态物体仅使用三角网格）
+- Keep rigid body count under 200 for mobile performance / 在移动设备上保持刚体数量低于 200 以获得良好性能
+- Use `btDbvtBroadphase` for dynamic scenes, `btAxisSweep3` for static / 动态场景使用 `btDbvtBroadphase`，静态场景使用 `btAxisSweep3`
+- Call `setSleepingThresholds()` to enable body sleeping / 调用 `setSleepingThresholds()` 启用刚体休眠
+- Destroy Ammo objects explicitly to prevent WASM memory leaks / 显式销毁 Ammo 对象以防止 WASM 内存泄漏
+- Use `Ammo.destroy()` for all temporary objects (vectors, transforms, etc.) / 对所有临时对象（向量、变换等）使用 `Ammo.destroy()`
 
-## Bullet Feature Support
+## Bullet Feature Support / Bullet 功能支持
 
 | Feature | Supported | Notes |
 |---------|-----------|-------|

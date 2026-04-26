@@ -8,6 +8,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references FairyGUI, data binding, screen management, adaptive layouts)
@@ -20,6 +21,7 @@ No gate IDs assigned.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: In-domain request — FairyGUI component creation
 **Input:** "Create a responsive button component in FairyGUI that changes state on touch."
 **Expected behavior:**
@@ -67,6 +69,7 @@ No gate IDs assigned.
 - Notes WeChat-specific considerations: touch target size (48x48dp), feedback timing
 - Emphasizes responsive design for portrait mode (750x1334px reference)
 
+<!-- 中文翻译 -->
 ### Case 2: Data binding pattern with GameState
 **Input:** "Implement a health bar that updates when player health changes in GameState."
 **Expected behavior:**
@@ -134,6 +137,7 @@ No gate IDs assigned.
 - Emphasizes unidirectional data flow: GameState → ViewModel → UI
 - Notes performance considerations: avoid frequent updates, batch UI changes
 
+<!-- 中文翻译 -->
 ### Case 3: Screen management stack
 **Input:** "Implement a screen manager that handles navigation between game screens (menu, gameplay, settings)."
 **Expected behavior:**
@@ -208,6 +212,7 @@ No gate IDs assigned.
 - Notes memory management: screens should release resources onHide/destroy
 - Considers WeChat-specific navigation patterns (back button, swipe gestures)
 
+<!-- 中文翻译 -->
 ### Case 4: Portrait-first design system
 **Input:** "Design a UI layout for WeChat Mini Games that works in portrait mode on various screen sizes."
 **Expected behavior:**
@@ -260,6 +265,7 @@ No gate IDs assigned.
 - Emphasizes minimum touch target size (48dp for accessibility)
 - Provides responsive scaling patterns
 
+<!-- 中文翻译 -->
 ### Case 5: Cross-platform input handling
 **Input:** "Handle both touch and keyboard input for PC WeChat and mobile WeChat."
 **Expected behavior:**
@@ -317,6 +323,7 @@ No gate IDs assigned.
 - Includes virtual button mapping for cross-platform consistency
 - Notes performance: minimize event handlers, use event pooling
 
+<!-- 中文翻译 -->
 ### Case 6: UI performance standards
 **Input:** "Our UI is causing frame drops. How do we optimize it for WeChat Mini Games?"
 **Expected behavior:**
@@ -340,6 +347,7 @@ No gate IDs assigned.
 - Includes performance budget: UI < 2ms CPU time per frame on mid-range devices
 - Recommends profiling tools: WeChat DevTools Performance panel
 
+<!-- 中文翻译 -->
 ### Case 7: Accessibility design
 **Input:** "Make our UI accessible for visually impaired users."
 **Expected behavior:**
@@ -382,6 +390,7 @@ No gate IDs assigned.
 - Notes regulatory requirements for Chinese market (残疾人保障法)
 - Emphasizes inclusive design as a core principle
 
+<!-- 中文翻译 -->
 ### Case 8: Figma/Sketch to FairyGUI workflow
 **Input:** "How do we convert our Figma designs to FairyGUI components?"
 **Expected behavior:**
@@ -419,6 +428,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - FairyGUI component creation (Case 1) demonstrates practical UI implementation skills

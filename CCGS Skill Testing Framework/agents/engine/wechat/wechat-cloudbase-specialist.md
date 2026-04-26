@@ -8,6 +8,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references WeChat Cloud Base, NoSQL database, cloud functions, security rules, storage management, real-time sync, quota optimization)
@@ -20,6 +21,7 @@ No gate IDs assigned.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: NoSQL database design for common query patterns
 **Input:** "Design a database schema for a multiplayer game with player profiles, inventory, and match history."
 **Expected behavior:**
@@ -71,6 +73,7 @@ No gate IDs assigned.
   ```
 - Notes Cloud Base quotas: batch operations for bulk writes, consider read/write ratios
 
+<!-- 中文翻译 -->
 ### Case 2: Cloud function with anti-cheat validation
 **Input:** "Implement a cloud function to submit player scores with anti-cheat protection."
 **Expected behavior:**
@@ -150,6 +153,7 @@ No gate IDs assigned.
   - Structured response format
   - Transactional operations for data consistency
 
+<!-- 中文翻译 -->
 ### Case 3: Security rules configuration
 **Input:** "Configure security rules for player data (public read, owner write) and leaderboards (public read, cloud function write only)."
 **Expected behavior:**
@@ -195,6 +199,7 @@ No gate IDs assigned.
   ```
 - Notes performance: avoid complex rule evaluation on every request
 
+<!-- 中文翻译 -->
 ### Case 4: Real-time data synchronization for multiplayer rooms
 **Input:** "Implement real-time synchronization for a multiplayer game room so all players see the same game state."
 **Expected behavior:**
@@ -254,6 +259,7 @@ No gate IDs assigned.
   - Connection state management
 - Notes quota considerations: `watch()` counts as database read operations
 
+<!-- 中文翻译 -->
 ### Case 5: Cloud storage management for user-generated content
 **Input:** "Handle user avatar uploads with size limits, format validation, and CDN delivery."
 **Expected behavior:**
@@ -331,6 +337,7 @@ No gate IDs assigned.
   - Image format conversion (WebP for modern browsers)
 - Notes Cloud Base storage quotas and pricing
 
+<!-- 中文翻译 -->
 ### Case 6: Quota optimization and cost control
 **Input:** "Our database read operations are exceeding free tier limits. How do we optimize?"
 **Expected behavior:**
@@ -390,6 +397,7 @@ No gate IDs assigned.
   ```
 - Recommends upgrade paths for scaling
 
+<!-- 中文翻译 -->
 ### Case 7: Version compatibility and API fallbacks
 **Input:** "Handle different WeChat versions where some Cloud Base APIs may not be available."
 **Expected behavior:**
@@ -457,6 +465,7 @@ No gate IDs assigned.
 - Provides user feedback for unsupported features
 - Notes backward compatibility requirements for WeChat Mini Games
 
+<!-- 中文翻译 -->
 ### Case 8: Error handling and user feedback
 **Input:** "Implement comprehensive error handling for network failures, quota limits, and permission errors."
 **Expected behavior:**
@@ -568,6 +577,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - NoSQL database design (Case 1) demonstrates understanding of Cloud Base document model and query optimization

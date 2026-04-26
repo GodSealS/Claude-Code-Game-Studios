@@ -1,10 +1,14 @@
-# Unreal Engine 5.7 — Networking Module Reference
+# Unreal Engine 5.7 — Networking Module Reference / Unreal Engine网络模块
+
+
+> **中文翻译**：本文档为Unreal Engine引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 **Last verified:** 2026-02-13
 **Knowledge Gap:** UE 5.7 networking improvements
 
 ---
 
+<!-- 概述 -->
 ## Overview
 
 UE 5.7 networking:
@@ -15,8 +19,10 @@ UE 5.7 networking:
 
 ---
 
+<!-- 中文翻译 -->
 ## Basic Multiplayer Setup
 
+<!-- 中文翻译 -->
 ### Enable Replication on Actor
 
 ```cpp
@@ -33,6 +39,7 @@ public:
 };
 ```
 
+<!-- 中文翻译 -->
 ### Network Role Checks
 
 ```cpp
@@ -52,8 +59,10 @@ if (GetRemoteRole() == ROLE_SimulatedProxy) {
 
 ---
 
+<!-- 中文翻译 -->
 ## Replicated Variables
 
+<!-- 中文翻译 -->
 ### Basic Replication
 
 ```cpp
@@ -72,6 +81,7 @@ void AMyActor::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetime
 }
 ```
 
+<!-- 中文翻译 -->
 ### Conditional Replication
 
 ```cpp
@@ -85,6 +95,7 @@ DOREPLIFETIME_CONDITION(AMyCharacter, TeamID, COND_SkipOwner);
 DOREPLIFETIME_CONDITION(AMyCharacter, Score, COND_InitialOnly);
 ```
 
+<!-- 中文翻译 -->
 ### RepNotify (Callback on Replication)
 
 ```cpp
@@ -102,8 +113,10 @@ void OnRep_Health() {
 
 ---
 
+<!-- 中文翻译 -->
 ## RPCs (Remote Procedure Calls)
 
+<!-- 中文翻译 -->
 ### Server RPC (Client → Server)
 
 ```cpp
@@ -126,6 +139,7 @@ bool AMyCharacter::Server_TakeDamage_Validate(int32 Damage) {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Client RPC (Server → Client)
 
 ```cpp
@@ -139,6 +153,7 @@ void AMyCharacter::Client_ShowDeathScreen_Implementation() {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Multicast RPC (Server → All Clients)
 
 ```cpp
@@ -152,6 +167,7 @@ void AMyActor::Multicast_PlayExplosion_Implementation(FVector Location) {
 }
 ```
 
+<!-- 中文翻译 -->
 ### RPC Reliability
 
 ```cpp
@@ -166,8 +182,10 @@ void Server_UpdateAim(FRotator AimRotation);
 
 ---
 
+<!-- 中文翻译 -->
 ## Server-Authoritative Pattern (RECOMMENDED)
 
+<!-- 中文翻译 -->
 ### Movement Example
 
 ```cpp
@@ -209,8 +227,10 @@ class AMyCharacter : public ACharacter {
 
 ---
 
+<!-- 中文翻译 -->
 ## Network Relevancy (Bandwidth Optimization)
 
+<!-- 中文翻译 -->
 ### Custom Relevancy
 
 ```cpp
@@ -221,6 +241,7 @@ bool AMyActor::IsNetRelevantFor(const AActor* RealViewer, const AActor* ViewTarg
 }
 ```
 
+<!-- 中文翻译 -->
 ### Always Relevant Actors
 
 ```cpp
@@ -232,8 +253,10 @@ AMyActor() {
 
 ---
 
+<!-- 中文翻译 -->
 ## Ownership
 
+<!-- 中文翻译 -->
 ### Set Owner
 
 ```cpp
@@ -241,6 +264,7 @@ AMyActor() {
 MyActor->SetOwner(OwningPlayerController);
 ```
 
+<!-- 中文翻译 -->
 ### Check Owner
 
 ```cpp
@@ -251,8 +275,10 @@ if (GetOwner() == PlayerController) {
 
 ---
 
+<!-- 中文翻译 -->
 ## Game Mode & Game State
 
+<!-- 中文翻译 -->
 ### Game Mode (Server Only)
 
 ```cpp
@@ -266,6 +292,7 @@ public:
 };
 ```
 
+<!-- 中文翻译 -->
 ### Game State (Replicated to All Clients)
 
 ```cpp
@@ -291,8 +318,10 @@ public:
 
 ---
 
+<!-- 中文翻译 -->
 ## Player Controller & Player State
 
+<!-- 中文翻译 -->
 ### Player Controller (One per Player)
 
 ```cpp
@@ -306,6 +335,7 @@ public:
 };
 ```
 
+<!-- 中文翻译 -->
 ### Player State (Replicated Player Info)
 
 ```cpp
@@ -330,8 +360,10 @@ public:
 
 ---
 
+<!-- 中文翻译 -->
 ## Sessions & Matchmaking
 
+<!-- 中文翻译 -->
 ### Create Session
 
 ```cpp
@@ -351,6 +383,7 @@ void CreateSession() {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Find Sessions
 
 ```cpp
@@ -368,8 +401,10 @@ void FindSessions() {
 
 ---
 
+<!-- 性能提示 -->
 ## Performance Tips
 
+<!-- 中文翻译 -->
 ### Reduce Bandwidth
 
 ```cpp
@@ -386,8 +421,10 @@ SetReplicationFrequency(10.0f); // Update 10 times per second (default 100)
 
 ---
 
+<!-- 调试 -->
 ## Debugging
 
+<!-- 中文翻译 -->
 ### Network Debugging
 
 ```cpp
@@ -403,6 +440,7 @@ UE_LOG(LogNet, Warning, TEXT("Replicating Health: %d"), Health);
 
 ---
 
+<!-- 来源 -->
 ## Sources
 - https://docs.unrealengine.com/5.7/en-US/networking-and-multiplayer-in-unreal-engine/
 - https://docs.unrealengine.com/5.7/en-US/actor-replication-in-unreal-engine/

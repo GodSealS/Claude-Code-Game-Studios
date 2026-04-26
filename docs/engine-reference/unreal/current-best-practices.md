@@ -1,4 +1,7 @@
-# Unreal Engine 5.7 — Current Best Practices
+# Unreal Engine 5.7 — Current Best Practices / 当前最佳实践
+
+
+> **中文翻译**：本文档为Unreal Engine引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 **Last verified:** 2026-02-13
 
@@ -7,12 +10,15 @@ These are production-ready recommendations as of UE 5.7.
 
 ---
 
+<!-- 项目设置 -->
 ## Project Setup
 
+<!-- 中文翻译 -->
 ### Use UE 5.7 for New Projects
 - Latest features: Megalights, production-ready Substrate and PCG
 - Better performance and stability
 
+<!-- 中文翻译 -->
 ### Choose the Right Rendering Features
 - **Lumen**: Real-time global illumination (RECOMMENDED for most projects)
 - **Nanite**: Virtualized geometry for high-poly meshes (RECOMMENDED for detailed environments)
@@ -21,8 +27,10 @@ These are production-ready recommendations as of UE 5.7.
 
 ---
 
+<!-- 中文翻译 -->
 ## C++ Coding
 
+<!-- 中文翻译 -->
 ### Use Modern C++ Features (C++20 in UE5.7)
 
 ```cpp
@@ -42,6 +50,7 @@ concept Damageable = requires(T t, float damage) {
 };
 ```
 
+<!-- 中文翻译 -->
 ### Use UPROPERTY() for Garbage Collection
 
 ```cpp
@@ -53,6 +62,7 @@ TObjectPtr<AActor> MyActor;
 AActor* MyActor; // Dangerous! May be garbage collected
 ```
 
+<!-- 中文翻译 -->
 ### Use UFUNCTION() for Blueprint Exposure
 
 ```cpp
@@ -67,13 +77,16 @@ void OnDeath();
 
 ---
 
+<!-- 中文翻译 -->
 ## Blueprint Best Practices
 
+<!-- 中文翻译 -->
 ### Use Blueprint vs C++
 
 - **C++**: Core gameplay systems, performance-critical code, low-level engine interaction
 - **Blueprint**: Rapid prototyping, content creation, data-driven logic, designer workflows
 
+<!-- 中文翻译 -->
 ### Blueprint Performance Tips
 
 ```cpp
@@ -89,8 +102,10 @@ void OnDeath();
 
 ---
 
+<!-- 中文翻译 -->
 ## Rendering (UE 5.7)
 
+<!-- 中文翻译 -->
 ### Use Lumen for Global Illumination
 
 ```cpp
@@ -98,6 +113,7 @@ void OnDeath();
 // Real-time GI, no lightmap baking needed (RECOMMENDED)
 ```
 
+<!-- 中文翻译 -->
 ### Use Nanite for High-Poly Meshes
 
 ```cpp
@@ -105,6 +121,7 @@ void OnDeath();
 // Automatically LODs millions of triangles (RECOMMENDED for detailed meshes)
 ```
 
+<!-- 中文翻译 -->
 ### Use Megalights for Complex Lighting (UE 5.5+)
 
 ```cpp
@@ -112,6 +129,7 @@ void OnDeath();
 // Supports millions of dynamic lights with minimal cost
 ```
 
+<!-- 中文翻译 -->
 ### Use Substrate Materials (Production-Ready in 5.7)
 
 ```cpp
@@ -121,8 +139,10 @@ void OnDeath();
 
 ---
 
+<!-- 中文翻译 -->
 ## Enhanced Input System
 
+<!-- 中文翻译 -->
 ### Setup Enhanced Input
 
 ```cpp
@@ -160,8 +180,10 @@ void AMyCharacter::Move(const FInputActionValue& Value) {
 
 ---
 
+<!-- 中文翻译 -->
 ## Gameplay Ability System (GAS)
 
+<!-- 中文翻译 -->
 ### Use GAS for Complex Gameplay
 
 ```cpp
@@ -186,8 +208,10 @@ public:
 
 ---
 
+<!-- 中文翻译 -->
 ## World Partition (Large Worlds)
 
+<!-- 中文翻译 -->
 ### Use World Partition for Open Worlds
 
 ```cpp
@@ -200,8 +224,10 @@ public:
 
 ---
 
+<!-- 中文翻译 -->
 ## Niagara (VFX)
 
+<!-- 中文翻译 -->
 ### Use Niagara (Not Cascade)
 
 ```cpp
@@ -218,8 +244,10 @@ UNiagaraComponent* NiagaraComp = UNiagaraFunctionLibrary::SpawnSystemAtLocation(
 
 ---
 
+<!-- 中文翻译 -->
 ## MetaSounds (Audio)
 
+<!-- 中文翻译 -->
 ### Use MetaSounds for Procedural Audio
 
 ```cpp
@@ -235,8 +263,10 @@ UAudioComponent* AudioComp = UGameplayStatics::SpawnSound2D(
 
 ---
 
+<!-- 中文翻译 -->
 ## Replication (Multiplayer)
 
+<!-- 中文翻译 -->
 ### Server-Authoritative Pattern
 
 ```cpp
@@ -261,8 +291,10 @@ void AMyCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLife
 
 ---
 
+<!-- 性能优化 -->
 ## Performance Optimization
 
+<!-- 中文翻译 -->
 ### Use Object Pooling
 
 ```cpp
@@ -281,6 +313,7 @@ AActor* GetPooledProjectile() {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Use Instanced Static Meshes
 
 ```cpp
@@ -294,8 +327,10 @@ for (int i = 0; i < 1000; i++) {
 
 ---
 
+<!-- 调试 -->
 ## Debugging
 
+<!-- 中文翻译 -->
 ### Use Logging
 
 ```cpp
@@ -308,6 +343,7 @@ DEFINE_LOG_CATEGORY(LogMyGame);
 UE_LOG(LogMyGame, Error, TEXT("Critical error!"));
 ```
 
+<!-- 中文翻译 -->
 ### Use Visual Logger
 
 ```cpp
@@ -320,6 +356,7 @@ UE_VLOG_LOCATION(this, LogTemp, Log, TargetLocation, 50.f, FColor::Green, TEXT("
 
 ---
 
+<!-- 中文翻译 -->
 ## Summary: UE 5.7 Recommended Stack
 
 | Feature | Use This (2026) | Notes |

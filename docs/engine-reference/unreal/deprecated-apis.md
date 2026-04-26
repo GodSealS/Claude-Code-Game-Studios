@@ -1,4 +1,7 @@
-# Unreal Engine 5.7 — Deprecated APIs
+# Unreal Engine 5.7 — Deprecated APIs / 已弃用API
+
+
+> **中文翻译**：本文档为Unreal Engine引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 **Last verified:** 2026-02-13
 
@@ -7,6 +10,7 @@ Format: **Don't use X** → **Use Y instead**
 
 ---
 
+<!-- 中文翻译 -->
 ## Input
 
 | Deprecated | Replacement | Notes |
@@ -19,6 +23,7 @@ Format: **Don't use X** → **Use Y instead**
 
 ---
 
+<!-- 中文翻译 -->
 ## Rendering
 
 | Deprecated | Replacement | Notes |
@@ -29,6 +34,7 @@ Format: **Don't use X** → **Use Y instead**
 
 ---
 
+<!-- 中文翻译 -->
 ## World Building
 
 | Deprecated | Replacement | Notes |
@@ -38,6 +44,7 @@ Format: **Don't use X** → **Use Y instead**
 
 ---
 
+<!-- 中文翻译 -->
 ## Animation
 
 | Deprecated | Replacement | Notes |
@@ -47,6 +54,7 @@ Format: **Don't use X** → **Use Y instead**
 
 ---
 
+<!-- 中文翻译 -->
 ## Gameplay
 
 | Deprecated | Replacement | Notes |
@@ -56,6 +64,7 @@ Format: **Don't use X** → **Use Y instead**
 
 ---
 
+<!-- 中文翻译 -->
 ## Niagara (VFX)
 
 | Deprecated | Replacement | Notes |
@@ -64,6 +73,7 @@ Format: **Don't use X** → **Use Y instead**
 
 ---
 
+<!-- 中文翻译 -->
 ## Audio
 
 | Deprecated | Replacement | Notes |
@@ -73,6 +83,7 @@ Format: **Don't use X** → **Use Y instead**
 
 ---
 
+<!-- 中文翻译 -->
 ## Networking
 
 | Deprecated | Replacement | Notes |
@@ -81,6 +92,7 @@ Format: **Don't use X** → **Use Y instead**
 
 ---
 
+<!-- 中文翻译 -->
 ## C++ Scripting
 
 | Deprecated | Replacement | Notes |
@@ -90,8 +102,10 @@ Format: **Don't use X** → **Use Y instead**
 
 ---
 
+<!-- 中文翻译 -->
 ## Quick Migration Patterns
 
+<!-- 中文翻译 -->
 ### Input Example
 ```cpp
 // ❌ Deprecated
@@ -110,6 +124,7 @@ void AMyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 }
 ```
 
+<!-- 中文翻译 -->
 ### Material Example
 ```cpp
 // ❌ Deprecated: Legacy material
@@ -120,6 +135,7 @@ void AMyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 // Use Substrate nodes in material editor
 ```
 
+<!-- 中文翻译 -->
 ### World Partition Example
 ```cpp
 // ❌ Deprecated: Level streaming volumes
@@ -130,6 +146,7 @@ void AMyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 // Use Data Layers for streaming
 ```
 
+<!-- 中文翻译 -->
 ### Particle System Example
 ```cpp
 // ❌ Deprecated: Cascade
@@ -139,6 +156,7 @@ UParticleSystemComponent* PSC = CreateDefaultSubobject<UParticleSystemComponent>
 UNiagaraComponent* NiagaraComp = CreateDefaultSubobject<UNiagaraComponent>(TEXT("Niagara"));
 ```
 
+<!-- 中文翻译 -->
 ### Audio Example
 ```cpp
 // ❌ Deprecated: Sound Cue for complex logic
@@ -150,6 +168,7 @@ UNiagaraComponent* NiagaraComp = CreateDefaultSubobject<UNiagaraComponent>(TEXT(
 
 ---
 
+<!-- 中文翻译 -->
 ## Summary: UE 5.7 Tech Stack
 
 | Feature | Use This (2026) | Avoid This (Legacy) |

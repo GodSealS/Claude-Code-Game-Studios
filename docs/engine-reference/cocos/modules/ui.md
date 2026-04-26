@@ -1,7 +1,11 @@
-# Cocos Creator — UI Module
+# Cocos Creator — UI Module / Cocos CreatorUI模块
+
+
+> **中文翻译**：本文档为Cocos Creator引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 Last verified: 2026-04-25
 
+<!-- 核心类型 -->
 ## Core Types
 
 | Type | Purpose |
@@ -19,6 +23,7 @@ Last verified: 2026-04-25
 | `RichText` | Styled text with tags |
 | `PageView` | Swipeable page container |
 
+<!-- 中文翻译 -->
 ## Canvas Setup
 
 ```typescript
@@ -26,6 +31,7 @@ Last verified: 2026-04-25
 // RenderMode: SCREEN_SPACE (overlay) or WORLD_SPACE (in-scene)
 ```
 
+<!-- 中文翻译 -->
 ## Responsive Layout with Widget
 
 ```typescript
@@ -42,6 +48,7 @@ widget.bottom = 20;
 widget.updateAlignment(); // Apply
 ```
 
+<!-- 中文翻译 -->
 ## Button with Callback
 
 ```typescript
@@ -55,6 +62,7 @@ onBtnClick() {
 }
 ```
 
+<!-- 中文翻译 -->
 ## Multi-Resolution Adaptation
 
 ```typescript
@@ -64,6 +72,7 @@ canvas.designResolution = new Size(1280, 720);
 canvas.fitHeight = true;  // or fitWidth
 ```
 
+<!-- 陷阱 -->
 ## Pitfalls
 
 - WRONG: Putting UI elements without Canvas parent

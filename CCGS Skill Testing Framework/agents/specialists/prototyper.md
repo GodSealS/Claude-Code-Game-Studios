@@ -8,6 +8,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (Read (all), Write (prototypes/ only), throwaway code)
@@ -19,6 +20,7 @@
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: In-domain request — prototype a card-drawing mechanic
 **Input**: "Prototype a card-drawing mechanic in 2 hours. The core question: does drawing 3 cards per turn with hand-size limit of 7 feel good? I need something to test in a playtest today."
 **Expected behavior**:
@@ -28,6 +30,7 @@
 - Does NOT implement production patterns (dependency injection, signals, data-driven config) unless they take less time than not using them
 - Includes a `README.md` in the prototype folder: hypothesis being tested, how to run, what to observe in the playtest
 
+<!-- 中文翻译 -->
 ### Case 2: Out-of-domain request — production-grade implementation
 **Input**: "The card mechanic prototype worked great. Now write the production implementation of the card system for src/gameplay/cards/."
 **Expected behavior**:
@@ -36,6 +39,7 @@
 - Offers to produce a transition document: what the prototype proved, what the production implementation should preserve (the mechanic), and what it should discard (the throwaway implementation patterns)
 - Does NOT copy the prototype code into src/ or suggest it as a starting point without warning about its non-production quality
 
+<!-- 中文翻译 -->
 ### Case 3: Prototype validates the mechanic — recommendation output
 **Input**: "The card-draw prototype playtested well. Three sessions all enjoyed drawing 3 cards/turn with hand limit 7. No confusion observed. What's next?"
 **Expected behavior**:
@@ -44,6 +48,7 @@
 - Does NOT begin writing production code
 - Output is structured as a decision-ready recommendation, not a narrative summary
 
+<!-- 中文翻译 -->
 ### Case 4: Prototype reveals the mechanic is unworkable — abandonment note
 **Input**: "The prototype for the physics-based lock-picking mechanic is done. After 4 playtest sessions, all testers found it frustrating — too much precision required, not fun. One tester rage-quit."
 **Expected behavior**:
@@ -52,6 +57,7 @@
 - Does NOT recommend persisting with the prototype mechanic because of sunk cost
 - Does NOT mark the result as inconclusive — after 4 sessions with consistent negative responses, abandonment is the correct verdict
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — using the project's engine scripting language
 **Input context**: Project uses Godot 4.6 with GDScript (configured in technical-preferences.md).
 **Input**: "Prototype a basic grid movement system — player clicks a tile and the character moves to it."
@@ -75,6 +81,7 @@
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Case 2 (production redirect) is critical — prototype code leaking into src/ is a common quality problem
 - Case 4 (abandonment honesty) tests whether the agent avoids sunk-cost bias — prototypes that fail should be cleanly abandoned

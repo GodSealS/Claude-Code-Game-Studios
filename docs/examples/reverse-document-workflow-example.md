@@ -1,11 +1,13 @@
 # Reverse Documentation Workflow Example / 反向文档工作流示例
 
+<!-- 中文翻译 -->
 ## Scenario
 Developer built a working skill tree system but never wrote a design doc.
 Code exists in `src/gameplay/skills/`, but `design/gdd/` has no skill-system.md.
 
 ---
 
+<!-- 中文翻译 -->
 ## Session Transcript
 
 **User:**
@@ -108,6 +110,7 @@ Next steps:
 
 ---
 
+<!-- 中文翻译 -->
 ## Key Observations
 
 1. **Agent asked clarifying questions** - didn't just describe code
@@ -116,6 +119,7 @@ Next steps:
 4. **Identified missing pieces** - edge cases not in code
 5. **Flagged follow-up work** - balance tuning, ADRs, tutorial
 
+<!-- 中文翻译 -->
 ## Outcome
 
 The design doc now exists and **matches reality** while also capturing the **intended vision**. Future changes will reference this doc, and new team members understand the *why* behind decisions.

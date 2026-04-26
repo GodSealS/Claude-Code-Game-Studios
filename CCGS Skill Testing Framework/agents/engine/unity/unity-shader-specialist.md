@@ -8,6 +8,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references Shader Graph / HLSL / VFX Graph / URP / HDRP)
@@ -19,6 +20,7 @@ No gate IDs assigned.
 
 ## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出 -->
 ### Case 1: In-domain request — appropriate output
 **Input:** "Create an outline effect for characters using Shader Graph in URP."
 **Expected behavior:**
@@ -29,6 +31,7 @@ No gate IDs assigned.
 - Notes URP limitations: no geometry shader support (rules out geometry-shader outline approach)
 - Does NOT produce HDRP-specific nodes without confirming the render pipeline
 
+<!-- 用例 2：域外重定向 -->
 ### Case 2: Out-of-domain redirect
 **Input:** "Implement the character health bar UI in code."
 **Expected behavior:**
@@ -37,6 +40,7 @@ No gate IDs assigned.
 - Redirects the request appropriately
 - May note that a shader-based fill effect for a health bar (e.g., a dissolve/fill gradient) is within its domain if the visual effect itself is shader-driven
 
+<!-- 中文翻译 -->
 ### Case 3: HDRP custom pass for outline
 **Input:** "We're on HDRP and want the outline as a post-process effect."
 **Expected behavior:**
@@ -47,6 +51,7 @@ No gate IDs assigned.
 - Notes that CustomPass requires HDRP package and does not work in URP
 - Confirms the project is on HDRP before providing HDRP-specific code
 
+<!-- 中文翻译 -->
 ### Case 4: VFX Graph performance — GPU event batching
 **Input:** "The explosion VFX Graph has 10,000 particles per event and spawning 20 simultaneous explosions is causing GPU frame spikes."
 **Expected behavior:**
@@ -56,6 +61,7 @@ No gate IDs assigned.
 - Notes the VFX Graph Event Batcher pattern and Output Event API for cross-frame distribution
 - Does NOT change the gameplay event system — proposes a VFX-side budgeting solution
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — render pipeline (URP or HDRP)
 **Input:** Project context: URP render pipeline, Unity 2022.3. Request: "Add depth of field post-processing."
 **Expected behavior:**
@@ -78,6 +84,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Outline effect (Case 1) should be paired with a visual screenshot test in `production/qa/evidence/`
 - HDRP CustomPass (Case 3) confirms the agent produces the correct Unity pattern, not a generic post-process approach

@@ -1,9 +1,13 @@
-# Godot — Breaking Changes
+# Godot — Breaking Changes / 破坏性变更
+
+
+> **中文翻译**：本文档为Godot引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 Last verified: 2026-02-12
 
 Changes between Godot versions, focused on post-LLM-cutoff changes (4.4+).
 
+<!-- 中文翻译 -->
 ## 4.5 → 4.6 (Jan 2026 — POST-CUTOFF, HIGH RISK)
 
 | Subsystem | Change | Details |
@@ -22,6 +26,7 @@ Changes between Godot versions, focused on post-LLM-cutoff changes (4.4+).
 | C# | Automatic string extraction | Translation strings auto-extracted from C# code. |
 | Plugins | New EditorDock class | Specialized container for plugin docks with layout control. |
 
+<!-- 中文翻译 -->
 ## 4.4 → 4.5 (Late 2025 — POST-CUTOFF, HIGH RISK)
 
 | Subsystem | Change | Details |
@@ -45,6 +50,7 @@ Changes between Godot versions, focused on post-LLM-cutoff changes (4.4+).
 | Platform | SDL3 gamepad driver | Delegated gamepad handling to SDL library |
 | Platform | Android 16KB page support | Required for Google Play targeting Android 15+ |
 
+<!-- 中文翻译 -->
 ## 4.3 → 4.4 (Mid 2025 — NEAR CUTOFF, VERIFY)
 
 | Subsystem | Change | Details |
@@ -58,6 +64,7 @@ Changes between Godot versions, focused on post-LLM-cutoff changes (4.4+).
 | GUI | `RichTextLabel.push_meta` | Added optional `tooltip` parameter |
 | GUI | `GraphEdit.connect_node` | Added optional `keep_alive` parameter |
 
+<!-- 中文翻译 -->
 ## 4.2 → 4.3 (In Training Data — LOW RISK)
 
 | Subsystem | Change | Details |

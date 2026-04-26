@@ -8,6 +8,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references world lore, factions, history, world rules, ecology)
@@ -20,6 +21,7 @@
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: In-domain request — faction culture and government design
 **Input**: "Design the Ironveil Merchant Consortium — a powerful trading faction in our world. I need their culture, government structure, and internal motivations."
 **Expected behavior**:
@@ -28,6 +30,7 @@
 - Output includes at least one internal tension or contradiction within the faction — factions without internal complexity are flat
 - Formatted as a structured faction profile, not a narrative essay
 
+<!-- 中文翻译 -->
 ### Case 2: Out-of-domain request — dialogue writing
 **Input**: "Write the dialogue for a Ironveil Consortium merchant NPC that the player meets at the city gates."
 **Expected behavior**:
@@ -35,6 +38,7 @@
 - States clearly: "Dialogue writing is owned by writer; I provide the world and faction context that informs the dialogue, including the faction's culture, tone, and speaking style"
 - Offers to produce the faction's speaking style notes and cultural context that writer would need to write consistent dialogue
 
+<!-- 中文翻译 -->
 ### Case 3: New lore entry contradicts established history — conflict flagging
 **Input**: "Add a lore entry stating the Ironveil Consortium was founded 50 years ago by a single merchant family." [Context includes existing lore: the Consortium has existed for 300 years and was founded as a collective by 12 rival trading houses.]
 **Expected behavior**:
@@ -44,6 +48,7 @@
 - Proposes resolution options: (a) the new entry is wrong and should be corrected; (b) the existing lore should be updated if the new version is the intended canon; (c) there is an in-world explanation (the current family claims founding credit despite the collective origin — a deliberate narrative unreliable narrator)
 - Routes the resolution to narrative-director if no clear answer exists
 
+<!-- 中文翻译 -->
 ### Case 4: World rule has gameplay implications — coordination with game-designer
 **Input**: "I want to establish a world rule: magic users who cast spells near iron ore are weakened. Iron disrupts arcane energy."
 **Expected behavior**:
@@ -52,6 +57,7 @@
 - Flags the coordination requirement: "This world rule has gameplay mechanics implications — game-designer needs to define how this translates into player-facing mechanics; proceeding with the lore without the mechanics definition risks inconsistency"
 - Does NOT unilaterally design the game mechanic — describes the lore rule and the mechanical territory it implies, then defers to game-designer
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — using established world documents
 **Input context**: Existing world document states: the world uses a dual-sun system, one sun is the source of arcane energy (the White Sun), and arcane magic ceases to function during the 3-day lunar eclipse period (the Darkening).
 **Input**: "Add a lore entry about the Mages' College and how they prepare for the Darkening."
@@ -75,6 +81,7 @@
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Case 3 (contradiction detection) requires existing lore to be in context — this is the most important consistency test
 - Case 4 (world rule/mechanic coordination) tests cross-domain awareness; verify the agent identifies the mechanic boundary without crossing it

@@ -8,6 +8,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified by reading the agent's `.codebuddy/agents/art-director.md` frontmatter:
@@ -21,6 +22,7 @@ Verified by reading the agent's `.codebuddy/agents/art-director.md` frontmatter:
 
 ## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出格式 -->
 ### Case 1: In-domain request — appropriate output format
 **Scenario:** The art bible's color palette section is submitted for review. The section defines a desaturated earth-tone primary palette with high-contrast accent colors tied to the game pillar "beauty in decay." The palette is internally consistent and references the pillar vocabulary. Request is tagged AD-ART-BIBLE.
 **Expected:** Returns `AD-ART-BIBLE: APPROVE` with rationale confirming the palette's internal consistency and its alignment with the stated pillar.
@@ -30,6 +32,7 @@ Verified by reading the agent's `.codebuddy/agents/art-director.md` frontmatter:
 - [ ] Rationale references the specific palette characteristics and pillar alignment — not generic art advice
 - [ ] Output stays within visual domain — does not comment on UX interaction patterns or audio mood
 
+<!-- 用例 2：域外请求 — 重定向或升级 -->
 ### Case 2: Out-of-domain request — redirects or escalates
 **Scenario:** Sound designer asks art-director to specify how ambient audio should layer and duck when the player enters a combat zone.
 **Expected:** Agent declines to define audio behavior and redirects to audio-director.
@@ -38,6 +41,7 @@ Verified by reading the agent's `.codebuddy/agents/art-director.md` frontmatter:
 - [ ] Explicitly names `audio-director` as the correct handler
 - [ ] May note if the audio has visual mood implications (e.g., "the audio should match the visual tension of the zone"), but defers all audio specification to audio-director
 
+<!-- 用例 3：门控裁决 — 正确词汇 -->
 ### Case 3: Gate verdict — correct vocabulary
 **Scenario:** Concept art for the protagonist is submitted. The art uses a vivid, saturated color palette (primary: #FF4500, #00BFFF) that directly contradicts the established art bible's "desaturated earth-tones" palette specification. Request is tagged AD-CONCEPT-VISUAL.
 **Expected:** Returns `AD-CONCEPT-VISUAL: CONCERNS` with specific citation of the palette discrepancy, referencing the art bible's stated palette values versus the submitted concept's palette.
@@ -47,6 +51,7 @@ Verified by reading the agent's `.codebuddy/agents/art-director.md` frontmatter:
 - [ ] Rationale specifically identifies the palette conflict — not a generic "doesn't match style" comment
 - [ ] References the art bible as the authoritative source for the correct palette
 
+<!-- 用例 4：冲突升级 — 正确上级 -->
 ### Case 4: Conflict escalation — correct parent
 **Scenario:** ux-designer proposes using high-contrast, brightly colored icons for the HUD to improve readability. art-director believes this violates the art bible's muted visual language and would undermine the visual identity.
 **Expected:** art-director states the visual identity concern and references the art bible, acknowledges ux-designer's readability goal as legitimate, and escalates to creative-director to arbitrate the trade-off between visual coherence and usability.
@@ -56,6 +61,7 @@ Verified by reading the agent's `.codebuddy/agents/art-director.md` frontmatter:
 - [ ] Clearly frames the conflict as a trade-off between two legitimate goals
 - [ ] References the specific art bible rule being violated
 
+<!-- 用例 5：上下文传递 — 使用提供的上下文 -->
 ### Case 5: Context pass — uses provided context
 **Scenario:** Agent receives a gate context block that includes the existing art bible with specific palette values (primary: #8B7355, #6B6B47; accent: #C8A96E) and style rules ("no pure white, no pure black; all shadows have warm undertones"). A new asset is submitted for review.
 **Expected:** Assessment references the specific hex values and style rules from the provided art bible, not generic color theory advice. Any concerns are tied to specific violations of the provided rules.
@@ -77,6 +83,7 @@ Verified by reading the agent's `.codebuddy/agents/art-director.md` frontmatter:
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - AD-PHASE-GATE (full visual phase advancement) is not covered — deferred to integration with /gate-check skill.
 - Asset pipeline standards (file format, resolution, naming conventions) compliance checks are not covered here.

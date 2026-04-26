@@ -86,17 +86,17 @@ Recommendations:
 
 ---
 
-## Phase 3: Asset Optimization
+## Phase 3: Asset Optimization / 第 3 阶段：资产优化
 
-### Image Optimization
+### Image Optimization / 图片优化
 
-Check for optimization opportunities:
+Check for optimization opportunities: / 检查优化机会：
 
 ```bash
-# Find large images
+# Find large images / 查找大图片
 Bash("find miniprogram/images -type f \( -name '*.png' -o -name '*.jpg' \) -size +100k")
 
-# Check for unoptimized images
+# Check for unoptimized images / 检查未优化的图片
 Bash("find miniprogram/images -type f -name '*.png' | head -10")
 ```
 
@@ -121,7 +121,7 @@ Would you like me to:
 - [ ] Suggest subpackage strategy for assets
 ```
 
-### Audio Optimization
+### Audio Optimization / 音频优化
 
 ```bash
 # Check audio files
@@ -135,9 +135,9 @@ Bash("find miniprogram/audio -type f \( -name '*.mp3' -o -name '*.wav' -o -name 
 
 ---
 
-## Phase 4: Code Quality Check
+## Phase 4: Code Quality Check / 第 4 阶段：代码质量检查
 
-### JavaScript/TypeScript Validation
+### JavaScript/TypeScript Validation / JavaScript/TypeScript 验证
 
 ```bash
 # Check for common issues
@@ -146,7 +146,7 @@ Grep("miniprogram/js/**/*.js", "window\\.")   # window object not available
 Grep("miniprogram/js/**/*.js", "localStorage") # Use wx.setStorageSync instead
 ```
 
-### Check for Anti-patterns
+### Check for Anti-patterns / 检查反模式
 
 ```
 🔍 Code Quality Check
@@ -179,9 +179,9 @@ Issues Found:
 
 ---
 
-## Phase 5: Configuration Validation
+## Phase 5: Configuration Validation / 第 5 阶段：配置验证
 
-### Validate game.json
+### Validate game.json / 验证 game.json
 
 ```javascript
 // Required fields check
@@ -197,7 +197,7 @@ if (gameJson.subpackages) {
 }
 ```
 
-### Validate app.json
+### Validate app.json / 验证 app.json
 
 ```javascript
 // Check for common issues
@@ -211,7 +211,7 @@ if (appJson.permission) {
 }
 ```
 
-### Configuration Report
+### Configuration Report / 配置报告
 
 ```
 ⚙️  Configuration Validation
@@ -235,9 +235,9 @@ if (appJson.permission) {
 
 ---
 
-## Phase 6: Security and Privacy Check
+## Phase 6: Security and Privacy Check / 第 6 阶段：安全和隐私检查
 
-### Check for Sensitive Data
+### Check for Sensitive Data / 检查敏感数据
 
 ```bash
 # Scan for potential issues
@@ -245,7 +245,7 @@ Grep("miniprogram/**/*", "appid|appsecret|api[_-]?key|password|token", "-i")
 Grep("miniprogram/**/*", "http://")  # Should use https://
 ```
 
-### Privacy Compliance
+### Privacy Compliance / 隐私合规
 
 ```
 🔒 Security and Privacy Check
@@ -273,9 +273,9 @@ Permissions declared:
 
 ---
 
-## Phase 7: Performance Check
+## Phase 7: Performance Check / 第 7 阶段：性能检查
 
-### Performance Recommendations
+### Performance Recommendations / 性能建议
 
 ```
 🚀 Performance Check
@@ -306,9 +306,9 @@ Best Practices:
 
 ---
 
-## Phase 8: Build Package
+## Phase 8: Build Package / 第 8 阶段：构建包
 
-### Create Build Directory
+### Create Build Directory / 创建构建目录
 
 ```bash
 # Create production build
@@ -320,7 +320,7 @@ Bash("rm -f build/wechat-minigame/.eslintrc.js")
 Bash("rm -rf build/wechat-minigame/node_modules")
 ```
 
-### Generate Build Report
+### Generate Build Report / 生成构建报告
 
 ```
 📦 Build Complete
@@ -347,9 +347,9 @@ Build type: {release|preview|test}
 
 ---
 
-## Phase 9: Submission Checklist
+## Phase 9: Submission Checklist / 第 9 阶段：提交清单
 
-Generate a submission checklist:
+Generate a submission checklist: / 生成提交清单：
 
 ```markdown
 # 🚀 WeChat Mini Game Submission Checklist
@@ -414,7 +414,7 @@ Generate a submission checklist:
 
 ---
 
-## Phase 10: Summary Output
+## Phase 10: Summary Output / 第 10 阶段：总结输出
 
 Show final summary to user:
 
@@ -448,7 +448,7 @@ Show final summary to user:
 
 ---
 
-## Edge Cases
+## Edge Cases / 边界情况
 
 - **Missing required files**: Offer to create or guide to `/setup-wechat-minigame`
 - **Package exceeds 4MB**: Provide detailed subpackage migration plan

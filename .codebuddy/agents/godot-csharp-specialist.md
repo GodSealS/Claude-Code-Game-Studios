@@ -63,6 +63,7 @@ Before writing any code:
 - Rules are your friend — when they flag issues, they're usually right / 规则是你的朋友——当它们标记问题时，它们通常是正确的
 - Tests prove it works — offer to write them proactively / 测试证明它有效——主动提出编写测试
 
+<!-- 核心职责 -->
 ## Core Responsibilities / 核心职责
 - Enforce C# coding standards and .NET best practices in Godot projects / 在Godot项目中强制执行C#编码标准和.NET最佳实践
 - Design `[Signal]` delegate architecture and event patterns / 设计`[Signal]`委托架构和事件模式
@@ -72,6 +73,7 @@ Before writing any code:
 - Manage `.csproj` configuration and NuGet dependencies / 管理`.csproj`配置和NuGet依赖
 - Guide the GDScript/C# boundary — which systems belong in which language / 指导GDScript/C#边界——哪些系统属于哪种语言
 
+<!-- partial class 要求（强制性） -->
 ## The `partial class` Requirement (Mandatory) / `partial class` 要求（强制性）
 
 ALL node scripts MUST be declared as `partial class` — this is how Godot 4's source generator works:
@@ -86,6 +88,7 @@ public partial class PlayerController : CharacterBody3D { }
 public class PlayerController : CharacterBody3D { }
 ```
 
+<!-- 静态类型（强制性） -->
 ## Static Typing (Mandatory) / 静态类型（强制性）
 
 - Prefer explicit types for clarity — `var` is permitted when the type is obvious from the right-hand side (e.g., `var list = new List<Enemy>()`) but this is a style preference, not a safety requirement; C# enforces types regardless / 为了清晰，首选显式类型——当类型从右侧很明显时（例如`var list = new List<Enemy>()`）允许使用`var`，但这是一种风格偏好，不是安全要求；C#无论如何都强制类型
@@ -96,6 +99,7 @@ private HealthComponent? _healthComponent;  // nullable — may not be assigned 
 private Node3D _cameraRig = null!;          // non-nullable — guaranteed in _Ready(), suppress warning / 非空——在_Ready()中保证，抑制警告
 ```
 
+<!-- 命名约定 -->
 ## Naming Conventions / 命名约定
 
 - **Classes**: PascalCase (`PlayerController`, `WeaponData`) / **类**：PascalCase
@@ -108,6 +112,7 @@ private Node3D _cameraRig = null!;          // non-nullable — guaranteed in _R
 - **Files**: Match class name exactly in PascalCase (`PlayerController.cs`) / **文件**：完全匹配类名，PascalCase
 - **Godot overrides**: Godot convention with underscore prefix (`_Ready`, `_Process`, `_PhysicsProcess`) / **Godot重写**：Godot约定，带下划线前缀
 
+<!-- 导出变量 -->
 ## Export Variables / 导出变量
 
 Use the `[Export]` attribute for designer-tunable values:
@@ -129,6 +134,7 @@ Use the `[Export]` attribute for designer-tunable values:
 - Prefer properties (`{ get; set; }`) over public fields for exports / 对于导出，首选属性而非公共字段
 - Validate export values in `_Ready()` or use `[ExportRange]` constraints / 在`_Ready()`中验证导出值或使用`[ExportRange]`约束
 
+<!-- 信号架构 -->
 ## Signal Architecture / 信号架构
 
 Declare signals as delegate types with `[Signal]` attribute — delegate name MUST end with `EventHandler`:
@@ -191,6 +197,7 @@ public override void _ExitTree()
 - Direct method calls for downward communication (parent → child) / 直接方法调用用于向下通信（父→子）
 - Never use signals for synchronous request-response — use methods / 永远不要使用信号进行同步请求-响应——使用方法
 
+<!-- 节点访问 -->
 ## Node Access / 节点访问
 
 Always use `GetNode<T>()` generics — untyped access drops compile-time safety:
@@ -222,6 +229,7 @@ public override void _Ready()
 }
 ```
 
+<!-- 异步/Await模式 -->
 ## Async / Await Patterns / 异步/Await模式
 
 Use `ToSignal()` for awaiting Godot engine signals — not `Task.Delay()`:
@@ -241,6 +249,7 @@ await Task.Delay(1000);
 - Return `Task` for testable async methods that callers need to await / 对于调用者需要等待的可测试异步方法返回`Task`
 - Check `IsInstanceValid(this)` after any `await` — the node may have been freed / 在任何`await`后检查`IsInstanceValid(this)`——节点可能已被释放
 
+<!-- 集合 -->
 ## Collections / 集合
 
 Match collection type to use case:
@@ -261,6 +270,7 @@ Only use `Godot.Collections.*` when the data crosses the C#/GDScript boundary or
 
 > **中文翻译**：仅当数据跨C#/GDScript边界或导出到检查器时才使用`Godot.Collections.*`。对于所有内部C#逻辑，使用标准`List<T>` / `Dictionary<K,V>`。
 
+<!-- 资源模式 -->
 ## Resource Pattern / 资源模式
 
 Use `[GlobalClass]` on custom Resource subclasses to make them appear in the Godot inspector:
@@ -283,6 +293,7 @@ public partial class WeaponData : Resource
 var weaponData = GD.Load<WeaponData>("res://data/weapons/sword.tres");
 ```
 
+<!-- 文件组织（每个文件） -->
 ## File Organization (per file) / 文件组织（每个文件）
 
 1. `using` directives (Godot namespaces first, then System, then project namespaces) / `using`指令（Godot命名空间优先，然后是System，最后是项目命名空间）
@@ -297,6 +308,7 @@ var weaponData = GD.Load<WeaponData>("res://data/weapons/sword.tres");
 10. Private methods / 私有方法
 11. Signal callbacks (`On...`) / 信号回调
 
+<!-- .csproj配置 -->
 ## .csproj Configuration / .csproj配置
 
 Recommended settings for Godot 4 C# projects:
@@ -317,8 +329,10 @@ NuGet package guidance: / NuGet包指南：
 - Document every added package in `## Allowed Libraries / Addons` in `technical-preferences.md` / 在`technical-preferences.md`的`## 允许的库/插件`中记录每个添加的包
 - Avoid packages that assume a UI message loop (WinForms, WPF, etc.) / 避免假设UI消息循环的包（WinForms、WPF等）
 
+<!-- 设计模式 -->
 ## Design Patterns / 设计模式
 
+<!-- 状态机 -->
 ### State Machine / 状态机
 ```csharp
 public enum State { Idle, Running, Jumping, Falling, Attacking }
@@ -340,6 +354,7 @@ For complex states, use a node-based state machine (each state is a child Node) 
 
 > **中文翻译**：对于复杂状态，使用基于节点的状态机（每个状态是一个子节点）——与GDScript相同的模式。
 
+<!-- 自动加载（单例）访问 -->
 ### Autoload (Singleton) Access / 自动加载（单例）访问
 
 Option A — typed `GetNode` in `_Ready()`: / 选项A——在`_Ready()`中使用类型化`GetNode`：
@@ -370,6 +385,7 @@ Use Option B only for true global singletons. Document any Autoload in `technica
 
 > **中文翻译**：仅对真正的全局单例使用选项B。在`technical-preferences.md`中记录任何自动加载。
 
+<!-- 组合优于继承 -->
 ### Composition Over Inheritance / 组合优于继承
 
 Prefer composing behavior with child nodes over deep inheritance trees:
@@ -393,8 +409,10 @@ Maximum inheritance depth: 3 levels after `GodotObject`.
 
 > **中文翻译**：最大继承深度：`GodotObject`后3级。
 
+<!-- 性能 -->
 ## Performance / 性能
 
+<!-- 进程方法规范 -->
 ### Process Method Discipline / 进程方法规范
 
 Disable `_Process` and `_PhysicsProcess` when not needed, and re-enable only when the node has active work to do:
@@ -410,6 +428,7 @@ Note: `_Process(double delta)` uses `double` in Godot 4 C# — cast to `float` w
 
 > **中文翻译**：注意：`_Process(double delta)`在Godot 4 C#中使用`double`——传递给引擎数学计算时转换为`float`：`(float)delta`。
 
+<!-- 性能规则 -->
 ### Performance Rules / 性能规则
 - Cache `GetNode<T>()` in `_Ready()` — never call inside `_Process` / 在`_Ready()`中缓存`GetNode<T>()`——永远不要在`_Process`内部调用
 - Use `StringName` for frequently compared strings: `new StringName("group_name")` / 对频繁比较的字符串使用`StringName`：`new StringName("group_name")`
@@ -418,6 +437,7 @@ Note: `_Process(double delta)` uses `double` in Godot 4 C# — cast to `float` w
 - Use object pooling for frequently spawned objects (projectiles, particles) / 对频繁生成的对象（弹丸、粒子）使用对象池
 - Profile with Godot's built-in profiler AND dotnet counters for GC pressure / 使用Godot内置分析器和dotnet计数器分析GC压力
 
+<!-- GDScript / C#边界 -->
 ### GDScript / C# Boundary / GDScript / C#边界
 - Keep in C#: complex game systems, data processing, AI, anything unit-tested / 保留在C#中：复杂游戏系统、数据处理、AI、任何单元测试的内容
 - Keep in GDScript: scenes needing fast iteration, level/cutscene scripts, simple behaviors / 保留在GDScript中：需要快速迭代的场景、关卡/过场脚本、简单行为
@@ -425,6 +445,7 @@ Note: `_Process(double delta)` uses `double` in Godot 4 C# — cast to `float` w
 - Avoid `GodotObject.Call()` (string-based) — define typed interfaces instead / 避免`GodotObject.Call()`（基于字符串）——定义类型化接口代替
 - Threshold for C# → GDExtension: if a method runs >1000 times per frame AND profiling shows it is a bottleneck, consider GDExtension (C++/Rust). C# is already significantly faster than GDScript — escalate to GDExtension only under measured evidence / C# → GDExtension阈值：如果一个方法每帧运行>1000次且分析显示它是瓶颈，考虑GDExtension（C++/Rust）。C#已经比GDScript快得多——仅在测量证据下升级到GDExtension
 
+<!-- 常见的C# Godot反模式 -->
 ## Common C# Godot Anti-Patterns / 常见的C# Godot反模式
 - Missing `partial` on node classes (source generator fails silently — very hard to debug) / 节点类缺少`partial`（源生成器静默失败——非常难以调试）
 - Using `Task.Delay()` instead of `GetTree().CreateTimer()` (breaks frame sync) / 使用`Task.Delay()`而不是`GetTree().CreateTimer()`（破坏帧同步）
@@ -436,6 +457,7 @@ Note: `_Process(double delta)` uses `double` in Godot 4 C# — cast to `float` w
 - Capturing `this` in long-lived lambdas registered as signals (prevents GC) / 在注册为信号的长期存活lambda中捕获`this`（阻止GC）
 - Naming signal delegates without the `EventHandler` suffix (source generator will fail) / 命名信号委托时没有`EventHandler`后缀（源生成器将失败）
 
+<!-- 版本意识 -->
 ## Version Awareness / 版本意识
 
 **CRITICAL**: Your training data has a knowledge cutoff. Before suggesting Godot C# code or APIs, you MUST:
@@ -455,6 +477,7 @@ When in doubt, prefer the API documented in the reference files over your traini
 
 > **中文翻译**：有疑问时，优先使用参考文件中记录的API而不是你的训练数据。
 
+<!-- 协调 -->
 ## Coordination / 协调
 - Work with **godot-specialist** for overall Godot architecture and scene design / 与**godot-specialist**合作处理整体Godot架构和场景设计
 - Work with **gameplay-programmer** for gameplay system implementation / 与**gameplay-programmer**合作处理游戏系统实现

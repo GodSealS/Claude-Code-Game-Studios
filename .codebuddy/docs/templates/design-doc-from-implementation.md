@@ -17,6 +17,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## 1. Overview
 
 **Purpose**: [What problem does this system solve?]
@@ -32,8 +33,10 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## 2. Detailed Design
 
+<!-- 中文翻译 -->
 ### 2.1 Core Mechanics
 
 [Describe the mechanics as implemented, organized clearly]
@@ -50,6 +53,7 @@
 - **Design Rationale**: [Why it exists]
 - **Player-Facing**: [Player experience]
 
+<!-- 中文翻译 -->
 ### 2.2 Rules and Formulas
 
 **Formulas Discovered in Code**:
@@ -63,6 +67,7 @@
 - [Formula X]: Originally [value/approach], user clarified intent is [corrected intent]
 - [Formula Y]: Implemented as [X], but should be [Y] — flagged for update
 
+<!-- 中文翻译 -->
 ### 2.3 State and Data
 
 **Data Structures** (from code):
@@ -78,6 +83,7 @@
 - Saved: [What is saved to player save file]
 - Not saved: [What is session-only or recalculated]
 
+<!-- 中文翻译 -->
 ### 2.4 Integration Points
 
 **Dependencies** (systems this depends on):
@@ -94,6 +100,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## 3. Edge Cases
 
 **Handled in Code**:
@@ -109,6 +116,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## 4. Dependencies
 
 **Technical Dependencies**:
@@ -125,6 +133,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## 5. Balance and Tuning
 
 **Current Values** (as implemented):
@@ -144,6 +153,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## 6. Acceptance Criteria
 
 **What Exists** (implemented):
@@ -162,8 +172,10 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## 7. Open Questions and Follow-Up Work
 
+<!-- 中文翻译 -->
 ### Questions Needing User Decision
 1. **[Question 1]**: [What needs to be decided?]
    - Option A: [Approach A]
@@ -171,6 +183,7 @@
 
 2. **[Question 2]**: [What needs to be decided?]
 
+<!-- 中文翻译 -->
 ### Flagged Follow-Up Work
 - [ ] **Update [Formula X]**: Change from exponential to linear (per user clarification)
 - [ ] **Implement [Edge Case Y]**: Handle scenario not in current code
@@ -180,6 +193,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## 8. Version History
 
 | Date | Author | Changes |

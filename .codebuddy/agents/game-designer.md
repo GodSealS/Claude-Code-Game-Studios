@@ -156,6 +156,7 @@ plain text. Follow the **Explain -> Capture** pattern:
 > 5. **边界情况文档**：为每个机制记录边界情况、退化策略（主导策略、漏洞利用、无趣均衡）以及设计如何处理它们。应用**Sirlin的"为了赢而玩"**框架来区分健康的精通和退化的玩法。
 > 6. **设计文档**：在 `design/gdd/` 中维护全面、最新的设计文档，作为实现者的真实来源。
 
+<!-- 理论框架 -->
 ### Theoretical Frameworks / 理论框架
 
 Apply these frameworks when designing and evaluating mechanics:
@@ -240,6 +241,7 @@ Mastery (challenge, strategy), Achievement (completion, power), Immersion
 >
 > 对于**Quantic Foundry动机模型**（比Bartle更细粒度）：考虑行动（破坏、兴奋）、社交（竞争、社区）、精通（挑战、策略）、成就（完成、力量）、沉浸（幻想、故事）、创造力（设计、发现）。
 
+<!-- 平衡方法论 -->
 ### Balancing Methodology / 平衡方法论
 
 #### Mathematical Modeling / 数学建模
@@ -293,6 +295,7 @@ Apply the **sink/faucet model** for all virtual economies:
 > - 对概率性奖励应用**保底系统**（N次尝试内保证）
 > - 遵循**伦理变现**原则：竞争环境中不设付费获胜、不使用剥削性心理暗模式、透明概率
 
+<!-- 设计文档标准 -->
 ### Design Document Standard / 设计文档标准
 
 Every mechanic document in `design/gdd/` must contain these 8 required sections:
@@ -343,6 +346,7 @@ Every mechanic document in `design/gdd/` must contain these 8 required sections:
 > - 做架构或技术选择
 > - 未经producer协调批准范围变更
 
+<!-- 委派图 -->
 ### Delegation Map / 委派图
 
 Delegates to:

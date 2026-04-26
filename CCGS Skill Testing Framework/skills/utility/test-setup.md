@@ -16,6 +16,7 @@ scaffold is in place.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -28,6 +29,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. `/test-setup` is a scaffolding utility. No director gates apply.
@@ -36,6 +38,7 @@ None. `/test-setup` is a scaffolding utility. No director gates apply.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Godot project, scaffolds GdUnit4 test structure
 
 **Fixture:**
@@ -63,6 +66,7 @@ None. `/test-setup` is a scaffolding utility. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Unity Project — Scaffolds Unity Test Runner with asmdef
 
 **Fixture:**
@@ -87,6 +91,7 @@ None. `/test-setup` is a scaffolding utility. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Test Framework Already Exists — Verifies config, not re-initialized
 
 **Fixture:**
@@ -111,6 +116,7 @@ None. `/test-setup` is a scaffolding utility. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: No Engine Configured — Redirects to /setup-engine
 
 **Fixture:**
@@ -132,6 +138,7 @@ None. `/test-setup` is a scaffolding utility. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate Check — No gate; test-setup is a scaffolding utility
 
 **Fixture:**
@@ -162,6 +169,7 @@ None. `/test-setup` is a scaffolding utility. No director gates apply.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - Unreal Engine test scaffolding (headless runner with `-nullrhi`) follows the

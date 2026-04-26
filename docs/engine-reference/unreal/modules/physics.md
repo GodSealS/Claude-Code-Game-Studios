@@ -1,10 +1,14 @@
-# Unreal Engine 5.7 — Physics Module Reference
+# Unreal Engine 5.7 — Physics Module Reference / Unreal Engine物理模块
+
+
+> **中文翻译**：本文档为Unreal Engine引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 **Last verified:** 2026-02-13
 **Knowledge Gap:** UE 5.7 Chaos Physics improvements
 
 ---
 
+<!-- 概述 -->
 ## Overview
 
 UE 5 uses **Chaos Physics** (replaced PhysX in UE 4):
@@ -14,8 +18,10 @@ UE 5 uses **Chaos Physics** (replaced PhysX in UE 4):
 
 ---
 
+<!-- 中文翻译 -->
 ## Rigid Body Physics
 
+<!-- 中文翻译 -->
 ### Enable Physics on Static Mesh
 
 ```cpp
@@ -25,6 +31,7 @@ MeshComp->SetEnableGravity(true);
 MeshComp->SetMassOverrideInKg(NAME_None, 50.0f); // 50 kg
 ```
 
+<!-- 中文翻译 -->
 ### Apply Forces
 
 ```cpp
@@ -40,8 +47,10 @@ MeshComp->AddTorqueInRadians(FVector(0, 0, 100));
 
 ---
 
+<!-- 中文翻译 -->
 ## Collision
 
+<!-- 中文翻译 -->
 ### Collision Channels
 
 ```cpp
@@ -55,6 +64,7 @@ MeshComp->SetCollisionResponseToAllChannels(ECR_Block);
 MeshComp->SetCollisionResponseToChannel(ECC_Camera, ECR_Ignore);
 ```
 
+<!-- 中文翻译 -->
 ### Collision Events
 
 ```cpp
@@ -71,6 +81,7 @@ void AMyActor::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor,
 }
 ```
 
+<!-- 中文翻译 -->
 ### Overlap Events
 
 ```cpp
@@ -89,8 +100,10 @@ void AMyActor::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* Other
 
 ---
 
+<!-- 中文翻译 -->
 ## Raycasting (Line Traces)
 
+<!-- 中文翻译 -->
 ### Single Line Trace
 
 ```cpp
@@ -116,6 +129,7 @@ if (bHit) {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Multi Line Trace
 
 ```cpp
@@ -133,6 +147,7 @@ for (const FHitResult& Hit : HitResults) {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Sweep (Thick Trace)
 
 ```cpp
@@ -152,8 +167,10 @@ bool bHit = GetWorld()->SweepSingleByChannel(
 
 ---
 
+<!-- 中文翻译 -->
 ## Character Movement
 
+<!-- 中文翻译 -->
 ### Character Movement Component
 
 ```cpp
@@ -168,6 +185,7 @@ MoveComp->GravityScale = 1.0f;
 MoveComp->bOrientRotationToMovement = true;
 ```
 
+<!-- 中文翻译 -->
 ### Add Movement Input
 
 ```cpp
@@ -187,8 +205,10 @@ void AMyCharacter::MoveRight(float Value) {
 
 ---
 
+<!-- 中文翻译 -->
 ## Physical Materials
 
+<!-- 中文翻译 -->
 ### Create Physical Material
 
 1. Content Browser > Right Click > Physics > Physical Material
@@ -196,6 +216,7 @@ void AMyCharacter::MoveRight(float Value) {
    - Friction: 0.0 - 1.0
    - Restitution (bounciness): 0.0 - 1.0
 
+<!-- 中文翻译 -->
 ### Assign Physical Material
 
 ```cpp
@@ -206,8 +227,10 @@ MeshComp->SetPhysMaterialOverride(PhysicalMaterial);
 
 ---
 
+<!-- 中文翻译 -->
 ## Constraints (Physics Joints)
 
+<!-- 中文翻译 -->
 ### Physics Constraint Component
 
 ```cpp
@@ -224,8 +247,10 @@ Constraint->SetAngularSwing1Limit(EAngularConstraintMotion::ACM_Limited, 45.0f);
 
 ---
 
+<!-- 中文翻译 -->
 ## Destruction (Chaos Destruction)
 
+<!-- 中文翻译 -->
 ### Enable Chaos Destruction
 
 ```cpp
@@ -233,6 +258,7 @@ Constraint->SetAngularSwing1Limit(EAngularConstraintMotion::ACM_Limited, 45.0f);
 // Create Geometry Collection asset for destructible objects
 ```
 
+<!-- 中文翻译 -->
 ### Destroy Geometry Collection
 
 ```cpp
@@ -244,8 +270,10 @@ GeoComp->ApplyPhysicsField(/* Field parameters */);
 
 ---
 
+<!-- 性能提示 -->
 ## Performance Tips
 
+<!-- 中文翻译 -->
 ### Physics Optimization
 
 ```cpp
@@ -261,8 +289,10 @@ MeshComp->SetCollisionEnabled(ECollisionEnabled::NoCollision); // Disable when n
 
 ---
 
+<!-- 调试 -->
 ## Debugging
 
+<!-- 中文翻译 -->
 ### Physics Debug Visualization
 
 ```cpp
@@ -278,6 +308,7 @@ DrawDebugBox(GetWorld(), Location, Extent, FColor::Red, false, 2.0f);
 
 ---
 
+<!-- 来源 -->
 ## Sources
 - https://docs.unrealengine.com/5.7/en-US/physics-in-unreal-engine/
 - https://docs.unrealengine.com/5.7/en-US/chaos-physics-overview-in-unreal-engine/

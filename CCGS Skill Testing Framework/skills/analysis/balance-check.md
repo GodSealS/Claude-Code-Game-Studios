@@ -11,6 +11,7 @@ CONCERNS, or OUT OF BALANCE.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -23,6 +24,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. Balance check is a read-only analysis skill; no gates are invoked.
@@ -31,6 +33,7 @@ None. Balance check is a read-only analysis skill; no gates are invoked.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — All balance values within formula tolerances
 
 **Fixture:**
@@ -57,6 +60,7 @@ None. Balance check is a read-only analysis skill; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Out of Balance — Player damage 40% above formula target
 
 **Fixture:**
@@ -81,6 +85,7 @@ None. Balance check is a read-only analysis skill; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: No GDD Formulas — Cannot validate, guidance given
 
 **Fixture:**
@@ -104,6 +109,7 @@ None. Balance check is a read-only analysis skill; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Orphan Reference — Balance file references an undefined stat
 
 **Fixture:**
@@ -128,6 +134,7 @@ None. Balance check is a read-only analysis skill; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Gate Compliance — Read-only; no gate; optional report requires approval
 
 **Fixture:**
@@ -163,6 +170,7 @@ None. Balance check is a read-only analysis skill; no gates are invoked.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The case where `assets/data/` is entirely empty is not tested; behavior

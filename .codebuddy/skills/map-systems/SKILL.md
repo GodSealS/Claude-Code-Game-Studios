@@ -249,7 +249,7 @@ requires it — without [system], the 30-second loop can't function."
 
 **"Why" column guidance / "原因"列指南**: When explaining why each system was placed in a priority tier, mix technical necessity with player-experience reasoning. Do not use purely technical justifications like "Combat needs damage math" — connect to player experience where relevant. Examples of good "Why" entries:
 
-> **中文翻译**：当解释每个系统为何被放在某个优先级层级时，混合技术必要性和玩家体验推理。不要使用纯技术理由如"战斗需要伤害计算"——在相关处联系玩家体验。好的"原因"条目示例：
+> **中文翻译**：**"原因"列指南**：当解释每个系统为何被放在某个优先级层级时，混合技术必要性和玩家体验推理。不要使用纯技术理由如"战斗需要伤害计算"——在相关处联系玩家体验。好的"原因"条目示例：
 
 - "Required for the core loop — without it, placement decisions have no consequence (Pillar 2: Placement is the Puzzle)" / "核心循环所需——没有它，放置决策没有后果（支柱 2：放置即谜题）"
 - "Ballista's punch-through identity is established here — this stat definition is what makes it feel different from Archer" / "弩炮的穿透特性在此建立——此属性定义是使其与弓箭手不同的原因"
@@ -354,6 +354,9 @@ Present the assessment. If REJECT, revise the system set with the user before GD
 ### Step 5c: Update Session State / 步骤 5c：更新会话状态
 
 After writing, create `production/session-state/active.md` if it does not exist, then update it with:
+
+> **中文翻译**：写入后，如 `production/session-state/active.md` 不存在则创建，然后用以下内容更新：
+
 - Task: Systems decomposition / 任务：系统分解
 - Status: Systems index created / 状态：系统索引已创建
 - File: design/gdd/systems-index.md / 文件：design/gdd/systems-index.md
@@ -369,11 +372,12 @@ If the user declined: **Verdict: BLOCKED** — user did not approve the write.
 ## Phase 6: Design Individual Systems (Handoff to /design-system) / 阶段 6：设计单个系统（移交给 /design-system）
 
 This phase is entered when:
+
+> **中文翻译**：此阶段在以下情况进入：
+
 - The user says "yes" to designing systems after creating the index / 用户在创建索引后说"是"要设计系统
 - The user invokes `/map-systems [system-name]` / 用户调用 `/map-systems [system-name]`
 - The user invokes `/map-systems next` / 用户调用 `/map-systems next`
-
-> **中文翻译**：此阶段在以下情况进入：
 
 ### Step 6a: Select the System / 步骤 6a：选择系统
 
@@ -393,9 +397,12 @@ system, or stop here?"
 
 Once a system is selected, invoke the `/design-system [system-name]` skill.
 
-> **中文翻译**：系统选定后，调用 `/design-system [system-name]` 技能。
+> **中文翻译**：系统选定后，调用 `/design-system [系统名称]` 技能。
 
 The `/design-system` skill handles the full GDD authoring process:
+
+> **中文翻译**：`/design-system` 技能处理完整的 GDD 编写过程：
+
 - Gathers context from game concept, systems index, and dependency GDDs / 从游戏概念、系统索引和依赖 GDD 收集上下文
 - Creates a file skeleton immediately / 立即创建文件骨架
 - Walks through all 8 required sections one at a time (collaborative, incremental) / 一次遍历所有 8 个必需章节（协作、增量）
@@ -413,6 +420,9 @@ The `/design-system` skill handles the full GDD authoring process:
 ### Step 6c: Loop or Stop / 步骤 6c：循环或停止
 
 After `/design-system` completes, use `AskUserQuestion`:
+
+> **中文翻译**：`/design-system` 完成后，使用 `AskUserQuestion`：
+
 - "Continue to the next system ([next system name])?" / "继续下一个系统（[下一个系统名称]）？"
 - "Pick a different system?" / "选择不同的系统？"
 - "Stop here for this session?" / "本次会话在这里停下？"
@@ -442,7 +452,7 @@ After any individual GDD is completed:
 
 > **中文翻译**：任何单个 GDD 完成后：
 
-- "Run `/design-review design/gdd/[system].md` in a fresh session to validate quality" / "在新会话中运行 `/design-review design/gdd/[system].md` 以验证质量"
+- "Run `/design-review design/gdd/[system].md` in a fresh session to validate quality" / "在新会话中运行 `/design-review design/gdd/[系统].md` 以验证质量"
 - "Run `/gate-check systems-design` when all MVP GDDs are complete" / "所有 MVP GDD 完成后运行 `/gate-check systems-design`"
 
 ---
@@ -491,5 +501,5 @@ If context reaches or exceeds 70% at any point, append this notice:
 
 - Run `/design-system [first-system-in-order]` to author the first GDD (use design order from the index) / 运行 `/design-system [设计顺序中的第一个系统]` 编写第一个 GDD
 - Run `/map-systems next` to always pick the highest-priority undesigned system automatically / 运行 `/map-systems next` 自动选择优先级最高的未设计系统
-- Run `/design-review design/gdd/[system].md` in a fresh session after each GDD is authored / 每个 GDD 编写后在新的会话中运行 `/design-review design/gdd/[system].md`
+- Run `/design-review design/gdd/[system].md` in a fresh session after each GDD is authored / 每个 GDD 编写后在新的会话中运行 `/design-review design/gdd/[系统].md`
 - Run `/gate-check pre-production` when all MVP GDDs are authored and reviewed / 所有 MVP GDD 编写和审查完成后运行 `/gate-check pre-production`

@@ -8,6 +8,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references telemetry, A/B testing, event tracking, analytics)
@@ -19,6 +20,7 @@
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: In-domain request — tutorial event tracking design
 **Input**: "Design the analytics event tracking for our tutorial. We want to know where players drop off and which steps they complete."
 **Expected behavior**:
@@ -28,6 +30,7 @@
 - Does NOT produce implementation code — marks implementation as [TO BE IMPLEMENTED BY PROGRAMMER]
 - Output is a schema table or structured list, not a narrative description
 
+<!-- 中文翻译 -->
 ### Case 2: Out-of-domain request — implement the event tracking in code
 **Input**: "Now that the event schema is designed, write the GDScript code to fire these events in our Godot tutorial scene."
 **Expected behavior**:
@@ -35,6 +38,7 @@
 - States clearly: "Telemetry implementation in game code is handled by the appropriate programmer (gameplay-programmer or systems-programmer); I provide the event schema and integration requirements"
 - Optionally produces an integration spec: what the programmer needs to know to implement correctly (event name, properties, when to fire, what analytics SDK or endpoint to use)
 
+<!-- 中文翻译 -->
 ### Case 3: Domain boundary — A/B test design for a UI change
 **Input**: "We want to A/B test two versions of our HUD: the current version and a minimal version with only a health bar. Design the test."
 **Expected behavior**:
@@ -47,6 +51,7 @@
   - **Randomization unit**: Player ID (not session ID, to prevent players seeing both versions)
 - Output is structured as a formal test design, not a bullet list of ideas
 
+<!-- 中文翻译 -->
 ### Case 4: Conflict — overlapping A/B test player segments
 **Input**: "We have two A/B tests running simultaneously: Test A (HUD variants) affects all players, and Test B (tutorial variants) also affects all players."
 **Expected behavior**:
@@ -55,6 +60,7 @@
 - Proposes resolution options: (a) run tests sequentially, (b) split the player population into exclusive segments (50% in Test A, 50% in Test B, 0% in both), or (c) run a factorial design if the interaction effect is also of interest (more complex, requires larger sample)
 - Does NOT recommend continuing both tests on overlapping populations
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — new events consistent with existing schema
 **Input context**: Existing event schema uses the naming convention: `[domain]_[object]_[action]` in snake_case. Example events: `combat_enemy_killed`, `inventory_item_equipped`, `tutorial_step_completed`.
 **Input**: "Design event tracking for our new crafting system: players gather materials, open the crafting menu, and craft items."
@@ -79,6 +85,7 @@
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Case 3 (A/B test design completeness) is a quality gate — an incomplete test design wastes experiment budget
 - Case 4 (mutual exclusion) is a data integrity test — overlapping tests produce unusable results; this must be caught

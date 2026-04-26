@@ -11,6 +11,7 @@ Verdicts: WITHIN BUDGET, CONCERNS, or OVER BUDGET.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -23,6 +24,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. Performance profiling is an advisory analysis skill; no gates are invoked.
@@ -31,6 +33,7 @@ None. Performance profiling is an advisory analysis skill; no gates are invoked.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Frame data provided, draw call spike found
 
 **Fixture:**
@@ -57,6 +60,7 @@ None. Performance profiling is an advisory analysis skill; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: No Profiler Data — Manual checklist output
 
 **Fixture:**
@@ -82,6 +86,7 @@ None. Performance profiling is an advisory analysis skill; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Over Budget — Frame budget exceeded for target platform
 
 **Fixture:**
@@ -106,6 +111,7 @@ None. Performance profiling is an advisory analysis skill; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Previous Perf Report Exists — Delta comparison
 
 **Fixture:**
@@ -130,6 +136,7 @@ None. Performance profiling is an advisory analysis skill; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Gate Compliance — No gate; performance-analyst separate
 
 **Fixture:**
@@ -163,6 +170,7 @@ None. Performance profiling is an advisory analysis skill; no gates are invoked.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - Platform-specific profiling workflows (console, mobile) are not tested here;

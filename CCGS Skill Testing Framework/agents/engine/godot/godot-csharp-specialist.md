@@ -8,6 +8,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references C# in Godot 4 / .NET patterns / signal delegates)
@@ -19,6 +20,7 @@ No gate IDs assigned.
 
 ## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出 -->
 ### Case 1: In-domain request — appropriate output
 **Input:** "Create an export property for enemy health with validation that clamps it between 1 and 1000."
 **Expected behavior:**
@@ -28,6 +30,7 @@ No gate IDs assigned.
 - Follows Godot 4 C# naming conventions (PascalCase for properties, fields private with underscore prefix)
 - Includes XML doc comment on the property per coding standards
 
+<!-- 用例 2：域外请求 — 正确重定向 -->
 ### Case 2: Out-of-domain request — redirects correctly
 **Input:** "Rewrite this enemy health system in GDScript."
 **Expected behavior:**
@@ -36,6 +39,7 @@ No gate IDs assigned.
 - Redirects the request to `godot-gdscript-specialist`
 - May note that the C# interface can be described so the gdscript-specialist knows the expected API shape
 
+<!-- 中文翻译 -->
 ### Case 3: Async signal awaiting
 **Input:** "Wait for an animation to finish before transitioning game state using C# async."
 **Expected behavior:**
@@ -45,6 +49,7 @@ No gate IDs assigned.
 - Notes that the calling method must be `async` and that fire-and-forget `async void` is only acceptable for event handlers
 - Handles cancellation or timeout if the animation could fail to fire
 
+<!-- 中文翻译 -->
 ### Case 4: Threading model conflict
 **Input:** "This C# code accesses a Godot Node from a background Task thread to update its position."
 **Expected behavior:**
@@ -53,6 +58,7 @@ No gate IDs assigned.
 - Provides the correct pattern: use `CallDeferred()`, `Callable.From().CallDeferred()`, or marshal back to the main thread via a thread-safe queue
 - Explains the distinction between Godot's main thread requirement and .NET's thread-agnostic types
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — Godot 4.6 API correctness
 **Input:** Engine version context: Godot 4.6. Request: "Connect a signal using the new typed signal delegate pattern."
 **Expected behavior:**
@@ -75,6 +81,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Export property with validation (Case 1) should have a unit test verifying the clamp behavior
 - Threading conflict (Case 4) is safety-critical: the agent must identify and fix this without prompting

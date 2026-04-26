@@ -8,6 +8,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references game mechanics / player systems)
@@ -19,6 +20,7 @@ No gate IDs assigned.
 
 ## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出 -->
 ### Case 1: In-domain request — appropriate output
 **Input:** "Implement a melee combo system where three consecutive light attacks chain into a finisher."
 **Expected behavior:**
@@ -28,6 +30,7 @@ No gate IDs assigned.
 - Does NOT implement UI feedback (delegates to ui-programmer) or AI reaction (delegates to ai-programmer)
 - Output includes doc comments on all public methods per coding standards
 
+<!-- 用例 2：域外请求 — 正确重定向 -->
 ### Case 2: Out-of-domain request — redirects correctly
 **Input:** "Build the main menu screen with pause and settings panels."
 **Expected behavior:**
@@ -36,6 +39,7 @@ No gate IDs assigned.
 - Redirects the request to `ui-programmer`
 - May note that if the pause menu requires reading gameplay state it can provide the state API surface
 
+<!-- 中文翻译 -->
 ### Case 3: Domain boundary — threading flag
 **Input:** "The combo system is causing frame stutters; can you add threading to spread the input processing?"
 **Expected behavior:**
@@ -44,6 +48,7 @@ No gate IDs assigned.
 - May produce a non-threaded refactor to reduce work per frame as a safe interim step
 - Documents the escalation so lead-programmer is aware
 
+<!-- 中文翻译 -->
 ### Case 4: Conflict with an Accepted ADR
 **Input:** "Change the damage calculation to use floating-point accumulation directly instead of the fixed-point formula in ADR-003."
 **Expected behavior:**
@@ -52,6 +57,7 @@ No gate IDs assigned.
 - Flags the conflict to `lead-programmer` with the ADR reference and the trade-off described
 - Will implement only after explicit override decision from lead-programmer or technical-director
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — implements to GDD spec
 **Input:** GDD for "PlayerCombat" provided in context. Request: "Implement the stamina drain formula from the combat GDD."
 **Expected behavior:**
@@ -74,6 +80,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Combo system test (Case 1) should be validated with a unit test in `tests/unit/gameplay/`
 - Threading escalation (Case 3) verifies the agent does not over-reach into engine territory

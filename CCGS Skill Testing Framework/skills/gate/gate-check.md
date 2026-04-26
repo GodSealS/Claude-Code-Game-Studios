@@ -11,6 +11,7 @@ critical gate-keeping skill in the pipeline.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -25,6 +26,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — All Concept artifacts present, advancing to Systems Design
 
 **Fixture:**
@@ -53,6 +55,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Failure Path — Missing required artifacts for Concept → Systems Design
 
 **Fixture:**
@@ -78,6 +81,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: No Argument — Auto-detect current stage
 
 **Fixture:**
@@ -100,6 +104,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Edge Case — Manual check items flagged correctly
 
 **Fixture:**
@@ -124,6 +129,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate — lean vs full vs solo mode
 
 **Fixture:**
@@ -188,6 +194,7 @@ treat this confirmation as a failure.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The Production → Polish and Polish → Release gates are not covered here

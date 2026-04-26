@@ -16,6 +16,7 @@ REVERTED (fix was applied but caused regression and was reverted).
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -28,6 +29,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. `/skill-improve` is a meta-utility skill. No director gates apply.
@@ -36,6 +38,7 @@ None. `/skill-improve` is a meta-utility skill. No director gates apply.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Skill With 2 Static Failures, Both Fixed, IMPROVED
 
 **Fixture:**
@@ -64,6 +67,7 @@ None. `/skill-improve` is a meta-utility skill. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Fix Causes Regression — Score Comparison Shows Regression, REVERTED
 
 **Fixture:**
@@ -91,6 +95,7 @@ None. `/skill-improve` is a meta-utility skill. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Skill With Category Assignment — Baseline Captures Both Scores
 
 **Fixture:**
@@ -120,6 +125,7 @@ None. `/skill-improve` is a meta-utility skill. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Skill Already Perfect — No Improvements Needed
 
 **Fixture:**
@@ -145,6 +151,7 @@ None. `/skill-improve` is a meta-utility skill. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate Check — No gate; skill-improve is a meta utility
 
 **Fixture:**
@@ -175,6 +182,7 @@ None. `/skill-improve` is a meta-utility skill. No director gates apply.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The improvement loop is designed to run only one fix-retest cycle per

@@ -18,6 +18,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## 1. HUD Philosophy
 
 > **Why this section exists**: The HUD design philosophy is not decoration — it is a
@@ -65,6 +66,7 @@ so it can be cited in design reviews.]
 
 ---
 
+<!-- 中文翻译 -->
 ## 2. Information Architecture
 
 > **Why this section exists**: Before specifying any HUD element's visual design,
@@ -94,6 +96,7 @@ so it can be cited in design reviews.]
 
 ---
 
+<!-- 中文翻译 -->
 ## 3. Layout Zones
 
 > **Why this section exists**: The game world is the primary content — the HUD is a
@@ -103,6 +106,7 @@ so it can be cited in design reviews.]
 > that overlap platform-required safe zones and get rejected in certification.
 > Every element in Section 4 must be assigned to a zone defined here.
 
+<!-- 中文翻译 -->
 ### 3.1 Zone Diagram
 
 ```
@@ -135,6 +139,7 @@ so it can be cited in design reviews.]
 > possible at all times. HUD elements that appear in the center zone — crosshairs,
 > interaction prompts, hit markers — must be minimal, high-contrast, and brief.
 
+<!-- 中文翻译 -->
 ### 3.2 Zone Specification Table
 
 | Zone Name | Screen Position | Safe Zone Compliant | Primary Elements | Max Simultaneous Elements | Notes |
@@ -160,6 +165,7 @@ so it can be cited in design reviews.]
 
 ---
 
+<!-- 中文翻译 -->
 ## 4. HUD Element Specifications
 
 > **Why this section exists**: Each HUD element needs its own specification to be
@@ -168,6 +174,7 @@ so it can be cited in design reviews.]
 > failures. This section is the implementation brief for every element — fill it
 > completely before any element moves into development.
 
+<!-- 中文翻译 -->
 ### 4.1 Element Overview Table
 
 > One row per HUD element. This is the master inventory for implementation planning.
@@ -187,6 +194,7 @@ so it can be cited in design reviews.]
 | [Status Effect Icons] | [Top Left — below health bar] | [No — context] | [Show when any status effect is active on player] | [StatusSystem] | [On effect add/remove] | [3% per icon] | [24px per icon] | [3] | [Icon + text label on hover/focus. Never icon-only.] |
 | [Notification Toast] | [Bottom Right] | [No — event-driven] | [On loot, XP gain, achievement, quest update] | [Multiple — see Section 6] | [On event] | [25%] | [Legible at body text size] | [7 — lowest] | [Queued; never overlapping. Read by screen reader if subtitle mode on.] |
 
+<!-- 中文翻译 -->
 ### 4.2 Element Detail Blocks
 
 > For each element in the table above, write a detail block. Copy and complete
@@ -224,6 +232,7 @@ so it can be cited in design reviews.]
 
 ---
 
+<!-- 中文翻译 -->
 ## 5. HUD States by Gameplay Context
 
 > **Why this section exists**: The HUD is not a static overlay — it is a dynamic
@@ -247,6 +256,7 @@ so it can be cited in design reviews.]
 
 ---
 
+<!-- 中文翻译 -->
 ## 6. Information Hierarchy
 
 > **Why this section exists**: Not all HUD information is equally important. When
@@ -272,6 +282,7 @@ so it can be cited in design reviews.]
 
 ---
 
+<!-- 中文翻译 -->
 ## 7. Visual Budget
 
 > **Why this section exists**: Without explicit budget constraints, HUD elements
@@ -296,6 +307,7 @@ so it can be cited in design reviews.]
 
 ---
 
+<!-- 中文翻译 -->
 ## 8. Feedback & Notification Systems
 
 > **Why this section exists**: Notifications are the most frequently-added and
@@ -323,6 +335,7 @@ so it can be cited in design reviews.]
 
 ---
 
+<!-- 中文翻译 -->
 ## 9. Platform Adaptation
 
 > **Why this section exists**: A HUD designed at 1920x1080 on a monitor may be
@@ -348,6 +361,7 @@ Repositioning saves to player profile, not to a single slot. Applies across play
 
 ---
 
+<!-- 中文翻译 -->
 ## 10. Accessibility — HUD Specific
 
 > **Why this section exists**: HUD accessibility failures are the most visible
@@ -357,6 +371,7 @@ Repositioning saves to player profile, not to a single slot. Applies across play
 > complaints in game reviews. This section defines HUD-specific requirements; refer
 > to the project's `docs/accessibility-requirements.md` for the full project standard.
 
+<!-- 中文翻译 -->
 ### 10.1 Colorblind Modes
 
 | Element | Color-Only Information Risk | Colorblind Mode Fix |
@@ -367,6 +382,7 @@ Repositioning saves to player profile, not to a single slot. Applies across play
 | [Status effect icons] | [If icon tint communicates status type] | [All status icons must have distinct shapes, not just distinct colors. Shape encodes meaning; color is secondary.] |
 | [Minimap icons] | [If player vs. enemy vs. objective distinguished by color] | [Distinct icon shapes: circle = player, triangle = enemy, star = objective. Color supplements shape.] |
 
+<!-- 中文翻译 -->
 ### 10.2 Text Scaling
 
 [Describe what happens when the player sets the UI text scale to 150% (the maximum required for your Accessibility Tier). Which elements reflow? Which elements clip? Which elements are architecturally blocked from scaling (e.g., fixed-size canvases)?
@@ -382,6 +398,7 @@ Example: "Health bar numerical label grows with text scale — bar expands sligh
 | [Notification toast text] | [Pass] | [TBD] | [TBD] | [Toast width expands to max 35% screen width, then wraps] |
 | [Subtitle text] | [Pass] | [TBD] | [TBD] | [Dedicated subtitle zone — must accommodate scale] |
 
+<!-- 中文翻译 -->
 ### 10.3 Motion Sensitivity
 
 | Animation / Motion Element | Severity | Disabled by Reduced Motion Setting? | Replacement Behavior |
@@ -393,6 +410,7 @@ Example: "Health bar numerical label grows with text scale — bar expands sligh
 | [Level up center animation] | [High] | [Yes — required] | [Static level up card, no scale animation, no particle effects] |
 | [Combo counter scale pulse] | [Mild] | [Yes] | [Number increments without scale animation] |
 
+<!-- 中文翻译 -->
 ### 10.4 Subtitles Specification
 
 > Subtitles are the highest-impact accessibility feature in the HUD. Specify them
@@ -410,6 +428,7 @@ Example: "Health bar numerical label grows with text scale — bar expands sligh
 - **Subtitle persistence**: [Each subtitle line holds for the duration of the spoken line plus 300ms after it ends — never disappear while audio is still playing]
 - **Non-dialogue captions**: [Document whether ambient sounds, music descriptions, and sound effects are captioned — e.g., "[tense music]", "[explosion in the distance]" — and where these appear if different from dialogue subtitles]
 
+<!-- 中文翻译 -->
 ### 10.5 HUD Opacity and Visibility Controls
 
 The following player-adjustable settings must be available from the Accessibility menu:
@@ -426,6 +445,7 @@ The following player-adjustable settings must be available from the Accessibilit
 
 ---
 
+<!-- 中文翻译 -->
 ## 11. Tuning Knobs
 
 > **Why this section exists**: HUD behavior should be data-driven to the same degree
@@ -448,6 +468,7 @@ The following player-adjustable settings must be available from the Accessibilit
 
 ---
 
+<!-- 中文翻译 -->
 ## 12. Acceptance Criteria
 
 > **Why this section exists**: These criteria are the certification checklist for the
@@ -492,6 +513,7 @@ The following player-adjustable settings must be available from the Accessibilit
 
 ---
 
+<!-- 中文翻译 -->
 ## 13. Open Questions
 
 > Track unresolved design questions here. All questions must be resolved before

@@ -1,10 +1,14 @@
-# Unity 6.3 — Animation Module Reference
+# Unity 6.3 — Animation Module Reference / Unity动画模块
+
+
+> **中文翻译**：本文档为Unity引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 **Last verified:** 2026-02-13
 **Knowledge Gap:** Unity 6 animation improvements, Timeline enhancements
 
 ---
 
+<!-- 概述 -->
 ## Overview
 
 Unity 6.3 animation systems:
@@ -15,8 +19,10 @@ Unity 6.3 animation systems:
 
 ---
 
+<!-- 自 2022 LTS 以来的关键变化 -->
 ## Key Changes from 2022 LTS
 
+<!-- 中文翻译 -->
 ### Animation Rigging Package (Production-Ready in Unity 6)
 
 ```csharp
@@ -24,6 +30,7 @@ Unity 6.3 animation systems:
 // Runtime IK, aim constraints, procedural animation
 ```
 
+<!-- 中文翻译 -->
 ### Timeline Improvements
 - Better performance
 - More track types
@@ -31,8 +38,10 @@ Unity 6.3 animation systems:
 
 ---
 
+<!-- 中文翻译 -->
 ## Animator Controller (Mecanim)
 
+<!-- 中文翻译 -->
 ### Basic Setup
 
 ```csharp
@@ -41,6 +50,7 @@ Unity 6.3 animation systems:
 // Assign Controller: Animator > Controller = YourAnimatorController
 ```
 
+<!-- 中文翻译 -->
 ### State Transitions
 
 ```csharp
@@ -59,6 +69,7 @@ animator.SetFloat("Speed", currentSpeed);
 animator.SetInteger("WeaponType", 2);
 ```
 
+<!-- 中文翻译 -->
 ### Animation Layers
 - **Base Layer**: Default animations (locomotion)
 - **Override Layers**: Replace base layer (e.g., weapon swap)
@@ -71,8 +82,10 @@ animator.SetLayerWeight(1, 0.5f); // 50% blend
 
 ---
 
+<!-- 中文翻译 -->
 ## Blend Trees
 
+<!-- 中文翻译 -->
 ### 1D Blend Tree (Speed blending)
 
 ```csharp
@@ -80,6 +93,7 @@ animator.SetLayerWeight(1, 0.5f); // 50% blend
 animator.SetFloat("Speed", moveSpeed);
 ```
 
+<!-- 中文翻译 -->
 ### 2D Blend Tree (Directional movement)
 
 ```csharp
@@ -91,8 +105,10 @@ animator.SetFloat("MoveY", input.y);
 
 ---
 
+<!-- 中文翻译 -->
 ## Animation Events
 
+<!-- 中文翻译 -->
 ### Trigger Events from Animation Clips
 
 ```csharp
@@ -112,8 +128,10 @@ public void OnAttackHit() {
 
 ---
 
+<!-- 中文翻译 -->
 ## Root Motion
 
+<!-- 中文翻译 -->
 ### Character Movement via Animation
 
 ```csharp
@@ -129,8 +147,10 @@ void OnAnimatorMove() {
 
 ---
 
+<!-- 中文翻译 -->
 ## Animation Rigging (Unity 6+)
 
+<!-- 中文翻译 -->
 ### IK (Inverse Kinematics)
 
 ```csharp
@@ -148,6 +168,7 @@ ikConstraint.data.target = targetTransform;
 ikConstraint.weight = 1f; // 0-1 blend
 ```
 
+<!-- 中文翻译 -->
 ### Aim Constraint (Look At)
 
 ```csharp
@@ -158,8 +179,10 @@ aimConstraint.data.sourceObjects[0] = new WeightedTransform(targetTransform, 1f)
 
 ---
 
+<!-- 中文翻译 -->
 ## Timeline (Cutscenes)
 
+<!-- 中文翻译 -->
 ### Basic Timeline Setup
 
 ```csharp
@@ -172,6 +195,7 @@ PlayableDirector director = GetComponent<PlayableDirector>();
 director.Play();
 ```
 
+<!-- 中文翻译 -->
 ### Timeline Tracks
 - **Activation Track**: Enable/disable GameObjects
 - **Animation Track**: Play animations on Animator
@@ -179,6 +203,7 @@ director.Play();
 - **Cinemachine Track**: Camera movement
 - **Signal Track**: Trigger events at specific times
 
+<!-- 中文翻译 -->
 ### Signal System (Events)
 
 ```csharp
@@ -195,8 +220,10 @@ public class CutsceneEvents : MonoBehaviour {
 
 ---
 
+<!-- 中文翻译 -->
 ## Animation Playback Control
 
+<!-- 中文翻译 -->
 ### Play Animation Directly (No State Machine)
 
 ```csharp
@@ -212,8 +239,10 @@ Animation anim = GetComponent<Animation>(); // DEPRECATED
 
 ---
 
+<!-- 中文翻译 -->
 ## Animation Curves
 
+<!-- 中文翻译 -->
 ### Custom Property Animation
 
 ```csharp
@@ -231,22 +260,27 @@ public class WeaponTrail : MonoBehaviour {
 
 ---
 
+<!-- 性能优化 -->
 ## Performance Optimization
 
+<!-- 中文翻译 -->
 ### Culling
 - `Animator > Culling Mode`:
   - **Always Animate**: Always update (expensive)
   - **Cull Update Transforms**: Stop updating bones when off-screen (RECOMMENDED)
   - **Cull Completely**: Stop all animation when off-screen
 
+<!-- 中文翻译 -->
 ### LOD (Level of Detail)
 - Simpler animations for distant characters
 - Reduce skeleton bone count for LOD meshes
 
 ---
 
+<!-- 常见模式 -->
 ## Common Patterns
 
+<!-- 中文翻译 -->
 ### Check if Animation Finished
 
 ```csharp
@@ -256,12 +290,14 @@ if (stateInfo.IsName("Attack") && stateInfo.normalizedTime >= 1.0f) {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Override Animation Speed
 
 ```csharp
 animator.speed = 1.5f; // 150% speed
 ```
 
+<!-- 中文翻译 -->
 ### Get Current Animation Name
 
 ```csharp
@@ -271,18 +307,22 @@ string currentClip = clipInfo[0].clip.name;
 
 ---
 
+<!-- 调试 -->
 ## Debugging
 
+<!-- 中文翻译 -->
 ### Animator Window
 - `Window > Animation > Animator`
 - Visualize state machine, see active state
 
+<!-- 中文翻译 -->
 ### Animation Window
 - `Window > Animation > Animation`
 - Edit animation clips, add events
 
 ---
 
+<!-- 来源 -->
 ## Sources
 - https://docs.unity3d.com/6000.0/Documentation/Manual/AnimationOverview.html
 - https://docs.unity3d.com/Packages/com.unity.animation.rigging@1.3/manual/index.html

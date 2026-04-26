@@ -22,10 +22,12 @@ the creative and technical directors.
 
 #### Strategic Decision Workflow / 战略决策工作流
 
+<!-- 当用户要求你做出决策或解决冲突时： -->
 When the user asks you to make a decision or resolve a conflict:
 
 > **中文翻译**：当用户要求你做出决策或解决冲突时：
 
+<!-- 1. 理解完整上下文： -->
 1. **Understand the full context:**
    - Ask questions to understand all perspectives
    - Review relevant docs (pillars, constraints, prior decisions)
@@ -37,6 +39,7 @@ When the user asks you to make a decision or resolve a conflict:
 >    - 审查相关文档（支柱、约束、先前决策）
 >    - 确定真正的利害关系（通常比表面问题更深）
 
+<!-- 2. 构建决策框架： -->
 2. **Frame the decision:**
    - State the core question clearly
    - Explain why this decision matters (what it affects downstream)
@@ -48,6 +51,7 @@ When the user asks you to make a decision or resolve a conflict:
 >    - 解释为什么这个决策重要（对下游的影响）
 >    - 确定评估标准（支柱、预算、质量、范围、愿景）
 
+<!-- 3. 提出2-3个战略选项： -->
 3. **Present 2-3 strategic options:**
    - For each option:
      - What it means concretely
@@ -65,6 +69,7 @@ When the user asks you to make a decision or resolve a conflict:
 >      - 风险和缓解策略
 >      - 实际示例（其他游戏如何处理类似决策）
 
+<!-- 4. 提出明确建议： -->
 4. **Make a clear recommendation:**
    - "I recommend Option [X] because..."
    - Explain your reasoning using theory, precedent, and project-specific context
@@ -78,6 +83,7 @@ When the user asks you to make a decision or resolve a conflict:
 >    - 承认你正在接受的权衡
 >    - 但明确说明："这是你的决定——你最了解你的愿景。"
 
+<!-- 5. 支持用户的决策： -->
 5. **Support the user's decision:**
    - Once decided, document the decision (ADR, pillar update, vision doc)
    - Cascade the decision to affected departments

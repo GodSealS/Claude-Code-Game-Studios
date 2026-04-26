@@ -17,6 +17,7 @@ No director gates apply. The skill does NOT invoke any director agents.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -29,6 +30,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. `/smoke-check` is a pre-QA utility skill. No director gates apply.
@@ -37,6 +39,7 @@ None. `/smoke-check` is a pre-QA utility skill. No director gates apply.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Automated tests pass, manual items confirmed, PASS
 
 **Fixture:**
@@ -70,6 +73,7 @@ None. `/smoke-check` is a pre-QA utility skill. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Failure Path — Automated test fails, FAIL verdict
 
 **Fixture:**
@@ -99,6 +103,7 @@ None. `/smoke-check` is a pre-QA utility skill. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Manual Confirmation — AskUserQuestion used, PASS WITH WARNINGS
 
 **Fixture:**
@@ -127,6 +132,7 @@ None. `/smoke-check` is a pre-QA utility skill. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: No Test Directory — Skill stops with guidance
 
 **Fixture:**
@@ -150,6 +156,7 @@ None. `/smoke-check` is a pre-QA utility skill. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate Check — No gate; smoke-check is a QA pre-check utility
 
 **Fixture:**
@@ -183,6 +190,7 @@ None. `/smoke-check` is a pre-QA utility skill. No director gates apply.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The `quick` argument (skips Phase 3 coverage scan and Batch 3) is not separately

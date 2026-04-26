@@ -8,6 +8,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references GDScript / static typing / signals / coroutines)
@@ -19,6 +20,7 @@ No gate IDs assigned.
 
 ## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出 -->
 ### Case 1: In-domain request — appropriate output
 **Input:** "Review this GDScript file for type annotation coverage."
 **Expected behavior:**
@@ -28,6 +30,7 @@ No gate IDs assigned.
 - Notes the performance and tooling benefits of static typing in Godot 4
 - Does NOT rewrite the entire file unprompted — produces a findings list for the developer to apply
 
+<!-- 用例 2：域外请求 — 正确重定向 -->
 ### Case 2: Out-of-domain request — redirects correctly
 **Input:** "Write a vertex shader to distort the mesh in world space."
 **Expected behavior:**
@@ -36,6 +39,7 @@ No gate IDs assigned.
 - Redirects the request to `godot-shader-specialist`
 - May note that the GDScript side (passing uniforms to a shader, setting shader parameters) is within its domain
 
+<!-- 中文翻译 -->
 ### Case 3: Async loading with coroutines
 **Input:** "Load a scene asynchronously and wait for it to finish before spawning it."
 **Expected behavior:**
@@ -45,6 +49,7 @@ No gate IDs assigned.
 - Notes error handling for failed loads
 - Does NOT use deprecated Godot 3 `yield()` syntax
 
+<!-- 中文翻译 -->
 ### Case 4: Performance issue — typed array recommendation
 **Input:** "The entity update loop is slow; it iterates an untyped Array of 1,000 nodes every frame."
 **Expected behavior:**
@@ -54,6 +59,7 @@ No gate IDs assigned.
 - Produces the typed array refactor as the immediate fix
 - Does NOT recommend migrating the entire codebase to C# without profiling evidence
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — Godot 4.6 with post-cutoff features
 **Input:** Engine version context provided: Godot 4.6. Request: "Create an abstract base class for all enemy types using @abstract."
 **Expected behavior:**
@@ -76,6 +82,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Type annotation review (Case 1) output is suitable as a code review checklist
 - Async loading (Case 3) should produce testable code verifiable with a unit test in `tests/unit/`

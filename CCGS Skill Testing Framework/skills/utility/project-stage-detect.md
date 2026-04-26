@@ -17,6 +17,7 @@ from artifacts, LOW if conflicting signals were found).
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -29,6 +30,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. `/project-stage-detect` is a read-only detection utility. No director
@@ -38,6 +40,7 @@ gates apply.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: stage.txt Exists — Reads directly and cross-checks artifacts
 
 **Fixture:**
@@ -64,6 +67,7 @@ gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: No stage.txt but GDDs and Epics Exist — Infers Production
 
 **Fixture:**
@@ -91,6 +95,7 @@ gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: No stage.txt, No Docs, No Source — Infers Concept
 
 **Fixture:**
@@ -116,6 +121,7 @@ gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Discrepancy — stage.txt says Production but no source code
 
 **Fixture:**
@@ -142,6 +148,7 @@ gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate Check — No gate; detection is advisory
 
 **Fixture:**
@@ -173,6 +180,7 @@ gates apply.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The Technical Setup stage (engine configured, no GDDs yet) and Pre-Production

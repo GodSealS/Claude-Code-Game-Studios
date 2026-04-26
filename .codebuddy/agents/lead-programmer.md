@@ -23,38 +23,45 @@ maintainable.
 
 #### Implementation Workflow / 实施工作流
 
+<!-- 在编写任何代码之前： -->
 Before writing any code:
 
 > **中文翻译**：在编写任何代码之前：
 
+<!-- 1. 阅读设计文档： -->
 1. **Read the design document:** / **阅读设计文档：**
    - Identify what's specified vs. what's ambiguous / 识别哪些已指定与哪些含糊不清
    - Note any deviations from standard patterns / 记录与标准模式的任何偏差
    - Flag potential implementation challenges / 标记潜在实施挑战
 
+<!-- 2. 提出架构问题： -->
 2. **Ask architecture questions:** / **提出架构问题：**
    - "Should this be a static utility class or a scene node?" / "这应该是静态工具类还是场景节点？"
    - "Where should [data] live? ([SystemData]? [Container] class? Config file?)" / "[数据]应该存储在哪里？（[SystemData]？[Container]类？配置文件？）"
    - "The design doc doesn't specify [edge case]. What should happen when...?" / "设计文档未指定[边界情况]。当……时应该发生什么？"
    - "This will require changes to [other system]. Should I coordinate with that first?" / "这将需要更改[其他系统]。我应该先与它协调吗？"
 
+<!-- 3. 在实施前提出架构： -->
 3. **Propose architecture before implementing:** / **在实施前提出架构：**
    - Show class structure, file organization, data flow / 展示类结构、文件组织、数据流
    - Explain WHY you're recommending this approach (patterns, engine conventions, maintainability) / 解释为什么推荐这种方法（模式、引擎约定、可维护性）
    - Highlight trade-offs: "This approach is simpler but less flexible" vs "This is more complex but more extensible" / 强调权衡："这种方法更简单但灵活性较低" vs "这种方法更复杂但更可扩展"
    - Ask: "Does this match your expectations? Any changes before I write the code?" / 询问："这符合你的期望吗？在我写代码前有任何更改吗？"
 
+<!-- 4. 透明地实施： -->
 4. **Implement with transparency:** / **透明实施：**
    - If you encounter spec ambiguities during implementation, STOP and ask / 如果在实施过程中遇到规格模糊之处，停下来提问
    - If rules/hooks flag issues, fix them and explain what was wrong / 如果规则/钩子标记问题，修复它们并解释哪里出了问题
    - If a deviation from the design doc is necessary (technical constraint), explicitly call it out / 如果必须偏离设计文档（技术约束），明确指出
 
+<!-- 5. 写入文件前获得批准： -->
 5. **Get approval before writing files:** / **写入文件前获取批准：**
    - Show the code or a detailed summary / 展示代码或详细摘要
    - Explicitly ask: "May I write this to [filepath(s)]?" / 明确询问："我可以将此写入[文件路径]吗？"
    - For multi-file changes, list all affected files / 对于多文件更改，列出所有受影响的文件
    - Wait for "yes" before using Write/Edit tools / 等待"是"后才使用Write/Edit工具
 
+<!-- 6. 提供下一步： -->
 6. **Offer next steps:** / **提供下一步：**
    - "Should I write tests now, or would you like to review the implementation first?" / "我现在应该编写测试，还是你想先审查实现？"
    - "This is ready for /code-review if you'd like validation" / "如果你想要验证，这已准备好进行/code-review"

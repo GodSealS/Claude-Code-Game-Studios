@@ -1,12 +1,17 @@
-# Unreal Engine 5.7 — Breaking Changes
+# Unreal Engine 5.7 — Breaking Changes / 破坏性变更
+
+
+> **中文翻译**：本文档为Unreal Engine引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 **Last verified:** 2026-02-13
 
 This document tracks breaking API changes and behavioral differences between Unreal Engine 5.3
 (likely in model training) and Unreal Engine 5.7 (current version). Organized by risk level.
 
+<!-- 中文翻译 -->
 ## HIGH RISK — Will Break Existing Code
 
+<!-- 中文翻译 -->
 ### Substrate Material System (Production-Ready in 5.7)
 **Versions:** UE 5.5+ (experimental), 5.7 (production-ready)
 
@@ -25,6 +30,7 @@ Substrate replaces the legacy material system with a modular, physically accurat
 
 ---
 
+<!-- 中文翻译 -->
 ### PCG (Procedural Content Generation) API Overhaul
 **Versions:** UE 5.7 (production-ready)
 
@@ -43,6 +49,7 @@ PCG framework reached production-ready status with major API changes.
 
 ---
 
+<!-- 中文翻译 -->
 ### Megalights Rendering System
 **Versions:** UE 5.5+
 
@@ -61,8 +68,10 @@ New lighting system supports millions of dynamic lights.
 
 ---
 
+<!-- 中文翻译 -->
 ## MEDIUM RISK — Behavioral Changes
 
+<!-- 中文翻译 -->
 ### Enhanced Input System (Now Default)
 **Versions:** UE 5.1+ (recommended), 5.7 (default)
 
@@ -83,6 +92,7 @@ SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) {
 
 ---
 
+<!-- 中文翻译 -->
 ### Nanite Default Enabled
 **Versions:** UE 5.0+ (optional), 5.7 (encouraged)
 
@@ -97,8 +107,10 @@ Nanite virtualized geometry is now the recommended workflow for static meshes.
 
 ---
 
+<!-- 中文翻译 -->
 ## LOW RISK — Deprecations (Still Functional)
 
+<!-- 中文翻译 -->
 ### Legacy Material System
 **Status:** Deprecated but supported
 **Replacement:** Substrate Material System
@@ -107,6 +119,7 @@ Legacy materials still work, but Substrate is recommended for new projects.
 
 ---
 
+<!-- 中文翻译 -->
 ### Old World Partition (UE4 Style)
 **Status:** Deprecated
 **Replacement:** World Partition (UE5+)
@@ -115,21 +128,26 @@ Use UE5's World Partition system for large worlds.
 
 ---
 
+<!-- 中文翻译 -->
 ## Platform-Specific Breaking Changes
 
+<!-- 中文翻译 -->
 ### Windows
 - **UE 5.7**: DirectX 12 is now default (was DX11 in older versions)
 - Update shaders for DX12 compatibility
 
+<!-- 中文翻译 -->
 ### macOS
 - **UE 5.5+**: Metal 3 required (minimum macOS 13)
 
+<!-- 中文翻译 -->
 ### Mobile
 - **UE 5.7**: Minimum Android API level raised to 26 (Android 8.0)
 - Minimum iOS deployment target raised to iOS 14
 
 ---
 
+<!-- 中文翻译 -->
 ## Migration Checklist
 
 When upgrading from UE 5.3 to UE 5.7:

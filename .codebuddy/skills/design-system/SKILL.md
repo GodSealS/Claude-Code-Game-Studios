@@ -10,6 +10,7 @@ When this skill is invoked:
 > **中文翻译**：当该技能被调用时：
 
 
+<!-- 中文翻译 -->
 ## 1. Parse Arguments & Validate
 > **中文翻译**：## 1. 解析参数并验证
 
@@ -104,11 +105,13 @@ If NOT in retrofit mode, normalize the system name to kebab-case for the filenam
 
 ---
 
+<!-- 中文翻译 -->
 ## 2. Gather Context (Read Phase)
 
 Read all relevant context **before** asking the user anything. This is the skill's
 primary advantage over ad-hoc design — it arrives informed.
 
+<!-- 中文翻译 -->
 ### 2a: Required Reads
 
 - **Game concept**: Read `design/gdd/game-concept.md` — fail if missing:
@@ -129,6 +132,7 @@ primary advantage over ad-hoc design — it arrives informed.
   in the Phase 2d context summary so the user knows where mistakes have
   occurred before in this domain.
 
+<!-- 中文翻译 -->
 ### 2b: Dependency Reads
 
 From the systems index, identify:
@@ -143,6 +147,7 @@ For each dependency GDD that exists, extract and hold in context:
 - Edge cases that assume this system's behavior
 - Tuning knobs that feed into this system
 
+<!-- 中文翻译 -->
 ### 2c: Optional Reads
 
 - **Game pillars**: Read `design/gdd/game-pillars.md` if it exists
@@ -152,6 +157,7 @@ For each dependency GDD that exists, extract and hold in context:
   (e.g., if designing a system that overlaps with another in scope, read the related GDD
   even if it's not a formal dependency)
 
+<!-- 中文翻译 -->
 ### 2d: Present Context Summary
 
 Before starting design work, present a brief summary to the user:
@@ -177,6 +183,7 @@ If any upstream dependencies are undesigned, warn:
 > its interface. Consider designing it first, or we can define the expected
 > contract and flag it as provisional."
 
+<!-- 中文翻译 -->
 ### 2e: Technical Feasibility Pre-Check
 
 Before asking the user to begin designing, load engine context and surface any
@@ -253,6 +260,7 @@ Use `AskUserQuestion`:
 
 ---
 
+<!-- 中文翻译 -->
 ## 3. Create File Skeleton
 
 Once the user confirms, **immediately** create the GDD file with empty section
@@ -337,6 +345,7 @@ File content:
 
 ---
 
+<!-- 中文翻译 -->
 ## 4. Section-by-Section Design
 > **中文翻译**：## 4. 分段设计
 
@@ -345,6 +354,7 @@ Walk through each section in order. For **each section**, follow this cycle:
 > **中文翻译**：按顺序浏览每个部分。对于**每个部分**，请遵循以下循环：
 
 
+<!-- 中文翻译 -->
 ### The Section Cycle
 > **中文翻译**：### 节循环
 
@@ -440,6 +450,7 @@ After writing each section, update `production/session-state/active.md` with the
 > **中文翻译**：编写每个部分后，使用完整的部分名称更新“Production/session-state/active.md”。使用 Glob 检查文件是否存在 - 如果不存在则使用 Write 创建它，如果存在则使用 E​​dit 更新它。
 
 
+<!-- 中文翻译 -->
 ### Section-Specific Guidance
 > **中文翻译**：### 特定部分的指导
 
@@ -450,6 +461,7 @@ Each section has unique design considerations and may benefit from specialist ag
 
 ---
 
+<!-- 中文翻译 -->
 ### Section A: Overview
 
 **Goal**: One paragraph a stranger could read and understand.
@@ -485,6 +497,7 @@ describes the technical approach used to achieve it.
 
 ---
 
+<!-- 中文翻译 -->
 ### Section B: Player Fantasy
 > **中文翻译**：### B 部分：玩家幻想
 
@@ -553,6 +566,7 @@ Use the answer to frame the Player Fantasy section appropriately. Do NOT assume 
 
 ---
 
+<!-- 中文翻译 -->
 ### Section C: Detailed Design (Core Rules, States, Interactions)
 
 **Goal**: Unambiguous specification a programmer could implement without questions.
@@ -587,6 +601,7 @@ system expects something different, flag the conflict.
 
 ---
 
+<!-- 中文翻译 -->
 ### Section D: Formulas
 > **中文翻译**：### D 部分：公式
 
@@ -649,6 +664,7 @@ Do NOT write `[Formula TBD]` or describe a formula in prose without the variable
 
 ---
 
+<!-- 中文翻译 -->
 ### Section E: Edge Cases
 
 **Goal**: Explicitly handle unusual situations so they don't become bugs.
@@ -676,6 +692,7 @@ defines a floor, cap, or resolution rule that this system could violate, flag it
 
 ---
 
+<!-- 中文翻译 -->
 ### Section F: Dependencies
 > **中文翻译**：### F 部分：依赖关系
 
@@ -704,6 +721,7 @@ This section is partially pre-filled from the context gathering phase. Present t
 
 ---
 
+<!-- 中文翻译 -->
 ### Section G: Tuning Knobs
 
 **Goal**: Every designer-adjustable value, with safe ranges and extreme behaviors.
@@ -721,6 +739,7 @@ reference them here. Don't create duplicate knobs — point to the source of tru
 
 ---
 
+<!-- 中文翻译 -->
 ### Section H: Acceptance Criteria
 > **中文翻译**：### H 部分：验收标准
 
@@ -770,6 +789,7 @@ Include at least: one criterion per core rule from Section C, and one per formul
 
 ---
 
+<!-- 中文翻译 -->
 ### Optional Sections: Visual/Audio, UI Requirements, Open Questions
 
 These sections are included in the template. Visual/Audio is **REQUIRED** for visual system categories — not optional. Determine the requirement level before asking:
@@ -814,6 +834,7 @@ fully resolved. Each question should have an owner and target resolution date.
 
 ---
 
+<!-- 中文翻译 -->
 ## 5. Post-Design Validation
 > **中文翻译**：## 5. 设计后验证
 
@@ -822,6 +843,7 @@ After all sections are written:
 > **中文翻译**：写完所有部分后：
 
 
+<!-- 中文翻译 -->
 ### 5a: Self-Check
 > **中文翻译**：### 5a：自检
 
@@ -841,6 +863,7 @@ Read back the complete GDD from file (not from conversation memory — the file 
   > **中文翻译**：验收标准是可测试的
 
 
+<!-- 中文翻译 -->
 ### 5a-bis: Creative Director Pillar Review
 > **中文翻译**：### 5a-bis：创意总监支柱回顾
 
@@ -870,6 +893,7 @@ Handle verdict per the standard rules in `director-gates.md`. After resolution, 
 
 ---
 
+<!-- 中文翻译 -->
 ### 5b: Update Entity Registry
 
 Scan the completed GDD for cross-system facts that should be registered:
@@ -900,6 +924,7 @@ and update `referenced_by` for the existing entries?"
 If yes: append new entries and update `referenced_by` arrays. Never modify
 existing `value` / attribute fields without surfacing it as a conflict first.
 
+<!-- 中文翻译 -->
 ### 5c: Offer Design Review
 
 Present a completion summary:
@@ -918,6 +943,7 @@ Present a completion summary:
 
 **NEVER offer to run `/design-review` inline.** Always direct the user to a fresh window.
 
+<!-- 中文翻译 -->
 ### 5d: Update Systems Index
 
 After the GDD is complete (and optionally reviewed):
@@ -933,6 +959,7 @@ After the GDD is complete (and optionally reviewed):
 
 Ask: "May I update the systems index at `design/gdd/systems-index.md`?"
 
+<!-- 中文翻译 -->
 ### 5d: Update Session State
 
 Update `production/session-state/active.md` with:
@@ -942,6 +969,7 @@ Update `production/session-state/active.md` with:
 - Sections: All 8 written
 - Next: [suggest next system from design order]
 
+<!-- 中文翻译 -->
 ### 5e: Suggest Next Steps
 
 Use `AskUserQuestion`:
@@ -955,6 +983,7 @@ Use `AskUserQuestion`:
 
 ---
 
+<!-- 中文翻译 -->
 ## 6. Specialist Agent Routing
 > **中文翻译**：## 6. 专业代理路由
 
@@ -1043,6 +1072,7 @@ This skill delegates to specialist agents for domain expertise. The main session
 
 ---
 
+<!-- 中文翻译 -->
 ## 7. Recovery & Resume
 
 If the session is interrupted (compaction, crash, new session):
@@ -1058,6 +1088,7 @@ disruption.
 
 ---
 
+<!-- 协作协议 -->
 ## Collaborative Protocol
 > **中文翻译**：## 协作协议
 
@@ -1097,6 +1128,7 @@ This skill follows the collaborative design principle at every step:
 > **中文翻译**：**永远不要**自动生成完整的 GDD 并将其呈现为既成事实。 **切勿**在未经用户批准的情况下编写部分。 **切勿**在未标记冲突的情况下与现有批准的 GDD 相矛盾。 **始终**显示决策的来源（依赖 GDD、支柱、用户选择）。
 
 
+<!-- 上下文窗口感知 -->
 ## Context Window Awareness
 > **中文翻译**：## 上下文窗口感知
 
@@ -1111,6 +1143,7 @@ This is a long-running skill. After writing each section, check if the status li
 
 ---
 
+<!-- 推荐后续步骤 -->
 ## Recommended Next Steps
 
 - Run `/design-review design/gdd/[system-name].md` in a **fresh session** to validate the completed GDD independently

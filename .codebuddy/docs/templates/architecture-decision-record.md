@@ -39,6 +39,7 @@ chosen approach.] / 选择的方法。]
 > **Note**: If Knowledge Risk is MEDIUM or HIGH, this ADR must be re-validated if the / > **注意**: 如果知识风险为中或高，如果项目升级引擎版本，必须重新验证此ADR。
 > project upgrades engine versions. Flag it as "Superseded" and write a new ADR. / 将其标记为"被取代"并编写新的ADR。
 
+<!-- ADR 依赖 -->
 ## ADR Dependencies
 
 | Field / 字段 | Value / 值 |
@@ -48,17 +49,21 @@ chosen approach.] / 选择的方法。]
 | **Blocks** | [Epic/Story name — cannot start until this ADR is Accepted, or "None"] |
 | **Ordering Note** | [Any sequencing constraint that isn't captured above] |
 
+<!-- 上下文 -->
 ## Context
 
+<!-- 中文翻译 -->
 ### Problem Statement
 
 [What problem are we solving? Why must this decision be made now? What is the
 cost of not deciding?]
 
+<!-- 中文翻译 -->
 ### Current State
 
 [How does the system work today? What is wrong with the current approach?]
 
+<!-- 约束 -->
 ### Constraints
 
 - [Technical constraints -- engine limitations, platform requirements]
@@ -66,6 +71,7 @@ cost of not deciding?]
 - [Resource constraints -- team size, expertise available]
 - [Compatibility requirements -- must work with existing systems]
 
+<!-- 要求 -->
 ### Requirements
 
 - [Functional requirement 1]
@@ -73,11 +79,13 @@ cost of not deciding?]
 - [Performance requirement -- specific, measurable]
 - [Scalability requirement]
 
+<!-- 决策 -->
 ## Decision
 
 [The specific technical decision, described in enough detail for someone to
 implement it without further clarification.]
 
+<!-- 架构 -->
 ### Architecture
 
 ```
@@ -85,6 +93,7 @@ implement it without further clarification.]
 Show components, data flow direction, and key interfaces.]
 ```
 
+<!-- 中文翻译 -->
 ### Key Interfaces
 
 ```
@@ -92,10 +101,12 @@ Show components, data flow direction, and key interfaces.]
 creates. These become the contracts that implementers must respect.]
 ```
 
+<!-- 中文翻译 -->
 ### Implementation Guidelines
 
 [Specific guidance for the programmer implementing this decision.]
 
+<!-- 考虑的替代方案 -->
 ## Alternatives Considered
 
 ### Alternative 1: [Name]
@@ -110,25 +121,31 @@ creates. These become the contracts that implementers must respect.]
 
 [Same structure as above]
 
+<!-- 后果 -->
 ## Consequences
 
+<!-- 中文翻译 -->
 ### Positive
 
 - [Good outcomes of this decision]
 
+<!-- 中文翻译 -->
 ### Negative
 
 - [Trade-offs and costs we are accepting]
 
+<!-- 中文翻译 -->
 ### Neutral
 
 - [Changes that are neither good nor bad, just different]
 
+<!-- 风险 -->
 ## Risks
 
 | Risk | Probability | Impact | Mitigation |
 |------|------------|--------|-----------|
 
+<!-- 性能影响 -->
 ## Performance Implications
 
 | Metric | Before | Expected After | Budget |
@@ -138,6 +155,7 @@ creates. These become the contracts that implementers must respect.]
 | Load Time | [X]s | [Y]s | [Z]s |
 | Network (if applicable) | [X]KB/s | [Y]KB/s | [Z]KB/s |
 
+<!-- 迁移计划 -->
 ## Migration Plan
 
 [If this changes existing systems, the step-by-step plan to migrate.]
@@ -148,6 +166,7 @@ creates. These become the contracts that implementers must respect.]
 
 **Rollback plan**: [How to revert if this decision proves wrong]
 
+<!-- 验证标准 -->
 ## Validation Criteria
 
 [How we will know this decision was correct after implementation.]
@@ -156,6 +175,7 @@ creates. These become the contracts that implementers must respect.]
 - [ ] [Measurable criterion 2]
 - [ ] [Performance criterion]
 
+<!-- 满足的 GDD 需求 -->
 ## GDD Requirements Addressed
 
 <!-- This section is MANDATORY. Every ADR must trace back to at least one GDD
@@ -170,6 +190,7 @@ creates. These become the contracts that implementers must respect.]
 > "Foundational — no GDD requirement. Enables: [list what GDD systems this
 > decision unlocks or constrains]"
 
+<!-- 中文翻译 -->
 ## Related
 
 - [Link to related ADRs — note if supersedes, contradicts, or depends on]

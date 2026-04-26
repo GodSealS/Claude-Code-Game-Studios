@@ -9,6 +9,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references release pipeline, certification, store submission)
@@ -20,6 +21,7 @@
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: In-domain request — platform certification checklist for Nintendo Switch
 **Input**: "Generate the certification checklist for our Nintendo Switch submission."
 **Expected behavior**:
@@ -29,6 +31,7 @@
 - Notes that Nintendo's full Lotcheck guidelines require a licensed developer account to access and flags any items that require manual verification against the current guidelines document
 - Does NOT produce fabricated requirement IDs — uses known public requirements or clearly marks uncertainty
 
+<!-- 中文翻译 -->
 ### Case 2: Out-of-domain request — design test cases
 **Input**: "Write test cases for our save system to make sure it passes certification."
 **Expected behavior**:
@@ -36,6 +39,7 @@
 - States clearly: "Test case design is owned by qa-lead (strategy) and qa-tester (execution); I can provide the certification requirements that the save system must meet, which qa-lead can then use to design tests"
 - Optionally offers to list the save-system-relevant certification requirements
 
+<!-- 中文翻译 -->
 ### Case 3: Domain boundary — certification failure (rating issue)
 **Input**: "Our build was rejected by the ESRB. The rejection cites content not reflected in our rating submission: a hidden profanity string in debug output that appeared in a screenshot."
 **Expected behavior**:
@@ -45,6 +49,7 @@
 - Does NOT minimize the issue — a certification rejection is a blocking event, not an advisory
 - Escalates to producer: documents the delay impact on release timeline
 
+<!-- 中文翻译 -->
 ### Case 4: Version numbering conflict — hotfix vs. release branch
 **Input**: "Our release branch is at v1.2.0. A hotfix was applied directly on main and tagged v1.2.1. Now the release branch also has changes that need to ship as v1.2.1 but they're different changes."
 **Expected behavior**:
@@ -53,6 +58,7 @@
 - Does NOT accept a state where the same version number refers to two different builds
 - Notes that once a version is submitted to a store, it cannot be reused — flags this as a potential store submission blocker
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — release date constraint and certification lead time
 **Input context**: Target release date is 2026-06-01. Current date is 2026-04-06. Nintendo Lotcheck typically takes 4-6 weeks.
 **Input**: "What should we prioritize on the certification checklist given our timeline?"
@@ -77,6 +83,7 @@
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Case 3 (LAUNCH BLOCKED verdict) is the most critical test — this agent's primary safety output is blocking bad launches
 - Case 5 requires current date and release date context; verify the agent uses actual dates, not placeholder estimates

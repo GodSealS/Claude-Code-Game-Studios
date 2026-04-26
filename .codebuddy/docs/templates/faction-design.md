@@ -79,22 +79,27 @@ Describe the power structure.]
 
 ---
 
+<!-- 中文翻译 -->
 ## Territory and Resources
 
+<!-- 中文翻译 -->
 ### Holdings
 [Where does this faction control territory? What are their key locations?]
 
+<!-- 资源 -->
 ### Resources
 - **Primary resource**: [What they have abundance of]
 - **Scarcity**: [What they lack and need]
 - **Trade goods**: [What they export/sell]
 
+<!-- 中文翻译 -->
 ### Military Strength
 [How powerful are they? Standing army? Special forces? Magical capabilities?
 Technology level?]
 
 ---
 
+<!-- 中文翻译 -->
 ## Relationships
 
 | Faction | Relationship | Reason | Trend |
@@ -105,6 +110,7 @@ Technology level?]
 
 ---
 
+<!-- 中文翻译 -->
 ## Reputation System (if applicable)
 
 | Tier | Points | Benefits | Requirements |

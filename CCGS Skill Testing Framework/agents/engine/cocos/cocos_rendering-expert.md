@@ -1,6 +1,9 @@
-# Agent Test Spec: cocos_rendering-expert
+# Agent Test Spec: cocos_rendering-expert / Cocos Creator渲染管线专家代理测试规范
 
-## Agent Summary
+> **中文翻译**：此文件为Cocos Creator渲染管线专家代理的测试规范。所有测试断言和用例保持英文原文以确保可执行性。
+
+
+## Agent Summary / 代理摘要
 Domain: Cocos Creator rendering pipeline: camera systems, lighting, shadows, post-processing effects, render pipeline configuration, and rendering performance optimization.
 Does NOT own: 2D/3D rendering implementation (cocos_2d-expert, cocos_3d-expert), graphics API (cocos_gfx-expert), animation (cocos_animation-expert).
 Model tier: DeepSeek-V3.2 (default).
@@ -8,7 +11,7 @@ No gate IDs assigned.
 
 ---
 
-## Static Assertions (Structural)
+## Static Assertions (Structural) / 静态断言（结构）
 
 - [ ] `description:` field is present and domain-specific (references rendering pipeline, camera, lighting, shadows, post-processing)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
@@ -18,8 +21,9 @@ No gate IDs assigned.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出 -->
 ### Case 1: In-domain request — appropriate output
 **Input:** "Configure a camera with orthographic projection for 2D UI rendering and a perspective camera for 3D gameplay."
 **Expected behavior:**
@@ -29,6 +33,7 @@ No gate IDs assigned.
 - Implements camera switching or blending between modes
 - Follows Cocos Creator's camera component patterns
 
+<!-- 用例 2：错误域重定向 -->
 ### Case 2: Wrong-domain redirect
 **Input:** "Write a custom vertex shader for particle effects."
 **Expected behavior:**
@@ -37,6 +42,7 @@ No gate IDs assigned.
 - Refers to cocos_gfx-expert for shader development
 - May provide conceptual mapping if relevant (e.g., "rendering pipeline configures how shaders are used")
 
+<!-- 中文翻译 -->
 ### Case 3: Lighting and shadow system
 **Input:** "Set up directional light with cascaded shadow mapping for outdoor scene."
 **Expected behavior:**
@@ -46,6 +52,7 @@ No gate IDs assigned.
 - Handles light baking vs. real-time lighting trade-offs
 - Follows Cocos Creator's lighting system patterns
 
+<!-- 中文翻译 -->
 ### Case 4: Post-processing effects
 **Input:** "Add bloom, tone mapping, and vignette effects to the main camera."
 **Expected behavior:**
@@ -55,6 +62,7 @@ No gate IDs assigned.
 - Adds vignette effect with adjustable strength and roundness
 - Follows project's post-processing architecture
 
+<!-- 中文翻译 -->
 ### Case 5: Render pipeline configuration
 **Input:** "Switch between forward and deferred rendering pipelines based on platform capabilities."
 **Expected behavior:**
@@ -64,6 +72,7 @@ No gate IDs assigned.
 - Handles material compatibility between pipelines
 - Provides fallback mechanisms for unsupported features
 
+<!-- 中文翻译 -->
 ### Case 6: Rendering performance optimization
 **Input:** "Our game has high GPU usage and low frame rate on mobile. How to optimize rendering?"
 **Expected behavior:**
@@ -75,6 +84,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 协议合规性 -->
 ## Protocol Compliance
 
 - [ ] Stays within declared domain (rendering pipeline, camera, lighting, shadows, post-processing)

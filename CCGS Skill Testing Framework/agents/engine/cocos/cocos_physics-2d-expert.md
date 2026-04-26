@@ -1,6 +1,9 @@
-# Agent Test Spec: cocos_physics-2d-expert
+# Agent Test Spec: cocos_physics-2d-expert / Cocos Creator 2D物理专家代理测试规范
 
-## Agent Summary
+> **中文翻译**：此文件为Cocos Creator 2D物理专家代理的测试规范。所有测试断言和用例保持英文原文以确保可执行性。
+
+
+## Agent Summary / 代理摘要
 Domain: Cocos Creator 2D physics systems: Box2D integration, 2D rigid bodies, collision detection, platformer physics, and 2D physics optimization.
 Does NOT own: 3D physics (cocos_physics-expert), 2D rendering (cocos_2d-expert), animation (cocos_animation-expert).
 Model tier: DeepSeek-V3.2 (default).
@@ -8,7 +11,7 @@ No gate IDs assigned.
 
 ---
 
-## Static Assertions (Structural)
+## Static Assertions (Structural) / 静态断言（结构）
 
 - [ ] `description:` field is present and domain-specific (references 2D physics, Box2D, platformer mechanics, collision detection)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
@@ -18,8 +21,9 @@ No gate IDs assigned.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出 -->
 ### Case 1: In-domain request — appropriate output
 **Input:** "Create a 2D platformer character controller with jumping and horizontal movement."
 **Expected behavior:**
@@ -29,6 +33,7 @@ No gate IDs assigned.
 - Handles slope climbing and edge cases
 - Follows Cocos Creator's 2D physics component patterns
 
+<!-- 用例 2：错误域重定向 -->
 ### Case 2: Wrong-domain redirect
 **Input:** "Set up 3D collision detection for a complex mesh object."
 **Expected behavior:**
@@ -37,6 +42,7 @@ No gate IDs assigned.
 - Refers to cocos_physics-expert for 3D physics implementation
 - May provide conceptual mapping if relevant (e.g., "2D physics uses simplified collision shapes")
 
+<!-- 中文翻译 -->
 ### Case 3: Box2D integration
 **Input:** "Configure Box2D physics world with custom gravity and collision matrix."
 **Expected behavior:**
@@ -46,6 +52,7 @@ No gate IDs assigned.
 - Implements collision filtering rules
 - Follows Cocos Creator's Box2D integration patterns
 
+<!-- 中文翻译 -->
 ### Case 4: 2D collision events
 **Input:** "Implement collision between player and collectible items to trigger pickup."
 **Expected behavior:**
@@ -55,6 +62,7 @@ No gate IDs assigned.
 - Provides visual/audio feedback for pickup
 - Follows project's event-driven architecture
 
+<!-- 中文翻译 -->
 ### Case 5: Platformer physics features
 **Input:** "Add one-way platforms that player can jump through from below."
 **Expected behavior:**
@@ -64,6 +72,7 @@ No gate IDs assigned.
 - Provides example of multiple platform types
 - Follows common platformer game design patterns
 
+<!-- 中文翻译 -->
 ### Case 6: 2D physics optimization
 **Input:** "Our 2D game has performance issues with many physics objects. How to optimize?"
 **Expected behavior:**
@@ -75,6 +84,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 协议合规性 -->
 ## Protocol Compliance
 
 - [ ] Stays within declared domain (2D physics, Box2D integration, platformer mechanics)

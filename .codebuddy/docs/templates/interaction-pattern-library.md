@@ -107,6 +107,7 @@ update this document before or simultaneously with any implementation change. / 
 
 ---
 
+<!-- 中文翻译 -->
 #### Button (Primary)
 
 **Category**: Input
@@ -145,6 +146,7 @@ Control — scaling the Button itself can clip children.]
 
 ---
 
+<!-- 按钮（次要） -->
 #### Button (Secondary)
 
 **Category**: Input
@@ -176,6 +178,7 @@ across screens is more important than per-screen aesthetic preference.]
 
 ---
 
+<!-- 中文翻译 -->
 #### Button (Destructive)
 
 **Category**: Input
@@ -209,6 +212,7 @@ consequential but reversible.
 
 ---
 
+<!-- 中文翻译 -->
 #### Toggle
 
 **Category**: Input
@@ -245,6 +249,7 @@ case, snap to final state instantly.]
 
 ---
 
+<!-- 中文翻译 -->
 #### Slider
 
 **Category**: Input
@@ -282,6 +287,7 @@ accessibility.]
 
 ---
 
+<!-- 中文翻译 -->
 #### Dropdown / Select
 
 **Category**: Input
@@ -319,6 +325,7 @@ bottom. Close the popup on `_input` detecting click outside its rect.]
 
 ---
 
+<!-- 列表项 -->
 #### List Item
 
 **Category**: Layout / Input
@@ -353,6 +360,7 @@ focused items in view. Use `ensure_control_visible()` on the scroll container.]
 
 ---
 
+<!-- 中文翻译 -->
 #### Grid Item
 
 **Category**: Layout / Input
@@ -390,6 +398,7 @@ index and column count. `GridContainer` does not provide this natively.]
 
 ---
 
+<!-- 中文翻译 -->
 #### Modal Dialog
 
 **Category**: Feedback / Layout
@@ -432,6 +441,7 @@ focusable elements.]
 
 ---
 
+<!-- 中文翻译 -->
 #### Confirmation Dialog
 
 **Category**: Feedback / Layout
@@ -466,6 +476,7 @@ Confirm button, after open animation completes.]
 
 ---
 
+<!-- 中文翻译 -->
 #### Toast / Notification
 
 **Category**: Feedback
@@ -502,6 +513,7 @@ animation.]
 
 ---
 
+<!-- 中文翻译 -->
 #### Tooltip
 
 **Category**: Feedback
@@ -539,6 +551,7 @@ position to the opposite side.]
 
 ---
 
+<!-- 中文翻译 -->
 #### Progress Bar
 
 **Category**: Feedback / Layout
@@ -574,6 +587,7 @@ indicator is shown instead.]
 
 ---
 
+<!-- 中文翻译 -->
 #### Input Field
 
 **Category**: Input
@@ -614,6 +628,7 @@ console keyboard API specifics.]
 
 ---
 
+<!-- 中文翻译 -->
 #### Tab Bar
 
 **Category**: Navigation
@@ -652,6 +667,7 @@ both are the same physical button, so a single binding works.]
 
 ---
 
+<!-- 中文翻译 -->
 #### Scroll Container
 
 **Category**: Layout
@@ -693,6 +709,7 @@ setting it directly.]
 
 ---
 
+<!-- 中文翻译 -->
 #### Inventory Slot
 
 **Category**: Game-Specific
@@ -720,6 +737,7 @@ content.
 
 ---
 
+<!-- 中文翻译 -->
 #### Ability / Skill Icon
 
 **Category**: Game-Specific
@@ -749,6 +767,7 @@ engine-reference/godot/ for Godot 4.6 shader support for this pattern.]
 
 ---
 
+<!-- 中文翻译 -->
 #### Health / Resource Bar
 
 **Category**: Game-Specific
@@ -776,6 +795,7 @@ on the front bar. Ghost bar Tween duration is tunable as a designer parameter.]
 
 ---
 
+<!-- 中文翻译 -->
 #### Dialogue Box
 
 **Category**: Game-Specific
@@ -808,6 +828,7 @@ JSON or a dedicated dialogue format (e.g., Dialogic, Yarn Spinner for Godot).]
 
 ---
 
+<!-- 中文翻译 -->
 #### Context Action Prompt
 
 **Category**: Game-Specific
@@ -832,6 +853,7 @@ when the player enters the interaction zone, disappears when they leave.
 
 ---
 
+<!-- 中文翻译 -->
 #### Damage Number
 
 **Category**: Game-Specific
@@ -865,6 +887,7 @@ with `EASE_OUT` on scale followed by linear settle.]
 
 ---
 
+<!-- 中文翻译 -->
 #### Screen Push / Pop / Replace
 
 **Category**: Navigation
@@ -890,6 +913,7 @@ Store the "return focus" element reference before pushing so it can be restored 
 
 ---
 
+<!-- 焦点管理 -->
 #### Focus Management
 
 **Category**: Navigation
@@ -915,6 +939,7 @@ Store the "return focus" element reference before pushing so it can be restored 
 
 ---
 
+<!-- 中文翻译 -->
 #### Escape / Cancel
 
 **Category**: Navigation
@@ -939,6 +964,7 @@ Store the "return focus" element reference before pushing so it can be restored 
 
 ---
 
+<!-- 中文翻译 -->
 #### Loading State
 
 **Category**: Feedback
@@ -955,6 +981,7 @@ Store the "return focus" element reference before pushing so it can be restored 
 
 ---
 
+<!-- 中文翻译 -->
 #### Empty State
 
 **Category**: Feedback
@@ -977,6 +1004,7 @@ Store the "return focus" element reference before pushing so it can be restored 
 
 ---
 
+<!-- 中文翻译 -->
 #### Error State
 
 **Category**: Feedback

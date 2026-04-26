@@ -15,6 +15,7 @@ or HOTFIX BLOCKED (fix introduced regression or user declined).
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -27,6 +28,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. Hotfixes are time-critical. Director review may follow separately as a
@@ -36,6 +38,7 @@ post-hoc step. No gate is invoked within this skill.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Critical crash bug fixed, smoke check passes
 
 **Fixture:**
@@ -63,6 +66,7 @@ post-hoc step. No gate is invoked within this skill.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Smoke Check Fails — HOTFIX BLOCKED
 
 **Fixture:**
@@ -87,6 +91,7 @@ post-hoc step. No gate is invoked within this skill.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Fix to Already-Released Build — Version tag noted, patch bump prompted
 
 **Fixture:**
@@ -110,6 +115,7 @@ post-hoc step. No gate is invoked within this skill.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: No Repro Steps — Skill Asks Before Applying Fix
 
 **Fixture:**
@@ -132,6 +138,7 @@ post-hoc step. No gate is invoked within this skill.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate Check — No gate; hotfixes are time-critical
 
 **Fixture:**
@@ -163,6 +170,7 @@ post-hoc step. No gate is invoked within this skill.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The case where multiple files need to be modified for one fix follows the same

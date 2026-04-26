@@ -8,12 +8,14 @@
 | **Last Docs Verified** | 2026-02-13 |
 | **LLM Knowledge Cutoff** | May 2025 |
 
+<!-- 中文翻译 -->
 ## Knowledge Gap Warning
 
 The LLM's training data likely covers Unreal Engine up to ~5.3. Versions 5.4, 5.5,
 5.6, and 5.7 introduced significant changes that the model does NOT know about.
 Always cross-reference this directory before suggesting Unreal API calls.
 
+<!-- 中文翻译 -->
 ## Post-Cutoff Version Timeline
 
 | Version | Release | Risk Level | Key Theme |
@@ -23,8 +25,10 @@ Always cross-reference this directory before suggesting Unreal API calls.
 | 5.6 | ~Oct 2025 | MEDIUM | Performance optimizations, bug fixes |
 | 5.7 | Nov 2025 | HIGH | PCG production-ready, Substrate production-ready, AI assistant |
 
+<!-- 中文翻译 -->
 ## Major Changes from UE 5.3 to UE 5.7
 
+<!-- 破坏性变更 -->
 ### Breaking Changes
 - **Substrate Material System**: New material framework (replaces legacy materials)
 - **PCG (Procedural Content Generation)**: Production-ready, major API changes
@@ -32,6 +36,7 @@ Always cross-reference this directory before suggesting Unreal API calls.
 - **Animation Authoring**: New rigging and animation tools
 - **AI Assistant**: In-editor AI guidance (experimental)
 
+<!-- 中文翻译 -->
 ### New Features (Post-Cutoff)
 - **Megalights**: Dynamic lighting at massive scale (millions of lights)
 - **Substrate Materials**: Production-ready modular material system
@@ -40,10 +45,12 @@ Always cross-reference this directory before suggesting Unreal API calls.
 - **Animation Improvements**: Better rigging, blending, procedural animation
 - **AI Assistant**: In-editor AI help (experimental)
 
+<!-- 中文翻译 -->
 ### Deprecated Systems
 - **Legacy Material System**: Migrate to Substrate for new projects
 - **Old PCG API**: Use new production-ready PCG API (5.7+)
 
+<!-- 已验证来源 -->
 ## Verified Sources
 
 - Official docs: https://docs.unrealengine.com/5.7/

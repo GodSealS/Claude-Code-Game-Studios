@@ -49,6 +49,7 @@ Wait for the user's selection. Do not proceed until they respond.
 
 ## Phase 3: Route Based on Answer / 第 3 阶段：根据回答路由
 
+<!-- 中文翻译 -->
 #### If A: No idea yet
 
 The user needs creative exploration before anything else.
@@ -79,6 +80,7 @@ The user needs creative exploration before anything else.
    - `/sprint-plan` — plan the first sprint
    **Production phase:** → pick up stories with `/dev-story`
 
+<!-- 中文翻译 -->
 #### If B: Vague idea
 
 1. Ask them to share their vague idea — even a few words is enough
@@ -107,6 +109,7 @@ The user needs creative exploration before anything else.
    - `/sprint-plan` — plan the first sprint
    **Production phase:** → pick up stories with `/dev-story`
 
+<!-- 中文翻译 -->
 #### If C: Clear concept
 
 1. Ask them to describe their concept in one sentence — genre and core mechanic. Use plain text, not AskUserQuestion (it's an open response).
@@ -138,6 +141,7 @@ The user needs creative exploration before anything else.
    - `/sprint-plan` — plan the first sprint
    **Production phase:** → pick up stories with `/dev-story`
 
+<!-- 中文翻译 -->
 #### If D: Existing work
 
 1. Share what you found in Phase 1:

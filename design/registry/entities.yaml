@@ -137,6 +137,9 @@ formulas: []
 # agree with it (e.g., gold carry limit defined in economy but checked in
 # inventory, or base inventory slots defined in inventory but displayed in HUD).
 #
+# 常量：跨多个系统引用的命名数值。
+# 当常量在一个GDD中定义但另一个GDD必须与其一致时在此注册。
+#
 # Required fields: name, status, source, referenced_by, value, unit, added
 
 constants: []

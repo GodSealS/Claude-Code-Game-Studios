@@ -1,10 +1,14 @@
-# Unity 6.3 — Input Module Reference
+# Unity 6.3 — Input Module Reference / Unity输入模块
+
+
+> **中文翻译**：本文档为Unity引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 **Last verified:** 2026-02-13
 **Knowledge Gap:** Unity 6 uses new Input System (legacy Input deprecated)
 
 ---
 
+<!-- 概述 -->
 ## Overview
 
 Unity 6 input systems:
@@ -13,8 +17,10 @@ Unity 6 input systems:
 
 ---
 
+<!-- 自 2022 LTS 以来的关键变化 -->
 ## Key Changes from 2022 LTS
 
+<!-- 中文翻译 -->
 ### Legacy Input Deprecated in Unity 6
 
 ```csharp
@@ -30,14 +36,17 @@ if (Keyboard.current.spaceKey.wasPressedThisFrame) { }
 
 ---
 
+<!-- 中文翻译 -->
 ## Input System Package Setup
 
+<!-- 安装 -->
 ### Installation
 1. `Window > Package Manager`
 2. Search "Input System"
 3. Install package
 4. Restart Unity when prompted
 
+<!-- 中文翻译 -->
 ### Enable New Input System
 `Edit > Project Settings > Player > Active Input Handling`:
 - **Input System Package (New)** ✅ Recommended
@@ -45,8 +54,10 @@ if (Keyboard.current.spaceKey.wasPressedThisFrame) { }
 
 ---
 
+<!-- 中文翻译 -->
 ## Input Actions (Recommended Pattern)
 
+<!-- 中文翻译 -->
 ### Create Input Actions Asset
 
 1. `Assets > Create > Input Actions`
@@ -66,6 +77,7 @@ Action Maps:
 4. **Generate C# Class**: Check "Generate C# Class" in Inspector
 5. Click "Apply"
 
+<!-- 中文翻译 -->
 ### Use Generated Input Class
 
 ```csharp
@@ -107,8 +119,10 @@ public class PlayerController : MonoBehaviour {
 
 ---
 
+<!-- 中文翻译 -->
 ## Direct Device Access (Quick & Dirty)
 
+<!-- 中文翻译 -->
 ### Keyboard
 
 ```csharp
@@ -126,6 +140,7 @@ void Update() {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Mouse
 
 ```csharp
@@ -147,6 +162,7 @@ void Update() {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Gamepad
 
 ```csharp
@@ -173,6 +189,7 @@ void Update() {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Touch (Mobile)
 
 ```csharp
@@ -192,8 +209,10 @@ void Update() {
 
 ---
 
+<!-- 中文翻译 -->
 ## Input Action Callbacks
 
+<!-- 中文翻译 -->
 ### Action Callbacks (Event-Driven)
 
 ```csharp
@@ -207,6 +226,7 @@ controls.Gameplay.Fire.performed += ctx => Debug.Log("Fire performed");
 controls.Gameplay.Fire.canceled += ctx => Debug.Log("Fire canceled");
 ```
 
+<!-- 中文翻译 -->
 ### Context Data
 
 ```csharp
@@ -219,8 +239,10 @@ controls.Gameplay.Move.performed += ctx => {
 
 ---
 
+<!-- 中文翻译 -->
 ## Control Schemes & Device Switching
 
+<!-- 中文翻译 -->
 ### Define Control Schemes in Input Actions Asset
 
 ```
@@ -230,6 +252,7 @@ Control Schemes:
   - Touch (Touchscreen)
 ```
 
+<!-- 中文翻译 -->
 ### Auto-Switch on Device Change
 
 ```csharp
@@ -244,8 +267,10 @@ controls.Gameplay.Move.performed += ctx => {
 
 ---
 
+<!-- 中文翻译 -->
 ## Rebinding (Runtime Key Mapping)
 
+<!-- 中文翻译 -->
 ### Interactive Rebind
 
 ```csharp
@@ -262,6 +287,7 @@ public void RebindJumpKey() {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Save/Load Bindings
 
 ```csharp
@@ -276,24 +302,30 @@ controls.LoadBindingOverridesFromJson(rebinds);
 
 ---
 
+<!-- 中文翻译 -->
 ## Action Types
 
+<!-- 中文翻译 -->
 ### Button (Press/Release)
 - Single press/release
 - Example: Jump, Fire
 
+<!-- 中文翻译 -->
 ### Value (Continuous)
 - Continuous value (float, Vector2)
 - Example: Move, Look, Aim
 
+<!-- 中文翻译 -->
 ### Pass-Through (Immediate)
 - No processing, immediate value
 - Example: Mouse position
 
 ---
 
+<!-- 中文翻译 -->
 ## Processors (Input Modifiers)
 
+<!-- 中文翻译 -->
 ### Scale
 
 ```csharp
@@ -301,6 +333,7 @@ controls.LoadBindingOverridesFromJson(rebinds);
 // Multiply input by value (e.g., invert Y-axis)
 ```
 
+<!-- 中文翻译 -->
 ### Invert
 
 ```csharp
@@ -308,6 +341,7 @@ controls.LoadBindingOverridesFromJson(rebinds);
 // Flip input sign
 ```
 
+<!-- 中文翻译 -->
 ### Dead Zone
 
 ```csharp
@@ -317,8 +351,10 @@ controls.LoadBindingOverridesFromJson(rebinds);
 
 ---
 
+<!-- 中文翻译 -->
 ## PlayerInput Component (Simplified Setup)
 
+<!-- 中文翻译 -->
 ### Automatic Input Setup
 
 ```csharp
@@ -343,14 +379,17 @@ public class Player : MonoBehaviour {
 
 ---
 
+<!-- 调试 -->
 ## Debugging
 
+<!-- 中文翻译 -->
 ### Input Debugger
 - `Window > Analysis > Input Debugger`
 - See active devices, input values, action states
 
 ---
 
+<!-- 来源 -->
 ## Sources
 - https://docs.unity3d.com/Packages/com.unity.inputsystem@1.11/manual/index.html
 - https://docs.unity3d.com/Packages/com.unity.inputsystem@1.11/manual/QuickStartGuide.html

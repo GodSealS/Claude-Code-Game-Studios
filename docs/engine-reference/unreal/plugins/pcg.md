@@ -1,4 +1,7 @@
-# Unreal Engine 5.7 — PCG (Procedural Content Generation)
+# Unreal Engine 5.7 — PCG (Procedural Content Generation) / Unreal EnginePCG（程序化内容生成）插件
+
+
+> **中文翻译**：本文档为Unreal Engine引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 **Last verified:** 2026-02-13
 **Status:** Production-Ready (as of UE 5.7)
@@ -6,6 +9,7 @@
 
 ---
 
+<!-- 概述 -->
 ## Overview
 
 **Procedural Content Generation (PCG)** is Unreal's node-based framework for generating
@@ -27,21 +31,26 @@ foliage, rocks, props, buildings, and other environmental detail.
 
 ---
 
+<!-- 核心概念 -->
 ## Core Concepts
 
+<!-- 中文翻译 -->
 ### 1. **PCG Graph**
 - Node-based graph (similar to Material Editor)
 - Defines generation rules
 
+<!-- 中文翻译 -->
 ### 2. **PCG Component**
 - Placed in level, executes PCG Graph
 - Generates content in defined volume
 
+<!-- 中文翻译 -->
 ### 3. **PCG Data**
 - Point data (positions, rotations, scales)
 - Spline data (paths, roads, rivers)
 - Volume data (density, biome masks)
 
+<!-- 中文翻译 -->
 ### 4. **Nodes**
 - **Samplers**: Generate points (Grid, Poisson, Surface)
 - **Filters**: Remove points based on rules (Density, Tag, Bounds)
@@ -50,17 +59,21 @@ foliage, rocks, props, buildings, and other environmental detail.
 
 ---
 
+<!-- 设置 -->
 ## Setup
 
+<!-- 中文翻译 -->
 ### 1. Enable Plugin
 
 `Edit > Plugins > PCG > Enabled > Restart`
 
+<!-- 中文翻译 -->
 ### 2. Create PCG Volume
 
 1. Place Actors > Volumes > PCG Volume
 2. Scale volume to desired generation area
 
+<!-- 中文翻译 -->
 ### 3. Create PCG Graph
 
 1. Content Browser > PCG > PCG Graph
@@ -68,10 +81,13 @@ foliage, rocks, props, buildings, and other environmental detail.
 
 ---
 
+<!-- 中文翻译 -->
 ## Basic Workflow
 
+<!-- 中文翻译 -->
 ### Example: Forest Generation
 
+<!-- 中文翻译 -->
 #### 1. Create PCG Graph
 
 **Node Setup:**
@@ -87,6 +103,7 @@ Static Mesh Spawner (tree meshes)
 Output
 ```
 
+<!-- 中文翻译 -->
 #### 2. Assign Graph to Volume
 
 1. Select PCG Volume
@@ -95,22 +112,27 @@ Output
 
 ---
 
+<!-- 中文翻译 -->
 ## Key Node Types
 
+<!-- 中文翻译 -->
 ### Samplers (Point Generation)
 
+<!-- 中文翻译 -->
 #### Grid Sampler
 - Regular grid of points
 - Configure:
   - **Grid Size**: Distance between points
   - **Offset**: Random offset per point
 
+<!-- 中文翻译 -->
 #### Poisson Disk Sampler
 - Random points with minimum distance
 - Configure:
   - **Points Per m²**: Density
   - **Min Distance**: Spacing between points
 
+<!-- 中文翻译 -->
 #### Surface Sampler
 - Points on mesh surfaces or landscape
 - Configure:
@@ -119,72 +141,89 @@ Output
 
 ---
 
+<!-- 中文翻译 -->
 ### Filters (Point Removal)
 
+<!-- 中文翻译 -->
 #### Density Filter
 - Remove points based on density value
 - Input: Texture or noise
 - Use for: Biome masks, clearings, paths
 
+<!-- 中文翻译 -->
 #### Tag Filter
 - Filter points by tag
 - Use for: Conditional spawning
 
+<!-- 中文翻译 -->
 #### Bounds Filter
 - Keep only points within bounds
 - Use for: Limiting generation to specific areas
 
 ---
 
+<!-- 中文翻译 -->
 ### Modifiers (Point Transformation)
 
+<!-- 中文翻译 -->
 #### Rotate
 - Randomize point rotation
 - Configure:
   - **Min/Max Rotation**: Rotation range per axis
 
+<!-- 中文翻译 -->
 #### Scale
 - Randomize point scale
 - Configure:
   - **Min/Max Scale**: Scale range
 
+<!-- 中文翻译 -->
 #### Project to Ground
 - Snap points to landscape surface
 
 ---
 
+<!-- 中文翻译 -->
 ### Spawners (Mesh/Actor Instantiation)
 
+<!-- 中文翻译 -->
 #### Static Mesh Spawner
 - Spawn static meshes at points
 - Configure:
   - **Mesh List**: Array of meshes (random selection)
   - **Culling Distance**: LOD/culling settings
 
+<!-- 中文翻译 -->
 #### Actor Spawner
 - Spawn Blueprint actors at points
 - Use for: Gameplay actors, interactive objects
 
 ---
 
+<!-- 中文翻译 -->
 ## Data Sources
 
+<!-- 中文翻译 -->
 ### Landscape
 - Use landscape as input for sampling
 - Automatically projects to landscape height
 
+<!-- 中文翻译 -->
 ### Splines
 - Generate content along splines (roads, rivers, paths)
 - Example: Trees along path
 
+<!-- 中文翻译 -->
 ### Textures
 - Use textures as density masks
 - Paint biomes, clearings, areas
 
 ---
 
+<!-- 中文翻译 -->
 ## Biome Example (Mixed Forest)
 
+<!-- 中文翻译 -->
 ### Graph Setup
 
 ```
@@ -206,8 +245,10 @@ Output
 
 ---
 
+<!-- 中文翻译 -->
 ## Spline-Based Generation (Road with Trees)
 
+<!-- 中文翻译 -->
 ### 1. Create PCG Graph
 
 ```
@@ -222,6 +263,7 @@ Tree Spawner
 Output
 ```
 
+<!-- 中文翻译 -->
 ### 2. Add Spline Component to PCG Volume
 
 1. PCG Volume > Add Component > Spline
@@ -230,8 +272,10 @@ Output
 
 ---
 
+<!-- 中文翻译 -->
 ## Runtime Generation
 
+<!-- 中文翻译 -->
 ### Trigger Generation from C++
 
 ```cpp
@@ -241,6 +285,7 @@ UPCGComponent* PCGComp = /* Get PCG Component */;
 PCGComp->Generate(); // Execute PCG graph
 ```
 
+<!-- 中文翻译 -->
 ### Stream Generation (Large Worlds)
 
 - PCG automatically streams with World Partition
@@ -248,8 +293,10 @@ PCGComp->Generate(); // Execute PCG graph
 
 ---
 
+<!-- 性能 -->
 ## Performance
 
+<!-- 中文翻译 -->
 ### Optimization Tips
 
 - Use **culling distance** on spawned meshes (LOD)
@@ -257,6 +304,7 @@ PCGComp->Generate(); // Execute PCG graph
 - Use **Hierarchical Instanced Static Meshes (HISM)** for repeated meshes
 - Enable **streaming** for large worlds
 
+<!-- 中文翻译 -->
 ### Debug Performance
 
 ```cpp
@@ -267,8 +315,10 @@ PCGComp->Generate(); // Execute PCG graph
 
 ---
 
+<!-- 常见模式 -->
 ## Common Patterns
 
+<!-- 中文翻译 -->
 ### Forest with Clearings
 
 ```
@@ -281,6 +331,7 @@ Tree Spawner (pine, oak, birch)
 
 ---
 
+<!-- 中文翻译 -->
 ### Rocks on Steep Slopes
 
 ```
@@ -295,6 +346,7 @@ Rock Spawner
 
 ---
 
+<!-- 中文翻译 -->
 ### Props Along Road
 
 ```
@@ -309,8 +361,10 @@ Street Light Spawner
 
 ---
 
+<!-- 调试 -->
 ## Debugging
 
+<!-- 中文翻译 -->
 ### PCG Debug Visualization
 
 ```cpp
@@ -319,6 +373,7 @@ Street Light Spawner
 // pcg.debug.colormode points - Color-code points
 ```
 
+<!-- 中文翻译 -->
 ### Graph Debugging
 
 - PCG Graph Editor > Debug > Show Debug Points
@@ -326,8 +381,10 @@ Street Light Spawner
 
 ---
 
+<!-- 中文翻译 -->
 ## Migration from UE 5.6 (Experimental) to 5.7 (Production)
 
+<!-- 中文翻译 -->
 ### API Changes
 
 ```cpp
@@ -342,6 +399,7 @@ Street Light Spawner
 
 ---
 
+<!-- 限制 -->
 ## Limitations
 
 - **Not for gameplay logic**: Use Blueprints/C++ for game rules
@@ -350,6 +408,7 @@ Street Light Spawner
 
 ---
 
+<!-- 来源 -->
 ## Sources
 - https://docs.unrealengine.com/5.7/en-US/procedural-content-generation-in-unreal-engine/
 - https://docs.unrealengine.com/5.7/en-US/pcg-quick-start-in-unreal-engine/

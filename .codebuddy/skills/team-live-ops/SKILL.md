@@ -32,7 +32,7 @@ The user must approve before moving to the next phase.
 - **narrative-director** — Seasonal narrative theme, story arc, world event framing / 赛季叙事主题、故事弧线、世界事件框架
 - **writer** — Event descriptions, reward item names, seasonal flavor text, announcement copy / 活动描述、奖励物品名称、赛季风味文本、公告文案
 
-## How to Delegate / 如何委托
+## How to Delegate / 如何委派
 
 Use the Task tool to spawn each team member as a subagent:
 

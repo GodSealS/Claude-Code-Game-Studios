@@ -11,6 +11,7 @@ No director gates are used. The skill asks "May I write to
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -23,6 +24,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. Patch notes generation is a fast compilation task; no gates are invoked.
@@ -31,6 +33,7 @@ None. Patch notes generation is a fast compilation task; no gates are invoked.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Changelog filtered to player-facing entries
 
 **Fixture:**
@@ -61,6 +64,7 @@ None. Patch notes generation is a fast compilation task; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: No Changelog Found — Directed to run /changelog first
 
 **Fixture:**
@@ -81,6 +85,7 @@ None. Patch notes generation is a fast compilation task; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Tone Guidance from Design Folder — Incorporated into output
 
 **Fixture:**
@@ -104,6 +109,7 @@ None. Patch notes generation is a fast compilation task; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Patch Note Template Exists — Used instead of generated structure
 
 **Fixture:**
@@ -126,6 +132,7 @@ None. Patch notes generation is a fast compilation task; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Gate Compliance — No gate; community-manager is separate
 
 **Fixture:**
@@ -160,6 +167,7 @@ None. Patch notes generation is a fast compilation task; no gates are invoked.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The case where all changelog entries are internal (zero player-facing items)

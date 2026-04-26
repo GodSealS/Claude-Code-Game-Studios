@@ -8,6 +8,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified by reading the agent's `.codebuddy/agents/lead-programmer.md` frontmatter:
@@ -21,6 +22,7 @@ Verified by reading the agent's `.codebuddy/agents/lead-programmer.md` frontmatt
 
 ## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出格式 -->
 ### Case 1: In-domain request — appropriate output format
 **Scenario:** A new `CombatSystem` implementation is submitted for code review. The system uses dependency injection for all external references, has doc comments on all public APIs, follows the project's naming conventions, and includes unit tests for all public methods. Request is tagged LP-CODE-REVIEW.
 **Expected:** Returns `LP-CODE-REVIEW: APPROVED` with rationale confirming dependency injection usage, doc comment coverage, naming convention compliance, and test coverage.
@@ -30,6 +32,7 @@ Verified by reading the agent's `.codebuddy/agents/lead-programmer.md` frontmatt
 - [ ] Rationale references specific coding standards criteria (DI, doc comments, naming, tests)
 - [ ] Output stays within code quality scope — does not comment on whether the mechanic is fun or fits creative vision
 
+<!-- 用例 2：域外请求 — 重定向或升级 -->
 ### Case 2: Out-of-domain request — redirects or escalates
 **Scenario:** Team member asks lead-programmer to review and approve the balance formula for player damage scaling across levels, checking whether the numbers "feel right."
 **Expected:** Agent declines to evaluate design balance and redirects to systems-designer.
@@ -38,6 +41,7 @@ Verified by reading the agent's `.codebuddy/agents/lead-programmer.md` frontmatt
 - [ ] Explicitly names `systems-designer` as the correct handler
 - [ ] May note code implementation concerns about the formula (e.g., integer overflow risk at max level), but defers all balance evaluation to systems-designer
 
+<!-- 用例 3：门控裁决 — 正确词汇 -->
 ### Case 3: Gate verdict — correct vocabulary
 **Scenario:** A proposed pathfinding approach for enemy AI uses a brute-force nearest-neighbor search against all other entities every frame. With expected enemy counts of 200+, this is O(n²) per frame at 60fps. Request is tagged LP-FEASIBILITY.
 **Expected:** Returns `LP-FEASIBILITY: INFEASIBLE` with specific citation of the O(n²) complexity, the entity count threshold, and the resulting per-frame cost against the target frame budget.
@@ -47,6 +51,7 @@ Verified by reading the agent's `.codebuddy/agents/lead-programmer.md` frontmatt
 - [ ] Rationale includes the specific algorithmic complexity and entity count numbers
 - [ ] Suggests at least one alternative approach (e.g., spatial hashing, KD-tree) without mandating a choice
 
+<!-- 用例 4：冲突升级 — 正确上级 -->
 ### Case 4: Conflict escalation — correct parent
 **Scenario:** game-designer wants a mechanic where every NPC maintains a full simulation of needs, schedule, and memory (similar to a full life-sim AI). lead-programmer calculates this will exceed the frame budget by 3x at target NPC counts. game-designer insists the mechanic is core to the game vision.
 **Expected:** lead-programmer states the specific frame budget violation with numbers, proposes alternative approaches (e.g., LOD-based simulation, simplified need model), but explicitly defers the "is this worth the cost or should the design change" decision to creative-director as the creative arbiter.
@@ -56,6 +61,7 @@ Verified by reading the agent's `.codebuddy/agents/lead-programmer.md` frontmatt
 - [ ] Explicitly defers the design priority decision to `creative-director`
 - [ ] Does not unilaterally cut or modify the mechanic design
 
+<!-- 用例 5：上下文传递 — 使用提供的上下文 -->
 ### Case 5: Context pass — uses provided context
 **Scenario:** Agent receives a gate context block that includes the project's frame budget: 16.67ms total per frame, with 4ms allocated to AI systems. A new AI behavior system is submitted that profiling estimates will consume 7ms per frame under normal conditions.
 **Expected:** Assessment references the specific frame budget allocation from context (4ms AI budget), identifies the 7ms estimate as exceeding the allocation by 3ms, and returns CONCERNS or INFEASIBLE with those specific numbers cited.
@@ -79,6 +85,7 @@ Verified by reading the agent's `.codebuddy/agents/lead-programmer.md` frontmatt
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Multi-file code review spanning several interdependent systems is not covered — deferred to integration tests.
 - Tech debt assessment and prioritization are not covered here — deferred to /tech-debt skill integration.

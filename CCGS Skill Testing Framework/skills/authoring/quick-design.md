@@ -15,6 +15,7 @@ for a quick-design, the skill redirects to `/design-system` instead.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -29,6 +30,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 No director gates — this skill spawns no director gate agents. The lightweight
@@ -39,6 +41,7 @@ Full GDD review is not needed for sub-4-hour single-system features.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Small UI change produces a 3-section spec
 
 **Fixture:**
@@ -64,6 +67,7 @@ Full GDD review is not needed for sub-4-hour single-system features.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Failure Path — Scope check fails; redirected to /design-system
 
 **Fixture:**
@@ -87,6 +91,7 @@ Full GDD review is not needed for sub-4-hour single-system features.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Edge Case — File already exists; offered to update
 
 **Fixture:**
@@ -109,6 +114,7 @@ Full GDD review is not needed for sub-4-hour single-system features.
 
 ---
 
+<!-- 用例 4：边界情况 — 未提供参数 -->
 ### Case 4: Edge Case — No argument provided
 
 **Fixture:**
@@ -130,6 +136,7 @@ Full GDD review is not needed for sub-4-hour single-system features.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate — No gate spawned; explicitly noted for sub-4h features
 
 **Fixture:**
@@ -165,6 +172,7 @@ Full GDD review is not needed for sub-4-hour single-system features.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The scope threshold heuristic (sub-4h, single-system) is a judgment call —

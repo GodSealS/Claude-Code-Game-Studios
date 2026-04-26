@@ -82,6 +82,7 @@ Tier 3 — Specialists (Sonnet/Haiku)
   live-ops-designer    community-manager
 ```
 
+<!-- 引擎专家 -->
 ### Engine Specialists
 
 The template includes agent sets for all three major engines. Use the set that matches your project:
@@ -142,6 +143,7 @@ Type `/` in Claude Code to access all 72 skills:
 
 All hooks fail gracefully if optional tools are missing — nothing breaks, you just lose validation.
 
+<!-- 设置 -->
 ### Setup
 
 1. **Clone or use as template**:
@@ -195,6 +197,7 @@ production/                         # Sprint plans, milestones, release tracking
 
 ## How It Works / 工作原理
 
+<!-- 中文翻译 -->
 ### Agent Coordination
 
 Agents follow a structured delegation model:
@@ -205,6 +208,7 @@ Agents follow a structured delegation model:
 4. **Change propagation** — cross-department changes are coordinated by `producer`
 5. **Domain boundaries** — agents don't modify files outside their domain without explicit delegation
 
+<!-- 中文翻译 -->
 ### Collaborative, Not Autonomous
 
 This is **not** an auto-pilot system. Every agent follows a strict collaboration protocol:
@@ -217,6 +221,7 @@ This is **not** an auto-pilot system. Every agent follows a strict collaboration
 
 You stay in control. The agents provide structure and expertise, not autonomy.
 
+<!-- 中文翻译 -->
 ### Automated Safety
 
 **Hooks** run automatically on every session:
@@ -240,6 +245,7 @@ You stay in control. The agents provide structure and expertise, not autonomy.
 
 **Permission rules** in `settings.json` auto-allow safe operations (git status, test runs) and block dangerous ones (force push, `rm -rf`, reading `.env` files).
 
+<!-- 中文翻译 -->
 ### Path-Scoped Rules
 
 Coding standards are automatically enforced based on file location:
@@ -310,48 +316,3 @@ Sponsorships help fund time spent maintaining skills, adding new agents, keeping
 ## License / 许可证
 
 MIT License. See [LICENSE](LICENSE) for details.
-
-Templates (模板) —— ⭐️ 绝对有必要（强烈建议双语/中文） Gemini Pro
-Rules (规则 / 约束) —— 🟡 很有必要（建议双语）
-Skills (技能 / 工作流) —— 🌗 部分有必要（只做交互层双语）
-Agents (代理 / 角色) —— ❌ 没必要（保持纯英文最佳）
-Hooks (钩子 / 触发器) —— ❌ 完全没必要（保持纯英文）
-
-AI 机翻
-将Skill 改为支持中英双语。翻译时只对必要的内容进行双语修改，执行逻辑尽量保持英文，同时优化Skill，剔除冗余的内容保留Skill核心能力。输出新的Skill内容支持一键复制修改后的skill，以支持替换原有的Skill。
-【设定】：你现在是一个资深研发工程师。请将以下Skill的代码文件进行双语（中英）优化。
-【规则】：
-
-1.只翻译向用户展示的文本（如 description、弹窗提问选项、生成的 Markdown 内容）。
-
-2.绝对保留：配置元数据（name、allowed-tools等）、系统变量名、代码匹配正则、内部执行阶段（Phase 1/2/3）。
-
-3.结果请直接输出完整的代码块，不省略任何内容。
-
-【设定】：你现在是一位资深的研发效能专家（Tech Lead）。请将以下 Markdown 模板文件优化为“中英双语”或“保留英文骨架，中文填充细节”的格式，以提升中文团队的使用体验，同时保证底层自动化工具能正常解析。
-
-【核心规则】：
-
-1.标题保留骨架：所有 Markdown 标题（#, ##, ###）必须保留英文原词，因为系统脚本依赖它们进行内容抓取。你可以在英文标题后补充中文（例如：## Player Fantasy / 玩家幻想），但绝对不能删除英文部分。
-
-2.注释全面汉化：所有的指引性文本（如 > [!NOTE] 引用块、说明文字）请直接翻译成通俗易懂的中文，帮助填写者理解这里该写什么。
-
-3.占位符双语化：将需要用户填写的占位符改为易懂的提示（例如：将 [Insert formula here] 改为 [在此处填写公式 / Insert formula here]）。
-
-4.严禁修改的技术项：文件头部的元数据（YAML Frontmatter）、文件路径引用、任何被反引号包裹的代码字段（如 **Status**:，TR-ID），绝对保持原样，不要翻译！
-
-【输出要求】：直接输出修改后的完整 Markdown 内容，不要省略。
-
-【设定】：你现在是一位极其严谨的资深系统架构师。请将以下代码规范/工程约束（Rules）文件优化为中英双语格式。你的目标是：让中文团队能毫无歧义地理解这些规则，同时绝对保证底层 AI Agent 和自动化审查工具对这些规则的精确读取。
-
-【核心规则】：
-
-1.核心标识符绝对保留：所有的 Rule ID（如 NO_GLOBAL_STATE）、报错等级（severity: error）、文件路径限定（如 include: src/**/*.ts）必须保持纯英文原样。
-
-2.约束描述双语化（中英对照）：对于 description、rationale（规则原因）或具体的条文说明，请采用“英文原文 + 中文翻译”的对照格式。如果输入是 Markdown，请在英文句号后加上斜杠和中文（例如：Avoid singletons. / 避免使用单例。）；如果输入是结构化数据（YAML/JSON），请尽量保持在同一个值内双语化。
-
-3.极高标准的技术精确度：翻译必须符合工程开发和引擎领域的专业习惯。遇到诸如 Mesh (网格体)、Vertex Welding (顶点焊接)、Texture Atlases (纹理图集) 等专业图形学或引擎术语时，保留英文或使用“中文 (英文)”的标准形式。严禁使用宽泛的非专业词汇意译。
-
-4.代码块隔离：由反引号包裹的任何代码片段、正则表达式、API 名称、变量名（不论是在行内还是独立的代码块中）绝对不能翻译，原样保留。
-
-【输出要求】：直接输出修改后的完整文件内容（无论是 YAML 还是 Markdown），不要省略任何层级结构。

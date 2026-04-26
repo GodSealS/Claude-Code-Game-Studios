@@ -8,6 +8,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified by reading the agent's `.codebuddy/agents/qa-lead.md` frontmatter:
@@ -21,6 +22,7 @@ Verified by reading the agent's `.codebuddy/agents/qa-lead.md` frontmatter:
 
 ## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出格式 -->
 ### Case 1: In-domain request — appropriate output format
 **Scenario:** A story for "Player takes damage from hazard tiles" is submitted for readiness check. The story has three acceptance criteria: (1) Player health decreases by the hazard's damage value, (2) A damage visual feedback plays, (3) Player cannot take damage again for 0.5 seconds (invincibility window). All three ACs are measurable and specific. Request is tagged QL-STORY-READY.
 **Expected:** Returns `QL-STORY-READY: ADEQUATE` with rationale confirming that all three ACs are present, specific, and testable.
@@ -30,6 +32,7 @@ Verified by reading the agent's `.codebuddy/agents/qa-lead.md` frontmatter:
 - [ ] Rationale references the specific number of ACs (3) and confirms each is measurable
 - [ ] Output stays within QA scope — does not comment on whether the mechanic is designed well
 
+<!-- 用例 2：域外请求 — 重定向或升级 -->
 ### Case 2: Out-of-domain request — redirects or escalates
 **Scenario:** A developer asks qa-lead to implement the automated test harness for the new physics system.
 **Expected:** Agent declines to implement the test code and redirects to the appropriate programmer (gameplay-programmer or lead-programmer).
@@ -38,6 +41,7 @@ Verified by reading the agent's `.codebuddy/agents/qa-lead.md` frontmatter:
 - [ ] Explicitly names `lead-programmer` or `gameplay-programmer` as the correct handler for implementation
 - [ ] May define what the test should verify (test strategy), but defers the code writing to programmers
 
+<!-- 用例 3：门控裁决 — 正确词汇 -->
 ### Case 3: Gate verdict — correct vocabulary
 **Scenario:** A story for "Combat feels responsive and punchy" is submitted for readiness check. The single acceptance criterion reads: "Combat should feel good to the player." This is subjective and unmeasurable. Request is tagged QL-STORY-READY.
 **Expected:** Returns `QL-STORY-READY: INADEQUATE` with specific identification of the unmeasurable AC and guidance on what would make it testable (e.g., "input-to-hit-feedback latency ≤ 100ms").
@@ -47,6 +51,7 @@ Verified by reading the agent's `.codebuddy/agents/qa-lead.md` frontmatter:
 - [ ] Rationale identifies the specific AC that fails the measurability requirement
 - [ ] Provides actionable guidance on how to rewrite the AC to be testable
 
+<!-- 用例 4：冲突升级 — 正确上级 -->
 ### Case 4: Conflict escalation — correct parent
 **Scenario:** gameplay-programmer and qa-lead disagree on whether a test that asserts "enemy patrol path visits all waypoints within 5 seconds" is deterministic enough to be a valid automated test. gameplay-programmer argues timing variability makes it flaky; qa-lead believes it is acceptable.
 **Expected:** qa-lead acknowledges the technical flakiness concern and escalates to lead-programmer for a technical ruling on what constitutes an acceptable determinism standard for automated tests.
@@ -56,6 +61,7 @@ Verified by reading the agent's `.codebuddy/agents/qa-lead.md` frontmatter:
 - [ ] Frames the escalation clearly: "this is a technical standards question, not a QA coverage question"
 - [ ] Does not abandon the coverage requirement — asks for a deterministic alternative if the current approach is ruled flaky
 
+<!-- 用例 5：上下文传递 — 使用提供的上下文 -->
 ### Case 5: Context pass — uses provided context
 **Scenario:** Agent receives a gate context block that includes the coding-standards.md testing standards section, which specifies: Logic stories require blocking automated unit tests, Visual/Feel stories require screenshots + lead sign-off (advisory), Config/Data stories require smoke check pass (advisory). A story classified as "Logic" type is submitted with only a manual walkthrough document as evidence.
 **Expected:** Assessment references the specific test evidence requirements from coding-standards.md, identifies that a "Logic" story requires an automated unit test (not just a manual walkthrough), and returns INADEQUATE with the specific requirement cited.
@@ -79,6 +85,7 @@ Verified by reading the agent's `.codebuddy/agents/qa-lead.md` frontmatter:
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - QL-TEST-COVERAGE (overall coverage assessment for a sprint or milestone) is not covered — a dedicated case should be added when coverage reports are available.
 - Bug severity triage (P0/P1/P2 classification) is not covered here — deferred to /bug-triage skill integration.

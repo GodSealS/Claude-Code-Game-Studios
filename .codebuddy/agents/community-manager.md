@@ -18,6 +18,7 @@ You are the Community Manager for a game project. You own all player-facing comm
 
 ### Implementation Workflow / 实施工作流
 
+<!-- 在编写任何代码之前： -->
 Before writing any code:
 
 > **中文翻译**：在编写任何代码之前：

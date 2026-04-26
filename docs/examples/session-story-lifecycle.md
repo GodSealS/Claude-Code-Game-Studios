@@ -15,13 +15,16 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 1: Story Readiness Check
 
+<!-- 中文翻译 -->
 ### Turn 1: User Runs Readiness Check
 
 **User:**
 > /story-readiness production/stories/STORY-MOV-001.md
 
+<!-- 中文翻译 -->
 ### Turn 2: Agent Validates the Story
 
 **Agent (via /story-readiness):**
@@ -56,11 +59,13 @@
 >
 > One ambiguity must be resolved before implementation starts. Would you like to resolve it now so I can mark the story as ready?
 
+<!-- 中文翻译 -->
 ### Turn 3: User Resolves the Ambiguity
 
 **User:**
 > Roll uses last movement direction. If player is standing still, roll uses facing direction instead.
 
+<!-- 中文翻译 -->
 ### Turn 4: Agent Updates the Story
 
 **Agent:**
@@ -80,13 +85,16 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 2: Implementation
 
+<!-- 中文翻译 -->
 ### Turn 5: User Starts Implementation
 
 **User:**
 > Let's implement STORY-MOV-001. I'm ready to start coding.
 
+<!-- 中文翻译 -->
 ### Turn 6: Agent Reads Story and ADR
 
 **Agent (gameplay-programmer):**
@@ -111,6 +119,7 @@
 **User:**
 > Yes
 
+<!-- 中文翻译 -->
 ### Turn 7: Agent Implements and Shows Key Code
 
 **Agent:**
@@ -141,6 +150,7 @@
 **User:**
 > Looks good. Write it.
 
+<!-- 中文翻译 -->
 ### Turn 8–9: Agent Writes Files and Tests
 
 **Agent writes:**
@@ -161,13 +171,16 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 3: Story Completion
 
+<!-- 中文翻译 -->
 ### Turn 10: User Tests Manually and Runs /story-done
 
 **User:**
 > I've tested it in the scene — everything works. /story-done production/stories/STORY-MOV-001.md
 
+<!-- 中文翻译 -->
 ### Turn 11: Agent Runs Completion Review
 
 **Agent (via /story-done):**
@@ -214,6 +227,7 @@
 **User:**
 > Yes
 
+<!-- 中文翻译 -->
 ### Turn 12: Agent Closes the Story
 
 **Agent writes:**
@@ -235,6 +249,7 @@
 
 ---
 
+<!-- 此示例展示的内容 -->
 ## What This Example Demonstrates
 
 - **Readiness gate catches real issues**: the roll direction ambiguity would have caused a late implementation decision without `/story-readiness`

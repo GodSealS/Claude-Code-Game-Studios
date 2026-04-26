@@ -14,11 +14,13 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Turn 1: User Escalates Problem to Creative Director
 
 **User:**
 > We have a problem. Alpha is in 2 weeks. The crafting system (Pillar 2 "Emergent Discovery") isn't implemented yet. Lead programmer says it'll take 3 weeks to implement fully. But the investor demo is at Alpha and they need to see both pillars (Combat + Crafting). What should I do?
 
+<!-- 中文翻译 -->
 ## Turn 2: Creative Director Gathers Full Context
 
 **Agent (creative-director):**
@@ -45,6 +47,7 @@
 > 4. How **critical** is this investor relationship? (Nice-to-have funding vs. make-or-break for project survival?)
 > 5. What's the **team status**? (Burned out from crunch? Fresh and could push if needed?)
 
+<!-- 中文翻译 -->
 ## Turn 3: User Provides Decision Context
 
 **User:**
@@ -54,6 +57,7 @@
 > 4. Make-or-break. This investor is our only lead. No funding = project dies.
 > 5. Just me solo, I'm not burned out yet.
 
+<!-- 中文翻译 -->
 ## Turn 4: Creative Director Frames the Decision
 
 **Agent:**
@@ -76,6 +80,7 @@
 >
 > Now let me present three strategic options...
 
+<!-- 中文翻译 -->
 ## Turn 5: Creative Director Presents Options with Analysis
 
 **Agent:**
@@ -194,11 +199,13 @@
 >
 > What's your decision?
 
+<!-- 中文翻译 -->
 ## Turn 6: User Makes Decision
 
 **User:**
 > Option B. The investor is technical and will appreciate the systems thinking even if it's rough. Let's simplify the crafting scope to make Alpha. Can you create the ADR and update the GDD?
 
+<!-- 中文翻译 -->
 ## Turn 7: Creative Director Documents Decision
 
 **Agent:**
@@ -286,6 +293,7 @@
 >
 > May I proceed to write these documents?
 
+<!-- 中文翻译 -->
 ## Turn 8: User Approves and Agent Completes
 
 **User:**
@@ -324,6 +332,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Session Summary
 
 **What Worked Well:**

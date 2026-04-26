@@ -35,6 +35,7 @@ This skill bridges planning and code. It reads a story file in full, assembles a
 
 ---
 
+<!-- 第 1 阶段：查找故事 -->
 ## Phase 1: Find the Story
 
 **If a path is provided**: read that file directly.
@@ -46,6 +47,7 @@ If not found, ask: "Which story are we implementing?" Glob
 
 ---
 
+<!-- 第 2 阶段：加载完整上下文 -->
 ## Phase 2: Load Full Context
 > **中文翻译**：## 第 2 阶段：加载完整上下文
 
@@ -81,6 +83,7 @@ Read all of the following simultaneously — these are independent reads. Do not
 > **中文翻译**：同时阅读以下所有内容——这些是独立的阅读。在加载所有上下文之前不要开始实施：
 
 
+<!-- 中文翻译 -->
 ### The story file Extract and hold:
 > **中文翻译**：### 故事文件解压并保存：
 
@@ -104,10 +107,12 @@ Read all of the following simultaneously — these are independent reads. Do not
   > **中文翻译**：**依赖关系** — 在这个故事之前必须完成什么
 
 
+<!-- 中文翻译 -->
 ### The TR registry Read `docs/architecture/tr-registry.yaml`. Look up the story's TR-ID. Read the current `requirement` text — this is the source of truth for what the GDD requires now. Do not rely on any inline text in the story file (may be stale).
 > **中文翻译**：### TR 注册表 阅读 `docs/architecture/tr-registry.yaml`。 Look up the story's TR-ID.阅读当前的“要求”文本——这是 GDD 现在要求的事实来源。不要依赖故事文件中的任何内嵌文本（可能已过时）。
 
 
+<!-- 中文翻译 -->
 ### The governing ADR Read `docs/architecture/[adr-file].md`. Extract:
 > **中文翻译**：### 管理 ADR 阅读 `docs/architecture/[adr-file].md`。提炼：
 
@@ -121,6 +126,7 @@ Read all of the following simultaneously — these are independent reads. Do not
   > **中文翻译**：ADR 依赖性部分
 
 
+<!-- 中文翻译 -->
 ### The control manifest Read `docs/architecture/control-manifest.md`. Extract the rules for this story's layer:
 > **中文翻译**：### 控制清单 阅读 `docs/architecture/control-manifest.md`。提取该故事层的规则：
 
@@ -151,6 +157,7 @@ If [A]: edit the story file's `Manifest Version:` field to the current manifest 
 > **中文翻译**：如果 [A]：在生成程序员之前将故事文件的“清单版本：”字段编辑为当前清单日期。然后仔细阅读清单以了解新规则。如果 [B]：无论如何都要仔细阅读清单以了解新规则，并注意“偏差”下第 6 阶段摘要中的版本不匹配。如果[C]：停止。不要生成任何代理。让用户查看并重新运行“/dev-story”。
 
 
+<!-- 中文翻译 -->
 ### Dependency validation
 > **中文翻译**：### 依赖验证
 
@@ -191,6 +198,7 @@ If a dependency file cannot be found: warn "Dependency story not found: [path]. 
 
 ---
 
+<!-- 中文翻译 -->
 ### Engine reference
 Read `.codebuddy/docs/technical-preferences.md`:
 - `Engine:` value — determines which programmer agents to use
@@ -200,6 +208,7 @@ Read `.codebuddy/docs/technical-preferences.md`:
 
 ---
 
+<!-- 第 3 阶段：路由到合适的程序员 -->
 ## Phase 3: Route to the Right Programmer
 > **中文翻译**：## 第三阶段：找到合适的程序员
 
@@ -212,6 +221,7 @@ Based on the story's **Layer**, **Type**, and **system name**, determine which s
 > **中文翻译**：**配置/数据故事 - 完全跳过代理生成：**如果故事的类型是“配置/数据”，则不需要程序员代理或引擎专家。直接跳转到第 4 阶段（配置/数据注释）。实施是数据文件编辑——没有路由表评估，没有引擎专家。
 
 
+<!-- 中文翻译 -->
 ### Primary agent routing table
 > **中文翻译**：### 主代理路由表
 
@@ -272,6 +282,7 @@ Read the `Engine Specialists` section of `.codebuddy/docs/technical-preferences.
 
 ---
 
+<!-- 第 4 阶段：实现 -->
 ## Phase 4: Implement
 
 Spawn the chosen programmer agent(s) via Task with the full context package:
@@ -292,6 +303,7 @@ The agent should:
 - Stay within the story's Out of Scope boundaries (do not touch unrelated files)
 - Write clean, doc-commented public APIs
 
+<!-- 中文翻译 -->
 ### Config/Data stories (no agent needed)
 
 For Type: Config/Data stories, no programmer agent is required. The implementation
@@ -299,6 +311,7 @@ is editing a data file. Read the story's acceptance criteria and make the specif
 changes to the data file directly. Note which values were changed and what they
 changed from/to.
 
+<!-- 中文翻译 -->
 ### Visual/Feel stories
 
 Spawn `gameplay-programmer` to implement the code/animation calls. Note that
@@ -307,6 +320,7 @@ check happens in `/story-done` via manual confirmation.
 
 ---
 
+<!-- 第 5 阶段：编写测试 -->
 ## Phase 5: Write the Test
 > **中文翻译**：## 第 5 阶段：编写测试
 
@@ -348,6 +362,7 @@ For **Config/Data** stories: no test file. A smoke check will serve as evidence.
 
 ---
 
+<!-- 第 6 阶段：收集和总结 -->
 ## Phase 6: Collect and Summarise
 
 After the programmer agent(s) complete, collect:
@@ -381,6 +396,7 @@ Ready for: `/code-review [file1] [file2]` then `/story-done [story-path]`
 
 ---
 
+<!-- 第 7 阶段：更新会话状态 -->
 ## Phase 7: Update Session State
 > **中文翻译**：## 第 7 阶段：更新会话状态
 
@@ -404,6 +420,7 @@ Create `active.md` if it does not exist. Confirm: "Session state updated."
 
 ---
 
+<!-- 错误恢复协议 -->
 ## Error Recovery Protocol
 
 If any spawned agent (via Task) returns BLOCKED, errors, or cannot complete:
@@ -423,6 +440,7 @@ Common blockers:
 - Conflicting instructions between ADR and story → surface the conflict, do not guess
 - Manifest version mismatch → show diff to user, ask whether to proceed with old rules or update story first
 
+<!-- 协作协议 -->
 ## Collaborative Protocol
 
 - **File writes are delegated** — all source code, test files, and evidence docs are written by sub-agents spawned via Task. Each sub-agent enforces the "May I write to [path]?" protocol individually. This orchestrator does not write files directly.
@@ -446,6 +464,7 @@ Common blockers:
 
 ---
 
+<!-- 推荐后续步骤 -->
 ## Recommended Next Steps
 > **中文翻译**：## 建议的后续步骤
 

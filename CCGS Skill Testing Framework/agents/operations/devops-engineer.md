@@ -9,6 +9,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references CI/CD, build, deployment, version control)
@@ -20,6 +21,7 @@
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: In-domain request — CI setup for a Godot project
 **Input**: "Set up a CI pipeline for our Godot 4 project. It should run tests on every push to main and every pull request, and fail the build if tests fail."
 **Expected behavior**:
@@ -29,6 +31,7 @@
 - Sets the job to fail (`exit 1` or non-zero exit) when tests fail — does NOT configure the pipeline to continue on test failure
 - References the project's coding standards CI rules in the output or comments
 
+<!-- 中文翻译 -->
 ### Case 2: Out-of-domain request — game networking implementation
 **Input**: "Implement the server-authoritative movement system for our multiplayer game."
 **Expected behavior**:
@@ -36,6 +39,7 @@
 - States clearly: "Game networking implementation is owned by network-programmer; I handle the infrastructure that builds, tests, and deploys the game"
 - Does not conflate CI pipeline configuration with in-game network architecture
 
+<!-- 中文翻译 -->
 ### Case 3: Build failure diagnosis
 **Input**: "Our CI pipeline is failing on the merge step. The error is: 'Asset import failed: texture compression format unsupported in headless mode.'"
 **Expected behavior**:
@@ -44,6 +48,7 @@
 - Does NOT declare the pipeline unfixable — provides at least one actionable path
 - Notes any tradeoffs (committing .import files increases repo size; CPU compression may differ from GPU output)
 
+<!-- 中文翻译 -->
 ### Case 4: Branching strategy conflict
 **Input**: "Half the team wants to use GitFlow with long-lived feature branches. The other half wants trunk-based development. How should we set this up?"
 **Expected behavior**:
@@ -53,6 +58,7 @@
 - Explains how to implement trunk-based development with short-lived feature branches and feature flags if needed
 - Does NOT override the project convention without flagging that doing so requires updating CLAUDE.md
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — platform-specific build matrix
 **Input context**: Project targets PC (Windows, Linux), Nintendo Switch, and PlayStation 5.
 **Input**: "Set up our CI build matrix so we get a build artifact for each target platform on every release branch push."
@@ -74,6 +80,7 @@
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Case 1 (Godot CI) references `coding-standards.md` CI rules — verify this file is present and current before running this test
 - Case 4 (branching strategy) is a convention-enforcement test — agent must know the project convention, not just give neutral advice

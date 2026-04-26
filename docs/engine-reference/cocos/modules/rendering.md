@@ -1,7 +1,11 @@
-# Cocos Creator — Rendering Module
+# Cocos Creator — Rendering Module / Cocos Creator渲染模块
+
+
+> **中文翻译**：本文档为Cocos Creator引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 Last verified: 2026-04-25
 
+<!-- 核心类型 -->
 ## Core Types
 
 | Type | Purpose |
@@ -13,6 +17,7 @@ Last verified: 2026-04-25
 | `DeferredPipeline` | Deferred rendering (3.8+, desktop) |
 | `Custom Render Pipeline` | Visual node-based pipeline editor |
 
+<!-- 中文翻译 -->
 ## Camera Setup
 
 ```typescript
@@ -28,6 +33,7 @@ camera.far = 1000;
 const ray = camera.screenPointToRay(screenX, screenY);
 ```
 
+<!-- 中文翻译 -->
 ## Rendering Pipeline (3.8+)
 
 ```typescript
@@ -38,6 +44,7 @@ const pipeline = director.root.pipeline;
 // Code access limited; prefer editor configuration
 ```
 
+<!-- 中文翻译 -->
 ## Post-Processing (CRP)
 
 Enable in Project Settings → Rendering → Render Pipeline:
@@ -46,6 +53,7 @@ Enable in Project Settings → Rendering → Render Pipeline:
 - **Color Grading**: LUT-based color correction
 - **Vignette**: Edge darkening
 
+<!-- Draw Call 优化 -->
 ## Draw Call Optimization
 
 | Technique | When to Use |
@@ -55,6 +63,7 @@ Enable in Project Settings → Rendering → Render Pipeline:
 | LOD Groups | 3D models at varying distances |
 | Occlusion Culling | Complex indoor scenes |
 
+<!-- 陷阱 -->
 ## Pitfalls
 
 - WRONG: Creating materials at runtime frequently

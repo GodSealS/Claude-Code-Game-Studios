@@ -7,6 +7,7 @@
 - **Gate IDs**: AUDIO-SPEC-REVIEW
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references SFX / audio events / mixing)
@@ -18,6 +19,7 @@
 
 ## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出 -->
 ### Case 1: In-domain request — appropriate output
 **Input:** "Create an SFX spec for a sword swing attack."
 **Expected behavior:**
@@ -30,6 +32,7 @@
   - Suggested layering notes (whoosh layer + impact transient)
 - Output follows the project audio naming convention if one is established
 
+<!-- 用例 2：域外请求 — 正确重定向 -->
 ### Case 2: Out-of-domain request — redirects correctly
 **Input:** "Compose a looping ambient music track for the forest level."
 **Expected behavior:**
@@ -38,6 +41,7 @@
 - Redirects the request to `audio-director`
 - May note it can provide an SFX ambience layer spec (wind, wildlife) to complement the music once the music direction is set
 
+<!-- 中文翻译 -->
 ### Case 3: Dynamic parameter — falloff curve spec
 **Input:** "The sword swing SFX needs distance falloff so it sounds different across the arena."
 **Expected behavior:**
@@ -48,6 +52,7 @@
   - Occlusion override behavior if applicable
 - Does NOT write the audio engine integration code (defers to the appropriate programmer)
 
+<!-- 中文翻译 -->
 ### Case 4: Naming convention conflict
 **Input:** "Add a new SFX event called `SWORD_HIT_1` for the melee system."
 **Expected behavior:**
@@ -57,6 +62,7 @@
 - Will proceed with the corrected name once confirmed by audio-director
 - Produces a CSV or Table format mapping the rejected name to the proposed name for batch updating.
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — uses audio style guide
 **Input:** Audio style guide provided in context specifying: "gritty, grounded, no reverb tails over 1.5s, reference: The Witcher 3 combat audio." Request: "Create SFX specs for the full melee combat suite."
 **Expected behavior:**
@@ -79,6 +85,7 @@
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - SFX spec format (Case 1) should match whatever event schema the audio middleware (Wwise/FMOD/built-in) requires
 - Falloff curve (Case 3) verifies the agent produces implementation-ready parameter specs

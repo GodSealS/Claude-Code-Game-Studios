@@ -16,6 +16,7 @@ documented) or PROTOTYPE ABANDONED (mechanic found to be unworkable).
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -28,6 +29,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. Prototypes are throwaway validation artifacts. No director gates apply.
@@ -36,6 +38,7 @@ None. Prototypes are throwaway validation artifacts. No director gates apply.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Mechanic concept prototyped, findings documented
 
 **Fixture:**
@@ -65,6 +68,7 @@ None. Prototypes are throwaway validation artifacts. No director gates apply.
 
 ---
 
+<!-- 用例 2：原型已存在 — 提供扩展、替换或归档 -->
 ### Case 2: Prototype Already Exists — Offers Extend, Replace, or Archive
 
 **Fixture:**
@@ -90,6 +94,7 @@ None. Prototypes are throwaway validation artifacts. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Prototype Validates Mechanic — Recommends Proceeding to Production
 
 **Fixture:**
@@ -113,6 +118,7 @@ None. Prototypes are throwaway validation artifacts. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Prototype Reveals Mechanic is Unworkable — PROTOTYPE ABANDONED
 
 **Fixture:**
@@ -138,6 +144,7 @@ None. Prototypes are throwaway validation artifacts. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate Check — No gate; prototypes are validation artifacts
 
 **Fixture:**
@@ -168,6 +175,7 @@ None. Prototypes are throwaway validation artifacts. No director gates apply.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - Prototype implementation quality (code style) is intentionally not tested —

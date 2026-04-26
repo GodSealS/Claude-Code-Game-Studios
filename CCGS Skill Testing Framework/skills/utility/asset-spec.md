@@ -15,6 +15,7 @@ director gates apply. The verdict is COMPLETE when all requested specs are writt
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -27,6 +28,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. `/asset-spec` is a design documentation utility. Technical artists may
@@ -36,6 +38,7 @@ review specs separately but this is not a gate within this skill.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Enemy sprite spec with full GDD and art bible
 
 **Fixture:**
@@ -66,6 +69,7 @@ review specs separately but this is not a gate within this skill.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: No Art Bible Found — Spec with Placeholder Style Notes, Dependency Flagged
 
 **Fixture:**
@@ -90,6 +94,7 @@ review specs separately but this is not a gate within this skill.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Asset Spec Already Exists — Offers to Update
 
 **Fixture:**
@@ -116,6 +121,7 @@ review specs separately but this is not a gate within this skill.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Multiple Assets Requested — May-I-Write Per Asset
 
 **Fixture:**
@@ -139,6 +145,7 @@ review specs separately but this is not a gate within this skill.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate Check — No gate; asset-spec is a design utility
 
 **Fixture:**
@@ -169,6 +176,7 @@ review specs separately but this is not a gate within this skill.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - Audio asset specs (sound effects, music) follow the same structure with

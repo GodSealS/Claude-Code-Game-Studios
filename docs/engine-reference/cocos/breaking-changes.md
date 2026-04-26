@@ -1,58 +1,63 @@
-# Cocos Creator — Breaking Changes
+# Cocos Creator — 破坏性变更
 
-Last verified: 2026-04-25
+最后验证：2026-04-25
 
+<!-- 中文翻译 -->
 ## 3.6 → 3.7
 
-### Rendering Pipeline
-- **Change**: Introduction of Custom Render Pipeline (CRP) as experimental
-- **Impact**: Projects using built-in forward pipeline remain compatible, but advanced rendering features now require CRP setup
-- **Migration**: Enable CRP in Project Settings → Rendering
+### 渲染管线
+- **变更**：引入自定义渲染管线（CRP）实验版
+- **影响**：使用内置前向管线的项目保持兼容，但高级渲染功能需要 CRP 设置
+- **迁移**：在项目设置 → 渲染中启用 CRP
 
+<!-- 中文翻译 -->
 ### Asset Bundle
-- **Change**: Asset bundle format version increment
-- **Impact**: Old bundles may need rebuild
-- **Migration**: Rebuild all asset bundles after upgrade
+- **变更**：Asset Bundle 格式版本号递增
+- **影响**：旧版 Bundle 可能需要重新构建
+- **迁移**：升级后重新构建所有 Asset Bundle
 
+<!-- 中文翻译 -->
 ## 3.7 → 3.8
 
-### Custom Render Pipeline (Stable)
-- **Change**: CRP moves from experimental to stable; built-in post-processing framework added
-- **Impact**: Projects using custom render pipelines need to update to new CRP API
-- **Migration**: Review `rendering.renderPipeline` setting; update custom pipeline assets
+### 自定义渲染管线（稳定版）
+- **变更**：CRP 从实验版升级为稳定版；内置后处理框架
+- **影响**：使用自定义渲染管线的项目需要更新到新 CRP API
+- **迁移**：检查 `rendering.renderPipeline` 设置；更新自定义管线资产
 
-### Deferred Rendering
-- **Change**: Deferred rendering pipeline introduced for 3D
-- **Impact**: New option for high-end 3D projects; not default
-- **Migration**: Opt-in via Project Settings; requires compatible hardware
+### 延迟渲染
+- **变更**：为 3D 引入延迟渲染管线
+- **影响**：高端 3D 项目的新选项；非默认
+- **迁移**：通过项目设置选择启用；需要兼容硬件
 
-### Material System
-- **Change**: Material inspector and shader graph updates
-- **Impact**: Some custom shaders may show different inspector layout
-- **Migration**: Re-save custom effect assets in editor
+### 材质系统
+- **变更**：材质检查器和着色器图更新
+- **影响**：部分自定义着色器可能显示不同的检查器布局
+- **迁移**：在编辑器中重新保存自定义 Effect 资产
 
+<!-- 中文翻译 -->
 ## 3.8.2 → 3.8.3
 
-### Asset Management
-- **Change**: Asset bundle loading API refinements
-- **Impact**: `assetManager.loadBundle()` behavior more strict
-- **Migration**: Ensure bundle names match configuration exactly
+### 资源管理
+- **变更**：Asset Bundle 加载 API 细化
+- **影响**：`assetManager.loadBundle()` 行为更加严格
+- **迁移**：确保 Bundle 名称与配置完全匹配
 
+<!-- 中文翻译 -->
 ## 3.8.3 → 3.8.5
 
-### Package Size Optimization
-- **Change**: Default project templates restructured for smaller builds
-- **Impact**: New projects default to smaller package sizes
-- **Migration**: Existing projects can opt into optimizations via Build Panel settings
-- **Details**:
-  - 2D empty project: ~360KB reduction
-  - 3D empty project: ~384KB reduction
-  - WeChat Mini Game 2D: ~160KB reduction with compressed engine internal properties
+### 包体大小优化
+- **变更**：默认项目模板重构，构建体积更小
+- **影响**：新项目默认为更小的包体
+- **迁移**：现有项目可通过构建面板设置选择性启用优化
+- **细节**：
+  - 2D 空项目：~360KB 缩减
+  - 3D 空项目：~384KB 缩减
+  - 微信小游戏 2D：~160KB 缩减（压缩引擎内部属性）
 
-## Cross-Version Patterns to Watch
+## 跨版本需注意的模式
 
-| Pattern | Affected Versions | Mitigation |
-|---------|-------------------|------------|
-| `@property` decorator changes | 3.7+ | Use `type` parameter explicitly; avoid implicit type inference |
-| Physics API sync → async | 3.6+ | Use `PhysicsSystem.instance.raycast()` return patterns carefully |
-| UI coordinate system | 3.8+ | `Widget` alignment behaviors slightly changed for nested canvases |
+| 模式 | 受影响版本 | 缓解措施 |
+|------|-----------|----------|
+| `@property` 装饰器变更 | 3.7+ | 显式使用 `type` 参数；避免隐式类型推断 |
+| 物理 API 同步→异步 | 3.6+ | 注意 `PhysicsSystem.instance.raycast()` 返回模式 |
+| UI 坐标系统 | 3.8+ | `Widget` 对齐行为在嵌套 Canvas 中略有变化 |

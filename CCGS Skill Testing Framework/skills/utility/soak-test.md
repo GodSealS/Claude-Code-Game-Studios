@@ -16,6 +16,7 @@ is COMPLETE when the soak test protocol is written.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -28,6 +29,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. `/soak-test` is a QA planning utility. No director gates apply.
@@ -36,6 +38,7 @@ None. `/soak-test` is a QA planning utility. No director gates apply.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Online gameplay feature, 2-hour soak protocol
 
 **Fixture:**
@@ -62,6 +65,7 @@ None. `/soak-test` is a QA planning utility. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: No Target Defined — Prompts for system, duration, and conditions
 
 **Fixture:**
@@ -86,6 +90,7 @@ None. `/soak-test` is a QA planning utility. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Previous Soak Test Exists — Offers to extend or add conditions
 
 **Fixture:**
@@ -112,6 +117,7 @@ None. `/soak-test` is a QA planning utility. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Mobile Target Platform — Memory-specific checkpoints added
 
 **Fixture:**
@@ -137,6 +143,7 @@ None. `/soak-test` is a QA planning utility. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate Check — No gate; soak-test is a planning utility
 
 **Fixture:**
@@ -167,6 +174,7 @@ None. `/soak-test` is a QA planning utility. No director gates apply.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - Soak tests for specific engine subsystems (rendering pipeline, physics

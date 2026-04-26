@@ -29,7 +29,7 @@ Design and implement user interfaces for WeChat Mini Games following platform st
 6. **Sets up data binding** — GameState → ViewModel → UI reactive pipeline / **设置数据绑定** — GameState → ViewModel → UI 响应式管道
 7. **Creates screen manager** — Stack-based navigation with transitions and lifecycle / **创建屏幕管理器** — 基于堆栈的导航，具有过渡效果和生命周期
 
-## Usage
+## Usage / 用法
 
 ```
 /wechat-ui-design init [project-name]
@@ -39,24 +39,24 @@ Design and implement user interfaces for WeChat Mini Games following platform st
 /wechat-ui-design screen [screen-name]
 ```
 
-## Example
+## Example / 示例
 
 ```
 /wechat-ui-design init "MyGame"
 ```
 
-This will:
-- Create Figma/Sketch project structure
-- Set up design tokens (colors, typography, spacing)
-- Define component library (buttons, cards, icons)
-- Create screen templates (Home, Game, Shop, Settings)
-- Set up WeChat design system compliance
-- Create data binding infrastructure
-- Set up screen navigation stack
+This will: / 这将：
+- Create Figma/Sketch project structure / 创建 Figma/Sketch 项目结构
+- Set up design tokens (colors, typography, spacing) / 设置设计令牌（颜色、排版、间距）
+- Define component library (buttons, cards, icons) / 定义组件库（按钮、卡片、图标）
+- Create screen templates (Home, Game, Shop, Settings) / 创建屏幕模板（主页、游戏、商店、设置）
+- Set up WeChat design system compliance / 设置微信设计系统合规性
+- Create data binding infrastructure / 创建数据绑定基础设施
+- Set up screen navigation stack / 设置屏幕导航堆栈
 
-## Output
+## Output / 输出
 
-Creates the following structure:
+Creates the following structure: / 创建以下结构：
 
 ```
 ui-design/
@@ -94,16 +94,17 @@ ui-design/
     └── accessibility.md      # Accessibility compliance guide
 ```
 
-## Design Standards Compliance
+## Design Standards Compliance / 设计标准合规性
 
-- iOS Human Interface Guidelines (touch targets, typography, safe areas)
-- WeChat Mini Game design standards (colors, patterns)
-- Mobile-first responsive design
-- **Portrait-first layout** — All screens designed for vertical orientation by default
-- **Touch targets** — Minimum 48x48dp for all interactive elements
-- **Safe area** — Auto-adapt for notch, home indicator, and status bar
-- Accessibility considerations (contrast, touch targets, screen reader support)
+- iOS Human Interface Guidelines (touch targets, typography, safe areas) / iOS 人机界面指南（触摸目标、排版、安全区域）
+- WeChat Mini Game design standards (colors, patterns) / 微信小游戏设计标准（颜色、模式）
+- Mobile-first responsive design / 移动优先的响应式设计
+- **Portrait-first layout** — All screens designed for vertical orientation by default / **竖屏优先布局** — 所有屏幕默认设计为垂直方向
+- **Touch targets** — Minimum 48x48dp for all interactive elements / **触摸目标** — 所有交互元素最小 48x48dp
+- **Safe area** — Auto-adapt for notch, home indicator, and status bar / **安全区域** — 自动适配刘海屏、主页指示器和状态栏
+- Accessibility considerations (contrast, touch targets, screen reader support) / 可访问性考虑（对比度、触摸目标、屏幕阅读器支持）
 
+<!-- FairyGUI 功能 -->
 ## FairyGUI Features
 
 - Auto-layout with anchors and stretch (portrait-optimized)
@@ -115,6 +116,7 @@ ui-design/
 - **Screen navigation** — Stack-based with push/pop and transitions
 - **Object pooling** — Recycle UI elements instead of create/destroy
 
+<!-- 数据绑定系统 -->
 ## Data Binding System
 
 ```typescript

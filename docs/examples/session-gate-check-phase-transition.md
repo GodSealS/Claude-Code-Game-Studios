@@ -15,11 +15,13 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Turn 1: User Initiates Gate Check
 
 **User:**
 > /gate-check
 
+<!-- 中文翻译 -->
 ## Turn 2: Agent Detects Current Phase and Runs the Check
 
 **Agent (via /gate-check):**
@@ -65,11 +67,13 @@
 >
 > **May I advance `production/stage.txt` to `technical-setup`?**
 
+<!-- 中文翻译 -->
 ## Turn 3: User Confirms
 
 **User:**
 > Yes, advance it.
 
+<!-- 中文翻译 -->
 ## Turn 4: Agent Updates Stage and Presents Next Steps
 
 **Agent:**
@@ -102,11 +106,13 @@
 >
 > **Tip:** Start with `/architecture-decision` for the item stack size conflict. It's a quick win that closes an open question before it creates ambiguity in two ADRs later.
 
+<!-- 中文翻译 -->
 ## Turn 5: User Asks About the Cross-Review Concern
 
 **User:**
 > What do I actually write in the ADR for the stack size conflict?
 
+<!-- 中文翻译 -->
 ## Turn 6: Agent Advises
 
 **Agent:**
@@ -130,6 +136,7 @@
 >
 > Run `/architecture-decision` and it will guide you through the ADR format, including the Dependencies section that links this ADR back to the two GDDs.
 
+<!-- 中文翻译 -->
 ## Turn 7: User Wraps Up
 
 **User:**
@@ -142,6 +149,7 @@
 
 ---
 
+<!-- 此示例展示的内容 -->
 ## What This Example Demonstrates
 
 - **Gate check is automated, not manual**: agent reads artifacts and checks them — user doesn't fill out a form

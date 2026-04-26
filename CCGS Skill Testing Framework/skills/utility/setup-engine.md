@@ -16,6 +16,7 @@ fully written.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -28,6 +29,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. `/setup-engine` is a technical configuration skill. No director gates apply.
@@ -36,6 +38,7 @@ None. `/setup-engine` is a technical configuration skill. No director gates appl
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Godot 4 + GDScript — Full engine configuration
 
 **Fixture:**
@@ -67,6 +70,7 @@ None. `/setup-engine` is a technical configuration skill. No director gates appl
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Unity + C# — Unity-specific configuration
 
 **Fixture:**
@@ -92,6 +96,7 @@ None. `/setup-engine` is a technical configuration skill. No director gates appl
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Unreal + Blueprint — Unreal-specific configuration
 
 **Fixture:**
@@ -116,6 +121,7 @@ None. `/setup-engine` is a technical configuration skill. No director gates appl
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Engine Already Configured — Offers to reconfigure specific sections
 
 **Fixture:**
@@ -141,6 +147,7 @@ None. `/setup-engine` is a technical configuration skill. No director gates appl
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate Check — No gate; setup-engine is a utility skill
 
 **Fixture:**
@@ -171,6 +178,7 @@ None. `/setup-engine` is a technical configuration skill. No director gates appl
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - Godot 4 + C# (instead of GDScript) follows the same flow as Case 1 with

@@ -8,6 +8,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified by reading the agent's `.codebuddy/agents/systems-designer.md` frontmatter:
@@ -21,6 +22,7 @@ Verified by reading the agent's `.codebuddy/agents/systems-designer.md` frontmat
 
 ## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出格式 -->
 ### Case 1: In-domain request — appropriate output format
 **Scenario:** A damage formula is submitted for review: `damage = base_attack * (1 + strength_modifier * 0.1) - defense * 0.5`, with defined ranges: base_attack [10–100], strength_modifier [0–20], defense [0–50]. The formula produces positive damage across all valid input ranges, scales smoothly, and has no division-by-zero or overflow risk within the defined value bounds.
 **Expected:** Returns `APPROVED` with rationale confirming the formula is balanced within the design parameters, produces valid output across the full input range, and has no degenerate cases.
@@ -30,6 +32,7 @@ Verified by reading the agent's `.codebuddy/agents/systems-designer.md` frontmat
 - [ ] Output stays within systems domain — does not comment on whether the mechanic is fun or how to implement it
 - [ ] Verdict is clearly labeled with context (e.g., "Formula Review: APPROVED")
 
+<!-- 用例 2：域外请求 — 重定向或升级 -->
 ### Case 2: Out-of-domain request — redirects or escalates
 **Scenario:** A writer asks systems-designer to draft the quest script for a side quest that rewards the player with a rare crafting ingredient.
 **Expected:** Agent declines to write quest script content and redirects to writer or narrative-director.
@@ -38,6 +41,7 @@ Verified by reading the agent's `.codebuddy/agents/systems-designer.md` frontmat
 - [ ] Explicitly names `writer` or `narrative-director` as the correct handler
 - [ ] May note the systems implications of the reward (e.g., "this ingredient should be rare enough to matter per the crafting economy model"), but defers all script writing to the narrative team
 
+<!-- 用例 3：门控裁决 — 正确词汇 -->
 ### Case 3: Gate verdict — correct vocabulary
 **Scenario:** A damage scaling formula is submitted: `damage = base_attack * level_multiplier`, where `level_multiplier = (player_level / enemy_level) ^ 2`. At max player level (50) against a min-level enemy (1), the multiplier is 2500x — producing 25,000+ damage from a 10-base-attack weapon, far exceeding any meaningful balance. This is a degenerate case at max level.
 **Expected:** Returns `NEEDS REVISION` with specific identification of the degenerate case: at max level vs. min enemy, the formula produces a 2500x multiplier that destroys any balance ceiling.
@@ -47,6 +51,7 @@ Verified by reading the agent's `.codebuddy/agents/systems-designer.md` frontmat
 - [ ] Identifies the specific formula component causing the issue (the squared ratio)
 - [ ] Suggests at least one revision approach (e.g., clamping the ratio, using a log scale) without mandating a choice
 
+<!-- 用例 4：冲突升级 — 正确上级 -->
 ### Case 4: Conflict escalation — correct parent
 **Scenario:** game-designer wants a simple, 2-variable damage formula for player intuitiveness. systems-designer argues that a 6-variable formula with elemental interactions is necessary for the depth of the combat system. Neither can agree on the right level of complexity.
 **Expected:** systems-designer presents the trade-offs clearly — the tuning granularity of the 6-variable system versus the player legibility of the 2-variable system — and escalates to creative-director for a player experience ruling. The question of "how complex should the formula be for players" is a player experience question, not a pure math question.
@@ -56,6 +61,7 @@ Verified by reading the agent's `.codebuddy/agents/systems-designer.md` frontmat
 - [ ] Does not unilaterally impose the 6-variable formula over game-designer's objection
 - [ ] Remains available to implement whichever complexity level is approved
 
+<!-- 用例 5：上下文传递 — 使用提供的上下文 -->
 ### Case 5: Context pass — uses provided context
 **Scenario:** Agent receives a gate context block that includes current balance data: enemy HP values range from 100 to 10,000; player attack values range from 15 to 150; target time-to-kill is 8–12 seconds at balanced matchups; the current formula is under review. A proposed revised formula is submitted.
 **Expected:** Assessment runs the proposed formula against the provided balance data (minimum and maximum input pairs, balanced matchup scenario) and verifies the time-to-kill falls within the 8–12 second target window. References specific numbers from the provided data.
@@ -77,6 +83,7 @@ Verified by reading the agent's `.codebuddy/agents/systems-designer.md` frontmat
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Progression curve review (XP curves, level-up scaling) is not covered — a dedicated case should be added.
 - Economy model review (resource generation and sink rates, inflation prevention) is not covered.

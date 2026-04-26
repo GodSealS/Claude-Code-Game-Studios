@@ -33,6 +33,7 @@
 
 ---
 
+<!-- 核心幻想 -->
 ## Core Fantasy
 
 [What power, experience, or feeling does the player get from this game?
@@ -69,11 +70,13 @@ The hook should be / 卖点应该：
 
 ---
 
+<!-- 中文翻译 -->
 ## Player Experience Analysis (MDA Framework)
 
 The MDA (Mechanics-Dynamics-Aesthetics) framework ensures we design from the
 player's emotional experience backward to the systems that create it.
 
+<!-- 中文翻译 -->
 ### Target Aesthetics (What the player FEELS)
 Rank the following aesthetic goals for this game (1 = primary, mark N/A if not
 relevant). These come from the MDA framework's 8 aesthetic categories:
@@ -89,6 +92,7 @@ relevant). These come from the MDA framework's 8 aesthetic categories:
 | **Expression** (self-expression, creativity) | [Priority] | [Build variety, cosmetics, creation tools] |
 | **Submission** (relaxation, comfort zone) | [Priority] | [Low-stress loops, ambient gameplay] |
 
+<!-- 中文翻译 -->
 ### Key Dynamics (Emergent player behaviors)
 [What behaviors do we WANT to emerge from our mechanics? What should players
 naturally start doing without being told?
@@ -96,6 +100,7 @@ naturally start doing without being told?
 Example: "Players will experiment with ability combinations to find synergies"
 Example: "Players will share discoveries with the community"]
 
+<!-- 中文翻译 -->
 ### Core Mechanics (Systems we build)
 [What are the 3-5 mechanical systems that generate the dynamics and aesthetics
 above? These are the rules, verbs, and systems we actually implement.]
@@ -106,12 +111,14 @@ above? These are the rules, verbs, and systems we actually implement.]
 
 ---
 
+<!-- 中文翻译 -->
 ## Player Motivation Profile
 
 Understanding WHY players play helps us make every design decision. Based on
 Self-Determination Theory (SDT) and the Player Experience of Need Satisfaction
 (PENS) model.
 
+<!-- 中文翻译 -->
 ### Primary Psychological Needs Served
 
 | Need | How This Game Satisfies It | Strength |
@@ -120,6 +127,7 @@ Self-Determination Theory (SDT) and the Player Experience of Need Satisfaction
 | **Competence** (mastery, skill growth) | [How does the player feel skilled?] | [Core / Supporting / Minimal] |
 | **Relatedness** (connection, belonging) | [How does the player feel connected?] | [Core / Supporting / Minimal] |
 
+<!-- 中文翻译 -->
 ### Player Type Appeal (Bartle Taxonomy)
 
 Which player types does this game primarily serve?
@@ -129,6 +137,7 @@ Which player types does this game primarily serve?
 - [ ] **Socializers** (relationships, cooperation, community) — How: [...]
 - [ ] **Killers/Competitors** (domination, PvP, leaderboards) — How: [...]
 
+<!-- 中文翻译 -->
 ### Flow State Design
 
 Flow occurs when challenge matches skill. How does this game maintain flow?
@@ -140,26 +149,32 @@ Flow occurs when challenge matches skill. How does this game maintain flow?
 
 ---
 
+<!-- 中文翻译 -->
 ## Core Loop
 
+<!-- 中文翻译 -->
 ### Moment-to-Moment (30 seconds)
 [What is the player physically doing most of the time? The most basic, repeated
 action. This MUST be intrinsically satisfying — if the 30-second loop isn't
 fun in isolation, no amount of progression will save the game.]
 
+<!-- 中文翻译 -->
 ### Short-Term (5-15 minutes)
 [What objective or cycle structures the moment-to-moment play? Encounters,
 puzzles, rounds, quests. This is where "one more turn" or "one more run"
 psychology lives.]
 
+<!-- 中文翻译 -->
 ### Session-Level (30-120 minutes)
 [What does a full play session look like? What does the player accomplish?
 This should end with a natural stopping point AND a reason to come back.]
 
+<!-- 中文翻译 -->
 ### Long-Term Progression
 [How does the player grow over days/weeks? Character progression, unlocks,
 story advancement, mastery. What is the player working toward?]
 
+<!-- 中文翻译 -->
 ### Retention Hooks
 [What specifically brings the player back for their next session?]
 - **Curiosity**: [Unanswered questions, unexplored areas, locked content]
@@ -169,6 +184,7 @@ story advancement, mastery. What is the player working toward?]
 
 ---
 
+<!-- 中文翻译 -->
 ## Game Pillars
 
 Design pillars are non-negotiable principles that guide EVERY decision. When
@@ -195,6 +211,7 @@ debating between X and Y, this pillar says we choose __."]
 
 *Design test*: [Decision it resolves]
 
+<!-- 中文翻译 -->
 ### Anti-Pillars (What This Game Is NOT)
 
 Anti-pillars are equally important — they prevent scope creep and keep the
@@ -206,6 +223,7 @@ vision focused. Every "no" protects the "yes."
 
 ---
 
+<!-- 中文翻译 -->
 ## Inspiration and References
 
 | Reference | What We Take From It | What We Do Differently | Why It Matters |
@@ -220,6 +238,7 @@ the medium.]
 
 ---
 
+<!-- 中文翻译 -->
 ## Target Player Profile
 
 [Be specific. "Gamers" is not a target audience.]
@@ -236,6 +255,7 @@ the medium.]
 
 ---
 
+<!-- 中文翻译 -->
 ## Technical Considerations
 
 | Consideration | Assessment |
@@ -251,28 +271,34 @@ the medium.]
 
 ---
 
+<!-- 中文翻译 -->
 ## Risks and Open Questions
 
+<!-- 中文翻译 -->
 ### Design Risks
 [Things that could make the game unfun or uncompelling]
 - [Risk 1 — e.g., "Core loop may not sustain sessions > 30 minutes"]
 - [Risk 2 — e.g., "Player motivation unclear after main story ends"]
 
+<!-- 中文翻译 -->
 ### Technical Risks
 [Things that could be hard or impossible to build]
 - [Risk 1 — e.g., "Procedural generation quality is unproven"]
 - [Risk 2 — e.g., "Networking for 100+ players may require dedicated infrastructure"]
 
+<!-- 中文翻译 -->
 ### Market Risks
 [Things that could prevent commercial success]
 - [Risk 1 — e.g., "Genre is saturated with established competitors"]
 - [Risk 2 — e.g., "Target audience may be too niche for financial sustainability"]
 
+<!-- 中文翻译 -->
 ### Scope Risks
 [Things that could blow the timeline]
 - [Risk 1 — e.g., "Content volume exceeds team capacity"]
 - [Risk 2 — e.g., "Feature X depends on technology we haven't prototyped"]
 
+<!-- 待解决问题 -->
 ### Open Questions
 [Things that need prototyping or research before we can answer]
 - [Question 1 — and how we plan to answer it]
@@ -280,6 +306,7 @@ the medium.]
 
 ---
 
+<!-- 中文翻译 -->
 ## MVP Definition
 
 [The absolute minimum version that validates the core hypothesis. The MVP
@@ -297,6 +324,7 @@ the combat-crafting loop engaging for 30+ minute sessions"]
 - [Feature that's nice but doesn't test the hypothesis]
 - [Feature that adds scope without validating the core]
 
+<!-- 中文翻译 -->
 ### Scope Tiers (if budget/time shrinks)
 
 | Tier | Content | Features | Timeline |
@@ -308,6 +336,7 @@ the combat-crafting loop engaging for 30+ minute sessions"]
 
 ---
 
+<!-- 后续步骤 -->
 ## Next Steps
 
 - [ ] Get concept approval from creative-director

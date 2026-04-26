@@ -18,6 +18,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## 1. Purpose & Player Need
 
 > **Why this section exists**: Every screen must justify its existence from the
@@ -54,6 +55,7 @@ part of.]
 
 ---
 
+<!-- 中文翻译 -->
 ## 2. Player Context on Arrival
 
 > **Why this section exists**: Screens do not exist in isolation. A player opening the
@@ -81,6 +83,7 @@ information and complete authority over their choices, with no ambiguity about o
 
 ---
 
+<!-- 中文翻译 -->
 ## 3. Navigation Position
 
 > **Why this section exists**: A screen that does not know where it sits in the
@@ -116,6 +119,7 @@ information and complete authority over their choices, with no ambiguity about o
 
 ---
 
+<!-- 中文翻译 -->
 ## 4. Entry & Exit Points
 
 > **Why this section exists**: Entry and exit define the screen's contract with the
@@ -142,6 +146,7 @@ information and complete authority over their choices, with no ambiguity about o
 
 ---
 
+<!-- 中文翻译 -->
 ## 5. Layout Specification
 
 > **Why this section exists**: The layout specification is the handoff artifact between
@@ -155,6 +160,7 @@ information and complete authority over their choices, with no ambiguity about o
 > Draw the layout at one standard resolution (e.g., 1920x1080). Note adaptations
 > for other resolutions separately.
 
+<!-- 中文翻译 -->
 ### 5.1 Wireframe
 
 ```
@@ -188,6 +194,7 @@ Example:
 ]
 ```
 
+<!-- 中文翻译 -->
 ### 5.2 Zone Definitions
 
 | Zone Name | Description | Approximate Size | Scrollable? | Overflow Behavior |
@@ -198,6 +205,7 @@ Example:
 | [e.g., Detail Panel] | [Right: stats and description for selected item] | [~30% width, ~75% height] | [Yes — vertical for long descriptions] | [Fade at bottom, scroll to reveal] |
 | [e.g., Action Bar] | [Bottom: context-sensitive actions for selected item] | [Full width, ~15% height] | [No] | [Actions collapse to icon-only below 4] |
 
+<!-- 中文翻译 -->
 ### 5.3 Component Inventory
 
 > List every discrete UI component on this screen. This table drives the implementation
@@ -218,6 +226,7 @@ Example:
 
 ---
 
+<!-- 中文翻译 -->
 ## 6. States & Variants
 
 > **Why this section exists**: A screen is not a single picture — it is a set of
@@ -238,6 +247,7 @@ Example:
 
 ---
 
+<!-- 中文翻译 -->
 ## 7. Interaction Map
 
 > **Why this section exists**: This section is the source of truth for what every
@@ -247,6 +257,7 @@ Example:
 > interaction map is also the input for the accessibility audit — if an action is
 > only reachable by mouse, it will fail the keyboard and gamepad columns.
 
+<!-- 中文翻译 -->
 ### 7.1 Navigation Inputs
 
 | Input | Platform | Action | Visual Response | Audio Cue | Notes |
@@ -257,6 +268,7 @@ Example:
 | [Mouse click] | [PC] | [Select and focus the clicked element] | [Pressed state flash, then selected/focused] | [Soft click] | [Right-click opens context menu if applicable; otherwise no-op] |
 | [Touch tap] | [Mobile] | [Select and activate in one gesture] | [Press ripple] | [Soft click] | [Treat tap as click + confirm for low-risk actions; require explicit confirm for destructive actions] |
 
+<!-- 中文翻译 -->
 ### 7.2 Action Inputs
 
 | Input | Platform | Context (What must be focused) | Action | Response | Animation | Audio Cue | Notes |
@@ -268,6 +280,7 @@ Example:
 | [Esc / B button / Back] | [All] | [Any, screen level] | [Close screen and return to previous state] | [Screen exit transition plays] | [Slide out, 200ms] | [Back/close tone] | [Commits all changes before closing. No discard — inventory is not a draft.] |
 | [F / L2] | [KB / Gamepad] | [Any] | [Toggle filter panel] | [Sort/filter overlay opens] | [Slide in from right, 200ms] | [Panel open tone] | [If no items in category, filter is disabled] |
 
+<!-- 中文翻译 -->
 ### 7.3 State-Specific Behaviors
 
 | State | Input Restriction | Reason |
@@ -278,6 +291,7 @@ Example:
 
 ---
 
+<!-- 中文翻译 -->
 ## 8. Data Requirements
 
 > **Why this section exists**: The separation between UI and game state is the most
@@ -302,6 +316,7 @@ Example:
 
 ---
 
+<!-- 中文翻译 -->
 ## 9. Events Fired
 
 > **Why this section exists**: This is the other half of the UI/system boundary.
@@ -321,6 +336,7 @@ Example:
 
 ---
 
+<!-- 中文翻译 -->
 ## 10. Transition & Animation
 
 > **Why this section exists**: Transitions are not decoration — they communicate
@@ -344,6 +360,7 @@ Example:
 
 ---
 
+<!-- 中文翻译 -->
 ## 11. Input Method Completeness Checklist
 
 > **Why this section exists**: Input completeness is not optional — it is a
@@ -380,6 +397,7 @@ Example:
 
 ---
 
+<!-- 中文翻译 -->
 ## 12. Screen-Level Accessibility Requirements
 
 > **Why this section exists**: Accessibility requirements must be specified at design
@@ -454,6 +472,7 @@ automatically.]
 
 ---
 
+<!-- 中文翻译 -->
 ## 13. Localization Considerations
 
 > **Why this section exists**: UI built without localization in mind breaks on first
@@ -479,6 +498,7 @@ automatically.]
 
 ---
 
+<!-- 中文翻译 -->
 ## 14. Acceptance Criteria
 
 > **Why this section exists**: Acceptance criteria are the contractual definition of
@@ -530,6 +550,7 @@ automatically.]
 
 ---
 
+<!-- 中文翻译 -->
 ## 15. Open Questions
 
 > Track unresolved design questions here. Each question should have a clear owner

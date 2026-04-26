@@ -39,6 +39,7 @@
   - [ ] [Missing system 1 + impact] / [缺失的系统1 + 影响]
   - [ ] [Missing system 2 + impact] / [缺失的系统2 + 影响]
 
+<!-- 中文翻译 -->
 ### Architecture Documentation
 - **Status**: [X%] complete
 - **ADRs Found**: [N] decisions documented in `docs/architecture/`
@@ -50,6 +51,7 @@
   - [ ] [Missing ADR 1 + why it's needed]
   - [ ] [Missing ADR 2 + why it's needed]
 
+<!-- 中文翻译 -->
 ### Production Management
 - **Status**: [X%] complete
 - **Found**:
@@ -59,6 +61,7 @@
 - **Key Gaps**:
   - [ ] [Missing production artifact + impact]
 
+<!-- 中文翻译 -->
 ### Testing
 - **Status**: [X%] coverage (estimated)
 - **Test Files**: [N] in `tests/`
@@ -68,6 +71,7 @@
 - **Key Gaps**:
   - [ ] [Missing test area + risk]
 
+<!-- 中文翻译 -->
 ### Prototypes
 - **Active Prototypes**: [N] in `prototypes/`
   - ✅ [Prototype 1] — documented with README
@@ -78,6 +82,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Stage Classification Rationale
 
 **Why [Stage]?**
@@ -95,8 +100,10 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Gaps Identified (with Clarifying Questions)
 
+<!-- 中文翻译 -->
 ### Critical Gaps (block progress)
 
 1. **[Gap Name]**
@@ -104,6 +111,7 @@
    - **Question**: [Clarifying question before assuming solution]
    - **Suggested Action**: [What could be done, pending clarification]
 
+<!-- 中文翻译 -->
 ### Important Gaps (affect quality/velocity)
 
 2. **[Gap Name]**
@@ -111,6 +119,7 @@
    - **Question**: [Clarifying question]
    - **Suggested Action**: [Proposed solution]
 
+<!-- 中文翻译 -->
 ### Nice-to-Have Gaps (polish/best practices)
 
 3. **[Gap Name]**
@@ -120,8 +129,10 @@
 
 ---
 
+<!-- 推荐后续步骤 -->
 ## Recommended Next Steps
 
+<!-- 中文翻译 -->
 ### Immediate Priority (Do First)
 1. **[Action 1]** — [Why it's priority 1]
    - Suggested skill: `/[skill-name]` or manual work
@@ -131,20 +142,24 @@
    - Suggested skill: `/[skill-name]`
    - Estimated effort: [S/M/L]
 
+<!-- 中文翻译 -->
 ### Short-Term (This Sprint/Week)
 3. **[Action 3]** — [Why it's important soon]
 4. **[Action 4]** — [Why it's important soon]
 
+<!-- 中文翻译 -->
 ### Medium-Term (Next Milestone)
 5. **[Action 5]** — [Future need]
 6. **[Action 6]** — [Future need]
 
 ---
 
+<!-- 中文翻译 -->
 ## Role-Specific Recommendations
 
 [If role filter was used, provide role-specific guidance]
 
+<!-- 中文翻译 -->
 ### For [Role]:
 - **Focus areas**: [What this role should prioritize]
 - **Blockers**: [What's blocking this role's work]
@@ -154,6 +169,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Follow-Up Skills to Run
 
 Based on gaps identified, consider running:
@@ -166,6 +182,7 @@ Based on gaps identified, consider running:
 
 ---
 
+<!-- 中文翻译 -->
 ## Appendix: File Counts by Directory
 
 ```

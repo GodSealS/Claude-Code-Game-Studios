@@ -21,6 +21,7 @@
 | ---- | ----- | ------ |
 | [Date] | [What happened] | [How it affected the project] |
 
+<!-- 中文翻译 -->
 ## What Went Well
 
 ### [Category 1: e.g., Technical Execution]
@@ -33,6 +34,7 @@
 **Why it worked**: [Root cause]
 **How to repeat**: [Action]
 
+<!-- 中文翻译 -->
 ## What Went Poorly
 
 ### [Category 1: e.g., Scope Management]
@@ -44,6 +46,7 @@
 ### [Category 2]
 [Same structure]
 
+<!-- 中文翻译 -->
 ## Key Metrics
 
 | Metric | Target | Actual | Notes |
@@ -54,16 +57,19 @@
 | Estimation accuracy | 100% | [N%] | |
 | Scope changes | 0 | [N] | |
 
+<!-- 中文翻译 -->
 ## Lessons Learned
 
 1. **[Lesson]**: [Explanation and how it changes future work]
 2. **[Lesson]**: [Explanation]
 
+<!-- 行动项 -->
 ## Action Items
 
 | # | Action | Owner | Deadline | Status |
 | - | ------ | ----- | -------- | ------ |
 | 1 | [Action] | [Who] | [When] | [Open/Done] |
 
+<!-- 中文翻译 -->
 ## Acknowledgments
 [Call out exceptional contributions]

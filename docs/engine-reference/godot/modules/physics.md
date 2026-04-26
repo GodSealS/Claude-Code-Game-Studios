@@ -1,9 +1,14 @@
-# Godot Physics — Quick Reference
+# Godot Physics — Quick Reference / Godot物理模块
+
+
+> **中文翻译**：本文档为Godot引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 Last verified: 2026-02-12 | Engine: Godot 4.6
 
+<!-- 自 ~4.3 以来的变化（LLM 训练截止） -->
 ## What Changed Since ~4.3 (LLM Cutoff)
 
+<!-- 中文翻译 -->
 ### 4.6 Changes
 - **Jolt Physics is the DEFAULT 3D engine** for new projects
   - Existing projects keep their current physics engine setting
@@ -11,10 +16,12 @@ Last verified: 2026-02-12 | Engine: Godot 4.6
   - Some HingeJoint3D properties (`damp`) only work with GodotPhysics3D
   - 2D physics UNCHANGED (still Godot Physics 2D)
 
+<!-- 中文翻译 -->
 ### 4.5 Changes
 - **3D physics interpolation rearchitected**: Moved from RenderingServer to SceneTree
   - User-facing API unchanged, but internal behavior may differ in edge cases
 
+<!-- 中文翻译 -->
 ## Physics Engine Selection (4.6)
 
 ```
@@ -23,6 +30,7 @@ Project Settings → Physics → 3D → Physics Engine:
 - GodotPhysics3D (legacy, still available)
 ```
 
+<!-- 中文翻译 -->
 ### Jolt vs GodotPhysics3D
 
 | Feature | Jolt (default) | GodotPhysics3D |
@@ -34,8 +42,10 @@ Project Settings → Physics → 3D → Physics Engine:
 | Runtime warnings | Yes, for unsupported properties | No |
 | Collision margins | May behave differently | Original behavior |
 
+<!-- 当前 API 模式 -->
 ## Current API Patterns
 
+<!-- 中文翻译 -->
 ### Basic Physics Setup (unchanged)
 ```gdscript
 # CharacterBody3D movement — API unchanged across engines
@@ -59,6 +69,7 @@ func _physics_process(delta: float) -> void:
     move_and_slide()
 ```
 
+<!-- 中文翻译 -->
 ### Raycasting (unchanged)
 ```gdscript
 var space_state: PhysicsDirectSpaceState3D = get_world_3d().direct_space_state
@@ -70,6 +81,7 @@ if result:
     var hit_normal: Vector3 = result.normal
 ```
 
+<!-- 常见错误 -->
 ## Common Mistakes
 - Assuming GodotPhysics3D is the default (Jolt since 4.6)
 - Using HingeJoint3D `damp` property without checking physics engine (Jolt ignores it)

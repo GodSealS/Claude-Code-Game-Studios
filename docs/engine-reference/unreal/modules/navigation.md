@@ -1,10 +1,14 @@
-# Unreal Engine 5.7 — Navigation Module Reference
+# Unreal Engine 5.7 — Navigation Module Reference / Unreal Engine导航模块
+
+
+> **中文翻译**：本文档为Unreal Engine引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 **Last verified:** 2026-02-13
 **Knowledge Gap:** UE 5.7 navigation improvements
 
 ---
 
+<!-- 概述 -->
 ## Overview
 
 UE 5.7 navigation systems:
@@ -14,14 +18,17 @@ UE 5.7 navigation systems:
 
 ---
 
+<!-- 中文翻译 -->
 ## Nav Mesh Setup
 
+<!-- 中文翻译 -->
 ### Add Nav Mesh Bounds Volume
 
 1. Place Actors > Volumes > Nav Mesh Bounds Volume
 2. Scale to cover walkable areas
 3. Press `P` to toggle Nav Mesh visualization (green overlay)
 
+<!-- 中文翻译 -->
 ### Nav Mesh Settings
 
 ```cpp
@@ -32,8 +39,10 @@ UE 5.7 navigation systems:
 
 ---
 
+<!-- 中文翻译 -->
 ## AI Controller & Movement
 
+<!-- 中文翻译 -->
 ### Create AI Controller
 
 ```cpp
@@ -52,6 +61,7 @@ public:
 };
 ```
 
+<!-- 中文翻译 -->
 ### Assign AI Controller to Pawn
 
 ```cpp
@@ -70,8 +80,10 @@ public:
 
 ---
 
+<!-- 中文翻译 -->
 ## Basic AI Movement
 
+<!-- 中文翻译 -->
 ### Move to Location
 
 ```cpp
@@ -86,6 +98,7 @@ if (AIController) {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Move to Actor
 
 ```cpp
@@ -93,6 +106,7 @@ AActor* Target = /* Get target actor */;
 AIController->MoveToActor(Target, 100.0f); // Stop 100 units away
 ```
 
+<!-- 中文翻译 -->
 ### Stop Movement
 
 ```cpp
@@ -101,8 +115,10 @@ AIController->StopMovement();
 
 ---
 
+<!-- 中文翻译 -->
 ## Path Following Events
 
+<!-- 中文翻译 -->
 ### On Move Completed
 
 ```cpp
@@ -131,8 +147,10 @@ public:
 
 ---
 
+<!-- 中文翻译 -->
 ## Pathfinding Queries
 
+<!-- 中文翻译 -->
 ### Find Path to Location
 
 ```cpp
@@ -158,6 +176,7 @@ if (NavSys) {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Check if Location is Reachable
 
 ```cpp
@@ -172,8 +191,10 @@ if (bReachable) {
 
 ---
 
+<!-- 中文翻译 -->
 ## Nav Mesh Modifiers
 
+<!-- 中文翻译 -->
 ### Nav Modifier Volume (Block/Allow Areas)
 
 1. Place Actors > Volumes > Nav Modifier Volume
@@ -181,8 +202,10 @@ if (bReachable) {
 
 ---
 
+<!-- 中文翻译 -->
 ## Custom Nav Areas
 
+<!-- 中文翻译 -->
 ### Create Custom Nav Area
 
 ```cpp
@@ -198,6 +221,7 @@ public:
 };
 ```
 
+<!-- 中文翻译 -->
 ### Use Custom Nav Area
 
 ```cpp
@@ -206,8 +230,10 @@ public:
 
 ---
 
+<!-- 中文翻译 -->
 ## Nav Mesh Generation
 
+<!-- 中文翻译 -->
 ### Rebuild Nav Mesh at Runtime
 
 ```cpp
@@ -215,6 +241,7 @@ UNavigationSystemV1* NavSys = UNavigationSystemV1::GetCurrent(GetWorld());
 NavSys->Build(); // Rebuild entire NavMesh
 ```
 
+<!-- 中文翻译 -->
 ### Dynamic Nav Mesh (Moving Obstacles)
 
 ```cpp
@@ -228,8 +255,10 @@ Mesh->bDynamicObstacle = true;
 
 ---
 
+<!-- 中文翻译 -->
 ## Nav Links (Off-Mesh Connections)
 
+<!-- 中文翻译 -->
 ### Nav Link Proxy (Jump, Teleport)
 
 1. Place Actors > Navigation > Nav Link Proxy
@@ -240,8 +269,10 @@ Mesh->bDynamicObstacle = true;
 
 ---
 
+<!-- 中文翻译 -->
 ## Crowd Management
 
+<!-- 中文翻译 -->
 ### Detour Crowd (Avoid Overlapping)
 
 ```cpp
@@ -256,8 +287,10 @@ MoveComp->SetAvoidanceEnabled(true);
 
 ---
 
+<!-- 性能提示 -->
 ## Performance Tips
 
+<!-- 中文翻译 -->
 ### Nav Mesh Optimization
 
 ```cpp
@@ -270,8 +303,10 @@ MoveComp->SetAvoidanceEnabled(true);
 
 ---
 
+<!-- 调试 -->
 ## Debugging
 
+<!-- 中文翻译 -->
 ### Visualize Nav Mesh
 
 ```cpp
@@ -289,8 +324,10 @@ if (NavPath) {
 
 ---
 
+<!-- 常见模式 -->
 ## Common Patterns
 
+<!-- 中文翻译 -->
 ### Patrol Between Waypoints
 
 ```cpp
@@ -308,6 +345,7 @@ void OnMoveCompleted(FAIRequestID RequestID, EPathFollowingResult::Type Result) 
 }
 ```
 
+<!-- 中文翻译 -->
 ### Chase Player
 
 ```cpp
@@ -333,6 +371,7 @@ void Tick(float DeltaTime) {
 
 ---
 
+<!-- 来源 -->
 ## Sources
 - https://docs.unrealengine.com/5.7/en-US/navigation-system-in-unreal-engine/
 - https://docs.unrealengine.com/5.7/en-US/ai-in-unreal-engine/

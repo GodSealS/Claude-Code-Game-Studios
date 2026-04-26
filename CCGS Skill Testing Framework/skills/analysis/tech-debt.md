@@ -11,6 +11,7 @@ REGISTER UPDATED or NO NEW DEBT FOUND.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -23,6 +24,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. Tech debt tracking is an internal codebase analysis skill; no gates are
@@ -32,6 +34,7 @@ invoked.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Inline TODOs plus existing register items merged
 
 **Fixture:**
@@ -58,6 +61,7 @@ invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Register Doesn't Exist — Offered to create it
 
 **Fixture:**
@@ -81,6 +85,7 @@ invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Resolved Item Detected — Marked resolved in register
 
 **Fixture:**
@@ -105,6 +110,7 @@ invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Edge Case — CRITICAL debt item surfaces prominently
 
 **Fixture:**
@@ -128,6 +134,7 @@ invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Gate Compliance — No gate; register updated only with approval
 
 **Fixture:**
@@ -162,6 +169,7 @@ invoked.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The case where `src/` is empty or absent is not tested; behavior follows

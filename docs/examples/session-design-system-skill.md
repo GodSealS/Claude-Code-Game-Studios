@@ -14,11 +14,13 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Turn 1: User Invokes the Skill
 
 **User:**
 > /design-system movement
 
+<!-- 中文翻译 -->
 ## Turn 2: Agent Loads Context and Presents the Plan
 
 **Agent (game-designer, via /design-system):**
@@ -50,6 +52,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Turn 3: Section 1 — Overview
 
 **Agent:**
@@ -76,6 +79,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Turn 4: Section 2 — Player Fantasy
 
 **Agent:**
@@ -92,6 +96,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Turn 5: Section 3 — Detailed Rules
 
 **Agent:**
@@ -133,6 +138,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Turn 6: Section 4 — Formulas
 
 **Agent:**
@@ -175,6 +181,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Turn 7–9: Sections 5, 6, 7
 
 *(These follow the same pattern — agent drafts, user approves or requests minor tweaks, agent writes each section to file before moving on. Abbreviated here.)*
@@ -199,6 +206,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Turn 10: Section 8 — Acceptance Criteria
 
 **Agent:**
@@ -233,6 +241,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Turn 11: Completion Summary
 
 **Agent:**
@@ -259,6 +268,7 @@
 
 ---
 
+<!-- 此示例展示的内容 -->
 ## What This Example Demonstrates
 
 - **Incremental file writing**: each section written to disk immediately after approval — a session crash loses at most one in-progress section

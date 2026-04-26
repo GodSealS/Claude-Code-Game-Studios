@@ -15,13 +15,16 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Part 1: HUD Design with /ux-design
 
+<!-- 中文翻译 -->
 ### Turn 1: User Starts HUD Design
 
 **User:**
 > /ux-design hud
 
+<!-- 中文翻译 -->
 ### Turn 2: Agent Loads Context and Presents the Approach
 
 **Agent (ux-designer, via /ux-design):**
@@ -43,6 +46,7 @@
 **User:**
 > B — I want it always there but minimal. The player is always managing resources.
 
+<!-- 中文翻译 -->
 ### Turn 3: Agent Drafts HUD Philosophy Section
 
 **Agent:**
@@ -78,13 +82,16 @@ design/ux/hud.md
 
 ---
 
+<!-- 中文翻译 -->
 ## Part 2: Inventory Screen with /ux-design
 
+<!-- 中文翻译 -->
 ### Turn 8: User Starts Inventory Screen
 
 **User:**
 > /ux-design screen inventory
 
+<!-- 中文翻译 -->
 ### Turn 9: Agent Scans GDD and Player Journey
 
 **Agent:**
@@ -114,13 +121,16 @@ design/ux/hud.md
 
 ---
 
+<!-- 中文翻译 -->
 ## Part 3: /ux-review
 
+<!-- 中文翻译 -->
 ### Turn 13: User Runs Review
 
 **User:**
 > /ux-review design/ux/
 
+<!-- 中文翻译 -->
 ### Turn 14: Agent Reviews Both Documents
 
 **Agent (via /ux-review):**
@@ -158,6 +168,7 @@ design/ux/hud.md
 > 2. **ADVISORY (HUD):** HP/stamina bars use color alone to convey state. Add a secondary indicator (shape, icon, or pattern) for colorblind users. Can be resolved in visual pass.
 > 3. **ADVISORY (Inventory):** Full-inventory drop behavior is unspecified. Resolve in GDD before implementation, or document as out-of-scope.
 
+<!-- 中文翻译 -->
 ### Turn 15: User Resolves Blocking Issue
 
 **User:**
@@ -177,8 +188,10 @@ design/ux/hud.md
 
 ---
 
+<!-- 中文翻译 -->
 ## Part 4: Handoff to /team-ui
 
+<!-- 中文翻译 -->
 ### Turn 16: User Kicks Off Team UI
 
 **User:**
@@ -199,6 +212,7 @@ design/ux/hud.md
 
 ---
 
+<!-- 此示例展示的内容 -->
 ## What This Example Demonstrates
 
 - **Context-driven design**: agent reads player-journey.md to ground HUD decisions in player emotional state, not just feature lists

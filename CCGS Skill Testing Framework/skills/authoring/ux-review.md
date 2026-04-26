@@ -17,6 +17,7 @@ NEEDED (structural or accessibility failures). No director gates apply —
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -29,6 +30,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. `/ux-review` is itself the review gate for UX specs. No additional director
@@ -38,6 +40,7 @@ gates are invoked within this skill.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Complete UX spec with all required sections, APPROVED
 
 **Fixture:**
@@ -65,6 +68,7 @@ gates are invoked within this skill.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Missing Accessibility Section — NEEDS REVISION
 
 **Fixture:**
@@ -90,6 +94,7 @@ gates are invoked within this skill.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Interaction States Incomplete — NEEDS REVISION
 
 **Fixture:**
@@ -113,6 +118,7 @@ gates are invoked within this skill.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: File Not Found — Error with remediation
 
 **Fixture:**
@@ -134,6 +140,7 @@ gates are invoked within this skill.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate Check — No gate; ux-review is itself the review
 
 **Fixture:**
@@ -165,6 +172,7 @@ gates are invoked within this skill.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - MAJOR REVISION NEEDED is triggered when structural sections are entirely

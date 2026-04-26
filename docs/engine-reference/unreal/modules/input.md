@@ -1,10 +1,14 @@
-# Unreal Engine 5.7 — Input Module Reference
+# Unreal Engine 5.7 — Input Module Reference / Unreal Engine输入模块
+
+
+> **中文翻译**：本文档为Unreal Engine引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 **Last verified:** 2026-02-13
 **Knowledge Gap:** UE 5.7 uses Enhanced Input as default (legacy input deprecated)
 
 ---
 
+<!-- 概述 -->
 ## Overview
 
 UE 5.7 input systems:
@@ -13,8 +17,10 @@ UE 5.7 input systems:
 
 ---
 
+<!-- 中文翻译 -->
 ## Enhanced Input System
 
+<!-- 中文翻译 -->
 ### Setup Enhanced Input
 
 1. **Enable Plugin**: `Edit > Plugins > Enhanced Input` (enabled by default in UE5)
@@ -22,6 +28,7 @@ UE 5.7 input systems:
 
 ---
 
+<!-- 中文翻译 -->
 ### Create Input Actions
 
 1. Content Browser > Input > Input Action
@@ -37,6 +44,7 @@ Example Input Actions:
 
 ---
 
+<!-- 中文翻译 -->
 ### Create Input Mapping Context
 
 1. Content Browser > Input > Input Mapping Context
@@ -49,6 +57,7 @@ Example Input Actions:
 
 ---
 
+<!-- 中文翻译 -->
 ### Bind Input in C++
 
 ```cpp
@@ -120,8 +129,10 @@ protected:
 
 ---
 
+<!-- 中文翻译 -->
 ## Input Triggers
 
+<!-- 中文翻译 -->
 ### Trigger Types
 
 Input Actions can have triggers to control when they fire:
@@ -131,6 +142,7 @@ Input Actions can have triggers to control when they fire:
 - **Tap**: Quick press
 - **Pulse**: Repeated firing while held
 
+<!-- 中文翻译 -->
 ### Add Trigger in Editor
 
 1. Open Input Action asset
@@ -139,8 +151,10 @@ Input Actions can have triggers to control when they fire:
 
 ---
 
+<!-- 中文翻译 -->
 ## Input Modifiers
 
+<!-- 中文翻译 -->
 ### Modifier Types
 
 Modifiers transform input values:
@@ -149,6 +163,7 @@ Modifiers transform input values:
 - **Scalar**: Multiply by value
 - **Smooth**: Smoothing over time
 
+<!-- 中文翻译 -->
 ### Add Modifier in Editor
 
 1. Open Input Action asset
@@ -157,8 +172,10 @@ Modifiers transform input values:
 
 ---
 
+<!-- 中文翻译 -->
 ## Input Mapping Contexts (Context Switching)
 
+<!-- 中文翻译 -->
 ### Multiple Contexts
 
 ```cpp
@@ -183,8 +200,10 @@ void EnterVehicle() {
 
 ---
 
+<!-- 中文翻译 -->
 ## Legacy Input (Deprecated)
 
+<!-- 中文翻译 -->
 ### Legacy Input Bindings
 
 ```cpp
@@ -207,8 +226,10 @@ void MoveForward(float Value) {
 
 ---
 
+<!-- 中文翻译 -->
 ## Gamepad Input
 
+<!-- 中文翻译 -->
 ### Gamepad with Enhanced Input
 
 ```cpp
@@ -222,8 +243,10 @@ void MoveForward(float Value) {
 
 ---
 
+<!-- 中文翻译 -->
 ## Touch Input (Mobile)
 
+<!-- 中文翻译 -->
 ### Touch Input with Enhanced Input
 
 ```cpp
@@ -236,8 +259,10 @@ void MoveForward(float Value) {
 
 ---
 
+<!-- 中文翻译 -->
 ## Rebinding Input at Runtime
 
+<!-- 中文翻译 -->
 ### Change Key Mapping
 
 ```cpp
@@ -256,8 +281,10 @@ Subsystem->AddPlayerMappedKey(/*..*/);
 
 ---
 
+<!-- 中文翻译 -->
 ## Input Debugging
 
+<!-- 中文翻译 -->
 ### Debug Input
 
 ```cpp
@@ -270,8 +297,10 @@ UE_LOG(LogTemp, Warning, TEXT("Move Input: %s"), *MoveVector.ToString());
 
 ---
 
+<!-- 常见模式 -->
 ## Common Patterns
 
+<!-- 中文翻译 -->
 ### Check if Key Pressed (Quick & Dirty)
 
 ```cpp
@@ -283,6 +312,7 @@ if (GetWorld()->GetFirstPlayerController()->IsInputKeyDown(EKeys::SpaceBar)) {
 
 ---
 
+<!-- 来源 -->
 ## Sources
 - https://docs.unrealengine.com/5.7/en-US/enhanced-input-in-unreal-engine/
 - https://docs.unrealengine.com/5.7/en-US/enhanced-input-action-and-input-mapping-context-in-unreal-engine/

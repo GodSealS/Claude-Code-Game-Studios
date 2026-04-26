@@ -17,6 +17,7 @@ before writing `design/gdd/game-concept.md`.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -31,6 +32,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 In `full` mode: CD-PILLARS, AD-CONCEPT-VISUAL, TD-FEASIBILITY, and PR-SCOPE
@@ -45,6 +47,7 @@ In `solo` mode: all 4 gates are skipped. Output notes all 4 as: "[GATE-ID] skipp
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Full mode, 3 concepts, user picks one, all 4 directors approve
 
 **Fixture:**
@@ -73,6 +76,7 @@ In `solo` mode: all 4 gates are skipped. Output notes all 4 as: "[GATE-ID] skipp
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Failure Path — CD-PILLARS returns REJECT
 
 **Fixture:**
@@ -97,6 +101,7 @@ In `solo` mode: all 4 gates are skipped. Output notes all 4 as: "[GATE-ID] skipp
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Lean Mode — All 4 gates skipped; concept written after user confirms
 
 **Fixture:**
@@ -120,6 +125,7 @@ In `solo` mode: all 4 gates are skipped. Output notes all 4 as: "[GATE-ID] skipp
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Solo Mode — All gates skipped; concept written with only user approval
 
 **Fixture:**
@@ -143,6 +149,7 @@ In `solo` mode: all 4 gates are skipped. Output notes all 4 as: "[GATE-ID] skipp
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate — PR-SCOPE returns CONCERNS (scope too large)
 
 **Fixture:**
@@ -178,6 +185,7 @@ In `solo` mode: all 4 gates are skipped. Output notes all 4 as: "[GATE-ID] skipp
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - AD-CONCEPT-VISUAL gate (art director feasibility) is grouped with the other

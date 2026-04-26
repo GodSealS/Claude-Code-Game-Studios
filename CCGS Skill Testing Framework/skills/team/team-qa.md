@@ -12,6 +12,7 @@ independent stories.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] Has required frontmatter fields: `name`, `description`, `argument-hint`, `user-invocable`, `allowed-tools`
@@ -30,6 +31,7 @@ independent stories.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — All stories pass manual QA, APPROVED verdict
 
 **Fixture:**
@@ -64,6 +66,7 @@ independent stories.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Smoke Check Fail — QA cycle stops at Phase 4
 
 **Fixture:**
@@ -89,6 +92,7 @@ independent stories.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Bug Found — Visual/Feel story fails manual QA, bug report filed
 
 **Fixture:**
@@ -120,6 +124,7 @@ independent stories.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: No Argument — Skill infers active sprint or asks user
 
 **Fixture (variant A — state files present):**
@@ -150,6 +155,7 @@ independent stories.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Mixed Results — Some PASS, one FAIL with S1 bug, one BLOCKED
 
 **Fixture:**
@@ -196,6 +202,7 @@ independent stories.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The "APPROVED WITH CONDITIONS" verdict path (S3/S4 bugs, PASS WITH NOTES) is covered implicitly by Case 5's PASS WITH NOTES story (Story B) — if no S1/S2 bugs existed, that case would produce APPROVED WITH CONDITIONS. A dedicated case is not required as the verdict logic is table-driven.

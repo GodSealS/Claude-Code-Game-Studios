@@ -15,6 +15,7 @@ engine is configured.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] Has required frontmatter fields: `name`, `description`, `argument-hint`, `user-invocable`, `allowed-tools`
@@ -35,6 +36,7 @@ engine is configured.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — All steps complete, audio design document saved
 
 **Fixture:**
@@ -74,6 +76,7 @@ engine is configured.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Accessibility Gap — Critical gameplay audio event has no visual fallback
 
 **Fixture:**
@@ -105,6 +108,7 @@ engine is configured.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: No Argument — Usage guidance or design doc inference
 
 **Fixture:**
@@ -125,6 +129,7 @@ engine is configured.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Missing Sound Bible — Skill notes the gap and proceeds without it
 
 **Fixture:**
@@ -151,6 +156,7 @@ engine is configured.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Engine Not Configured — Engine specialist step skipped gracefully
 
 **Fixture:**
@@ -195,6 +201,7 @@ engine is configured.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The "Retry with narrower scope" and "Skip this agent" resolution paths from the Error

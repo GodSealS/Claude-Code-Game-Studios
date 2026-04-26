@@ -1,10 +1,14 @@
-# Unity 6.3 — UI Module Reference
+# Unity 6.3 — UI Module Reference / UnityUI模块
+
+
+> **中文翻译**：本文档为Unity引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 **Last verified:** 2026-02-13
 **Knowledge Gap:** Unity 6 UI Toolkit is production-ready for runtime UI
 
 ---
 
+<!-- 概述 -->
 ## Overview
 
 Unity 6 UI systems:
@@ -14,8 +18,10 @@ Unity 6 UI systems:
 
 ---
 
+<!-- 中文翻译 -->
 ## UI Toolkit (Modern UI)
 
+<!-- 中文翻译 -->
 ### Setup UI Document
 
 1. Create UXML (UI structure):
@@ -28,6 +34,7 @@ Unity 6 UI systems:
 
 ---
 
+<!-- 中文翻译 -->
 ### UXML (UI Structure)
 
 ```xml
@@ -44,6 +51,7 @@ Unity 6 UI systems:
 
 ---
 
+<!-- 中文翻译 -->
 ### USS (Styling)
 
 ```css
@@ -77,6 +85,7 @@ Button:hover {
 
 ---
 
+<!-- 中文翻译 -->
 ### C# Scripting (UI Toolkit)
 
 ```csharp
@@ -112,6 +121,7 @@ public class MainMenu : MonoBehaviour {
 
 ---
 
+<!-- 中文翻译 -->
 ### Common UI Elements
 
 ```csharp
@@ -143,6 +153,7 @@ dropdown.value = "Normal";
 
 ---
 
+<!-- 中文翻译 -->
 ### Dynamic UI Creation (No UXML)
 
 ```csharp
@@ -164,6 +175,7 @@ void CreateUI() {
 
 ---
 
+<!-- 中文翻译 -->
 ### USS Flexbox Layout
 
 ```css
@@ -191,8 +203,10 @@ void CreateUI() {
 
 ---
 
+<!-- 中文翻译 -->
 ## UGUI (Legacy Canvas UI)
 
+<!-- 中文翻译 -->
 ### Basic Setup (Still Works in Unity 6)
 
 ```csharp
@@ -209,6 +223,7 @@ void CreateUI() {
 
 ---
 
+<!-- 中文翻译 -->
 ### UGUI Scripting
 
 ```csharp
@@ -244,6 +259,7 @@ public class LegacyUI : MonoBehaviour {
 
 ---
 
+<!-- 中文翻译 -->
 ### TextMeshPro (Better Text Rendering)
 
 ```csharp
@@ -260,8 +276,10 @@ tmpText.color = Color.white;
 
 ---
 
+<!-- 中文翻译 -->
 ## Canvas Settings (UGUI)
 
+<!-- 中文翻译 -->
 ### Render Modes
 
 ```csharp
@@ -270,6 +288,7 @@ tmpText.color = Color.white;
 // World Space: UI in 3D world (e.g., floating health bars)
 ```
 
+<!-- 中文翻译 -->
 ### Canvas Scaler (Responsive UI)
 
 ```csharp
@@ -285,8 +304,10 @@ tmpText.color = Color.white;
 
 ---
 
+<!-- 中文翻译 -->
 ## Layout Groups (UGUI)
 
+<!-- 中文翻译 -->
 ### Horizontal Layout Group
 
 ```csharp
@@ -294,12 +315,14 @@ tmpText.color = Color.white;
 // Add: GameObject > Add Component > Horizontal Layout Group
 ```
 
+<!-- 中文翻译 -->
 ### Vertical Layout Group
 
 ```csharp
 // Auto-arranges children vertically
 ```
 
+<!-- 中文翻译 -->
 ### Grid Layout Group
 
 ```csharp
@@ -308,14 +331,17 @@ tmpText.color = Color.white;
 
 ---
 
+<!-- 中文翻译 -->
 ## Performance (UI Toolkit vs UGUI)
 
+<!-- 中文翻译 -->
 ### UI Toolkit Advantages
 - ✅ Faster rendering (retained mode)
 - ✅ Better for complex UIs with many elements
 - ✅ Easier styling (CSS-like)
 - ✅ Better for dynamic UIs
 
+<!-- 中文翻译 -->
 ### UGUI Advantages
 - ✅ More mature, widely documented
 - ✅ Better integration with Unity Editor
@@ -323,8 +349,10 @@ tmpText.color = Color.white;
 
 ---
 
+<!-- 常见模式 -->
 ## Common Patterns
 
+<!-- 中文翻译 -->
 ### Health Bar (UI Toolkit)
 
 ```csharp
@@ -332,6 +360,7 @@ var healthBar = root.Q<VisualElement>("health-bar");
 healthBar.style.width = new StyleLength(new Length(healthPercent, LengthUnit.Percent));
 ```
 
+<!-- 中文翻译 -->
 ### Health Bar (UGUI)
 
 ```csharp
@@ -344,6 +373,7 @@ void UpdateHealth(float percent) {
 
 ---
 
+<!-- 中文翻译 -->
 ### Fade In/Out (UI Toolkit)
 
 ```csharp
@@ -359,18 +389,22 @@ IEnumerator FadeIn(VisualElement element, float duration) {
 
 ---
 
+<!-- 调试 -->
 ## Debugging
 
+<!-- 中文翻译 -->
 ### UI Toolkit Debugger
 - `Window > UI Toolkit > Debugger`
 - Inspect element hierarchy, styles, layout
 
+<!-- 中文翻译 -->
 ### UGUI Event System Debugger
 - Select EventSystem in Hierarchy
 - Inspector shows active input module, raycast info
 
 ---
 
+<!-- 来源 -->
 ## Sources
 - https://docs.unity3d.com/6000.0/Documentation/Manual/UIElements.html
 - https://docs.unity3d.com/Packages/com.unity.ui@2.0/manual/index.html

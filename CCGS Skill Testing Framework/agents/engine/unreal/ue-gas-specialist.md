@@ -8,6 +8,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references GAS, abilities, GameplayEffects, AttributeSets)
@@ -19,6 +20,7 @@
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: In-domain request — dash ability with cooldown
 **Input**: "Implement a dash ability that moves the player forward 500 units and has a 1.5 second cooldown."
 **Expected behavior**:
@@ -27,6 +29,7 @@
 - Tags clearly named following a hierarchy convention (e.g., Ability.Dash, Cooldown.Ability.Dash)
 - Output includes both the ability class outline and the GameplayEffect definition
 
+<!-- 中文翻译 -->
 ### Case 2: Out-of-domain request — GAS state replication
 **Input**: "How do I replicate the player's ability cooldown state to all clients so the UI updates correctly?"
 **Expected behavior**:
@@ -35,6 +38,7 @@
 - For custom replication needs beyond GAS built-ins, explicitly states: "For custom net serialization of GAS data, coordinate with ue-replication-specialist"
 - Does NOT attempt to write custom replication code outside GAS's own systems without flagging the domain boundary
 
+<!-- 中文翻译 -->
 ### Case 3: Domain boundary — incorrect GameplayTag hierarchy
 **Input**: "We have an ability that applies a tag called 'Stunned' and another that checks for 'Status.Stunned'. They're not matching."
 **Expected behavior**:
@@ -44,6 +48,7 @@
 - Provides the fix: either rename the applied tag to 'Status.Stunned' or update the query to match 'Stunned'
 - Notes where tag definitions should live (DefaultGameplayTags.ini or a DataTable)
 
+<!-- 中文翻译 -->
 ### Case 4: Conflict — attribute set conflict between two abilities
 **Input**: "Our Shield ability and our Armor ability both modify a 'DefenseValue' attribute. They're stacking in ways that aren't intended — after both are active, defense goes well above maximum."
 **Expected behavior**:
@@ -53,6 +58,7 @@
 - Produces a concrete resolution: either an Execution Calculation class outline or a change to the Modifier Op (Override instead of Additive for the cap)
 - Does NOT propose removing one of the abilities as the solution
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — designing against an existing attribute set
 **Input context**: Project has an existing AttributeSet with attributes: Health, MaxHealth, Stamina, MaxStamina, Defense, AttackPower.
 **Input**: "Design a Berserker ability that increases AttackPower by 50% when Health drops below 30%."
@@ -74,6 +80,7 @@
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Case 3 (tag hierarchy) is a frequent source of subtle bugs; test whenever tag naming conventions change
 - Case 4 requires knowledge of GAS stacking policies — verify this case if the GAS integration depth changes

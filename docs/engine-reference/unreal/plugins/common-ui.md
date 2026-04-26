@@ -1,4 +1,7 @@
-# Unreal Engine 5.7 — CommonUI Plugin
+# Unreal Engine 5.7 — CommonUI Plugin / Unreal EngineCommonUI（通用UI）插件
+
+
+> **中文翻译**：本文档为Unreal Engine引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 **Last verified:** 2026-02-13
 **Status:** Production-Ready
@@ -6,6 +9,7 @@
 
 ---
 
+<!-- 概述 -->
 ## Overview
 
 **CommonUI** is a cross-platform UI framework that automatically handles input routing
@@ -25,6 +29,7 @@ across PC, console, and mobile platforms with minimal platform-specific code.
 
 ---
 
+<!-- 中文翻译 -->
 ## Key Differences from Standard UMG
 
 | Feature | Standard UMG | CommonUI |
@@ -37,18 +42,22 @@ across PC, console, and mobile platforms with minimal platform-specific code.
 
 ---
 
+<!-- 设置 -->
 ## Setup
 
+<!-- 中文翻译 -->
 ### 1. Enable Plugin
 
 `Edit > Plugins > CommonUI > Enabled > Restart`
 
+<!-- 中文翻译 -->
 ### 2. Configure Project Settings
 
 `Project Settings > Plugins > CommonUI`:
 - **Default Input Type**: Gamepad (or auto-detect)
 - **Platform-Specific Settings**: Configure input icons per platform
 
+<!-- 中文翻译 -->
 ### 3. Create Common Input Settings Asset
 
 1. Content Browser > Input > Common Input Settings
@@ -59,8 +68,10 @@ across PC, console, and mobile platforms with minimal platform-specific code.
 
 ---
 
+<!-- 中文翻译 -->
 ## Core Widgets
 
+<!-- 中文翻译 -->
 ### CommonActivatableWidget (Screen Management)
 
 Base class for screens/menus that can be activated/deactivated.
@@ -98,6 +109,7 @@ private:
 
 ---
 
+<!-- 中文翻译 -->
 ### CommonButtonBase (Input-Aware Button)
 
 Replaces standard UMG Button. Automatically handles gamepad/mouse/keyboard input.
@@ -131,6 +143,7 @@ protected:
 
 ---
 
+<!-- 中文翻译 -->
 ### CommonTextBlock (Styled Text)
 
 Text widget with CommonUI styling support.
@@ -144,6 +157,7 @@ TitleText->SetText(FText::FromString(TEXT("Main Menu")));
 
 ---
 
+<!-- 中文翻译 -->
 ### CommonActionWidget (Input Prompts)
 
 Displays input prompts (e.g., "Press A to Continue", automatically shows correct button icon).
@@ -159,8 +173,10 @@ ConfirmActionWidget->SetInputAction(ConfirmInputActionData);
 
 ---
 
+<!-- 中文翻译 -->
 ## Widget Stack (Screen Management)
 
+<!-- 中文翻译 -->
 ### CommonActivatableWidgetStack
 
 Manages a stack of screens (e.g., Main Menu → Settings → Controls).
@@ -184,8 +200,10 @@ void GoBack() {
 
 ---
 
+<!-- 中文翻译 -->
 ## Input Actions (CommonUI Style)
 
+<!-- 中文翻译 -->
 ### Define Input Actions
 
 Create **Common Input Action Data Table**:
@@ -200,6 +218,7 @@ Example row:
 
 ---
 
+<!-- 中文翻译 -->
 ### Bind Input Actions in Widget
 
 ```cpp
@@ -231,8 +250,10 @@ private:
 
 ---
 
+<!-- 中文翻译 -->
 ## Focus & Navigation
 
+<!-- 中文翻译 -->
 ### Automatic Gamepad Navigation
 
 CommonUI automatically handles gamepad navigation (D-Pad/Stick to move between buttons).
@@ -243,6 +264,7 @@ CommonUI automatically handles gamepad navigation (D-Pad/Stick to move between b
 // - Focus order is determined by widget hierarchy and layout
 ```
 
+<!-- 中文翻译 -->
 ### Custom Focus Navigation
 
 ```cpp
@@ -254,8 +276,10 @@ virtual UWidget* NativeGetDesiredFocusTarget() const override {
 
 ---
 
+<!-- 中文翻译 -->
 ## Input Mode (Game vs UI)
 
+<!-- 中文翻译 -->
 ### Switch Input Mode
 
 ```cpp
@@ -270,8 +294,10 @@ UCommonUIExtensions::PopInputConfig(this);
 
 ---
 
+<!-- 中文翻译 -->
 ## Platform-Specific Input Icons
 
+<!-- 中文翻译 -->
 ### Configure Input Icons
 
 1. Create **Common Input Base Controller Data** asset for each platform:
@@ -285,6 +311,7 @@ UCommonUIExtensions::PopInputConfig(this);
 
 3. Assign to **Common Input Settings** asset
 
+<!-- 中文翻译 -->
 ### Automatically Display Correct Icons
 
 ```cpp
@@ -298,8 +325,10 @@ JumpActionWidget->SetInputAction(JumpInputActionData);
 
 ---
 
+<!-- 常见模式 -->
 ## Common Patterns
 
+<!-- 中文翻译 -->
 ### Main Menu with Navigation
 
 ```cpp
@@ -337,6 +366,7 @@ protected:
 
 ---
 
+<!-- 中文翻译 -->
 ### Pause Menu with Back Action
 
 ```cpp
@@ -364,6 +394,7 @@ protected:
 
 ---
 
+<!-- 性能提示 -->
 ## Performance Tips
 
 - Use **CommonActivatableWidgetStack** for screen management (automatically handles activation/deactivation)
@@ -372,8 +403,10 @@ protected:
 
 ---
 
+<!-- 调试 -->
 ## Debugging
 
+<!-- 中文翻译 -->
 ### CommonUI Debug Commands
 
 ```cpp
@@ -384,6 +417,7 @@ protected:
 
 ---
 
+<!-- 来源 -->
 ## Sources
 - https://docs.unrealengine.com/5.7/en-US/commonui-plugin-for-advanced-user-interfaces-in-unreal-engine/
 - https://docs.unrealengine.com/5.7/en-US/commonui-quickstart-guide-for-unreal-engine/

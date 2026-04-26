@@ -27,7 +27,7 @@ Initialize WebGL shader development for WeChat Mini Games, convert shaders from 
 5. **Creates boilerplate** — Vertex/fragment shader templates, WebGL context setup / **创建样板代码** — 顶点/片段着色器模板、WebGL 上下文设置
 6. **Establishes render standards** — Performance budgets, shader complexity limits, fallback strategies / **建立渲染标准** — 性能预算、着色器复杂度限制、后备策略
 
-## Usage
+## Usage / 用法
 
 ```
 /wechat-shader convert [source-engine] [shader-file]
@@ -37,21 +37,23 @@ Initialize WebGL shader development for WeChat Mini Games, convert shaders from 
 /wechat-shader variant [shader-name] [feature-flags]
 ```
 
+<!-- 示例 -->
 ## Example
 
 ```
 /wechat-shader setup webgl2
 ```
 
-This will:
-- Create `shaders/` directory structure
-- Set up shader loading and caching system
-- Create vertex/fragment shader templates
-- Add WebGL 2.0 context initialization
-- Include mobile optimization patterns
-- Set up render pipeline performance budgets
-- Create shader variant system with feature toggles
+This will: / 这将：
+- Create `shaders/` directory structure / 创建 `shaders/` 目录结构
+- Set up shader loading and caching system / 设置着色器加载和缓存系统
+- Create vertex/fragment shader templates / 创建顶点/片段着色器模板
+- Add WebGL 2.0 context initialization / 添加 WebGL 2.0 上下文初始化
+- Include mobile optimization patterns / 包含移动优化模式
+- Set up render pipeline performance budgets / 设置渲染管线性能预算
+- Create shader variant system with feature toggles / 创建带功能开关的着色器变体系统
 
+<!-- 输出 -->
 ## Output
 
 Creates the following structure:

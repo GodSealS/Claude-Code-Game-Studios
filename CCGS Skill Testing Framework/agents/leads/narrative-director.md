@@ -8,6 +8,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified by reading the agent's `.codebuddy/agents/narrative-director.md` frontmatter:
@@ -21,6 +22,7 @@ Verified by reading the agent's `.codebuddy/agents/narrative-director.md` frontm
 
 ## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出格式 -->
 ### Case 1: In-domain request — appropriate output format
 **Scenario:** A new lore document for "The Sunken Archive" location is submitted. The document establishes that the Archive was flooded 200 years ago during the Great Collapse, consistent with the established timeline in the world-bible. All named characters referenced are consistent with their established backstories. Request is tagged ND-CONSISTENCY.
 **Expected:** Returns `ND-CONSISTENCY: CONSISTENT` with rationale confirming the timeline alignment and character reference accuracy.
@@ -30,6 +32,7 @@ Verified by reading the agent's `.codebuddy/agents/narrative-director.md` frontm
 - [ ] Rationale references specific established facts verified (the 200-year timeline, the Great Collapse event)
 - [ ] Output stays within narrative scope — does not comment on visual design of the location or its technical implementation
 
+<!-- 用例 2：域外请求 — 重定向或升级 -->
 ### Case 2: Out-of-domain request — redirects or escalates
 **Scenario:** A developer asks narrative-director to review and optimize the shader code used for the "ancient glow" visual effect on Archive artifacts.
 **Expected:** Agent declines to evaluate shader code and redirects to the appropriate engine specialist (godot-gdscript-specialist or equivalent shader specialist).
@@ -38,6 +41,7 @@ Verified by reading the agent's `.codebuddy/agents/narrative-director.md` frontm
 - [ ] Explicitly names the appropriate engine or shader specialist as the correct handler
 - [ ] May note the intended narrative mood the effect should convey (e.g., "should feel ancient and sacred, not technological"), but defers all technical visual implementation
 
+<!-- 用例 3：门控裁决 — 正确词汇 -->
 ### Case 3: Gate verdict — correct vocabulary
 **Scenario:** A new character backstory document is submitted for the character "Aldric Vorne." The document states Aldric was born in the Capital 150 years ago and witnessed the Great Collapse firsthand. However, the established world-bible states Aldric was born 50 years after the Great Collapse in a provincial town, not the Capital. Request is tagged ND-CONSISTENCY.
 **Expected:** Returns `ND-CONSISTENCY: INCONSISTENT` with specific citation of the two contradicting facts: the birth timing (150 years ago vs. 50 years post-Collapse) and the birth location (Capital vs. provincial town).
@@ -47,6 +51,7 @@ Verified by reading the agent's `.codebuddy/agents/narrative-director.md` frontm
 - [ ] Rationale cites both contradictions specifically, not just "doesn't match lore"
 - [ ] References the authoritative source (world-bible) for the established facts
 
+<!-- 用例 4：冲突升级 — 正确上级 -->
 ### Case 4: Conflict escalation — correct parent
 **Scenario:** A writer has established in their latest dialogue that the ancient civilization "spoke only in song." The world-builder's existing lore entries describe the same civilization communicating through written glyphs. Both are in the narrative domain, and the two creators disagree on which is canonical.
 **Expected:** narrative-director makes a binding canonical decision within their domain. They do not need to escalate to a higher authority for intra-narrative conflicts — this is within their declared domain authority. They issue a ruling (e.g., "glyph-writing is the canonical primary communication; song may be ritual/ceremonial") and direct both writer and world-builder to align their work to the ruling.
@@ -56,6 +61,7 @@ Verified by reading the agent's `.codebuddy/agents/narrative-director.md` frontm
 - [ ] Directs both parties (writer and world-builder) to update their respective documents to align
 - [ ] Notes the decision in a way that can be added to the world-bible as a canonical fact
 
+<!-- 用例 5：上下文传递 — 使用提供的上下文 -->
 ### Case 5: Context pass — uses provided context
 **Scenario:** Agent receives a gate context block that includes three existing lore documents: the world-bible (establishes the Great Collapse timeline and causes), the character registry (lists canonical character ages, origins, and allegiances), and a faction document (describes the Sunken Archive Keepers). A new story chapter is submitted that introduces a previously unregistered character.
 **Expected:** Assessment cross-references the new character against the character registry (no conflict), checks the chapter's timeline references against the world-bible, and evaluates the chapter's portrayal of the Archive Keepers against the faction document. Uses specific facts from all three provided documents in the assessment.
@@ -78,6 +84,7 @@ Verified by reading the agent's `.codebuddy/agents/narrative-director.md` frontm
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Dialogue quality review (distinct from world-building consistency) is not covered — a dedicated case should be added.
 - Multi-document consistency check across a full chapter set is not covered — deferred to /review-all-gdds integration.

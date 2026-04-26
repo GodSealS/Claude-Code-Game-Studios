@@ -10,6 +10,7 @@ before persisting. Verdict is always COMPLETE.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -22,6 +23,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. Changelog generation is a fast compilation task; no gates are invoked.
@@ -30,6 +32,7 @@ None. Changelog generation is a fast compilation task; no gates are invoked.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Multiple sprints since last release tag
 
 **Fixture:**
@@ -57,6 +60,7 @@ None. Changelog generation is a fast compilation task; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: No Git Tags Found — All commits used, version baseline noted
 
 **Fixture:**
@@ -80,6 +84,7 @@ None. Changelog generation is a fast compilation task; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Commit Messages Without Task IDs — Grouped by date with note
 
 **Fixture:**
@@ -104,6 +109,7 @@ None. Changelog generation is a fast compilation task; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Existing CHANGELOG.md — New section prepended, old entries preserved
 
 **Fixture:**
@@ -127,6 +133,7 @@ None. Changelog generation is a fast compilation task; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Gate Compliance — No gate; read-then-write with approval
 
 **Fixture:**
@@ -159,6 +166,7 @@ None. Changelog generation is a fast compilation task; no gates are invoked.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The case where git is not initialized in the repository is not tested;

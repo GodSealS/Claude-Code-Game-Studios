@@ -1,12 +1,17 @@
-# Unity 6.3 LTS — Breaking Changes
+# Unity 6.3 LTS — Breaking Changes / 破坏性变更
+
+
+> **中文翻译**：本文档为Unity引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 **Last verified:** 2026-02-13
 
 This document tracks breaking API changes and behavioral differences between Unity 2022 LTS
 (likely in model training) and Unity 6.3 LTS (current version). Organized by risk level.
 
+<!-- 中文翻译 -->
 ## HIGH RISK — Will Break Existing Code
 
+<!-- 中文翻译 -->
 ### Entities/DOTS API Complete Overhaul
 **Versions:** Entities 1.0+ (Unity 6.0+)
 
@@ -35,6 +40,7 @@ public partial struct DamageSystem : ISystem {
 
 ---
 
+<!-- 中文翻译 -->
 ### Input System — Legacy Input Deprecated
 **Versions:** Unity 6.0+
 
@@ -51,6 +57,7 @@ if (Keyboard.current.spaceKey.wasPressedThisFrame) { }
 
 ---
 
+<!-- 中文翻译 -->
 ### URP/HDRP Renderer Feature API Changes
 **Versions:** Unity 6.0+
 
@@ -66,8 +73,10 @@ public override void RecordRenderGraph(RenderGraph renderGraph, ContextContainer
 
 ---
 
+<!-- 中文翻译 -->
 ## MEDIUM RISK — Behavioral Changes
 
+<!-- 中文翻译 -->
 ### Addressables — Asset Loading Returns
 **Versions:** Unity 6.2+
 
@@ -90,6 +99,7 @@ try {
 
 ---
 
+<!-- 中文翻译 -->
 ### Physics — Default Solver Iterations Changed
 **Versions:** Unity 6.0+
 
@@ -98,8 +108,10 @@ Check `Physics.defaultSolverIterations` if you rely on old behavior.
 
 ---
 
+<!-- 中文翻译 -->
 ## LOW RISK — Deprecations (Still Functional)
 
+<!-- 中文翻译 -->
 ### UGUI (Legacy UI)
 **Status:** Deprecated but supported
 **Replacement:** UI Toolkit
@@ -108,32 +120,39 @@ UGUI still works but UI Toolkit is recommended for new projects.
 
 ---
 
+<!-- 中文翻译 -->
 ### Legacy Particle System
 **Status:** Deprecated
 **Replacement:** Visual Effect Graph (VFX Graph)
 
 ---
 
+<!-- 中文翻译 -->
 ### Old Animation System
 **Status:** Deprecated
 **Replacement:** Animator Controller (Mecanim)
 
 ---
 
+<!-- 中文翻译 -->
 ## Platform-Specific Breaking Changes
 
+<!-- 中文翻译 -->
 ### WebGL
 - **Unity 6.0+**: WebGPU is now the default (WebGL 2.0 fallback available)
 - Update shaders for WebGPU compatibility
 
+<!-- 中文翻译 -->
 ### Android
 - **Unity 6.0+**: Minimum API level raised to 24 (Android 7.0)
 
+<!-- 中文翻译 -->
 ### iOS
 - **Unity 6.0+**: Minimum deployment target raised to iOS 13
 
 ---
 
+<!-- 中文翻译 -->
 ## Migration Checklist
 
 When upgrading from 2022 LTS to Unity 6.3 LTS:

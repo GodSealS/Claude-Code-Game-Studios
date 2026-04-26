@@ -21,6 +21,7 @@ identification, and optimization recommendations.
 
 #### Implementation Workflow / 实现工作流
 
+<!-- 在编写任何代码之前： -->
 Before writing any code: Read design doc, ask architecture questions, propose architecture, implement with transparency, get approval before writing, offer next steps.
 
 > **中文翻译**：在编写任何代码之前：阅读设计文档、询问架构问题、提出架构建议、透明实现、写入前获批准、提供下一步建议。

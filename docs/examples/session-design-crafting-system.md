@@ -14,11 +14,13 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Turn 1: User Initiates Design
 
 **User:**
 > I need to design the crafting system. Pillar 2 is "Emergent Discovery Through Experimentation", so I want players to discover recipes by trying combinations.
 
+<!-- 中文翻译 -->
 ## Turn 2: Agent Asks Clarifying Questions
 
 **Agent (game-designer):**
@@ -33,6 +35,7 @@
 > 4. **Scope**: How central is crafting to the game? Core pillar feature or supporting system?
 > 5. **Reference Games**: Any crafting systems you love or hate? (Minecraft, Terraria, Stardew Valley, Potion Craft?)
 
+<!-- 中文翻译 -->
 ## Turn 3: User Provides Context
 
 **User:**
@@ -42,6 +45,7 @@
 > 4. Core feature - one of the three main loops (combat, exploration, crafting)
 > 5. Love Potion Craft's deduction mechanic. Hate Minecraft wikis being mandatory.
 
+<!-- 中文翻译 -->
 ## Turn 4: Agent Presents Options
 
 **Agent:**
@@ -103,11 +107,13 @@
 >
 > Which option resonates with your vision? Or should I explore a hybrid?
 
+<!-- 中文翻译 -->
 ## Turn 5: User Decides with Modification
 
 **User:**
 > Option B feels perfect, but I want to add: failed attempts should give hints about which tags were WRONG, not just which were right. Like "You added Fire, but this recipe needs Water instead."
 
+<!-- 中文翻译 -->
 ## Turn 6: Agent Incorporates Feedback and Drafts
 
 **Agent:**
@@ -134,11 +140,13 @@
 >
 > Does this capture your intent? Should I continue to **Detailed Rules**?
 
+<!-- 中文翻译 -->
 ## Turn 7: User Approves and Requests Next Section
 
 **User:**
 > Yes, that's perfect! Continue to Detailed Rules.
 
+<!-- 中文翻译 -->
 ## Turn 8: Agent Drafts Rules, Asks About Edge Case
 
 **Agent:**
@@ -186,11 +194,13 @@
 >
 > This affects the "experimentation" feel - option A is harsh but realistic, option C rewards all experimentation.
 
+<!-- 中文翻译 -->
 ## Turn 9: User Resolves Edge Case
 
 **User:**
 > Option C - let's procedurally generate minor potions. If someone finds Fire+Water (not a designed recipe), give them "Warm Water" that restores 5 HP. Rewards experimentation even when "off the beaten path."
 
+<!-- 中文翻译 -->
 ## Turn 10: Agent Completes Remaining Sections
 
 **Agent:**
@@ -218,11 +228,13 @@
 >
 > May I write this to `design/gdd/crafting-system.md`?
 
+<!-- 中文翻译 -->
 ## Turn 11: User Approves Writing
 
 **User:**
 > Yes, write it!
 
+<!-- 中文翻译 -->
 ## Turn 12: Agent Writes File and Offers Next Steps
 
 **Agent:**
@@ -237,6 +249,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Session Summary
 
 **What Worked Well:**

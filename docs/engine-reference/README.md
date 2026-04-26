@@ -6,6 +6,7 @@ has a cutoff date** and game engines update frequently.
 
 > **中文翻译**：此目录包含项目所使用游戏引擎的版本锁定文档快照。这些文件的存在是因为 **LLM 知识有截止日期**，而游戏引擎更新频繁。
 
+<!-- 中文翻译 -->
 ## Why This Exists
 
 Claude's training data has a knowledge cutoff (currently May 2025). Game engines
@@ -13,6 +14,7 @@ like Godot, Unity, Unreal, and Cocos Creator ship updates that introduce breakin
 new features, and deprecated patterns. Without these reference files, agents will
 suggest outdated code.
 
+<!-- 中文翻译 -->
 ## Structure
 
 Each engine gets its own directory:
@@ -29,6 +31,7 @@ Each engine gets its own directory:
     └── ...
 ```
 
+<!-- 中文翻译 -->
 ## How Agents Use These Files
 
 Engine-specialist agents are instructed to:
@@ -38,8 +41,10 @@ Engine-specialist agents are instructed to:
 3. Consult `breaking-changes.md` for version-specific concerns
 4. Read relevant `modules/*.md` for subsystem-specific work
 
+<!-- 中文翻译 -->
 ## Maintenance
 
+<!-- 中文翻译 -->
 ### When to Update
 
 - After upgrading the engine version
@@ -47,6 +52,7 @@ Engine-specialist agents are instructed to:
 - After running `/refresh-docs` (if available)
 - When you discover an API the model gets wrong
 
+<!-- 中文翻译 -->
 ### How to Update
 
 1. Update `VERSION.md` with the new engine version and date
@@ -56,6 +62,7 @@ Engine-specialist agents are instructed to:
 5. Update relevant `modules/*.md` with API changes
 6. Set "Last verified" dates on all modified files
 
+<!-- 中文翻译 -->
 ### Quality Rules
 
 - Every file must have a "Last verified: YYYY-MM-DD" date

@@ -22,6 +22,7 @@ These should pass before any behavioral testing:
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 [Describe which director gates this skill triggers (if any), and under what review mode conditions.]
@@ -35,6 +36,7 @@ These should pass before any behavioral testing:
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — [brief name]
 
 **Fixture** (assumed project state):
@@ -55,6 +57,7 @@ These should pass before any behavioral testing:
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Failure / Blocked — [brief name]
 
 **Fixture**:
@@ -74,6 +77,7 @@ These should pass before any behavioral testing:
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Mode Variant — [brief name]
 
 **Fixture**:
@@ -91,6 +95,7 @@ These should pass before any behavioral testing:
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Edge Case — [brief name]
 
 **Fixture**:
@@ -107,6 +112,7 @@ These should pass before any behavioral testing:
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate — [brief name]
 
 **Fixture**:
@@ -136,6 +142,7 @@ These should pass before any behavioral testing:
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 [Any gaps in coverage, known edge cases not tested, or conditions that would require

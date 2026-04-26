@@ -9,6 +9,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references i18n, string extraction, locale pipeline, localization)
@@ -20,6 +21,7 @@
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: In-domain request — string extraction pipeline for a Unity project
 **Input**: "Set up a string extraction pipeline for our Unity game. We need to get all localizable strings into a format translators can work with."
 **Expected behavior**:
@@ -28,6 +30,7 @@
 - Notes that string keys must be stable (do not use index-based keys) — key changes break all existing translations
 - Does NOT produce Unity C# code for the i18n implementation — marks as [TO BE IMPLEMENTED BY PROGRAMMER]
 
+<!-- 中文翻译 -->
 ### Case 2: Out-of-domain request — translate game dialogue
 **Input**: "Translate the following English dialogue into French: 'Well met, traveler. The road ahead is treacherous.'"
 **Expected behavior**:
@@ -35,6 +38,7 @@
 - States clearly: "localization-lead owns the pipeline, quality standards, and workflow; actual translation work is performed by human translators or approved translation vendors — I am not a translator"
 - Optionally notes what information a translator would need: context (who is speaking, to whom, game genre/tone), character limit constraints if any, glossary terms (e.g., if "traveler" has a game-specific translation)
 
+<!-- 中文翻译 -->
 ### Case 3: Domain boundary — missing plural forms in Russian locale
 **Input**: "Our Russian locale files only have a singular form for item quantity strings. Russian requires multiple plural forms (1 item, 2-4 items, 5+ items use different forms)."
 **Expected behavior**:
@@ -44,6 +48,7 @@
 - Notes which other languages in the pipeline also require plural form support (e.g., Polish, Czech, Arabic)
 - Does NOT suggest using a numeric threshold workaround as a substitute for proper CLDR plural support
 
+<!-- 中文翻译 -->
 ### Case 4: String key naming conflict between two systems
 **Input**: "Our UI system uses keys like 'button_confirm' and 'button_cancel'. Our dialogue system uses 'confirm' and 'cancel' for the same concepts. Translators are confused about which to use."
 **Expected behavior**:
@@ -53,6 +58,7 @@
 - Provides a migration path: map old keys to new keys, update all string references in both systems, deprecate old keys after one release cycle
 - Does NOT recommend maintaining two separate keys for the same concept
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — pipeline accommodates RTL languages
 **Input context**: Target locales include English (en), French (fr), German (de), Arabic (ar), and Hebrew (he).
 **Input**: "Design the localization pipeline for this project."
@@ -78,6 +84,7 @@
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Case 3 (plural forms) and Case 5 (RTL) are locale-correctness tests — these affect shipping quality in non-English markets
 - Case 4 (key naming conflict) is a pipeline hygiene test — duplicate keys cause ongoing translator confusion and cost

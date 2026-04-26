@@ -1,7 +1,11 @@
-# Cocos Creator — Physics Module (3D)
+# Cocos Creator — Physics Module (3D) / Cocos Creator物理模块
+
+
+> **中文翻译**：本文档为Cocos Creator引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 Last verified: 2026-04-25
 
+<!-- 核心类型 -->
 ## Core Types
 
 | Type | Purpose |
@@ -11,6 +15,7 @@ Last verified: 2026-04-25
 | `ConstantForce` | Continuous force application |
 | `PhysicsSystem` | Global physics singleton |
 
+<!-- 中文翻译 -->
 ## Component Setup
 
 ```typescript
@@ -21,6 +26,7 @@ PhysicsSystem.instance.enable = true;
 PhysicsSystem.instance.gravity = new Vec3(0, -9.81, 0);
 ```
 
+<!-- 常见操作 -->
 ## Common Operations
 
 ```typescript
@@ -36,6 +42,7 @@ rb.type = ERigidBodyType.KINEMATIC;
 rb.setWorldPosition(newPosition);
 ```
 
+<!-- 中文翻译 -->
 ## Raycasting
 
 ```typescript
@@ -49,6 +56,7 @@ if (out) {
 }
 ```
 
+<!-- 中文翻译 -->
 ## Collision Events
 
 ```typescript
@@ -67,6 +75,7 @@ onCollisionEnter(event: ICollisionEvent) {
 }
 ```
 
+<!-- 陷阱 -->
 ## Pitfalls
 
 - WRONG: Modifying `position` directly on dynamic `RigidBody`

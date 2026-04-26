@@ -1,10 +1,14 @@
-# Godot — Deprecated APIs
+# Godot — Deprecated APIs / 已弃用API
+
+
+> **中文翻译**：本文档为Godot引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 Last verified: 2026-02-12
 
 If an agent suggests any API in the "Deprecated" column, it MUST be replaced
 with the "Use Instead" column.
 
+<!-- 中文翻译 -->
 ## Nodes & Classes
 
 | Deprecated | Use Instead | Since | Notes |
@@ -16,6 +20,7 @@ with the "Use Instead" column.
 | `Navigation2D` / `Navigation3D` | `NavigationServer2D` / `NavigationServer3D` | 4.0 | Server-based API |
 | `EditorSceneFormatImporterFBX` | `EditorSceneFormatImporterFBX2GLTF` | 4.3 | Renamed |
 
+<!-- 中文翻译 -->
 ## Methods & Properties
 
 | Deprecated | Use Instead | Since | Notes |
@@ -31,6 +36,7 @@ with the "Use Instead" column.
 | `AnimationPlayer.method_call_mode` | `AnimationMixer.callback_mode_method` | 4.3 | Moved to base class |
 | `AnimationPlayer.playback_active` | `AnimationMixer.active` | 4.3 | Moved to base class |
 
+<!-- 中文翻译 -->
 ## Patterns (Not Just APIs)
 
 | Deprecated Pattern | Use Instead | Why |

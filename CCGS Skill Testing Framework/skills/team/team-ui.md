@@ -14,6 +14,7 @@ with verdict COMPLETE / BLOCKED and handoffs to `/ux-review`, `/code-review`,
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] Has required frontmatter fields: `name`, `description`, `argument-hint`, `user-invocable`, `allowed-tools`
@@ -33,6 +34,7 @@ with verdict COMPLETE / BLOCKED and handoffs to `/ux-review`, `/code-review`,
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Full pipeline from UX spec through polish succeeds
 
 **Fixture:**
@@ -66,6 +68,7 @@ with verdict COMPLETE / BLOCKED and handoffs to `/ux-review`, `/code-review`,
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: UX Review Gate — Spec fails review; skill halts before implementation
 
 **Fixture:**
@@ -95,6 +98,7 @@ with verdict COMPLETE / BLOCKED and handoffs to `/ux-review`, `/code-review`,
 
 ---
 
+<!-- 用例 3：无参数 — 显示用法指导 -->
 ### Case 3: No Argument — Usage guidance shown
 
 **Fixture:**
@@ -117,6 +121,7 @@ with verdict COMPLETE / BLOCKED and handoffs to `/ux-review`, `/code-review`,
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Accessibility Parallel Review — Phase 4 runs three streams simultaneously
 
 **Fixture:**
@@ -147,6 +152,7 @@ with verdict COMPLETE / BLOCKED and handoffs to `/ux-review`, `/code-review`,
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Missing Interaction Pattern Library — Skill notes the gap rather than inventing patterns
 
 **Fixture:**
@@ -188,6 +194,7 @@ with verdict COMPLETE / BLOCKED and handoffs to `/ux-review`, `/code-review`,
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The HUD-specific path (`/ux-design hud` + `hud-design.md` template + visual budget check in Phase 5)

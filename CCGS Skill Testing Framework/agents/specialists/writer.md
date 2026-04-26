@@ -8,6 +8,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references dialogue, lore entries, item descriptions, in-game text)
@@ -20,6 +21,7 @@
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: In-domain request — NPC merchant dialogue
 **Input**: "Write dialogue for Mira, a traveling merchant NPC. She sells general supplies. Players can ask her about her wares, the road ahead, and rumors."
 **Expected behavior**:
@@ -29,6 +31,7 @@
 - Mira's voice is consistent across branches: if she's warm and chatty in one branch, she's not brusque in another without reason
 - Output is formatted as a structured dialogue tree: node label, NPC line, player options, next node
 
+<!-- 中文翻译 -->
 ### Case 2: Out-of-domain request — world history design
 **Input**: "Design the history of the world — when the first kingdom was founded, what the great wars were, and why magic was banned."
 **Expected behavior**:
@@ -36,6 +39,7 @@
 - States clearly: "World history, lore, and world rules are owned by world-builder; once the history is established, I can write in-game texts, books, and dialogue that reference those events"
 - Does not produce even partial world history as a "placeholder"
 
+<!-- 中文翻译 -->
 ### Case 3: Dialogue contradicts established lore — flag to narrative-director
 **Input**: "Write Mira's dialogue line where she mentions that dragons have been extinct for 200 years." [Context includes existing lore: dragons are alive and revered in the northern provinces, not extinct.]
 **Expected behavior**:
@@ -44,6 +48,7 @@
 - Flags the inconsistency to narrative-director: "Mira's dialogue as requested contradicts established lore (dragons are alive per world-builder's document); requires narrative-director resolution before I can write this line"
 - Offers an alternative: a line that references dragons in a way consistent with the established lore (e.g., Mira expresses awe about a dragon sighting in the north)
 
+<!-- 中文翻译 -->
 ### Case 4: Item description references an undesigned mechanic
 **Input**: "Write a description for the 'Berserker's Chalice' — a consumable that triggers the Berserker state when drunk."
 **Expected behavior**:
@@ -52,6 +57,7 @@
 - Does NOT write a description that invents mechanic details (duration, effects) that may conflict with the eventual design
 - Offers two paths: (a) write a vague, non-mechanical description that creates no false expectations, flagged as temporary; (b) wait for game-designer to define the Berserker state first
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — character voice guide
 **Input context**: Character voice guide for Mira: She speaks in short, energetic sentences. Uses merchant slang ("a fine bargain," "coin well spent"). Drops pronouns occasionally ("Good wares, these."). Never uses contractions — always "I will" not "I'll". Warm but slightly mercenary.
 **Input**: "Write Mira's response when a player asks if she has healing potions."
@@ -75,6 +81,7 @@
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Case 3 (lore contradiction detection) requires that existing lore is in the conversation context — test is only valid when context is provided
 - Case 4 (dependency gap) tests whether the agent writes descriptions that could set wrong player expectations — a subtle but important quality issue

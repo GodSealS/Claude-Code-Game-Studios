@@ -8,6 +8,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references UX flows / interaction design / information architecture)
@@ -19,6 +20,7 @@ No gate IDs assigned.
 
 ## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出 -->
 ### Case 1: In-domain request — appropriate output
 **Input:** "Design the inventory management flow for a survival game."
 **Expected behavior:**
@@ -28,6 +30,7 @@ No gate IDs assigned.
 - Notes cognitive load considerations (e.g., maximum items visible without scrolling)
 - Does NOT produce visual design (colors, icons) or implementation code
 
+<!-- 用例 2：域外请求 — 正确重定向 -->
 ### Case 2: Out-of-domain request — redirects correctly
 **Input:** "Implement the inventory screen in GDScript with drag-and-drop support."
 **Expected behavior:**
@@ -36,6 +39,7 @@ No gate IDs assigned.
 - Redirects the request to `ui-programmer`
 - Notes that the UX flow spec should be provided to ui-programmer as the implementation reference
 
+<!-- 中文翻译 -->
 ### Case 3: Flow depth conflict — simplification
 **Input:** "The lead designer says the current 5-step crafting flow is too deep; maximum 3 steps allowed."
 **Expected behavior:**
@@ -44,6 +48,7 @@ No gate IDs assigned.
 - Does NOT simply remove steps without addressing the user's goal at each removed step
 - Flags if the 3-step constraint makes any required use case impossible and proposes an alternative
 
+<!-- 中文翻译 -->
 ### Case 4: Accessibility conflict
 **Input:** "The onboarding flow uses a timed prompt (auto-advances after 3 seconds) to keep pace, but this conflicts with accessibility requirements for user-controlled timing."
 **Expected behavior:**
@@ -52,6 +57,7 @@ No gate IDs assigned.
 - Coordinates with `accessibility-specialist` to agree on a compliant solution
 - Proposes alternatives: pause-on-hover, skip button, settings option to disable auto-advance
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — player mental model research
 **Input:** Playtest research provided in context: "Players consistently expected the 'Crafting' option to be inside the Inventory screen, not in a separate top-level menu." Request: "Redesign the navigation IA for crafting."
 **Expected behavior:**
@@ -73,6 +79,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Inventory flow (Case 1) should be written to `design/ux/` as a spec for ui-programmer to implement against
 - Mental model case (Case 5) verifies the agent applies research evidence, not intuition

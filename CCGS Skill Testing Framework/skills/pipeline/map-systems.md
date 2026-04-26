@@ -17,6 +17,7 @@ skipped. The skill writes to `design/systems-index.md`.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -30,6 +31,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 In `full` mode: CD-SYSTEMS (creative-director) and TD-SYSTEM-BOUNDARY
@@ -45,6 +47,7 @@ In `solo` mode: both gates are skipped with equivalent notes.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Game concept exists, 5-8 systems identified
 
 **Fixture:**
@@ -75,6 +78,7 @@ In `solo` mode: both gates are skipped with equivalent notes.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Failure Path — No game concept found
 
 **Fixture:**
@@ -97,6 +101,7 @@ In `solo` mode: both gates are skipped with equivalent notes.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Director Gate — CD-SYSTEMS returns CONCERNS (missing core system)
 
 **Fixture:**
@@ -122,6 +127,7 @@ In `solo` mode: both gates are skipped with equivalent notes.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Edge Case — systems-index.md already exists
 
 **Fixture:**
@@ -144,6 +150,7 @@ In `solo` mode: both gates are skipped with equivalent notes.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate — Lean mode and solo mode both skip gates, noted
 
 **Fixture (lean mode):**
@@ -186,6 +193,7 @@ In `solo` mode: both gates are skipped with equivalent notes.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - Circular dependency detection (System A depends on System B which depends on A)

@@ -2,6 +2,7 @@
 
 When authoring or editing files in this directory, follow these standards.
 
+<!-- 中文翻译 -->
 ## GDD Files (`design/gdd/`)
 
 Every GDD must include all **8 required sections** in this order:
@@ -23,11 +24,13 @@ Every GDD must include all **8 required sections** in this order:
 **Validation:** Run `/design-review [path]` after authoring any GDD.
 Run `/review-all-gdds` after completing a set of related GDDs.
 
+<!-- 中文翻译 -->
 ## Quick Specs (`design/quick-specs/`)
 
 Lightweight specs for tuning changes, minor mechanics, or balance adjustments.
 Use `/quick-design` to author.
 
+<!-- 中文翻译 -->
 ## UX Specs (`design/ux/`)
 
 - Per-screen specs: `design/ux/[screen-name].md`

@@ -227,6 +227,7 @@ ue-replication-specialist
 | **E2 — File routing** | Routes file types to the correct sub-specialist (e.g., `.gdshader` → godot-shader-specialist, not godot-gdscript-specialist) |
 | **E3 — Engine-specific patterns** | Enforces engine-specific idioms (e.g., GDScript static typing, C# attribute exports, Blueprint function libraries) |
 
+<!-- 中文翻译 -->
 ### `qa` / QA
 
 **Agents**: qa-tester, qa-lead, security-engineer, accessibility-specialist

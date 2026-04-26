@@ -12,6 +12,7 @@ NO-GO. Closes with a post-release monitoring plan.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] Has required frontmatter fields: `name`, `description`, `argument-hint`, `user-invocable`, `allowed-tools`
@@ -30,6 +31,7 @@ NO-GO. Closes with a post-release monitoring plan.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path (Single-Player) — All phases complete, version deployed
 
 **Fixture:**
@@ -65,6 +67,7 @@ NO-GO. Closes with a post-release monitoring plan.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Go/No-Go: NO — S1 bug found in Phase 3, deployment skipped
 
 **Fixture:**
@@ -99,6 +102,7 @@ NO-GO. Closes with a post-release monitoring plan.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Security Audit for Online Game — security-engineer is spawned in Phase 3
 
 **Fixture:**
@@ -129,6 +133,7 @@ NO-GO. Closes with a post-release monitoring plan.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Localization Miss — Untranslated strings block the ship
 
 **Fixture:**
@@ -159,6 +164,7 @@ NO-GO. Closes with a post-release monitoring plan.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: No Argument — Skill infers version or asks
 
 **Fixture (variant A — milestone data present):**
@@ -206,6 +212,7 @@ NO-GO. Closes with a post-release monitoring plan.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - Phase 7 post-release actions (release report, milestone tracking, community publishing, dashboard monitoring) are validated implicitly by Case 1. No separate edge case is required as Phase 7 is non-gated and does not have a blocking failure mode.

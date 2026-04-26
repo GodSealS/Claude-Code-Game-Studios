@@ -18,6 +18,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Table of Contents
 
 1. [Quick Start](#quick-start)
@@ -35,8 +36,10 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Quick Start
 
+<!-- 中文翻译 -->
 ### What You Need
 
 Before you start, make sure you have:
@@ -46,6 +49,7 @@ Before you start, make sure you have:
 - **jq** (optional but recommended -- hooks fall back to `grep` if missing)
 - **Python 3** (optional -- some hooks use it for JSON validation)
 
+<!-- 中文翻译 -->
 ### Step 1: Clone and Open
 
 ```bash
@@ -53,6 +57,7 @@ git clone <repo-url> my-game
 cd my-game
 ```
 
+<!-- 中文翻译 -->
 ### Step 2: Run /start
 
 If this is your first session:
@@ -70,6 +75,7 @@ This guided onboarding asks where you are and routes you to the right phase:
 - **Path D2** -- Existing project, GDDs/ADRs exist: runs `/project-stage-detect`
   then `/adopt` for brownfield migration
 
+<!-- 中文翻译 -->
 ### Step 3: Verify Hooks Are Working
 
 Start a new Claude Code session. You should see output from the
@@ -86,6 +92,7 @@ Recent commits:
 If you see this, hooks are working. If not, check `.codebuddy/settings.json` to
 make sure the hook paths are correct for your OS.
 
+<!-- 中文翻译 -->
 ### Step 4: Ask for Help Anytime
 
 At any point, run:
@@ -98,6 +105,7 @@ This reads your current phase from `production/stage.txt`, checks which
 artifacts exist, and tells you exactly what to do next. It distinguishes
 between REQUIRED next steps and OPTIONAL opportunities.
 
+<!-- 中文翻译 -->
 ### Step 5: Create Your Directory Structure
 
 Directories are created as needed. The system expects this layout:
@@ -146,14 +154,17 @@ production/           # Sprint plans, milestones, releases
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 1: Concept
 
+<!-- 此阶段发生什么 -->
 ### What Happens in This Phase
 
 You go from "no idea" or "vague idea" to a structured game concept document
 with defined pillars and a player journey. This is where you figure out
 **what** you are making and **why**.
 
+<!-- 中文翻译 -->
 ### Phase 1 Pipeline
 
 ```
@@ -173,6 +184,7 @@ with defined pillars and a player journey. This is where you figure out
                                                              priority tiers)
 ```
 
+<!-- 中文翻译 -->
 ### Step 1.1: Brainstorm With /brainstorm
 
 This is your starting point. Run the brainstorm skill:
@@ -209,6 +221,7 @@ The concept document includes:
 - Game pillars (3-5 non-negotiable design values)
 - Anti-pillars (things the game intentionally avoids)
 
+<!-- 中文翻译 -->
 ### Step 1.2: Review the Concept (Optional but Recommended)
 
 ```
@@ -217,6 +230,7 @@ The concept document includes:
 
 Validates structure and completeness before you proceed.
 
+<!-- 中文翻译 -->
 ### Step 1.3: Choose Your Engine
 
 ```
@@ -242,6 +256,7 @@ engine-specialist agents to use. If you pick Godot, agents like
 `godot-specialist`, `godot-gdscript-specialist`, and `godot-shader-specialist`
 become your go-to experts.
 
+<!-- 中文翻译 -->
 ### Step 1.4: Decompose Your Concept Into Systems
 
 Before writing individual GDDs, enumerate all the systems your game needs:
@@ -261,6 +276,7 @@ This step is **required** before proceeding to Phase 2. Research from 155 game
 postmortems confirms that skipping systems enumeration costs 5-10x more in
 production.
 
+<!-- 中文翻译 -->
 ### Phase 1 Gate
 
 ```
@@ -278,8 +294,10 @@ risks. FAIL blocks advancement.
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 2: Systems Design
 
+<!-- 此阶段发生什么 -->
 ### What Happens in This Phase
 
 You create all the design documents that define how your game works. Nothing
@@ -287,6 +305,7 @@ gets coded yet -- this is pure design. Each system identified in the systems
 index gets its own GDD, authored section by section, reviewed individually,
 and then all GDDs are cross-checked for consistency.
 
+<!-- 中文翻译 -->
 ### Phase 2 Pipeline
 
 ```
@@ -306,6 +325,7 @@ and then all GDDs are cross-checked for consistency.
   PASS / CONCERNS / FAIL
 ```
 
+<!-- 中文翻译 -->
 ### Step 2.1: Author System GDDs
 
 Design each system in dependency order using the guided workflow:
@@ -350,6 +370,7 @@ You can also design a specific system directly:
 Plus a **Game Feel** section: feel reference, input responsiveness (ms/frames),
 animation feel targets (startup/active/recovery), impact moments, weight profile.
 
+<!-- 中文翻译 -->
 ### Step 2.2: Review Each GDD
 
 Before the next system starts, validate the current one:
@@ -364,6 +385,7 @@ bidirectional dependencies, and testable acceptance criteria.
 **Verdict:** APPROVED / NEEDS REVISION / MAJOR REVISION. Only APPROVED GDDs
 should proceed.
 
+<!-- 中文翻译 -->
 ### Step 2.3: Small Changes Without Full GDDs
 
 For tuning changes, small additions, or tweaks that do not warrant a full GDD:
@@ -375,6 +397,7 @@ For tuning changes, small additions, or tweaks that do not warrant a full GDD:
 This creates a lightweight spec in `design/quick-specs/` instead of a full
 8-section GDD. Use it for tuning, number changes, and small additions.
 
+<!-- 中文翻译 -->
 ### Step 2.4: Cross-GDD Consistency Review
 
 After all MVP system GDDs are approved individually:
@@ -404,6 +427,7 @@ This reads ALL GDDs simultaneously and runs two analysis phases:
 
 **Output:** `design/gdd/gdd-cross-review-[date].md` with a verdict.
 
+<!-- 中文翻译 -->
 ### Step 2.5: Narrative Design (If Applicable)
 
 If your game has story, lore, or dialogue, this is when you build it:
@@ -414,6 +438,7 @@ If your game has story, lore, or dialogue, this is when you build it:
    character arcs, and narrative beats
 3. **Character sheets** -- Use the `narrative-character-sheet.md` template
 
+<!-- 中文翻译 -->
 ### Phase 2 Gate
 
 ```
@@ -429,14 +454,17 @@ If your game has story, lore, or dialogue, this is when you build it:
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 3: Technical Setup
 
+<!-- 此阶段发生什么 -->
 ### What Happens in This Phase
 
 You make key technical decisions, document them as Architecture Decision Records
 (ADRs), validate them through review, and produce a control manifest that
 gives programmers flat, actionable rules. You also establish UX foundations.
 
+<!-- 中文翻译 -->
 ### Phase 3 Pipeline
 
 ```
@@ -461,6 +489,7 @@ gives programmers flat, actionable rules. You also establish UX foundations.
         Interaction pattern library
 ```
 
+<!-- 中文翻译 -->
 ### Step 3.1: Master Architecture Document
 
 ```
@@ -470,6 +499,7 @@ gives programmers flat, actionable rules. You also establish UX foundations.
 Creates the overarching architecture document in `docs/architecture/architecture.md`
 covering system boundaries, data flow, and integration points.
 
+<!-- 中文翻译 -->
 ### Step 3.2: Architecture Decision Records (ADRs)
 
 For each significant technical decision:
@@ -500,6 +530,7 @@ project:
 This detects which template sections are missing and adds only those, never
 overwriting existing content.
 
+<!-- 中文翻译 -->
 ### Step 3.3: Architecture Review
 
 ```
@@ -512,6 +543,7 @@ Validates all ADRs together:
 - GDD Revision Flags (flags GDD sections that need updates based on ADR choices)
 - TR-ID registry maintenance (`docs/architecture/tr-registry.yaml`)
 
+<!-- 中文翻译 -->
 ### Step 3.4: Control Manifest
 
 ```
@@ -528,6 +560,7 @@ This contains Required patterns, Forbidden patterns, and Guardrails organized
 by code layer. Stories created later embed the manifest version date so
 staleness can be detected.
 
+<!-- 中文翻译 -->
 ### Step 3.5: Accessibility Requirements
 
 Create `design/accessibility-requirements.md` using the template. Commit to a
@@ -537,6 +570,7 @@ matrix (visual, motor, cognitive, auditory).
 This document is required in Phase 3 because UX specs (written in Phase 4)
 reference this tier — it is a design prerequisite, not a UX deliverable.
 
+<!-- 中文翻译 -->
 ### Phase 3 Gate
 
 ```
@@ -553,14 +587,17 @@ reference this tier — it is a design prerequisite, not a UX deliverable.
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 4: Pre-Production
 
+<!-- 此阶段发生什么 -->
 ### What Happens in This Phase
 
 You create UX specs for key screens, prototype risky mechanics, turn design
 documents into implementable stories, plan your first sprint, and build a
 Vertical Slice that proves the core loop is fun.
 
+<!-- 中文翻译 -->
 ### Phase 4 Pipeline
 
 ```
@@ -588,6 +625,7 @@ Vertical Slice that proves the core loop is fun.
                     3 unguided sessions)
 ```
 
+<!-- 中文翻译 -->
 ### Step 4.1: UX Specs for Key Screens
 
 Before writing epics, create UX specs so that story authors know what screens
@@ -630,6 +668,7 @@ etc.) with animation and sound standards.
 Validates UX specs for GDD alignment and accessibility tier compliance.
 Produces APPROVED / NEEDS REVISION / MAJOR REVISION NEEDED verdict.
 
+<!-- 中文翻译 -->
 ### Step 4.2: Prototype Risky Mechanics
 
 Not everything needs a prototype. Prototype when:
@@ -650,6 +689,7 @@ pollutes `src/`.
 hardcoded values OK, no tests required -- but a README with hypothesis and
 findings is mandatory.
 
+<!-- 中文翻译 -->
 ### Step 4.3: Create Epics and Stories From Design Artifacts
 
 ```
@@ -671,6 +711,7 @@ implementable story files in `production/epics/[slug]/`. Each story embeds:
 Once stories exist, run `/dev-story [story-path]` to implement one — it routes
 automatically to the correct programmer agent.
 
+<!-- 中文翻译 -->
 ### Step 4.4: Validate Stories Before Pickup
 
 ```
@@ -680,6 +721,7 @@ automatically to the correct programmer agent.
 Checks: Design completeness, Architecture coverage, Scope clarity, Definition
 of Done. Verdict: READY / NEEDS WORK / BLOCKED.
 
+<!-- 中文翻译 -->
 ### Step 4.5: Effort Estimation
 
 ```
@@ -688,6 +730,7 @@ of Done. Verdict: READY / NEEDS WORK / BLOCKED.
 
 Provides effort estimates with risk assessment.
 
+<!-- 中文翻译 -->
 ### Step 4.6: Plan Your First Sprint
 
 ```
@@ -701,6 +744,7 @@ Provides effort estimates with risk assessment.
 - Creates `production/sprints/sprint-01.md`
 - Populates `production/sprint-status.yaml` (machine-readable story tracking)
 
+<!-- 中文翻译 -->
 ### Step 4.7: Vertical Slice (Hard Gate)
 
 Before advancing to Production, you must build and playtest a Vertical Slice:
@@ -713,6 +757,7 @@ Before advancing to Production, you must build and playtest a Vertical Slice:
 This is a **hard gate** -- `/gate-check` will auto-FAIL if a human has not
 played the build unguided.
 
+<!-- 中文翻译 -->
 ### Phase 4 Gate
 
 ```
@@ -730,8 +775,10 @@ played the build unguided.
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 5: Production
 
+<!-- 此阶段发生什么 -->
 ### What Happens in This Phase
 
 This is the core production loop. You work in sprints (typically 1-2 weeks),
@@ -739,6 +786,7 @@ implementing features story by story, tracking progress, and closing stories
 through a structured completion review. This phase repeats until your game
 is content-complete.
 
+<!-- 中文翻译 -->
 ### Phase 5 Pipeline (Per Sprint)
 
 ```
@@ -757,6 +805,7 @@ is content-complete.
   /retrospective  (at sprint end)
 ```
 
+<!-- 中文翻译 -->
 ### Step 5.1: The Story Lifecycle
 
 The production phase centers on the **story lifecycle**:
@@ -806,6 +855,7 @@ This runs an 8-phase completion review:
 
 Tech debt discovered during review is logged to `docs/tech-debt-register.md`.
 
+<!-- 中文翻译 -->
 ### Step 5.2: Sprint Tracking
 
 Check progress anytime:
@@ -825,6 +875,7 @@ If scope is growing:
 This compares current scope against the original plan and flags scope increase,
 recommends cuts.
 
+<!-- 中文翻译 -->
 ### Step 5.3: Content Tracking
 
 ```
@@ -834,6 +885,7 @@ recommends cuts.
 Compares GDD-specified content against what has been implemented. Catches
 content gaps early.
 
+<!-- 中文翻译 -->
 ### Step 5.4: Design Change Propagation
 
 When a GDD changes after stories have been created:
@@ -845,6 +897,7 @@ When a GDD changes after stories have been created:
 Git-diffs the GDD, finds affected ADRs, generates an impact report, and
 walks you through Superseded/update/keep decisions.
 
+<!-- 中文翻译 -->
 ### Step 5.5: Multi-System Features (Team Orchestration)
 
 For features spanning multiple domains, use team skills:
@@ -867,6 +920,7 @@ Each team skill coordinates a 6-phase collaborative workflow:
 
 The orchestration is automated, but **decision points stay with you**.
 
+<!-- 中文翻译 -->
 ### Step 5.6: Sprint Review and Next Sprint
 
 At the end of a sprint:
@@ -883,6 +937,7 @@ Then plan the next sprint:
 /sprint-plan new
 ```
 
+<!-- 中文翻译 -->
 ### Step 5.7: Milestone Reviews
 
 At milestone checkpoints:
@@ -894,6 +949,7 @@ At milestone checkpoints:
 Produces feature completeness, quality metrics, risk assessment, and go/no-go
 recommendation.
 
+<!-- 中文翻译 -->
 ### Phase 5 Gate
 
 ```
@@ -909,13 +965,16 @@ recommendation.
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 6: Polish
 
+<!-- 此阶段发生什么 -->
 ### What Happens in This Phase
 
 Your game is feature-complete. Now you make it good. This phase focuses on
 performance, balance, accessibility, audio, visual polish, and playtesting.
 
+<!-- 中文翻译 -->
 ### Phase 6 Pipeline
 
 ```
@@ -934,6 +993,7 @@ performance, balance, accessibility, audio, visual polish, and playtesting.
   debt items       audio + UX + QA
 ```
 
+<!-- 中文翻译 -->
 ### Step 6.1: Performance Profiling
 
 ```
@@ -945,6 +1005,7 @@ Guides you through structured performance profiling:
 - Identify bottlenecks ranked by impact
 - Generate actionable optimization tasks with code locations and expected gains
 
+<!-- 中文翻译 -->
 ### Step 6.2: Balance Analysis
 
 ```
@@ -954,6 +1015,7 @@ Guides you through structured performance profiling:
 Analyzes balance data for statistical outliers, broken progression curves,
 degenerate strategies, and economy imbalances.
 
+<!-- 中文翻译 -->
 ### Step 6.3: Asset Audit
 
 ```
@@ -963,6 +1025,7 @@ degenerate strategies, and economy imbalances.
 Verifies naming conventions, file format standards, and size budgets across
 all assets.
 
+<!-- 中文翻译 -->
 ### Step 6.4: Playtesting (Required: 3 Sessions)
 
 ```
@@ -974,6 +1037,7 @@ Generates structured playtest reports. Three sessions are required, covering:
 - Mid-game systems
 - Difficulty curve
 
+<!-- 中文翻译 -->
 ### Step 6.5: Technical Debt Assessment
 
 ```
@@ -983,6 +1047,7 @@ Generates structured playtest reports. Three sessions are required, covering:
 Scans for TODO/FIXME/HACK comments, code duplication, overly complex functions,
 missing tests, and outdated dependencies. Each item categorized and prioritized.
 
+<!-- 中文翻译 -->
 ### Step 6.6: Coordinated Polish Pass
 
 ```
@@ -997,6 +1062,7 @@ Coordinates 4 specialists in parallel:
 
 You set priorities; the team executes with your approval at each step.
 
+<!-- 中文翻译 -->
 ### Step 6.7: Localization and Accessibility
 
 ```
@@ -1009,6 +1075,7 @@ does not account for expansion, and missing locale files.
 Accessibility is audited against the tier committed in Phase 3's accessibility
 requirements document.
 
+<!-- 中文翻译 -->
 ### Phase 6 Gate
 
 ```
@@ -1024,12 +1091,15 @@ requirements document.
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 7: Release
 
+<!-- 此阶段发生什么 -->
 ### What Happens in This Phase
 
 Your game is polished, tested, and ready. Now you ship it.
 
+<!-- 中文翻译 -->
 ### Phase 7 Pipeline
 
 ```
@@ -1043,6 +1113,7 @@ Your game is polished, tested, and ready. Now you ship it.
                     Also: /changelog, /patch-notes, /hotfix
 ```
 
+<!-- 中文翻译 -->
 ### Step 7.1: Release Checklist
 
 ```
@@ -1057,6 +1128,7 @@ Generates a comprehensive pre-release checklist covering:
 - Save game compatibility
 - Analytics verification
 
+<!-- 中文翻译 -->
 ### Step 7.2: Launch Readiness (Full Validation)
 
 ```
@@ -1083,6 +1155,7 @@ Complete cross-department validation:
 
 Each item gets a **Go / No-Go** status. All must be Go to ship.
 
+<!-- 中文翻译 -->
 ### Step 7.3: Generate Player-Facing Content
 
 ```
@@ -1098,6 +1171,7 @@ Translates developer language into player language.
 
 Generates an internal changelog (more technical, for the team).
 
+<!-- 中文翻译 -->
 ### Step 7.4: Coordinate the Release
 
 ```
@@ -1111,6 +1185,7 @@ Coordinates release-manager, QA, and DevOps through:
 4. Deployment preparation
 5. Go/No-Go decision
 
+<!-- 中文翻译 -->
 ### Step 7.5: Ship
 
 The `validate-push` hook will warn you when pushing to `main` or `develop`.
@@ -1121,6 +1196,7 @@ git tag v1.0.0
 git push origin main --tags
 ```
 
+<!-- 中文翻译 -->
 ### Step 7.6: Post-Launch
 
 **Hotfix workflow** for critical production bugs:
@@ -1144,10 +1220,12 @@ Ask Claude to create a post-mortem using the template at
 
 ---
 
+<!-- 中文翻译 -->
 ## Cross-Cutting Concerns
 
 These topics apply across all phases.
 
+<!-- 中文翻译 -->
 ### Director Review Modes
 
 Director gates are specialist agents that review your work at key workflow steps.
@@ -1175,6 +1253,7 @@ Full gate definitions and check pattern: `.codebuddy/docs/director-gates.md`
 
 ---
 
+<!-- 中文翻译 -->
 ### The Collaboration Protocol
 
 This system is **user-driven collaborative**, not autonomous.
@@ -1192,6 +1271,7 @@ Every agent interaction follows this pattern:
 See `docs/COLLABORATIVE-DESIGN-PRINCIPLE.md` for the full protocol with
 examples.
 
+<!-- 中文翻译 -->
 ### The AskUserQuestion Tool
 
 Agents use the `AskUserQuestion` tool for structured option presentation.
@@ -1200,6 +1280,7 @@ then a clean UI picker for the decision. Use it for design choices,
 architecture decisions, and strategic questions. Do not use it for open-ended
 discovery questions or simple yes/no confirmations.
 
+<!-- 中文翻译 -->
 ### Agent Coordination (3-Tier Hierarchy)
 
 ```
@@ -1233,6 +1314,7 @@ Tier 3 (Specialists):  gameplay-programmer, engine-programmer,
   conflicts go to `technical-director`. Scope conflicts go to `producer`.
 - No unilateral cross-domain changes.
 
+<!-- 中文翻译 -->
 ### Automated Hooks (Safety Net)
 
 The system has 12 hooks that run automatically:
@@ -1252,6 +1334,7 @@ The system has 12 hooks that run automatically:
 | `log-agent-stop.sh` | Agent stop | Completes agent audit trail (start + stop) |
 | `session-stop.sh` | Session end | Final session logging |
 
+<!-- 中文翻译 -->
 ### Context Resilience
 
 **Session state file:** `production/session-state/active.md` is a living
@@ -1272,6 +1355,7 @@ machine-readable story tracker. Written by `/sprint-plan` (init) and
 `/story-done` (status updates). Read by `/sprint-status`, `/help`, and
 `/story-done` (next story). Eliminates fragile markdown scanning.
 
+<!-- 中文翻译 -->
 ### Brownfield Adoption
 
 For existing projects that already have some artifacts:
@@ -1303,6 +1387,7 @@ Individual skills also support retrofit mode:
 
 These detect which sections are present vs. missing and fill only the gaps.
 
+<!-- 中文翻译 -->
 ### Gate System
 
 Phase gates are formal checkpoints. Run `/gate-check` with the transition name:
@@ -1324,6 +1409,7 @@ Phase gates are formal checkpoints. Run `/gate-check` with the transition name:
 When a gate passes, `production/stage.txt` is updated (only then), which
 controls the status line and `/help` behavior.
 
+<!-- 中文翻译 -->
 ### Reverse Documentation
 
 For code that exists without design docs (common after brownfield adoption):
@@ -1336,8 +1422,10 @@ Reads existing code and generates GDD-format design documentation from it.
 
 ---
 
+<!-- 中文翻译 -->
 ## Appendix A: Agent Quick-Reference
 
+<!-- 中文翻译 -->
 ### "I need to do X -- which agent do I use?"
 
 | I need to... | Agent | Tier |
@@ -1392,6 +1480,7 @@ Reads existing code and generates GDD-format design documentation from it.
 | Unreal replication | `ue-replication-specialist` | 3 |
 | Unreal UMG/CommonUI | `ue-umg-specialist` | 3 |
 
+<!-- 中文翻译 -->
 ### Agent Hierarchy
 
 ```
@@ -1414,10 +1503,13 @@ conflicts go to `producer`.
 
 ---
 
+<!-- 中文翻译 -->
 ## Appendix B: Slash Command Quick-Reference
 
+<!-- 中文翻译 -->
 ### All 66 Commands by Category
 
+<!-- 中文翻译 -->
 #### Onboarding and Navigation (5)
 
 | Command | Purpose | Phase |
@@ -1428,6 +1520,7 @@ conflicts go to `producer`.
 | `/setup-engine` | Configure engine, pin version, set preferences | 1 |
 | `/adopt` | Brownfield audit and migration plan | Any (existing projects) |
 
+<!-- 中文翻译 -->
 #### Game Design (6)
 
 | Command | Purpose | Phase |
@@ -1439,6 +1532,7 @@ conflicts go to `producer`.
 | `/review-all-gdds` | Cross-GDD consistency and design theory review | 2 |
 | `/propagate-design-change` | Find ADRs/stories affected by GDD changes | 5 |
 
+<!-- 中文翻译 -->
 #### UX and Interface (2)
 
 | Command | Purpose | Phase |
@@ -1446,6 +1540,7 @@ conflicts go to `producer`.
 | `/ux-design` | Author UX specs (screen/flow, HUD, patterns) | 4 |
 | `/ux-review` | Validate UX specs for accessibility and GDD alignment | 4 |
 
+<!-- 中文翻译 -->
 #### Architecture (4)
 
 | Command | Purpose | Phase |
@@ -1455,6 +1550,7 @@ conflicts go to `producer`.
 | `/architecture-review` | Validate all ADRs, dependency ordering | 3 |
 | `/create-control-manifest` | Flat programmer rules from Accepted ADRs | 3 |
 
+<!-- 中文翻译 -->
 #### Stories and Sprints (8)
 
 | Command | Purpose | Phase |
@@ -1468,6 +1564,7 @@ conflicts go to `producer`.
 | `/story-done` | 8-phase story completion review | 5 |
 | `/estimate` | Effort estimation with risk assessment | 4-5 |
 
+<!-- 中文翻译 -->
 #### Reviews and Analysis (10)
 
 | Command | Purpose | Phase |
@@ -1483,6 +1580,7 @@ conflicts go to `producer`.
 | `/gate-check` | Formal phase gate with PASS/CONCERNS/FAIL | All transitions |
 | `/reverse-document` | Generate design docs from existing code | Any |
 
+<!-- 中文翻译 -->
 #### QA and Testing (9)
 
 | Command | Purpose | Phase |
@@ -1497,6 +1595,7 @@ conflicts go to `producer`.
 | `/test-flakiness` | Detect non-deterministic tests from CI logs | 5-6 |
 | `/skill-test` | Validate skill files for structural and behavioral correctness | Any |
 
+<!-- 中文翻译 -->
 #### Production Management (6)
 
 | Command | Purpose | Phase |
@@ -1508,6 +1607,7 @@ conflicts go to `producer`.
 | `/playtest-report` | Structured playtest session report | 4-6 |
 | `/onboard` | Onboard a new team member | Any |
 
+<!-- 中文翻译 -->
 #### Release (5)
 
 | Command | Purpose | Phase |
@@ -1518,6 +1618,7 @@ conflicts go to `producer`.
 | `/patch-notes` | Player-facing patch notes | 7 |
 | `/hotfix` | Emergency fix workflow | 7+ |
 
+<!-- 中文翻译 -->
 #### Creative (2)
 
 | Command | Purpose | Phase |
@@ -1525,6 +1626,7 @@ conflicts go to `producer`.
 | `/prototype` | Throwaway prototype in isolated worktree | 4 |
 | `/localize` | String extraction and validation | 6-7 |
 
+<!-- 中文翻译 -->
 #### Team Orchestration (9)
 
 | Command | Purpose | Phase |
@@ -1541,8 +1643,10 @@ conflicts go to `producer`.
 
 ---
 
+<!-- 中文翻译 -->
 ## Appendix C: Common Workflows
 
+<!-- 中文翻译 -->
 ### Workflow 1: "I just started and have no game idea"
 
 ```
@@ -1555,6 +1659,7 @@ conflicts go to `producer`.
 7. /design-system per system (guided GDD authoring)
 ```
 
+<!-- 中文翻译 -->
 ### Workflow 2: "I have designs and want to start coding"
 
 ```
@@ -1570,6 +1675,7 @@ conflicts go to `producer`.
 10. /story-readiness -> implement -> /story-done (story lifecycle)
 ```
 
+<!-- 中文翻译 -->
 ### Workflow 3: "I need to add a complex feature mid-production"
 
 ```
@@ -1582,6 +1688,7 @@ conflicts go to `producer`.
 7. /balance-check if it affects game balance
 ```
 
+<!-- 中文翻译 -->
 ### Workflow 4: "Something broke in production"
 
 ```
@@ -1593,6 +1700,7 @@ conflicts go to `producer`.
 6. Deploy and backport
 ```
 
+<!-- 中文翻译 -->
 ### Workflow 5: "I have an existing project and want to use this system"
 
 ```
@@ -1604,6 +1712,7 @@ conflicts go to `producer`.
 6. /gate-check at appropriate transition
 ```
 
+<!-- 中文翻译 -->
 ### Workflow 6: "Starting a new sprint"
 
 ```
@@ -1616,6 +1725,7 @@ conflicts go to `producer`.
 7. /sprint-status for quick progress checks
 ```
 
+<!-- 中文翻译 -->
 ### Workflow 7: "Shipping the game"
 
 ```
@@ -1631,6 +1741,7 @@ conflicts go to `producer`.
 10. Post-mortem after launch stabilizes
 ```
 
+<!-- 中文翻译 -->
 ### Workflow 8: "I'm lost / don't know what to do next"
 
 ```
@@ -1641,6 +1752,7 @@ conflicts go to `producer`.
 
 ---
 
+<!-- 中文翻译 -->
 ## Tips for Getting the Most Out of the System
 
 1. **Always start with design, then implement.** The agent system is built

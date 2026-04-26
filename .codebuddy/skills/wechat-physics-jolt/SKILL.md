@@ -25,7 +25,7 @@ Initialize and configure the JoltPhysics engine (via WASM) for high-performance 
 5. **Sets up constraint system** — Configures point, distance, hinge, slider, cone, and swing-twist constraints via `IPhysicsJoint` / **设置约束系统** — 通过 `IPhysicsJoint` 配置点约束、距离约束、铰链约束、滑动约束、锥形约束和摆动扭曲约束
 6. **Character controller support** — Built-in character controller with slide, stair climbing / **角色控制器支持** — 具有滑动和爬楼梯功能的内置角色控制器
 
-## Usage
+## Usage / 用法
 
 ```
 /wechat-physics-jolt init [gravity-x] [gravity-y] [gravity-z]
@@ -34,7 +34,7 @@ Initialize and configure the JoltPhysics engine (via WASM) for high-performance 
 /wechat-physics-jolt character [position] [height] [radius]
 ```
 
-## Example
+## Example / 示例
 
 ```
 /wechat-physics-jolt init 0 -9.8 0
@@ -47,7 +47,14 @@ This will:
 - Create TypeScript interface files for `IPhysicsWorld`, `IPhysicsBody`, `IPhysicsJoint`
 - Add boilerplate for broadphase layer interface, object layer pair filter, and contact listener
 
-## Output
+> **中文翻译**：这将：
+> - 从 `libs/jolt.wasm` 加载 JoltPhysics WASM 模块
+> - 创建重力为 (0, -9.8, 0) 的 `JoltPhysicsWorld`
+> - 将世界注册到物理工厂
+> - 为 `IPhysicsWorld`、`IPhysicsBody`、`IPhysicsJoint` 创建 TypeScript 接口文件
+> - 添加宽相层接口、对象层对过滤器和接触监听器的样板代码
+
+## Output / 输出
 
 Creates the following structure:
 
@@ -70,7 +77,7 @@ src/physics/
 └── index.ts                   # Public API exports
 ```
 
-## JoltPhysics World Initialization
+## JoltPhysics World Initialization / JoltPhysics 物理世界初始化
 
 ```typescript
 // src/physics/jolt/JoltInitializer.ts
@@ -110,7 +117,7 @@ export async function initJolt(): Promise<JoltModule> {
 }
 ```
 
-## JoltPhysics IPhysicsWorld Implementation
+## JoltPhysics IPhysicsWorld Implementation / JoltPhysics IPhysicsWorld 实现
 
 ```typescript
 // src/physics/jolt/JoltPhysicsWorld.ts
@@ -218,7 +225,7 @@ export class JoltPhysicsWorld implements IPhysicsWorld {
 }
 ```
 
-## Physics Factory Registration
+## Physics Factory Registration / 物理工厂注册
 
 ```typescript
 // src/physics/PhysicsFactory.ts (updated with Jolt)
@@ -247,7 +254,7 @@ export function createPhysicsWorld(
 }
 ```
 
-## Configuration in game.json
+## Configuration in game.json / game.json 配置
 
 ```json
 {
@@ -265,18 +272,18 @@ export function createPhysicsWorld(
 }
 ```
 
-## Performance Considerations
+## Performance Considerations / 性能考虑
 
-- JoltPhysics WASM size: ~800KB — good balance of features vs. package size
-- Deterministic simulation — ideal for networked multiplayer with lockstep
-- Built-in character controller eliminates need for custom implementation
-- Use broadphase layers for efficient collision filtering (recommended: 16 layers)
-- Keep body count under 1024 for mobile performance
-- Use `integrationSubSteps` for stability (1 is usually sufficient)
-- Destroy Jolt bodies explicitly via `BodyInterface.RemoveBody()` to prevent memory leaks
-- JoltPhysics is multithreaded-capable but WASM currently runs single-threaded
+- JoltPhysics WASM size: ~800KB — good balance of features vs. package size / JoltPhysics WASM 大小：约 800KB — 功能与包大小之间的良好平衡
+- Deterministic simulation — ideal for networked multiplayer with lockstep / 确定性模拟 — 适用于需要锁步的联网多人游戏
+- Built-in character controller eliminates need for custom implementation / 内置角色控制器消除了自定义实现的需求
+- Use broadphase layers for efficient collision filtering (recommended: 16 layers) / 使用宽相层进行高效碰撞过滤（推荐：16层）
+- Keep body count under 1024 for mobile performance / 在移动设备上保持刚体数量低于 1024 以获得良好性能
+- Use `integrationSubSteps` for stability (1 is usually sufficient) / 使用 `integrationSubSteps` 提高稳定性（通常1就足够了）
+- Destroy Jolt bodies explicitly via `BodyInterface.RemoveBody()` to prevent memory leaks / 通过 `BodyInterface.RemoveBody()` 显式销毁 Jolt 刚体以防止内存泄漏
+- JoltPhysics is multithreaded-capable but WASM currently runs single-threaded / JoltPhysics 支持多线程，但 WASM 当前以单线程运行
 
-## JoltPhysics Feature Support
+## JoltPhysics Feature Support / JoltPhysics 功能支持
 
 | Feature | Supported | Notes |
 |---------|-----------|-------|

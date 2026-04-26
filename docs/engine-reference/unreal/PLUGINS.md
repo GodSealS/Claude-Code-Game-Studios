@@ -1,4 +1,7 @@
-# Unreal Engine 5.7 — Optional Plugins & Systems
+# Unreal Engine 5.7 — Optional Plugins & Systems / Unreal Engine可选插件和系统
+
+
+> **中文翻译**：本文档为Unreal Engine引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 **Last verified:** 2026-02-13
 
@@ -7,6 +10,7 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ## How to Use This Guide
 
 **✅ Detailed Documentation Available** - See `plugins/` directory for comprehensive guides
@@ -16,8 +20,10 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ## Production-Ready Systems (Detailed Docs Available)
 
+<!-- 中文翻译 -->
 ### ✅ Gameplay Ability System (GAS)
 - **Purpose:** Modular ability system (abilities, attributes, effects, cooldowns, costs)
 - **When to use:** RPGs, MOBAs, shooters with abilities, any ability-based gameplay
@@ -29,6 +35,7 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ### ✅ CommonUI
 - **Purpose:** Cross-platform UI framework (automatic gamepad/mouse/touch input routing)
 - **When to use:** Multi-platform games (console + PC), input-agnostic UI
@@ -40,6 +47,7 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ### ✅ Gameplay Camera System
 - **Purpose:** Modular camera management (camera modes, blending, context-aware cameras)
 - **When to use:** Games needing dynamic camera behavior (3rd person, aiming, vehicles)
@@ -51,6 +59,7 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ### ✅ PCG (Procedural Content Generation)
 - **Purpose:** Node-based procedural world generation (foliage, props, terrain details)
 - **When to use:** Open worlds, procedural levels, large-scale environment population
@@ -62,8 +71,10 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ## Other Production-Ready Plugins (Brief Overview)
 
+<!-- 中文翻译 -->
 ### 🟡 Mass Entity
 - **Purpose:** High-performance ECS for large-scale AI/crowds (10,000+ entities)
 - **When to use:** RTS, city simulators, massive crowds, large-scale AI
@@ -73,6 +84,7 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ### 🟡 Niagara Fluids
 - **Purpose:** GPU fluid simulation (smoke, fire, liquids)
 - **When to use:** Realistic fire/smoke effects, water simulation
@@ -82,6 +94,7 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ### 🟡 Water Plugin
 - **Purpose:** Ocean, river, lake rendering with buoyancy
 - **When to use:** Games with water bodies, boats, swimming
@@ -91,6 +104,7 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ### 🟡 Landmass Plugin
 - **Purpose:** Terrain sculpting and landscape editing
 - **When to use:** Large-scale terrain modification, procedural landscapes
@@ -100,6 +114,7 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ### 🟡 Chaos Destruction
 - **Purpose:** Real-time fracture and destruction
 - **When to use:** Destructible environments (walls, buildings, objects)
@@ -109,6 +124,7 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ### 🟡 Chaos Vehicle
 - **Purpose:** Advanced vehicle physics (wheeled vehicles, suspension)
 - **When to use:** Racing games, vehicle-heavy gameplay
@@ -118,6 +134,7 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ### 🟡 Geometry Scripting
 - **Purpose:** Runtime procedural mesh generation and editing
 - **When to use:** Dynamic mesh creation, procedural modeling
@@ -127,6 +144,7 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ### 🟡 Motion Design Tools
 - **Purpose:** Motion graphics, procedural animation, keyframe animation
 - **When to use:** UI animations, procedural motion, keyframed sequences
@@ -136,8 +154,10 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ## Experimental Plugins (Use with Caution)
 
+<!-- 中文翻译 -->
 ### ⚠️ AI Assistant (UE 5.7+)
 - **Purpose:** In-editor AI guidance and help
 - **Status:** Experimental
@@ -146,6 +166,7 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ### ⚠️ OpenXR (VR/AR)
 - **Purpose:** Cross-platform VR/AR support
 - **When to use:** VR/AR games
@@ -155,6 +176,7 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ### ⚠️ Online Subsystem (EOS, Steam, etc.)
 - **Purpose:** Platform-agnostic online services (matchmaking, friends, achievements)
 - **When to use:** Multiplayer games with online features
@@ -164,20 +186,24 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ## Deprecated Plugins (Avoid for New Projects)
 
+<!-- 中文翻译 -->
 ### ❌ PhysX Vehicles
 - **Deprecated:** Use Chaos Vehicles instead
 - **Status:** Legacy, not recommended
 
 ---
 
+<!-- 中文翻译 -->
 ### ❌ Old Replication Graph
 - **Deprecated:** Replaced by Iris (UE 5.1+)
 - **Status:** Use Iris for modern networking
 
 ---
 
+<!-- 中文翻译 -->
 ## On-Demand WebSearch Strategy
 
 For plugins NOT listed above, use the following approach when users ask:
@@ -191,6 +217,7 @@ For plugins NOT listed above, use the following approach when users ask:
 
 ---
 
+<!-- 中文翻译 -->
 ## Quick Decision Guide
 
 **I need abilities/skills/buffs** → **Gameplay Ability System (GAS)**

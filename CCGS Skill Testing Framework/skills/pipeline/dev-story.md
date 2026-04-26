@@ -15,6 +15,7 @@ marked Complete after the user confirms all criteria are met. The skill asks
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -29,6 +30,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 In `full` mode: LP-CODE-REVIEW gate runs after implementation is complete and all
@@ -43,6 +45,7 @@ In `solo` mode: LP-CODE-REVIEW is skipped with equivalent notes.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Story implemented and marked Complete (full mode)
 
 **Fixture:**
@@ -78,6 +81,7 @@ In `solo` mode: LP-CODE-REVIEW is skipped with equivalent notes.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Failure Path — Referenced ADR is Proposed
 
 **Fixture:**
@@ -102,6 +106,7 @@ In `solo` mode: LP-CODE-REVIEW is skipped with equivalent notes.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Ambiguous Acceptance Criteria — Skill asks for clarification
 
 **Fixture:**
@@ -126,6 +131,7 @@ In `solo` mode: LP-CODE-REVIEW is skipped with equivalent notes.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Edge Case — No argument; reads from session state
 
 **Fixture:**
@@ -150,6 +156,7 @@ In `solo` mode: LP-CODE-REVIEW is skipped with equivalent notes.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate — LP-CODE-REVIEW returns NEEDS CHANGES; lean mode skips gate
 
 **Fixture (full mode):**
@@ -195,6 +202,7 @@ In `solo` mode: LP-CODE-REVIEW is skipped with equivalent notes.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - Engine routing logic (Godot vs Unity vs Unreal) is not tested per engine —

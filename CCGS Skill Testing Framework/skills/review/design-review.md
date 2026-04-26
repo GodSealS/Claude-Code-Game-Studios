@@ -12,6 +12,7 @@ REVISION NEEDED. It is a read-only skill (no file writes) and runs as a
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -26,6 +27,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Complete GDD, all 8 sections present
 
 **Fixture:**
@@ -56,6 +58,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Failure Path — Incomplete GDD (4/8 sections)
 
 **Fixture:**
@@ -81,6 +84,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Partial Path — 7/8 sections, minor inconsistency
 
 **Fixture:**
@@ -104,6 +108,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Edge Case — File not found
 
 **Fixture:**
@@ -127,6 +132,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate — no gate spawned regardless of review mode
 
 **Fixture:**
@@ -160,6 +166,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - Cross-system consistency checking (Case 3 in the skill's own phase list) is

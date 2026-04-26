@@ -8,6 +8,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references Addressables / asset loading / content catalogs / remote delivery)
@@ -19,6 +20,7 @@ No gate IDs assigned.
 
 ## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出 -->
 ### Case 1: In-domain request — appropriate output
 **Input:** "Load a character texture asynchronously and release it when the character is destroyed."
 **Expected behavior:**
@@ -29,6 +31,7 @@ No gate IDs assigned.
 - Notes that releasing with a null or uninitialized handle causes errors — includes a validity check
 - Notes the difference between releasing the handle vs. releasing the asset (handle release is correct)
 
+<!-- 用例 2：域外重定向 -->
 ### Case 2: Out-of-domain redirect
 **Input:** "Implement the rendering system that applies the loaded texture to the character mesh."
 **Expected behavior:**
@@ -37,6 +40,7 @@ No gate IDs assigned.
 - Redirects the request to `engine-programmer`
 - May describe the asset type and API surface it will provide (e.g., `Texture2D` reference once the handle completes) as a handoff spec
 
+<!-- 中文翻译 -->
 ### Case 3: Memory leak — un-released handle
 **Input:** "Memory usage keeps climbing after each level load. We use Addressables to load level assets."
 **Expected behavior:**
@@ -46,6 +50,7 @@ No gate IDs assigned.
 - Provides a corrected pattern using a tracked handle list (`List<AsyncOperationHandle>`) with a `ReleaseAll()` cleanup method
 - Does NOT assume the leak is elsewhere without evidence
 
+<!-- 中文翻译 -->
 ### Case 4: Remote content delivery — catalog versioning
 **Input:** "We need to support downloadable content updates without requiring a full app re-install."
 **Expected behavior:**
@@ -57,6 +62,7 @@ No gate IDs assigned.
 - Addresses the edge case: what happens if a player starts a session, the catalog updates mid-session — defines behavior (complete current session on old catalog, reload on next launch)
 - Does NOT design the server-side CDN infrastructure (defers to devops-engineer)
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — platform memory constraints
 **Input:** Platform context: Nintendo Switch target, 4GB RAM, practical asset memory ceiling 512MB. Request: "Design the Addressables loading strategy for a large open-world level."
 **Expected behavior:**
@@ -81,6 +87,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Handle lifecycle (Case 1) must include a test verifying memory is reclaimed after release
 - Handle leak diagnosis (Case 3) should produce a findings report suitable for a bug ticket

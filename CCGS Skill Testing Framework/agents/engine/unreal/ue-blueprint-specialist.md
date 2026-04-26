@@ -8,6 +8,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references Blueprint architecture and optimization)
@@ -19,6 +20,7 @@
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: In-domain request — Blueprint graph performance review
 **Input**: "Review our AI behavior Blueprint. It has tick-based logic running every frame that checks line-of-sight for 30 NPCs simultaneously."
 **Expected behavior**:
@@ -28,6 +30,7 @@
 - Suggests alternatives: AIPerception component events, staggered tick groups, or moving the system to C++ if Blueprint overhead is measured to be significant
 - Output is structured: problem identified, impact estimated, alternatives listed
 
+<!-- 中文翻译 -->
 ### Case 2: Out-of-domain request — C++ implementation
 **Input**: "Write the C++ implementation for this ability cooldown system."
 **Expected behavior**:
@@ -36,6 +39,7 @@
 - States clearly: "C++ implementation is handled by engine-programmer or gameplay-programmer; I can show the Blueprint approach or describe the boundary where Blueprint calls into C++"
 - Optionally notes when the cooldown complexity warrants a C++ backend
 
+<!-- 中文翻译 -->
 ### Case 3: Domain boundary — unsafe raw pointer access in Blueprint
 **Input**: "Our Blueprint calls GetOwner() and then immediately accesses a component on the result without checking if it's valid."
 **Expected behavior**:
@@ -44,6 +48,7 @@
 - Notes that Blueprint's null checks are not optional on Actor-derived references
 - Does NOT silently fix the code without explaining why the original was unsafe
 
+<!-- 中文翻译 -->
 ### Case 4: Blueprint graph complexity — readiness for Function Library refactor
 **Input**: "Our main GameMode Blueprint has 600+ nodes in a single graph with duplicated damage calculation logic in 8 places."
 **Expected behavior**:
@@ -53,6 +58,7 @@
 - Notes that if the damage logic is performance-sensitive or shared with C++, it may be a candidate for migration to unreal-specialist review
 - Output is a concrete refactor plan, not a vague recommendation
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — Blueprint complexity budget
 **Input context**: Project conventions specify a maximum of 100 nodes per Blueprint event graph before a mandatory Function Library extraction.
 **Input**: "Here is our inventory Blueprint graph [150 nodes shown]. Is it ready to ship?"
@@ -74,6 +80,7 @@
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Case 3 (null pointer safety) is a safety-critical test — this is a common source of shipping crashes
 - Case 5 requires that project conventions include a stated node budget; if none is configured, the agent should note the absence and recommend setting one

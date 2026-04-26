@@ -22,6 +22,7 @@ The Control Manifest is a flat, actionable rules sheet for programmers. It answe
 
 ## 1. Load All Inputs / 1. 加载所有输入
 
+<!-- 中文翻译 -->
 ### ADRs
 - Glob `docs/architecture/adr-*.md` and read every file
 - Filter to only Accepted ADRs (Status: Accepted) — skip Proposed, Deprecated,

@@ -8,6 +8,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references Godot architecture / node patterns / engine decisions)
@@ -19,6 +20,7 @@ No gate IDs assigned.
 
 ## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出 -->
 ### Case 1: In-domain request — appropriate output
 **Input:** "When should I use signals vs. direct method calls in Godot?"
 **Expected behavior:**
@@ -29,6 +31,7 @@ No gate IDs assigned.
 - Does NOT produce raw code for both patterns — refers to gdscript-specialist or csharp-specialist for implementation
 - Notes the "no upward signals" convention (child does not call parent methods directly — uses signals instead)
 
+<!-- 用例 2：错误引擎重定向 -->
 ### Case 2: Wrong-engine redirect
 **Input:** "Write a MonoBehaviour that runs on Start() and subscribes to a UnityEvent."
 **Expected behavior:**
@@ -37,6 +40,7 @@ No gate IDs assigned.
 - Provides the Godot equivalent: a Node script using `_ready()` instead of `Start()`, and Godot signals instead of UnityEvent
 - Confirms the project is Godot-based and redirects the conceptual mapping
 
+<!-- 中文翻译 -->
 ### Case 3: Post-cutoff API risk
 **Input:** "Use the new Godot 4.5 @abstract annotation to define an abstract base class."
 **Expected behavior:**
@@ -45,6 +49,7 @@ No gate IDs assigned.
 - Directs the user to verify against `docs/engine-reference/godot/VERSION.md` and the official 4.5 migration guide
 - Provides best-effort guidance based on the migration notes in the version reference while clearly marking it as unverified
 
+<!-- 中文翻译 -->
 ### Case 4: Language selection for a hot path
 **Input:** "The physics query loop runs every frame for 500 objects. Should we use GDScript or C# for this?"
 **Expected behavior:**
@@ -55,6 +60,7 @@ No gate IDs assigned.
 - Defers the decision to `lead-programmer` with the analysis as input
 - Notes that GDExtension (C++) is a third option for extreme performance cases and recommends escalating if C# is insufficient
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — engine version 4.6
 **Input:** Engine version context provided: Godot 4.6, Jolt as default physics. Request: "Set up a RigidBody3D for the player character."
 **Expected behavior:**
@@ -76,6 +82,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Signal vs. direct call guide (Case 1) should be written to `docs/architecture/` as a reusable pattern doc
 - Post-cutoff flag (Case 3) confirms the agent does not confidently use APIs it cannot verify

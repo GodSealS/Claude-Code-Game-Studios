@@ -51,10 +51,12 @@ See `.codebuddy/docs/director-gates.md` for the full check pattern.
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 0: Load All Context
 
 Before anything else, load the full project context in this order:
 
+<!-- 中文翻译 -->
 ### 0a. Engine Context (Critical)
 
 Read the engine reference library completely:
@@ -74,6 +76,7 @@ If no engine is configured, stop and prompt:
 > "No engine is configured. Run `/setup-engine` first. Architecture cannot be
 > written without knowing which engine and version you are targeting."
 
+<!-- 中文翻译 -->
 ### 0b. Design Context + Technical Requirements Extraction
 
 Read all approved design documents and extract technical requirements from each:
@@ -108,11 +111,13 @@ Extracted from [N] GDDs | [X] total requirements
 This baseline feeds into every subsequent phase. No GDD requirement should be
 left without an architectural decision to support it by the end of this session.
 
+<!-- 中文翻译 -->
 ### 0c. Existing Architecture Decisions
 
 Read all files in `docs/architecture/` to understand what has already been decided.
 List any ADRs found and their domains.
 
+<!-- 中文翻译 -->
 ### 0d. Generate Knowledge Gap Inventory
 
 Before proceeding, display a structured summary:
@@ -141,6 +146,7 @@ continue building the architecture with these warnings flagged throughout?"
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 1: System Layer Mapping
 > **中文翻译**：## 第一阶段：系统层映射
 
@@ -185,6 +191,7 @@ Present the proposed layer assignment and ask for approval before proceeding to 
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 2: Module Ownership Map
 
 For each module defined in Phase 1, define ownership:
@@ -210,6 +217,7 @@ Get user approval on the ownership map before writing.
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 3: Data Flow
 > **中文翻译**：## 第 3 阶段：数据流
 
@@ -247,6 +255,7 @@ Get user approval per scenario before writing.
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 4: API Boundaries
 
 Define the public contracts between modules. For each boundary:
@@ -265,6 +274,7 @@ exists and has not changed signature in the target engine version.
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 5: ADR Audit + Traceability Check
 > **中文翻译**：## 第 5 阶段：ADR 审核 + 可追溯性检查
 
@@ -273,6 +283,7 @@ Review all existing ADRs from Phase 0c against both the architecture built in Ph
 > **中文翻译**：对照阶段 1-4 中构建的架构和阶段 0b 的技术要求基线，审查阶段 0c 的所有现有 ADR。
 
 
+<!-- 中文翻译 -->
 ### ADR Quality Check
 > **中文翻译**：### ADR 质量检查
 
@@ -335,6 +346,7 @@ Count: X covered, Y gaps. For each gap, it becomes a **Required New ADR**.
 > **中文翻译**：计数：X 已覆盖，Y 是间隙。对于每个差距，它都成为**必需的新 ADR**。
 
 
+<!-- 中文翻译 -->
 ### Required New ADRs
 > **中文翻译**：### 需要新的 ADR
 
@@ -359,6 +371,7 @@ List all decisions made during this architecture session (Phases 1-4) that do no
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 6: Missing ADR List
 
 Based on the full architecture, produce a complete list of ADRs that should exist
@@ -376,6 +389,7 @@ but don't yet. Group by priority:
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 7: Write the Master Architecture Document
 > **中文翻译**：## 第 7 阶段：编写主架构文档
 
@@ -433,6 +447,7 @@ derived from the game concept, GDDs, and technical preferences]
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 7b: Technical Director Sign-Off + Lead Programmer Feasibility Review
 
 After writing the master architecture document, perform an explicit sign-off before handoff.
@@ -469,6 +484,7 @@ Ask: "May I update the Document Status section in `docs/architecture/architectur
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 8: Handoff
 > **中文翻译**：## 第 8 阶段：移交
 
@@ -491,6 +507,7 @@ After writing the document, provide a clear handoff:
 
 ---
 
+<!-- 协作协议 -->
 ## Collaborative Protocol
 
 This skill follows the collaborative design principle at every phase:
@@ -508,6 +525,7 @@ unsure, present 2-4 options with pros/cons before asking them to decide.
 
 ---
 
+<!-- 推荐后续步骤 -->
 ## Recommended Next Steps
 > **中文翻译**：## 建议的后续步骤
 

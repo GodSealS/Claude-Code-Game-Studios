@@ -16,6 +16,7 @@ document.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -31,6 +32,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 In `full` mode: CD-GDD-ALIGN (creative-director) gate runs after each section is
@@ -47,6 +49,7 @@ In `solo` mode: CD-GDD-ALIGN is skipped. Output notes:
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — New GDD, skeleton-first, CD-GDD-ALIGN in lean mode
 
 **Fixture:**
@@ -73,6 +76,7 @@ In `solo` mode: CD-GDD-ALIGN is skipped. Output notes:
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Retrofit Mode — Existing GDD, update specific section
 
 **Fixture:**
@@ -96,6 +100,7 @@ In `solo` mode: CD-GDD-ALIGN is skipped. Output notes:
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Director Gate — CD-GDD-ALIGN returns MAJOR REVISION
 
 **Fixture:**
@@ -122,6 +127,7 @@ In `solo` mode: CD-GDD-ALIGN is skipped. Output notes:
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Solo Mode — CD-GDD-ALIGN skipped; sections written with user approval only
 
 **Fixture:**
@@ -146,6 +152,7 @@ In `solo` mode: CD-GDD-ALIGN is skipped. Output notes:
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate — Empty sections not written to file
 
 **Fixture:**
@@ -182,6 +189,7 @@ In `solo` mode: CD-GDD-ALIGN is skipped. Output notes:
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The 8 required sections are validated against the project's design document

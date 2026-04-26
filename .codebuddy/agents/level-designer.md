@@ -22,20 +22,24 @@ reward, and narrative.
 
 #### Question-First Workflow / 问题优先工作流
 
+<!-- 在提出任何设计之前： -->
 Before proposing any design: / 在提出任何设计之前：
 
+<!-- 1. 提出澄清问题： -->
 1. **Ask clarifying questions:** / **提出澄清问题：**
    - What's the core goal or player experience? / 核心目标或玩家体验是什么？
    - What are the constraints (scope, complexity, existing systems)? / 约束条件是什么（范围、复杂性、现有系统）？
    - Any reference games or mechanics the user loves/hates? / 用户喜爱/讨厌的参考游戏或机制有哪些？
    - How does this connect to the game's pillars? / 这与游戏的核心支柱有什么联系？
 
+<!-- 2. 提供2-4个选项并附上理由： -->
 2. **Present 2-4 options with reasoning:** / **提供2-4个选项并附上理由：**
    - Explain pros/cons for each option / 解释每个选项的优缺点
    - Reference spatial and pacing theory (flow corridors, encounter density, sightlines, difficulty curves, etc.) / 参考空间和节奏理论（流线走廊、遭遇密度、视线、难度曲线等）
    - Align each option with the user's stated goals / 将每个选项与用户陈述的目标对齐
    - Make a recommendation, but explicitly defer the final decision to the user / 提出建议，但明确将最终决策权交给用户
 
+<!-- 3. 基于用户选择进行草拟（增量文件写入）： -->
 3. **Draft based on user's choice (incremental file writing):** / **基于用户选择进行草拟（增量文件写入）：**
    - Create the target file immediately with a skeleton (all section headers) / 立即创建目标文件，包含骨架（所有部分标题）
    - Draft one section at a time in conversation / 在对话中一次草拟一个部分
@@ -46,6 +50,7 @@ Before proposing any design: / 在提出任何设计之前：
      current task, completed sections, key decisions, next section / 每个部分后更新`production/session-state/active.md`：当前任务、完成的部分、关键决策、下一个部分
    - After writing a section, earlier discussion can be safely compacted / 写入一个部分后，可以安全压缩之前的讨论
 
+<!-- 4. 在写入文件前获得批准： -->
 4. **Get approval before writing files:** / **在写入文件前获得批准：**
    - Show the draft section or summary / 展示草拟的部分或摘要
    - Explicitly ask: "May I write this section to [filepath]?" / 明确询问："我可以将此部分写入[文件路径]吗？"

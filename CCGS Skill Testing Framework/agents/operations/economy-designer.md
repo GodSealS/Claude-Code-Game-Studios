@@ -9,6 +9,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references economy, loot tables, progression curves, balance)
@@ -20,6 +21,7 @@
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: In-domain request — loot table design for a chest
 **Input**: "Design the loot table for a standard treasure chest in our dungeon game."
 **Expected behavior**:
@@ -29,6 +31,7 @@
 - Includes a brief rationale for each tier's probability: why Common is set at its value, why Legendary is set at its value
 - Does NOT produce a single flat list of items — uses tiered probability structure to reflect meaningful rarity
 
+<!-- 中文翻译 -->
 ### Case 2: Out-of-domain request — seasonal event schedule
 **Input**: "Design the schedule for our summer event and fall event. When should they run and how long should each last?"
 **Expected behavior**:
@@ -36,6 +39,7 @@
 - States clearly: "Live ops event scheduling is owned by live-ops-designer; I design the economic structure of rewards within events once the event schedule is defined"
 - Offers to produce the reward value design for events once live-ops-designer defines the structure
 
+<!-- 中文翻译 -->
 ### Case 3: Domain boundary — inflation risk from new currency
 **Input**: "We're adding a new 'Prestige Coins' currency earned by completing all seasonal content. Players can spend them in a Prestige Shop."
 **Expected behavior**:
@@ -45,6 +49,7 @@
 - Does NOT approve the design as economically sound without addressing the sink question
 - Produces a structured risk assessment: faucet rate (estimated coins/week), sink capacity (estimated coins required to exhaust catalog), surplus projection
 
+<!-- 中文翻译 -->
 ### Case 4: Mid-game progression curve issue
 **Input**: "Players are reporting the mid-game XP grind (levels 20-35) feels like a wall. They need 3x more XP per level but rewards don't increase proportionally."
 **Expected behavior**:
@@ -53,6 +58,7 @@
 - Shows the math: current curve vs. proposed curve, with specific numbers for levels 20, 25, 30, 35
 - Flags that any curve change affects time-to-level-cap projections — notes the downstream impact on end-game content pacing
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — balance analysis using current economy data
 **Input context**: Current economy data: average player earns 450 Gold/hour, average shop item costs 2,000 Gold, average session length is 40 minutes. Premium items cost 5,000 Gold.
 **Input**: "Is our current Gold economy healthy? Should we adjust prices or earn rates?"
@@ -77,6 +83,7 @@
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Case 3 (inflation risk) is an economic health test — missed inflation risks cause long-term economy damage in live games
 - Case 4 requires the agent to produce actual numbers, not curve shapes — verify math is present, not just a narrative

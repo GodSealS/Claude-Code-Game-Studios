@@ -14,6 +14,7 @@ formal phase gate logic. Verdicts: RELEASE READY, RELEASE BLOCKED, or CONCERNS.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -26,6 +27,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. `/release-checklist` is an internal audit utility. Formal phase advancement
@@ -35,6 +37,7 @@ is managed by `/gate-check`.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — All Sprint Stories Complete, QA Passed, RELEASE READY
 
 **Fixture:**
@@ -63,6 +66,7 @@ is managed by `/gate-check`.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Open HIGH Severity Bugs — RELEASE BLOCKED
 
 **Fixture:**
@@ -85,6 +89,7 @@ is managed by `/gate-check`.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Changelog Not Generated — CONCERNS
 
 **Fixture:**
@@ -108,6 +113,7 @@ is managed by `/gate-check`.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Previous Release Checklist Exists — Delta From Last Release
 
 **Fixture:**
@@ -134,6 +140,7 @@ is managed by `/gate-check`.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate Check — No gate; release-checklist is an internal audit
 
 **Fixture:**
@@ -165,6 +172,7 @@ is managed by `/gate-check`.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - Build stability verification (no failed CI runs) is listed as a check category

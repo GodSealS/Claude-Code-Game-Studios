@@ -10,6 +10,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references test cases, bug reports, test execution, regression testing)
@@ -21,6 +22,7 @@
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: In-domain request — test cases for a save system
 **Input**: "Write test cases for our save system. It must save and load player position, inventory, and quest state."
 **Expected behavior**:
@@ -34,6 +36,7 @@
 - Each test case includes: **Precondition** (required game state before test), **Steps** (numbered, unambiguous), **Expected Result** (specific, observable outcome), **Pass Criteria** (binary pass/fail condition)
 - Does NOT write "verify the save works" as a pass criterion — criteria must be observable and unambiguous
 
+<!-- 中文翻译 -->
 ### Case 2: Out-of-domain request — implement a bug fix
 **Input**: "You found a bug where the save system loses inventory data on version mismatch. Please fix it."
 **Expected behavior**:
@@ -41,6 +44,7 @@
 - States clearly: "Bug fixes are implemented by the appropriate programmer (gameplay-programmer for save system logic); I document the bug and write regression test cases to verify the fix"
 - Offers to produce: (a) a structured bug report for the programmer, (b) regression test cases for TC-SAVE-005 (version mismatch) that can be run after the fix
 
+<!-- 中文翻译 -->
 ### Case 3: Ambiguous acceptance criterion — flag to qa-lead
 **Input**: "Write test cases for the tutorial. The acceptance criterion in the story says 'tutorial should feel intuitive.'"
 **Expected behavior**:
@@ -49,6 +53,7 @@
 - Flags to qa-lead: "The acceptance criterion 'tutorial should feel intuitive' is not testable as written; needs clarification — e.g., 'X% of first-time players complete the tutorial without using the hint button' or 'no tester requires external help to complete the tutorial in session'"
 - Provides two or three concrete, measurable alternative criteria for qa-lead to choose between
 
+<!-- 中文翻译 -->
 ### Case 4: Regression test after a hotfix
 **Input**: "A hotfix was applied that changed how the inventory serialization handles nullable item slots. Write a targeted regression checklist for the affected systems."
 **Expected behavior**:
@@ -58,6 +63,7 @@
 - Each checklist item specifies: what to test, how to verify pass, and what a failure looks like
 - Does NOT produce a generic "test everything" checklist — the value of a targeted regression is specificity
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — test evidence format from coding-standards.md
 **Input context**: coding-standards.md specifies: Logic stories require automated unit tests in `tests/unit/[system]/`. Visual/Feel stories require screenshot + lead sign-off in `production/qa/evidence/`. UI stories require manual walkthrough doc in `production/qa/evidence/`.
 **Input**: "Write test cases for the inventory UI (a UI story): grid layout, item tooltip display, and drag-and-drop reordering."
@@ -83,6 +89,7 @@
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Case 1 (test case completeness) is the foundational quality test — missing fields (precondition, steps, expected result, pass criteria) are a failure
 - Case 3 (ambiguous criterion) is a coordination test — qa-tester must not silently accept untestable criteria

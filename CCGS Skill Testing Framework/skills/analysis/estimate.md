@@ -10,6 +10,7 @@ not pass/fail — every run produces an estimate.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -22,6 +23,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. Estimation is an advisory informational skill; no gates are invoked.
@@ -30,6 +32,7 @@ None. Estimation is an advisory informational skill; no gates are invoked.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Clear story with known tech stack
 
 **Fixture:**
@@ -56,6 +59,7 @@ None. Estimation is an advisory informational skill; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: High Uncertainty — Unknown system, no ADR yet
 
 **Fixture:**
@@ -80,6 +84,7 @@ None. Estimation is an advisory informational skill; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: No Sprint Velocity Data — Conservative defaults used
 
 **Fixture:**
@@ -103,6 +108,7 @@ None. Estimation is an advisory informational skill; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Multiple Stories — Each estimated individually plus sprint total
 
 **Fixture:**
@@ -126,6 +132,7 @@ None. Estimation is an advisory informational skill; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Gate Compliance — No gate; estimates are informational
 
 **Fixture:**
@@ -159,6 +166,7 @@ None. Estimation is an advisory informational skill; no gates are invoked.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The skill does not produce PASS/FAIL verdicts; the "verdict" here is the

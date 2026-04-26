@@ -9,6 +9,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references player communication, patch notes, community management)
@@ -20,6 +21,7 @@
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: In-domain request — patch notes for a bug fix
 **Input**: "Write player-facing patch notes for this fix: 'JIRA-4821: Fixed NullReferenceException in InventoryManager.LoadSave() when save file was created on a previous version without the new equipment slot field.'"
 **Expected behavior**:
@@ -28,6 +30,7 @@
 - Conveys the user impact (game crashed on load) without exposing internal implementation details
 - Output is formatted for the project's patch notes style (bullet, or numbered, depending on established format)
 
+<!-- 中文翻译 -->
 ### Case 2: Out-of-domain request — fixing a reported bug
 **Input**: "A player reported that their save file is corrupted. Can you fix the save system?"
 **Expected behavior**:
@@ -36,6 +39,7 @@
 - Routes it: "This requires investigation by the appropriate programmer; I'm routing this to [gameplay-programmer or lead-programmer] for technical triage"
 - Optionally drafts a player-facing acknowledgment post ("We're aware of reports of save corruption and are investigating") if requested
 
+<!-- 中文翻译 -->
 ### Case 3: Community crisis — backlash over a game change
 **Input**: "Players are angry about our latest patch. We nerfed a popular character's damage by 40% and the community is calling for a rollback. Forum posts, tweets, and Discord are all very negative."
 **Expected behavior**:
@@ -44,6 +48,7 @@
 - Does NOT commit to a rollback on behalf of the design team — flags this as a creative-director decision
 - Tone is empathetic but not apologetic for intentional design decisions
 
+<!-- 中文翻译 -->
 ### Case 4: Brand voice conflict in patch notes
 **Input**: "Here is our patch note draft: 'We have annihilated the egregious framerate catastrophe that plagued the loading screen.' Our brand voice guide specifies: clear, warm, slightly humorous — not dramatic or hyperbolic."
 **Expected behavior**:
@@ -52,6 +57,7 @@
 - Produces a revised version: e.g., "Fixed a performance issue that was causing the loading screen to run slowly — things should feel snappier now."
 - Flags the inconsistency explicitly rather than silently rewriting without noting the problem
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — using a brand voice document
 **Input context**: Brand voice guide specifies: direct language, second-person ("you"), light humor is encouraged, avoid corporate jargon, game-specific slang from the in-world glossary is appropriate.
 **Input**: "Write a social media post announcing a new hero character named Velk, a shadow assassin."
@@ -77,6 +83,7 @@
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Case 1 (patch note sanitization) is the most frequently used behavior — test on every new patch cycle
 - Case 3 (crisis communication) is a brand-safety test — verify the agent de-escalates rather than inflames

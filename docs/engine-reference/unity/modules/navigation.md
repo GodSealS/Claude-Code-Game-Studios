@@ -1,10 +1,14 @@
-# Unity 6.3 — Navigation Module Reference
+# Unity 6.3 — Navigation Module Reference / Unity导航模块
+
+
+> **中文翻译**：本文档为Unity引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 **Last verified:** 2026-02-13
 **Knowledge Gap:** Unity 6 NavMesh improvements
 
 ---
 
+<!-- 概述 -->
 ## Overview
 
 Unity 6 navigation systems:
@@ -13,8 +17,10 @@ Unity 6 navigation systems:
 
 ---
 
+<!-- 中文翻译 -->
 ## NavMesh Basics
 
+<!-- 中文翻译 -->
 ### Bake Navigation Mesh
 
 1. Mark walkable surfaces:
@@ -35,8 +41,10 @@ Unity 6 navigation systems:
 
 ---
 
+<!-- 中文翻译 -->
 ## NavMeshAgent (AI Movement)
 
+<!-- 中文翻译 -->
 ### Basic Agent Setup
 
 ```csharp
@@ -60,6 +68,7 @@ public class Enemy : MonoBehaviour {
 
 ---
 
+<!-- 中文翻译 -->
 ### NavMeshAgent Properties
 
 ```csharp
@@ -86,6 +95,7 @@ agent.obstacleAvoidanceType = ObstacleAvoidanceType.HighQualityObstacleAvoidance
 
 ---
 
+<!-- 中文翻译 -->
 ### Check Path Status
 
 ```csharp
@@ -113,6 +123,7 @@ void Update() {
 
 ---
 
+<!-- 中文翻译 -->
 ### Calculate Path (Don't Move Yet)
 
 ```csharp
@@ -127,8 +138,10 @@ if (path.status == NavMeshPathStatus.PathComplete) {
 
 ---
 
+<!-- 中文翻译 -->
 ## NavMesh Areas (Walkable Costs)
 
+<!-- 中文翻译 -->
 ### Define Areas
 `Window > AI > Navigation > Areas tab`
 - **Walkable**: Cost 1 (default)
@@ -136,6 +149,7 @@ if (path.status == NavMeshPathStatus.PathComplete) {
 - **Jump**: Cost 2 (prefer other routes)
 - **Custom**: Define your own
 
+<!-- 中文翻译 -->
 ### Assign Area Costs
 
 ```csharp
@@ -148,8 +162,10 @@ agent.areaMask = 1 << NavMesh.GetAreaFromName("Walkable");
 
 ---
 
+<!-- 中文翻译 -->
 ## NavMesh Obstacles (Dynamic Obstacles)
 
+<!-- 中文翻译 -->
 ### NavMeshObstacle Component
 
 ```csharp
@@ -159,6 +175,7 @@ agent.areaMask = 1 << NavMesh.GetAreaFromName("Walkable");
 // Don't Carve: Agent pushes through (local avoidance)
 ```
 
+<!-- 中文翻译 -->
 ### Dynamic Carving (Moving Obstacles)
 
 ```csharp
@@ -168,8 +185,10 @@ obstacle.carving = true; // Create dynamic hole in NavMesh
 
 ---
 
+<!-- 中文翻译 -->
 ## Off-Mesh Links (Jumps, Teleports)
 
+<!-- 中文翻译 -->
 ### Create Off-Mesh Link
 
 1. `GameObject > Create Empty` (at jump start)
@@ -179,6 +198,7 @@ obstacle.carving = true; // Create dynamic hole in NavMesh
    - **Bi-Directional**: Can traverse both ways
    - **Cost Override**: Path cost for this link
 
+<!-- 中文翻译 -->
 ### Detect Off-Mesh Link Traversal
 
 ```csharp
@@ -210,12 +230,15 @@ IEnumerator TraverseOffMeshLink() {
 
 ---
 
+<!-- 中文翻译 -->
 ## NavMeshComponents Package (Runtime Baking)
 
+<!-- 安装 -->
 ### Installation
 1. `Window > Package Manager`
 2. Add from Git URL: `com.unity.ai.navigation`
 
+<!-- 中文翻译 -->
 ### Runtime NavMesh Baking
 
 ```csharp
@@ -238,8 +261,10 @@ public class NavMeshBuilder : MonoBehaviour {
 
 ---
 
+<!-- 常见模式 -->
 ## Common Patterns
 
+<!-- 中文翻译 -->
 ### Patrol Between Waypoints
 
 ```csharp
@@ -255,6 +280,7 @@ void Update() {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Chase Player
 
 ```csharp
@@ -272,6 +298,7 @@ void Update() {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Flee from Player
 
 ```csharp
@@ -293,12 +320,15 @@ void Update() {
 
 ---
 
+<!-- 调试 -->
 ## Debugging
 
+<!-- 中文翻译 -->
 ### NavMesh Visualization
 - `Window > AI > Navigation > Bake tab`
 - Check "Show NavMesh" to visualize walkable areas
 
+<!-- 中文翻译 -->
 ### Agent Path Gizmos
 
 ```csharp
@@ -316,6 +346,7 @@ void OnDrawGizmos() {
 
 ---
 
+<!-- 性能提示 -->
 ## Performance Tips
 
 - **Limit Obstacle Avoidance Quality**: Use `LowQualityObstacleAvoidance` for distant agents
@@ -325,6 +356,7 @@ void OnDrawGizmos() {
 
 ---
 
+<!-- 来源 -->
 ## Sources
 - https://docs.unity3d.com/6000.0/Documentation/Manual/Navigation.html
 - https://docs.unity3d.com/Packages/com.unity.ai.navigation@2.0/manual/index.html

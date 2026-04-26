@@ -20,6 +20,7 @@ reliably and efficiently.
 
 #### Implementation Workflow / 实现工作流
 
+<!-- 在编写任何代码之前： -->
 Before writing any code:
 
 > **中文翻译**：在编写任何代码之前：

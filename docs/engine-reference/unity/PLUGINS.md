@@ -1,4 +1,7 @@
-# Unity 6.3 LTS — Optional Packages & Systems
+# Unity 6.3 LTS — Optional Packages & Systems / Unity可选插件和系统
+
+
+> **中文翻译**：本文档为Unity引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 **Last verified:** 2026-02-13
 
@@ -7,6 +10,7 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ## How to Use This Guide
 
 **✅ Detailed Documentation Available** - See `plugins/` directory for comprehensive guides
@@ -16,8 +20,10 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ## Production-Ready Packages (Detailed Docs Available)
 
+<!-- 中文翻译 -->
 ### ✅ Cinemachine
 - **Purpose:** Virtual camera system (dynamic cameras, cutscenes, camera blending)
 - **When to use:** 3rd person games, cinematics, complex camera behavior
@@ -29,6 +35,7 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ### ✅ Addressables
 - **Purpose:** Advanced asset management (async loading, remote content, memory control)
 - **When to use:** Large projects, DLC, remote content delivery
@@ -40,6 +47,7 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ### ✅ DOTS / Entities (ECS)
 - **Purpose:** Data-Oriented Technology Stack (high-performance ECS for massive scale)
 - **When to use:** Games with 1000s of entities, RTS, simulations
@@ -51,8 +59,10 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ## Other Production-Ready Packages (Brief Overview)
 
+<!-- 中文翻译 -->
 ### 🟡 Input System (Already Covered)
 - **Purpose:** Modern input handling (rebindable, cross-platform)
 - **Status:** Production-Ready (default in Unity 6)
@@ -62,6 +72,7 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ### 🟡 UI Toolkit (Already Covered)
 - **Purpose:** Modern runtime UI (HTML/CSS-like, performant)
 - **Status:** Production-Ready (Unity 6)
@@ -71,6 +82,7 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ### 🟡 Visual Effect Graph (VFX Graph)
 - **Purpose:** GPU-accelerated particle system (millions of particles)
 - **When to use:** Large-scale VFX, fire, smoke, magic, explosions
@@ -80,6 +92,7 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ### 🟡 Shader Graph
 - **Purpose:** Visual shader editor (node-based shader creation)
 - **When to use:** Custom shaders without HLSL coding
@@ -89,6 +102,7 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ### 🟡 Timeline
 - **Purpose:** Cinematic sequencing (cutscenes, scripted events)
 - **When to use:** Story-driven games, cinematics, scripted sequences
@@ -98,6 +112,7 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ### 🟡 Animation Rigging
 - **Purpose:** Runtime IK, procedural animation
 - **When to use:** Foot IK, aim offsets, procedural limb placement
@@ -107,6 +122,7 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ### 🟡 ProBuilder
 - **Purpose:** In-editor 3D modeling (level prototyping, greyboxing)
 - **When to use:** Rapid prototyping, level blockout
@@ -116,6 +132,7 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ### 🟡 Netcode for GameObjects
 - **Purpose:** Official Unity multiplayer networking
 - **When to use:** Multiplayer games (client-server architecture)
@@ -125,6 +142,7 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ### 🟡 Burst Compiler
 - **Purpose:** LLVM-based compiler for C# Jobs (massive performance boost)
 - **When to use:** Performance-critical code, DOTS, Jobs System
@@ -134,6 +152,7 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ### 🟡 Jobs System
 - **Purpose:** Multi-threaded job scheduling (CPU parallelism)
 - **When to use:** Performance optimization, parallel processing
@@ -143,6 +162,7 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ### 🟡 Mathematics
 - **Purpose:** SIMD math library (optimized for Burst)
 - **When to use:** DOTS, high-performance math
@@ -152,6 +172,7 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ### 🟡 ML-Agents (Machine Learning)
 - **Purpose:** Train AI with reinforcement learning
 - **When to use:** Advanced AI training, procedural behavior
@@ -161,6 +182,7 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ### 🟡 Recorder
 - **Purpose:** Capture gameplay footage, screenshots, animation clips
 - **When to use:** Trailers, replays, debug recording
@@ -170,8 +192,10 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ## Preview/Experimental Packages (Use with Caution)
 
+<!-- 中文翻译 -->
 ### ⚠️ Splines
 - **Purpose:** Runtime spline creation and editing
 - **When to use:** Roads, paths, procedural content
@@ -181,6 +205,7 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ### ⚠️ Muse (AI Assistant)
 - **Purpose:** AI-powered asset creation (textures, sprites, animations)
 - **Status:** Preview (Unity 6)
@@ -189,6 +214,7 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ### ⚠️ Sentis (Neural Network Inference)
 - **Purpose:** Run neural networks in Unity (AI inference)
 - **Status:** Preview
@@ -197,26 +223,31 @@ These are NOT part of the core engine but are commonly used for specific game ty
 
 ---
 
+<!-- 中文翻译 -->
 ## Deprecated Packages (Avoid for New Projects)
 
+<!-- 中文翻译 -->
 ### ❌ UGUI (Canvas UI)
 - **Deprecated:** Still supported, but UI Toolkit recommended
 - **Use Instead:** UI Toolkit
 
 ---
 
+<!-- 中文翻译 -->
 ### ❌ Legacy Particle System
 - **Deprecated:** Use Visual Effect Graph (VFX Graph)
 - **Use Instead:** VFX Graph
 
 ---
 
+<!-- 中文翻译 -->
 ### ❌ Legacy Animation
 - **Deprecated:** Use Animator (Mecanim)
 - **Use Instead:** Animator Controller
 
 ---
 
+<!-- 中文翻译 -->
 ## On-Demand WebSearch Strategy
 
 For packages NOT listed above, use the following approach when users ask:
@@ -230,6 +261,7 @@ For packages NOT listed above, use the following approach when users ask:
 
 ---
 
+<!-- 中文翻译 -->
 ## Quick Decision Guide
 
 **I need virtual cameras** → **Cinemachine**

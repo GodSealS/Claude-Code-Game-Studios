@@ -11,6 +11,7 @@ PASS, WARNINGS, or FAIL.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -23,6 +24,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. Test evidence review is an advisory quality skill; QL-TEST-COVERAGE gate
@@ -32,6 +34,7 @@ is a separate skill invocation and is NOT triggered here.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Tests follow all standards
 
 **Fixture:**
@@ -58,6 +61,7 @@ is a separate skill invocation and is NOT triggered here.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Fail — Timing dependency detected
 
 **Fixture:**
@@ -86,6 +90,7 @@ is a separate skill invocation and is NOT triggered here.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Fail — Test calls external API directly
 
 **Fixture:**
@@ -113,6 +118,7 @@ is a separate skill invocation and is NOT triggered here.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Edge Case — No Test Files Found
 
 **Fixture:**
@@ -134,6 +140,7 @@ is a separate skill invocation and is NOT triggered here.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Gate Compliance — No gate; QL-TEST-COVERAGE is a separate skill
 
 **Fixture:**
@@ -167,6 +174,7 @@ is a separate skill invocation and is NOT triggered here.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - Batch review of all test files in `tests/` is not explicitly tested; behavior

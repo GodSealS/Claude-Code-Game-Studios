@@ -8,6 +8,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references ECS / Jobs / Burst / IComponentData)
@@ -19,6 +20,7 @@ No gate IDs assigned.
 
 ## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出 -->
 ### Case 1: In-domain request — appropriate output
 **Input:** "Convert the player movement system to ECS."
 **Expected behavior:**
@@ -30,6 +32,7 @@ No gate IDs assigned.
 - Marks the job `[BurstCompile]` and notes what must be unmanaged for Burst compatibility
 - Does NOT modify the input polling system — reads from an existing `PlayerInputData` component
 
+<!-- 中文翻译 -->
 ### Case 2: MonoBehaviour push-back
 **Input:** "Just use MonoBehaviour for the player movement — it's simpler."
 **Expected behavior:**
@@ -39,6 +42,7 @@ No gate IDs assigned.
 - If no commitment exists, flags the architecture decision to `lead-programmer` / `technical-director` for resolution
 - Does not make the MonoBehaviour vs. DOTS decision unilaterally
 
+<!-- 中文翻译 -->
 ### Case 3: Burst-incompatible managed memory
 **Input:** "This Burst job accesses a `List<EnemyData>` to find the nearest enemy."
 **Expected behavior:**
@@ -48,6 +52,7 @@ No gate IDs assigned.
 - Notes that `NativeArray` must be disposed explicitly or via `[DeallocateOnJobCompletion]`
 - Produces the corrected job using unmanaged native containers
 
+<!-- 中文翻译 -->
 ### Case 4: Hybrid access — DOTS system needs MonoBehaviour data
 **Input:** "The DOTS movement system needs to read the camera transform managed by a MonoBehaviour CameraController."
 **Expected behavior:**
@@ -57,6 +62,7 @@ No gate IDs assigned.
 - Does NOT access the MonoBehaviour from inside a Burst job — flags that as unsafe
 - Provides the bridge code on both the MonoBehaviour side (writing to ECS) and the DOTS system side (reading from ECS)
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — performance targets
 **Input:** Technical preferences from context: 60fps target, max 2ms CPU script budget per frame. Request: "Design the ECS chunk layout for 10,000 enemy entities."
 **Expected behavior:**
@@ -81,6 +87,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - ECS conversion (Case 1) must include a unit test using the ECS test framework (`World`, `EntityManager`)
 - Burst incompatibility (Case 3) is safety-critical — the agent must catch this before the code is written

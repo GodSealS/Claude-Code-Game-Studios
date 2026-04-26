@@ -1,4 +1,7 @@
-# Unity 6.3 — DOTS / Entities (ECS)
+# Unity 6.3 — DOTS / Entities (ECS) / UnityDOTS/Entities（数据导向技术栈）插件
+
+
+> **中文翻译**：本文档为Unity引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 **Last verified:** 2026-02-13
 **Status:** Production-Ready (Entities 1.3+, Unity 6.3 LTS)
@@ -6,6 +9,7 @@
 
 ---
 
+<!-- 概述 -->
 ## Overview
 
 **DOTS (Data-Oriented Technology Stack)** is Unity's high-performance ECS (Entity Component System)
@@ -27,8 +31,10 @@ Many tutorials for Entities 0.x are now outdated.
 
 ---
 
+<!-- 安装 -->
 ## Installation
 
+<!-- 中文翻译 -->
 ### Install via Package Manager
 
 1. `Window > Package Manager`
@@ -41,28 +47,35 @@ Many tutorials for Entities 0.x are now outdated.
 
 ---
 
+<!-- 核心概念 -->
 ## Core Concepts
 
+<!-- 中文翻译 -->
 ### 1. **Entity**
 - Lightweight ID (int)
 - No behavior, just an identifier
 
+<!-- 中文翻译 -->
 ### 2. **Component**
 - Data only (no methods)
 - Struct implementing `IComponentData`
 
+<!-- 中文翻译 -->
 ### 3. **System**
 - Logic that operates on components
 - Struct implementing `ISystem`
 
+<!-- 中文翻译 -->
 ### 4. **Archetype**
 - Unique combination of component types
 - Entities with same components share archetype
 
 ---
 
+<!-- 中文翻译 -->
 ## Basic ECS Pattern
 
+<!-- 中文翻译 -->
 ### Define Component
 
 ```csharp
@@ -81,6 +94,7 @@ public struct Velocity : IComponentData {
 
 ---
 
+<!-- 中文翻译 -->
 ### Define System
 
 ```csharp
@@ -106,6 +120,7 @@ public partial struct MovementSystem : ISystem {
 
 ---
 
+<!-- 中文翻译 -->
 ### Create Entities
 
 ```csharp
@@ -128,8 +143,10 @@ public partial class EntitySpawner : SystemBase {
 
 ---
 
+<!-- 中文翻译 -->
 ## Hybrid ECS (MonoBehaviour + ECS)
 
+<!-- 中文翻译 -->
 ### Baker (Convert GameObject to Entity)
 
 ```csharp
@@ -157,8 +174,10 @@ public class PlayerBaker : Baker<PlayerAuthoring> {
 
 ---
 
+<!-- 查询 -->
 ## Queries
 
+<!-- 中文翻译 -->
 ### Query All Entities with Components
 
 ```csharp
@@ -171,6 +190,7 @@ foreach (var (position, velocity) in
 
 ---
 
+<!-- 中文翻译 -->
 ### Query with Entity
 
 ```csharp
@@ -184,6 +204,7 @@ foreach (var (position, velocity, entity) in
 
 ---
 
+<!-- 中文翻译 -->
 ### Query with Filters
 
 ```csharp
@@ -196,8 +217,10 @@ foreach (var position in
 
 ---
 
+<!-- 中文翻译 -->
 ## Jobs (Parallel Execution)
 
+<!-- 中文翻译 -->
 ### IJobEntity (Parallel Foreach)
 
 ```csharp
@@ -227,8 +250,10 @@ public partial struct MovementSystem : ISystem {
 
 ---
 
+<!-- 中文翻译 -->
 ## Burst Compiler (Performance)
 
+<!-- 中文翻译 -->
 ### Enable Burst
 
 ```csharp
@@ -250,8 +275,10 @@ public partial struct MySystem : ISystem {
 
 ---
 
+<!-- 中文翻译 -->
 ## Entity Command Buffers (Structural Changes)
 
+<!-- 中文翻译 -->
 ### Deferred Structural Changes
 
 ```csharp
@@ -275,8 +302,10 @@ public partial struct SpawnSystem : ISystem {
 
 ---
 
+<!-- 中文翻译 -->
 ## Dynamic Buffers (Array-Like Components)
 
+<!-- 中文翻译 -->
 ### Define Dynamic Buffer
 
 ```csharp
@@ -285,6 +314,7 @@ public struct PathWaypoint : IBufferElementData {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Use Dynamic Buffer
 
 ```csharp
@@ -303,14 +333,17 @@ foreach (var buffer in SystemAPI.Query<DynamicBuffer<PathWaypoint>>()) {
 
 ---
 
+<!-- 中文翻译 -->
 ## Tags (Zero-Size Components)
 
+<!-- 中文翻译 -->
 ### Define Tag
 
 ```csharp
 public struct EnemyTag : IComponentData { } // Empty component = tag
 ```
 
+<!-- 中文翻译 -->
 ### Use Tag for Filtering
 
 ```csharp
@@ -323,8 +356,10 @@ foreach (var position in
 
 ---
 
+<!-- 中文翻译 -->
 ## System Ordering
 
+<!-- 中文翻译 -->
 ### Explicit Ordering
 
 ```csharp
@@ -337,8 +372,10 @@ public partial struct RenderSystem : ISystem { }
 
 ---
 
+<!-- 中文翻译 -->
 ## Performance Patterns
 
+<!-- 中文翻译 -->
 ### Chunk Iteration (Maximum Performance)
 
 ```csharp
@@ -366,6 +403,7 @@ public void OnUpdate(ref SystemState state) {
 
 ---
 
+<!-- 中文翻译 -->
 ## Migration from MonoBehaviour
 
 ```csharp
@@ -396,8 +434,10 @@ public partial struct EnemyMovementSystem : ISystem {
 
 ---
 
+<!-- 调试 -->
 ## Debugging
 
+<!-- 中文翻译 -->
 ### Entities Hierarchy Window
 
 `Window > Entities > Hierarchy`
@@ -405,6 +445,7 @@ public partial struct EnemyMovementSystem : ISystem {
 - Shows all entities and their components
 - Filter by archetype, component type
 
+<!-- 中文翻译 -->
 ### Entities Profiler
 
 `Window > Analysis > Profiler > Entities`
@@ -414,6 +455,7 @@ public partial struct EnemyMovementSystem : ISystem {
 
 ---
 
+<!-- 来源 -->
 ## Sources
 - https://docs.unity3d.com/Packages/com.unity.entities@1.3/manual/index.html
 - https://docs.unity3d.com/Packages/com.unity.burst@1.8/manual/index.html

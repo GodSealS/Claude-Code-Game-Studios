@@ -13,6 +13,7 @@ with verdict COMPLETE / BLOCKED and handoffs to `/design-review`, `/dev-story`,
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] Has required frontmatter fields: `name`, `description`, `argument-hint`, `user-invocable`, `allowed-tools`
@@ -32,6 +33,7 @@ with verdict COMPLETE / BLOCKED and handoffs to `/design-review`, `/dev-story`,
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — All team members produce outputs, document compiled and saved
 
 **Fixture:**
@@ -66,6 +68,7 @@ with verdict COMPLETE / BLOCKED and handoffs to `/design-review`, `/dev-story`,
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Blocked Agent (world-builder) — Partial report produced with gap noted
 
 **Fixture:**
@@ -96,6 +99,7 @@ with verdict COMPLETE / BLOCKED and handoffs to `/design-review`, `/dev-story`,
 
 ---
 
+<!-- 用例 3：无参数 — 显示用法指导 -->
 ### Case 3: No Argument — Usage guidance shown
 
 **Fixture:**
@@ -118,6 +122,7 @@ with verdict COMPLETE / BLOCKED and handoffs to `/design-review`, `/dev-story`,
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Accessibility Review Gate — Blocking concern surfaces before sign-off
 
 **Fixture:**
@@ -149,6 +154,7 @@ with verdict COMPLETE / BLOCKED and handoffs to `/design-review`, `/dev-story`,
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Circular Level Reference — Adjacent area dependency flagged
 
 **Fixture:**
@@ -192,6 +198,7 @@ with verdict COMPLETE / BLOCKED and handoffs to `/design-review`, `/dev-story`,
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - narrative-director and world-builder in Step 1 may be sequential or parallel — the skill spec

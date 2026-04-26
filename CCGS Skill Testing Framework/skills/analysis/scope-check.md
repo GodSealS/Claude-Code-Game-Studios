@@ -10,6 +10,7 @@ Verdicts: ON SCOPE, CONCERNS, or SCOPE CREEP DETECTED.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -22,6 +23,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. Scope check is a read-only advisory skill; no gates are invoked.
@@ -30,6 +32,7 @@ None. Scope check is a read-only advisory skill; no gates are invoked.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Sprint stories align with milestone goals
 
 **Fixture:**
@@ -54,6 +57,7 @@ None. Scope check is a read-only advisory skill; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Scope Creep Detected — Stories introducing systems not in milestone
 
 **Fixture:**
@@ -78,6 +82,7 @@ None. Scope check is a read-only advisory skill; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: No Milestone Defined — CONCERNS; scope cannot be validated
 
 **Fixture:**
@@ -101,6 +106,7 @@ None. Scope check is a read-only advisory skill; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Single Story Check — Evaluated against its parent epic
 
 **Fixture:**
@@ -125,6 +131,7 @@ None. Scope check is a read-only advisory skill; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Gate Compliance — No gate; PR may be consulted separately
 
 **Fixture:**
@@ -159,6 +166,7 @@ None. Scope check is a read-only advisory skill; no gates are invoked.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The case where the sprint file itself does not exist is not tested; the

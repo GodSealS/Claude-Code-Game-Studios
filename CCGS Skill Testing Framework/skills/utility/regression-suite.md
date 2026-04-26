@@ -16,6 +16,7 @@ has no test).
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -28,6 +29,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. `/regression-suite` is a QA analysis utility. No director gates apply.
@@ -36,6 +38,7 @@ None. `/regression-suite` is a QA analysis utility. No director gates apply.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Full Coverage — All ACs in sprint have corresponding tests
 
 **Fixture:**
@@ -61,6 +64,7 @@ None. `/regression-suite` is a QA analysis utility. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Gaps Found — 3 ACs have no tests
 
 **Fixture:**
@@ -84,6 +88,7 @@ None. `/regression-suite` is a QA analysis utility. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Critical AC Untested — CRITICAL GAPS verdict, flagged prominently
 
 **Fixture:**
@@ -107,6 +112,7 @@ None. `/regression-suite` is a QA analysis utility. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Orphan Tests — Test file has no matching AC
 
 **Fixture:**
@@ -132,6 +138,7 @@ None. `/regression-suite` is a QA analysis utility. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate Check — No gate; regression-suite is a QA utility
 
 **Fixture:**
@@ -162,6 +169,7 @@ None. `/regression-suite` is a QA analysis utility. No director gates apply.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The heuristic for matching an AC to a test (by system name + scenario keywords)

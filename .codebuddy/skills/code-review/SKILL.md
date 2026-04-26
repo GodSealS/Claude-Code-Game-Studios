@@ -7,6 +7,7 @@ allowed-tools: Read, Glob, Grep, Bash, Task
 agent: lead-programmer
 ---
 
+<!-- 第 1 阶段：加载目标文件 -->
 ## Phase 1: Load Target Files
 > **中文翻译**：## 第 1 阶段：加载目标文件
 
@@ -17,6 +18,7 @@ Read the target file(s) in full. Read CODEBUDDY.md for project coding standards.
 
 ---
 
+<!-- 第 2 阶段：识别引擎专家 -->
 ## Phase 2: Identify Engine Specialists
 
 Read `.codebuddy/docs/technical-preferences.md`, section `## Engine Specialists`. Note:
@@ -30,6 +32,7 @@ If the section reads `[TO BE CONFIGURED]`, no engine is pinned — skip engine s
 
 ---
 
+<!-- 第 3 阶段：ADR 合规性检查 -->
 ## Phase 3: ADR Compliance Check
 > **中文翻译**：## 第 3 阶段：ADR 合规性检查
 
@@ -56,6 +59,7 @@ For each referenced ADR: read the file, extract the **Decision** and **Consequen
 
 ---
 
+<!-- 第 4 阶段：标准合规性 -->
 ## Phase 4: Standards Compliance
 
 Identify the system category (engine, gameplay, AI, networking, UI, tools) and evaluate:
@@ -69,6 +73,7 @@ Identify the system category (engine, gameplay, AI, networking, UI, tools) and e
 
 ---
 
+<!-- 第 5 阶段：架构和 SOLID -->
 ## Phase 5: Architecture and SOLID
 > **中文翻译**：## 第 5 阶段：架构和 SOLID
 
@@ -105,6 +110,7 @@ Identify the system category (engine, gameplay, AI, networking, UI, tools) and e
 
 ---
 
+<!-- 第 6 阶段：游戏特定关注点 -->
 ## Phase 6: Game-Specific Concerns
 
 - [ ] Frame-rate independence (delta time usage)
@@ -115,6 +121,7 @@ Identify the system category (engine, gameplay, AI, networking, UI, tools) and e
 
 ---
 
+<!-- 第 7 阶段：专家评审（并行） -->
 ## Phase 7: Specialist Reviews (Parallel)
 > **中文翻译**：## 第 7 阶段：专家评审（并行）
 
@@ -123,6 +130,7 @@ Spawn all applicable specialists simultaneously via Task — do not wait for one
 > **中文翻译**：通过任务同时产生所有适用的专家 - 不要等待一个专家才开始下一个。
 
 
+<!-- 引擎专家 -->
 ### Engine Specialists
 > **中文翻译**：### 发动机专家
 
@@ -145,6 +153,7 @@ Also spawn the **Primary Specialist** for any file touching engine architecture 
 > **中文翻译**：还为任何文件接触引擎架构（场景结构、节点层次结构、生命周期挂钩）生成**主要专家**。
 
 
+<!-- QA 可测试性审查 -->
 ### QA Testability Review
 > **中文翻译**：### QA 可测试性审查
 
@@ -185,6 +194,7 @@ Collect all specialist findings before producing output.
 
 ---
 
+<!-- 第 8 阶段：输出审查 -->
 ## Phase 8: Output Review
 
 ```
@@ -228,6 +238,7 @@ This skill is read-only — no files are written.
 
 ---
 
+<!-- 第 9 阶段：后续步骤 -->
 ## Phase 9: Next Steps
 > **中文翻译**：## 第 9 阶段：后续步骤
 

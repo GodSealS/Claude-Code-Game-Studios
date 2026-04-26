@@ -11,6 +11,7 @@ allowed-tools: Read, Glob, Grep, Write
 
 ## Phase 1: Parse Arguments / 第 1 阶段：解析参数
 
+<!-- 读取目标平台参数 -->
 Read the argument for the target platform (`pc`, `console`, `mobile`, or `all`). If no platform is specified, default to `all`.
 > **中文翻译**：读取目标平台参数（`pc`、`console`、`mobile` 或 `all`）。如果未指定平台，默认为 `all`。
 
@@ -32,6 +33,7 @@ Scan for outstanding issues: / 扫描未解决的问题：
 - Count `HACK` comments / 计算 `HACK` 注释
 - Note their locations and severity / 记录其位置和严重程度
 
+<!-- 检查测试结果 -->
 Check for test results in any test output directories or CI logs if available.
 > **中文翻译**：检查任何测试输出目录或 CI 日志中的测试结果（如有）。
 

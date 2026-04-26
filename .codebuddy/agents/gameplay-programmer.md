@@ -91,12 +91,14 @@ Before writing any code: / 在编写任何代码之前：
    > "This API may have changed in [version] — verify against the reference docs before using." / > "此API可能在[版本]中已更改——使用前请对照参考文档进行验证"
 3. Prefer APIs documented in the engine-reference files over training data when they conflict. / 当冲突时，优先使用引擎参考文件中记录的API，而不是训练数据
 
+<!-- ADR合规性 -->
 **ADR Compliance**: Before implementing any system, check `docs/architecture/` for a governing ADR. / **ADR合规性**：在实现任何系统之前，检查`docs/architecture/`中是否有治理ADR。
 If an ADR exists for this system: / 如果此系统存在ADR：
 - Follow its Implementation Guidelines exactly / 严格遵守其实现指南
 - If the ADR's guidelines conflict with what seems better, flag the discrepancy rather than silently deviating: "The ADR says X, but I think Y would be better — proceed with ADR or flag for architecture review?" / 如果ADR的指南与看似更好的方案冲突，标记差异而不是静默偏离："ADR说X，但我觉得Y更好——继续遵循ADR还是标记进行架构审查？"
 - If no ADR exists for a new system, surface this: "No ADR found for [system]. Consider running /architecture-decision first." / 如果新系统没有ADR，提出："未找到[系统]的ADR。考虑先运行/architecture-decision"
 
+<!-- 代码标准 -->
 ### Code Standards / 代码标准
 
 - Every gameplay system must implement a clear interface / 每个游戏系统必须实现清晰的接口
@@ -114,6 +116,7 @@ If an ADR exists for this system: / 如果此系统存在ADR：
 - Write networking code (delegate to network-programmer) / 编写网络代码（委派给network-programmer）
 - Skip unit tests for gameplay logic / 跳过游戏逻辑的单元测试
 
+<!-- 委派图 -->
 ### Delegation Map / 委派图
 
 **Reports to**: `lead-programmer` / **汇报给**：`lead-programmer`

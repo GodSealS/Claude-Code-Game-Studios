@@ -9,6 +9,7 @@ Tests the skills and agents themselves — not any game built with them.
 
 ---
 
+<!-- 中文翻译 -->
 ## What's in here
 
 ```
@@ -49,10 +50,12 @@ CCGS Skill Testing Framework/
 
 ---
 
+<!-- 中文翻译 -->
 ## How to use it
 
 All testing is driven by two skills already in the framework:
 
+<!-- 中文翻译 -->
 ### Check structural compliance
 
 ```
@@ -60,6 +63,7 @@ All testing is driven by two skills already in the framework:
 /skill-test static all              # Check all 72 skills
 ```
 
+<!-- 中文翻译 -->
 ### Run a behavioral spec test
 
 ```
@@ -67,6 +71,7 @@ All testing is driven by two skills already in the framework:
 /skill-test spec design-review
 ```
 
+<!-- 中文翻译 -->
 ### Check against category rubric
 
 ```
@@ -74,12 +79,14 @@ All testing is driven by two skills already in the framework:
 /skill-test category all            # Run rubric checks across all categorized skills
 ```
 
+<!-- 中文翻译 -->
 ### See full coverage picture
 
 ```
 /skill-test audit                   # Skills + agents: has-spec, last tested, result
 ```
 
+<!-- 中文翻译 -->
 ### Improve a failing skill
 
 ```
@@ -120,6 +127,7 @@ All testing is driven by two skills already in the framework:
 
 ---
 
+<!-- 中文翻译 -->
 ## Updating the catalog
 
 `catalog.yaml` tracks test coverage for every skill and agent. After running a test:
@@ -130,6 +138,7 @@ All testing is driven by two skills already in the framework:
 
 ---
 
+<!-- 中文翻译 -->
 ## Writing a new spec
 
 1. Find the spec template at `templates/skill-test-spec.md`
@@ -139,6 +148,7 @@ All testing is driven by two skills already in the framework:
 
 ---
 
+<!-- 中文翻译 -->
 ## Removing this framework
 
 This folder has no hooks into the main project. To remove:

@@ -1,6 +1,9 @@
-# Agent Test Spec: cocos_core-expert
+# Agent Test Spec: cocos_core-expert / Cocos Creator核心引擎专家代理测试规范
 
-## Agent Summary
+> **中文翻译**：此文件为Cocos Creator核心引擎专家代理的测试规范。所有测试断言和用例保持英文原文以确保可执行性。
+
+
+## Agent Summary / 代理摘要
 Domain: Cocos Creator core engine systems: component architecture, scene graph, lifecycle management, event communication, object pooling, and core framework patterns.
 Does NOT own: 2D/3D rendering (cocos_2d-expert, cocos_3d-expert), animation (cocos_animation-expert), physics (cocos_physics-expert).
 Model tier: DeepSeek-V3.2 (default).
@@ -8,7 +11,7 @@ No gate IDs assigned.
 
 ---
 
-## Static Assertions (Structural)
+## Static Assertions (Structural) / 静态断言（结构）
 
 - [ ] `description:` field is present and domain-specific (references core engine, component system, scene graph, lifecycle)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
@@ -18,8 +21,9 @@ No gate IDs assigned.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出 -->
 ### Case 1: In-domain request — appropriate output
 **Input:** "Create a custom component that logs lifecycle events (onLoad, start, update, onDestroy)."
 **Expected behavior:**
@@ -29,6 +33,7 @@ No gate IDs assigned.
 - Follows Cocos Creator's component naming conventions
 - Includes proper import statements and documentation
 
+<!-- 用例 2：错误域重定向 -->
 ### Case 2: Wrong-domain redirect
 **Input:** "Implement a 3D mesh rendering system with material switching."
 **Expected behavior:**
@@ -37,6 +42,7 @@ No gate IDs assigned.
 - Refers to cocos_3d-expert for mesh rendering implementation
 - May provide conceptual mapping if relevant (e.g., "components can be attached to render nodes")
 
+<!-- 中文翻译 -->
 ### Case 3: Event communication system
 **Input:** "Set up an event system for decoupled communication between game systems."
 **Expected behavior:**
@@ -46,6 +52,7 @@ No gate IDs assigned.
 - Includes example usage for score updates or game state changes
 - Handles event cleanup to prevent memory leaks
 
+<!-- 中文翻译 -->
 ### Case 4: Object pooling for performance
 **Input:** "Create an object pool for bullet entities to reduce instantiation overhead."
 **Expected behavior:**
@@ -55,6 +62,7 @@ No gate IDs assigned.
 - Provides usage example for bullet spawning/recycling
 - Includes capacity management and growth strategies
 
+<!-- 中文翻译 -->
 ### Case 5: Scene graph management
 **Input:** "Implement a utility for finding nodes by path or component type in the scene hierarchy."
 **Expected behavior:**
@@ -64,6 +72,7 @@ No gate IDs assigned.
 - Provides TypeScript type safety for returned nodes
 - Follows project's utility function patterns
 
+<!-- 中文翻译 -->
 ### Case 6: Game state management
 **Input:** "Design a finite state machine for game states (menu, playing, paused, gameover)."
 **Expected behavior:**
@@ -75,6 +84,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 协议合规性 -->
 ## Protocol Compliance
 
 - [ ] Stays within declared domain (core engine, component system, scene graph, lifecycle)

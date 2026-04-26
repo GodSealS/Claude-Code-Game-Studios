@@ -4,6 +4,7 @@ When authoring or editing files in this directory, follow these standards.
 
 > **中文翻译**：在编写或编辑此目录中的文件时，请遵循以下标准。
 
+<!-- 中文翻译 -->
 ## Architecture Decision Records (`docs/architecture/`)
 
 Use the ADR template: `.codebuddy/docs/templates/architecture-decision-record.md`
@@ -27,6 +28,7 @@ ADR Dependencies, Engine Compatibility, GDD Requirements Addressed
 
 **Validation:** Run `/architecture-review` after completing a set of ADRs.
 
+<!-- 中文翻译 -->
 ## Engine Reference (`docs/engine-reference/`)
 
 Version-pinned engine API snapshots. **Always check here before using any

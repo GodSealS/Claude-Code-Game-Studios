@@ -59,6 +59,7 @@ sudo pacman -S jq       # Arch
 
 ## Platform Notes / 平台说明
 
+<!-- 中文翻译 -->
 ### Windows
 - Git for Windows includes **Git Bash**, which provides the `bash` command
   used by all hooks in `settings.json`
@@ -69,6 +70,7 @@ sudo pacman -S jq       # Arch
   CodeBuddy invokes commands through a shell that can find `bash.exe`
   > **中文翻译**：钩子使用 `bash .codebuddy/hooks/[name].sh` — 这在Windows上可行，因为CodeBuddy通过能找到 `bash.exe` 的shell调用命令
 
+<!-- 中文翻译 -->
 ### macOS / Linux
 - Bash is available natively
   > **中文翻译**：Bash原生可用

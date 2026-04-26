@@ -1,24 +1,33 @@
-# Godot Input — Quick Reference
+# Godot Input — Quick Reference / Godot输入模块
+
+
+> **中文翻译**：本文档为Godot引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 Last verified: 2026-02-12 | Engine: Godot 4.6
 
+<!-- 自 ~4.3 以来的变化（LLM 训练截止） -->
 ## What Changed Since ~4.3 (LLM Cutoff)
 
+<!-- 中文翻译 -->
 ### 4.6 Changes
 - **Dual-focus system**: Mouse/touch focus is now separate from keyboard/gamepad focus
   - Visual feedback differs by input method
   - Custom focus implementations may need updating
 - **Select Mode keybind changed**: "Select Mode" is now `v` key; old mode renamed "Transform Mode" (`q` key)
 
+<!-- 中文翻译 -->
 ### 4.5 Changes
 - **SDL3 gamepad driver**: Gamepad handling delegated to SDL library for better cross-platform support
 - **Recursive Control disable**: Single property disables mouse/focus for entire node hierarchies
 
+<!-- 中文翻译 -->
 ### 4.3 Changes (in training data)
 - **InputEventShortcut**: Dedicated event type for menu shortcuts (optional)
 
+<!-- 当前 API 模式 -->
 ## Current API Patterns
 
+<!-- 中文翻译 -->
 ### Input Actions (unchanged)
 ```gdscript
 func _physics_process(delta: float) -> void:
@@ -29,6 +38,7 @@ func _physics_process(delta: float) -> void:
         jump()
 ```
 
+<!-- 中文翻译 -->
 ### Input Events (unchanged)
 ```gdscript
 func _unhandled_input(event: InputEvent) -> void:
@@ -40,6 +50,7 @@ func _unhandled_input(event: InputEvent) -> void:
             toggle_pause()
 ```
 
+<!-- 中文翻译 -->
 ### Focus Management (4.6 — CHANGED)
 ```gdscript
 # Mouse/touch and keyboard/gamepad focus are now SEPARATE
@@ -53,6 +64,7 @@ func _ready() -> void:
 # But be aware: mouse hover focus != keyboard focus in 4.6
 ```
 
+<!-- 中文翻译 -->
 ### Gamepad (4.5+ — SDL3 backend)
 ```gdscript
 # API unchanged, but SDL3 provides:
@@ -66,6 +78,7 @@ func _input(event: InputEvent) -> void:
             confirm_selection()
 ```
 
+<!-- 常见错误 -->
 ## Common Mistakes
 - Not testing both mouse and keyboard focus paths (dual-focus in 4.6)
 - Assuming `grab_focus()` affects mouse focus (it only affects keyboard/gamepad in 4.6)

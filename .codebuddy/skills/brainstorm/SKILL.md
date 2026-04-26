@@ -76,6 +76,7 @@ When this skill is invoked:
 
 ---
 
+<!-- 中文翻译 -->
 ### Phase 1: Creative Discovery
 
 Start by understanding the person, not the game. Ask these questions
@@ -109,6 +110,7 @@ Read the brief back and confirm it captures their intent.
 
 ---
 
+<!-- 中文翻译 -->
 ### Phase 2: Concept Generation
 > **中文翻译**：### 第 2 阶段：概念生成
 
@@ -183,6 +185,7 @@ Never pressure toward a choice — let them sit with it.
 
 ---
 
+<!-- 中文翻译 -->
 ### Phase 3: Core Loop Design
 
 For the chosen concept, use structured questioning to build the core loop.
@@ -221,6 +224,7 @@ After capturing answers, analyze: Is this action intrinsically satisfying? What 
 
 ---
 
+<!-- 中文翻译 -->
 ### Phase 4: Pillars and Boundaries
 > **中文翻译**：### 第四阶段：支柱和边界
 
@@ -330,6 +334,7 @@ If the creative-director returns CONCERNS or REJECT on pillars, resolve pillar i
 
 ---
 
+<!-- 中文翻译 -->
 ### Phase 5: Player Type Validation
 
 Using the Bartle taxonomy and Quantic Foundry motivation model, validate
@@ -345,6 +350,7 @@ who this game is actually for:
 
 ---
 
+<!-- 中文翻译 -->
 ### Phase 6: Scope and Feasibility
 > **中文翻译**：### 第 6 阶段：范围和可行性
 
@@ -484,6 +490,7 @@ Verdict: **COMPLETE** — game concept created and handed off for next steps.
 
 ---
 
+<!-- 上下文窗口感知 -->
 ## Context Window Awareness
 > **中文翻译**：## 上下文窗口感知
 
@@ -498,6 +505,7 @@ This is a multi-phase skill. If context reaches or exceeds 70% during any phase,
 
 ---
 
+<!-- 推荐后续步骤 -->
 ## Recommended Next Steps
 
 After the game concept is written, follow the pre-production pipeline in order:

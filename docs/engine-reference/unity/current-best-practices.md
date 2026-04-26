@@ -1,4 +1,7 @@
-# Unity 6.3 LTS — Current Best Practices
+# Unity 6.3 LTS — Current Best Practices / 当前最佳实践
+
+
+> **中文翻译**：本文档为Unity引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 **Last verified:** 2026-02-13
 
@@ -7,12 +10,15 @@ These are production-ready recommendations as of Unity 6.3 LTS.
 
 ---
 
+<!-- 项目设置 -->
 ## Project Setup
 
+<!-- 中文翻译 -->
 ### Use Unity 6.3 LTS for Production
 - **Tech Stream** (6.4+): Latest features, less stable
 - **LTS** (6.3): Production-ready, 2-year support (until Dec 2027)
 
+<!-- 中文翻译 -->
 ### Choose the Right Render Pipeline
 - **URP (Universal)**: Mobile, cross-platform, good performance ✅ Recommended for most games
 - **HDRP (High Definition)**: High-end PC/console, photorealistic
@@ -20,8 +26,10 @@ These are production-ready recommendations as of Unity 6.3 LTS.
 
 ---
 
+<!-- 中文翻译 -->
 ## Scripting
 
+<!-- 中文翻译 -->
 ### Use C# 9+ Features (Unity 6 Supports C# 9)
 
 ```csharp
@@ -41,6 +49,7 @@ var result = enemy switch {
 };
 ```
 
+<!-- 中文翻译 -->
 ### Async/Await for Asset Loading
 
 ```csharp
@@ -51,6 +60,7 @@ public async Task<GameObject> LoadEnemyAsync(string key) {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Use Source Generators for Serialization (Unity 6+)
 
 ```csharp
@@ -64,8 +74,10 @@ public partial struct PlayerStats : IComponentData {
 
 ---
 
+<!-- 中文翻译 -->
 ## DOTS/ECS (Production-Ready in Unity 6.3 LTS)
 
+<!-- 中文翻译 -->
 ### Use ISystem (Not ComponentSystem)
 
 ```csharp
@@ -82,6 +94,7 @@ public partial struct MovementSystem : ISystem {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Use IJobEntity for Parallel Jobs
 
 ```csharp
@@ -102,8 +115,10 @@ job.ScheduleParallel();
 
 ---
 
+<!-- 中文翻译 -->
 ## Input
 
+<!-- 中文翻译 -->
 ### Use Input System Package (Not Legacy Input)
 
 ```csharp
@@ -127,8 +142,10 @@ Create Input Actions asset in editor, generate C# class via inspector.
 
 ---
 
+<!-- UI -->
 ## UI
 
+<!-- 中文翻译 -->
 ### Use UI Toolkit for Runtime UI (Production-Ready in Unity 6)
 
 ```csharp
@@ -152,8 +169,10 @@ public class MainMenu : MonoBehaviour {
 
 ---
 
+<!-- 中文翻译 -->
 ## Asset Management
 
+<!-- 中文翻译 -->
 ### Use Addressables (Not Resources)
 
 ```csharp
@@ -173,8 +192,10 @@ public async Task SpawnEnemyAsync(string enemyKey) {
 
 ---
 
+<!-- 中文翻译 -->
 ## Rendering
 
+<!-- 中文翻译 -->
 ### Use RenderGraph API for Custom Passes (URP/HDRP)
 
 ```csharp
@@ -193,8 +214,10 @@ public override void RecordRenderGraph(RenderGraph renderGraph, ContextContainer
 
 ---
 
+<!-- 性能 -->
 ## Performance
 
+<!-- 中文翻译 -->
 ### Use Burst Compiler + Jobs System
 
 ```csharp
@@ -223,6 +246,7 @@ job.Schedule(positions.Length, 64).Complete();
 
 ---
 
+<!-- 中文翻译 -->
 ### Use GPU Instancing for Repeated Objects
 
 ```csharp
@@ -237,8 +261,10 @@ Graphics.RenderMeshInstanced(
 
 ---
 
+<!-- 内存管理 -->
 ## Memory Management
 
+<!-- 中文翻译 -->
 ### Use NativeContainers (Not Managed Arrays in Jobs)
 
 ```csharp
@@ -254,8 +280,10 @@ using var data = new NativeArray<int>(1000, Allocator.TempJob);
 
 ---
 
+<!-- 中文翻译 -->
 ## Multiplayer
 
+<!-- 中文翻译 -->
 ### Use Netcode for GameObjects (Official)
 
 ```csharp
@@ -276,8 +304,10 @@ public class Player : NetworkBehaviour {
 
 ---
 
+<!-- 中文翻译 -->
 ## Testing
 
+<!-- 中文翻译 -->
 ### Use Unity Test Framework (NUnit-based)
 
 ```csharp
@@ -296,8 +326,10 @@ public IEnumerator Player_TakesDamage_HealthDecreases() {
 
 ---
 
+<!-- 调试 -->
 ## Debugging
 
+<!-- 中文翻译 -->
 ### Use Logging Best Practices
 
 ```csharp
@@ -314,6 +346,7 @@ Debug.Log($"Player {playerName} scored {score} points");
 
 ---
 
+<!-- 中文翻译 -->
 ## Summary: Unity 6 Tech Stack
 
 | Feature | Use This (2026) | Avoid This (Legacy) |

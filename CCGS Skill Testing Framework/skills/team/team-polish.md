@@ -13,6 +13,7 @@ identifies engine-level root causes. Verdict is READY FOR RELEASE or NEEDS MORE 
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] Has required frontmatter fields: `name`, `description`, `argument-hint`, `user-invocable`, `allowed-tools`
@@ -32,6 +33,7 @@ identifies engine-level root causes. Verdict is READY FOR RELEASE or NEEDS MORE 
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Full pipeline completes, READY FOR RELEASE verdict
 
 **Fixture:**
@@ -70,6 +72,7 @@ identifies engine-level root causes. Verdict is READY FOR RELEASE or NEEDS MORE 
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Performance Blocker — Frame budget violation cannot be fully resolved
 
 **Fixture:**
@@ -102,6 +105,7 @@ identifies engine-level root causes. Verdict is READY FOR RELEASE or NEEDS MORE 
 
 ---
 
+<!-- 用例 3：无参数 — 显示用法指导 -->
 ### Case 3: No Argument — Usage guidance shown
 
 **Fixture:**
@@ -122,6 +126,7 @@ identifies engine-level root causes. Verdict is READY FOR RELEASE or NEEDS MORE 
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Engine-Level Bottleneck — engine-programmer spawned conditionally in Phase 2
 
 **Fixture:**
@@ -152,6 +157,7 @@ identifies engine-level root causes. Verdict is READY FOR RELEASE or NEEDS MORE 
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Regression Found — Polish change broke an existing feature
 
 **Fixture:**
@@ -201,6 +207,7 @@ identifies engine-level root causes. Verdict is READY FOR RELEASE or NEEDS MORE 
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The tools-programmer optional agent (for content pipeline tool verification) is not

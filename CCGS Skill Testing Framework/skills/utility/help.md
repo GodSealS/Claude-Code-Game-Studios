@@ -14,6 +14,7 @@ navigator, suggesting 2-3 next skills based on the current project state.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -26,6 +27,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. `/help` is a read-only navigation skill. No director gates apply.
@@ -34,6 +36,7 @@ None. `/help` is a read-only navigation skill. No director gates apply.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Production stage with active sprint
 
 **Fixture:**
@@ -61,6 +64,7 @@ None. `/help` is a read-only navigation skill. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Concept Stage — Shows concept-to-systems-design workflow path
 
 **Fixture:**
@@ -84,6 +88,7 @@ None. `/help` is a read-only navigation skill. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: No stage.txt — Shows full workflow overview
 
 **Fixture:**
@@ -108,6 +113,7 @@ None. `/help` is a read-only navigation skill. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Context Query — User asks for help with testing
 
 **Fixture:**
@@ -131,6 +137,7 @@ None. `/help` is a read-only navigation skill. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate Check — No gate; help is read-only navigation
 
 **Fixture:**
@@ -162,6 +169,7 @@ None. `/help` is a read-only navigation skill. No director gates apply.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The case where the active sprint is complete (all stories Done) is not

@@ -15,6 +15,7 @@ fields are ambiguous and need human review).
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -27,6 +28,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. `/reverse-document` is a documentation utility. No director gates apply.
@@ -35,6 +37,7 @@ None. `/reverse-document` is a documentation utility. No director gates apply.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Well-Structured Source — Accurate design doc skeleton produced
 
 **Fixture:**
@@ -66,6 +69,7 @@ None. `/reverse-document` is a documentation utility. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Ambiguous Source — Magic Numbers, PARTIAL Verdict
 
 **Fixture:**
@@ -92,6 +96,7 @@ None. `/reverse-document` is a documentation utility. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Multiple Interdependent Files — Cross-System Overview Produced
 
 **Fixture:**
@@ -116,6 +121,7 @@ None. `/reverse-document` is a documentation utility. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Source File Not Found — Error
 
 **Fixture:**
@@ -138,6 +144,7 @@ None. `/reverse-document` is a documentation utility. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate Check — No gate; reverse-document is a utility
 
 **Fixture:**
@@ -168,6 +175,7 @@ None. `/reverse-document` is a documentation utility. No director gates apply.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - Architecture overview format (for technical/infrastructure systems) differs

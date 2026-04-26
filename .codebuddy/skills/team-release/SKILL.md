@@ -6,14 +6,13 @@ user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Bash, Task, AskUserQuestion, TodoWrite
 ---
 **Argument check:** If no version number is provided:
+> **中文翻译**：**参数检查：** 如果未提供版本号：
 1. Read `production/session-state/active.md` and the most recent file in `production/milestones/` (if they exist) to infer the target version.
+> **中文翻译**：1. 读取 `production/session-state/active.md` 和 `production/milestones/` 中的最新文件（如果存在）以推断目标版本。
 2. If a version is found: report "No version argument provided — inferred [version] from milestone data. Proceeding." Then confirm with `AskUserQuestion`: "Releasing [version]. Is this correct?"
+> **中文翻译**：2. 如果找到版本：报告"未提供版本参数 — 从里程碑数据推断出[版本]。继续。"然后通过 `AskUserQuestion` 确认："正在发布[版本]。这正确吗？"
 3. If no version is discoverable: use `AskUserQuestion` to ask "What version number should be released? (e.g., v1.0.0)" and wait for user input before proceeding. Do NOT default to a hardcoded version string.
-
-> **中文翻译**：**参数检查**：如果未提供版本号：
-> 1. 读取 `production/session-state/active.md` 和 `production/milestones/` 中的最新文件（如果存在）以推断目标版本
-> 2. 如果找到版本：报告"未提供版本参数 — 从里程碑数据推断出[版本]。继续。"然后通过 `AskUserQuestion` 确认："正在发布[版本]。这正确吗？"
-> 3. 如果无法发现版本：使用 `AskUserQuestion` 询问"应该发布什么版本号？（例如，v1.0.0）"并在继续前等待用户输入。不要默认使用硬编码版本字符串。
+> **中文翻译**：3. 如果无法发现版本：使用 `AskUserQuestion` 询问"应该发布什么版本号？（例如，v1.0.0）"并在继续前等待用户输入。不要默认使用硬编码版本字符串。
 
 When this skill is invoked, orchestrate the release team through a structured pipeline.
 

@@ -13,6 +13,7 @@ with verdict COMPLETE / NEEDS WORK / BLOCKED and handoffs to `/code-review`,
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] Has required frontmatter fields: `name`, `description`, `argument-hint`, `user-invocable`, `allowed-tools`
@@ -30,6 +31,7 @@ with verdict COMPLETE / NEEDS WORK / BLOCKED and handoffs to `/code-review`,
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — All agents succeed, full pipeline runs to completion
 
 **Fixture:**
@@ -59,6 +61,7 @@ with verdict COMPLETE / NEEDS WORK / BLOCKED and handoffs to `/code-review`,
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Blocked Agent — One subagent returns BLOCKED mid-pipeline
 
 **Fixture:**
@@ -85,6 +88,7 @@ with verdict COMPLETE / NEEDS WORK / BLOCKED and handoffs to `/code-review`,
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: No Argument — Clear usage guidance shown
 
 **Fixture:**
@@ -107,6 +111,7 @@ with verdict COMPLETE / NEEDS WORK / BLOCKED and handoffs to `/code-review`,
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Parallel Phase Validation — Phase 3 agents run simultaneously
 
 **Fixture:**
@@ -130,6 +135,7 @@ with verdict COMPLETE / NEEDS WORK / BLOCKED and handoffs to `/code-review`,
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Architecture Phase Engine Routing — Engine specialist receives correct context
 
 **Fixture:**
@@ -168,6 +174,7 @@ with verdict COMPLETE / NEEDS WORK / BLOCKED and handoffs to `/code-review`,
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The NEEDS WORK verdict path (qa-tester finds failures in Phase 5) is not separately tested

@@ -15,6 +15,7 @@ mode, both gates are skipped. The skill writes to `docs/architecture/architectur
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -30,6 +31,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 In `full` mode: TD-ARCHITECTURE (technical-director) and LP-FEASIBILITY
@@ -45,6 +47,7 @@ In `solo` mode: both gates are skipped with equivalent notes.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — New architecture doc, skeleton-first, full mode gates approve
 
 **Fixture:**
@@ -72,6 +75,7 @@ In `solo` mode: both gates are skipped with equivalent notes.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Failure Path — TD-ARCHITECTURE returns MAJOR REVISION
 
 **Fixture:**
@@ -96,6 +100,7 @@ In `solo` mode: both gates are skipped with equivalent notes.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Lean Mode — Both gates skipped; architecture written with user approval only
 
 **Fixture:**
@@ -119,6 +124,7 @@ In `solo` mode: both gates are skipped with equivalent notes.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Retrofit Mode — Existing architecture doc, user updates a section
 
 **Fixture:**
@@ -141,6 +147,7 @@ In `solo` mode: both gates are skipped with equivalent notes.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate — Architecture references a Proposed ADR; flagged as risk
 
 **Fixture:**
@@ -176,6 +183,7 @@ In `solo` mode: both gates are skipped with equivalent notes.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The required section list for architecture documents is defined in the skill

@@ -1,4 +1,7 @@
-# Unity 6.3 — Addressables
+# Unity 6.3 — Addressables / UnityAddressables（可寻址资产）插件
+
+
+> **中文翻译**：本文档为Unity引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 **Last verified:** 2026-02-13
 **Status:** Production-Ready
@@ -6,6 +9,7 @@
 
 ---
 
+<!-- 概述 -->
 ## Overview
 
 **Addressables** is Unity's advanced asset management system that replaces `Resources.Load()`
@@ -24,8 +28,10 @@ with async loading, remote content delivery, and better memory control.
 
 ---
 
+<!-- 安装 -->
 ## Installation
 
+<!-- 中文翻译 -->
 ### Install via Package Manager
 
 1. `Window > Package Manager`
@@ -34,28 +40,35 @@ with async loading, remote content delivery, and better memory control.
 
 ---
 
+<!-- 核心概念 -->
 ## Core Concepts
 
+<!-- 中文翻译 -->
 ### 1. **Addressable Assets**
 - Assets marked as "Addressable" (assigned unique keys)
 - Can be loaded by key at runtime
 
+<!-- 中文翻译 -->
 ### 2. **Asset Groups**
 - Organize assets (e.g., "UI", "Weapons", "Level1")
 - Groups determine build settings (local vs remote)
 
+<!-- 中文翻译 -->
 ### 3. **Async Loading**
 - All loading is async (non-blocking)
 - Returns `AsyncOperationHandle`
 
+<!-- 中文翻译 -->
 ### 4. **Reference Counting**
 - Addressables tracks asset usage
 - Must manually release assets when done
 
 ---
 
+<!-- 设置 -->
 ## Setup
 
+<!-- 中文翻译 -->
 ### 1. Mark Assets as Addressable
 
 1. Select asset in Project window
@@ -74,6 +87,7 @@ AddressableAssetSettings.AddAssetEntry(guid, "MyAssetKey", "Default Local Group"
 
 ---
 
+<!-- 中文翻译 -->
 ### 2. Create Groups
 
 `Window > Asset Management > Addressables > Groups`
@@ -83,8 +97,10 @@ AddressableAssetSettings.AddAssetEntry(guid, "MyAssetKey", "Default Local Group"
 
 ---
 
+<!-- 中文翻译 -->
 ## Basic Loading
 
+<!-- 中文翻译 -->
 ### Load Asset Async
 
 ```csharp
@@ -112,6 +128,7 @@ public class AssetLoader : MonoBehaviour {
 
 ---
 
+<!-- 中文翻译 -->
 ### Load and Instantiate
 
 ```csharp
@@ -130,6 +147,7 @@ async void SpawnEnemy() {
 
 ---
 
+<!-- 中文翻译 -->
 ### Load Multiple Assets
 
 ```csharp
@@ -148,13 +166,16 @@ async void LoadAllWeapons() {
 
 ---
 
+<!-- 中文翻译 -->
 ## Asset Labels (Tags)
 
+<!-- 中文翻译 -->
 ### Assign Labels
 
 1. `Window > Asset Management > Addressables > Groups`
 2. Select asset > Inspector > Labels > Add label (e.g., "Level1", "UI")
 
+<!-- 中文翻译 -->
 ### Load by Label
 
 ```csharp
@@ -164,8 +185,10 @@ Addressables.LoadAssetsAsync<GameObject>("Level1", null);
 
 ---
 
+<!-- 中文翻译 -->
 ## Remote Content (DLC)
 
+<!-- 中文翻译 -->
 ### Setup Remote Groups
 
 1. Create new group: `Window > Addressables > Groups > Create New Group > Packed Assets`
@@ -173,6 +196,7 @@ Addressables.LoadAssetsAsync<GameObject>("Level1", null);
    - **Build Path**: `ServerData/[BuildTarget]`
    - **Load Path**: `http://yourcdn.com/content/[BuildTarget]`
 
+<!-- 中文翻译 -->
 ### Build Remote Content
 
 1. `Window > Asset Management > Addressables > Build > New Build > Default Build Script`
@@ -181,8 +205,10 @@ Addressables.LoadAssetsAsync<GameObject>("Level1", null);
 
 ---
 
+<!-- 中文翻译 -->
 ## Preloading / Caching
 
+<!-- 中文翻译 -->
 ### Download Dependencies
 
 ```csharp
@@ -196,6 +222,7 @@ async void PreloadLevel() {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Check Download Size
 
 ```csharp
@@ -212,8 +239,10 @@ async void CheckDownloadSize() {
 
 ---
 
+<!-- 内存管理 -->
 ## Memory Management
 
+<!-- 中文翻译 -->
 ### Release Assets
 
 ```csharp
@@ -224,6 +253,7 @@ Addressables.Release(handle);
 Addressables.ReleaseInstance(gameObject);
 ```
 
+<!-- 中文翻译 -->
 ### Check Reference Count
 
 ```csharp
@@ -233,8 +263,10 @@ Addressables.ReleaseInstance(gameObject);
 
 ---
 
+<!-- 中文翻译 -->
 ## Asset References (Inspector-Assigned)
 
+<!-- 中文翻译 -->
 ### Use AssetReference
 
 ```csharp
@@ -258,8 +290,10 @@ public class EnemySpawner : MonoBehaviour {
 
 ---
 
+<!-- 中文翻译 -->
 ## Scenes
 
+<!-- 中文翻译 -->
 ### Load Addressable Scene
 
 ```csharp
@@ -279,8 +313,10 @@ async void LoadScene() {
 
 ---
 
+<!-- 常见模式 -->
 ## Common Patterns
 
+<!-- 中文翻译 -->
 ### Lazy Loading (Load on Demand)
 
 ```csharp
@@ -298,6 +334,7 @@ async Task<GameObject> GetAsset(string key) {
 
 ---
 
+<!-- 中文翻译 -->
 ### Cleanup on Scene Unload
 
 ```csharp
@@ -312,8 +349,10 @@ void OnDestroy() {
 
 ---
 
+<!-- 中文翻译 -->
 ## Content Catalog Updates (Live Updates)
 
+<!-- 中文翻译 -->
 ### Check for Catalog Updates
 
 ```csharp
@@ -332,6 +371,7 @@ async void CheckForUpdates() {
 
 ---
 
+<!-- 性能提示 -->
 ## Performance Tips
 
 - **Preload** frequently used assets at startup
@@ -341,8 +381,10 @@ async void CheckForUpdates() {
 
 ---
 
+<!-- 调试 -->
 ## Debugging
 
+<!-- 中文翻译 -->
 ### Addressables Event Viewer
 
 `Window > Asset Management > Addressables > Event Viewer`
@@ -351,6 +393,7 @@ async void CheckForUpdates() {
 - Memory usage per asset
 - Reference counts
 
+<!-- 中文翻译 -->
 ### Addressables Profiler
 
 `Window > Asset Management > Addressables > Profiler`
@@ -360,6 +403,7 @@ async void CheckForUpdates() {
 
 ---
 
+<!-- 中文翻译 -->
 ## Migration from Resources
 
 ```csharp
@@ -373,6 +417,7 @@ GameObject prefab = handle.Result;
 
 ---
 
+<!-- 来源 -->
 ## Sources
 - https://docs.unity3d.com/Packages/com.unity.addressables@2.0/manual/index.html
 - https://learn.unity.com/tutorial/addressables

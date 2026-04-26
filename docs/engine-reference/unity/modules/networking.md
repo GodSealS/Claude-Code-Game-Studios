@@ -1,10 +1,14 @@
-# Unity 6.3 — Networking Module Reference
+# Unity 6.3 — Networking Module Reference / Unity网络模块
+
+
+> **中文翻译**：本文档为Unity引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 **Last verified:** 2026-02-13
 **Knowledge Gap:** Unity 6 uses Netcode for GameObjects (UNet deprecated)
 
 ---
 
+<!-- 概述 -->
 ## Overview
 
 Unity 6 networking options:
@@ -17,8 +21,10 @@ Unity 6 networking options:
 
 ---
 
+<!-- 中文翻译 -->
 ## Netcode for GameObjects
 
+<!-- 安装 -->
 ### Installation
 1. `Window > Package Manager`
 2. Search "Netcode for GameObjects"
@@ -26,8 +32,10 @@ Unity 6 networking options:
 
 ---
 
+<!-- 中文翻译 -->
 ## Basic Setup
 
+<!-- 中文翻译 -->
 ### NetworkManager
 
 ```csharp
@@ -49,14 +57,17 @@ public class CustomNetworkManager : MonoBehaviour {
 
 ---
 
+<!-- 中文翻译 -->
 ## NetworkObject (Networked GameObjects)
 
+<!-- 中文翻译 -->
 ### Mark GameObject as Networked
 
 1. Add `NetworkObject` component to GameObject
 2. Must be in root of prefab (not nested)
 3. Register prefab in `NetworkManager > NetworkPrefabs List`
 
+<!-- 中文翻译 -->
 ### Spawn Network Objects
 
 ```csharp
@@ -75,8 +86,10 @@ public class GameManager : NetworkBehaviour {
 
 ---
 
+<!-- 中文翻译 -->
 ## NetworkBehaviour (Networked Scripts)
 
+<!-- 中文翻译 -->
 ### NetworkBehaviour Base Class
 
 ```csharp
@@ -110,8 +123,10 @@ public class Player : NetworkBehaviour {
 
 ---
 
+<!-- 中文翻译 -->
 ## Network Variables (Synchronized State)
 
+<!-- 中文翻译 -->
 ### NetworkVariable<T>
 
 ```csharp
@@ -139,6 +154,7 @@ public class Player : NetworkBehaviour {
 }
 ```
 
+<!-- 中文翻译 -->
 ### NetworkVariable Permissions
 
 ```csharp
@@ -155,8 +171,10 @@ private NetworkVariable<int> ammo = new NetworkVariable<int>(
 
 ---
 
+<!-- 中文翻译 -->
 ## RPCs (Remote Procedure Calls)
 
+<!-- 中文翻译 -->
 ### ServerRpc (Client → Server)
 
 ```csharp
@@ -173,6 +191,7 @@ if (IsOwner && Input.GetKeyDown(KeyCode.Space)) {
 }
 ```
 
+<!-- 中文翻译 -->
 ### ClientRpc (Server → All Clients)
 
 ```csharp
@@ -194,6 +213,7 @@ void ExplodeServerRpc(Vector3 position) {
 }
 ```
 
+<!-- 中文翻译 -->
 ### RPC Parameters
 
 ```csharp
@@ -209,8 +229,10 @@ void UpdateScoresClientRpc(int[] scores) { }
 
 ---
 
+<!-- 中文翻译 -->
 ## Network Ownership
 
+<!-- 中文翻译 -->
 ### Check Ownership
 
 ```csharp
@@ -231,6 +253,7 @@ if (IsLocalPlayer) {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Transfer Ownership
 
 ```csharp
@@ -241,6 +264,7 @@ netObj.ChangeOwnership(newOwnerClientId);
 
 ---
 
+<!-- 中文翻译 -->
 ## NetworkObjectReference (Pass GameObjects in RPCs)
 
 ```csharp
@@ -261,8 +285,10 @@ AttackTargetServerRpc(targetNetObj);
 
 ---
 
+<!-- 中文翻译 -->
 ## Client-Server Architecture
 
+<!-- 中文翻译 -->
 ### Server-Authoritative Pattern (RECOMMENDED)
 
 ```csharp
@@ -290,8 +316,10 @@ public class Player : NetworkBehaviour {
 
 ---
 
+<!-- 中文翻译 -->
 ## Network Transport
 
+<!-- 中文翻译 -->
 ### Unity Transport (Default)
 
 ```csharp
@@ -301,6 +329,7 @@ public class Player : NetworkBehaviour {
 // - Port: 7777 (default)
 ```
 
+<!-- 中文翻译 -->
 ### Connection Events
 
 ```csharp
@@ -320,13 +349,16 @@ void OnClientDisconnected(ulong clientId) {
 
 ---
 
+<!-- 性能提示 -->
 ## Performance Tips
 
+<!-- 中文翻译 -->
 ### Reduce Network Traffic
 - Use `NetworkVariable` for state that changes infrequently
 - Batch multiple changes before syncing
 - Use delta compression for large data
 
+<!-- 中文翻译 -->
 ### Prediction & Reconciliation
 - Run movement locally for responsiveness
 - Reconcile with server authoritative state
@@ -334,18 +366,22 @@ void OnClientDisconnected(ulong clientId) {
 
 ---
 
+<!-- 调试 -->
 ## Debugging
 
+<!-- 中文翻译 -->
 ### Network Profiler
 - `Window > Analysis > Network Profiler`
 - Monitor bandwidth, RPC calls, variable updates
 
+<!-- 中文翻译 -->
 ### Network Simulator (Test Latency/Packet Loss)
 - `NetworkManager > Network Simulator`
 - Add artificial lag and packet loss for testing
 
 ---
 
+<!-- 来源 -->
 ## Sources
 - https://docs-multiplayer.unity3d.com/netcode/current/about/
 - https://docs-multiplayer.unity3d.com/netcode/current/learn/bossroom/

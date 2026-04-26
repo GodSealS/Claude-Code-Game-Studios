@@ -16,6 +16,7 @@ asks "May I write" per section during authoring. ADRs are written to
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -31,6 +32,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 In `full` mode: TD-ADR (technical-director) and LP-FEASIBILITY (lead-programmer)
@@ -46,6 +48,7 @@ In `solo` mode: both gates are skipped. ADR is written with Status: Proposed.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — New ADR for rendering approach, full mode, gates approve
 
 **Fixture:**
@@ -75,6 +78,7 @@ In `solo` mode: both gates are skipped. ADR is written with Status: Proposed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Failure Path — TD-ADR returns CONCERNS
 
 **Fixture:**
@@ -99,6 +103,7 @@ In `solo` mode: both gates are skipped. ADR is written with Status: Proposed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Lean Mode — Both gates skipped; ADR written as Proposed
 
 **Fixture:**
@@ -122,6 +127,7 @@ In `solo` mode: both gates are skipped. ADR is written with Status: Proposed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Edge Case — ADR already exists for this topic
 
 **Fixture:**
@@ -144,6 +150,7 @@ In `solo` mode: both gates are skipped. ADR is written with Status: Proposed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate — Status set correctly based on mode and gate outcome
 
 **Fixture:**
@@ -187,6 +194,7 @@ In `solo` mode: both gates are skipped. ADR is written with Status: Proposed.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - ADR numbering (auto-incrementing NNN) is not independently fixture-tested —

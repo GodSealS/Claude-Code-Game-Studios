@@ -1,4 +1,7 @@
-# Unreal Engine 5.7 — Gameplay Ability System (GAS)
+# Unreal Engine 5.7 — Gameplay Ability System (GAS) / Unreal EngineGameplay Ability System（游戏能力系统）插件
+
+
+> **中文翻译**：本文档为Unreal Engine引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 **Last verified:** 2026-02-13
 **Status:** Production-Ready
@@ -6,6 +9,7 @@
 
 ---
 
+<!-- 概述 -->
 ## Overview
 
 **Gameplay Ability System (GAS)** is a modular framework for building abilities, attributes,
@@ -22,35 +26,44 @@ and any game with complex ability systems.
 
 ---
 
+<!-- 核心概念 -->
 ## Core Concepts
 
+<!-- 中文翻译 -->
 ### 1. **Ability System Component** (ASC)
 - The main component that owns abilities, attributes, and effects
 - Added to Characters or PlayerStates
 
+<!-- 中文翻译 -->
 ### 2. **Gameplay Abilities**
 - Individual skills/actions (fireball, heal, dash, etc.)
 - Activated, committed (cost/cooldown), and can be cancelled
 
+<!-- 中文翻译 -->
 ### 3. **Attributes & Attribute Sets**
 - Stats that can be modified (Health, Mana, Stamina, Strength, etc.)
 - Stored in Attribute Sets
 
+<!-- 中文翻译 -->
 ### 4. **Gameplay Effects**
 - Modify attributes (damage, healing, buffs, debuffs)
 - Can be instant, duration-based, or infinite
 
+<!-- 中文翻译 -->
 ### 5. **Gameplay Tags**
 - Hierarchical tags for ability logic (e.g., `Ability.Attack.Melee`, `Status.Stunned`)
 
 ---
 
+<!-- 设置 -->
 ## Setup
 
+<!-- 中文翻译 -->
 ### 1. Enable Plugin
 
 `Edit > Plugins > Gameplay Abilities > Enabled > Restart`
 
+<!-- 中文翻译 -->
 ### 2. Add Ability System Component
 
 ```cpp
@@ -81,6 +94,7 @@ protected:
 };
 ```
 
+<!-- 中文翻译 -->
 ### 3. Initialize ASC (Important for Multiplayer)
 
 ```cpp
@@ -106,8 +120,10 @@ void AMyCharacter::OnRep_PlayerState() {
 
 ---
 
+<!-- 中文翻译 -->
 ## Attributes & Attribute Sets
 
+<!-- 中文翻译 -->
 ### Create Attribute Set
 
 ```cpp
@@ -149,6 +165,7 @@ protected:
 };
 ```
 
+<!-- 中文翻译 -->
 ### Implement Attribute Set
 
 ```cpp
@@ -178,8 +195,10 @@ void UMyAttributeSet::OnRep_Health(const FGameplayAttributeData& OldHealth) {
 
 ---
 
+<!-- 中文翻译 -->
 ## Gameplay Abilities
 
+<!-- 中文翻译 -->
 ### Create Gameplay Ability
 
 ```cpp
@@ -221,6 +240,7 @@ public:
 };
 ```
 
+<!-- 中文翻译 -->
 ### Grant Abilities to Character
 
 ```cpp
@@ -233,6 +253,7 @@ void AMyCharacter::GiveDefaultAbilities() {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Activate Ability
 
 ```cpp
@@ -247,8 +268,10 @@ AbilitySystemComponent->TryActivateAbilitiesByTag(TagContainer);
 
 ---
 
+<!-- 中文翻译 -->
 ## Gameplay Effects
 
+<!-- 中文翻译 -->
 ### Create Gameplay Effect (Damage)
 
 ```cpp
@@ -275,6 +298,7 @@ public:
 };
 ```
 
+<!-- 中文翻译 -->
 ### Apply Gameplay Effect
 
 ```cpp
@@ -294,8 +318,10 @@ if (UAbilitySystemComponent* TargetASC = UAbilitySystemBlueprintLibrary::GetAbil
 
 ---
 
+<!-- 中文翻译 -->
 ## Gameplay Tags
 
+<!-- 中文翻译 -->
 ### Define Tags
 
 `Project Settings > Project > Gameplay Tags > Gameplay Tag List`
@@ -315,6 +341,7 @@ Status
   └─ Status.Silenced
 ```
 
+<!-- 中文翻译 -->
 ### Use Tags in Abilities
 
 ```cpp
@@ -341,8 +368,10 @@ public:
 
 ---
 
+<!-- 中文翻译 -->
 ## Cooldowns & Costs
 
+<!-- 中文翻译 -->
 ### Add Cooldown
 
 ```cpp
@@ -351,6 +380,7 @@ public:
 // Assign to Ability > Cooldown Gameplay Effect Class
 ```
 
+<!-- 中文翻译 -->
 ### Add Cost (Mana)
 
 ```cpp
@@ -360,14 +390,17 @@ public:
 
 ---
 
+<!-- 常见模式 -->
 ## Common Patterns
 
+<!-- 中文翻译 -->
 ### Get Current Attribute Value
 
 ```cpp
 float CurrentHealth = AbilitySystemComponent->GetNumericAttribute(UMyAttributeSet::GetHealthAttribute());
 ```
 
+<!-- 中文翻译 -->
 ### Listen for Attribute Changes
 
 ```cpp
@@ -381,6 +414,7 @@ void AMyCharacter::OnHealthChanged(const FOnAttributeChangeData& Data) {
 
 ---
 
+<!-- 来源 -->
 ## Sources
 - https://docs.unrealengine.com/5.7/en-US/gameplay-ability-system-for-unreal-engine/
 - https://github.com/tranek/GASDocumentation (community guide)

@@ -25,14 +25,17 @@ the project. What is it, what does the player做什么，以及它为什么存�
 emotional or power fantasy being served? This section guides all detail / 情感或力量幻想？此部分指导下面所有的细节决策。]
 decisions below.]
 
+<!-- 详细设计 -->
 ## Detailed Design
 
+<!-- 中文翻译 -->
 ### Core Rules
 
 [Precise, unambiguous rules. A programmer should be able to implement this
 section without asking questions. Use numbered rules for sequential processes
 and bullet points for properties.]
 
+<!-- 中文翻译 -->
 ### States and Transitions
 
 [If this system has states (e.g., weapon states, status effects, phases),
@@ -41,12 +44,14 @@ document every state and every valid transition between states.]
 | State | Entry Condition | Exit Condition | Behavior |
 |-------|----------------|----------------|----------|
 
+<!-- 中文翻译 -->
 ### Interactions with Other Systems
 
 [How does this system interact with combat? Inventory? Progression? UI?
 For each interaction, specify the interface: what data flows in, what flows
 out, and who is responsible for what.]
 
+<!-- 公式 -->
 ## Formulas
 
 [Every mathematical formula used by this system. For each formula:]
@@ -66,6 +71,7 @@ result = base_value * (1 + modifier_sum) * scaling_factor
 **Expected output range**: [min] to [max]
 **Edge case**: When modifier_sum < -0.9, clamp to -0.9 to prevent negative results.
 
+<!-- 边界情况 -->
 ## Edge Cases
 
 [Explicitly document what happens in unusual situations. Each edge case
@@ -76,6 +82,7 @@ should have a clear resolution.]
 | [What if X is zero?] | [This happens] | [Because of this reason] |
 | [What if both effects trigger?] | [Priority rule] | [Design reasoning] |
 
+<!-- 依赖 -->
 ## Dependencies
 
 [List every system this mechanic depends on or that depends on this mechanic.]
@@ -85,6 +92,7 @@ should have a clear resolution.]
 | [Combat] | This depends on Combat | Needs damage calculation results |
 | [Inventory] | Inventory depends on this | Provides item effect data |
 
+<!-- 调节旋钮 -->
 ## Tuning Knobs
 
 [Every value that should be adjustable for balancing. Include the current
@@ -93,6 +101,7 @@ value, the safe range, and what happens at the extremes.]
 | Parameter | Current Value | Safe Range | Effect of Increase | Effect of Decrease |
 |-----------|--------------|------------|-------------------|-------------------|
 
+<!-- 中文翻译 -->
 ## Visual/Audio Requirements
 
 [What visual and audio feedback does this mechanic need?]
@@ -100,6 +109,7 @@ value, the safe range, and what happens at the extremes.]
 | Event | Visual Feedback | Audio Feedback | Priority |
 |-------|----------------|---------------|----------|
 
+<!-- 中文翻译 -->
 ## Game Feel
 
 > **Why this section exists separately from Visual/Audio Requirements**: Visual/Audio
@@ -111,6 +121,7 @@ value, the safe range, and what happens at the extremes.]
 > timing. Retrofitting feel targets after implementation is expensive and often requires
 > fundamental rework.
 
+<!-- 中文翻译 -->
 ### Feel Reference
 
 [Name a specific game, mechanic, or moment that captures the target feel. Be precise —
@@ -120,6 +131,7 @@ Optionally include an anti-reference (what this should NOT feel like).]
 > Example: "Should feel like Dark Souls weapon swings — weighty, committed, and
 > telegraphed, but satisfying on contact. NOT floaty like early Halo melee."
 
+<!-- 中文翻译 -->
 ### Input Responsiveness
 
 [Maximum acceptable latency from player input to visible/audible response, per action.]
@@ -129,6 +141,7 @@ Optionally include an anti-reference (what this should NOT feel like).]
 | [Primary action] | [e.g., 50ms] | [e.g., 3 frames] | |
 | [Secondary action] | | | |
 
+<!-- 中文翻译 -->
 ### Animation Feel Targets
 
 [Frame data targets for each animation in this mechanic. Startup = windup before the
@@ -140,6 +153,7 @@ ability firing, etc.). Recovery = committed/vulnerable frames after the action r
 | [e.g., Light attack] | | | | [e.g., Snappy, low commitment] | |
 | [e.g., Heavy attack] | | | | [e.g., Weighty, high commitment] | |
 
+<!-- 中文翻译 -->
 ### Impact Moments
 
 [Defines the punctuation of the mechanic — the moments of peak feedback intensity that
@@ -153,6 +167,7 @@ make actions feel consequential. Every high-stakes event should have at least on
 | Controller rumble | | | |
 | Time-scale slowdown | | | |
 
+<!-- 中文翻译 -->
 ### Weight and Responsiveness Profile
 
 [A short prose description of the overall feel target. Answer the following:]
@@ -166,6 +181,7 @@ make actions feel consequential. Every high-stakes event should have at least on
 - **Failure texture**: When the player makes an error, does the mechanic feel fair
   or punishing? What is the read on WHY they failed?
 
+<!-- 中文翻译 -->
 ### Feel Acceptance Criteria
 
 [Specific, testable criteria a playtester can verify without measurement instruments.
@@ -176,6 +192,7 @@ These are subjective targets stated precisely enough to get consistent verdicts.
 - [ ] [e.g., "Input latency is imperceptible at target 60fps framerate"]
 - [ ] [e.g., "Hit-stop reads as satisfying, not as lag or stutter"]
 
+<!-- 中文翻译 -->
 ## UI Requirements
 
 [What information needs to be displayed to the player and when?]
@@ -183,6 +200,7 @@ These are subjective targets stated precisely enough to get consistent verdicts.
 | Information | Display Location | Update Frequency | Condition |
 |-------------|-----------------|-----------------|-----------|
 
+<!-- 中文翻译 -->
 ## Cross-References
 
 [Declare every explicit dependency on another GDD's specific mechanic, value, or
@@ -201,6 +219,7 @@ system's behaviour anywhere in this document, it must appear here.]
 > (our rule assumes their rule is also true), `Ownership handoff` (we hand off
 > ownership of a value to them).
 
+<!-- 验收标准 -->
 ## Acceptance Criteria
 
 [Testable criteria that confirm this mechanic is working as designed.]
@@ -211,6 +230,7 @@ system's behaviour anywhere in this document, it must appear here.]
 - [ ] Performance: System update completes within [X]ms
 - [ ] No hardcoded values in implementation
 
+<!-- 待解决问题 -->
 ## Open Questions
 
 [Anything not yet decided. Each question should have an owner and deadline.]

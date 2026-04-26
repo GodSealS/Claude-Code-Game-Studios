@@ -4,6 +4,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Headline
 
 > [One compelling sentence summarizing the most exciting part of this release. / [一句话总结本次发布最令人兴奋的部分。
@@ -31,12 +32,14 @@ how it works internally. Include a screenshot or GIF reference if applicable.]
 | [Weapon/Ability/Item] / [武器/技能/物品] | [What changed] / [更改内容] | [Old value] / [旧值] | [New value] / [新值] | [Why — 1 sentence] / [为什么—1句话] |
 | | | | | |
 
+<!-- 中文翻译 -->
 ### Mechanic Changes
 - **[Change Name]**: [What changed and how it affects gameplay. Be specific
   about what players will experience differently.]
 
 ---
 
+<!-- 中文翻译 -->
 ## Quality of Life
 
 - [Improvement 1 — describe the player benefit, not the technical change]
@@ -45,26 +48,33 @@ how it works internally. Include a screenshot or GIF reference if applicable.]
 
 ---
 
+<!-- 中文翻译 -->
 ## Bug Fixes
 
+<!-- 中文翻译 -->
 ### Critical Fixes
 - Fixed [describe what players experienced, e.g., "a crash when loading
   saved games from version 1.0"]
 
+<!-- 中文翻译 -->
 ### Gameplay Fixes
 - Fixed [describe the incorrect behavior and the correct behavior now]
 
+<!-- 中文翻译 -->
 ### UI Fixes
 - Fixed [description]
 
+<!-- 中文翻译 -->
 ### Audio Fixes
 - Fixed [description]
 
+<!-- 中文翻译 -->
 ### Platform-Specific Fixes
 - **[Platform]**: Fixed [description]
 
 ---
 
+<!-- 中文翻译 -->
 ## Performance Improvements
 
 - [Improvement players will notice, e.g., "Reduced load times by approximately
@@ -73,6 +83,7 @@ how it works internally. Include a screenshot or GIF reference if applicable.]
 
 ---
 
+<!-- 已知问题 -->
 ## Known Issues
 
 We are aware of the following issues and are working on fixes for a future update:
@@ -82,6 +93,7 @@ We are aware of the following issues and are working on fixes for a future updat
 
 ---
 
+<!-- 中文翻译 -->
 ## Coming Next
 
 [Optional — tease upcoming content to build anticipation. Keep it vague enough
@@ -91,6 +103,7 @@ to not create binding commitments.]
 
 ---
 
+<!-- 中文翻译 -->
 ## Thank You
 
 [Brief message thanking the community. Reference specific community feedback

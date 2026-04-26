@@ -8,6 +8,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified by reading the agent's `.codebuddy/agents/audio-director.md` frontmatter:
@@ -21,6 +22,7 @@ Verified by reading the agent's `.codebuddy/agents/audio-director.md` frontmatte
 
 ## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出格式 -->
 ### Case 1: In-domain request — appropriate output format
 **Scenario:** An audio specification document is submitted for the game's "Exploration" music layer. The spec defines a generative ambient system using layered stems that shift based on environmental density, designed to reinforce the pillar "lived-in world." The tone palette (sparse, organic, slightly melancholic) matches the established design pillars.
 **Expected:** Returns `APPROVED` with rationale confirming the stem-based approach supports dynamic responsiveness and the tone palette aligns with the pillar vocabulary.
@@ -30,6 +32,7 @@ Verified by reading the agent's `.codebuddy/agents/audio-director.md` frontmatte
 - [ ] Output stays within audio scope — does not comment on visual design of the environment or UI layout
 - [ ] Verdict is clearly labeled with context (e.g., "Audio Spec Review: APPROVED")
 
+<!-- 用例 2：域外请求 — 重定向或升级 -->
 ### Case 2: Out-of-domain request — redirects or escalates
 **Scenario:** A developer asks audio-director to evaluate whether the UI flow for the audio settings menu (the sequence of screens and options) is intuitive and well-organized.
 **Expected:** Agent declines to evaluate UI interaction flow and redirects to ux-designer.
@@ -38,6 +41,7 @@ Verified by reading the agent's `.codebuddy/agents/audio-director.md` frontmatte
 - [ ] Explicitly names `ux-designer` as the correct handler
 - [ ] May note audio-specific requirements for the settings menu (e.g., "must include separate master, music, and SFX sliders"), but defers flow and layout decisions to ux-designer
 
+<!-- 用例 3：门控裁决 — 正确词汇 -->
 ### Case 3: Gate verdict — correct vocabulary
 **Scenario:** A music cue for the final boss encounter is submitted. The cue is an upbeat, major-key orchestral piece with fast tempo. The game pillars and narrative context for this encounter specify "dread, inevitability, and tragic sacrifice." The audio cue's emotional register directly contradicts the intended emotional beat.
 **Expected:** Returns `NEEDS REVISION` with specific citation of the emotional mismatch: the cue's upbeat/major-key/fast-tempo characteristics versus the intended dread/inevitability/sacrifice emotional targets from the pillars and narrative context.
@@ -47,6 +51,7 @@ Verified by reading the agent's `.codebuddy/agents/audio-director.md` frontmatte
 - [ ] References the specific emotional targets from the game pillars or narrative context
 - [ ] Provides actionable direction for revision (e.g., "shift to minor key, slower tempo, reduce ensemble density")
 
+<!-- 用例 4：冲突升级 — 正确上级 -->
 ### Case 4: Conflict escalation — correct parent
 **Scenario:** sound-designer proposes implementing audio occlusion using real-time raycast-based physics queries (technical approach). technical-artist argues this is too expensive and proposes a zone-based trigger system instead. Both agree the occlusion effect is desirable; the conflict is purely about implementation approach.
 **Expected:** audio-director decides on the desired audio behavior (what occlusion should sound like and when it should activate), then defers the implementation approach decision to technical-artist or lead-programmer as the implementation experts. audio-director does not make the technical implementation choice.
@@ -56,6 +61,7 @@ Verified by reading the agent's `.codebuddy/agents/audio-director.md` frontmatte
 - [ ] Does not unilaterally choose the technical implementation method
 - [ ] Frames the handoff clearly: "audio-director owns what, technical lead owns how"
 
+<!-- 用例 5：上下文传递 — 使用提供的上下文 -->
 ### Case 5: Context pass — uses provided context
 **Scenario:** Agent receives a gate context block that includes the game's three pillars: "emergent stories," "meaningful sacrifice," and "lived-in world." A sound design spec for ambient environmental audio is submitted.
 **Expected:** Assessment evaluates the ambient audio spec against all three pillars specifically — how does the audio support (or undermine) each pillar? Uses the pillar vocabulary directly in the rationale.
@@ -77,6 +83,7 @@ Verified by reading the agent's `.codebuddy/agents/audio-director.md` frontmatte
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Mix balance review (relative levels between music, SFX, and dialogue) is not covered — a dedicated case should be added.
 - Audio implementation strategy review (middleware choice, streaming approach) is not covered.

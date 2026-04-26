@@ -15,6 +15,7 @@ prioritize which bugs to address next.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -27,6 +28,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. `/bug-triage` is a read-only advisory skill. No director gates apply.
@@ -35,6 +37,7 @@ None. `/bug-triage` is a read-only advisory skill. No director gates apply.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — 5 bugs of varying severity, sorted table produced
 
 **Fixture:**
@@ -63,6 +66,7 @@ None. `/bug-triage` is a read-only advisory skill. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: No Bug Reports Found — Guidance to run /bug-report
 
 **Fixture:**
@@ -84,6 +88,7 @@ None. `/bug-triage` is a read-only advisory skill. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Bug Missing Reproduction Steps — Flagged as NEEDS REPRO INFO
 
 **Fixture:**
@@ -106,6 +111,7 @@ None. `/bug-triage` is a read-only advisory skill. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Possible Duplicate Bugs — Flagged in triage output
 
 **Fixture:**
@@ -131,6 +137,7 @@ None. `/bug-triage` is a read-only advisory skill. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate Check — No gate; triage is advisory
 
 **Fixture:**
@@ -163,6 +170,7 @@ None. `/bug-triage` is a read-only advisory skill. No director gates apply.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The case where a bug report is malformed (missing severity field entirely)

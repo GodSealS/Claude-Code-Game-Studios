@@ -33,7 +33,7 @@ The user must approve before moving to the next phase.
 - **engine specialist** (primary) — Validate architecture and implementation patterns are idiomatic for the engine (read from `.codebuddy/docs/technical-preferences.md` Engine Specialists section) / （主要）引擎专家 — 验证架构和实现模式符合引擎惯例（从 `.codebuddy/docs/technical-preferences.md` 引擎专家部分读取）
 - **qa-tester** — Write test cases and validate the implementation / 编写测试用例并验证实现
 
-## How to Delegate / 如何委托
+## How to Delegate / 如何委派
 
 Use the Task tool to spawn each team member as a subagent:
 

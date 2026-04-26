@@ -8,6 +8,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references WeChat Mini Game platform, wx.* APIs, 4MB package limit)
@@ -20,6 +21,7 @@ No gate IDs assigned.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: In-domain request — MVC vs ECS architecture decision
 **Input:** "Should I use MVC or ECS architecture for this puzzle game targeting WeChat Mini Games?"
 **Expected behavior:**
@@ -30,6 +32,7 @@ No gate IDs assigned.
 - Does NOT produce raw code for both patterns — refers to wechat-minigame-specialist for implementation
 - Notes the 4MB package size impact of each approach (ECS may require more upfront code)
 
+<!-- 用例 2：错误引擎重定向 -->
 ### Case 2: Wrong-engine redirect
 **Input:** "Write a MonoBehaviour that runs on Start() and subscribes to a UnityEvent."
 **Expected behavior:**
@@ -39,6 +42,7 @@ No gate IDs assigned.
 - Confirms the project is WeChat-based and redirects the conceptual mapping
 - Notes that WeChat Mini Games use TypeScript/JavaScript, not C#
 
+<!-- 中文翻译 -->
 ### Case 3: Package size limit violation
 **Input:** "Our main package is 5.2MB. What should we do?"
 **Expected behavior:**
@@ -52,6 +56,7 @@ No gate IDs assigned.
 - Does NOT suggest ignoring the limit — emphasizes it's a hard platform constraint
 - Provides specific wx.* API examples for subpackage loading
 
+<!-- 中文翻译 -->
 ### Case 4: WeChat API version compatibility
 **Input:** "Use the new wx.createOffscreenCanvas() API for background rendering."
 **Expected behavior:**
@@ -68,6 +73,7 @@ No gate IDs assigned.
   }
   ```
 
+<!-- 中文翻译 -->
 ### Case 5: Sub-specialist delegation
 **Input:** "Implement a physics-based character controller for our platformer game."
 **Expected behavior:**
@@ -81,6 +87,7 @@ No gate IDs assigned.
 - Explains the delegation: "Physics implementation is handled by wechat-minigame-specialist who owns the physics engine abstraction layer"
 - Provides high-level architecture guidance before delegation
 
+<!-- 中文翻译 -->
 ### Case 6: Context pass — WeChat version and device constraints
 **Input:** Project context provided: Target WeChat version 8.0.25, mid-range Android devices. Request: "Design the game loop for smooth 60fps."
 **Expected behavior:**
@@ -109,6 +116,7 @@ No gate IDs assigned.
   }
   ```
 
+<!-- 中文翻译 -->
 ### Case 7: Social feature implementation
 **Input:** "Add share functionality so players can share their high scores."
 **Expected behavior:**
@@ -145,6 +153,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - MVC vs ECS decision guide (Case 1) should be written to `docs/architecture/wechat/` as a reusable pattern doc

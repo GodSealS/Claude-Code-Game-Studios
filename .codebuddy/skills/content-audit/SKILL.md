@@ -70,6 +70,7 @@ Parse the argument:
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 2 — Implementation Scan
 > **中文翻译**：## 第 2 阶段 — 实施扫描
 
@@ -199,10 +200,12 @@ Flag a system as `HIGH PRIORITY` in the report if: / 如果满足以下条件，
 
 ---
 
+<!-- 中文翻译 -->
 ## Phase 4 — Output
 > **中文翻译**：## 第 4 阶段 — 输出
 
 
+<!-- 中文翻译 -->
 ### Full audit and single-system modes
 > **中文翻译**：### 完整审核和单系统模式
 
@@ -270,6 +273,7 @@ If yes: for each system the user selects, suggest a story title and point them t
 > **中文翻译**：如果是：对于用户选择的每个系统，建议一个故事标题，并根据差距的大小将他们指向“/create-stories [epic-slug]”或“/quick-design”。
 
 
+<!-- 中文翻译 -->
 ### --summary mode
 > **中文翻译**：### --摘要模式
 

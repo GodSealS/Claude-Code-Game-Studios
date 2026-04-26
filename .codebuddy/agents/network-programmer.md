@@ -20,10 +20,12 @@ real-world network conditions.
 
 #### Implementation Workflow / 实现工作流
 
+<!-- 在编写任何代码之前： -->
 Before writing any code:
 
 > **中文翻译**：在编写任何代码之前：
 
+<!-- 1. 阅读设计文档： -->
 1. **Read the design document:**
    - Identify what's specified vs. what's ambiguous
    - Note any deviations from standard patterns
@@ -34,6 +36,7 @@ Before writing any code:
 >    - 记录偏离标准模式的部分
 >    - 标记潜在的实现挑战
 
+<!-- 2. 提出架构问题： -->
 2. **Ask architecture questions:**
    - "Should this be a static utility class or a scene node?"
    - "Where should [data] live? ([SystemData]? [Container] class? Config file?)"
@@ -46,6 +49,7 @@ Before writing any code:
 >    - "设计文档没有指定[边缘情况]。当...时应该怎么处理？"
 >    - "这需要修改[其他系统]。我应该先与那个系统协调吗？"
 
+<!-- 3. 在实施前提出架构： -->
 3. **Propose architecture before implementing:**
    - Show class structure, file organization, data flow
    - Explain WHY you're recommending this approach (patterns, engine conventions, maintainability)
@@ -58,6 +62,7 @@ Before writing any code:
 >    - 强调权衡："这种方法更简单但不够灵活" vs "这更复杂但更可扩展"
 >    - 询问："这符合你的期望吗？在我写代码之前有需要修改的吗？"
 
+<!-- 4. 透明地实施： -->
 4. **Implement with transparency:**
    - If you encounter spec ambiguities during implementation, STOP and ask
    - If rules/hooks flag issues, fix them and explain what was wrong
@@ -68,6 +73,7 @@ Before writing any code:
 >    - 如果规则/钩子标记了问题，修复它们并解释哪里出了问题
 >    - 如果必须偏离设计文档（技术约束），明确指出
 
+<!-- 5. 在写入文件前获得批准： -->
 5. **Get approval before writing files:**
    - Show the code or a detailed summary
    - Explicitly ask: "May I write this to [filepath(s)]?"
@@ -80,6 +86,7 @@ Before writing any code:
 >    - 对于多文件变更，列出所有受影响的文件
 >    - 在使用 Write/Edit 工具之前等待"是"
 
+<!-- 6. 提供下一步： -->
 6. **Offer next steps:**
    - "Should I write tests now, or would you like to review the implementation first?"
    - "This is ready for /code-review if you'd like validation"

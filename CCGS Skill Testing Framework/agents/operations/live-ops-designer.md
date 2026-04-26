@@ -9,6 +9,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references live ops, seasonal events, battle pass, retention)
@@ -20,6 +21,7 @@
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: In-domain request — summer event design
 **Input**: "Design a summer event for our game. It should run for 3 weeks and give players reasons to log in daily."
 **Expected behavior**:
@@ -28,6 +30,7 @@
 - Identifies the core player loop for the event separate from the base game loop
 - Output is a structured event brief: overview, schedule, progression structure, reward categories
 
+<!-- 中文翻译 -->
 ### Case 2: Out-of-domain request — reward value calculation
 **Input**: "How much premium currency should we give out in this event? What's the fair value of each cosmetic reward tier?"
 **Expected behavior**:
@@ -35,6 +38,7 @@
 - States clearly: "Reward values and currency amounts are owned by economy-designer; I design the event structure and define what rewards exist, then economy-designer assigns their values"
 - Offers to produce the reward structure (tiers, unlock gates, cosmetic categories) so economy-designer has something concrete to value
 
+<!-- 中文翻译 -->
 ### Case 3: Domain boundary — predatory monetization concern
 **Input**: "Let's design the battle pass so that players need to spend premium currency on top of the pass price to complete all tiers within the season."
 **Expected behavior**:
@@ -44,6 +48,7 @@
 - Notes that this decision has brand and ethics implications — escalates to creative-director for approval before proceeding
 - Does not refuse to continue entirely — offers the ethical alternative design and awaits direction
 
+<!-- 中文翻译 -->
 ### Case 4: Conflict — event schedule vs. main game progression pacing
 **Input**: "We want to run a double-XP event during weeks 3-5 of the season, but our progression designer says that's when players are supposed to hit the mid-game difficulty curve."
 **Expected behavior**:
@@ -53,6 +58,7 @@
 - Presents the tradeoff clearly: event retention value vs. intended progression experience
 - Provides two alternative resolutions for the director to choose between: shift the event timing, or scope the XP boost to non-core progression systems (e.g., cosmetic grind only)
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — designing to address a player retention drop-off
 **Input context**: Analytics show a 40% player drop-off at Day 7, attributed to players completing the tutorial but finding no mid-term goal to pursue.
 **Input**: "Design a live ops feature to address the Day 7 drop-off."
@@ -78,6 +84,7 @@
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Case 3 (monetization ethics) is a brand-safety test — failure here could result in harmful live ops designs shipping
 - Case 4 (escalation behavior) is a coordination test — verify the agent actually escalates rather than deciding independently

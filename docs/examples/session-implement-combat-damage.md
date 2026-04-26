@@ -14,11 +14,13 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Turn 1: User Requests Implementation
 
 **User:**
 > Implement the damage calculation system from design/gdd/combat-system.md. The formula is in section 4.
 
+<!-- 中文翻译 -->
 ## Turn 2: Agent Reads Design and Asks Clarifying Questions
 
 **Agent (gameplay-programmer):**
@@ -45,6 +47,7 @@
 >
 > Please clarify so I can implement this correctly the first time.
 
+<!-- 中文翻译 -->
 ## Turn 3: User Resolves Ambiguities
 
 **User:**
@@ -56,6 +59,7 @@
 > 6. Clamp damage to minimum of 1 (always do at least 1 damage, even with 100% defense)
 > 7. Create a minimal health component - just current_hp, max_hp, and take_damage() method
 
+<!-- 中文翻译 -->
 ## Turn 4: Agent Proposes Architecture
 
 **Agent:**
@@ -131,11 +135,13 @@
 >
 > **Question:** This architecture makes `DamageCalculator` easily testable (pure function, no dependencies). The `HealthComponent` uses signals for VFX/SFX hookup. Does this match your expectations, or should I change anything before implementing?
 
+<!-- 中文翻译 -->
 ## Turn 5: User Approves with Minor Change
 
 **User:**
 > Looks good, but change `attacker_stats` and `defender_stats` to proper typed dictionaries or classes. I don't want untyped Dictionary bags floating around.
 
+<!-- 中文翻译 -->
 ## Turn 6: Agent Refines Architecture
 
 **Agent:**
@@ -162,11 +168,13 @@
 >
 > Much cleaner. May I proceed with implementation?
 
+<!-- 中文翻译 -->
 ## Turn 7: User Approves Implementation
 
 **User:**
 > Yes, implement it.
 
+<!-- 中文翻译 -->
 ## Turn 8: Agent Implements and Reports
 
 **Agent:**
@@ -213,11 +221,13 @@
 >
 > What would you like?
 
+<!-- 中文翻译 -->
 ## Turn 9: User Requests Tests
 
 **User:**
 > A - write unit tests. Cover all the edge cases.
 
+<!-- 中文翻译 -->
 ## Turn 10: Agent Writes Tests and Completes
 
 **Agent:**
@@ -268,6 +278,7 @@
 
 ---
 
+<!-- 中文翻译 -->
 ## Session Summary
 
 **What Worked Well:**

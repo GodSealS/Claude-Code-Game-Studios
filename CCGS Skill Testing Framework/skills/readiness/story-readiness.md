@@ -11,6 +11,7 @@ before any developer picks up a story.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -25,6 +26,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Fully ready story
 
 **Fixture:**
@@ -59,6 +61,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Blocked Path — Referenced ADR is Proposed (not Accepted)
 
 **Fixture:**
@@ -83,6 +86,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Needs Work — Missing Acceptance Criteria
 
 **Fixture:**
@@ -108,6 +112,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Edge Case — Stale manifest version
 
 **Fixture:**
@@ -134,6 +139,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate — QL-STORY-READY behavior across review modes
 
 **Fixture:**
@@ -184,6 +190,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - Case where TR-ID is missing from the registry entirely is not explicitly

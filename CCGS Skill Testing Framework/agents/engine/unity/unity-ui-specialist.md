@@ -8,6 +8,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references UI Toolkit / UGUI / Canvas / data binding)
@@ -19,6 +20,7 @@ No gate IDs assigned.
 
 ## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出 -->
 ### Case 1: In-domain request — appropriate output
 **Input:** "Implement an inventory UI screen using Unity UI Toolkit."
 **Expected behavior:**
@@ -28,6 +30,7 @@ No gate IDs assigned.
 - Uses `ListView` with `makeItem` / `bindItem` callbacks for the scrollable item list
 - Does NOT produce the UX flow design — implements from a provided spec
 
+<!-- 用例 2：域外重定向 -->
 ### Case 2: Out-of-domain redirect
 **Input:** "Design the UX flow for the inventory — what happens when the player equips vs. drops an item."
 **Expected behavior:**
@@ -36,6 +39,7 @@ No gate IDs assigned.
 - Redirects the request to `ux-designer`
 - Notes it will implement whatever flow the ux-designer specifies
 
+<!-- 中文翻译 -->
 ### Case 3: UI Toolkit data binding for dynamic list
 **Input:** "The inventory list needs to update in real time as items are added or removed from the player's bag."
 **Expected behavior:**
@@ -44,6 +48,7 @@ No gate IDs assigned.
 - Notes the performance considerations for large lists (virtualization via `makeItem`/`bindItem` pattern)
 - Does NOT use `QuerySelector` loops to update individual elements as a list refresh strategy — flags that as a performance antipattern
 
+<!-- 中文翻译 -->
 ### Case 4: Canvas performance — overdraw
 **Input:** "The main menu canvas is causing GPU overdraw warnings; there are many overlapping panels."
 **Expected behavior:**
@@ -55,6 +60,7 @@ No gate IDs assigned.
 - Notes UI Toolkit alternative if the project is in a migration position
 - Identifies redundant Layout Group usage in UGUI that triggers recursive dirtying of the layout system, recommending custom positioning or flattened hierarchies.
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — Unity version
 **Input:** Project context: Unity 2022.3 LTS. Request: "Implement the settings panel with data binding."
 **Expected behavior:**
@@ -76,6 +82,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Inventory UI (Case 1) should have a manual walkthrough doc in `production/qa/evidence/`
 - Dynamic list binding (Case 3) should have an integration test or automated interaction test

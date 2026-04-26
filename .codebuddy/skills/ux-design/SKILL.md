@@ -126,50 +126,69 @@ Then ask: "Anything else I should read before we start, or shall we proceed?" / 
 
 ---
 
-## 2b. Retrofit Mode Detection
+## 2b. Retrofit Mode Detection / 改造模式检测
 
 Before creating a skeleton, check if the target output file already exists.
+> **中文翻译**：在创建骨架之前，检查目标输出文件是否已存在。
 
 Glob `design/ux/[filename].md` (where `[filename]` is the resolved output path from Phase 1).
+> **中文翻译**：Glob `design/ux/[filename].md`（其中 `[filename]` 是第 1 步解析的输出路径）。
 
 **If the file exists — retrofit mode:**
+> **中文翻译**：**如果文件存在 — 改造模式：**
 - Read the file in full
 - For each expected section, check whether the body has real content (more than a `[To be designed]` placeholder) or is empty/placeholder
-- Present a section status summary to the user:
+- Present a section status summary to the user: / 向用户呈现节状态摘要：
 
-> "Found existing UX spec at `design/ux/[filename].md`. Here's what's already done:
->
-> | Section | Status |
-> |---------|--------|
-> | Overview & Context | [Complete / Empty / Placeholder] |
-> | Player Journey Integration | ... |
-> | Screen Layout & Information Architecture | ... |
-> | Interaction Model | ... |
-> | Feedback & State Communication | ... |
-> | Accessibility | ... |
-> | Edge Cases & Error States | ... |
-> | Open Questions | ... |
->
-> I'll work on the [N] incomplete sections only — existing content will not be overwritten."
+> "Found existing UX spec at `design/ux/[filename].md`. Here's what's already done:"
+> > **中文翻译**：在 `design/ux/[filename].md` 找到现有 UX 规范。以下是已完成的：
+> 
+> > "| Section | Status |"
+> > > **中文翻译**：| 节 | 状态 |
+> > "|---------|--------|"
+> > "| Overview & Context | [Complete / Empty / Placeholder] |"
+> > > **中文翻译**：| 概览与上下文 | [完成 / 空 / 占位符] |
+> > "| Player Journey Integration | ... |"
+> > > **中文翻译**：| 玩家旅程集成 | ... |
+> > "| Screen Layout & Information Architecture | ... |"
+> > > **中文翻译**：| 屏幕布局与信息架构 | ... |
+> > "| Interaction Model | ... |"
+> > > **中文翻译**：| 交互模型 | ... |
+> > "| Feedback & State Communication | ... |"
+> > > **中文翻译**：| 反馈与状态通信 | ... |
+> > "| Accessibility | ... |"
+> > > **中文翻译**：| 可访问性 | ... |
+> > "| Edge Cases & Error States | ... |"
+> > > **中文翻译**：| 边界情况与错误状态 | ... |
+> > "| Open Questions | ... |"
+> > > **中文翻译**：| 开放问题 | ... |
+> 
+> > "I'll work on the [N] incomplete sections only — existing content will not be overwritten."
+> > > **中文翻译**：我将只处理 [N] 个不完整的节 — 现有内容不会被覆盖。
 
 - Skip Section 3 (skeleton creation) — the file already exists
 - In Phase 4 (Section Authoring), only work on sections with Status: Empty or Placeholder
 - Use `Edit` to fill placeholders in-place rather than creating a new skeleton
 
 **If the file does not exist — fresh authoring mode:**
+> **中文翻译**：**如果文件不存在 — 全新创作模式：**
 Proceed to Phase 3 (Create File Skeleton) as normal.
+> **中文翻译**：正常进入第 3 步（创建文件骨架）。
 
 ---
 
-## 3. Create File Skeleton
+## 3. Create File Skeleton / 创建文件骨架
 
 Once the user confirms, **immediately** create the output file with empty section
 headers. This ensures incremental writes have a target and work survives interruptions.
+> **中文翻译**：一旦用户确认，**立即**创建带有空节头的输出文件。这确保增量写入有目标，并且工作在中断后得以保存。
 
 Ask: "May I create the skeleton file at `design/ux/[filename].md`?"
+> **中文翻译**：询问："我可以在 `design/ux/[filename].md` 创建骨架文件吗？"
 
 ---
 
+<!-- 中文翻译 -->
 ### Skeleton for UX Spec (screen or flow)
 
 ```markdown
@@ -282,6 +301,7 @@ Ask: "May I create the skeleton file at `design/ux/[filename].md`?"
 
 ---
 
+<!-- 中文翻译 -->
 ### Skeleton for HUD Design
 
 ```markdown
@@ -349,6 +369,7 @@ Ask: "May I create the skeleton file at `design/ux/[filename].md`?"
 
 ---
 
+<!-- 中文翻译 -->
 ### Skeleton for Interaction Pattern Library
 
 ```markdown
@@ -396,36 +417,43 @@ After writing the skeleton, update `production/session-state/active.md` with:
 - Task: Designing [screen/flow name] UX spec
 - Current section: Starting (skeleton created)
 - File: design/ux/[filename].md
+> **中文翻译**：写入骨架后，更新 `production/session-state/active.md`：
+> - 任务：设计 [屏幕/流程名称] UX 规格
+> - 当前部分：开始（骨架已创建）
+> - 文件：design/ux/[filename].md
 
 ---
 
-## 4. Section-by-Section Authoring
+## 4. Section-by-Section Authoring / 逐节创作
 
-Walk through each section in order. For **each section**, follow this cycle:
+Walk through each section in order. For **each section**, follow this cycle: / 按顺序处理每个节。对于**每个节**，遵循此周期：
 
 ```
 Context  ->  Questions  ->  Options  ->  Decision  ->  Draft  ->  Approval  ->  Write
+上下文 -> 问题 -> 选项 -> 决策 -> 草稿 -> 批准 -> 写入
 ```
 
 1. **Context**: State what this section needs to contain and surface any relevant
-   constraints from context gathered in Phase 2.
+   constraints from context gathered in Phase 2. / **上下文**：说明此节需要包含什么内容，并呈现第 2 步收集的上下文中的任何相关约束。
 2. **Questions**: Ask what is needed to draft this section. Use `AskUserQuestion`
-   for constrained choices, conversational text for open-ended exploration.
+   for constrained choices, conversational text for open-ended exploration. / **问题**：询问起草此节需要什么。对于受限选择使用 `AskUserQuestion`，对于开放式探索使用对话文本。
 3. **Options**: Where design choices exist, present 2-4 approaches with pros/cons.
-   Explain reasoning in conversation, then use `AskUserQuestion` to capture the decision.
-4. **Decision**: User picks an approach or provides custom direction.
+   Explain reasoning in conversation, then use `AskUserQuestion` to capture the decision. / **选项**：存在设计选择的地方，提供2-4种方法及其优缺点。在对话中解释推理，然后使用 `AskUserQuestion` 捕捉决策。
+4. **Decision**: User picks an approach or provides custom direction. / **决策**：用户选择一种方法或提供自定义方向。
 5. **Draft**: Write the section content in conversation for review. Flag provisional
-   assumptions explicitly.
-6. **Approval**: "Does this capture it? Any changes before I write it to the file?"
+   assumptions explicitly. / **草稿**：在对话中编写节内容以供审查。明确标记临时假设。
+6. **Approval**: "Does this capture it? Any changes before I write it to the file?" / **批准**："这抓住了要点吗？在我写入文件之前有任何更改吗？"
 7. **Write**: Use `Edit` to replace the `[To be designed]` placeholder with approved
-   content. Confirm the write.
+   content. Confirm the write. / **写入**：使用 `Edit` 将 `[To be designed]` 占位符替换为批准的内容。确认写入。
 
-After writing each section, update `production/session-state/active.md`.
+After writing each section, update `production/session-state/active.md`. / 写入每个节后，更新 `production/session-state/active.md`。
 
 ---
 
+<!-- 中文翻译 -->
 ### Section Guidance: UX Spec Mode
 
+<!-- 中文翻译 -->
 #### Section A: Purpose & Player Need
 
 This section is the foundation. Every other decision flows from it.
@@ -437,9 +465,11 @@ This section is the foundation. Every other decision flows from it.
 
 Cross-reference the player journey context gathered in Phase 2. The stated purpose
 must align with the journey phase and emotional state.
+> **中文翻译**：交叉引用第 2 步收集的玩家旅程上下文。声明的目的必须与旅程阶段和情感状态一致。
 
 ---
 
+<!-- 中文翻译 -->
 #### Section B: Player Context on Arrival
 
 **Questions to ask**:
@@ -452,6 +482,7 @@ Offer to map this against the journey phases if the player journey doc exists.
 
 ---
 
+<!-- 中文翻译 -->
 #### Section B2: Navigation Position
 
 Where does this screen sit in the game's navigation hierarchy? This is a one-paragraph orientation map — not a full flow diagram.
@@ -465,6 +496,7 @@ Present as: "This screen lives at: [root] → [parent] → [this screen]" plus a
 
 ---
 
+<!-- 中文翻译 -->
 #### Section B3: Entry & Exit Points
 
 Map every way the player can arrive at and leave this screen.
@@ -486,6 +518,7 @@ Present as two tables:
 
 ---
 
+<!-- 中文翻译 -->
 #### Section C: Layout Specification
 
 This is the largest and most interactive section. Work through it in sub-sections:
@@ -520,6 +553,7 @@ This is the largest and most interactive section. Work through it in sub-section
 
 ---
 
+<!-- 中文翻译 -->
 #### Section D: States & Variants
 
 Guide the user to think beyond the happy path.
@@ -544,6 +578,7 @@ Present the collected states as a table for approval:
 
 ---
 
+<!-- 中文翻译 -->
 #### Section E: Interaction Map
 
 For each interactive component identified in the Layout Specification, define:
@@ -562,6 +597,7 @@ an existing UX spec or note it as a spec dependency.
 
 ---
 
+<!-- 中文翻译 -->
 #### Section E2: Events Fired
 
 For every player action in the Interaction Map, document the corresponding event the game or analytics system should fire — or explicitly note "no event" if none applies.
@@ -580,6 +616,7 @@ Flag any action that modifies persistent game state (save data, progress, econom
 
 ---
 
+<!-- 中文翻译 -->
 #### Section E3: Transitions & Animations
 
 Specify how the screen enters and exits, and how it responds to state changes.
@@ -597,6 +634,7 @@ Minimum required:
 
 ---
 
+<!-- 中文翻译 -->
 #### Section F: Data Requirements
 
 Cross-reference the GDD UI Requirements sections gathered in Phase 2.
@@ -619,6 +657,7 @@ Present the data requirements as a table:
 
 ---
 
+<!-- 中文翻译 -->
 #### Section G: Accessibility
 
 Cross-reference `design/accessibility-requirements.md` if it exists.
@@ -637,6 +676,7 @@ Use `AskUserQuestion` to surface any open questions on accessibility tier:
 
 ---
 
+<!-- 中文翻译 -->
 #### Section H: Localization Considerations
 
 Document constraints that affect how this screen behaves when text is translated.
@@ -650,7 +690,7 @@ Note: aim to flag any element where a 40% text expansion (common in translations
 
 ---
 
-#### Section I: Acceptance Criteria
+#### Section I: Acceptance Criteria / I 节：验收标准
 
 Write at least 5 specific, testable criteria that a QA tester can verify without reading any other design document. These become the pass/fail conditions for `/story-done`.
 
@@ -676,11 +716,13 @@ Ask the user to confirm: "Do these criteria cover what would actually make this 
 
 ---
 
+<!-- 中文翻译 -->
 ### Section Guidance: HUD Design Mode
 
 HUD design follows a different order from UX spec mode. Begin with philosophy;
 do not touch layout until the information architecture is complete.
 
+<!-- 中文翻译 -->
 #### Section A: HUD Philosophy
 
 Ask the user to describe the game's relationship with on-screen information in
@@ -697,6 +739,7 @@ If a proposed element conflicts with the stated philosophy, surface that conflic
 
 ---
 
+<!-- 中文翻译 -->
 #### Section B: Information Architecture
 
 Complete this before any layout work. Do not skip it.
@@ -727,6 +770,7 @@ but the Must Show list is growing long, surface the conflict explicitly:
 
 ---
 
+<!-- 中文翻译 -->
 #### Section C: Layout Zones
 
 Only after the information architecture is approved, design layout zones.
@@ -742,6 +786,7 @@ categorization from Section B.
 
 ---
 
+<!-- 中文翻译 -->
 #### Section D: HUD Elements
 
 For each element in the layout, specify:
@@ -757,7 +802,7 @@ exist for status displays, resource bars, or cooldown indicators.
 
 ---
 
-#### Sections E, F, G: Dynamic Behaviors, Platform Variants, Accessibility
+#### Sections E, F, G: Dynamic Behaviors, Platform Variants, Accessibility / E、F、G 节：动态行为、平台变体、无障碍
 
 These follow the same structure as the UX spec equivalents. See UX Spec section
 guidance for D (States/Variants), E (Interactions), and G (Accessibility).
@@ -768,10 +813,12 @@ For the HUD specifically, emphasize:
 
 ---
 
+<!-- 中文翻译 -->
 ### Section Guidance: Interaction Pattern Library Mode
 
 Pattern library authoring is additive and catalog-driven, not linear.
 
+<!-- 中文翻译 -->
 #### Phase 1: Catalog Existing Patterns
 
 Glob `design/ux/*.md` (excluding `interaction-patterns.md`) and read the Component
@@ -788,6 +835,7 @@ additional ones now."
 
 ---
 
+<!-- 中文翻译 -->
 #### Phase 2: Formalize Each Pattern
 
 For each pattern (existing or new), document:
@@ -817,6 +865,7 @@ I've found in the existing specs, or do you want to define them one by one?"
 
 ---
 
+<!-- 中文翻译 -->
 #### Phase 3: Identify Gaps
 
 After cataloging known patterns, ask:
@@ -829,6 +878,7 @@ Document gaps in the Gaps section for follow-up.
 
 ---
 
+<!-- 中文翻译 -->
 ## 5. Cross-Reference Check
 
 Before marking the spec as ready for review, run these checks:
@@ -861,10 +911,12 @@ Present the check results:
 
 ---
 
+<!-- 中文翻译 -->
 ## 6. Handoff
 
 When all sections are approved and written:
 
+<!-- 中文翻译 -->
 ### 6a: Update Session State
 
 Update `production/session-state/active.md` with:
@@ -874,6 +926,7 @@ Update `production/session-state/active.md` with:
 - Sections: All written
 - Next: [suggestion]
 
+<!-- 中文翻译 -->
 ### 6b: Suggest Next Step
 
 Before presenting options, state clearly:
@@ -893,6 +946,7 @@ Then use `AskUserQuestion`:
 If the user picks "Design another screen first", add a note: "Reminder: run
 `/ux-review` on all completed specs before running `/gate-check pre-production`."
 
+<!-- 中文翻译 -->
 ### 6c: Cross-Link Related Specs
 
 If other UX specs link to or from this screen, note which ones should reference
@@ -900,21 +954,23 @@ this spec. Do not edit those files without asking — just name them.
 
 ---
 
-## 7. Recovery & Resume
+## 7. Recovery & Resume / 第 7 步：恢复与继续
 
 If the session is interrupted (compaction, crash, new session):
+> **中文翻译**：如果会话被中断（压缩、崩溃、新会话）：
 
 1. Read `production/session-state/active.md` — it records the current screen
-   and which sections are complete.
+   and which sections are complete. / 读取 `production/session-state/active.md` — 它记录当前屏幕和哪些节已完成。
 2. Read `design/ux/[filename].md` — sections with real content are done;
-   sections with `[To be designed]` still need work.
-3. Resume from the next incomplete section — no need to re-discuss completed ones.
+   sections with `[To be designed]` still need work. / 读取 `design/ux/[filename].md` — 有真实内容的节已完成；有 `[To be designed]` 的节仍需工作。
+3. Resume from the next incomplete section — no need to re-discuss completed ones. / 从下一个不完整的节继续 — 无需重新讨论已完成的节。
 
 This is why incremental writing matters: every approved section survives any
-disruption.
+disruption. / 这就是增量写入重要的原因：每个批准的节都能在任何中断中幸存。
 
 ---
 
+<!-- 中文翻译 -->
 ## 8. Specialist Agent Routing
 
 This skill uses `ux-designer` as the primary agent (set in frontmatter). For
@@ -937,38 +993,38 @@ When delegating to another agent via the Task tool:
 
 ---
 
-## Collaborative Protocol
+## Collaborative Protocol / 协作协议
 
-This skill follows the collaborative design principle at every step:
+This skill follows the collaborative design principle at every step: / 此技能在每个步骤都遵循协作设计原则：
 
-1. **Question -> Options -> Decision -> Draft -> Approval** for every section
-2. **AskUserQuestion** at every decision point (Explain -> Capture pattern):
-   - Phase 2: "Ready to start, or need more context?"
-   - Phase 3: "May I create the skeleton?"
-   - Phase 4 (each section): design questions, approach options, draft approval
-   - Phase 5: "Run cross-reference check? What's next?"
-3. **"May I write to [filepath]?"** before the skeleton and before each section write
-4. **Incremental writing**: Each section is written to file immediately after approval
-5. **Session state updates**: After every section write
+1. **Question -> Options -> Decision -> Draft -> Approval** for every section / **问题 -> 选项 -> 决策 -> 草稿 -> 批准** 对于每个节
+2. **AskUserQuestion** at every decision point (Explain -> Capture pattern): / **AskUserQuestion** 在每个决策点（解释 -> 捕捉模式）：
+   - Phase 2: "Ready to start, or need more context?" / 第 2 步："准备开始，还是需要更多上下文？"
+   - Phase 3: "May I create the skeleton?" / 第 3 步："我可以创建骨架吗？"
+   - Phase 4 (each section): design questions, approach options, draft approval / 第 4 步（每个节）：设计问题、方法选项、草稿批准
+   - Phase 5: "Run cross-reference check? What's next?" / 第 5 步："运行交叉引用检查吗？接下来是什么？"
+3. **"May I write to [filepath]?"** before the skeleton and before each section write / **"我可以写入 [filepath] 吗？"** 在骨架和每个节写入之前
+4. **Incremental writing**: Each section is written to file immediately after approval / **增量写入**：每个节在批准后立即写入文件
+5. **Session state updates**: After every section write / **会话状态更新**：每个节写入后
 
 **Aesthetic deference**: When layout or visual choices come down to personal taste,
 present the options and ask. Do not select a layout because it is "standard" — always
-confirm. The user is the creative director.
+confirm. The user is the creative director. / **美学尊重**：当布局或视觉选择归结为个人品味时，呈现选项并询问。不要因为"标准"而选择布局 — 总是确认。用户是创意总监。
 
 **Conflict surfacing**: When a GDD requirement and the available screen real estate
 conflict, surface the conflict and present resolution options. Never silently drop
-a requirement. Never silently expand the layout without flagging it.
+a requirement. Never silently expand the layout without flagging it. / **冲突浮现**：当 GDD 要求与可用屏幕空间冲突时，浮现冲突并提供解决选项。永不静默丢弃要求。永不静默扩展布局而不标记。
 
-**Never** auto-generate the full spec and present it as a fait accompli.
-**Never** write a section without user approval.
-**Never** contradict an existing approved UX spec without flagging the conflict.
-**Always** show where decisions come from (GDD requirements, player journey, user choices).
+**Never** auto-generate the full spec and present it as a fait accompli. / **永不**自动生成完整规范并呈现为既成事实。
+**Never** write a section without user approval. / **永不**未经用户批准写入节。
+**Never** contradict an existing approved UX spec without flagging the conflict. / **永不**矛盾现有批准的 UX 规范而不标记冲突。
+**Always** show where decisions come from (GDD requirements, player journey, user choices). / **总是**展示决策来源（GDD 要求、玩家旅程、用户选择）。
 
-Verdict: **COMPLETE** — UX spec written and approved section by section.
+Verdict: **COMPLETE** — UX spec written and approved section by section. / 裁决：**COMPLETE** — UX 规范逐节编写和批准。
 
 ---
 
-## Recommended Next Steps
+## Recommended Next Steps / 推荐的后续步骤
 
 - Run `/ux-review [filename]` to validate this spec before it enters the implementation pipeline
 - Run `/ux-design [next-screen]` to continue designing remaining screens or flows

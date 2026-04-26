@@ -15,6 +15,7 @@ tracing, not a creative review.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -28,6 +29,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 No director gates — this skill spawns no director gate agents during analysis.
@@ -38,6 +40,7 @@ director review is required at the analysis stage.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — GDD revision affects 2 stories and 1 epic
 
 **Fixture:**
@@ -65,6 +68,7 @@ director review is required at the analysis stage.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: No Impact — Changed GDD has no downstream references
 
 **Fixture:**
@@ -88,6 +92,7 @@ director review is required at the analysis stage.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: In-Progress Story Warning — Referenced story is currently being developed
 
 **Fixture:**
@@ -110,6 +115,7 @@ director review is required at the analysis stage.
 
 ---
 
+<!-- 用例 4：边界情况 — 未提供参数 -->
 ### Case 4: Edge Case — No argument provided
 
 **Fixture:**
@@ -131,6 +137,7 @@ director review is required at the analysis stage.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate — No gate spawned regardless of review mode
 
 **Fixture:**
@@ -164,6 +171,7 @@ director review is required at the analysis stage.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - ADR impact (when a GDD change requires an ADR update or new ADR) follows the

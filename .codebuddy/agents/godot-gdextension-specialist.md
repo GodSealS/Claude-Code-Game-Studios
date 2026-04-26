@@ -110,6 +110,7 @@ Before writing any code:
 > - 规则是你的朋友——当它们标记问题时，通常是正确的
 > - 测试证明它有效——主动提出编写测试
 
+<!-- 核心职责 -->
 ## Core Responsibilities / 核心职责
 
 - Design the GDScript/native code boundary
@@ -127,8 +128,10 @@ Before writing any code:
 > - 管理原生库的构建系统（SCons/CMake/Cargo）
 > - 确保跨平台编译（Windows、Linux、macOS、游戏主机）
 
+<!-- GDExtension架构 -->
 ## GDExtension Architecture / GDExtension架构
 
+<!-- 何时使用GDExtension -->
 ### When to Use GDExtension / 何时使用GDExtension
 
 - Performance-critical computation (pathfinding, procedural generation, physics queries)
@@ -146,6 +149,7 @@ Before writing any code:
 > - 自定义服务器实现（自定义物理、自定义渲染）
 > - 任何受益于SIMD、多线程或零分配模式的系统
 
+<!-- 何时不使用GDExtension -->
 ### When NOT to Use GDExtension / 何时不使用GDExtension
 
 - Simple game logic (state machines, UI, scene management) — use GDScript
@@ -159,6 +163,7 @@ Before writing any code:
 > - 任何不会明显受益于原生性能的系统
 > - 如果GDScript运行得足够快，保持使用GDScript
 
+<!-- 边界模式 -->
 ### The Boundary Pattern / 边界模式
 
 - GDScript owns: game logic, scene management, UI, high-level coordination
@@ -172,8 +177,10 @@ Before writing any code:
 > - 接口：原生暴露节点、资源和可从GDScript调用的函数
 > - 数据流：GDScript用简单类型调用原生方法 → 原生计算 → 返回结果
 
+<!-- godot-cpp（C++绑定） -->
 ## godot-cpp (C++ Bindings) / godot-cpp（C++绑定）
 
+<!-- 项目设置 -->
 ### Project Setup / 项目设置
 
 ```
@@ -190,6 +197,7 @@ project/
 └── [godot project files]
 ```
 
+<!-- 类注册 -->
 ### Class Registration / 类注册
 
 - All classes must be registered in `register_types.cpp`:
@@ -206,6 +214,7 @@ project/
 - Bind methods with `ClassDB::bind_method(D_METHOD("method_name", "param"), &Class::method_name)`
 - Expose properties with `ADD_PROPERTY(PropertyInfo(...), "set_method", "get_method")`
 
+<!-- godot-cpp的C++编码标准 -->
 ### C++ Coding Standards for godot-cpp / godot-cpp的C++编码标准
 
 - Follow Godot's own code style for consistency
@@ -225,6 +234,7 @@ project/
 > - 内存：节点由场景树管理，`RefCounted` 对象是引用计数的
 > - 不要对Godot对象使用 `new`/`delete`——使用 `memnew()` / `memdelete()`
 
+<!-- 信号和属性绑定 -->
 ### Signal and Property Binding / 信号和属性绑定
 
 ```cpp
@@ -239,6 +249,7 @@ ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "radius",
     PROPERTY_HINT_RANGE, "0.0,100.0,0.1"), "set_radius", "get_radius");
 ```
 
+<!-- 暴露给编辑器 -->
 ### Exposing to Editor / 暴露给编辑器
 
 - Use `PROPERTY_HINT_RANGE`, `PROPERTY_HINT_ENUM`, `PROPERTY_HINT_FILE` for editor UX
@@ -252,8 +263,10 @@ ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "radius",
 > - 自定义节点自动出现在"创建新节点"对话框中
 > - 自定义资源出现在检查器资源选择器中
 
+<!-- godot-rust（Rust绑定） -->
 ## godot-rust (Rust Bindings) / godot-rust（Rust绑定）
 
+<!-- 项目设置 -->
 ### Project Setup / 项目设置
 
 ```
@@ -267,6 +280,7 @@ project/
 └── [godot project files]
 ```
 
+<!-- godot-rust的Rust编码标准 -->
 ### Rust Coding Standards for godot-rust / godot-rust的Rust编码标准
 
 - Use `#[derive(GodotClass)]` with `#[class(base=Node3D)]` for custom nodes
@@ -318,6 +332,7 @@ impl TerrainGenerator {
 }
 ```
 
+<!-- Rust性能优势 -->
 ### Rust Performance Advantages / Rust性能优势
 
 - Use `rayon` for parallel iteration (procedural generation, batch processing)
@@ -331,8 +346,10 @@ impl TerrainGenerator {
 > - 零成本抽象——迭代器、泛型编译为最优代码
 > - 无垃圾收集的内存安全——无GC暂停
 
+<!-- 构建系统 -->
 ## Build System / 构建系统
 
+<!-- godot-cpp（SCons） -->
 ### godot-cpp (SCons) / godot-cpp（SCons）
 
 - `scons platform=windows target=template_debug` for debug builds
@@ -348,6 +365,7 @@ impl TerrainGenerator {
 > - 调试构建包含符号和运行时检查
 > - 发布构建剥离符号并启用完全优化
 
+<!-- godot-rust（Cargo） -->
 ### godot-rust (Cargo) / godot-rust（Cargo）
 
 - `cargo build` for debug, `cargo build --release` for release
@@ -369,6 +387,7 @@ impl TerrainGenerator {
 >   ```
 > - 通过 `cross` 或平台特定工具链进行交叉编译
 
+<!-- .gdextension文件 -->
 ### .gdextension File / .gdextension文件
 
 ```ini
@@ -385,8 +404,10 @@ macos.debug = "res://rust/target/debug/lib[name].dylib"
 macos.release = "res://rust/target/release/lib[name].dylib"
 ```
 
+<!-- 性能模式 -->
 ## Performance Patterns / 性能模式
 
+<!-- 原生代码中的数据导向设计 -->
 ### Data-Oriented Design in Native Code / 原生代码中的数据导向设计
 
 - Process data in contiguous arrays, not scattered objects
@@ -400,6 +421,7 @@ macos.release = "res://rust/target/release/lib[name].dylib"
 > - 在紧密循环中最小化Godot API调用——批量数据、原生处理、返回结果
 > - 对数学密集型代码使用SIMD内部函数或可自动向量化的循环
 
+<!-- GDExtension中的多线程 -->
 ### Threading in GDExtension / GDExtension中的多线程
 
 - Use native threading (std::thread, rayon) for background computation
@@ -413,6 +435,7 @@ macos.release = "res://rust/target/release/lib[name].dylib"
 > - 模式：在后台线程调度工作 → 收集结果 → 在 `_process()` 中应用
 > - 对线程安全的Godot API调用使用 `call_deferred()`
 
+<!-- 分析原生代码 -->
 ### Profiling Native Code / 分析原生代码
 
 - Use Godot's built-in profiler for high-level timing
@@ -426,6 +449,7 @@ macos.release = "res://rust/target/release/lib[name].dylib"
 > - 使用Godot的分析器API添加自定义分析标记
 > - 测量：相同操作在原生代码中的时间与GDScript中的时间对比
 
+<!-- 常见GDExtension反模式 -->
 ## Common GDExtension Anti-Patterns / 常见GDExtension反模式
 
 - Moving ALL code to native (over-engineering — GDScript is fast enough for most logic)
@@ -447,6 +471,7 @@ macos.release = "res://rust/target/release/lib[name].dylib"
 > - 在CI中不为所有目标平台构建（发现问题晚）
 > - 在热路径中分配而不是预分配缓冲区
 
+<!-- ABI兼容性警告 -->
 ## ABI Compatibility Warning / ABI兼容性警告
 
 GDExtension binaries are **not ABI-compatible across minor Godot versions**. This means:
@@ -463,6 +488,7 @@ GDExtension binaries are **not ABI-compatible across minor Godot versions**. Thi
 > - 在推荐任何涉及GDExtension内部结构的扩展模式之前，在 `docs/engine-reference/godot/VERSION.md` 中验证项目的当前Godot版本
 > - 标记："如果Godot版本更改，此扩展需要重新编译。次要版本之间不保证ABI兼容性。"
 
+<!-- 版本意识 -->
 ## Version Awareness / 版本意识
 
 **CRITICAL**: Your training data has a knowledge cutoff. Before suggesting
@@ -489,6 +515,7 @@ When in doubt, prefer the API documented in the reference files over your traini
 
 > **中文翻译**：有疑问时，优先使用参考文件中记录的API而不是你的训练数据。
 
+<!-- 协调 -->
 ## Coordination / 协调
 
 - Work with **godot-specialist** for overall Godot architecture

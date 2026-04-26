@@ -13,10 +13,10 @@ model: opus
 The architecture review validates that the complete body of architectural decisions
 covers all game design requirements, is internally consistent, and correctly targets
 the project's pinned engine version. It is the quality gate between Technical Setup
-and Pre-Production.
+and Pre-Production. / 架构审查验证完整的架构决策是否覆盖所有游戏设计需求、内部一致且正确针对项目固定的引擎版本。它是技术设置和预生产之间的质量门控。
 > **中文翻译**：架构审查验证完整的架构决策是否覆盖所有游戏设计需求、内部一致且正确针对项目固定的引擎版本。它是技术设置和预生产之间的质量门控。
 
-**Argument modes:**
+**Argument modes:** / **参数模式：**
 > **中文翻译**：**参数模式：**
 
 - **No argument / `full`**: Full review — all phases / **无参数 / `full`**：完整审查 — 所有阶段
@@ -37,7 +37,7 @@ and Pre-Production.
 ### Phase 1a — L0: Summary Scan (fast, low tokens) / 第 1a 阶段 — L0：摘要扫描（快速，低 token）
 
 Before reading any full document, use Grep to extract `## Summary` sections
-from all GDDs and ADRs:
+from all GDDs and ADRs: / 在读取任何完整文档之前，使用 Grep 从所有 GDD 和 ADR 中提取 `## Summary` 章节：
 > **中文翻译**：在读取任何完整文档之前，使用 Grep 从所有 GDD 和 ADR 中提取 `## Summary` 章节：
 
 ```
@@ -47,18 +47,18 @@ Grep pattern="## Summary" glob="docs/architecture/adr-*.md" output_mode="content
 
 For `single-gdd [path]` mode: use the target GDD's summary to identify which
 ADRs reference the same system (Grep ADRs for the system name), then full-read
-only those ADRs. Skip full-reading unrelated GDDs entirely.
+only those ADRs. Skip full-reading unrelated GDDs entirely. / 对于 `single-gdd [path]` 模式：使用目标 GDD 的摘要识别哪些 ADR 引用了同一系统（Grep ADR 中的系统名称），然后仅完整读取那些 ADR。完全跳过不相关的 GDD。
 > **中文翻译**：对于 `single-gdd [path]` 模式：使用目标 GDD 的摘要识别哪些 ADR 引用了同一系统（Grep ADR 中的系统名称），然后仅完整读取那些 ADR。完全跳过不相关的 GDD。
 
-For `engine` mode: only full-read ADRs — GDDs are not needed for engine checks.
+For `engine` mode: only full-read ADRs — GDDs are not needed for engine checks. / 对于 `engine` 模式：仅完整读取 ADR — GDD 不需要用于引擎检查。
 > **中文翻译**：对于 `engine` 模式：仅完整读取 ADR — GDD 不需要用于引擎检查。
 
-For `coverage` or `full` mode: proceed to full-read everything below.
+For `coverage` or `full` mode: proceed to full-read everything below. / 对于 `coverage` 或 `full` 模式：继续完整读取以下所有内容。
 > **中文翻译**：对于 `coverage` 或 `full` 模式：继续完整读取以下所有内容。
 
 ### Phase 1b — L1/L2: Full Document Load / 第 1b 阶段 — L1/L2：完整文档加载
 
-Read all inputs appropriate to the mode:
+Read all inputs appropriate to the mode: / 读取适合该模式的所有输入：
 > **中文翻译**：读取适合该模式的所有输入：
 
 ### Design Documents / 设计文档
@@ -78,13 +78,13 @@ Read all inputs appropriate to the mode:
 ### Project Standards / 项目标准
 - `.codebuddy/docs/technical-preferences.md`
 
-Report a count: "Loaded [N] GDDs, [M] ADRs, engine: [name + version]."
+Report a count: "Loaded [N] GDDs, [M] ADRs, engine: [name + version]." / 报告计数："已加载 [N] 个 GDD，[M] 个 ADR，引擎：[名称 + 版本]。"
 > **中文翻译**：报告计数："已加载 [N] 个 GDD，[M] 个 ADR，引擎：[名称 + 版本]。"
 
 **Also read `docs/consistency-failures.md`** if it exists. Extract entries with
 Domain matching the systems under review (Architecture, Engine, or any GDD domain
 being covered). Surface recurring patterns as a "Known conflict-prone areas" note
-at the top of the Phase 4 conflict detection output.
+at the top of the Phase 4 conflict detection output. / **还要读取 `docs/consistency-failures.md`**（如果存在）。提取领域与审查中的系统匹配的条目（Architecture、Engine 或任何被覆盖的 GDD 领域）。将重复出现的模式作为"已知冲突易发区域"注释呈现在第 4 阶段冲突检测输出的顶部。
 > **中文翻译**：**还要读取 `docs/consistency-failures.md`**（如果存在）。提取领域与审查中的系统匹配的条目（Architecture、Engine 或任何被覆盖的 GDD 领域）。将重复出现的模式作为"已知冲突易发区域"注释呈现在第 4 阶段冲突检测输出的顶部。
 
 ---
@@ -95,10 +95,10 @@ at the top of the Phase 4 conflict detection output.
 
 Before extracting any requirements, read `docs/architecture/tr-registry.yaml`
 if it exists. Index existing entries by `id` and by normalized `requirement`
-text (lowercase, trimmed). This prevents ID renumbering across review runs.
+text (lowercase, trimmed). This prevents ID renumbering across review runs. / 在提取任何需求之前，读取 `docs/architecture/tr-registry.yaml`（如果存在）。按 `id` 和规范化的 `requirement` 文本（小写、去除空格）索引现有条目。这防止审查运行之间的 ID 重新编号。
 > **中文翻译**：在提取任何需求之前，读取 `docs/architecture/tr-registry.yaml`（如果存在）。按 `id` 和规范化的 `requirement` 文本（小写、去除空格）索引现有条目。这防止审查运行之间的 ID 重新编号。
 
-For each requirement you extract, the matching rule is:
+For each requirement you extract, the matching rule is: / 对于你提取的每个需求，匹配规则是：
 > **中文翻译**：对于你提取的每个需求，匹配规则是：
 
 1. **Exact/near match** to an existing registry entry for the same system →
@@ -109,23 +109,22 @@ For each requirement you extract, the matching rule is:
    system, starting from the highest existing sequence + 1. / **无匹配** → 分配新 ID：该系统的下一个可用 `TR-[system]-NNN`，从最高现有序号 + 1 开始。
 3. **Ambiguous** (partial match, intent unclear) → ask the user: / **模糊**（部分匹配，意图不明确）→ 询问用户：
    > "Does '[new requirement text]' refer to the same requirement as
-   > `TR-[system]-NNN: [existing text]'`, or is it a new requirement?"
-   User answers: "Same requirement" (reuse ID) or "New requirement" (new ID).
-   > **中文翻译**：> "'[新需求文本]' 是否与 `TR-[system]-NNN: [现有文本]'` 引用同一需求，还是一个新需求？" 用户回答："同一需求"（复用 ID）或"新需求"（新 ID）。
+   > `TR-[system]-NNN: [existing text]'`, or is it a new requirement?" / > "'[新需求文本]' 是否与 `TR-[system]-NNN: [现有文本]'` 引用同一需求，还是一个新需求？"
+   User answers: "Same requirement" (reuse ID) or "New requirement" (new ID). / 用户回答："同一需求"（复用 ID）或"新需求"（新 ID）。
 
 For any requirement with `status: deprecated` in the registry — skip it.
-It was removed from the GDD intentionally.
+It was removed from the GDD intentionally. / 对于注册表中 `status: deprecated` 的任何需求 — 跳过。它是有意从 GDD 中移除的。
 > **中文翻译**：对于注册表中 `status: deprecated` 的任何需求 — 跳过。它是有意从 GDD 中移除的。
 
 For each GDD, read it and extract all **technical requirements** — things the
 architecture must provide for the system to work. A technical requirement is any
-statement that implies a specific architectural decision.
+statement that implies a specific architectural decision. / 对于每个 GDD，读取它并提取所有**技术需求** — 架构必须为系统工作提供的东西。技术需求是任何暗示特定架构决策的陈述。
 > **中文翻译**：对于每个 GDD，读取它并提取所有**技术需求** — 架构必须为系统工作提供的东西。技术需求是任何暗示特定架构决策的陈述。
 
-Categories to extract:
+Categories to extract: / 要提取的类别：
 > **中文翻译**：要提取的类别：
 
-| Category | Example |
+| Category / 类别 | Example / 示例 |
 |----------|---------|
 | **Data structures** / **数据结构** | "Each entity has health, max health, status effects" → needs a component/data schema / "每个实体有生命值、最大生命值、状态效果" → 需要组件/数据架构 |
 | **Performance constraints** / **性能约束** | "Collision detection must run at 60fps with 200 entities" → physics budget ADR / "碰撞检测必须在 200 个实体下以 60fps 运行" → 物理预算 ADR |
@@ -135,7 +134,7 @@ Categories to extract:
 | **Threading/timing** / **线程/时序** | "AI decisions happen off the main thread" → concurrency ADR / "AI 决策在主线程之外进行" → 并发 ADR |
 | **Platform requirements** / **平台需求** | "Supports keyboard, gamepad, touch" → input system ADR / "支持键盘、手柄、触摸" → 输入系统 ADR |
 
-For each GDD, produce a structured list:
+For each GDD, produce a structured list: / 对于每个 GDD，生成一个结构化列表：
 > **中文翻译**：对于每个 GDD，生成一个结构化列表：
 
 ```
@@ -147,14 +146,14 @@ Technical Requirements:
 ```
 
 This becomes the **requirements baseline** — the complete set of what the
-architecture must cover.
+architecture must cover. / 这成为**需求基线** — 架构必须覆盖的完整集合。
 > **中文翻译**：这成为**需求基线** — 架构必须覆盖的完整集合。
 
 ---
 
 ## Phase 3: Build the Traceability Matrix / 第 3 阶段：构建可追溯性矩阵
 
-For each technical requirement extracted in Phase 2, search the ADRs:
+For each technical requirement extracted in Phase 2, search the ADRs: / 对于第 2 阶段提取的每个技术需求，搜索 ADR：
 > **中文翻译**：对于第 2 阶段提取的每个技术需求，搜索 ADR：
 
 1. Read every ADR's "GDD Requirements Addressed" section / 读取每个 ADR 的 "GDD Requirements Addressed" 章节
@@ -162,13 +161,13 @@ For each technical requirement extracted in Phase 2, search the ADRs:
 3. Check if the ADR's decision text implicitly covers the requirement / 检查 ADR 的决策文本是否隐含覆盖了该需求
 4. Mark coverage status: / 标记覆盖状态：
 
-| Status | Meaning |
+| Status / 状态 | Meaning / 含义 |
 |--------|---------|
 | ✅ **Covered** | An ADR explicitly addresses this requirement / ADR 明确解决了此需求 |
 | ⚠️ **Partial** | An ADR partially covers this, or coverage is ambiguous / ADR 部分覆盖，或覆盖模糊 |
 | ❌ **Gap** | No ADR addresses this requirement / 无 ADR 解决此需求 |
 
-Build the full matrix:
+Build the full matrix: / 构建完整矩阵：
 > **中文翻译**：构建完整矩阵：
 
 ```
@@ -181,25 +180,25 @@ Build the full matrix:
 | TR-inventory-001 | inventory.md | Inventory | Persistent item storage | ADR-0005 | ✅ |
 ```
 
-Count the totals: X covered, Y partial, Z gaps.
+Count the totals: X covered, Y partial, Z gaps. / 计算总数：X 已覆盖，Y 部分覆盖，Z 差距。
 > **中文翻译**：计算总数：X 已覆盖，Y 部分覆盖，Z 差距。
 
 ---
 
 ## Phase 3b: Story and Test Linkage (RTM mode only) / 第 3b 阶段：故事和测试关联（仅 RTM 模式）
 
-*Skip this phase unless the argument is `rtm` or `full` with stories present.*
+*Skip this phase unless the argument is `rtm` or `full` with stories present.* / *除非参数为 `rtm` 或 `full` 且存在故事，否则跳过此阶段。*
 > **中文翻译**：*除非参数为 `rtm` 或 `full` 且存在故事，否则跳过此阶段。*
 
 This phase extends the Phase 3 matrix to include the story that implements
 each requirement and the test that verifies it — producing the full
-Requirements Traceability Matrix (RTM).
+Requirements Traceability Matrix (RTM). / 此阶段扩展第 3 阶段矩阵以包含实现每个需求的故事和验证它的测试 — 生成完整的需求可追溯性矩阵（RTM）。
 > **中文翻译**：此阶段扩展第 3 阶段矩阵以包含实现每个需求的故事和验证它的测试 — 生成完整的需求可追溯性矩阵（RTM）。
 
 ### Step 3b-1 — Load stories / 步骤 3b-1 — 加载故事
 
 Glob `production/epics/**/*.md` (excluding EPIC.md index files). For each
-story file:
+story file: / Glob `production/epics/**/*.md`（排除 EPIC.md 索引文件）。对于每个故事文件：
 > **中文翻译**：Glob `production/epics/**/*.md`（排除 EPIC.md 索引文件）。对于每个故事文件：
 
 - Extract `TR-ID` from the story's Context section / 从故事的上下文章节提取 `TR-ID`
@@ -209,16 +208,16 @@ story file:
 ### Step 3b-2 — Load test files / 步骤 3b-2 — 加载测试文件
 
 Glob `tests/unit/**/*_test.*` and `tests/integration/**/*_test.*`.
-Build an index: system → [test file paths].
+Build an index: system → [test file paths]. / Glob `tests/unit/**/*_test.*` 和 `tests/integration/**/*_test.*`。构建索引：系统 → [测试文件路径]。
 > **中文翻译**：Glob `tests/unit/**/*_test.*` 和 `tests/integration/**/*_test.*`。构建索引：系统 → [测试文件路径]。
 
 For each test file path from Step 3b-1, confirm via Glob whether the file
-actually exists. Note MISSING if the stated path does not exist.
+actually exists. Note MISSING if the stated path does not exist. / 对于步骤 3b-1 中的每个测试文件路径，通过 Glob 确认文件是否实际存在。如果声明的路径不存在则标记 MISSING。
 > **中文翻译**：对于步骤 3b-1 中的每个测试文件路径，通过 Glob 确认文件是否实际存在。如果声明的路径不存在则标记 MISSING。
 
 ### Step 3b-3 — Build the extended RTM / 步骤 3b-3 — 构建扩展 RTM
 
-For each TR-ID in the Phase 3 matrix, add:
+For each TR-ID in the Phase 3 matrix, add: / 对于第 3 阶段矩阵中的每个 TR-ID，添加：
 > **中文翻译**：对于第 3 阶段矩阵中的每个 TR-ID，添加：
 
 - **Story**: the story file path(s) that reference this TR-ID (may be multiple) / **故事**：引用此 TR-ID 的故事文件路径（可能多个）
@@ -227,7 +226,7 @@ For each TR-ID in the Phase 3 matrix, add:
   found) / NONE (no test path stated, story type may be Visual/Feel/UI) /
   NO STORY (requirement has no story yet — pre-production gap) / **测试状态**：COVERED（测试文件存在）/ MISSING（路径已声明但未找到）/ NONE（无测试路径，故事类型可能是 Visual/Feel/UI）/ NO STORY（需求尚无故事 — 预生产差距）
 
-Extended matrix format:
+Extended matrix format: / 扩展矩阵格式：
 > **中文翻译**：扩展矩阵格式：
 
 ```
@@ -240,7 +239,7 @@ Extended matrix format:
 | TR-inventory-001 | inventory.md | Persistent storage | ADR-0005 | — | — | NO STORY |
 ```
 
-RTM coverage summary:
+RTM coverage summary: / RTM 覆盖摘要：
 > **中文翻译**：RTM 覆盖摘要：
 
 - COVERED: [N] — requirements with ADR + story + passing test / 有 ADR + 故事 + 通过测试的需求
@@ -254,7 +253,7 @@ RTM coverage summary:
 ## Phase 4: Cross-ADR Conflict Detection / 第 4 阶段：跨 ADR 冲突检测
 
 Compare every ADR against every other ADR to detect contradictions. A conflict
-exists when:
+exists when: / 将每个 ADR 与其他每个 ADR 比较以检测矛盾。当以下情况时存在冲突：
 > **中文翻译**：将每个 ADR 与其他每个 ADR 比较以检测矛盾。当以下情况时存在冲突：
 
 - **Data ownership conflict**: Two ADRs claim exclusive ownership of the same data / **数据所有权冲突**：两个 ADR 声称独占拥有相同数据
@@ -269,7 +268,7 @@ exists when:
 - **State management conflict**: Two ADRs define authority over the same game state
   (e.g. both Combat ADR and Character ADR claim to own the health value) / **状态管理冲突**：两个 ADR 定义对同一游戏状态的权限（例如战斗 ADR 和角色 ADR 都声称拥有生命值）
 
-For each conflict found:
+For each conflict found: / 对于发现的每个冲突：
 > **中文翻译**：对于发现的每个冲突：
 
 ```
@@ -285,7 +284,7 @@ Resolution options:
 
 ### ADR Dependency Ordering / ADR 依赖排序
 
-After conflict detection, analyse the dependency graph across all ADRs:
+After conflict detection, analyse the dependency graph across all ADRs: / 冲突检测后，分析所有 ADR 的依赖图：
 > **中文翻译**：冲突检测后，分析所有 ADR 的依赖图：
 
 1. **Collect all `Depends On` fields** from every ADR's "ADR Dependencies" section / 从每个 ADR 的 "ADR Dependencies" 章节**收集所有 `Depends On` 字段**
@@ -320,7 +319,7 @@ After conflict detection, analyse the dependency graph across all ADRs:
 
 ## Phase 5: Engine Compatibility Cross-Check / 第 5 阶段：引擎兼容性交叉检查
 
-Across all ADRs, check for engine consistency:
+Across all ADRs, check for engine consistency: / 在所有 ADR 中，检查引擎一致性：
 > **中文翻译**：在所有 ADR 中，检查引擎一致性：
 
 ### Version Consistency / 版本一致性
@@ -340,7 +339,7 @@ Across all ADRs, check for engine consistency:
 - List all ADRs that are missing the Engine Compatibility section entirely / 列出所有完全缺少 Engine Compatibility 章节的 ADR
 - These are blind spots — their engine assumptions are unknown / 这些是盲点 — 其引擎假设未知
 
-Output format:
+Output format: / 输出格式：
 > **中文翻译**：输出格式：
 
 ```
@@ -362,7 +361,7 @@ Post-Cutoff API Conflicts:
 
 ### Engine Specialist Consultation / 引擎专家咨询
 
-After completing the engine audit above, spawn the **primary engine specialist** via Task for a domain-expert second opinion:
+After completing the engine audit above, spawn the **primary engine specialist** via Task for a domain-expert second opinion: / 完成上述引擎审计后，通过 Task 生成**主引擎专家**以获取领域专家的第二意见：
 > **中文翻译**：完成上述引擎审计后，通过 Task 生成**主引擎专家**以获取领域专家的第二意见：
 
 - Read `.codebuddy/docs/technical-preferences.md` `Engine Specialists` section to get the primary specialist / 读取 `.codebuddy/docs/technical-preferences.md` 的 `Engine Specialists` 章节获取主专家
@@ -372,7 +371,7 @@ After completing the engine audit above, spawn the **primary engine specialist**
   2. Identify engine-specific anti-patterns in the ADRs that the audit may have missed (e.g., using the wrong Godot node type, Unity component coupling, Unreal subsystem misuse) / 识别审计可能遗漏的 ADR 中引擎特定的反模式
   3. Flag ADRs that make assumptions about engine behaviour that differ from the actual pinned version / 标记对引擎行为做出与实际固定版本不同假设的 ADR
 
-Incorporate additional findings under `### Engine Specialist Findings` in the Phase 5 output. These feed into the final verdict — specialist-identified issues carry the same weight as audit-identified issues.
+Incorporate additional findings under `### Engine Specialist Findings` in the Phase 5 output. These feed into the final verdict — specialist-identified issues carry the same weight as audit-identified issues. / 将额外发现纳入第 5 阶段输出的 `### Engine Specialist Findings`。这些将影响最终裁决 — 专家识别的问题与审计识别的问题具有相同权重。
 > **中文翻译**：将额外发现纳入第 5 阶段输出的 `### Engine Specialist Findings`。这些将影响最终裁决 — 专家识别的问题与审计识别的问题具有相同权重。
 
 ---
@@ -380,25 +379,23 @@ Incorporate additional findings under `### Engine Specialist Findings` in the Ph
 ## Phase 5b: Design Revision Flags (Architecture → GDD Feedback) / 第 5b 阶段：设计修订标记（架构 → GDD 反馈）
 
 For each **HIGH RISK engine finding** from Phase 5, check whether any GDD makes an
-assumption that the verified engine reality contradicts.
+assumption that the verified engine reality contradicts. / 对于第 5 阶段的每个**高风险引擎发现**，检查是否有 GDD 做出了与验证的引擎现实矛盾的假设。
 > **中文翻译**：对于第 5 阶段的每个**高风险引擎发现**，检查是否有 GDD 做出了与验证的引擎现实矛盾的假设。
 
-Specific cases to check:
+Specific cases to check: / 要检查的具体情况：
 > **中文翻译**：要检查的具体情况：
 
 1. **Post-cutoff API behaviour differs from training-data assumptions**: If an ADR
    records a verified API behaviour that differs from the default LLM assumption,
    check all GDDs that reference the related system. Look for design rules written
    around the old (assumed) behaviour. / **截断后 API 行为与训练数据假设不同**：如果 ADR 记录了与默认 LLM 假设不同的已验证 API 行为，检查引用相关系统的所有 GDD。查找围绕旧（假设）行为编写的设计规则。
-
 2. **Known engine limitations in ADRs**: If an ADR records a known engine limitation
    (e.g. "Jolt ignores HingeJoint3D damp", "D3D12 is now the default backend"), check
    GDDs that design mechanics around the affected feature. / **ADR 中的已知引擎限制**：如果 ADR 记录了已知引擎限制，检查围绕受影响功能设计机制的 GDD。
-
 3. **Deprecated API conflicts**: If Phase 5 flagged a deprecated API used in an ADR,
    check whether any GDD contains mechanics that assume the deprecated API's behaviour. / **已弃用 API 冲突**：如果第 5 阶段标记了 ADR 中使用的已弃用 API，检查是否有 GDD 包含假设该已弃用 API 行为的机制。
 
-For each conflict found, record it in the GDD Revision Flags table:
+For each conflict found, record it in the GDD Revision Flags table: / 对于发现的每个冲突，记录在 GDD 修订标记表中：
 > **中文翻译**：对于发现的每个冲突，记录在 GDD 修订标记表中：
 
 ```
@@ -412,10 +409,10 @@ The GDD should be revised before its system enters implementation.
 ```
 
 If no revision flags are found, write: "No GDD revision flags — all GDD assumptions
-are consistent with verified engine behaviour."
+are consistent with verified engine behaviour." / 如果未找到修订标记，写入："无 GDD 修订标记 — 所有 GDD 假设与验证的引擎行为一致。"
 > **中文翻译**：如果未找到修订标记，写入："无 GDD 修订标记 — 所有 GDD 假设与验证的引擎行为一致。"
 
-Ask: "Should I flag these GDDs for revision in the systems index?"
+Ask: "Should I flag these GDDs for revision in the systems index?" / 询问："我应该在系统索引中标记这些 GDD 以供修订吗？"
 > **中文翻译**：询问："我应该在系统索引中标记这些 GDD 以供修订吗？"
 
 - If yes: update the relevant systems' Status field to "Needs Revision"
@@ -428,7 +425,7 @@ Ask: "Should I flag these GDDs for revision in the systems index?"
 
 ## Phase 6: Architecture Document Coverage / 第 6 阶段：架构文档覆盖
 
-If `docs/architecture/architecture.md` exists, validate it against GDDs:
+If `docs/architecture/architecture.md` exists, validate it against GDDs: / 如果 `docs/architecture/architecture.md` 存在，对照 GDD 验证它：
 > **中文翻译**：如果 `docs/architecture/architecture.md` 存在，对照 GDD 验证它：
 
 - Does every system from `systems-index.md` appear in the architecture layers? / `systems-index.md` 中的每个系统是否出现在架构层中？
@@ -500,7 +497,7 @@ FAIL: Critical gaps (Foundation/Core layer requirements uncovered),
 
 ## Phase 8: Write and Update Traceability Index / 第 8 阶段：写入和更新可追溯性索引
 
-Use `AskUserQuestion` for the write approval:
+Use `AskUserQuestion` for the write approval: / 使用 `AskUserQuestion` 获取写入批准：
 > **中文翻译**：使用 `AskUserQuestion` 获取写入批准：
 
 - "Review complete. What would you like to write?" / "审查完成。你想写入什么？"
@@ -511,10 +508,10 @@ Use `AskUserQuestion` for the write approval:
 ### RTM Output (rtm mode only) / RTM 输出（仅 rtm 模式）
 
 For `rtm` mode, additionally ask: "May I write the full Requirements Traceability
-Matrix to `docs/architecture/requirements-traceability.md`?"
+Matrix to `docs/architecture/requirements-traceability.md`?" / 对于 `rtm` 模式，另外询问："我可以将完整的需求可追溯性矩阵写入 `docs/architecture/requirements-traceability.md` 吗？"
 > **中文翻译**：对于 `rtm` 模式，另外询问："我可以将完整的需求可追溯性矩阵写入 `docs/architecture/requirements-traceability.md` 吗？"
 
-RTM file format:
+RTM file format: / RTM 文件格式：
 > **中文翻译**：RTM 文件格式：
 
 ```markdown
@@ -526,58 +523,58 @@ RTM file format:
 
 ## How to read this matrix
 
-| Column | Meaning |
+| Column / 列 | Meaning / 含义 |
 |--------|---------|
 | TR-ID | Stable requirement ID from tr-registry.yaml |
-| GDD | Source design document |
-| ADR | Architectural decision governing implementation |
-| Story | Story file that implements this requirement |
-| Test File | Automated test file path |
+| GDD | Source design document / 来源设计文档 |
+| ADR | Architectural decision governing implementation / 管辖实现的架构决策 |
+| Story | Story file that implements this requirement / 实现此需求的故事文件 |
+| Test File | Automated test file path / 自动化测试文件路径 |
 | Test Status | COVERED / MISSING / NONE / NO STORY |
 
 ## Full Traceability Matrix
 
-| TR-ID | GDD | Requirement | ADR | Story | Test File | Status |
+| TR-ID | GDD | Requirement / 需求 | ADR | Story / 故事 | Test File / 测试文件 | Status / 状态 |
 |-------|-----|-------------|-----|-------|-----------|--------|
 [Full matrix rows from Phase 3b]
 
-## Coverage Summary
+## Coverage Summary / 覆盖摘要
 
-| Status | Count | % |
+| Status / 状态 | Count / 计数 | % / 百分比 |
 |--------|-------|---|
-| COVERED — full chain complete | [N] | [%] |
-| MISSING test — story exists, no test | [N] | [%] |
-| NO STORY — ADR exists, not yet implemented | [N] | [%] |
-| NO ADR — architectural gap | [N] | [%] |
-| **Total requirements** | **[N]** | **100%** |
+| COVERED — full chain complete / 完整链完成 | [N] | [%] |
+| MISSING test — story exists, no test / 测试缺失 — 故事存在，无测试 | [N] | [%] |
+| NO STORY — ADR exists, not yet implemented / 无故事 — ADR 存在，尚未实现 | [N] | [%] |
+| NO ADR — architectural gap / 无 ADR — 架构差距 | [N] | [%] |
+| **Total requirements** / **总需求** | **[N]** | **100%** |
 
-## Uncovered Requirements (Priority Fix List)
+## Uncovered Requirements (Priority Fix List) / 未覆盖需求（优先级修复列表）
 
-Requirements where the full chain is broken, prioritised by layer:
+Requirements where the full chain is broken, prioritised by layer: / 完整链断裂的需求，按层优先级排序：
 
-### Foundation layer gaps
-[list with suggested action per gap]
+### Foundation layer gaps / 基础层差距
+[list with suggested action per gap] / [每个差距的建议操作列表]
 
-### Core layer gaps
-[list]
+### Core layer gaps / 核心层差距
+[list] / [列表]
 
-### Feature / Presentation layer gaps
-[list — lower priority]
+### Feature / Presentation layer gaps / 功能/表现层差距
+[list — lower priority] / [列表 — 较低优先级]
 
-## History
+## History / 历史
 
-| Date | Full Chain % | Notes |
+| Date / 日期 | Full Chain % / 完整链百分比 | Notes / 备注 |
 |------|-------------|-------|
-| [date] | [%] | Initial RTM |
+| [date] | [%] | Initial RTM / 初始 RTM |
 ```
 
 ### TR Registry Update / TR 注册表更新
 
 Also ask: "May I update `docs/architecture/tr-registry.yaml` with new requirement
-IDs from this review?"
+IDs from this review?" / 另外询问："我可以使用本次审查的新需求 ID 更新 `docs/architecture/tr-registry.yaml` 吗？"
 > **中文翻译**：另外询问："我可以使用本次审查的新需求 ID 更新 `docs/architecture/tr-registry.yaml` 吗？"
 
-If yes:
+If yes: / 如果是：
 > **中文翻译**：如果是：
 
 - **Append** any new TR-IDs that weren't in the registry before this review / **追加**本次审查之前不在注册表中的任何新 TR-ID
@@ -589,13 +586,13 @@ If yes:
 - Update the `last_updated` and `version` fields at the top / 更新顶部的 `last_updated` 和 `version` 字段
 
 This ensures all future story files can reference stable TR-IDs that persist
-across every subsequent architecture review.
+across every subsequent architecture review. / 这确保所有未来的故事文件可以引用在每次后续架构审查中持久存在的稳定 TR-ID。
 > **中文翻译**：这确保所有未来的故事文件可以引用在每次后续架构审查中持久存在的稳定 TR-ID。
 
 ### Reflexion Log Update / 反思日志更新
 
 After writing the review report, append any 🔴 CONFLICT entries found in Phase 4
-to `docs/consistency-failures.md` (if the file exists):
+to `docs/consistency-failures.md` (if the file exists): / 写入审查报告后，将第 4 阶段发现的任何 🔴 CONFLICT 条目追加到 `docs/consistency-failures.md`（如果文件存在）：
 > **中文翻译**：写入审查报告后，将第 4 阶段发现的任何 🔴 CONFLICT 条目追加到 `docs/consistency-failures.md`（如果文件存在）：
 
 ```markdown
@@ -609,15 +606,16 @@ to `docs/consistency-failures.md` (if the file exists):
 
 Only append CONFLICT entries — do not log GAP entries (missing ADRs are expected
 before the architecture is complete). Do not create the file if missing — only
-append when it already exists.
+append when it already exists. / 仅追加 CONFLICT 条目 — 不要记录 GAP 条目（架构完成前缺少 ADR 是正常的）。如果文件不存在则不要创建 — 仅在已存在时追加。
 > **中文翻译**：仅追加 CONFLICT 条目 — 不要记录 GAP 条目（架构完成前缺少 ADR 是正常的）。如果文件不存在则不要创建 — 仅在已存在时追加。
 
 ### Session State Update / 会话状态更新
 
 After writing all approved files, silently append to
-`production/session-state/active.md`:
+`production/session-state/active.md`: / 写入所有批准的文件后，静默追加到 `production/session-state/active.md`：
 > **中文翻译**：写入所有批准的文件后，静默追加到 `production/session-state/active.md`：
 
+    <!-- 中文翻译 -->
     ## Session Extract — /architecture-review [date]
     - Verdict: [PASS / CONCERNS / FAIL]
     - Requirements: [N] total — [X] covered, [Y] partial, [Z] gaps
@@ -627,10 +625,10 @@ After writing all approved files, silently append to
     - Report: docs/architecture/architecture-review-[date].md
 
 If `active.md` does not exist, create it with this block as the initial content.
-Confirm in conversation: "Session state updated."
+Confirm in conversation: "Session state updated." / 如果 `active.md` 不存在，使用此块作为初始内容创建它。在对话中确认："会话状态已更新。"
 > **中文翻译**：如果 `active.md` 不存在，使用此块作为初始内容创建它。在对话中确认："会话状态已更新。"
 
-The traceability index format:
+The traceability index format: / 可追溯性索引格式：
 > **中文翻译**：可追溯性索引格式：
 
 ```markdown
@@ -638,19 +636,19 @@ The traceability index format:
 Last Updated: [date]
 Engine: [name + version]
 
-## Coverage Summary
+## Coverage Summary / 覆盖摘要
 - Total requirements: [N]
 - Covered: [X] ([%])
 - Partial: [Y]
 - Gaps: [Z]
 
-## Full Matrix
+## Full Matrix / 完整矩阵
 [Complete traceability matrix from Phase 3]
 
-## Known Gaps
+## Known Gaps / 已知差距
 [All ❌ items with suggested ADRs]
 
-## Superseded Requirements
+## Superseded Requirements / 已替代需求
 [Requirements whose GDD was changed after the ADR was written]
 ```
 
@@ -658,7 +656,7 @@ Engine: [name + version]
 
 ## Phase 9: Handoff / 第 9 阶段：交接
 
-After completing the review and writing approved files, present:
+After completing the review and writing approved files, present: / 完成审查并写入批准的文件后，呈现：
 > **中文翻译**：完成审查并写入批准的文件后，呈现：
 
 1. **Immediate actions**: List the top 3 ADRs to create (highest-impact gaps first,
@@ -668,7 +666,7 @@ After completing the review and writing approved files, present:
 3. **Rerun trigger**: "Re-run `/architecture-review` after each new ADR is written
    to verify coverage improves" / **重新运行触发**："每次写入新 ADR 后重新运行 `/architecture-review` 以验证覆盖率提升"
 
-Then close with `AskUserQuestion`:
+Then close with `AskUserQuestion`: / 然后以 `AskUserQuestion` 结束：
 > **中文翻译**：然后以 `AskUserQuestion` 结束：
 
 - "Architecture review complete. What would you like to do next?" / "架构审查完成。你想接下来做什么？"
@@ -680,7 +678,7 @@ Then close with `AskUserQuestion`:
 
 ## Error Recovery Protocol / 错误恢复协议
 
-If any spawned agent returns BLOCKED, errors, or fails to complete:
+If any spawned agent returns BLOCKED, errors, or fails to complete: / 如果任何生成的代理返回 BLOCKED、错误或无法完成：
 > **中文翻译**：如果任何生成的代理返回 BLOCKED、错误或无法完成：
 
 1. **Surface immediately**: Report "[AgentName]: BLOCKED — [reason]" before continuing / **立即呈现**：在继续之前报告"[代理名称]：BLOCKED — [原因]"

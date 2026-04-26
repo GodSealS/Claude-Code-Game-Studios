@@ -8,6 +8,7 @@ allowed-tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch, Task, AskUser
 
 When this skill is invoked:
 
+<!-- 中文翻译 -->
 ## 1. Parse Arguments
 
 Four modes:
@@ -20,10 +21,12 @@ Four modes:
 
 ---
 
+<!-- 中文翻译 -->
 ## 2. Guided Mode (No Arguments)
 
 If no engine is specified, run an interactive engine selection process:
 
+<!-- 中文翻译 -->
 ### Check for existing game concept
 - Read `design/gdd/game-concept.md` if it exists — extract genre, scope, platform
   targets, art style, team size, and any engine recommendation from `/brainstorm`
@@ -32,6 +35,7 @@ If no engine is specified, run an interactive engine selection process:
   > you want to build — it will also recommend an engine. Or tell me about your
   > game and I can help you pick."
 
+<!-- 中文翻译 -->
 ### If the user wants to pick without a concept, ask in this order:
 
 **Question 1 — Prior experience** (ask this first, always, via `AskUserQuestion`):
@@ -58,6 +62,7 @@ If no engine is specified, run an interactive engine selection process:
 4. **Any strong language preferences?** (GDScript, C#, C++, visual scripting?)
 5. **Budget for engine licensing?** (free only, or commercial licenses OK?)
 
+<!-- 中文翻译 -->
 ### Produce a recommendation
 
 Do NOT use a simple scoring matrix that eliminates engines. Instead, reason through the user's profile against the honest tradeoffs below, then present 1-2 recommendations with full context. Always end with the user choosing — never force a verdict.
@@ -121,6 +126,7 @@ The user can select multiple topics. Answer each selected topic in depth before 
 
 ---
 
+<!-- 中文翻译 -->
 ## 3. Look Up Current Version
 
 Once the engine is chosen:
@@ -132,8 +138,10 @@ Once the engine is chosen:
 
 ---
 
+<!-- 中文翻译 -->
 ## 4. Update CODEBUDDY.md Technology Stack
 
+<!-- 中文翻译 -->
 ### Language Selection (Godot only)
 
 If Godot was chosen, ask the user which language to use **before** showing the proposed Technology Stack:
@@ -185,14 +193,17 @@ Update the Technology Stack section, replacing the `[CHOOSE]` placeholders with 
 
 ---
 
+<!-- 中文翻译 -->
 ## 5. Populate Technical Preferences
 
 After updating CODEBUDDY.md, create or update `.codebuddy/docs/technical-preferences.md` with
 engine-appropriate defaults. Read the existing template first, then fill in:
 
+<!-- 中文翻译 -->
 ### Engine & Language Section
 - Fill from the engine choice made in step 4
 
+<!-- 中文翻译 -->
 ### Naming Conventions (engine defaults)
 
 **For Godot** — see **Appendix A** for GDScript, C#, and Both variants.
@@ -221,6 +232,7 @@ engine-appropriate defaults. Read the existing template first, then fill in:
 - Decorators: `@ccclass`, `@property`, `@menu` — required for component classes
 - Component class suffix: `Component` (e.g., `PlayerMovementComponent`)
 
+<!-- 中文翻译 -->
 ### Input & Platform Section
 
 Populate `## Input & Platform` using the answers gathered in Section 2 (or extracted
@@ -254,6 +266,7 @@ Example filled section:
 - **Platform Notes**: All UI must support d-pad navigation. No hover-only interactions.
 ```
 
+<!-- 中文翻译 -->
 ### Remaining Sections
 - **Performance Budgets**: Use `AskUserQuestion`:
   - Prompt: "Should I set default performance budgets now, or leave them for later?"
@@ -265,6 +278,7 @@ Example filled section:
 
 > **Guardrail**: Never add speculative dependencies to Allowed Libraries. For example, do NOT add GodotSteam unless Steam integration is actively beginning in this session. Post-launch integrations should be added to Allowed Libraries when that work begins, not during engine setup.
 
+<!-- 中文翻译 -->
 ### Engine Specialists Routing
 
 Also populate the `## Engine Specialists` section in `technical-preferences.md` with the correct routing for the chosen engine:
@@ -344,6 +358,7 @@ Also populate the `## Engine Specialists` section in `technical-preferences.md` 
 | General architecture review | unreal-specialist |
 ```
 
+<!-- 中文翻译 -->
 ### Collaborative Step
 Present the filled-in preferences to the user. For Godot, include the chosen language and note where the full naming conventions and routing tables live:
 > "Here are the default technical preferences for [engine] ([language if Godot]). The naming conventions and specialist routing are in Appendix A of this skill — I'll apply the [GDScript/C#/Both] variant. Want to customize any of these, or shall I save the defaults?"
@@ -354,6 +369,7 @@ Wait for approval before writing the file.
 
 ---
 
+<!-- 中文翻译 -->
 ## 6. Determine Knowledge Gap
 
 Check whether the engine version is likely beyond the LLM's training data.
@@ -375,8 +391,10 @@ Inform the user which category they're in and why.
 
 ---
 
+<!-- 中文翻译 -->
 ## 7. Populate Engine Reference Docs
 
+<!-- 中文翻译 -->
 ### If WITHIN training data (LOW RISK):
 
 Create a minimal `docs/engine-reference/<engine>/VERSION.md`:
@@ -402,6 +420,7 @@ Run `/setup-engine refresh` to populate full reference docs at any time.
 Do NOT create breaking-changes.md, deprecated-apis.md, etc. — they would
 add context cost with minimal value.
 
+<!-- 中文翻译 -->
 ### If BEYOND training data (MEDIUM or HIGH RISK):
 
 Create the full reference doc set by searching the web:
@@ -440,6 +459,7 @@ Wait for confirmation before writing any files.
 
 ---
 
+<!-- 中文翻译 -->
 ## 8. Update CODEBUDDY.md Import
 
 Ask: "May I update the `@` import in `CODEBUDDY.md` to point to the new engine reference?"
@@ -458,6 +478,7 @@ Godot to Unity), update it.
 
 ---
 
+<!-- 中文翻译 -->
 ## 9. Update Agent Instructions
 
 Ask: "May I add a Version Awareness section to the engine specialist agent files?" before making any edits.
@@ -474,6 +495,7 @@ The section should instruct the agent to:
 
 ---
 
+<!-- 中文翻译 -->
 ## 10. Refresh Subcommand
 
 If invoked as `/setup-engine refresh`:
@@ -490,10 +512,12 @@ If invoked as `/setup-engine refresh`:
 
 ---
 
+<!-- 中文翻译 -->
 ## 11. Upgrade Subcommand
 
 If invoked as `/setup-engine upgrade [old-version] [new-version]`:
 
+<!-- 中文翻译 -->
 ### Step 1 — Read Current Version State
 
 Read `docs/engine-reference/<engine>/VERSION.md` to confirm the current pinned
@@ -501,6 +525,7 @@ version, risk level, and any migration note URLs already recorded. If
 `old-version` was not provided as an argument, use the pinned version from this
 file.
 
+<!-- 中文翻译 -->
 ### Step 2 — Fetch Migration Guide
 
 Use WebSearch and WebFetch to locate the official migration guide between
@@ -514,6 +539,7 @@ Use WebSearch and WebFetch to locate the official migration guide between
 Extract: renamed APIs, removed APIs, changed defaults, behavior changes, and
 any "must migrate" items.
 
+<!-- 中文翻译 -->
 ### Step 3 — Pre-Upgrade Audit
 
 Scan `src/` for code that uses APIs known to be deprecated or changed in the
@@ -548,6 +574,7 @@ Recommended migration order (dependency-sorted):
 If no deprecated APIs are found in `src/`, report: "No deprecated API usage
 found in src/ — upgrade may be low-risk."
 
+<!-- 中文翻译 -->
 ### Step 4 — Confirm Before Updating
 
 Ask the user before making any changes:
@@ -559,6 +586,7 @@ Ask the user before making any changes:
 
 Wait for explicit confirmation before continuing.
 
+<!-- 中文翻译 -->
 ### Step 5 — Update VERSION.md
 
 After confirmation:
@@ -576,6 +604,7 @@ After confirmation:
 2. If `breaking-changes.md` or `deprecated-apis.md` exist in the engine
    reference directory, append the new version's changes to those files.
 
+<!-- 中文翻译 -->
 ### Step 6 — Post-Upgrade Reminder
 
 After updating VERSION.md, output:
@@ -595,6 +624,7 @@ Next steps:
 
 ---
 
+<!-- 中文翻译 -->
 ## 12. Output Summary
 
 After setup is complete, output:
@@ -623,6 +653,7 @@ Next Steps:
 
 Verdict: **COMPLETE** — engine configured and reference docs populated.
 
+<!-- 中文翻译 -->
 ## Guardrails
 
 - NEVER guess an engine version — always verify via WebSearch or user confirmation
@@ -634,12 +665,14 @@ Verdict: **COMPLETE** — engine configured and reference docs populated.
 
 ---
 
+<!-- 中文翻译 -->
 ## Appendix A — Godot Language Configuration
 
 All Godot-specific variants for language-dependent configuration. Referenced from Sections 4 and 5 — only relevant when Godot is the chosen engine. Use the subsection matching the language chosen in Section 4.
 
 ---
 
+<!-- 中文翻译 -->
 ### A1. CODEBUDDY.md Technology Stack Templates
 
 **GDScript:**
@@ -670,6 +703,7 @@ All Godot-specific variants for language-dependent configuration. Referenced fro
 
 ---
 
+<!-- 中文翻译 -->
 ### A2. Naming Conventions
 
 **GDScript:**
@@ -695,6 +729,7 @@ Use GDScript conventions for `.gd` files and C# conventions for `.cs` files. Mix
 
 ---
 
+<!-- 中文翻译 -->
 ### A3. Engine Specialists Routing
 
 **GDScript:**

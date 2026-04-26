@@ -23,8 +23,7 @@ The user must approve before moving to the next step.
 
 > **中文翻译**：**决策点：** 在每个步骤转换时，使用 `AskUserQuestion` 向用户展示子代理的提案作为可选选项。在对话中写入代理的完整分析，然后用简洁的标签捕获决策。用户必须在进入下一步之前批准。
 
-1. **Read the argument** for the target feature or area (e.g., `combat`,
-   `main menu`, `forest biome`, `boss encounter`). / **读取参数**，获取目标功能或区域（如 `combat`、`main menu`、`forest biome`、`boss encounter`）。
+1. **Read the argument** for the target feature or area (e.g., `combat`, `main menu`, `forest biome`, `boss encounter`). / **读取参数**，获取目标功能或区域（如 `combat`、`main menu`、`forest biome`、`boss encounter`）。
 
 2. **Gather context**: / **收集上下文**：
    - Read relevant design docs in `design/gdd/` for the feature / 读取 `design/gdd/` 中该功能的相关设计文档
@@ -101,8 +100,7 @@ Spawn the `gameplay-programmer` agent to: / 派生 `gameplay-programmer` 代理�
 
 5. **Save to** `design/gdd/audio-[feature].md`. / **保存到** `design/gdd/audio-[feature].md`。
 
-6. **Output a summary** with: audio event count, estimated asset count,
-   implementation tasks, and any open questions between team members. / **输出摘要**，包含：音频事件数、估算资产数、实现任务和团队成员之间的任何开放问题。
+6. **Output a summary** with: audio event count, estimated asset count, implementation tasks, and any open questions between team members. / **输出摘要**，包含：音频事件数、估算资产数、实现任务和团队成员之间的任何开放问题。
 
 Verdict: **COMPLETE** — audio design document produced and team pipeline finished.
 

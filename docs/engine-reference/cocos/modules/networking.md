@@ -1,7 +1,11 @@
-# Cocos Creator — Networking Module
+# Cocos Creator — Networking Module / Cocos Creator网络模块
+
+
+> **中文翻译**：本文档为Cocos Creator引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 Last verified: 2026-04-25
 
+<!-- 核心类型 -->
 ## Core Types
 
 | Type | Purpose |
@@ -10,6 +14,7 @@ Last verified: 2026-04-25
 | `XMLHttpRequest` / `fetch` | HTTP requests |
 | `socket.io` (3rd party) | Common choice for multiplayer |
 
+<!-- 中文翻译 -->
 ## WebSocket Example
 
 ```typescript
@@ -29,6 +34,7 @@ ws.onclose = () => {
 };
 ```
 
+<!-- 中文翻译 -->
 ## HTTP with fetch
 
 ```typescript
@@ -39,6 +45,7 @@ async loadPlayerData(playerId: string): Promise<PlayerData> {
 }
 ```
 
+<!-- 中文翻译 -->
 ## WeChat Mini Game
 
 Use `wx.request()` instead of `fetch` for better compatibility:
@@ -51,6 +58,7 @@ wx.request({
 });
 ```
 
+<!-- 陷阱 -->
 ## Pitfalls
 
 - WRONG: Sending game state every frame over WebSocket

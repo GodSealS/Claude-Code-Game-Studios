@@ -14,6 +14,7 @@ Epics are written to `production/epics/[layer]/EPIC-[name].md`.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -27,6 +28,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 In `full` mode: PR-EPIC (producer) gate runs after epics are drafted and before
@@ -41,6 +43,7 @@ In `solo` mode: PR-EPIC is skipped. Output notes: "PR-EPIC skipped — solo mode
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Two approved GDDs create two EPIC files
 
 **Fixture:**
@@ -70,6 +73,7 @@ In `solo` mode: PR-EPIC is skipped. Output notes: "PR-EPIC skipped — solo mode
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Failure Path — No approved GDDs found
 
 **Fixture:**
@@ -93,6 +97,7 @@ In `solo` mode: PR-EPIC is skipped. Output notes: "PR-EPIC skipped — solo mode
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Director Gate — Full mode spawns PR-EPIC before writing
 
 **Fixture:**
@@ -125,6 +130,7 @@ In `solo` mode: PR-EPIC is skipped. Output notes: "PR-EPIC skipped — solo mode
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Edge Case — Epic already exists for a GDD
 
 **Fixture:**
@@ -145,6 +151,7 @@ In `solo` mode: PR-EPIC is skipped. Output notes: "PR-EPIC skipped — solo mode
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate — PR-EPIC returns CONCERNS
 
 **Fixture:**
@@ -180,6 +187,7 @@ In `solo` mode: PR-EPIC is skipped. Output notes: "PR-EPIC skipped — solo mode
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - Processing of Core, Feature, and Presentation layers follows the same per-epic

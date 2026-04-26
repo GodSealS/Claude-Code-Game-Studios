@@ -82,6 +82,7 @@ Best when: you didn't use git to set up the template (just downloaded a zip).
 
 ---
 
+<!-- 中文翻译 -->
 ## v0.4.1
 
 **Released:** 2026-04-02
@@ -128,6 +129,7 @@ None — all changes are to infrastructure files with no user content.
 
 ---
 
+<!-- 中文翻译 -->
 ## v0.4.x → v1.0
 
 **Released:** 2026-03-29
@@ -228,6 +230,7 @@ individual run with `--review [mode]` on any gate-using skill:
 
 ---
 
+<!-- 中文翻译 -->
 ## v0.4.0 → v0.4.1
 
 **Released:** 2026-03-26
@@ -287,6 +290,7 @@ No files require manual merging in this release. All changes are to infrastructu
 
 ---
 
+<!-- 中文翻译 -->
 ## v0.3.0 → v0.4.0
 
 **Released:** 2026-03-21
@@ -402,6 +406,7 @@ UPGRADING.md
 
 ### Files: Merge Carefully / 文件：需谨慎合并
 
+<!-- 中文翻译 -->
 #### `.codebuddy/settings.json`
 
 Four new hooks are registered in this version. If you haven't customized `settings.json`, overwriting is safe. Otherwise, add the following hook entries manually:
@@ -428,6 +433,7 @@ Stories now have a formal lifecycle enforced by two skills:
 
 Flow: `/story-readiness` → implement → `/story-done` → next story
 
+<!-- 中文翻译 -->
 #### Full UX/UI Pipeline
 
 - **`/ux-design`** — guided section-by-section UX spec authoring. Three modes: screen/flow, HUD, or interaction pattern library. Reads GDD UI requirements and player journey. Output to `design/ux/`.
@@ -450,6 +456,7 @@ Also: `/design-system retrofit [path]` and `/architecture-decision retrofit [pat
 - Status values: `backlog | ready-for-dev | in-progress | review | done | blocked`
 - Falls back gracefully to markdown scanning if file doesn't exist
 
+<!-- 中文翻译 -->
 #### `/help` — Context-Aware Next Step
 
 `/help` reads your current stage and in-progress work, checks which artifacts are complete, and tells you exactly what to do next — one primary required step, plus optional opportunities. Distinct from `/start` (first-time only) and `/project-stage-detect` (full audit).
@@ -470,6 +477,7 @@ Nine new QA/testing skills covering the full testing lifecycle:
 
 Also new: **`/bug-triage`** re-evaluates all open bugs for priority, severity, and ownership.
 
+<!-- 中文翻译 -->
 #### Skill Validator (`/skill-test`)
 
 `/skill-test` is a meta-skill for validating the harness itself. Run it after editing any skill file. Three modes:
@@ -511,6 +519,7 @@ Three new directory-scoped CLAUDE.md files (`design/`, `src/`, `docs/`) provide 
 
 ---
 
+<!-- 中文翻译 -->
 ## v0.2.0 → v0.3.0
 
 **Released:** 2026-03-09
@@ -519,6 +528,7 @@ Three new directory-scoped CLAUDE.md files (`design/`, `src/`, `docs/`) provide 
 
 ### Breaking Changes / 破坏性变更
 
+<!-- 中文翻译 -->
 #### `/design-systems` renamed to `/map-systems`
 
 The `/design-systems` skill was renamed to `/map-systems` for clarity
@@ -574,6 +584,7 @@ UPGRADING.md
 
 ### Files: Merge Carefully / 文件：需谨慎合并
 
+<!-- 中文翻译 -->
 #### `.codebuddy/settings.json`
 
 The new version adds a `statusLine` configuration block pointing to
@@ -609,6 +620,7 @@ ctx: 42% | claude-sonnet-4-6 | Production | Combat System > Melee Combat > Hitbo
 The current stage is auto-detected from project artifacts, or can be pinned by
 writing a stage name to `production/stage.txt`.
 
+<!-- 中文翻译 -->
 #### `/gate-check` Stage Advancement
 
 When a gate PASS verdict is confirmed, `/gate-check` now writes the new stage
@@ -635,6 +647,7 @@ future sessions without requiring manual file edits.
 
 ---
 
+<!-- 中文翻译 -->
 ## v0.1.0 → v0.2.0
 
 **Released:** 2026-02-21
@@ -738,6 +751,7 @@ If you *have* customized agent prompts, see "Merge carefully" below.
 These files contain both template structure and your project-specific content.
 Do **not** overwrite them — merge the changes manually.
 
+<!-- 中文翻译 -->
 #### `CLAUDE.md`
 
 The template version was slimmed from ~159 lines to ~60 lines. The key
@@ -753,18 +767,21 @@ rules-reference, review-workflow).
 - Slimmer imports list (drop the 5 redundant `@` imports if present)
 - Updated collaboration protocol wording
 
+<!-- 中文翻译 -->
 #### `.codebuddy/docs/technical-preferences.md`
 
 If you ran `/setup-engine`, this file has your engine config, naming
 conventions, and performance budgets. Keep all of it. The template version
 is just the empty placeholder.
 
+<!-- 中文翻译 -->
 #### `.codebuddy/docs/templates/game-concept.md`
 
 Minor structural update — a `## Next Steps` section was added pointing to
 `/map-systems`. Add that section to your copy if you want the updated
 guidance, but it's not required.
 
+<!-- 中文翻译 -->
 #### `.codebuddy/settings.json`
 
 Check whether the new version adds any permission rules you want. The change

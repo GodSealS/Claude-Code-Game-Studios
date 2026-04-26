@@ -10,6 +10,7 @@ Fired before a tool is executed. Can **allow** (exit 0) or **block** (exit 2).
 
 > **中文翻译**：在工具执行前触发。可以**允许**（退出码 0）或**阻止**（退出码 2）。
 
+<!-- 中文翻译 -->
 ### PreToolUse: Bash
 
 ```json
@@ -23,6 +24,7 @@ Fired before a tool is executed. Can **allow** (exit 0) or **block** (exit 2).
 }
 ```
 
+<!-- 中文翻译 -->
 ### PreToolUse: Write
 
 ```json
@@ -35,6 +37,7 @@ Fired before a tool is executed. Can **allow** (exit 0) or **block** (exit 2).
 }
 ```
 
+<!-- 中文翻译 -->
 ### PreToolUse: Edit
 
 ```json
@@ -48,6 +51,7 @@ Fired before a tool is executed. Can **allow** (exit 0) or **block** (exit 2).
 }
 ```
 
+<!-- 中文翻译 -->
 ### PreToolUse: Read
 
 ```json
@@ -65,6 +69,7 @@ Fired after a tool completes. **Cannot block** (exit code ignored for blocking).
 
 > **中文翻译**：在工具完成后触发。**无法阻止**（退出码对阻止无效）。Stderr 消息作为警告显示。
 
+<!-- 中文翻译 -->
 ### PostToolUse: Write
 
 ```json
@@ -78,6 +83,7 @@ Fired after a tool completes. **Cannot block** (exit code ignored for blocking).
 }
 ```
 
+<!-- 中文翻译 -->
 ### PostToolUse: Edit
 
 ```json

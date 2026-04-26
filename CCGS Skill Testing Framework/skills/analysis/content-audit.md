@@ -10,6 +10,7 @@ user approval. Verdicts: COMPLETE, GAPS FOUND, or MISSING CRITICAL CONTENT.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -22,6 +23,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. Content audit is a read-only analysis skill; no gates are invoked.
@@ -30,6 +32,7 @@ None. Content audit is a read-only analysis skill; no gates are invoked.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — All specified content present
 
 **Fixture:**
@@ -55,6 +58,7 @@ None. Content audit is a read-only analysis skill; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Gaps Found — Enemy type missing from assets
 
 **Fixture:**
@@ -77,6 +81,7 @@ None. Content audit is a read-only analysis skill; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: No GDD Content Specs Found — Guidance given
 
 **Fixture:**
@@ -98,6 +103,7 @@ None. Content audit is a read-only analysis skill; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Edge Case — Asset in wrong format for target platform
 
 **Fixture:**
@@ -122,6 +128,7 @@ None. Content audit is a read-only analysis skill; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Gate Compliance — Read-only; no gate; gap table for human review
 
 **Fixture:**
@@ -155,6 +162,7 @@ None. Content audit is a read-only analysis skill; no gates are invoked.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - MISSING CRITICAL CONTENT verdict (vs. GAPS FOUND) is triggered when the

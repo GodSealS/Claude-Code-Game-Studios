@@ -9,6 +9,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references menus / HUDs / UI framework / data binding)
@@ -22,6 +23,7 @@ direction
 
 ## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出 -->
 ### Case 1: In-domain request — appropriate output
 **Input:** "Implement the inventory screen from the UX spec in `design/ux/inventory-flow.md`."
 **Expected behavior:**
@@ -31,6 +33,7 @@ direction
 - Binds inventory data to UI elements via the project's data model, not hardcoded values
 - Includes doc comments on public UI API per coding standards
 
+<!-- 用例 2：域外请求 — 正确重定向 -->
 ### Case 2: Out-of-domain request — redirects correctly
 **Input:** "Design the inventory interaction flow — what happens when the player equips, drops, or combines items."
 **Expected behavior:**
@@ -39,6 +42,7 @@ direction
 - Redirects the request to `ux-designer`
 - Notes that once the flow spec is ready, it can implement it
 
+<!-- 中文翻译 -->
 ### Case 3: Custom animation coordination
 **Input:** "The item selection in the inventory needs a custom bounce animation when selected."
 **Expected behavior:**
@@ -47,6 +51,7 @@ direction
 - Coordinates with `technical-artist` for an animation spec (duration, easing curve, overshoot amount)
 - Once the spec is provided, produces the implementation binding the animation to the selection state
 
+<!-- 中文翻译 -->
 ### Case 4: Ambiguous UX spec — flags back
 **Input:** The UX spec states "show item details on selection" but does not define what happens when an empty slot is selected.
 **Expected behavior:**
@@ -55,6 +60,7 @@ direction
 - Flags the ambiguity back to `ux-designer` with the specific question: "What should the detail panel show when an empty inventory slot is selected?"
 - May propose two common options (hide panel / show placeholder) to help ux-designer decide quickly
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — engine UI toolkit
 **Input:** Engine context provided: project uses Godot 4.6 with Control node UI. Request: "Implement a scrollable item list for the inventory."
 **Expected behavior:**
@@ -79,6 +85,7 @@ direction
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Inventory implementation (Case 1) should have a UI interaction test or manual walkthrough doc in `production/qa/evidence/`
 - Animation coordination (Case 3) confirms the agent does not invent feel parameters without a spec

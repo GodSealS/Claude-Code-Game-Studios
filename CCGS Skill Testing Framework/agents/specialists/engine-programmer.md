@@ -9,6 +9,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references rendering / memory / engine core)
@@ -20,6 +21,7 @@
 
 ## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出 -->
 ### Case 1: In-domain request — appropriate output
 **Input:** "Implement a custom object pool for projectiles to avoid per-frame allocation."
 **Expected behavior:**
@@ -29,6 +31,7 @@
 - Includes doc comments on the public API per coding standards
 - Output is compatible with the project's configured engine and language
 
+<!-- 用例 2：域外请求 — 正确重定向 -->
 ### Case 2: Out-of-domain request — redirects correctly
 **Input:** "Add a pause menu screen with volume sliders and a 'back to main menu' button."
 **Expected behavior:**
@@ -37,6 +40,7 @@
 - Redirects the request to `ui-programmer`
 - May note it can provide engine-level audio volume API endpoints for the ui-programmer to call
 
+<!-- 中文翻译 -->
 ### Case 3: Memory leak diagnosis
 **Input:** "Memory usage grows by ~50MB per level load and never releases. We suspect the resource loading system."
 **Expected behavior:**
@@ -45,6 +49,7 @@
 - Produces a concrete fix for the identified leak pattern
 - Provides a test to verify the fix (memory baseline before load, measure after unload, confirm return to baseline)
 
+<!-- 中文翻译 -->
 ### Case 4: Cross-domain coordination — shared system optimization
 **Input:** "I need to optimize the physics broadphase, but the gameplay system is tightly coupled to the physics query API."
 **Expected behavior:**
@@ -53,6 +58,7 @@
 - Proposes a migration path: new optimized API alongside old API, with a deprecation period
 - Documents the coordination requirement before proceeding
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — checks engine version reference
 **Input:** Engine version reference (Godot 4.6) provided in context. Request: "Set up the default physics engine for the project."
 **Expected behavior:**
@@ -77,6 +83,7 @@
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Object pool (Case 1) must include a unit test in `tests/unit/engine/`
 - Memory leak diagnosis (Case 3) should produce evidence artifacts in `production/qa/evidence/`

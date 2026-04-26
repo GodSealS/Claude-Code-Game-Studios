@@ -5,6 +5,7 @@ These show what runs before and after each skill, and what artifacts flow betwee
 
 ---
 
+<!-- 中文翻译 -->
 ## Full Pipeline Overview (Zero to Ship)
 
 ```
@@ -113,6 +114,7 @@ PHASE 7: RELEASE
 
 ---
 
+<!-- 中文翻译 -->
 ## Skill Chain: /design-system in Detail
 
 How a single GDD gets authored, reviewed, and handed to architecture:
@@ -148,6 +150,7 @@ upstream GDDs (input, if any)
 
 ---
 
+<!-- 中文翻译 -->
 ## Skill Chain: UX / UI Pipeline in Detail
 
 UX specs are authored in Phase 4 (Pre-Production), before epics are written, so
@@ -184,6 +187,7 @@ Note: /ux-design and /ux-review belong in Phase 4 (Pre-Production).
 
 ---
 
+<!-- 中文翻译 -->
 ## Skill Chain: Dev Story Flow in Detail
 
 How a story moves from backlog to closed:
@@ -218,6 +222,7 @@ How a story moves from backlog to closed:
 
 ---
 
+<!-- 中文翻译 -->
 ## Skill Chain: Story Lifecycle (Backlog to Closed)
 
 How a story gets from backlog to closed (summary view):
@@ -243,6 +248,7 @@ How a story gets from backlog to closed (summary view):
 
 ---
 
+<!-- 中文翻译 -->
 ## Skill Chain: QA Pipeline in Detail
 
 ```
@@ -297,6 +303,7 @@ How a story gets from backlog to closed (summary view):
 
 ---
 
+<!-- 中文翻译 -->
 ## Skill Chain: UX Pipeline in Detail (Legacy Reference)
 
 ```
@@ -327,6 +334,7 @@ design/player-journey.md (emotional arc)
 
 ---
 
+<!-- 中文翻译 -->
 ## Brownfield Onboarding Flow
 
 For projects with existing work (use `/start` option D or run directly):
@@ -352,6 +360,7 @@ For projects with existing work (use `/start` option D or run directly):
 
 ---
 
+<!-- 中文翻译 -->
 ## How to Read These Diagrams
 
 | Symbol | Meaning |
@@ -366,6 +375,7 @@ For projects with existing work (use `/start` option D or run directly):
 
 ---
 
+<!-- 中文翻译 -->
 ## Common Entry Points
 
 | Where you are | Run this |

@@ -11,6 +11,7 @@ VULNERABILITIES FOUND.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -23,6 +24,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. Security audit is a read-only advisory skill; no gates are invoked.
@@ -31,6 +33,7 @@ None. Security audit is a read-only advisory skill; no gates are invoked.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Save data encrypted, no hardcoded credentials
 
 **Fixture:**
@@ -55,6 +58,7 @@ None. Security audit is a read-only advisory skill; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Vulnerabilities Found — Unencrypted save data and exposed version
 
 **Fixture:**
@@ -80,6 +84,7 @@ None. Security audit is a read-only advisory skill; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Online Features Without Authentication — CONCERNS
 
 **Fixture:**
@@ -103,6 +108,7 @@ None. Security audit is a read-only advisory skill; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Edge Case — No Source Files to Analyze
 
 **Fixture:**
@@ -124,6 +130,7 @@ None. Security audit is a read-only advisory skill; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Gate Compliance — No gate; security-engineer invoked separately
 
 **Fixture:**
@@ -158,6 +165,7 @@ None. Security audit is a read-only advisory skill; no gates are invoked.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - Anti-cheat analysis (client-side value validation, server authority) is not

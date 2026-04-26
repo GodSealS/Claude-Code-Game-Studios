@@ -10,6 +10,7 @@ context: |
 
 ## Phase 1: Parse Arguments / 第 1 阶段：解析参数
 
+<!-- 确定回顾类型 -->
 Determine whether this is a sprint retrospective (`sprint-N`) or a milestone retrospective (`milestone-name`).
 > **中文翻译**：确定这是冲刺回顾（`sprint-N`）还是里程碑回顾（`milestone-name`）。
 
@@ -17,6 +18,7 @@ Determine whether this is a sprint retrospective (`sprint-N`) or a milestone ret
 
 ## Phase 1b: Check for Existing Retrospective / 第 1b 阶段：检查现有回顾
 
+<!-- 在加载数据前搜索现有回顾文件 -->
 Before loading any data, glob for an existing retrospective file:
 > **中文翻译**：在加载任何数据之前，搜索现有的回顾文件：
 
@@ -24,6 +26,7 @@ Before loading any data, glob for an existing retrospective file:
   (also check `production/sprints/sprint-[N]-retrospective.md` as an alternate location) / （同时检查 `production/sprints/sprint-[N]-retrospective.md` 作为备用位置）
 - For milestone retrospectives: `production/retrospectives/retro-[milestone-name]-*.md` / 对于里程碑回顾
 
+<!-- 如果找到匹配文件 -->
 If a matching file is found, present the user with:
 > **中文翻译**：如果找到匹配文件，向用户展示：
 
@@ -42,6 +45,7 @@ carry its content forward into the generation phase, revising sections with new 
 
 ## Phase 2: Load Sprint or Milestone Data / 第 2 阶段：加载冲刺或里程碑数据
 
+<!-- 从适当位置读取计划 -->
 Read the sprint or milestone plan from the appropriate location:
 > **中文翻译**：从适当的位置读取冲刺或里程碑计划：
 

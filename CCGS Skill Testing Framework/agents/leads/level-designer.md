@@ -8,6 +8,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified by reading the agent's `.codebuddy/agents/level-designer.md` frontmatter:
@@ -21,6 +22,7 @@ Verified by reading the agent's `.codebuddy/agents/level-designer.md` frontmatte
 
 ## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出格式 -->
 ### Case 1: In-domain request — appropriate output format
 **Scenario:** A level layout document for "The Flooded Tunnels" is submitted for review. The layout includes: a low-intensity exploration opening section, two mid-intensity encounters with visible escape routes, a tension-building narrow passage with environmental hazards, and a high-intensity final encounter room followed by a release/reward area. The pacing follows a classic tension-arc structure.
 **Expected:** Returns `APPROVED` with rationale confirming the pacing follows the tension arc, encounters are varied in intensity, and spatial readability supports player navigation.
@@ -30,6 +32,7 @@ Verified by reading the agent's `.codebuddy/agents/level-designer.md` frontmatte
 - [ ] Output stays within level design scope — does not comment on visual art style or enemy AI code behavior
 - [ ] Verdict is clearly labeled with context (e.g., "Level Design Review: APPROVED")
 
+<!-- 用例 2：域外请求 — 重定向或升级 -->
 ### Case 2: Out-of-domain request — redirects or escalates
 **Scenario:** A team member asks level-designer to write the behavior tree code for an enemy patrol AI that navigates the level layout.
 **Expected:** Agent declines to write AI behavior code and redirects to ai-programmer or gameplay-programmer.
@@ -38,6 +41,7 @@ Verified by reading the agent's `.codebuddy/agents/level-designer.md` frontmatte
 - [ ] Explicitly names `ai-programmer` or `gameplay-programmer` as the correct handler
 - [ ] May specify the desired patrol behavior from a level design perspective (e.g., "patrol should cover both chokepoints and create pressure in this zone"), but defers all code implementation to the programmer
 
+<!-- 用例 3：门控裁决 — 正确词汇 -->
 ### Case 3: Gate verdict — correct vocabulary
 **Scenario:** A level layout for "The Ancient Forge" is submitted. Section 3 of the level introduces a dramatically harder enemy encounter (elite enemy with new attack patterns) with no preceding tutorial moment, no environmental readability cues (no visible cover or safe zones), and no checkpoint nearby. Players are likely to die repeatedly with no clear signal of what to do differently.
 **Expected:** Returns `REVISION NEEDED` with specific identification of the difficulty spike in section 3, the missing readability cue, and the absence of a nearby checkpoint to reduce frustration from repeated deaths.
@@ -47,6 +51,7 @@ Verified by reading the agent's `.codebuddy/agents/level-designer.md` frontmatte
 - [ ] Identifies the three specific problems: difficulty spike, missing readability cue, missing checkpoint
 - [ ] Provides actionable revision guidance (e.g., "add a visible safe zone, pre-encounter cue object, or reduce elite's health for first introduction")
 
+<!-- 用例 4：冲突升级 — 正确上级 -->
 ### Case 4: Conflict escalation — correct parent
 **Scenario:** game-designer wants higher encounter density throughout the level (more enemies in each room) to increase combat challenge. level-designer believes this density undermines the pacing arc by eliminating rest periods and making the level feel relentless without reward.
 **Expected:** level-designer clearly articulates the pacing concern (eliminating rest periods removes the tension-release rhythm), acknowledges game-designer's challenge goal, and escalates to creative-director for a design arbiter ruling on whether challenge density or pacing rhythm takes precedence for this level.
@@ -56,6 +61,7 @@ Verified by reading the agent's `.codebuddy/agents/level-designer.md` frontmatte
 - [ ] Does not unilaterally override game-designer's challenge density request
 - [ ] Frames the conflict clearly: "challenge density vs. pacing rhythm — which takes precedence here?"
 
+<!-- 用例 5：上下文传递 — 使用提供的上下文 -->
 ### Case 5: Context pass — uses provided context
 **Scenario:** Agent receives a gate context block that includes game-feel notes specifying: "exploration sections should feel vast and lonely," "combat sections should feel urgent and claustrophobic," and "reward rooms should feel safe and visually distinct." A new level layout is submitted for review.
 **Expected:** Assessment evaluates each section type (exploration, combat, reward) against the specific feel targets from the provided context. Uses the exact vocabulary from the feel notes ("vast and lonely," "urgent and claustrophobic," "safe and visually distinct") in the rationale.
@@ -78,6 +84,7 @@ Verified by reading the agent's `.codebuddy/agents/level-designer.md` frontmatte
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Environmental storytelling review (using spatial elements to convey narrative without dialogue) could benefit from a dedicated case.
 - Spatial puzzle design review is not covered — a dedicated case should be added when puzzle mechanics are defined.

@@ -44,73 +44,78 @@ Read all sprint reports for sprints within this milestone from `production/sprin
 ## Phase 3: Generate the Milestone Review / 阶段 3：生成里程碑审查
 
 ```markdown
-# Milestone Review: [Milestone Name]
+# Milestone Review: [Milestone Name] / # 里程碑审查：[里程碑名称]
 
-## Overview
-- **Target Date**: [Date]
-- **Current Date**: [Today]
-- **Days Remaining**: [N]
-- **Sprints Completed**: [X/Y]
+## Overview / ## 概述
+- **Target Date**: [Date] / **目标日期**：[日期]
+- **Current Date**: [Today] / **当前日期**：[今天]
+- **Days Remaining**: [N] / **剩余天数**：[N]
+- **Sprints Completed**: [X/Y] / **完成的冲刺**：[X/Y]
 
-## Feature Completeness
+## Feature Completeness / ## 功能完整性
 
-### Fully Complete
-| Feature | Acceptance Criteria | Test Status |
+### Fully Complete / ### 完全完成
+| Feature | Acceptance Criteria | Test Status | / **功能** | **验收标准** | **测试状态** |
 |---------|-------------------|-------------|
+| [Feature] | [Criteria met?] | [Pass/Fail] |
 
-### Partially Complete
-| Feature | % Done | Remaining Work | Risk to Milestone |
+### Partially Complete / ### 部分完成
+| Feature | % Done | Remaining Work | Risk to Milestone | / **功能** | **完成%** | **剩余工作** | **对里程碑的风险** |
 |---------|--------|---------------|------------------|
+| [Feature] | [%] | [Work description] | [High/Medium/Low] |
 
-### Not Started
-| Feature | Priority | Can Cut? | Impact of Cutting |
+### Not Started / ### 未开始
+| Feature | Priority | Can Cut? | Impact of Cutting | / **功能** | **优先级** | **可削减？** | **削减影响** |
 |---------|----------|----------|------------------|
+| [Feature] | [High/Medium/Low] | [Yes/No] | [Impact description] |
 
-## Quality Metrics
-- **Open S1 Bugs**: [N] -- [List]
-- **Open S2 Bugs**: [N]
-- **Open S3 Bugs**: [N]
-- **Test Coverage**: [X%]
-- **Performance**: [Within budget? Details]
+## Quality Metrics / ## 质量指标
+- **Open S1 Bugs**: [N] -- [List] / **未解决的 S1 错误**：[N] -- [列表]
+- **Open S2 Bugs**: [N] / **未解决的 S2 错误**：[N]
+- **Open S3 Bugs**: [N] / **未解决的 S3 错误**：[N]
+- **Test Coverage**: [X%] / **测试覆盖率**：[X%]
+- **Performance**: [Within budget? Details] / **性能**：[在预算内？详情]
 
-## Code Health
-- **TODO count**: [N across codebase]
-- **FIXME count**: [N]
-- **HACK count**: [N]
-- **Technical debt items**: [List critical ones]
+## Code Health / ## 代码健康状况
+- **TODO count**: [N across codebase] / **TODO 数量**：[整个代码库中的 N]
+- **FIXME count**: [N] / **FIXME 数量**：[N]
+- **HACK count**: [N] / **HACK 数量**：[N]
+- **Technical debt items**: [List critical ones] / **技术债务项目**：[列出关键项目]
 
-## Risk Assessment
-| Risk | Status | Impact if Realized | Mitigation Status |
+## Risk Assessment / ## 风险评估
+| Risk | Status | Impact if Realized | Mitigation Status | / **风险** | **状态** | **实现时的影响** | **缓解状态** |
 |------|--------|-------------------|------------------|
+| [Risk description] | [Active/Monitored/Resolved] | [High/Medium/Low] | [In progress/Complete/Future] |
 
-## Velocity Analysis
-- **Planned vs Completed** (across all sprints): [X/Y tasks = Z%]
-- **Trend**: [Improving / Stable / Declining]
-- **Adjusted estimate for remaining work**: [Days needed at current velocity]
+## Velocity Analysis / ## 速度分析
+- **Planned vs Completed** (across all sprints): [X/Y tasks = Z%] / **计划与完成**（所有冲刺中）：[X/Y 任务 = Z%]
+- **Trend**: [Improving / Stable / Declining] / **趋势**：[改善/稳定/下降]
+- **Adjusted estimate for remaining work**: [Days needed at current velocity] / **剩余工作的调整估算**：[以当前速度所需的天数]
 
-## Scope Recommendations
-### Protect (Must ship with milestone)
-- [Feature and why]
+## Scope Recommendations / ## 范围建议
+### Protect (Must ship with milestone) / ### 保护（必须随里程碑发布）
+- [Feature and why] / [功能及原因]
 
-### At Risk (May need to cut or simplify)
-- [Feature and risk]
+### At Risk (May need to cut or simplify) / ### 有风险（可能需要削减或简化）
+- [Feature and risk] / [功能及风险]
 
-### Cut Candidates (Can defer without compromising milestone)
-- [Feature and impact of cutting]
+### Cut Candidates (Can defer without compromising milestone) / ### 削减候选（可以推迟而不损害里程碑）
+- [Feature and impact of cutting] / [功能及削减影响]
 
-## Go/No-Go Assessment
+## Go/No-Go Assessment / ## 继续/停止评估
 
-**Recommendation**: [GO / CONDITIONAL GO / NO-GO]
+**Recommendation**: [GO / CONDITIONAL GO / NO-GO] / **建议**：[继续/有条件继续/停止]
 
-**Conditions** (if conditional):
-- [Condition 1 that must be met]
-- [Condition 2 that must be met]
+**Conditions** (if conditional): / **条件**（如果有条件）：
+- [Condition 1 that must be met] / [必须满足的条件 1]
+- [Condition 2 that must be met] / [必须满足的条件 2]
 
-**Rationale**: [Explanation of the recommendation]
+**Rationale**: [Explanation of the recommendation] / **理由**：[建议的解释]
 
-## Action Items
-| # | Action | Owner | Deadline |
+## Action Items / ## 行动项
+| # | Action | Owner | Deadline | / **#** | **行动** | **负责人** | **截止日期** |
 |---|--------|-------|----------|
+| 1 | [Action description] | [Owner] | [Date] |
 ```
 
 ---

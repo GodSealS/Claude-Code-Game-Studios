@@ -28,6 +28,7 @@ Hooks 是在特定事件触发时自动执行的 Bash 脚本，配置在 `.codeb
 
 ### 可用 Hooks
 
+<!-- 中文翻译 -->
 #### session-start.sh
 
 **触发**: `SessionStart`
@@ -48,6 +49,7 @@ Git: 3 个未提交更改
 
 ---
 
+<!-- 中文翻译 -->
 #### detect-gaps.sh
 
 **触发**: `SessionStart`
@@ -62,6 +64,7 @@ Git: 3 个未提交更改
 
 ---
 
+<!-- 中文翻译 -->
 #### pre-compact.sh
 
 **触发**: `PreCompact`
@@ -76,6 +79,7 @@ Git: 3 个未提交更改
 
 ---
 
+<!-- 中文翻译 -->
 #### post-compact.sh
 
 **触发**: `PostCompact`
@@ -90,6 +94,7 @@ Git: 3 个未提交更改
 
 ---
 
+<!-- 中文翻译 -->
 #### session-stop.sh
 
 **触发**: `Stop`
@@ -103,6 +108,7 @@ Git: 3 个未提交更改
 
 ---
 
+<!-- 中文翻译 -->
 #### validate-commit.sh
 
 **触发**: `PreToolUse (Bash)`, 匹配 `git commit`
@@ -120,6 +126,7 @@ Git: 3 个未提交更改
 
 ---
 
+<!-- 中文翻译 -->
 #### validate-push.sh
 
 **触发**: `PreToolUse (Bash)`, 匹配 `git push`
@@ -139,6 +146,7 @@ Git: 3 个未提交更改
 
 ---
 
+<!-- 中文翻译 -->
 #### validate-assets.sh
 
 **触发**: `PostToolUse (Write/Edit)`, 匹配 `assets/**`
@@ -154,6 +162,7 @@ Git: 3 个未提交更改
 
 ---
 
+<!-- 中文翻译 -->
 #### validate-skill-change.sh
 
 **触发**: `PostToolUse (Write/Edit)`, 匹配 `.codebuddy/skills/**`
@@ -168,6 +177,7 @@ Git: 3 个未提交更改
 
 ---
 
+<!-- 中文翻译 -->
 #### notify.sh
 
 **触发**: `Notification`
@@ -181,6 +191,7 @@ Git: 3 个未提交更改
 
 ---
 
+<!-- 中文翻译 -->
 #### log-agent.sh
 
 **触发**: `SubagentStart`
@@ -193,6 +204,7 @@ Git: 3 个未提交更改
 
 ---
 
+<!-- 中文翻译 -->
 #### log-agent-stop.sh
 
 **触发**: `SubagentStop`
@@ -256,6 +268,7 @@ Rules 是当编辑特定路径的文件时自动应用的规则，位于 `.codeb
 
 ### 可用 Rules
 
+<!-- 中文翻译 -->
 #### gameplay-code.md
 
 **路径**: `src/gameplay/**`
@@ -278,6 +291,7 @@ ui.health_bar.value = health  # UI 引用
 
 ---
 
+<!-- 中文翻译 -->
 #### engine-code.md
 
 **路径**: `src/core/**`
@@ -302,6 +316,7 @@ void ProcessBatch() {
 
 ---
 
+<!-- 中文翻译 -->
 #### ai-code.md
 
 **路径**: `src/ai/**`
@@ -313,6 +328,7 @@ void ProcessBatch() {
 
 ---
 
+<!-- 中文翻译 -->
 #### network-code.md
 
 **路径**: `src/networking/**`
@@ -341,6 +357,7 @@ void OnPlayerMove(Request& req) {
 
 ---
 
+<!-- 中文翻译 -->
 #### ui-code.md
 
 **路径**: `src/ui/**`
@@ -363,6 +380,7 @@ func _on_button_pressed():
 
 ---
 
+<!-- 中文翻译 -->
 #### design-docs.md
 
 **路径**: `design/gdd/**`
@@ -384,6 +402,7 @@ func _on_button_pressed():
 
 ---
 
+<!-- 中文翻译 -->
 #### narrative.md
 
 **路径**: `design/narrative/**`
@@ -395,6 +414,7 @@ func _on_button_pressed():
 
 ---
 
+<!-- 中文翻译 -->
 #### data-files.md
 
 **路径**: `assets/data/**`
@@ -419,6 +439,7 @@ func _on_button_pressed():
 
 ---
 
+<!-- 中文翻译 -->
 #### test-standards.md
 
 **路径**: `tests/**`
@@ -441,6 +462,7 @@ def test_damage():
 
 ---
 
+<!-- 中文翻译 -->
 #### prototype-code.md
 
 **路径**: `prototypes/**`
@@ -457,6 +479,7 @@ def test_damage():
 
 ---
 
+<!-- 中文翻译 -->
 #### shader-code.md
 
 **路径**: `assets/shaders/**`
@@ -508,6 +531,7 @@ def test_damage():
 
 ## Hooks 和 Rules 最佳实践
 
+<!-- 中文翻译 -->
 ### Hooks
 
 1. **保持轻量**: Hook 执行时间应短（设置超时）
@@ -515,6 +539,7 @@ def test_damage():
 3. **提供价值**: Hook 应该提供有用的信息或防止常见错误
 4. **可配置**: 允许用户在某些情况下跳过
 
+<!-- 中文翻译 -->
 ### Rules
 
 1. **具体明确**: 规则应该清晰、可执行

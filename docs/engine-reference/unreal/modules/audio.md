@@ -1,10 +1,14 @@
-# Unreal Engine 5.7 — Audio Module Reference
+# Unreal Engine 5.7 — Audio Module Reference / Unreal Engine音频模块
+
+
+> **中文翻译**：本文档为Unreal Engine引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 **Last verified:** 2026-02-13
 **Knowledge Gap:** UE 5.7 MetaSounds production-ready
 
 ---
 
+<!-- 概述 -->
 ## Overview
 
 UE 5.7 audio systems:
@@ -14,8 +18,10 @@ UE 5.7 audio systems:
 
 ---
 
+<!-- 中文翻译 -->
 ## Basic Audio Playback
 
+<!-- 中文翻译 -->
 ### Play Sound at Location
 
 ```cpp
@@ -33,8 +39,10 @@ UGameplayStatics::PlaySoundAtLocation(GetWorld(), ExplosionSound, GetActorLocati
 
 ---
 
+<!-- 中文翻译 -->
 ## Audio Component
 
+<!-- 中文翻译 -->
 ### Audio Component (Persistent Sound)
 
 ```cpp
@@ -58,8 +66,10 @@ AudioComp->SetPitchMultiplier(1.2f);
 
 ---
 
+<!-- 中文翻译 -->
 ## 3D Spatial Audio
 
+<!-- 中文翻译 -->
 ### Attenuation Settings
 
 ```cpp
@@ -75,6 +85,7 @@ AudioComp->SetPitchMultiplier(1.2f);
 AudioComp->AttenuationSettings = AttenuationAsset;
 ```
 
+<!-- 中文翻译 -->
 ### Attenuation Override in Code
 
 ```cpp
@@ -89,8 +100,10 @@ AudioComp->bOverrideAttenuation = true;
 
 ---
 
+<!-- 中文翻译 -->
 ## MetaSounds (Procedural Audio)
 
+<!-- 中文翻译 -->
 ### Create MetaSound Source
 
 1. Content Browser > Sounds > MetaSound Source
@@ -102,6 +115,7 @@ AudioComp->bOverrideAttenuation = true;
    - **Effects**: Filters, reverb, delay
    - **Output**: Audio output
 
+<!-- 中文翻译 -->
 ### Play MetaSound
 
 ```cpp
@@ -113,6 +127,7 @@ AudioComp->SetSound(MetaSoundSource);
 AudioComp->Play();
 ```
 
+<!-- 中文翻译 -->
 ### Set MetaSound Parameters
 
 ```cpp
@@ -125,14 +140,17 @@ AudioComp->SetBoolParameter(FName("EnableReverb"), true);
 
 ---
 
+<!-- 中文翻译 -->
 ## Sound Cues (Legacy)
 
+<!-- 中文翻译 -->
 ### Create Sound Cue
 
 1. Content Browser > Sounds > Sound Cue
 2. Open Sound Cue editor
 3. Add nodes: Random, Modulator, Mixer, etc.
 
+<!-- 中文翻译 -->
 ### Use Sound Cue
 
 ```cpp
@@ -142,8 +160,10 @@ UGameplayStatics::PlaySound2D(GetWorld(), SoundCue);
 
 ---
 
+<!-- 中文翻译 -->
 ## Sound Classes & Sound Mixes
 
+<!-- 中文翻译 -->
 ### Sound Class (Volume Groups)
 
 ```cpp
@@ -158,6 +178,7 @@ UAudioSettings* AudioSettings = GetMutableDefault<UAudioSettings>();
 // Configure via Sound Class hierarchy
 ```
 
+<!-- 中文翻译 -->
 ### Sound Mix (Dynamic Mixing)
 
 ```cpp
@@ -173,8 +194,10 @@ UGameplayStatics::PopSoundMixModifier(GetWorld(), DuckedMusicMix);
 
 ---
 
+<!-- 中文翻译 -->
 ## Audio Occlusion & Reverb
 
+<!-- 中文翻译 -->
 ### Audio Occlusion (Walls Block Sound)
 
 ```cpp
@@ -184,6 +207,7 @@ AudioComp->bEnableOcclusion = true;
 // Requires geometry with collision
 ```
 
+<!-- 中文翻译 -->
 ### Reverb Volumes
 
 ```cpp
@@ -194,8 +218,10 @@ AudioComp->bEnableOcclusion = true;
 
 ---
 
+<!-- 常见模式 -->
 ## Common Patterns
 
+<!-- 中文翻译 -->
 ### Footstep Sounds (Random Variation)
 
 ```cpp
@@ -209,6 +235,7 @@ void PlayFootstep() {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Music Crossfade
 
 ```cpp
@@ -221,6 +248,7 @@ void CrossfadeMusic(float Duration) {
 }
 ```
 
+<!-- 中文翻译 -->
 ### Check if Sound is Playing
 
 ```cpp
@@ -231,8 +259,10 @@ if (AudioComp->IsPlaying()) {
 
 ---
 
+<!-- 中文翻译 -->
 ## Audio Concurrency
 
+<!-- 中文翻译 -->
 ### Limit Concurrent Sounds
 
 ```cpp
@@ -249,8 +279,10 @@ if (AudioComp->IsPlaying()) {
 
 ---
 
+<!-- 性能提示 -->
 ## Performance Tips
 
+<!-- 中文翻译 -->
 ### Audio Optimization
 
 ```cpp
@@ -270,8 +302,10 @@ if (Distance > MaxAudibleDistance) {
 
 ---
 
+<!-- 调试 -->
 ## Debugging
 
+<!-- 中文翻译 -->
 ### Audio Debug Commands
 
 ```cpp
@@ -284,6 +318,7 @@ if (Distance > MaxAudibleDistance) {
 
 ---
 
+<!-- 来源 -->
 ## Sources
 - https://docs.unrealengine.com/5.7/en-US/audio-in-unreal-engine/
 - https://docs.unrealengine.com/5.7/en-US/metasounds-in-unreal-engine/

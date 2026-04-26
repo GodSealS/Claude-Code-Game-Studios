@@ -7,6 +7,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references multiplayer / replication / networking)
@@ -18,6 +19,7 @@
 
 ## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出 -->
 ### Case 1: In-domain request — appropriate output
 **Input:** "Design state replication for player position in a 4-player co-op game."
 **Expected behavior:**
@@ -29,6 +31,7 @@
 - Does NOT implement the player movement logic itself (defers to gameplay-programmer)
 - Proposes dead-reckoning or prediction strategy to reduce visible lag
 
+<!-- 用例 2：域外请求 — 正确重定向 -->
 ### Case 2: Out-of-domain request — redirects correctly
 **Input:** "Deploy our game server to AWS EC2 and set up auto-scaling."
 **Expected behavior:**
@@ -37,6 +40,7 @@
 - Redirects the request to `devops-engineer`
 - May note it can provide the network protocol spec the server needs to implement once infrastructure is set up
 
+<!-- 中文翻译 -->
 ### Case 3: State divergence — rollback/reconciliation
 **Input:** "Under high latency, clients are diverging from the authoritative server state for physics objects."
 **Expected behavior:**
@@ -46,6 +50,7 @@
 - Does NOT change the physics simulation itself — documents the interface contract for engine-programmer
 - Explicitly lists the 'Security-Performance Trade-off' in a table format for the Technical Director's review.
 
+<!-- 中文翻译 -->
 ### Case 4: Anti-cheat conflict
 **Input:** "We want client-authoritative position for smooth movement, but anti-cheat requires server validation."
 **Expected behavior:**
@@ -54,6 +59,7 @@
 - Proposes a compromise (server validates position within a tolerance band, flags outliers) rather than unilaterally deciding
 - Documents the trade-off and escalates the final decision to `technical-director` if security-engineer and network-programmer cannot agree
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — latency budget
 **Input:** Technical preferences provided in context: target latency 80ms RTT for 95th percentile players. Request: "Design the input replication scheme for a fighting game."
 **Expected behavior:**
@@ -77,6 +83,7 @@
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Replication strategy (Case 1) should include a bandwidth calculation reviewable by technical-director
 - Rollback/reconciliation (Case 3) must document the engine-programmer interface contract clearly

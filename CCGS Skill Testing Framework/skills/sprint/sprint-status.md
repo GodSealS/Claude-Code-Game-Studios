@@ -11,6 +11,7 @@ fast, low-cost status checks during a session.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -23,6 +24,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. `/sprint-status` is a read-only reporting skill; no gates are invoked.
@@ -31,6 +33,7 @@ None. `/sprint-status` is a read-only reporting skill; no gates are invoked.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Mixed sprint, AT RISK with named blocker
 
 **Fixture:**
@@ -58,6 +61,7 @@ None. `/sprint-status` is a read-only reporting skill; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: All Stories Complete — Sprint COMPLETE verdict
 
 **Fixture:**
@@ -79,6 +83,7 @@ None. `/sprint-status` is a read-only reporting skill; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: No Active Sprint File — Guidance to run /sprint-plan
 
 **Fixture:**
@@ -101,6 +106,7 @@ None. `/sprint-status` is a read-only reporting skill; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Edge Case — Stale In Progress Story (flagged)
 
 **Fixture:**
@@ -125,6 +131,7 @@ None. `/sprint-status` is a read-only reporting skill; no gates are invoked.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Gate Compliance — Read-only; no gate invocation
 
 **Fixture:**
@@ -157,6 +164,7 @@ None. `/sprint-status` is a read-only reporting skill; no gates are invoked.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The case where multiple sprints are active simultaneously is not tested;

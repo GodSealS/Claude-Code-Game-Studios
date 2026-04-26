@@ -16,6 +16,7 @@ before writing each story file. Stories are written to
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -30,6 +31,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 In `full` mode: QL-STORY-READY check runs per story after creation. Stories that
@@ -44,6 +46,7 @@ In `solo` mode: QL-STORY-READY is skipped with equivalent notes.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Epic with 3 stories, all ADRs Accepted
 
 **Fixture:**
@@ -74,6 +77,7 @@ In `solo` mode: QL-STORY-READY is skipped with equivalent notes.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Failure Path — No epic file found
 
 **Fixture:**
@@ -96,6 +100,7 @@ In `solo` mode: QL-STORY-READY is skipped with equivalent notes.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Blocked Story — ADR is Proposed
 
 **Fixture:**
@@ -121,6 +126,7 @@ In `solo` mode: QL-STORY-READY is skipped with equivalent notes.
 
 ---
 
+<!-- 用例 4：边界情况 — 未提供参数 -->
 ### Case 4: Edge Case — No argument provided
 
 **Fixture:**
@@ -142,6 +148,7 @@ In `solo` mode: QL-STORY-READY is skipped with equivalent notes.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate — Full mode runs QL-STORY-READY; stories failing noted as NEEDS WORK
 
 **Fixture:**
@@ -181,6 +188,7 @@ In `solo` mode: QL-STORY-READY is skipped with equivalent notes.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - Integration story test evidence (playtest doc alternative) follows the same

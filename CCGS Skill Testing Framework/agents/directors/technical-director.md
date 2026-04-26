@@ -8,6 +8,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified by reading the agent's `.codebuddy/agents/technical-director.md` frontmatter:
@@ -21,6 +22,7 @@ Verified by reading the agent's `.codebuddy/agents/technical-director.md` frontm
 
 ## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出格式 -->
 ### Case 1: In-domain request — appropriate output format
 **Scenario:** An architecture document for the "Combat System" is submitted. It describes a layered design: input layer → game logic layer → presentation layer, with clearly defined interfaces between each. Request is tagged TD-ARCHITECTURE.
 **Expected:** Returns `TD-ARCHITECTURE: APPROVE` with rationale confirming that system boundaries are correctly separated and interfaces are well-defined.
@@ -30,6 +32,7 @@ Verified by reading the agent's `.codebuddy/agents/technical-director.md` frontm
 - [ ] Rationale specifically references the layered structure and interface definitions — not generic architecture advice
 - [ ] Output stays within technical scope — does not comment on whether the mechanic is fun or fits the creative vision
 
+<!-- 用例 2：域外请求 — 重定向或升级 -->
 ### Case 2: Out-of-domain request — redirects or escalates
 **Scenario:** Writer asks technical-director to review and approve the dialogue scripts for the game's opening cutscene.
 **Expected:** Agent declines to evaluate dialogue quality and redirects to narrative-director.
@@ -38,6 +41,7 @@ Verified by reading the agent's `.codebuddy/agents/technical-director.md` frontm
 - [ ] Explicitly names `narrative-director` as the correct handler
 - [ ] May note technical constraints that affect dialogue (e.g., localization string limits, data format), but defers all content decisions
 
+<!-- 用例 3：门控裁决 — 正确词汇 -->
 ### Case 3: Gate verdict — correct vocabulary
 **Scenario:** A proposed multiplayer mechanic requires raycasting against all active entities every frame to detect line-of-sight. At expected player counts (1000 entities in a large zone), this is O(n²) . Request is tagged TD-FEASIBILITY.
 **Expected:** Returns `TD-FEASIBILITY: CONCERNS` with specific citation of the O(n²) complexity and the entity count that makes this infeasible at target framerate.
@@ -47,6 +51,7 @@ Verified by reading the agent's `.codebuddy/agents/technical-director.md` frontm
 - [ ] Rationale includes the specific algorithmic complexity concern and the entity count threshold
 - [ ] Suggests at least one alternative approach (e.g., spatial partitioning, interest management) without mandating which to choose
 
+<!-- 用例 4：冲突升级 — 正确上级 -->
 ### Case 4: Conflict escalation — correct parent
 **Scenario:** game-designer wants to add a real-time physics simulation for every inventory item (hundreds of items on screen simultaneously). technical-director assesses this as technically expensive and proposes simplifying the simulation. game-designer disagrees, arguing it is essential to the game feel.
 **Expected:** technical-director clearly states the technical cost and constraints, proposes alternative implementation approaches that could achieve a similar feel, but explicitly defers the final design priority decision to creative-director as the arbiter of player experience trade-offs.
@@ -56,6 +61,7 @@ Verified by reading the agent's `.codebuddy/agents/technical-director.md` frontm
 - [ ] Explicitly defers the "is this worth the cost" decision to creative-director — does not unilaterally cut the feature
 - [ ] Does not claim authority to override game-designer's design intent
 
+<!-- 用例 5：上下文传递 — 使用提供的上下文 -->
 ### Case 5: Context pass — uses provided context
 **Scenario:** Agent receives a gate context block that includes the target platform constraints: mobile, 60fps target, 2GB RAM ceiling, no compute shaders. A proposed architecture includes a GPU-driven rendering pipeline.
 **Expected:** Assessment references the specific hardware constraints from the context, identifies the compute shader dependency as incompatible with the stated platform constraints, and returns a CONCERNS or REJECT verdict with those specifics cited.
@@ -77,6 +83,7 @@ Verified by reading the agent's `.codebuddy/agents/technical-director.md` frontm
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - TD-ADR (Architecture Decision Record approval) is not covered — a dedicated case should be added when the /architecture-decision skill produces ADR documents.
 - TD-ENGINE-RISK assessment for specific engine versions (e.g., Godot 4.6 post-cutoff APIs) is not covered — deferred to engine-specialist integration tests.

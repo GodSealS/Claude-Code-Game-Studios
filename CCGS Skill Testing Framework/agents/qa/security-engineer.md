@@ -9,6 +9,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references anti-cheat / security / vulnerability assessment)
@@ -20,6 +21,7 @@
 
 ## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出 -->
 ### Case 1: In-domain request — appropriate output
 **Input:** "Review the save data system for security issues."
 **Expected behavior:**
@@ -29,6 +31,7 @@
 - Produces a prioritized finding list (CRITICAL / HIGH / MEDIUM / LOW)
 - Does NOT change the save system code directly — produces findings for gameplay-programmer or engine-programmer to act on
 
+<!-- 用例 2：域外请求 — 正确重定向 -->
 ### Case 2: Out-of-domain request — redirects correctly
 **Input:** "Design the matchmaking algorithm to pair players by skill rating."
 **Expected behavior:**
@@ -37,6 +40,7 @@
 - Redirects the request to `network-programmer`
 - May note it can review the matchmaking system for security vulnerabilities (e.g., rating manipulation) once the design is complete
 
+<!-- 中文翻译 -->
 ### Case 3: Critical vulnerability — SQL injection
 **Input:** (Hypothetical) "Review this server-side query handler: `query = 'SELECT * FROM users WHERE id=' + user_input`"
 **Expected behavior:**
@@ -45,6 +49,7 @@
 - Recommends a security review of all other query-construction code in the codebase
 - Escalates to `technical-director` given CRITICAL severity — does not leave the finding unescalated
 
+<!-- 中文翻译 -->
 ### Case 4: Security vs. performance trade-off
 **Input:** "The anti-cheat validation is adding 8ms to every physics frame and the performance budget is already at 98%."
 **Expected behavior:**
@@ -53,6 +58,7 @@
 - Escalates to `technical-director` with both the security risk level and the performance impact quantified
 - Proposes options: async validation (reduces frame impact, adds latency), sampling-based checks (reduces frequency, accepts some cheating), or budget renegotiation
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — OWASP guidelines
 **Input:** OWASP Top 10 (2021) provided in context. Request: "Audit the game's login and account system."
 **Expected behavior:**
@@ -77,6 +83,7 @@
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Save data audit (Case 1) confirms the agent produces actionable, prioritized findings not generic advice
 - CRITICAL vulnerability escalation (Case 3) verifies the agent's severity classification and escalation path

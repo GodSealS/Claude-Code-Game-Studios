@@ -16,6 +16,7 @@ is COMPLETE when all sections are written.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -29,6 +30,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 | Gate ID      | Trigger condition              | Mode guard            |
@@ -39,6 +41,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Full mode, art bible drafted, AD-ART-BIBLE approves
 
 **Fixture:**
@@ -65,6 +68,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: AD-ART-BIBLE Returns CONCERNS — Section revised before writing
 
 **Fixture:**
@@ -91,6 +95,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Lean Mode — AD-ART-BIBLE Skipped, Written With User Approval Only
 
 **Fixture:**
@@ -114,6 +119,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Existing Art Bible — Retrofit Mode
 
 **Fixture:**
@@ -140,6 +146,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Solo Mode — AD-ART-BIBLE Skipped, Noted in Output
 
 **Fixture:**
@@ -174,6 +181,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The case where AD-ART-BIBLE returns REJECT (not just CONCERNS) is not

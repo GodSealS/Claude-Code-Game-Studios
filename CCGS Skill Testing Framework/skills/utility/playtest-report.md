@@ -15,6 +15,7 @@ a separate invocation. The verdict is COMPLETE when the report is written.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -27,6 +28,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. `/playtest-report` is a documentation utility. The CD-PLAYTEST gate is a
@@ -36,6 +38,7 @@ separate invocation and not part of this skill.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — User provides playtest notes, structured report produced
 
 **Fixture:**
@@ -65,6 +68,7 @@ separate invocation and not part of this skill.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Empty Input — Guided prompting through each section
 
 **Fixture:**
@@ -89,6 +93,7 @@ separate invocation and not part of this skill.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Multiple Testers — Aggregated feedback with majority/minority notes
 
 **Fixture:**
@@ -115,6 +120,7 @@ separate invocation and not part of this skill.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Bug Matches Existing Report — Links to existing file
 
 **Fixture:**
@@ -139,6 +145,7 @@ separate invocation and not part of this skill.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate Check — No gate; CD-PLAYTEST is a separate invocation
 
 **Fixture:**
@@ -168,6 +175,7 @@ separate invocation and not part of this skill.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The CD-PLAYTEST director gate (creative director reviews playtest insights

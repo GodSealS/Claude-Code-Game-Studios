@@ -8,6 +8,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references UMG, widget hierarchy, CommonUI)
@@ -19,6 +20,7 @@
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: In-domain request — inventory widget with data binding
 **Input**: "Create an inventory widget that shows a grid of item slots. Each slot should display item icon, quantity, and rarity color. It needs to update when the inventory changes."
 **Expected behavior**:
@@ -27,6 +29,7 @@
 - Specifies how rarity color is driven: a WidgetStyle asset or a data table lookup, not hardcoded color values
 - Output includes the widget hierarchy, binding pattern, and the refresh trigger mechanism
 
+<!-- 中文翻译 -->
 ### Case 2: Out-of-domain request — UX flow design
 **Input**: "Design the full navigation flow for our inventory system — how the player opens it, transitions to character stats, and exits to the pause menu."
 **Expected behavior**:
@@ -34,6 +37,7 @@
 - States clearly: "Navigation flow and screen transition design is owned by ux-designer; I can implement the UMG widget structure once the flow is defined"
 - Does not make UX decisions (back button behavior, transition animations, modal vs. fullscreen) without a UX spec
 
+<!-- 中文翻译 -->
 ### Case 3: Domain boundary — CommonUI input action mismatch
 **Input**: "Our inventory widget isn't responding to the controller Back button. We're using CommonUI."
 **Expected behavior**:
@@ -42,6 +46,7 @@
 - Provides the fix: verify that the widget's Back action tag matches the registered tag in the project's CommonUI input action data table
 - Distinguishes this from a hardware input binding issue (which would be Enhanced Input territory)
 
+<!-- 中文翻译 -->
 ### Case 4: Widget performance issue — many widget instances per frame
 **Input**: "Our leaderboard widget creates 500 individual WBP_LeaderboardRow instances at once. The game hitches for 300ms when opening the leaderboard."
 **Expected behavior**:
@@ -51,6 +56,7 @@
 - If ListView is not appropriate, recommends pooling: pre-instantiate a fixed number of rows and recycle them with new data
 - Output is a concrete recommendation with the specific UMG component to use, not a vague "optimize it"
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — CommonUI setup already configured
 **Input context**: Project uses CommonUI with the following registered InputAction tags: UI.Action.Confirm, UI.Action.Back, UI.Action.Pause, UI.Action.Secondary, UI.Action.Filter.
 **Input**: "Add a 'Sort Inventory' button to the inventory widget that works with CommonUI."
@@ -72,6 +78,7 @@
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Case 3 (CommonUI input routing) requires project to have CommonUI configured; test is skipped if project does not use CommonUI
 - Case 4 (performance) is a high-impact failure mode — 300ms hitches are shipping-blocking; prioritize this test case

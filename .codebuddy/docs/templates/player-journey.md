@@ -82,6 +82,7 @@ first impression", "Recommend it to no one."]
 
 ---
 
+<!-- 中文翻译 -->
 ### Phase 2: Orientation (5-30 minutes)
 
 **Emotional state on arrival**: [Player is intrigued but not yet committed.
@@ -106,6 +107,7 @@ a system or interaction that hints "this goes further than I thought."]
 
 ---
 
+<!-- 中文翻译 -->
 ### Phase 3: First Mastery (30 minutes - 2 hours)
 
 **Emotional state on arrival**: [Player understands the basics and is testing
@@ -134,6 +136,7 @@ the game when it breaks."]
 
 ---
 
+<!-- 中文翻译 -->
 ### Phase 4: Depth Discovery (2-10 hours)
 
 **Emotional state on arrival**: [Player has a working strategy and is starting
@@ -164,6 +167,7 @@ the game and feels mild disappointment", "Player recommends the game but says
 
 ---
 
+<!-- 中文翻译 -->
 ### Phase 5: Habitual Play (10-50 hours)
 
 > *Note: Not applicable to short-form games (visual novels, short narrative
@@ -195,6 +199,7 @@ strong opinions about it."]
 
 ---
 
+<!-- 中文翻译 -->
 ### Phase 6: Long-Term Engagement (50+ hours)
 
 > *Note: Only applies to games designed for extended play — live service games,
@@ -223,6 +228,7 @@ social influence with them, accelerating churn in the broader player base."]
 
 ---
 
+<!-- 中文翻译 -->
 ## Critical Moments
 
 > **Guidance**: These are specific, individual events — not phases — that
@@ -242,6 +248,7 @@ social influence with them, accelerating churn in the broader player base."]
 
 ---
 
+<!-- 中文翻译 -->
 ## Retention Hooks
 
 > **Guidance**: Retention hooks are the specific mechanisms that pull the player
@@ -261,6 +268,7 @@ social influence with them, accelerating churn in the broader player base."]
 
 ---
 
+<!-- 中文翻译 -->
 ## Player Progression Feel
 
 [Describe HOW the player should experience their progression — not the mechanical
@@ -287,6 +295,7 @@ concretely look and feel like at the beginning, middle, and end of the journey?]
 
 ---
 
+<!-- 中文翻译 -->
 ## Anti-Patterns to Avoid
 
 > **Guidance**: Anti-patterns are recurring design mistakes that reliably
@@ -314,6 +323,7 @@ concretely look and feel like at the beginning, middle, and end of the journey?]
 
 ---
 
+<!-- 中文翻译 -->
 ## Validation Questions
 
 > **Guidance**: These are questions a playtester session facilitator asks
@@ -348,6 +358,7 @@ concretely look and feel like at the beginning, middle, and end of the journey?]
 
 ---
 
+<!-- 待解决问题 -->
 ## Open Questions
 
 | Question | Owner | Deadline | Resolution |

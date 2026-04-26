@@ -8,6 +8,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified by reading the agent's `.codebuddy/agents/creative-director.md` frontmatter:
@@ -21,6 +22,7 @@ Verified by reading the agent's `.codebuddy/agents/creative-director.md` frontma
 
 ## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出格式 -->
 ### Case 1: In-domain request — appropriate output format
 **Scenario:** A game concept document is submitted for pillar review. The concept describes a narrative survival game built around three pillars: "emergent stories," "meaningful sacrifice," and "lived-in world." Request is tagged CD-PILLARS.
 **Expected:** Returns `CD-PILLARS: APPROVE` with rationale citing how each pillar is represented in the concept and any reinforcing or weakening signals found in the document.
@@ -30,6 +32,7 @@ Verified by reading the agent's `.codebuddy/agents/creative-director.md` frontma
 - [ ] Rationale references the three specific pillars by name, not generic creative advice
 - [ ] Output stays within creative scope — does not comment on engine feasibility or sprint schedule
 
+<!-- 用例 2：域外请求 — 重定向或升级 -->
 ### Case 2: Out-of-domain request — redirects or escalates
 **Scenario:** Developer asks creative-director to review a proposed PostgreSQL schema for storing player save data.
 **Expected:** Agent declines to evaluate the schema and redirects to technical-director.
@@ -38,6 +41,7 @@ Verified by reading the agent's `.codebuddy/agents/creative-director.md` frontma
 - [ ] Explicitly names `technical-director` as the correct handler
 - [ ] May note whether the data model has creative implications (e.g., what player data is tracked), but defers structural decisions entirely
 
+<!-- 用例 3：门控裁决 — 正确词汇 -->
 ### Case 3: Gate verdict — correct vocabulary
 **Scenario:** A GDD for the "Crafting" system is submitted. Section 4 (Formulas) defines a resource decay formula that punishes exploration — contradicting the Player Fantasy section which calls for "freedom to roam without fear." Request is tagged CD-GDD-ALIGN.
 **Expected:** Returns `CD-GDD-ALIGN: CONCERNS` with specific citation of the contradiction between the formula behavior and the Player Fantasy statement.
@@ -47,6 +51,7 @@ Verified by reading the agent's `.codebuddy/agents/creative-director.md` frontma
 - [ ] Rationale quotes or directly references GDD Section 4 (Formulas) and the Player Fantasy section
 - [ ] Does not prescribe a specific formula fix — that belongs to systems-designer
 
+<!-- 用例 4：冲突升级 — 正确上级 -->
 ### Case 4: Conflict escalation — correct parent
 **Scenario:** technical-director raises a concern that the core loop mechanic (real-time branching conversations) is prohibitively expensive to implement and recommends cutting it. creative-director disagrees on creative grounds.
 **Expected:** creative-director acknowledges the technical constraint, does not override technical-director's feasibility assessment, but retains authority to define what the creative goal is. For the conflict itself, creative-director is the top-level creative escalation point and defers to technical-director on implementation feasibility while advocating for the design intent. The resolution path is for both to jointly present trade-off options to the user.
@@ -56,6 +61,7 @@ Verified by reading the agent's `.codebuddy/agents/creative-director.md` frontma
 - [ ] Proposes presenting trade-offs to the user rather than resolving unilaterally
 - [ ] Does not claim to own implementation decisions
 
+<!-- 用例 5：上下文传递 — 使用提供的上下文 -->
 ### Case 5: Context pass — uses provided context
 **Scenario:** Agent receives a gate context block that includes the game pillars document (`design/gdd/pillars.md`) and a new mechanic spec for review. The pillars document defines "player authorship," "consequence permanence," and "world responsiveness" as the three core pillars.
 **Expected:** Assessment uses the exact pillar vocabulary from the provided document, not generic creative heuristics. Any approval or concern is tied back to one or more of the three named pillars.
@@ -77,6 +83,7 @@ Verified by reading the agent's `.codebuddy/agents/creative-director.md` frontma
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Multi-gate scenario (e.g., single submission triggering both CD-PILLARS and CD-GDD-ALIGN) is not covered here — deferred to integration tests.
 - CD-PHASE-GATE (full phase advancement) involves synthesizing multiple sub-gate results; this complex case is deferred.

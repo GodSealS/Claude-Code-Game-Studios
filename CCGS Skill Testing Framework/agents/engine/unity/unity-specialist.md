@@ -8,6 +8,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references Unity patterns / MonoBehaviour / subsystem decisions)
@@ -19,6 +20,7 @@ No gate IDs assigned.
 
 ## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出 -->
 ### Case 1: In-domain request — appropriate output
 **Input:** "Should I use MonoBehaviour or ScriptableObject for storing enemy configuration data?"
 **Expected behavior:**
@@ -29,6 +31,7 @@ No gate IDs assigned.
 - Notes that MonoBehaviour can reference the ScriptableObject for runtime use
 - Provides a concrete example of what the ScriptableObject class definition looks like (does not produce full code — refers to engine-programmer or gameplay-programmer for implementation)
 
+<!-- 用例 2：错误引擎重定向 -->
 ### Case 2: Wrong-engine redirect
 **Input:** "Set up a Node scene tree with signals for this enemy system."
 **Expected behavior:**
@@ -38,6 +41,7 @@ No gate IDs assigned.
 - Maps the concepts: Godot Node → Unity MonoBehaviour, Godot Signal → C# event / UnityEvent
 - Confirms the project is Unity-based before proceeding
 
+<!-- 中文翻译 -->
 ### Case 3: Unity version API flag
 **Input:** "Use the new Unity 6 GPU resident drawer for batch rendering."
 **Expected behavior:**
@@ -47,6 +51,7 @@ No gate IDs assigned.
 - Directs to verify against official Unity 6 documentation
 - Does NOT assume the project is on Unity 6 without confirmation
 
+<!-- 中文翻译 -->
 ### Case 4: DOTS vs. MonoBehaviour conflict
 **Input:** "The combat system uses MonoBehaviour for state management, but we want to add a DOTS-based projectile system. Can they coexist?"
 **Expected behavior:**
@@ -57,6 +62,7 @@ No gate IDs assigned.
 - Defers to `unity-dots-specialist` for the DOTS-side implementation details
 - Explicitly warns against 'ScriptableObject variables' for state management in a DOTS hybrid environment due to thread-safety concerns, recommending a clean data-copy bridge instead.
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — Unity version
 **Input:** Project context provided: Unity 2023.3 LTS. Request: "Configure the new Input System for this project."
 **Expected behavior:**
@@ -78,6 +84,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - MonoBehaviour vs. ScriptableObject (Case 1) should be documented as an ADR if it results in a project-level decision
 - Version flag (Case 3) confirms the agent does not assume the latest Unity version without context

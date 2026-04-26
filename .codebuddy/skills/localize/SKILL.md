@@ -38,8 +38,7 @@ If no subcommand is provided, output usage and stop. Verdict: **FAIL** — missi
 ## Phase 2A: Scan Mode / 阶段 2A：扫描模式
 
 Search `src/` for hardcoded user-facing strings:
-
-> **中文翻译**：在 `src/` 中搜索硬编码的面向用户的字符串：
+/ 在 `src/` 中搜索硬编码的面向用户的字符串：
 
 - String literals in UI code not wrapped in a localization function (`tr()`, `Tr()`, `NSLocalizedString`, `GetText`, etc.) / UI 代码中未包装在本地化函数中的字符串字面量
 - Concatenated strings that should be parameterized / 应参数化的拼接字符串
@@ -47,8 +46,7 @@ Search `src/` for hardcoded user-facing strings:
 - Format strings that mix locale-sensitive data (numbers, dates, currencies) without locale-aware formatting / 混合区域敏感数据（数字、日期、货币）但未使用区域感知格式的格式字符串
 
 Search for localization anti-patterns:
-
-> **中文翻译**：搜索本地化反模式：
+/ 搜索本地化反模式：
 
 - Date/time formatting not using locale-aware functions / 未使用区域感知函数的日期/时间格式化
 - Number formatting without locale awareness (`1,000` vs `1.000`) / 无区域感知的数字格式化
@@ -68,7 +66,7 @@ Report all findings with file paths and line numbers. This mode is read-only —
 - Scan all source files for localized string references / 扫描所有源文件中的本地化字符串引用
 - Compare against the existing string table in `assets/data/strings/` / 与 `assets/data/strings/` 中现有的字符串表比较
 - Generate new entries for strings not yet keyed / 为尚未设置键的字符串生成新条目
-- Suggest key names following the convention: `[category].[subcategory].[description]` / 按照约定建议键名
+- Suggest key names following the convention: `[category].[subcategory].[description]` / 按照约定建议键名：`[类别].[子类别].[描述]`
   - Example: `ui.hud.health_label`, `dialogue.npc.merchant.greeting`, `menu.main.play_button`
 - Each new entry must include a `context` field — a translator comment explaining: / 每个新条目必须包含 `context` 字段——一个翻译员注释，说明：
   - Where it appears (which screen, which scene) / 出现位置（哪个屏幕、哪个场景）
@@ -93,8 +91,7 @@ If yes, write only the diff (new entries), not a full replacement. Verdict: **CO
 ## Phase 2C: Validate Mode / 阶段 2C：验证模式
 
 Read all string table files in `assets/data/strings/`. For each locale, check:
-
-> **中文翻译**：读取 `assets/data/strings/` 中的所有字符串表文件。对每个语言区域检查：
+/ 读取 `assets/data/strings/` 中的所有字符串表文件。对每个语言区域检查：
 
 - **Completeness** — key exists in source (en) but no translation for this locale / **完整性** — 键存在于源（en）但此语言区域无翻译
 - **Placeholder mismatches** — source has `{name}` but translation omits it or adds extras / **占位符不匹配** — 源有 `{name}` 但翻译遗漏或添加了额外的
@@ -159,28 +156,30 @@ Generate `production/localization/translator-brief-[locale]-[date].md`:
 
 ## Game Overview
 [2-3 paragraph summary of the game, genre, tone, and audience]
+/ [2-3段游戏摘要，包括类型、基调和受众]
 
 ## Tone and Voice
-- **Overall tone**: [e.g., "Darkly comic, not slapstick — think Terry Pratchett, not Looney Tunes"]
-- **Player address**: [e.g., "Second person, informal. Never formal 'vous' — always 'tu' for French"]
-- **Profanity policy**: [e.g., "Mild — PG-13 equivalent. Match intensity to source, do not soften or escalate"]
-- **Humour**: [e.g., "Wordplay exists — if a pun cannot translate, invent an equivalent local joke; do not translate literally"]
+- **Overall tone**: [e.g., "Darkly comic, not slapstick — think Terry Pratchett, not Looney Tunes"] / **整体基调**
+- **Player address**: [e.g., "Second person, informal. Never formal 'vous' — always 'tu' for French"] / **对玩家的称呼**
+- **Profanity policy**: [e.g., "Mild — PG-13 equivalent. Match intensity to source, do not soften or escalate"] / **脏话策略**
+- **Humour**: [e.g., "Wordplay exists — if a pun cannot translate, invent an equivalent local joke; do not translate literally"] / **幽默**
 
 ## Character Glossary
 | Name | Role | Personality | Notes |
 |------|------|-------------|-------|
-| [Name] | [Role] | [Personality] | [Do not translate / transliterate as X] |
+| [Name] | [Role] | [Personality] | [Do not translate / transliterate as X] / [不翻译 / 音译为 X] |
 
 ## World Glossary
 | Term | Meaning | Notes |
 |------|---------|-------|
-| [Term] | [What it means] | [Keep in English / translate as X] |
+| [Term] | [What it means] | [Keep in English / translate as X] / [保持英文 / 翻译为 X] |
 
 ## Do Not Translate List
 The following must appear verbatim in all locales:
+/ 以下内容必须在所有语言区域中原样显示：
 - [Game name]
-- [UI terms that match in-engine labels]
-- [Brand or trademark names]
+- [UI terms that match in-engine labels] / [匹配引擎内标签的 UI 术语]
+- [Brand or trademark names] / [品牌或商标名称]
 
 ## Placeholder Reference
 | Placeholder | What it represents | Example |
@@ -192,9 +191,11 @@ The following must appear verbatim in all locales:
 Tight UI fields with hard limits are marked in the string table `context` field.
 Where no limit is stated, target ±30% of the English length as a guideline.
 
+> **中文翻译**：有硬性限制的紧凑 UI 字段在字符串表的 `context` 字段中标记。如未说明限制，以英文长度的 ±30% 为指导目标。
+
 ## Contact
-Direct questions to: [placeholder for user/team contact]
-Delivery format: JSON, same schema as strings-en.json
+Direct questions to: [placeholder for user/team contact] / 直接联系：[用户/团队联系方式占位符]
+Delivery format: JSON, same schema as strings-en.json / 交付格式：JSON，与 strings-en.json 相同的架构
 ```
 
 Ask: "May I write this translator brief to `production/localization/translator-brief-[locale]-[date].md`?"
@@ -206,8 +207,7 @@ Ask: "May I write this translator brief to `production/localization/translator-b
 ## Phase 2F: Cultural Review Mode / 阶段 2F：文化审查模式
 
 Spawn `localization-lead` via Task. Ask them to audit the following for cultural sensitivity across the target locales (read from `assets/data/strings/` and `assets/`):
-
-> **中文翻译**：通过 Task 启动 `localization-lead`。要求他们审核目标语言区域的文化敏感性（从 `assets/data/strings/` 和 `assets/` 读取）：
+/ 通过 Task 启动 `localization-lead`。要求他们审核目标语言区域的文化敏感性（从 `assets/data/strings/` 和 `assets/` 读取）：
 
 ### Content Areas to Review / 审查内容领域
 
@@ -237,8 +237,7 @@ Spawn `localization-lead` via Task. Ask them to audit the following for cultural
 - Stereotyped representation of nationalities, religions, or ethnic groups / 对国籍、宗教或族裔群体的刻板表现
 
 Present findings as a table:
-
-> **中文翻译**：以表格形式呈现发现：
+/ 以表格形式呈现发现：
 
 | Finding | Locale(s) Affected | Severity | Recommended Action |
 |---------|--------------------|----------|--------------------|
@@ -257,8 +256,7 @@ Ask: "May I write this cultural review report to `production/localization/cultur
 ## Phase 2G: VO Pipeline Mode / 阶段 2G：语音管线模式
 
 Manage the voice-over localization process. Determine the sub-task from the argument:
-
-> **中文翻译**：管理语音本地化流程。从参数确定子任务：
+/ 管理语音本地化流程。从参数确定子任务：
 
 - `vo-pipeline scan` — identify all dialogue lines that require VO recording / 识别所有需要语音录制的对话行
 - `vo-pipeline script` — generate recording scripts with director notes / 生成带导演注释的录制脚本
@@ -273,8 +271,7 @@ Read `assets/data/strings/` and `design/narrative/`. Identify:
 - Lines not yet recorded / 尚未录制的行
 
 Output a recording manifest:
-
-> **中文翻译**：输出录制清单：
+/ 输出录制清单：
 
 ```
 ## VO Recording Manifest — [Date]
@@ -288,8 +285,7 @@ Output a recording manifest:
 ### VO Pipeline: Script / 语音管线：脚本
 
 Generate a recording script document for each character, grouped by scene. Include:
-
-> **中文翻译**：为每个角色生成录制脚本文档，按场景分组。包括：
+/ 为每个角色生成录制脚本文档，按场景分组。包括：
 
 - Character name and brief personality note / 角色名称和简短性格说明
 - Full dialogue line with pronunciation guide for unusual proper nouns / 完整对话行及不常见专有名词的发音指南
@@ -323,8 +319,7 @@ just translating text. This mode validates the implementation.
 > **中文翻译**：从右到左的语言（阿拉伯语、希伯来语、波斯语、乌尔都语）需要超越文本翻译的布局镜像。此模式验证实现。
 
 Read `.codebuddy/docs/technical-preferences.md` to determine the engine. Then check:
-
-> **中文翻译**：读取 `.codebuddy/docs/technical-preferences.md` 确定引擎。然后检查：
+/ 读取 `.codebuddy/docs/technical-preferences.md` 确定引擎。然后检查：
 
 **Layout mirroring / 布局镜像**
 - Is RTL layout enabled in the engine? (Godot: `Control.layout_direction`, Unity: `RTL Support` package, Unreal: text direction flags) / 引擎中是否启用了 RTL 布局？
@@ -345,6 +340,7 @@ Read `.codebuddy/docs/technical-preferences.md` to determine the engine. Then ch
 - Do any text-in-image assets exist that require RTL versions? / 是否存在需要 RTL 版本的图文资产？
 
 Grep patterns to check:
+/ 要检查的 Grep 模式：
 - Engine-specific RTL flags in scene/prefab files / 场景/预制件文件中引擎特定的 RTL 标志
 - Any `HBoxContainer`, `LinearLayout`, `HorizontalBox` nodes — verify layout_direction settings / 任何 `HBoxContainer`、`LinearLayout`、`HorizontalBox` 节点——验证 layout_direction 设置
 - String concatenation with `+` near dialogue or UI code / 对话或 UI 代码附近使用 `+` 的字符串拼接
@@ -378,22 +374,21 @@ If already frozen:
 > **中文翻译**："字符串冻结当前处于活动状态（于 [date] 调用）。自冻结以来已有 [N] 个字符串被添加或修改。这些是冻结违规——它们需要重新翻译或批准的冻结解除。"
 
 If not frozen, present the pre-freeze checklist:
-
-> **中文翻译**：如果未冻结，呈现冻结前检查清单：
+/ 如果未冻结，呈现冻结前检查清单：
 
 ```
 Pre-Freeze Checklist
-[ ] All planned UI screens are implemented
-[ ] All dialogue lines are final (no further narrative revisions planned)
-[ ] All system strings (error messages, tutorial text) are complete
-[ ] /localize scan shows zero hardcoded strings
-[ ] /localize validate shows no placeholder mismatches in source (en)
-[ ] Marketing strings (store description, achievements) are final
+[ ] All planned UI screens are implemented / 所有计划的 UI 屏幕已实现
+[ ] All dialogue lines are final (no further narrative revisions planned) / 所有对话行已定稿（不再计划叙事修订）
+[ ] All system strings (error messages, tutorial text) are complete / 所有系统字符串（错误消息、教程文本）已完成
+[ ] /localize scan shows zero hardcoded strings / /localize scan 显示零硬编码字符串
+[ ] /localize validate shows no placeholder mismatches in source (en) / /localize validate 显示源（en）中无占位符不匹配
+[ ] Marketing strings (store description, achievements) are final / 营销字符串（商店描述、成就）已定稿
 ```
 
 Use `AskUserQuestion`:
 - Prompt: "Are all items above confirmed? Calling string freeze locks the source table." / 提示："以上所有项目是否已确认？调用字符串冻结将锁定源表。"
-- Options: `[A] Yes — call string freeze now` / `[B] No — I still have strings to add` / 选项：`[A] 是——现在调用字符串冻结` / `[B] 否——我还有字符串要添加`
+- Options: `[A] Yes — call string freeze now` / `[A] 是——现在调用字符串冻结` `[B] No — I still have strings to add` / `[B] 否——我还有字符串要添加`
 
 If [A]: Write `production/localization/freeze-status.md`:
 
@@ -407,6 +402,7 @@ If [A]: Write `production/localization/freeze-status.md`:
 
 ## Post-Freeze Changes
 [Any strings added or modified after freeze are listed here automatically by /localize extract]
+/ [冻结后添加或修改的任何字符串由 /localize extract 自动在此列出]
 ```
 
 ### freeze lift / 冻结解除
@@ -433,14 +429,14 @@ before any locale ships. This is not the same as `/validate` (which checks compl
 > **中文翻译**：本地化 QA 是在翻译交付后但任何语言区域发布前运行的专用测试阶段。这与 `/validate`（检查完整性）不同——这是基于结构化游戏流程的质量检查。
 
 Spawn `localization-lead` via Task with:
+/ 通过 Task 启动 `localization-lead`，附带：
 - The target locale(s) to QA / 要 QA 的目标语言区域
 - The list of all screens/flows in the game (from `design/gdd/` or `/content-audit` output) / 游戏中所有屏幕/流程的列表
 - The current `/localize validate` report / 当前的 `/localize validate` 报告
 - The cultural review report (if it exists) / 文化审查报告（如存在）
 
 Ask the localization-lead to produce a QA plan covering:
-
-> **中文翻译**：要求 localization-lead 生成 QA 计划，涵盖：
+/ 要求 localization-lead 生成 QA 计划，涵盖：
 
 1. **Functional string check** — every string displays in-game without truncation, placeholder errors, or encoding corruption / **功能字符串检查** — 每个字符串在游戏中正确显示，无截断、占位符错误或编码损坏
 2. **UI overflow check** — translated strings that exceed UI bounds (even if within character limits, some languages expand) / **UI 溢出检查** — 超出 UI 边界的翻译字符串（即使在字符限制内，某些语言也会扩展）
@@ -450,8 +446,7 @@ Ask the localization-lead to produce a QA plan covering:
 6. **Platform cert requirements** — check platform-specific localization requirements (age ratings text, legal notices, ESRB/PEGI/CERO text) / **平台认证要求** — 检查平台特定的本地化要求
 
 Output a QA verdict per locale:
-
-> **中文翻译**：每个语言区域输出 QA 裁决：
+/ 每个语言区域输出 QA 裁决：
 
 ```
 ## Localization QA Verdict — [Locale]
@@ -466,12 +461,12 @@ Output a QA verdict per locale:
 | LOC-001 | UI Overflow | "Settings" button text overflows on [Screen] | BLOCKING | Open |
 | LOC-002 | Translation | [Key] translation is literal — sounds unnatural | ADVISORY | Open |
 
-### Conditions (if PASS WITH CONDITIONS)
-- [Condition 1 — must resolve before ship]
+### Conditions (if PASS WITH CONDITIONS) / 条件（如果为 PASS WITH CONDITIONS）
+- [Condition 1 — must resolve before ship] / [条件1——发布前必须解决]
 
 ### Sign-Off
-[ ] All BLOCKING findings resolved
-[ ] Producer approves shipping [Locale]
+[ ] All BLOCKING findings resolved / 所有 BLOCKING 发现已解决
+[ ] Producer approves shipping [Locale] / 制作人批准发布 [语言区域]
 ```
 
 Ask: "May I write this localization QA report to `production/localization/loc-qa-[locale]-[date].md`?"
@@ -499,16 +494,16 @@ Ask: "May I write this localization QA report to `production/localization/loc-qa
 ### Recommended Workflow / 推荐工作流
 
 ```
-/localize scan            → find hardcoded strings
-/localize extract         → build string table
-/localize freeze          → lock source before sending to translators
-/localize brief           → generate translator briefing document
-[Send to translators]
-/localize validate        → check returned translations
-/localize cultural-review → flag culturally sensitive content
-/localize rtl-check       → if shipping Arabic / Hebrew / Persian
-/localize vo-pipeline     → if shipping dubbed VO
-/localize qa              → full localization QA pass
+/localize scan            → find hardcoded strings / 查找硬编码字符串
+/localize extract         → build string table / 构建字符串表
+/localize freeze          → lock source before sending to translators / 在发送给翻译员前锁定源
+/localize brief           → generate translator briefing document / 生成翻译员简报文档
+[Send to translators]     / [发送给翻译员]
+/localize validate        → check returned translations / 检查返回的翻译
+/localize cultural-review → flag culturally sensitive content / 标记文化敏感内容
+/localize rtl-check       → if shipping Arabic / Hebrew / Persian / 如果发布阿拉伯语/希伯来语/波斯语
+/localize vo-pipeline     → if shipping dubbed VO / 如果发布配音语音
+/localize qa              → full localization QA pass / 完整本地化 QA 通过
 ```
 
 After `qa` returns PASS for all shipping locales, include the QA report path when running `/gate-check release`.

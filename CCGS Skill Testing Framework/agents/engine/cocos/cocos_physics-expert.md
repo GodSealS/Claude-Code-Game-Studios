@@ -1,6 +1,9 @@
-# Agent Test Spec: cocos_physics-expert
+# Agent Test Spec: cocos_physics-expert / Cocos Creator 3D物理专家代理测试规范
 
-## Agent Summary
+> **中文翻译**：此文件为Cocos Creator 3D物理专家代理的测试规范。所有测试断言和用例保持英文原文以确保可执行性。
+
+
+## Agent Summary / 代理摘要
 Domain: Cocos Creator 3D physics systems: rigid body dynamics, collision detection, joints, raycasting, and physics simulation optimization.
 Does NOT own: 2D physics (cocos_physics-2d-expert), 3D rendering (cocos_3d-expert), animation (cocos_animation-expert).
 Model tier: DeepSeek-V3.2 (default).
@@ -8,7 +11,7 @@ No gate IDs assigned.
 
 ---
 
-## Static Assertions (Structural)
+## Static Assertions (Structural) / 静态断言（结构）
 
 - [ ] `description:` field is present and domain-specific (references 3D physics, rigid bodies, collision detection, joints)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
@@ -18,8 +21,9 @@ No gate IDs assigned.
 
 ---
 
-## Test Cases
+## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出 -->
 ### Case 1: In-domain request — appropriate output
 **Input:** "Create a dynamic rigid body for a ball that bounces with restitution and friction."
 **Expected behavior:**
@@ -29,6 +33,7 @@ No gate IDs assigned.
 - Handles physics material assignment
 - Follows Cocos Creator's physics component patterns
 
+<!-- 用例 2：错误域重定向 -->
 ### Case 2: Wrong-domain redirect
 **Input:** "Implement 2D platformer physics with character controller and slope handling."
 **Expected behavior:**
@@ -37,6 +42,7 @@ No gate IDs assigned.
 - Refers to cocos_physics-2d-expert for 2D physics and platformer mechanics
 - May provide conceptual mapping if relevant (e.g., "3D physics uses different coordinate system")
 
+<!-- 中文翻译 -->
 ### Case 3: Collision detection and response
 **Input:** "Set up collision events between player and enemy to trigger damage."
 **Expected behavior:**
@@ -46,6 +52,7 @@ No gate IDs assigned.
 - Provides example of collision debugging visualization
 - Follows project's event-driven architecture
 
+<!-- 中文翻译 -->
 ### Case 4: Raycasting for interaction
 **Input:** "Implement raycast from camera to select objects in 3D world."
 **Expected behavior:**
@@ -55,6 +62,7 @@ No gate IDs assigned.
 - Provides visual feedback for selected objects
 - Includes fallback for no-hit scenarios
 
+<!-- 中文翻译 -->
 ### Case 5: Joint constraints
 **Input:** "Create a hinge joint between two rigid bodies for door opening mechanism."
 **Expected behavior:**
@@ -64,6 +72,7 @@ No gate IDs assigned.
 - Handles joint breaking under excessive force
 - Follows Cocos Creator's joint component patterns
 
+<!-- 中文翻译 -->
 ### Case 6: Physics performance optimization
 **Input:** "Our physics simulation is slowing down with many dynamic objects. How to optimize?"
 **Expected behavior:**
@@ -75,6 +84,7 @@ No gate IDs assigned.
 
 ---
 
+<!-- 协议合规性 -->
 ## Protocol Compliance
 
 - [ ] Stays within declared domain (3D physics, rigid bodies, collision detection, joints)

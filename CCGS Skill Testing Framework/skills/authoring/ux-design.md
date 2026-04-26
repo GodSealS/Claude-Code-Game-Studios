@@ -16,6 +16,7 @@ rather than replace. Verdict is COMPLETE when all sections are written.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -28,6 +29,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. `/ux-design` has no inline director gates. `/ux-review` is the separate
@@ -37,6 +39,7 @@ review skill invoked after this skill completes.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — New HUD spec, all sections authored and written
 
 **Fixture:**
@@ -65,6 +68,7 @@ review skill invoked after this skill completes.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Existing UX Spec — Retrofit: user picks section to update
 
 **Fixture:**
@@ -91,6 +95,7 @@ review skill invoked after this skill completes.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Dependency Gap — Spec references a system with no design doc
 
 **Fixture:**
@@ -115,6 +120,7 @@ review skill invoked after this skill completes.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: No Argument Provided — Usage error
 
 **Fixture:**
@@ -136,6 +142,7 @@ review skill invoked after this skill completes.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate Check — No gate; ux-review is the separate review skill
 
 **Fixture:**
@@ -166,6 +173,7 @@ review skill invoked after this skill completes.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - Interaction state enumeration (normal/hover/focus/disabled/error) is a core

@@ -8,6 +8,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified by reading the agent's `.codebuddy/agents/game-designer.md` frontmatter:
@@ -21,6 +22,7 @@ Verified by reading the agent's `.codebuddy/agents/game-designer.md` frontmatter
 
 ## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出格式 -->
 ### Case 1: In-domain request — appropriate output format
 **Scenario:** A mechanic spec for a "Stamina-Based Dodge" system is submitted for review. The spec defines: the player has a stamina pool (100 units), each dodge costs 25 stamina, stamina regenerates at 20 units/second when not dodging, and the dodge grants 0.3 seconds of invincibility. The core loop interaction is clearly described, rules are unambiguous, and edge cases (stamina at 0, dodge during regen) are addressed.
 **Expected:** Returns `APPROVED` with rationale confirming the core loop clarity, unambiguous rules, and edge case coverage.
@@ -30,6 +32,7 @@ Verified by reading the agent's `.codebuddy/agents/game-designer.md` frontmatter
 - [ ] Output stays within design scope — does not comment on how to implement it in code or what art assets it requires
 - [ ] Verdict is clearly labeled with context (e.g., "Mechanic Spec Review: APPROVED")
 
+<!-- 用例 2：域外请求 — 重定向或升级 -->
 ### Case 2: Out-of-domain request — redirects or escalates
 **Scenario:** A team member asks game-designer to write the in-world lore explanation for why the stamina system exists (e.g., the narrative reason characters have stamina limits in the game world).
 **Expected:** Agent declines to write narrative/lore content and redirects to writer or narrative-director.
@@ -38,6 +41,7 @@ Verified by reading the agent's `.codebuddy/agents/game-designer.md` frontmatter
 - [ ] Explicitly names `writer` or `narrative-director` as the correct handler
 - [ ] May note the design intent that the lore should support (e.g., "the stamina system should reinforce the physical realism theme"), but defers the writing to the narrative team
 
+<!-- 用例 3：门控裁决 — 正确词汇 -->
 ### Case 3: Gate verdict — correct vocabulary
 **Scenario:** A mechanic spec for "Environmental Hazard Damage" is submitted. The spec defines three hazard types (fire, acid, electricity) but does not specify what happens when a player is simultaneously affected by multiple hazard types, what happens when a hazard is applied during the invincibility window from a dodge, or what the damage frequency is (per-second, per-tick, on-enter).
 **Expected:** Returns REJECT [list of blockers] with specific identification of the undefined edge cases...
@@ -47,6 +51,7 @@ Verified by reading the agent's `.codebuddy/agents/game-designer.md` frontmatter
 - [ ] Does not reject the entire mechanic — identifies the specific gaps to fill
 - [ ] Provides actionable guidance on what to define (not how to implement it)
 
+<!-- 用例 4：冲突升级 — 正确上级 -->
 ### Case 4: Conflict escalation — correct parent
 **Scenario:** systems-designer proposes a damage formula with 6 variables and complex scaling interactions, arguing it produces the best tuning granularity. game-designer believes the formula is too complex for players to intuit and want a simpler 2-variable version.
 **Expected:** game-designer owns the conceptual rule and player experience intention ("the damage should feel understandable to players"), but defers the formula granularity question to systems-designer. If the disagreement cannot be resolved between them (one wants complex, one wants simple), escalate to creative-director for a player experience ruling.
@@ -56,6 +61,7 @@ Verified by reading the agent's `.codebuddy/agents/game-designer.md` frontmatter
 - [ ] Escalates unresolved disagreement to `creative-director` for player experience arbiter ruling
 - [ ] Does not unilaterally impose a formula structure on systems-designer
 
+<!-- 用例 5：上下文传递 — 使用提供的上下文 -->
 ### Case 5: Context pass — uses provided context
 **Scenario:** Agent receives a gate context block that includes the game's three pillars: "player authorship," "consequence permanence," and "world responsiveness." A new mechanic spec for "permadeath with legacy bonuses" is submitted for review.
 **Expected:** Assessment evaluates the mechanic against all three provided pillars — how does permadeath support player authorship, how do legacy bonuses express consequence permanence, and how does the world respond to a player's death? Uses the pillar vocabulary directly in the rationale.
@@ -77,6 +83,7 @@ Verified by reading the agent's `.codebuddy/agents/game-designer.md` frontmatter
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - Economy design review (resource sinks, faucets, inflation prevention) is not covered — a dedicated case should be added.
 - Progression system review (XP curves, unlock gates, player power trajectory) is not covered.

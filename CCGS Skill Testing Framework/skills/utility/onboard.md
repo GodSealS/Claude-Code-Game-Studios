@@ -15,6 +15,7 @@ always ONBOARDING COMPLETE — the skill is purely informational.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -27,6 +28,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. `/onboard` is a read-only orientation skill. No director gates apply.
@@ -35,6 +37,7 @@ None. `/onboard` is a read-only orientation skill. No director gates apply.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Configured project in Production stage with active sprint
 
 **Fixture:**
@@ -64,6 +67,7 @@ None. `/onboard` is a read-only orientation skill. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Fresh Project — No engine, no sprint, suggests /start
 
 **Fixture:**
@@ -89,6 +93,7 @@ None. `/onboard` is a read-only orientation skill. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: No CLAUDE.md Found — Error with remediation
 
 **Fixture:**
@@ -111,6 +116,7 @@ None. `/onboard` is a read-only orientation skill. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Role-Specific Onboarding — User specifies "artist" role
 
 **Fixture:**
@@ -137,6 +143,7 @@ None. `/onboard` is a read-only orientation skill. No director gates apply.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate Check — No gate; onboard is read-only orientation
 
 **Fixture:**
@@ -168,6 +175,7 @@ None. `/onboard` is a read-only orientation skill. No director gates apply.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The case where `technical-preferences.md` is missing entirely (as opposed to

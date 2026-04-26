@@ -15,6 +15,7 @@ no files are written.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -28,6 +29,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 In `full` mode: TD-ARCHITECTURE (technical-director) and LP-FEASIBILITY
@@ -42,6 +44,7 @@ In `solo` mode: both gates are skipped with equivalent notes.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Complete architecture doc in full mode
 
 **Fixture:**
@@ -70,6 +73,7 @@ In `solo` mode: both gates are skipped with equivalent notes.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Failure Path — Missing required sections
 
 **Fixture:**
@@ -93,6 +97,7 @@ In `solo` mode: both gates are skipped with equivalent notes.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Partial Path — Architecture contradicts an existing ADR
 
 **Fixture:**
@@ -116,6 +121,7 @@ In `solo` mode: both gates are skipped with equivalent notes.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Edge Case — File not found
 
 **Fixture:**
@@ -138,6 +144,7 @@ In `solo` mode: both gates are skipped with equivalent notes.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate — Full mode spawns both gates; solo mode skips both
 
 **Fixture (full mode):**
@@ -182,6 +189,7 @@ In `solo` mode: both gates are skipped with equivalent notes.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The 8 required architecture sections are project-specific; tests use the

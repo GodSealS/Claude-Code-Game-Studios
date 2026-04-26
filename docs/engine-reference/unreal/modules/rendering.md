@@ -1,10 +1,14 @@
-# Unreal Engine 5.7 — Rendering Module Reference
+# Unreal Engine 5.7 — Rendering Module Reference / Unreal Engine渲染模块
+
+
+> **中文翻译**：本文档为Unreal Engine引擎参考文档。所有代码示例和技术术语保持英文原文。
 
 **Last verified:** 2026-02-13
 **Knowledge Gap:** UE 5.7 has Megalights, production-ready Substrate, and Lumen improvements
 
 ---
 
+<!-- 概述 -->
 ## Overview
 
 UE 5.7 rendering stack:
@@ -15,8 +19,10 @@ UE 5.7 rendering stack:
 
 ---
 
+<!-- 中文翻译 -->
 ## Lumen (Global Illumination)
 
+<!-- 中文翻译 -->
 ### Enable Lumen
 
 ```cpp
@@ -24,6 +30,7 @@ UE 5.7 rendering stack:
 // Real-time GI, no lightmap baking needed
 ```
 
+<!-- 中文翻译 -->
 ### Lumen Quality Settings
 
 ```ini
@@ -33,6 +40,7 @@ r.Lumen.DiffuseColorBoost=1.0
 r.Lumen.ScreenProbeGather.RadianceCache.NumFramesToKeepCached=2
 ```
 
+<!-- 中文翻译 -->
 ### Lumen in C++
 
 ```cpp
@@ -42,14 +50,17 @@ bool bIsLumenEnabled = IConsoleManager::Get().FindConsoleVariable(TEXT("r.Dynami
 
 ---
 
+<!-- 中文翻译 -->
 ## Nanite (Virtualized Geometry)
 
+<!-- 中文翻译 -->
 ### Enable Nanite on Static Mesh
 
 1. Static Mesh Editor
 2. Details > Nanite Settings > Enable Nanite Support
 3. Save mesh (auto-builds Nanite data)
 
+<!-- 中文翻译 -->
 ### Nanite in C++
 
 ```cpp
@@ -58,6 +69,7 @@ UStaticMeshComponent* MeshComp = CreateDefaultSubobject<UStaticMeshComponent>(TE
 MeshComp->SetStaticMesh(NaniteMesh); // Automatically uses Nanite if enabled
 ```
 
+<!-- 中文翻译 -->
 ### Nanite Limitations
 - No vertex animation (skeletal meshes)
 - No world position offset (WPO) in materials
@@ -65,8 +77,10 @@ MeshComp->SetStaticMesh(NaniteMesh); // Automatically uses Nanite if enabled
 
 ---
 
+<!-- 中文翻译 -->
 ## Megalights (UE 5.5+)
 
+<!-- 中文翻译 -->
 ### Enable Megalights
 
 ```cpp
@@ -74,6 +88,7 @@ MeshComp->SetStaticMesh(NaniteMesh); // Automatically uses Nanite if enabled
 // Supports millions of dynamic lights with minimal performance cost
 ```
 
+<!-- 中文翻译 -->
 ### Megalights Usage
 
 ```cpp
@@ -87,8 +102,10 @@ Light->SetAttenuationRadius(500.0f);
 
 ---
 
+<!-- 中文翻译 -->
 ## Substrate Materials (Production-Ready in 5.7)
 
+<!-- 中文翻译 -->
 ### Enable Substrate
 
 ```cpp
@@ -96,12 +113,14 @@ Light->SetAttenuationRadius(500.0f);
 // Restart editor
 ```
 
+<!-- 中文翻译 -->
 ### Substrate Material Nodes
 - **Substrate Slab**: Physical material layer (diffuse, specular, etc.)
 - **Substrate Blend**: Blend multiple layers
 - **Substrate Thin Film**: Iridescence, soap bubbles
 - **Substrate Hair**: Hair-specific shading
 
+<!-- 中文翻译 -->
 ### Example Substrate Material Graph
 
 ```
@@ -114,8 +133,10 @@ Substrate Slab (Diffuse)
 
 ---
 
+<!-- 中文翻译 -->
 ## Materials (C++ API)
 
+<!-- 中文翻译 -->
 ### Dynamic Material Instances
 
 ```cpp
@@ -133,8 +154,10 @@ MeshComp->SetMaterial(0, DynMat);
 
 ---
 
+<!-- 后处理 -->
 ## Post-Processing
 
+<!-- 中文翻译 -->
 ### Post-Process Volume
 
 ```cpp
@@ -150,6 +173,7 @@ PPV->Settings.bOverride_BloomIntensity = true;
 PPV->Settings.BloomIntensity = 1.0f;
 ```
 
+<!-- 中文翻译 -->
 ### Post-Process in C++
 
 ```cpp
@@ -163,8 +187,10 @@ if (APlayerCameraManager* CamManager = PC->PlayerCameraManager) {
 
 ---
 
+<!-- 中文翻译 -->
 ## Lighting
 
+<!-- 中文翻译 -->
 ### Directional Light (Sun)
 
 ```cpp
@@ -174,6 +200,7 @@ Sun->GetLightComponent()->SetIntensity(10.0f);
 Sun->GetLightComponent()->bCastShadows = true;
 ```
 
+<!-- 中文翻译 -->
 ### Point Light
 
 ```cpp
@@ -184,6 +211,7 @@ Light->GetPointLightComponent()->SetAttenuationRadius(1000.0f);
 Light->GetPointLightComponent()->SetLightColor(FLinearColor::Red);
 ```
 
+<!-- 中文翻译 -->
 ### Spot Light
 
 ```cpp
@@ -194,8 +222,10 @@ Spotlight->GetSpotLightComponent()->SetOuterConeAngle(40.0f);
 
 ---
 
+<!-- 中文翻译 -->
 ## Render Targets (Render to Texture)
 
+<!-- 中文翻译 -->
 ### Create Render Target
 
 ```cpp
@@ -214,8 +244,10 @@ UKismetRenderingLibrary::DrawMaterialToRenderTarget(
 
 ---
 
+<!-- 中文翻译 -->
 ## Custom Render Passes (Advanced)
 
+<!-- 中文翻译 -->
 ### Render Dependency Graph (RDG)
 
 ```cpp
@@ -249,8 +281,10 @@ void RenderCustomPass(FRDGBuilder& GraphBuilder, const FViewInfo& View) {
 
 ---
 
+<!-- 性能 -->
 ## Performance
 
+<!-- 中文翻译 -->
 ### Render Stats
 
 ```cpp
@@ -261,6 +295,7 @@ void RenderCustomPass(FRDGBuilder& GraphBuilder, const FViewInfo& View) {
 // profilegpu - Detailed GPU profile
 ```
 
+<!-- 中文翻译 -->
 ### Scalability Settings
 
 ```cpp
@@ -276,8 +311,10 @@ Settings->ApplySettings(false);
 
 ---
 
+<!-- 调试 -->
 ## Debugging
 
+<!-- 中文翻译 -->
 ### Visualize Render Features
 
 ```
@@ -291,6 +328,7 @@ Console commands:
 
 ---
 
+<!-- 来源 -->
 ## Sources
 - https://docs.unrealengine.com/5.7/en-US/lumen-global-illumination-and-reflections-in-unreal-engine/
 - https://docs.unrealengine.com/5.7/en-US/nanite-virtualized-geometry-in-unreal-engine/

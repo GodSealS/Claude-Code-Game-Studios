@@ -14,6 +14,7 @@ is unresolved.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] Has required frontmatter fields: `name`, `description`, `argument-hint`, `user-invocable`, `allowed-tools`
@@ -32,6 +33,7 @@ is unresolved.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — All five phases complete, narrative doc delivered
 
 **Fixture:**
@@ -68,6 +70,7 @@ is unresolved.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Lore Contradiction Found — world-builder finds conflict before writer proceeds
 
 **Fixture:**
@@ -100,6 +103,7 @@ is unresolved.
 
 ---
 
+<!-- 用例 3：无参数 — 显示用法指导 -->
 ### Case 3: No Argument — Usage guidance shown
 
 **Fixture:**
@@ -120,6 +124,7 @@ is unresolved.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Localization Compliance — localization-lead flags a non-translatable string
 
 **Fixture:**
@@ -150,6 +155,7 @@ is unresolved.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Writer Blocked — Missing character voice profiles
 
 **Fixture:**
@@ -194,6 +200,7 @@ is unresolved.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - Phase 3 (level-designer) and Phase 4 (narrative-director review) happy-path behavior are

@@ -16,6 +16,7 @@ hierarchy exists.
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 Verified automatically by `/skill-test static` — no fixture needed.
@@ -28,6 +29,7 @@ Verified automatically by `/skill-test static` — no fixture needed.
 
 ---
 
+<!-- 总监门控检查 -->
 ## Director Gate Checks
 
 None. `/start` is a utility setup skill. No director agents exist yet at the
@@ -37,6 +39,7 @@ point this skill runs.
 
 ## Test Cases / 测试用例
 
+<!-- 中文翻译 -->
 ### Case 1: Happy Path — Fresh repo, no engine, full onboarding flow
 
 **Fixture:**
@@ -66,6 +69,7 @@ point this skill runs.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 2: Already Configured — Detects existing config, offers to skip or reconfigure
 
 **Fixture:**
@@ -89,6 +93,7 @@ point this skill runs.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 3: Engine Choice — User picks Godot 4, routes to /setup-engine godot
 
 **Fixture:**
@@ -109,6 +114,7 @@ point this skill runs.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 4: Interrupted Setup — Partial config detected, offers resume or restart
 
 **Fixture:**
@@ -133,6 +139,7 @@ point this skill runs.
 
 ---
 
+<!-- 中文翻译 -->
 ### Case 5: Director Gate Check — No gate; start is a utility setup skill
 
 **Fixture:**
@@ -162,6 +169,7 @@ point this skill runs.
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 
 - The case where the user rejects all engine options and provides a custom

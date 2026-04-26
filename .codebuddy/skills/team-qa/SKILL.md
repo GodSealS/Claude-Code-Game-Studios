@@ -78,6 +78,8 @@ options:
   - "Adjust story types before proceeding"
   - "Skip blocked stories and proceed with the rest"
   - "Smoke check failed — fix issues and re-run /team-qa"
+  - "Cancel — resolve blockers first"
+```
 > **中文翻译**：
 > 问题："QA 策略审查"
 > 选项：
@@ -85,52 +87,62 @@ options:
 >   - "继续前调整故事类型"
 >   - "跳过被阻塞的故事，继续处理其余部分"
 >   - "冒烟检查失败 — 修复问题并重新运行 /team-qa"
-  - "Cancel — resolve blockers first"
-```
+>   - "取消 — 先解决阻塞问题"
 
 If smoke check **FAIL**: do not proceed to Phase 3. Surface the failures and stop. The user must fix them and re-run `/team-qa`. / 如果冒烟检查 **FAIL**：不要继续到第 3 阶段。展示失败项并停止。用户必须修复它们并重新运行 `/team-qa`。
 If smoke check **PASS WITH WARNINGS**: note the warnings for the sign-off report and continue. / 如果冒烟检查 **PASS WITH WARNINGS**：记录警告用于签署报告并继续。
 If blockers are present: list them explicitly. The user may choose to skip blocked stories or cancel the cycle.
+> **中文翻译**：如果存在阻塞项：明确列出它们。用户可以选择跳过被阻塞的故事或取消周期。
 
-### Phase 3: Test Plan Generation
+### Phase 3: Test Plan Generation / 第 3 阶段：测试计划生成
 
 Using the strategy from Phase 2, produce a structured test plan document.
+> **中文翻译**：使用第 2 阶段的策略，生成结构化的测试计划文档。
 
 The test plan should cover:
-- **Scope**: sprint/feature name, story count, dates
-- **Story Classification Table**: from Phase 2 strategy
-- **Automated Test Requirements**: which stories need test files, expected paths in `tests/`
-- **Manual QA Scope**: which stories need manual walkthrough and what to validate
-- **Out of Scope**: what is explicitly not being tested this cycle and why
-- **Entry Criteria**: what must be true before QA can begin (smoke check pass, build stable)
-- **Exit Criteria**: what constitutes a completed QA cycle (all stories PASS or FAIL with bugs filed)
+> **中文翻译**：测试计划应涵盖：
+- **Scope**: sprint/feature name, story count, dates / **范围**：冲刺/功能名称、故事数量、日期
+- **Story Classification Table**: from Phase 2 strategy / **故事分类表**：来自第 2 阶段策略
+- **Automated Test Requirements**: which stories need test files, expected paths in `tests/` / **自动化测试需求**：哪些故事需要测试文件、`tests/` 中的预期路径
+- **Manual QA Scope**: which stories need manual walkthrough and what to validate / **手动 QA 范围**：哪些故事需要手动走查和验证什么
+- **Out of Scope**: what is explicitly not being tested this cycle and why / **范围外**：本周期明确不测试什么及原因
+- **Entry Criteria**: what must be true before QA can begin (smoke check pass, build stable) / **准入标准**：QA 开始前必须为真的条件（冒烟检查通过、构建稳定）
+- **Exit Criteria**: what constitutes a completed QA cycle (all stories PASS or FAIL with bugs filed) / **退出标准**：什么构成完成的 QA 周期（所有故事通过或失败并提交缺陷）
 
 Ask: "May I write the QA plan to `production/qa/qa-plan-[sprint]-[date].md`?"
+> **中文翻译**：询问："我可以将 QA 计划写入 `production/qa/qa-plan-[sprint]-[date].md` 吗？"
 
 Write only after receiving approval.
+> **中文翻译**：仅在获得批准后写入。
 
-### Phase 4: Test Case Writing (qa-tester)
+### Phase 4: Test Case Writing (qa-tester) / 第 4 阶段：测试用例编写（qa-tester）
 
 > **Smoke check** is performed as part of Phase 2 (QA Strategy). If the smoke check returned FAIL in Phase 2, the cycle was stopped there. This phase only runs when the Phase 2 smoke check was PASS or PASS WITH WARNINGS.
+> **中文翻译**：**冒烟检查**作为第 2 阶段（QA 策略）的一部分执行。如果冒烟检查在第 2 阶段返回 FAIL，周期会在那里停止。此阶段仅在第 2 阶段冒烟检查为 PASS 或 PASS WITH WARNINGS 时运行。
 
 For each story requiring manual QA (Visual/Feel, UI, Integration without automated tests):
+> **中文翻译**：对于每个需要手动 QA 的故事（视觉/感觉、UI、无自动化测试的集成）：
 
 Spawn `qa-tester` via Task for each story (run in parallel where possible), providing:
-- The story file path
-- The relevant section of the QA plan for that story
-- The GDD acceptance criteria for the system being tested (if available)
-- Instructions to write detailed test cases covering all acceptance criteria
+> **中文翻译**：通过 Task 为每个故事派生 `qa-tester`（尽可能并行运行），提供：
+- The story file path / 故事文件路径
+- The relevant section of the QA plan for that story / 该故事的 QA 计划相关部分
+- The GDD acceptance criteria for the system being tested (if available) / 被测试系统的 GDD 验收标准（如有）
+- Instructions to write detailed test cases covering all acceptance criteria / 编写覆盖所有验收标准的详细测试用例的说明
 
 Each test case set should include:
-- **Preconditions**: game state required before testing begins
-- **Steps**: numbered, unambiguous actions
-- **Expected Result**: what should happen
-- **Actual Result**: field left blank for the tester to fill in
-- **Pass/Fail**: field left blank
+> **中文翻译**：每个测试用例集应包括：
+- **Preconditions**: game state required before testing begins / **前置条件**：测试开始前需要的游戏状态
+- **Steps**: numbered, unambiguous actions / **步骤**：编号、明确的操作
+- **Expected Result**: what should happen / **预期结果**：应该发生什么
+- **Actual Result**: field left blank for the tester to fill in / **实际结果**：留空供测试人员填写
+- **Pass/Fail**: field left blank / **通过/失败**：留空
 
 Present the test cases to the user for review before execution. Group by story.
+> **中文翻译**：在执行前向用户展示测试用例供审查。按故事分组。
 
 Use `AskUserQuestion` per story group (batched 3-4 at a time):
+> **中文翻译**：对每个故事组使用 `AskUserQuestion`（一次批处理 3-4 个）：
 
 ```
 question: "Test cases ready for [Story Group]. Review before manual QA begins?"
@@ -139,12 +151,20 @@ options:
   - "Revise test cases for [story name]"
   - "Skip manual QA for [story name] — not ready"
 ```
+> **中文翻译**：
+> 问题："[故事组] 的测试用例已准备好。在手动 QA 开始前审查？"
+> 选项：
+>   - "批准 — 开始这些故事的手动 QA"
+>   - "修改 [故事名称] 的测试用例"
+>   - "跳过 [故事名称] 的手动 QA — 尚未准备好"
 
-### Phase 6: Manual QA Execution
+### Phase 6: Manual QA Execution / 第 6 阶段：手动 QA 执行
 
 Walk through each story in the approved manual QA list.
+> **中文翻译**：遍历已批准手动 QA 列表中的每个故事。
 
 Batch stories into groups of 3-4 and use `AskUserQuestion` for each:
+> **中文翻译**：将故事分批为每组 3-4 个，对每个使用 `AskUserQuestion`：
 
 ```
 question: "Manual QA — [Story Title]\n[brief description of what to test]"
@@ -154,22 +174,34 @@ options:
   - "FAIL — criteria not met (describe after)"
   - "BLOCKED — cannot test yet (reason)"
 ```
+> **中文翻译**：
+> 问题："手动 QA — [故事标题]\n[要测试内容的简要描述]"
+> 选项：
+>   - "通过 — 所有验收标准已验证"
+>   - "带备注通过 — 发现小问题（稍后描述）"
+>   - "失败 — 标准未满足（稍后描述）"
+>   - "阻塞 — 尚无法测试（原因）"
 
 After each FAIL result: use `AskUserQuestion` to collect the failure description, then spawn `qa-tester` via Task to write a formal bug report in `production/qa/bugs/`.
+> **中文翻译**：每次 FAIL 结果后：使用 `AskUserQuestion` 收集失败描述，然后通过 Task 派生 `qa-tester` 在 `production/qa/bugs/` 中编写正式缺陷报告。
 
 Bug report naming: `BUG-[NNN]-[short-slug].md` (increment NNN from existing bugs in the directory).
+> **中文翻译**：缺陷报告命名：`BUG-[NNN]-[short-slug].md`（从目录中现有缺陷递增 NNN）。
 
 After collecting all results, summarize:
-- Stories PASS: [count]
-- Stories PASS WITH NOTES: [count]
-- Stories FAIL: [count] — bugs filed: [IDs]
-- Stories BLOCKED: [count]
+> **中文翻译**：收集所有结果后，总结：
+- Stories PASS: [count] / 故事通过：[数量]
+- Stories PASS WITH NOTES: [count] / 故事带备注通过：[数量]
+- Stories FAIL: [count] — bugs filed: [IDs] / 故事失败：[数量] — 已提交缺陷：[ID]
+- Stories BLOCKED: [count] / 故事阻塞：[数量]
 
-### Phase 7: QA Sign-Off Report
+### Phase 7: QA Sign-Off Report / 第 7 阶段：QA 签署报告
 
 Spawn `qa-lead` via Task to produce the sign-off report using all results from Phases 4–6.
+> **中文翻译**：通过 Task 派生 `qa-lead` 使用第 4-6 阶段的所有结果生成签署报告。
 
 The sign-off report format:
+> **中文翻译**：签署报告格式：
 
 ```markdown
 ## QA Sign-Off Report: [Sprint/Feature]
@@ -194,42 +226,77 @@ The sign-off report format:
 ### Next Step
 [guidance based on verdict]
 ```
+> **中文翻译**：
+> ## QA 签署报告：[冲刺/功能]
+> **日期**：[日期]
+> **QA 负责人签署**：[待定]
+>
+> ### 测试覆盖摘要
+> | 故事 | 类型 | 自动测试 | 手动 QA | 结果 |
+> |------|------|----------|---------|------|
+> | [标题] | 逻辑 | 通过 | — | 通过 |
+> | [标题] | 视觉 | — | 通过 | 通过 |
+>
+> ### 发现的缺陷
+> | ID | 故事 | 严重性 | 状态 |
+> |----|------|--------|------|
+> | BUG-001 | [故事] | S2 | 开放 |
+>
+> ### 裁决：批准 / 有条件批准 / 未批准
+>
+> **条件**（如有）：[构建推进前必须修复的列表]
+>
+> ### 下一步
+> [基于裁决的指导]
 
 Verdict rules:
-- **APPROVED**: All stories PASS or PASS WITH NOTES; no S1/S2 bugs open
-- **APPROVED WITH CONDITIONS**: S3/S4 bugs open, or PASS WITH NOTES issues documented; no S1/S2 bugs
-- **NOT APPROVED**: Any S1/S2 bugs open; or stories FAIL without documented workaround
+> **中文翻译**：裁决规则：
+- **APPROVED**: All stories PASS or PASS WITH NOTES; no S1/S2 bugs open / **批准**：所有故事通过或带备注通过；无 S1/S2 缺陷开放
+- **APPROVED WITH CONDITIONS**: S3/S4 bugs open, or PASS WITH NOTES issues documented; no S1/S2 bugs / **有条件批准**：S3/S4 缺陷开放，或带备注通过的问题已记录；无 S1/S2 缺陷
+- **NOT APPROVED**: Any S1/S2 bugs open; or stories FAIL without documented workaround / **未批准**：任何 S1/S2 缺陷开放；或故事失败且无记录解决方法
 
 Next step guidance by verdict:
-- APPROVED: "Build is ready for the next phase. Run `/gate-check` to validate advancement."
-- APPROVED WITH CONDITIONS: "Resolve conditions before advancing. S3/S4 bugs may be deferred to polish."
-- NOT APPROVED: "Resolve S1/S2 bugs and re-run `/team-qa` or targeted manual QA before advancing."
+> **中文翻译**：按裁决的下一步指导：
+- APPROVED: "Build is ready for the next phase. Run `/gate-check` to validate advancement." / 批准："构建已准备好进入下一阶段。运行 `/gate-check` 验证推进。"
+- APPROVED WITH CONDITIONS: "Resolve conditions before advancing. S3/S4 bugs may be deferred to polish." / 有条件批准："推进前解决条件。S3/S4 缺陷可推迟到打磨阶段。"
+- NOT APPROVED: "Resolve S1/S2 bugs and re-run `/team-qa` or targeted manual QA before advancing." / 未批准："推进前解决 S1/S2 缺陷并重新运行 `/team-qa` 或有针对性的手动 QA。"
 
 Ask: "May I write this QA sign-off report to `production/qa/qa-signoff-[sprint]-[date].md`?"
+> **中文翻译**：询问："我可以将此 QA 签署报告写入 `production/qa/qa-signoff-[sprint]-[date].md` 吗？"
 
 Write only after receiving approval.
+> **中文翻译**：仅在获得批准后写入。
 
-## Error Recovery Protocol
+## Error Recovery Protocol / 错误恢复协议
 
 If any spawned agent (via Task) returns BLOCKED, errors, or cannot complete:
+> **中文翻译**：如果任何派生的代理（通过 Task）返回 BLOCKED、错误或无法完成：
 
 1. **Surface immediately**: Report "[AgentName]: BLOCKED — [reason]" to the user before continuing to dependent phases
+> **中文翻译**：1. **立即报告**：在继续依赖阶段之前向用户报告"[代理名]：BLOCKED — [原因]"
 2. **Assess dependencies**: Check whether the blocked agent's output is required by subsequent phases. If yes, do not proceed past that dependency point without user input.
+> **中文翻译**：2. **评估依赖**：检查被阻塞代理的输出是否为后续阶段所需。如果是，未经用户输入不要超过该依赖点。
 3. **Offer options** via AskUserQuestion with choices:
-   - Skip this agent and note the gap in the final report
-   - Retry with narrower scope
-   - Stop here and resolve the blocker first
+> **中文翻译**：3. 通过 AskUserQuestion **提供选项**：
+   - Skip this agent and note the gap in the final report / 跳过此代理并在最终报告中记录差距
+   - Retry with narrower scope / 以更窄的范围重试
+   - Stop here and resolve the blocker first / 在此停止并先解决阻塞问题
 4. **Always produce a partial report** — output whatever was completed. Never discard work because one agent blocked.
+> **中文翻译**：4. **始终生成部分报告** — 输出已完成的内容。绝不因一个代理阻塞而丢弃工作。
 
 Common blockers:
-- Input file missing (story not found, GDD absent) → redirect to the skill that creates it
-- ADR status is Proposed → do not implement; run `/architecture-decision` first
-- Scope too large → split into two stories via `/create-stories`
-- Conflicting instructions between ADR and story → surface the conflict, do not guess
+> **中文翻译**：常见阻塞：
+- Input file missing (story not found, GDD absent) → redirect to the skill that creates it / 输入文件缺失（故事未找到、GDD 缺失）→ 重定向到创建它的技能
+- ADR status is Proposed → do not implement; run `/architecture-decision` first / ADR 状态为 Proposed → 不要实现；先运行 `/architecture-decision`
+- Scope too large → split into two stories via `/create-stories` / 范围太大 → 通过 `/create-stories` 拆分为两个故事
+- Conflicting instructions between ADR and story → surface the conflict, do not guess / ADR 和故事之间指令冲突 → 展示冲突，不要猜测
 
-## Output
+## Output / 输出
 
 A summary covering: stories in scope, smoke check result, manual QA results, bugs filed (with IDs and severities), and the final APPROVED / APPROVED WITH CONDITIONS / NOT APPROVED verdict.
+> **中文翻译**：摘要涵盖：范围内故事、冒烟检查结果、手动 QA 结果、已提交缺陷（含 ID 和严重性）以及最终 批准/有条件批准/未批准 裁决。
 
 Verdict: **COMPLETE** — QA cycle finished.
+> **中文翻译**：裁决：**COMPLETE** — QA 周期完成。
 Verdict: **BLOCKED** — smoke check failed or critical blocker prevented cycle completion; partial report produced.
+> **中文翻译**：裁决：**BLOCKED** — 冒烟检查失败或关键阻塞阻止周期完成；生成了部分报告。

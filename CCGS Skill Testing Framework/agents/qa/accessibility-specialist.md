@@ -9,6 +9,7 @@
 
 ---
 
+<!-- 静态断言（结构） -->
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references accessibility / inclusive design / WCAG)
@@ -20,6 +21,7 @@
 
 ## Test Cases / 测试用例
 
+<!-- 用例 1：域内请求 — 适当输出 -->
 ### Case 1: In-domain request — appropriate output
 **Input:** "Review the player HUD for accessibility."
 **Expected behavior:**
@@ -31,6 +33,7 @@
 - Produces a prioritized finding list with specific element names and the criteria they fail
 - Does NOT redesign the HUD — produces findings for ux-designer and ui-programmer to act on
 
+<!-- 用例 2：域外请求 — 正确重定向 -->
 ### Case 2: Out-of-domain request — redirects correctly
 **Input:** "Design the overall game flow: main menu → character select → loading → gameplay → pause → results."
 **Expected behavior:**
@@ -39,6 +42,7 @@
 - Redirects the request to `ux-designer`
 - May note it can review the flow for accessibility concerns (e.g., time limits, cognitive load) once the flow is designed
 
+<!-- 中文翻译 -->
 ### Case 3: Colorblind mode conflict
 **Input:** "The proposed colorblind mode for deuteranopia replaces the enemy red health bars with orange, but the art palette already uses orange for friendly units."
 **Expected behavior:**
@@ -47,6 +51,7 @@
 - Flags the conflict to `art-director` with the specific visual overlap described
 - Proposes alternative differentiation strategies that don't require palette changes (e.g., shape/icon overlay, pattern fill, iconography)
 
+<!-- 中文翻译 -->
 ### Case 4: UI state requirement for accessibility feature
 **Input:** "Screen reader support for the inventory requires the system to expose item names and quantities as accessible text nodes."
 **Expected behavior:**
@@ -55,6 +60,7 @@
 - Coordinates with `ui-programmer` to implement the required accessible text node exposure
 - Does NOT implement the UI system changes itself
 
+<!-- 中文翻译 -->
 ### Case 5: Context pass — WCAG 2.1 targets
 **Input:** Project accessibility target provided in context: WCAG 2.1 AA compliance. Request: "Review the dialogue system for accessibility."
 **Expected behavior:**
@@ -79,6 +85,7 @@
 
 ---
 
+<!-- 覆盖说明 -->
 ## Coverage Notes
 - HUD audit (Case 1) should produce findings trackable as accessibility stories in the sprint backlog
 - Colorblind conflict (Case 3) confirms the agent respects art-director's authority over the palette
