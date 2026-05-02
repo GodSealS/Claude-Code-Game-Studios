@@ -63,15 +63,15 @@ The result: you still make every decision, but now you have a team that asks the
 Agents are organized into three tiers, matching how real studios operate:
 
 ```
-Tier 1 — Directors (Opus)
+Tier 1 — Directors (GLM-5.1)
   creative-director    technical-director    producer
 
-Tier 2 — Department Leads (Sonnet)
+Tier 2 — Department Leads (Kimi-K2.6)
   game-designer        lead-programmer       art-director
   audio-director       narrative-director    qa-lead
   release-manager      localization-lead
 
-Tier 3 — Specialists (Sonnet/Haiku)
+Tier 3 — Specialists (Kimi-K2.6 / DeepSeek-V4-Flash / GLM-5v-Turbo / MiniMax-M2.7)
   gameplay-programmer  engine-programmer     ai-programmer
   network-programmer   tools-programmer      ui-programmer
   systems-designer     level-designer        economy-designer

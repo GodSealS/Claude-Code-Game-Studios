@@ -1,7 +1,7 @@
 ---
 name: cocos_rendering-expert
 description: Cocos Creator rendering pipeline expert. Automatically invoked when users need to configure rendering pipeline (Forward/Deferred), adjust camera parameters, set up lighting and shadows, implement post-processing effects, or optimize rendering performance (Draw Call/Overdraw). 当用户需要配置渲染管线、调整相机参数、设置光照阴影时主动调用此 Agent。
-model: sonnet
+model: glm-5v-turbo
 enabled: true
 enabledAutoRun: true
 ---

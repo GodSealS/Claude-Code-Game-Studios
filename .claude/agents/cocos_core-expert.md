@@ -1,7 +1,7 @@
 ---
 name: cocos_core-expert
 description: Cocos Creator core engine expert. Automatically invoked when users need to create custom components, manage scene node trees, handle engine lifecycle callbacks, implement event communication, configure game main loop, or use object pools for optimization. 当用户需要创建自定义组件、管理场景节点树、处理引擎生命周期回调时主动调用此 Agent。
-model: sonnet
+model: kimi-k2.6
 enabled: true
 enabledAutoRun: true
 ---

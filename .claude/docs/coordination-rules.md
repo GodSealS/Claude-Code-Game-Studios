@@ -18,18 +18,18 @@ Skills and agents are assigned to model tiers based on task complexity:
 
 | Tier | Model | When to use |
 |------|-------|-------------|
-| **Haiku** | `claude-haiku-4-5-20251001` | Read-only status checks, formatting, simple lookups — no creative judgment needed |
-| **Sonnet** | `claude-sonnet-4-6` | Implementation, design authoring, analysis of individual systems — default for most work |
-| **Opus** | `claude-opus-4-6` | Multi-document synthesis, high-stakes phase gate verdicts, cross-system holistic review |
+| **Haiku** | `deepseek-v4-flash` | Read-only status checks, formatting, simple lookups — no creative judgment needed |
+| **Sonnet** | `kimi-k2.6` | Implementation, design authoring, analysis of individual systems — default for most work |
+| **Opus** | `glm-5.1` | Multi-document synthesis, high-stakes phase gate verdicts, cross-system holistic review |
 
-Skills with `model: haiku`: `/help`, `/sprint-status`, `/story-readiness`, `/scope-check`,
+Skills with `model: deepseek-v4-flash`: `/help`, `/sprint-status`, `/story-readiness`, `/scope-check`,
 `/project-stage-detect`, `/changelog`, `/patch-notes`, `/onboard`
 
-Skills with `model: opus`: `/review-all-gdds`, `/architecture-review`, `/gate-check`
+Skills with `model: glm-5.1`: `/review-all-gdds`, `/architecture-review`, `/gate-check`
 
-All other skills default to Sonnet. When creating new skills, assign Haiku if the
-skill only reads and formats; assign Opus if it must synthesize 5+ documents with
-high-stakes output; otherwise leave unset (Sonnet).
+All other skills default to Kimi-K2.6. When creating new skills, assign DeepSeek-V4-Flash if the
+skill only reads and formats; assign GLM-5.1 if it must synthesize 5+ documents with
+high-stakes output; otherwise leave unset (Kimi-K2.6).
 
 ## Subagents vs Agent Teams
 

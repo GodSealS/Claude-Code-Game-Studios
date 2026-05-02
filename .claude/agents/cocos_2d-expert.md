@@ -1,7 +1,7 @@
 ---
 name: cocos_2d-expert
 description: Cocos Creator 2D rendering expert. Automatically invoked when users need to create UI interfaces, implement sprite animations, handle text display, draw 2D graphics, configure masks and clipping, or optimize 2D rendering performance. 当用户需要创建UI界面、实现精灵动画、处理文本显示时主动调用此 Agent。
-model: sonnet
+model: kimi-k2.6
 enabled: true
 enabledAutoRun: true
 ---

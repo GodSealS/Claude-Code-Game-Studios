@@ -307,7 +307,7 @@ No files require manual merging in this release. All changes are to infrastructu
 | **Skill updates** | `/team-ui` — full UX pipeline (ux-design → ux-review → team phases) |
 | **Agent updates** | 14 specialist agents — `memory: project` added |
 | **Agent updates** | `prototyper` — `isolation: worktree` (throwaway work in isolated git branch) |
-| **Model routing** | Haiku/Sonnet/Opus tier assignments documented in coordination rules; skills declare their tier in frontmatter |
+| **Model routing** | DeepSeek-V4-Flash/Kimi-K2.6/GLM-5.1 tier assignments documented in coordination rules; skills declare their tier in frontmatter |
 | **Directory CLAUDE.md** | Scaffolded `design/CLAUDE.md`, `src/CLAUDE.md`, `docs/CLAUDE.md` — path-scoped instructions for each directory |
 | **Pipeline integrity** | TR-ID stability, manifest versioning, ADR status gates, TR-ID reference not quote |
 | **GDD template** | `## Game Feel` section added (input responsiveness, animation targets, impact moments) |
@@ -484,7 +484,7 @@ The new `validate-skill-change.sh` hook reminds you to run `/skill-test` automat
 
 #### Model Tier Routing
 
-Skills are now explicitly assigned to Haiku, Sonnet, or Opus tiers based on task complexity. Read-only status checks use Haiku; complex multi-document synthesis uses Opus; everything else defaults to Sonnet. Tier assignments are documented in `.claude/docs/coordination-rules.md`.
+Skills are now explicitly assigned to DeepSeek-V4-Flash, Kimi-K2.6, or GLM-5.1 tiers based on task complexity. Read-only status checks use DeepSeek-V4-Flash; complex multi-document synthesis uses GLM-5.1; everything else defaults to Kimi-K2.6. Tier assignments are documented in `.claude/docs/coordination-rules.md`.
 
 #### Directory CLAUDE.md Files
 
@@ -594,14 +594,14 @@ is safe. Otherwise, add this block manually:
 the terminal status line:
 
 ```
-ctx: 42% | claude-sonnet-4-6 | Systems Design
+ctx: 42% | kimi-k2.6 | Systems Design
 ```
 
 In Production/Polish/Release stages, it also shows the active Epic/Feature/Task
 from `production/session-state/active.md` if a `<!-- STATUS -->` block is present:
 
 ```
-ctx: 42% | claude-sonnet-4-6 | Production | Combat System > Melee Combat > Hitboxes
+ctx: 42% | kimi-k2.6 | Production | Combat System > Melee Combat > Hitboxes
 ```
 
 The current stage is auto-detected from project artifacts, or can be pinned by

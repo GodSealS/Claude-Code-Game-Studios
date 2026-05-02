@@ -1,7 +1,7 @@
 ---
 name: cocos_3d-expert
 description: Cocos Creator 3D rendering expert. Automatically invoked when users need to load and render 3D models, configure skinned mesh animation, optimize 3D rendering performance, or handle model LOD and occlusion culling. 当用户需要加载和渲染3D模型、配置蒙皮网格动画、优化3D渲染性能时主动调用此 Agent。
-model: sonnet
+model: kimi-k2.6
 enabled: true
 enabledAutoRun: true
 ---
