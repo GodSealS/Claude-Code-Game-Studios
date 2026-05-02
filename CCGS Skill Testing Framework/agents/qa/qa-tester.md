@@ -4,7 +4,7 @@
 - **Domain**: Detailed test case authoring, bug reports (structured format), test execution documentation, regression checklists, smoke check execution docs, test evidence recording per the project's coding standards
 - **Does NOT own**: Test strategy and test plan design (qa-lead), implementation fixes for found bugs (appropriate programmer), QA process architecture (qa-lead)
 - **Category**: qa
-- **Model tier**: DeepSeek-V3.2
+- **Model tier**: DeepSeek-V4-Flash
 - **Gate IDs**: QT-TEST-CASE, QT-EVIDENCE-RECORD
 - **Domain**: Test case authoring, structured bug reporting, evidence recording (UE 5.5 standards).
 
@@ -14,7 +14,7 @@
 
 - [ ] `description:` field is present and domain-specific (references test cases, bug reports, test execution, regression testing)
 - [ ] `allowed-tools:` list matches the agent's role (Read/Write for tests/ and production/qa/evidence/; no source code editing tools)
-- [ ] Model tier is DeepSeek-V3.2 (default for QA specialists)
+- [ ] Model tier is DeepSeek-V4-Flash (default for QA specialists)
 - [ ] Agent definition does not claim authority over test strategy, fix implementation, or acceptance criterion definition
 
 ---

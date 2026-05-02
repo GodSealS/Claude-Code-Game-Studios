@@ -3,7 +3,7 @@
 ## Agent Summary
 Domain: Cocos Creator 2D rendering systems: sprites, UI components, text rendering, 2D graphics, masks, clipping, and 2D performance optimization.
 Does NOT own: 3D rendering (cocos_3d-expert), animation systems (cocos_animation-expert), core engine (cocos_core-expert).
-Model tier: DeepSeek-V3.2 (default).
+Model tier: DeepSeek-V4-Flash (default).
 No gate IDs assigned.
 
 ---
@@ -12,7 +12,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and domain-specific (references Cocos Creator 2D rendering, sprites, UI, text)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is DeepSeek-V3.2 (default for specialists)
+- [ ] Model tier is DeepSeek-V4-Flash (default for specialists)
 - [ ] Agent definition does not claim authority over 3D rendering or animation systems
 - [ ] File scope includes only 2D-related files (under `cocos/2d/` directory)
 

@@ -1,7 +1,7 @@
 ---
 name: cocos_animation-expert
 description: Cocos Creator animation system expert. Automatically invoked when users need to implement character animation, configure animation state machines, handle skeletal animation, implement animation blending (crossFade), add animation event callbacks, or optimize animation performance. 当用户需要实现角色动画、配置动画状态机、处理骨骼动画、实现动画混合时主动调用此 Agent。
-model: DeepSeek-V3.2
+model: DeepSeek-V4-Flash
 enabled: true
 enabledAutoRun: true
 ---

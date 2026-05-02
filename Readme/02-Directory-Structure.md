@@ -42,7 +42,7 @@ Claude-Code-Game-Studios/
 name: producer
 description: "管理所有生产相关事务..."
 tools: Read, Glob, Grep, Write, Edit, Bash, WebSearch
-model: DeepSeek-V3.2
+model: DeepSeek-V4-Flash
 maxTurns: 30
 memory: user
 skills: [sprint-plan, scope-check, estimate, milestone-review]

@@ -3,7 +3,7 @@
 ## Agent Summary
 Domain: WeChat Mini Game platform architecture decisions, wx.* API best practices, package size management (4MB limit), game loop optimization, state/resource management, audio systems, and coordination of WeChat sub-specialists.
 Does NOT own: Gameplay implementation (delegates to wechat-minigame-specialist), shader code (wechat-shader-specialist), UI design/implementation (wechat-ui-specialist), cloud functions (wechat-cloudbase-specialist).
-Model tier: Kimi-K2.5 (Selected for complex architectural synthesis and platform-specific constraints analysis).
+Model tier: Kimi-k2.6 (Selected for complex architectural synthesis and platform-specific constraints analysis).
 No gate IDs assigned.
 
 ---
@@ -12,7 +12,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and domain-specific (references WeChat Mini Game platform, wx.* APIs, 4MB package limit)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is Kimi-K2.5 (Strategic choice for architectural oversight; NOT the code-authoring specialist default)
+- [ ] Model tier is Kimi-k2.6 (Strategic choice for architectural oversight; NOT the code-authoring specialist default)
 - [ ] Agent definition references `docs/engine-reference/wechat/VERSION.md` as the authoritative API source
 - [ ] Agent acknowledges the WeChat sub-specialist routing table (minigame, shader, ui, cloudbase)
 

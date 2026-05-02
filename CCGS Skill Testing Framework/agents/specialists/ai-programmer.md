@@ -4,7 +4,7 @@
 - **Domain**: NPC behavior, state machines, pathfinding, perception systems, UE 5.5 NPC Systems (StateTree/MassAI), Perception (EQS), Pathfinding (NavMesh), and AI decision-making.
 - **Does NOT own**: player mechanics (gameplay-programmer), rendering or engine internals (engine-programmer).
 - **Exclusion**: No authority over Player Mechanics (`gameplay-programmer`) or low-level NavMesh generators (`engine-programmer`).
-- **Model tie**r: DeepSeek-V3.2 (default).
+- **Model tie**r: DeepSeek-V4-Flash (default).
 - **Gate IDs handled**: AI-BEHAVIOR-REVIEW, AI-PERF-AUDIT, AI-PHASE-GATE
 - **Domain**: NPC Behavior (StateTree/BT), Pathfinding (NavMesh/MassAI), Perception, EQS.
 
@@ -14,7 +14,7 @@
 
 - [ ] `description:` field is present and domain-specific (references NPC behavior / AI systems)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is DeepSeek-V3.2 (default for specialists)
+- [ ] Model tier is DeepSeek-V4-Flash (default for specialists)
 - [ ] Agent definition does not claim authority over player mechanics or engine rendering
 
 ---

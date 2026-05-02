@@ -3,7 +3,7 @@
 ## Agent Summary
 Domain: Cocos Creator 3D physics systems: rigid body dynamics, collision detection, joints, raycasting, and physics simulation optimization.
 Does NOT own: 2D physics (cocos_physics-2d-expert), 3D rendering (cocos_3d-expert), animation (cocos_animation-expert).
-Model tier: DeepSeek-V3.2 (default).
+Model tier: DeepSeek-V4-Flash (default).
 No gate IDs assigned.
 
 ---
@@ -12,7 +12,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and domain-specific (references 3D physics, rigid bodies, collision detection, joints)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is DeepSeek-V3.2 (default for specialists)
+- [ ] Model tier is DeepSeek-V4-Flash (default for specialists)
 - [ ] Agent definition does not claim authority over 2D physics or rendering
 - [ ] File scope includes only physics-related files (under `cocos/physics/` directory)
 

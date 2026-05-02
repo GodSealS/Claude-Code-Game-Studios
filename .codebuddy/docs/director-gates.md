@@ -266,7 +266,7 @@ any session that produces player feedback
 
 ## Tier 1 — Technical Director Gates
 
-Agent: `technical-director` | Model tier: DeepSeek-V3.2 | Domain: Architecture, engine risk, performance
+Agent: `technical-director` | Model tier: DeepSeek-V4-Flash | Domain: Architecture, engine risk, performance
 
 ---
 
@@ -412,7 +412,7 @@ or before finalizing any engine-specific implementation approach
 
 ## Tier 1 — Producer Gates
 
-Agent: `producer` | Model tier: Kimi-K2.5 | Domain: Scope, timeline, dependencies, production risk
+Agent: `producer` | Model tier: Kimi-k2.6 | Domain: Scope, timeline, dependencies, production risk
 
 ---
 

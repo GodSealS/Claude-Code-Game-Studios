@@ -3,7 +3,7 @@
 ## Agent Summary
 - **Domain**: SFX specs, audio events, mixing parameters, and sound category definitions.
 - **Does NOT own**: music composition direction (audio-director), code implementation of audio systems.
-- **Model tier**: DeepSeek-V3.2 (default).
+- **Model tier**: DeepSeek-V4-Flash (default).
 - **Gate IDs**: AUDIO-SPEC-REVIEW
 ---
 
@@ -11,7 +11,7 @@
 
 - [ ] `description:` field is present and domain-specific (references SFX / audio events / mixing)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Glob, Grep — does NOT include engine code execution tools
-- [ ] Model tier is DeepSeek-V3.2 (default for specialists)
+- [ ] Model tier is DeepSeek-V4-Flash (default for specialists)
 - [ ] Agent definition does not claim authority over music direction or audio code implementation
 
 ---

@@ -2,7 +2,7 @@
 
 ## Agent Summary
 - **Domain**: Combat formulas, progression curves, crafting economy, and numerical balance.
-- **Model tier**: DeepSeek-V3.2
+- **Model tier**: DeepSeek-V4-Flash
 - **Gate IDs handled**: SD-FORMULA-REVIEW, SD-ECONOMY-BALANCE, SD-PHASE-GATE
 - **Does NOT own**: Narrative lore, visual art, or code implementation.
 
@@ -14,7 +14,7 @@ Verified by reading the agent's `.codebuddy/agents/systems-designer.md` frontmat
 
 - [ ] `description:` field is present and domain-specific (references formulas, progression curves, balance math, economy — not generic)
 - [ ] `allowed-tools:` list is read-focused; may include Bash for formula evaluation scripts if the project uses them; no write access outside `design/balance/` without delegation
-- [ ] Model tier is `DeepSeek-V3.2` per coordination-rules.md
+- [ ] Model tier is `DeepSeek-V4-Flash` per coordination-rules.md
 - [ ] Agent definition does not claim authority over narrative, visual design, or conceptual mechanic rule ownership
 
 ---

@@ -3,7 +3,7 @@
 ## Agent Summary
 Domain: WeChat Mini Game UI design and implementation using FairyGUI, responsive data binding (GameState → ViewModel → UI), screen management stack (push/pop/replace), adaptive layouts for portrait-first design, and WeChat-specific UI patterns.
 Does NOT own: Gameplay implementation (wechat-minigame-specialist), shader code (wechat-shader-specialist), architecture decisions (wechat-specialist).
-Model tier: DeepSeek-V3.2 (default for implementation specialists).
+Model tier: DeepSeek-V4-Flash (default for implementation specialists).
 No gate IDs assigned.
 
 ---
@@ -12,7 +12,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and domain-specific (references FairyGUI, data binding, screen management, adaptive layouts)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is DeepSeek-V3.2 (default for specialists)
+- [ ] Model tier is DeepSeek-V4-Flash (default for specialists)
 - [ ] Agent definition does not claim authority over gameplay or rendering
 - [ ] Agent references WeChat-specific UI constraints (portrait-first, touch targets, safe area)
 

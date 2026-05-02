@@ -3,7 +3,7 @@
 ## Agent Summary
 Domain: ECS architecture (IComponentData, ISystem, SystemAPI), Jobs system (IJob, IJobEntity, Burst), Burst compiler constraints, DOTS gameplay systems, and hybrid renderer.
 Does NOT own: MonoBehaviour gameplay code (gameplay-programmer), UI implementation (unity-ui-specialist).
-Model tier: DeepSeek-V3.2 (default).
+Model tier: DeepSeek-V4-Flash (default).
 No gate IDs assigned.
 
 ---
@@ -12,7 +12,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and domain-specific (references ECS / Jobs / Burst / IComponentData)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep, Python, Lua
-- [ ] Model tier is DeepSeek-V3.2 (default for specialists)
+- [ ] Model tier is DeepSeek-V4-Flash (default for specialists)
 - [ ] Agent definition does not claim authority over MonoBehaviour gameplay or UI systems
 
 ---

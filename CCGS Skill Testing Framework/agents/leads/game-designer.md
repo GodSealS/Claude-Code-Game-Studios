@@ -3,7 +3,7 @@
 ## Agent Summary
 **Domain owned:** Core loop design, progression systems, combat mechanics rules, economy design, player-facing rules and interactions.
 **Does NOT own:** Code implementation (lead-programmer / gameplay-programmer), visual art (art-director), narrative lore and story (narrative-director — coordinates with), balance formula math (systems-designer — collaborates with).
-**Model tier:** DeepSeek-V3.2 (individual system design authoring and review).
+**Model tier:** DeepSeek-V4-Flash (individual system design authoring and review).
 **Gate IDs handled:** GD-MECHANIC-REVIEW, GD-ECONOMY-CHECK, GD-PHASE-GATE
 
 ---
@@ -14,7 +14,7 @@ Verified by reading the agent's `.codebuddy/agents/game-designer.md` frontmatter
 
 - [ ] `description:` field is present and domain-specific (references core loop, progression, combat rules, economy, player-facing design — not generic)
 - [ ] `allowed-tools:` list is read-focused; includes Read for GDDs and design docs; no Bash unless design tooling requires it
-- [ ] Model tier is `DeepSeek-V3.2` per coordination-rules.md
+- [ ] Model tier is `DeepSeek-V4-Flash` per coordination-rules.md
 - [ ] Agent definition does not claim authority over code implementation, visual art style, or standalone narrative lore decisions
 
 ---

@@ -3,7 +3,7 @@
 ## Agent Summary
 - **Domain**: Multiplayer networking, state replication, lag compensation, matchmaking protocol design, and network message schemas.
 - **Does NOT own**: gameplay logic (only the networking of it), server infrastructure and deployment (devops-engineer).
-- **Model tier**: DeepSeek-V3.2 (default).
+- **Model tier**: DeepSeek-V4-Flash (default).
 
 ---
 
@@ -11,7 +11,7 @@
 
 - [ ] `description:` field is present and domain-specific (references multiplayer / replication / networking)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is DeepSeek-V3.2 is verified for technical reasoning and math accuracy.
+- [ ] Model tier is DeepSeek-V4-Flash is verified for technical reasoning and math accuracy.
 - [ ] Agent definition does not claim authority over gameplay logic or server deployment infrastructure
 
 ---

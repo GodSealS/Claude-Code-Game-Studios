@@ -1,7 +1,7 @@
 ---
 name: cocos_gfx-expert
 description: Cocos Creator graphics API abstraction layer expert. Automatically invoked when users need to create custom shaders, manage GPU buffers and textures, implement custom rendering pipelines, adapt cross-platform graphics backends, or troubleshoot WebGL/Vulkan/Metal compatibility issues. 当用户需要创建自定义着色器、管理GPU资源、实现自定义渲染管线时主动调用此 Agent。
-model: DeepSeek-V3.2
+model: DeepSeek-V4-Flash
 enabled: true
 enabledAutoRun: true
 ---

@@ -3,7 +3,7 @@
 ## Agent Summary
 - **Domain**: Editor extensions, content authoring tools, debug utilities, and pipeline automation scripts.
 - **Does NOT own**: game code (gameplay-programmer, ui-programmer, etc.), engine core systems (engine-programmer).
-- **Model tier**: DeepSeek-V3.2 (default).
+- **Model tier**: DeepSeek-V4-Flash (default).
 - **Gate IDs handled**: TOOL-SPEC-REVIEW, PIPELINE-AUDIT
 - **Gate IDs**: PIPELINE-AUDIT
 
@@ -13,7 +13,7 @@
 
 - [ ] `description:` field is present and domain-specific (references editor tools / pipeline / debug utilities)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is DeepSeek-V3.2 (default for specialists)
+- [ ] Model tier is DeepSeek-V4-Flash (default for specialists)
 - [ ] Agent definition does not claim authority over game source code or engine internals
 - [ ] Allowed-tools list grants READ access to src/ for data-structure synchronization, but strictly denies WRITE access to gameplay files.
 

@@ -3,7 +3,7 @@
 ## Agent Summary
 Domain: WeChat Mini Game gameplay implementation, physics engine integration (Box2D/Bullet/JoltPhysics via unified IPhysicsWorld interface), WASM library embedding, and Spine/DragonBones skeletal animation runtimes.
 Does NOT own: Architecture decisions (MVC vs ECS, engine choice) — defers to wechat-specialist, shader code (wechat-shader-specialist), UI design/implementation (wechat-ui-specialist), cloud functions (wechat-cloudbase-specialist).
-Model tier: DeepSeek-V3.2 (default for implementation specialists).
+Model tier: DeepSeek-V4-Flash (default for implementation specialists).
 No gate IDs assigned.
 
 ---
@@ -12,7 +12,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and domain-specific (references gameplay implementation, physics engines, WASM, skeletal animation)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is DeepSeek-V3.2 (default for specialists)
+- [ ] Model tier is DeepSeek-V4-Flash (default for specialists)
 - [ ] Agent definition does not claim authority over architecture decisions or other domains
 - [ ] Agent references the IPhysicsWorld unified interface for all physics engine interactions
 

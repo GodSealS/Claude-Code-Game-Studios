@@ -3,7 +3,7 @@
 ## Agent Summary
 Domain: Cocos Creator 3D rendering systems: mesh rendering, skinned animation, model loading, materials, shaders, and 3D performance optimization.
 Does NOT own: 2D rendering (cocos_2d-expert), animation systems (cocos_animation-expert), graphics API (cocos_gfx-expert).
-Model tier: DeepSeek-V3.2 (default).
+Model tier: DeepSeek-V4-Flash (default).
 No gate IDs assigned.
 
 ---
@@ -12,7 +12,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and domain-specific (references Cocos Creator 3D rendering, mesh, skinned animation, models)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is DeepSeek-V3.2 (default for specialists)
+- [ ] Model tier is DeepSeek-V4-Flash (default for specialists)
 - [ ] Agent definition does not claim authority over 2D rendering or animation systems
 - [ ] File scope includes only 3D-related files (under `cocos/3d/` directory)
 

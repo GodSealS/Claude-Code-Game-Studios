@@ -19,7 +19,7 @@ Skills and agents are assigned to model tiers based on task complexity:
 | Tier | Model | When to use |
 |------|-------|-------------|
 | **Haiku** | `MiniMax-M2.7​` | Read-only status checks, formatting, simple lookups — no creative judgment needed |
-| **Sonnet** | `DeepSeek-V3.2` | Implementation, design authoring, analysis of individual systems — default for most work |
+| **Sonnet** | `DeepSeek-V4-Flash` | Implementation, design authoring, analysis of individual systems — default for most work |
 | **Opus** | `GLM-5.1` | Multi-document synthesis, high-stakes phase gate verdicts, cross-system holistic review |
 
 Skills with `model: haiku`: `/help`, `/sprint-status`, `/story-readiness`, `/scope-check`,
@@ -27,9 +27,9 @@ Skills with `model: haiku`: `/help`, `/sprint-status`, `/story-readiness`, `/sco
 
 Skills with `model: opus`: `/review-all-gdds`, `/architecture-review`, `/gate-check`
 
-All other skills default to DeepSeek-V3.2. When creating new skills, assign Haiku if the
+All other skills default to DeepSeek-V4-Flash. When creating new skills, assign Haiku if the
 skill only reads and formats; assign Opus if it must synthesize 5+ documents with
-high-stakes output; otherwise leave unset (DeepSeek-V3.2).
+high-stakes output; otherwise leave unset (DeepSeek-V4-Flash).
 
 ## Subagents vs Agent Teams
 

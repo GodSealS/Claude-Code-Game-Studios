@@ -3,7 +3,7 @@
 ## Agent Summary
 Domain: WebGL shader development for WeChat Mini Games, shader conversion from other engines (Unity/Unreal/Godot → GLSL), rendering optimization, WebGL 1.0 vs 2.0 decisions, and shader performance/quality tiers.
 Does NOT own: Gameplay implementation (wechat-minigame-specialist), UI design/implementation (wechat-ui-specialist), architecture decisions (wechat-specialist).
-Model tier: DeepSeek-V3.2 (default for technical specialists).
+Model tier: DeepSeek-V4-Flash (default for technical specialists).
 No gate IDs assigned.
 
 ---
@@ -12,7 +12,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and domain-specific (references WebGL shaders, GLSL, rendering optimization, shader conversion)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is DeepSeek-V3.2 (default for specialists)
+- [ ] Model tier is DeepSeek-V4-Flash (default for specialists)
 - [ ] Agent definition does not claim authority over gameplay or UI implementation
 - [ ] Agent references WebGL constraints specific to WeChat Mini Game environment
 

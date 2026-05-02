@@ -3,7 +3,7 @@
 ## Agent Summary
 Domain: GDScript static typing, design patterns in GDScript, signal architecture, coroutine/await patterns, and GDScript performance.
 Does NOT own: shader code (godot-shader-specialist), GDExtension bindings (godot-gdextension-specialist).
-Model tier: DeepSeek-V3.2 (default).
+Model tier: DeepSeek-V4-Flash (default).
 No gate IDs assigned.
 
 ---
@@ -12,7 +12,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and domain-specific (references GDScript / static typing / signals / coroutines)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is DeepSeek-V3.2 (default for specialists)
+- [ ] Model tier is DeepSeek-V4-Flash (default for specialists)
 - [ ] Agent definition does not claim authority over shader code or GDExtension
 
 ---

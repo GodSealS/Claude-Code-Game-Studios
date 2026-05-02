@@ -3,7 +3,7 @@
 - **Domain**: Rendering pipeline, physics integration, memory management, resource loading, and core engine framework.
 
 - **Does NOT own**: gameplay mechanics (gameplay-programmer), editor/debug tool UI (tools-programmer).
-- **Model tier**: DeepSeek-V3.2 (default).
+- **Model tier**: DeepSeek-V4-Flash (default).
 - **Gate IDs handled**: EP-PERF-AUDIT, EP-MEMORY-SIGN-OFF, EP-PHASE-GATE
 - **Domain**: UE 5.5 Rendering (Nanite/Lumen), Chaos Physics, Zen Loader, Memory Management.
 
@@ -13,7 +13,7 @@
 
 - [ ] `description:` field is present and domain-specific (references rendering / memory / engine core)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is DeepSeek-V3.2 (Ensures logic-heavy reasoning for memory/rendering audits)
+- [ ] Model tier is DeepSeek-V4-Flash (Ensures logic-heavy reasoning for memory/rendering audits)
 - [ ] Agent definition does not claim authority over gameplay mechanics or tool UI
 
 ---

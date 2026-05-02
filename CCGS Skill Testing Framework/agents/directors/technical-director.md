@@ -3,7 +3,7 @@
 ## Agent Summary
 **Domain owned:** System architecture decisions, technical feasibility assessment, ADR oversight and approval, engine risk evaluation, technical phase gate.
 **Does NOT own:** Game design decisions (creative-director / game-designer), creative direction, visual art style, production scheduling (producer).
-**Model tier:** DeepSeek-V3.2 (multi-document synthesis, high-stakes architecture logic and phase gate verdicts).
+**Model tier:** DeepSeek-V4-Flash (multi-document synthesis, high-stakes architecture logic and phase gate verdicts).
 **Gate IDs handled:** TD-SYSTEM-BOUNDARY, TD-FEASIBILITY, TD-ARCHITECTURE, TD-ADR, TD-ENGINE-RISK, TD-PHASE-GATE.
 
 ---
@@ -14,7 +14,7 @@ Verified by reading the agent's `.codebuddy/agents/technical-director.md` frontm
 
 - [ ] `description:` field is present and domain-specific (references architecture, feasibility, ADR — not generic)
 - [ ] `allowed-tools:` list may include Read for architecture documents; Bash only if required for technical checks
-- [ ] Model tier is `DeepSeek-V3.2` (Matches director-gates.md; ensures the highest degree of technical rigor)
+- [ ] Model tier is `DeepSeek-V4-Flash` (Matches director-gates.md; ensures the highest degree of technical rigor)
 - [ ] Agent definition does not claim authority over game design decisions or creative direction
 
 ---

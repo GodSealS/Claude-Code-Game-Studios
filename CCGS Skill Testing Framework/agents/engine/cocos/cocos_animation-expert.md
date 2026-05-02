@@ -3,7 +3,7 @@
 ## Agent Summary
 Domain: Cocos Creator animation systems: keyframe animation, skeletal animation, state machines, blending, animation events, and performance optimization.
 Does NOT own: 2D/3D rendering (cocos_2d-expert, cocos_3d-expert), physics (cocos_physics-expert), core engine (cocos_core-expert).
-Model tier: DeepSeek-V3.2 (default).
+Model tier: DeepSeek-V4-Flash (default).
 No gate IDs assigned.
 
 ---
@@ -12,7 +12,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and domain-specific (references animation systems, skeletal animation, state machines, blending)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is DeepSeek-V3.2 (default for specialists)
+- [ ] Model tier is DeepSeek-V4-Flash (default for specialists)
 - [ ] Agent definition does not claim authority over rendering or physics
 - [ ] File scope includes only animation-related files (under `cocos/animation/` directory)
 

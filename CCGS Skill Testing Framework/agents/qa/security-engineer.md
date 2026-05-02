@@ -3,7 +3,7 @@
 ## Agent Summary
 - **Domain**: Anti-cheat systems, save data security, network security, vulnerability assessment, and data privacy compliance.
 - **Does NOT own**: game logic design (gameplay-programmer), server infrastructure (devops-engineer).
-- **Model tier**: DeepSeek-V3.2 (default).
+- **Model tier**: DeepSeek-V4-Flash (default).
 - **Gate IDs handled**: SE-VULNERABILITY-AUDIT, SE-SAVE-SECURITY-CHECK, SE-PHASE-GATE
 - **Domain**: Anti-cheat, Network Security, SQLi/XSS, UE 5.5 Save Security.
 
@@ -13,7 +13,7 @@
 
 - [ ] `description:` field is present and domain-specific (references anti-cheat / security / vulnerability assessment)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is DeepSeek-V3.2 (default for specialists)
+- [ ] Model tier is DeepSeek-V4-Flash (default for specialists)
 - [ ] Agent definition does not claim authority over game logic design or server deployment
 
 ---

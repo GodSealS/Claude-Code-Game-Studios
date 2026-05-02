@@ -17,12 +17,12 @@ Flow State, Bartle Player Types). Use whichever engine set matches your project.
 
 There are three tiers of agents:
 
-- **Tier 1 (DeepSeek-V3.2/GLM-5.1)**: Directors who make high-level decisions
+- **Tier 1 (DeepSeek-V4-Flash/GLM-5.1)**: Directors who make high-level decisions
   - `creative-director` -- vision and creative conflict resolution
   - `technical-director` -- architecture and technology decisions
   - `producer` -- scheduling, coordination, and risk management
 
-- **Tier 2 (Kimi-K2.5/GLM-5.1)**: Department leads who own their domain
+- **Tier 2 (Kimi-k2.6/GLM-5.1)**: Department leads who own their domain
   - `game-designer`, `lead-programmer`, `art-director`, `audio-director`,
     `narrative-director`, `qa-lead`, `release-manager`, `localization-lead`
 

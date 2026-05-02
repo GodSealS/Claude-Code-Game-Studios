@@ -3,7 +3,7 @@
 ## Agent Summary
 - **Domain**: Menu screens, HUDs, inventory screens, dialogue boxes, UI framework code, and data binding.
 - **Does NOT own**: UX flow design (ux-designer), visual style direction (art-director / technical-artist).
-- **Model tie**r: DeepSeek-V3.2 (default).
+- **Model tie**r: DeepSeek-V4-Flash (default).
 - **Gate IDs handled**: UI-ACCESSIBILITY-REVIEW, UI-LAYOUT-SIGN-OFF。
 - **Gate IDs**: UI-LAYOUT-SIGN-OFF。
 
@@ -13,7 +13,7 @@
 
 - [ ] `description:` field is present and domain-specific (references menus / HUDs / UI framework / data binding)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is DeepSeek-V3.2 (default for specialists)
+- [ ] Model tier is DeepSeek-V4-Flash (default for specialists)
 - [ ] Agent definition does not claim authority over UX flow design or visual art 
 direction
 - [ ] Agent rejects hardcoded display text in favor of localization IDs.

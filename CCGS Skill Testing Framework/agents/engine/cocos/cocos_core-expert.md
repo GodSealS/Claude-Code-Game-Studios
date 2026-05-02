@@ -3,7 +3,7 @@
 ## Agent Summary
 Domain: Cocos Creator core engine systems: component architecture, scene graph, lifecycle management, event communication, object pooling, and core framework patterns.
 Does NOT own: 2D/3D rendering (cocos_2d-expert, cocos_3d-expert), animation (cocos_animation-expert), physics (cocos_physics-expert).
-Model tier: DeepSeek-V3.2 (default).
+Model tier: DeepSeek-V4-Flash (default).
 No gate IDs assigned.
 
 ---
@@ -12,7 +12,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and domain-specific (references core engine, component system, scene graph, lifecycle)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is DeepSeek-V3.2 (default for specialists)
+- [ ] Model tier is DeepSeek-V4-Flash (default for specialists)
 - [ ] Agent definition does not claim authority over rendering or physics implementation
 - [ ] File scope includes only core-related files (under `cocos/core/` directory)
 

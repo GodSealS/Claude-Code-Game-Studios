@@ -3,7 +3,7 @@
 ## Agent Summary
 Domain: Cocos Creator-specific patterns, component-based architecture, scene node hierarchy, subsystem integration (rendering, animation, physics), and TypeScript best practices.
 Does NOT own: actual implementation of specific subsystems (delegates to sub-experts).
-Model tier: Kimi-K2.5 (Selected for complex architectural synthesis and long-context documentation mapping).
+Model tier: Kimi-k2.6 (Selected for complex architectural synthesis and long-context documentation mapping).
 No gate IDs assigned.
 
 ---
@@ -12,7 +12,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and domain-specific (references Cocos Creator architecture / component patterns / engine decisions)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep, Task
-- [ ] Model tier is Kimi-K2.5 (Strategic choice for architectural oversight; NOT the code-authoring specialist default)
+- [ ] Model tier is Kimi-k2.6 (Strategic choice for architectural oversight; NOT the code-authoring specialist default)
 - [ ] Agent definition references `docs/engine-reference/cocos/VERSION.md` as the authoritative API source
 
 ---

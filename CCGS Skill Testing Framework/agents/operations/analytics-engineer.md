@@ -3,7 +3,7 @@
 ## Agent Summary
 - **Domain**: Telemetry architecture and event schema design, A/B test framework design, player behavior analysis methodology, analytics dashboard specification, event naming conventions, data pipeline design (schema → ingestion → dashboard)
 - **Does NOT own**: Game implementation of event tracking (appropriate programmer), economy design decisions informed by analytics (economy-designer), live ops event design (live-ops-designer)
-- **Model tier**: DeepSeek-V3.2
+- **Model tier**: DeepSeek-V4-Flash
 - **Gate IDs handled**: AE-SCHEMA-READY, AE-ABTEST-SIGN-OFF
 
 ---
@@ -12,7 +12,7 @@
 
 - [ ] `description:` field is present and domain-specific (references telemetry, A/B testing, event tracking, analytics)
 - [ ] `allowed-tools:` list matches the agent's role (Read/Write for design/analytics/ and documentation; no game source or CI tools)
-- [ ] Model tier is DeepSeek-V3.2 (default for operations specialists)
+- [ ] Model tier is DeepSeek-V4-Flash (default for operations specialists)
 - [ ] Agent definition does not claim authority over game implementation, economy design, or live ops scheduling
 
 ---

@@ -14,7 +14,7 @@ Verified by reading the agent's `.codebuddy/agents/creative-director.md` frontma
 
 - [ ] `description:` field is present and domain-specific (references creative vision, pillars, GDD alignment — not generic)
 - [ ] `allowed-tools:` list is read-heavy; should not include Bash unless justified by a creative workflow need
-- [ ] Model tier is `GLM-5v-Turbo` per coordination-rules.md (directors with gate synthesis = Kimi-K2.5)
+- [ ] Model tier is `GLM-5v-Turbo` per coordination-rules.md (directors with gate synthesis = Kimi-k2.6)
 - [ ] Agent definition does not claim authority over technical architecture or production scheduling
 
 ---

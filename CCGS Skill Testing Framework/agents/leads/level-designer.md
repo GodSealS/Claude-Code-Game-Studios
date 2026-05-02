@@ -3,7 +3,7 @@
 ## Agent Summary
 **Domain owned:** Level layouts, encounter design, pacing and tension arc, environmental storytelling, spatial puzzles.
 **Does NOT own:** Narrative dialogue (writer / narrative-director), visual art style (art-director), code implementation (lead-programmer / ai-programmer), enemy AI behavior logic (ai-programmer / gameplay-programmer).
-**Model tier:** DeepSeek-V3.2 (individual system analysis — level design review and encounter assessment).
+**Model tier:** DeepSeek-V4-Flash (individual system analysis — level design review and encounter assessment).
 **Gate IDs**: LD-LAYOUT-REVIEW, LD-ENCOUNTER-CHECK, LD-PHASE-GATE
 
 ---
@@ -14,7 +14,7 @@ Verified by reading the agent's `.codebuddy/agents/level-designer.md` frontmatte
 
 - [ ] `description:` field is present and domain-specific (references level layout, encounter design, pacing, environmental storytelling — not generic)
 - [ ] `allowed-tools:` list is read-focused; includes Read for level design documents and GDDs; no Bash unless level tooling requires it
-- [ ] Model tier is `DeepSeek-V3.2` per coordination-rules.md
+- [ ] Model tier is `DeepSeek-V4-Flash` per coordination-rules.md
 - [ ] Agent definition does not claim authority over narrative dialogue, AI behavior code, or visual art style
 
 ---

@@ -55,7 +55,7 @@ todos:
 
 基于现有 `.codebuddy/agents/wechat-cloudbase-specialist.md`（417行）内容，遵循统一模板结构：
 
-- **Agent Summary**：定义域（云开发数据库设计、云函数、安全规则、存储管理、配额控制），明确不负责内容（架构决策、UI设计等），指定模型层级（DeepSeek-V3.2）
+- **Agent Summary**：定义域（云开发数据库设计、云函数、安全规则、存储管理、配额控制），明确不负责内容（架构决策、UI设计等），指定模型层级（DeepSeek-V4-Flash）
 - **Static Assertions**：7个结构检查点，确保描述字段、允许工具、模型层级、引用关系等符合标准
 - **Test Cases**：8个测试用例，覆盖数据库设计、云函数防作弊、安全规则、实时同步、存储管理、配额控制、版本兼容、错误处理等场景
 - **Protocol Compliance**：8条协议合规检查，确保不越界、正确委派、考虑微信特有约束
@@ -64,7 +64,7 @@ todos:
 ### 2. 一致性验证要点
 
 - **结构完整性**：所有5个文件必须包含相同的5个部分（Agent Summary、Static Assertions、Test Cases、Protocol Compliance、Coverage Notes）
-- **术语统一性**：Domain字段格式、Does NOT own表述、Model tier指定（specialist用Kimi-K2.5，子专家用DeepSeek-V3.2）
+- **术语统一性**：Domain字段格式、Does NOT own表述、Model tier指定（specialist用Kimi-k2.6，子专家用DeepSeek-V4-Flash）
 - **接口设计统一**：所有测试用例使用TypeScript代码示例，引用wx.* API，考虑4MB包体限制和分包加载策略
 - **测试用例覆盖面**：每个文件6-8个测试用例，覆盖各自域的关键场景
 

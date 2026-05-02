@@ -95,7 +95,7 @@ creative-director: "这涉及到我们的核心设计支柱...
 
 ### producer（制作人）
 
-**模型**: DeepSeek-V3.2
+**模型**: DeepSeek-V4-Flash
 
 **职责**:
 - 进度规划和管理
@@ -140,7 +140,7 @@ producer: "让我分析一下...
 
 ### game-designer（游戏设计师）
 
-**模型**: DeepSeek-V3.2
+**模型**: DeepSeek-V4-Flash
 
 **职责**:
 - 游戏机制设计
@@ -164,7 +164,7 @@ producer: "让我分析一下...
 
 ### lead-programmer（首席程序员）
 
-**模型**: DeepSeek-V3.2
+**模型**: DeepSeek-V4-Flash
 
 **职责**:
 - 代码架构审查
@@ -188,7 +188,7 @@ producer: "让我分析一下...
 
 ### art-director（艺术总监）
 
-**模型**: DeepSeek-V3.2
+**模型**: DeepSeek-V4-Flash
 
 **职责**:
 - 视觉风格定义
@@ -210,7 +210,7 @@ producer: "让我分析一下...
 
 ### audio-director（音频总监）
 
-**模型**: DeepSeek-V3.2
+**模型**: DeepSeek-V4-Flash
 
 **职责**:
 - 音频方向定义
@@ -227,7 +227,7 @@ producer: "让我分析一下...
 
 ### narrative-director（叙事总监）
 
-**模型**: DeepSeek-V3.2
+**模型**: DeepSeek-V4-Flash
 
 **职责**:
 - 故事弧线设计
@@ -244,7 +244,7 @@ producer: "让我分析一下...
 
 ### qa-lead（QA 主管）
 
-**模型**: DeepSeek-V3.2
+**模型**: DeepSeek-V4-Flash
 
 **职责**:
 - 测试策略
@@ -266,7 +266,7 @@ producer: "让我分析一下...
 
 ### release-manager（发布经理）
 
-**模型**: DeepSeek-V3.2
+**模型**: DeepSeek-V4-Flash
 
 **职责**:
 - 构建管理
@@ -289,7 +289,7 @@ producer: "让我分析一下...
 
 ### localization-lead（本地化主管）
 
-**模型**: DeepSeek-V3.2
+**模型**: DeepSeek-V4-Flash
 
 **职责**:
 - 字符串外化
@@ -311,7 +311,7 @@ producer: "让我分析一下...
 
 #### systems-designer（系统设计师）
 
-**模型**: DeepSeek-V3.2
+**模型**: DeepSeek-V4-Flash
 
 **职责**: 具体机制实现、公式设计、游戏循环
 
@@ -321,7 +321,7 @@ producer: "让我分析一下...
 
 #### level-designer（关卡设计师）
 
-**模型**: Kimi-K2.5
+**模型**: Kimi-k2.6
 
 **职责**: 关卡布局、节奏、遭遇设计、流程
 
@@ -331,7 +331,7 @@ producer: "让我分析一下...
 
 #### economy-designer（经济设计师）
 
-**模型**: DeepSeek-V3.2
+**模型**: DeepSeek-V4-Flash
 
 **职责**: 虚拟经济、资源流动、战利品表
 
@@ -353,7 +353,7 @@ producer: "让我分析一下...
 
 #### gameplay-programmer（游戏程序员）
 
-**模型**: DeepSeek-V3.2
+**模型**: DeepSeek-V4-Flash
 
 **职责**: 功能实现、游戏系统代码
 
@@ -363,7 +363,7 @@ producer: "让我分析一下...
 
 #### engine-programmer（引擎程序员）
 
-**模型**: DeepSeek-V3.2
+**模型**: DeepSeek-V4-Flash
 
 **职责**: 核心引擎、渲染、物理、内存管理
 
@@ -373,7 +373,7 @@ producer: "让我分析一下...
 
 #### ai-programmer（AI 程序员）
 
-**模型**: DeepSeek-V3.2
+**模型**: DeepSeek-V4-Flash
 
 **职责**: 行为树、寻路、NPC 逻辑、状态机
 
@@ -383,7 +383,7 @@ producer: "让我分析一下...
 
 #### network-programmer（网络程序员）
 
-**模型**: DeepSeek-V3.2
+**模型**: DeepSeek-V4-Flash
 
 **职责**: 网络代码、复制、延迟补偿、匹配
 
@@ -451,7 +451,7 @@ producer: "让我分析一下...
 
 #### qa-tester（测试员）
 
-**模型**: DeepSeek-V3.2
+**模型**: DeepSeek-V4-Flash
 
 **职责**: 编写测试用例、Bug 报告、测试清单
 
@@ -483,7 +483,7 @@ producer: "让我分析一下...
 
 #### analytics-engineer（分析工程师）
 
-**模型**: DeepSeek-V3.2
+**模型**: DeepSeek-V4-Flash
 
 **职责**: 事件追踪、仪表板、A/B 测试设计
 
@@ -493,7 +493,7 @@ producer: "让我分析一下...
 
 #### security-engineer（安全工程师）
 
-**模型**: DeepSeek-V3.2
+**模型**: DeepSeek-V4-Flash
 
 **职责**: 反作弊、漏洞预防、存档加密、网络安全
 
@@ -515,7 +515,7 @@ producer: "让我分析一下...
 
 #### prototyper（原型师）
 
-**模型**: DeepSeek-V3.2
+**模型**: DeepSeek-V4-Flash
 
 **职责**: 快速原型、机制测试、可行性验证
 
@@ -525,7 +525,7 @@ producer: "让我分析一下...
 
 #### live-ops-designer（运营设计师）
 
-**模型**: DeepSeek-V3.2
+**模型**: DeepSeek-V4-Flash
 
 **职责**: 赛季、活动、战斗通行证、留存、运营经济
 
@@ -580,11 +580,11 @@ producer: "让我分析一下...
 
 | Agent | 专长 | 模型 | 汇报给 |
 |-------|------|------|--------|
-| `wechat-specialist` | 微信平台架构、MVC/ECS 决策、游戏循环优化、状态/资源管理、音频系统、子专家协调 | DeepSeek-V3.2 | lead-programmer |
-| `wechat-minigame-specialist` | 平台 API、4MB 包体限制、物理引擎(Box2D/Bullet/JoltPhysics 统一 IPhysicsWorld 接口)、WebAssembly 集成、Spine/DragonBones 骨骼动画运行时 | DeepSeek-V3.2 | wechat-specialist |
+| `wechat-specialist` | 微信平台架构、MVC/ECS 决策、游戏循环优化、状态/资源管理、音频系统、子专家协调 | DeepSeek-V4-Flash | lead-programmer |
+| `wechat-minigame-specialist` | 平台 API、4MB 包体限制、物理引擎(Box2D/Bullet/JoltPhysics 统一 IPhysicsWorld 接口)、WebAssembly 集成、Spine/DragonBones 骨骼动画运行时 | DeepSeek-V4-Flash | wechat-specialist |
 | `wechat-shader-specialist` | WebGL 1.0/2.0 Shader、Unity/Unreal/Godot Shader 转 WebGL GLSL、后处理效果、渲染管线标准 | GLM-5v-Turbo | wechat-specialist |
 | `wechat-ui-specialist` | Figma/Sketch 原型、Photoshop/Illustrator 资产制作、FairyGUI 界面拼装(含数据绑定/Screen管理)、竖屏默认适配、微信设计规范 | GLM-5v-Turbo | wechat-specialist |
-| `wechat-cloudbase-specialist` | 微信云开发、数据库、云函数、存储、安全规则、反作弊 | DeepSeek-V3.2 | wechat-specialist |
+| `wechat-cloudbase-specialist` | 微信云开发、数据库、云函数、存储、安全规则、反作弊 | DeepSeek-V4-Flash | wechat-specialist |
 
 **技术规范**：
 - 代码语言：TypeScript（首选），JavaScript

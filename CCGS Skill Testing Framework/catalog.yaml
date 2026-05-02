@@ -798,7 +798,7 @@ skills:
     category: utility
 
 agents:
-  # Tier 1 Directors (DeepSeek-V3.2)
+  # Tier 1 Directors (DeepSeek-V4-Flash)
   - name: creative-director
     spec: CCGS Skill Testing Framework/agents/directors/creative-director.md
     last_spec: ""
@@ -823,7 +823,7 @@ agents:
     last_spec_result: ""
     category: director
 
-  # Tier 2 Leads (GLM-5.1 / Kimi-K2.5)
+  # Tier 2 Leads (GLM-5.1 / Kimi-k2.6)
   - name: lead-programmer
     spec: CCGS Skill Testing Framework/agents/leads/lead-programmer.md
     last_spec: ""

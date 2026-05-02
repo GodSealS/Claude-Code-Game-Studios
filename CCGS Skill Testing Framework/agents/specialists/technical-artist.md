@@ -3,7 +3,7 @@
 ## Agent Summary
 - **Domain**: Shaders, VFX, rendering optimization, art pipeline tools, and visual performance.
 - **Does NOT own**: art style decisions or color palette (art-director), gameplay code (gameplay-programmer).
-- **Model tier**: DeepSeek-V3.2 (default).
+- **Model tier**: DeepSeek-V4-Flash (default).
 - **Gate IDs**:TA-SHADER-AUDIT
 
 ---
@@ -12,7 +12,7 @@
 
 - [ ] `description:` field is present and domain-specific (references shaders / VFX / rendering)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is DeepSeek-V3.2 (default for specialists)
+- [ ] Model tier is DeepSeek-V4-Flash (default for specialists)
 - [ ] Agent definition does not claim authority over art style direction or gameplay logic
 
 ---

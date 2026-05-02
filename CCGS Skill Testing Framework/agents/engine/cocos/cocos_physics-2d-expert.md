@@ -3,7 +3,7 @@
 ## Agent Summary
 Domain: Cocos Creator 2D physics systems: Box2D integration, 2D rigid bodies, collision detection, platformer physics, and 2D physics optimization.
 Does NOT own: 3D physics (cocos_physics-expert), 2D rendering (cocos_2d-expert), animation (cocos_animation-expert).
-Model tier: DeepSeek-V3.2 (default).
+Model tier: DeepSeek-V4-Flash (default).
 No gate IDs assigned.
 
 ---
@@ -12,7 +12,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and domain-specific (references 2D physics, Box2D, platformer mechanics, collision detection)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is DeepSeek-V3.2 (default for specialists)
+- [ ] Model tier is DeepSeek-V4-Flash (default for specialists)
 - [ ] Agent definition does not claim authority over 3D physics or rendering
 - [ ] File scope includes only 2D physics-related files (under `cocos/physics-2d/` directory)
 

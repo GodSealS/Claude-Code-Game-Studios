@@ -3,7 +3,7 @@
 ## Agent Summary
 Domain: Cocos Creator rendering pipeline: camera systems, lighting, shadows, post-processing effects, render pipeline configuration, and rendering performance optimization.
 Does NOT own: 2D/3D rendering implementation (cocos_2d-expert, cocos_3d-expert), graphics API (cocos_gfx-expert), animation (cocos_animation-expert).
-Model tier: DeepSeek-V3.2 (default).
+Model tier: DeepSeek-V4-Flash (default).
 No gate IDs assigned.
 
 ---
@@ -12,7 +12,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and domain-specific (references rendering pipeline, camera, lighting, shadows, post-processing)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is DeepSeek-V3.2 (default for specialists)
+- [ ] Model tier is DeepSeek-V4-Flash (default for specialists)
 - [ ] Agent definition does not claim authority over rendering implementation or graphics API
 - [ ] File scope includes only rendering-related files (under `cocos/rendering/` directory)
 

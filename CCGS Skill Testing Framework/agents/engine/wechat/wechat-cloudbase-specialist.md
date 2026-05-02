@@ -3,7 +3,7 @@
 ## Agent Summary
 Domain: WeChat Cloud Base (云开发) serverless backend development, NoSQL database design optimized for query patterns, cloud functions (Node.js) with anti-cheat validation, security rules for data access control, cloud storage management, real-time data synchronization with database.watch(), quota optimization, and compliance with Chinese data regulations.
 Does NOT own: Architecture decisions (Cloud Base vs self-hosted, overall backend strategy) — defers to wechat-specialist, gameplay implementation (wechat-minigame-specialist), shader code (wechat-shader-specialist), UI design/implementation (wechat-ui-specialist).
-Model tier: DeepSeek-V3.2 (default for implementation specialists).
+Model tier: DeepSeek-V4-Flash (default for implementation specialists).
 No gate IDs assigned.
 
 ---
@@ -12,7 +12,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and domain-specific (references WeChat Cloud Base, NoSQL database, cloud functions, security rules, storage management, real-time sync, quota optimization)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is DeepSeek-V3.2 (default for specialists)
+- [ ] Model tier is DeepSeek-V4-Flash (default for specialists)
 - [ ] Agent definition does not claim authority over architecture decisions or other domains
 - [ ] Agent references WeChat Cloud Base-specific constraints (quotas, wx.* APIs, environment initialization)
 

@@ -180,7 +180,7 @@ agents:
       - sprint-plan
       - scope-check
       - estimate
-    model: "DeepSeek-V3.2"
+    model: "DeepSeek-V4-Flash"
     
   game-designer:
     name: "Game Designer"

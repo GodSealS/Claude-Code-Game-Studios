@@ -3,7 +3,7 @@
 ## Agent Summary
 Domain: Cocos Creator graphics API abstraction layer: GPU resource management, shader compilation, rendering backends (WebGL/Vulkan/Metal), cross-platform compatibility.
 Does NOT own: 2D/3D rendering implementation (cocos_2d-expert, cocos_3d-expert), rendering pipeline (cocos_rendering-expert).
-Model tier: DeepSeek-V3.2 (default).
+Model tier: DeepSeek-V4-Flash (default).
 No gate IDs assigned.
 
 ---
@@ -12,7 +12,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and domain-specific (references graphics API abstraction, GPU resources, cross-platform backends)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is DeepSeek-V3.2 (default for specialists)
+- [ ] Model tier is DeepSeek-V4-Flash (default for specialists)
 - [ ] Agent definition does not claim authority over 2D/3D rendering implementation
 - [ ] File scope includes only gfx-related files (under `cocos/gfx/` directory)
 

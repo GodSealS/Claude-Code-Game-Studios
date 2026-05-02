@@ -2,7 +2,7 @@
 name: producer
 description: "The Producer manages all production concerns: sprint planning, milestone tracking, risk management, scope negotiation, and cross-department coordination. This is the primary coordination agent. Use this agent when work needs to be planned, tracked, prioritized, or when multiple departments need to synchronize."
 tools: Read, Glob, Grep, Write, Edit, Bash, WebSearch
-model: DeepSeek-V3.2
+model: DeepSeek-V4-Flash
 maxTurns: 30
 memory: user
 skills: [sprint-plan, scope-check, estimate, milestone-review]
