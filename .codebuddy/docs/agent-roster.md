@@ -5,7 +5,8 @@ The following agents are available. Each has a dedicated definition file in
 spans multiple domains, the coordinating agent (usually `producer` or the
 domain lead) should delegate to specialists.
 
-<!-- 中文翻译 -->
+> **中文翻译**：以下代理可用。每个代理在 `.codebuddy/agents/` 中都有专用定义文件。根据手头任务选择最合适的代理。当任务跨多个领域时，协调代理（通常是 `producer` 或领域负责人）应委派给专家。
+
 ## Tier 1 -- Leadership Agents (GLM-5.1)
 | Agent | Domain | When to Use |
 |-------|--------|-------------|
@@ -13,7 +14,13 @@ domain lead) should delegate to specialists.
 | `technical-director` | Technical vision | Architecture decisions, tech stack choices, performance strategy |
 | `producer` | Production management | Sprint planning, milestone tracking, risk management, coordination |
 
-<!-- 中文翻译 -->
+> **中文翻译**：
+| 代理 | 领域 | 何时使用 |
+|------|------|----------|
+| `creative-director` | 高层愿景 | 重大创意决策、支柱冲突、基调/方向 |
+| `technical-director` | 技术愿景 | 架构决策、技术栈选择、性能策略 |
+| `producer` | 生产管理 | 冲刺规划、里程碑跟踪、风险管理、协调 |
+
 ## Tier 2 -- Department Lead Agents (DeepSeek-V3.2)
 | Agent | Domain | When to Use |
 |-------|--------|-------------|
@@ -26,7 +33,18 @@ domain lead) should delegate to specialists.
 | `release-manager` | Release pipeline | Build management, versioning, changelogs, deployment, rollbacks |
 | `localization-lead` | Internationalization | String externalization, translation pipeline, locale testing |
 
-<!-- 中文翻译 -->
+> **中文翻译**：
+| 代理 | 领域 | 何时使用 |
+|------|------|----------|
+| `game-designer` | 游戏设计 | 机制、系统、进度、经济、平衡 |
+| `lead-programmer` | 代码架构 | 系统设计、代码审查、API设计、重构 |
+| `art-director` | 视觉方向 | 风格指南、美术圣经、资产标准、UI/UX方向 |
+| `audio-director` | 音频方向 | 音乐方向、声音调色板、音频实现策略 |
+| `narrative-director` | 故事与写作 | 故事弧、世界构建、角色设计、对话策略 |
+| `qa-lead` | 质量保证 | 测试策略、缺陷分诊、发布就绪、回归规划 |
+| `release-manager` | 发布管线 | 构建管理、版本控制、变更日志、部署、回滚 |
+| `localization-lead` | 国际化 | 字符串外部化、翻译管线、本地化测试 |
+
 ## Tier 3 -- Specialist Agents (Kimi-K2.5 or MiniMax-M2.7)
 | Agent | Domain | Model | When to Use |
 |-------|--------|-------|-------------|
@@ -56,10 +74,37 @@ domain lead) should delegate to specialists.
 | `live-ops-designer` | Live operations | DeepSeek-V3.2 | Seasons, events, battle passes, retention, live economy |
 | `community-manager` | Community | GLM-5.0-Turbo | Patch notes, player feedback, crisis comms, community health |
 
-<!-- 引擎专用代理（使用与你的引擎匹配的集合） -->
+> **中文翻译**：
+| 代理 | 领域 | 模型 | 何时使用 |
+|------|------|------|----------|
+| `systems-designer` | 系统设计 | DeepSeek-V3.2 | 具体机制实现、公式设计、循环 |
+| `level-designer` | 关卡设计 | Kimi-K2.5 | 关卡布局、节奏、遭遇设计、流程 |
+| `economy-designer` | 经济/平衡 | DeepSeek-V3.2 | 资源经济、掉落表、进度曲线 |
+| `gameplay-programmer` | 玩法代码 | DeepSeek-V3.2 | 功能实现、玩法系统代码 |
+| `engine-programmer` | 引擎系统 | DeepSeek-V3.2 | 核心引擎、渲染、物理、内存管理 |
+| `ai-programmer` | AI系统 | DeepSeek-V3.2 | 行为树、寻路、NPC逻辑、状态机 |
+| `network-programmer` | 网络 | DeepSeek-V3.2 | 网络代码、复制、延迟补偿、匹配 |
+| `tools-programmer` | 开发工具 | DeepSeek-V3.2 | 编辑器扩展、管线工具、调试工具 |
+| `ui-programmer` | UI实现 | GLM-5v-Turbo | UI框架、屏幕、组件、数据绑定 |
+| `technical-artist` | 技术美术 | GLM-5v-Turbo | 着色器、特效、优化、美术管线工具 |
+| `sound-designer` | 声音设计 | MiniMax-M2.7 | 音效设计文档、音频事件列表、混音说明 |
+| `writer` | 对话/传说 | MiniMax-M2.7 | 对话写作、传说条目、物品描述 |
+| `world-builder` | 世界/传说设计 | MiniMax-M2.7 | 世界规则、派系设计、历史、地理 |
+| `qa-tester` | 测试执行 | DeepSeek-V3.2 | 编写测试用例、缺陷报告、测试清单 |
+| `performance-analyst` | 性能 | GLM-5.1 | 性能分析、优化建议、内存分析 |
+| `devops-engineer` | 构建/部署 | GLM-5.1 | CI/CD、构建脚本、版本控制工作流 |
+| `analytics-engineer` | 遥测 | DeepSeek-V3.2 | 事件跟踪、仪表板、A/B测试设计 |
+| `ux-designer` | UX流程 | GLM-5.1 | 用户流程、线框图、无障碍、输入处理 |
+| `prototyper` | 快速原型 | DeepSeek-V3.2 | 一次性原型、机制测试、可行性验证 |
+| `security-engineer` | 安全 | DeepSeek-V3.2 | 反作弊、漏洞预防、存档加密、网络安全 |
+| `accessibility-specialist` | 无障碍 | GLM-5v-Turbo | WCAG合规、色盲模式、重映射、文本缩放 |
+| `live-ops-designer` | 实时运营 | DeepSeek-V3.2 | 赛季、活动、战斗通行证、留存、实时经济 |
+| `community-manager` | 社区 | GLM-5.0-Turbo | 补丁说明、玩家反馈、危机沟通、社区健康 |
+
 ## Engine-Specific Agents (use the set matching your engine)
 
-<!-- 中文翻译 -->
+> **中文翻译**：引擎专用代理（使用与你的引擎匹配的集合）
+
 ### Engine Leads
 
 | Agent | Engine | Model | When to Use |
@@ -70,8 +115,15 @@ domain lead) should delegate to specialists.
 | `wechat-specialist` | WeChat Mini Game | DeepSeek-V3.2 | WeChat platform architecture (MVC/ECS), wx.* APIs, game loop optimization, state/resource management, audio systems, sub-specialist coordination |
 | `cocos-specialist` | Cocos Creator | DeepSeek-V3.2 | Component system, scene graph, rendering pipeline, Cocos optimization |
 
+> **中文翻译**：
+| 代理 | 引擎 | 模型 | 何时使用 |
+|------|------|------|----------|
+| `unreal-specialist` | Unreal Engine 5 | DeepSeek-V3.2 | Blueprint vs C++、GAS概述、UE子系统、Unreal优化 |
+| `unity-specialist` | Unity | DeepSeek-V3.2 | MonoBehaviour vs DOTS、Addressables、URP/HDRP、Unity优化 |
+| `godot-specialist` | Godot 4 | DeepSeek-V3.2 | GDScript模式、节点/场景架构、信号、Godot优化 |
+| `wechat-specialist` | 微信小游戏 | DeepSeek-V3.2 | 微信平台架构(MVC/ECS)、wx.* API、游戏循环优化、状态/资源管理、音频系统、子专家协调 |
+| `cocos-specialist` | Cocos Creator | DeepSeek-V3.2 | 组件系统、场景图、渲染管线、Cocos优化 |
 
-<!-- 中文翻译 -->
 ### Unreal Engine Sub-Specialists
 
 | Agent | Subsystem | Model | When to Use |
@@ -81,7 +133,14 @@ domain lead) should delegate to specialists.
 | `ue-replication-specialist` | Networking/Replication | GLM-5.1 | Property replication, RPCs, prediction, relevancy, bandwidth |
 | `ue-umg-specialist` | UMG/CommonUI | DeepSeek-V3.2 | Widget hierarchy, data binding, CommonUI input, UI performance |
 
-<!-- 中文翻译 -->
+> **中文翻译**：
+| 代理 | 子系统 | 模型 | 何时使用 |
+|------|--------|------|----------|
+| `ue-gas-specialist` | Gameplay Ability System | DeepSeek-V3.2 | 能力、游戏效果、属性集、标签、预测 |
+| `ue-blueprint-specialist` | Blueprint架构 | GLM-5v-Turbo | BP/C++边界、图表标准、命名、BP优化 |
+| `ue-replication-specialist` | 网络/复制 | GLM-5.1 | 属性复制、RPC、预测、相关性、带宽 |
+| `ue-umg-specialist` | UMG/CommonUI | DeepSeek-V3.2 | 组件层级、数据绑定、CommonUI输入、UI性能 |
+
 ### Unity Sub-Specialists
 
 | Agent | Subsystem | Model | When to Use |
@@ -91,7 +150,14 @@ domain lead) should delegate to specialists.
 | `unity-addressables-specialist` | Asset Management | DeepSeek-V3.2 | Addressable groups, async loading, memory, content delivery |
 | `unity-ui-specialist` | UI Toolkit/UGUI | GLM-5v-Turbo | UI Toolkit, UXML/USS, UGUI Canvas, data binding, cross-platform input |
 
-<!-- 中文翻译 -->
+> **中文翻译**：
+| 代理 | 子系统 | 模型 | 何时使用 |
+|------|--------|------|----------|
+| `unity-dots-specialist` | DOTS/ECS | DeepSeek-V3.2 | 实体组件系统、Jobs、Burst编译器、混合渲染器 |
+| `unity-shader-specialist` | 着色器/特效 | GLM-5.1 | Shader Graph、VFX Graph、URP/HDRP定制、后处理 |
+| `unity-addressables-specialist` | 资产管理 | DeepSeek-V3.2 | Addressable组、异步加载、内存、内容分发 |
+| `unity-ui-specialist` | UI Toolkit/UGUI | GLM-5v-Turbo | UI Toolkit、UXML/USS、UGUI Canvas、数据绑定、跨平台输入 |
+
 ### Godot Sub-Specialists
 
 | Agent | Subsystem | Model | When to Use |
@@ -100,7 +166,13 @@ domain lead) should delegate to specialists.
 | `godot-shader-specialist` | Shaders/Rendering | GLM-5v-Turbo | Godot shading language, visual shaders, particles, post-processing |
 | `godot-gdextension-specialist` | GDExtension | DeepSeek-V3.2 | C++/Rust bindings, native performance, custom nodes, build systems |
 
-<!-- 中文翻译 -->
+> **中文翻译**：
+| 代理 | 子系统 | 模型 | 何时使用 |
+|------|--------|------|----------|
+| `godot-gdscript-specialist` | GDScript | DeepSeek-V3.2 | 静态类型、设计模式、信号、协程、GDScript性能 |
+| `godot-shader-specialist` | 着色器/渲染 | GLM-5v-Turbo | Godot着色语言、可视着色器、粒子、后处理 |
+| `godot-gdextension-specialist` | GDExtension | DeepSeek-V3.2 | C++/Rust绑定、原生性能、自定义节点、构建系统 |
+
 ### Cocos Creator Sub-Specialists
 
 | Agent | Subsystem | Model | When to Use |
@@ -114,6 +186,18 @@ domain lead) should delegate to specialists.
 | `cocos_physics-2d-expert` | 2D Physics | DeepSeek-V3.2 | Box2D integration, 2D collision detection, physics events |
 | `cocos_rendering-expert` | Rendering Pipeline | DeepSeek-V3.2 | Camera system, lighting, shadows, post-processing, optimization |
 
+> **中文翻译**：
+| 代理 | 子系统 | 模型 | 何时使用 |
+|------|--------|------|----------|
+| `cocos_2d-expert` | 2D渲染 | DeepSeek-V3.2 | 精灵、UI组件、2D图形、文本渲染、遮罩效果 |
+| `cocos_3d-expert` | 3D渲染 | DeepSeek-V3.2 | 网格渲染、骨骼动画、模型管理、LOD |
+| `cocos_animation-expert` | 动画系统 | DeepSeek-V3.2 | 动画剪辑、骨骼动画、状态机、混合 |
+| `cocos_core-expert` | 核心引擎 | DeepSeek-V3.2 | 组件系统、场景图、生命周期管理、事件系统 |
+| `cocos_gfx-expert` | 图形API | DeepSeek-V3.2 | 着色器、GPU资源、跨平台后端、渲染管线 |
+| `cocos_physics-expert` | 3D物理 | DeepSeek-V3.2 | 刚体、碰撞检测、射线检测、关节 |
+| `cocos_physics-2d-expert` | 2D物理 | DeepSeek-V3.2 | Box2D集成、2D碰撞检测、物理事件 |
+| `cocos_rendering-expert` | 渲染管线 | DeepSeek-V3.2 | 相机系统、光照、阴影、后处理、优化 |
+
 ---
 
 ### WeChat Mini Game (微信小游戏) Sub-Specialists
@@ -125,6 +209,14 @@ domain lead) should delegate to specialists.
 | `wechat-ui-specialist` | UI/UX Design | GLM-5v-Turbo | wechat-specialist | Figma/Sketch prototyping, Photoshop/Illustrator asset production, FairyGUI layout with data binding, screen management, portrait-first design, WeChat design system compliance |
 | `wechat-cloudbase-specialist` | Cloud Backend | DeepSeek-V3.2 | wechat-specialist | Serverless backend, database, cloud functions, storage, security rules, anti-cheat |
 
+> **中文翻译**：
+| 代理 | 领域 | 模型 | 汇报给 | 何时使用 |
+|------|------|------|--------|----------|
+| `wechat-minigame-specialist` | 玩法与物理 | DeepSeek-V3.2 | wechat-specialist | 平台API、4MB包体限制、物理引擎（通过统一IPhysicsWorld接口的Box2D/Bullet/JoltPhysics）、WASM集成、Spine/DragonBones动画运行时 |
+| `wechat-shader-specialist` | WebGL着色器 | GLM-5v-Turbo | wechat-specialist | 自定义着色器、WebGL 1.0/2.0、Unity/Unreal/Godot着色器转GLSL、后处理效果、渲染管线标准 |
+| `wechat-ui-specialist` | UI/UX设计 | GLM-5v-Turbo | wechat-specialist | Figma/Sketch原型设计、Photoshop/Illustrator资产制作、FairyGUI布局与数据绑定、屏幕管理、竖屏优先设计、微信设计系统合规 |
+| `wechat-cloudbase-specialist` | 云后端 | DeepSeek-V3.2 | wechat-specialist | 无服务器后端、数据库、云函数、存储、安全规则、反作弊 |
+
 **Notes:**
 - `wechat-specialist` is the Engine Lead for the WeChat platform, coordinating all sub-specialists
 - WeChat Mini Game specialists use TypeScript (preferred) for all JavaScript code
@@ -132,3 +224,11 @@ domain lead) should delegate to specialists.
 - Audio format: AAC preferred, MP3 fallback; avoid WAV and OGG
 - Cloud Base provides serverless backend with MongoDB-like database
 - Real-name verification (实名制) and anti-addiction (防沉迷) compliance required for China market
+
+> **中文翻译**：
+> - `wechat-specialist` 是微信平台的引擎负责人，协调所有子专家
+> - 微信小游戏专家对所有 JavaScript 代码使用 TypeScript（首选）
+> - 严格强制执行 4MB 包大小限制
+> - 音频格式：首选 AAC，备用 MP3；避免 WAV 和 OGG
+> - 云开发提供带有类 MongoDB 数据库的无服务器后端
+> - 中国市场需要实名认证（实名制）和防沉迷（防沉迷）合规
