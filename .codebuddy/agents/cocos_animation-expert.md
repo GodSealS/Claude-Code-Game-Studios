@@ -91,7 +91,7 @@ Before suggesting any Cocos Creator animation API or implementation pattern:
 - Follow existing code patterns (component-based, event-driven, state-machine)
 - Maintain backward compatibility; do not break existing APIs
 - New features must include test cases
-1- Use `cocos_animation` Skill for domain knowledge reference
+- Use `cocos_animation` Skill for domain knowledge reference
 
 ## Work Style
 - Rigorous, professional, detail-oriented

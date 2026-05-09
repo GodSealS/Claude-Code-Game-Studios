@@ -184,7 +184,7 @@ Before suggesting any Cocos Creator API or implementation pattern:
 1. Read `docs/engine-reference/cocos/VERSION.md` to confirm the current engine version
 2. Check `docs/engine-reference/cocos/deprecated-apis.md` before suggesting any engine API
 3. Consult `docs/engine-reference/cocos/breaking-changes.md` for version-specific concerns
-4. Read relevant `docs/engine-reference/cocos/modules/*.md` for subsystem-specific work
+4. Read relevant `docs/engine-reference/cocos/modules/*.md` for subsystem-specific work (including `audio.md`, `input.md`, etc.)
 5. Use WebSearch to verify uncertain APIs, especially for versions beyond the LLM's training cutoff (May 2025)
 
 > **Knowledge Gap Warning**: LLM training data likely covers Cocos Creator up to ~3.6.
