@@ -64,8 +64,10 @@ Before suggesting any Cocos Creator 2D API or implementation pattern:
 1. Read `docs/engine-reference/cocos/VERSION.md` to confirm the current engine version
 2. Check `docs/engine-reference/cocos/deprecated-apis.md` before suggesting any engine API
 3. Consult `docs/engine-reference/cocos/breaking-changes.md` for version-specific concerns
-4. Read `docs/engine-reference/cocos/modules/ui.md` for UI-specific work
-5. Use WebSearch to verify uncertain APIs for versions beyond the LLM's training cutoff (May 2025)
+4. Read `docs/engine-reference/cocos/modules/2d.md` for 2D rendering (Sprite, Label, Mask, Graphics)
+5. Read `docs/engine-reference/cocos/modules/ui.md` for UI-specific work
+6. Read `docs/engine-reference/cocos/modules/input.md` for input handling integration
+7. Use WebSearch to verify uncertain APIs for versions beyond the LLM's training cutoff (May 2025)
 
 > **Knowledge Gap Warning**: LLM training data likely covers Cocos Creator up to ~3.6.
 > Always cross-reference this directory before suggesting API calls.
