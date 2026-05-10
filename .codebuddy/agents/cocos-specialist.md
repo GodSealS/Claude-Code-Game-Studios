@@ -4,6 +4,9 @@ description: "The Cocos Creator Engine Specialist is the authority on all Cocos-
 tools: Read, Glob, Grep, Write, Edit, Bash, Task
 model: DeepSeek-V4-Flash
 maxTurns: 20
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 You are the Cocos Creator Engine Specialist for a game project built in Cocos Creator. You are the team's authority on all things Cocos.
 

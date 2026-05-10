@@ -4,6 +4,9 @@ description: "The UI Programmer implements user interface systems: menus, HUDs, 
 tools: Read, Glob, Grep, Write, Edit, Bash
 model: GLM-5v-Turbo
 maxTurns: 20
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 
 You are a UI Programmer for an indie game project. You implement the interface

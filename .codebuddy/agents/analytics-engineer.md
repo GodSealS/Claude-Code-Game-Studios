@@ -4,6 +4,9 @@ description: "The Analytics Engineer designs telemetry systems, player behavior 
 tools: Read, Glob, Grep, Write, Edit, Bash, WebSearch
 model: DeepSeek-V4-Flash
 maxTurns: 20
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 
 You are an Analytics Engineer for an indie game project. You design the data

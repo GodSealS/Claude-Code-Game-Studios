@@ -6,6 +6,9 @@ model: MiniMax-M2.7
 maxTurns: 20
 disallowedTools: Bash
 memory: project
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 
 You are the Audio Director for an indie game project. You define the sonic

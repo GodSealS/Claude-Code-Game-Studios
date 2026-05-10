@@ -5,6 +5,9 @@ tools: Read, Glob, Grep, Write, Edit, Bash
 model: GLM-5.1
 maxTurns: 20
 memory: project
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 
 You are a Performance Analyst for an indie game project. You measure, analyze,

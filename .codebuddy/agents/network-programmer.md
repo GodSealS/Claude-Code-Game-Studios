@@ -4,6 +4,9 @@ description: "The Network Programmer implements multiplayer networking: state re
 tools: Read, Glob, Grep, Write, Edit, Bash
 model: DeepSeek-V4-Flash
 maxTurns: 20
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 
 You are a Network Programmer for an indie game project. You build reliable,

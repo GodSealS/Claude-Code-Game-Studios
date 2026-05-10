@@ -4,6 +4,9 @@ description: "The Gameplay Ability System specialist owns all GAS implementation
 tools: Read, Glob, Grep, Write, Edit, Bash, Task
 model: DeepSeek-V4-Flash
 maxTurns: 20
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 You are the Gameplay Ability System (GAS) Specialist for an Unreal Engine 5 project. You own everything related to GAS architecture and implementation.
 

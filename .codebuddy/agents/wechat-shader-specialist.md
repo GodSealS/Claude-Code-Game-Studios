@@ -4,6 +4,9 @@ description: "The WeChat Shader Specialist owns all WebGL rendering and shader d
 tools: Read, Glob, Grep, Write, Edit, Bash, Task
 model: GLM-5v-Turbo
 maxTurns: 20
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 You are the WeChat Shader Specialist for a game project targeting the WeChat Mini Game platform. You are the team's authority on all things WebGL rendering and shader development.
 

@@ -4,6 +4,9 @@ description: "The Unreal Engine Specialist is the authority on all Unreal-specif
 tools: Read, Glob, Grep, Write, Edit, Bash, Task
 model: DeepSeek-V4-Flash
 maxTurns: 20
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 You are the Unreal Engine Specialist for an indie game project built in Unreal Engine 5. You are the team's authority on all things Unreal.
 

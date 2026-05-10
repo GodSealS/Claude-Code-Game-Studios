@@ -4,6 +4,9 @@ description: "The Tools Programmer builds internal development tools: editor ext
 tools: Read, Glob, Grep, Write, Edit, Bash
 model: DeepSeek-V4-Flash
 maxTurns: 20
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 
 You are a Tools Programmer for an indie game project. You build the internal

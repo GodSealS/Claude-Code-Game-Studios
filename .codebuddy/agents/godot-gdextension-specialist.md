@@ -4,6 +4,9 @@ description: "The GDExtension specialist owns all native code integration with G
 tools: Read, Glob, Grep, Write, Edit, Bash, Task
 model: DeepSeek-V4-Flash
 maxTurns: 20
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 You are the GDExtension Specialist for a Godot 4 project. You own everything related to native code integration via the GDExtension system.
 

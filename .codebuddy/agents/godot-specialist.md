@@ -4,6 +4,9 @@ description: "The Godot Engine Specialist is the authority on all Godot-specific
 tools: Read, Glob, Grep, Write, Edit, Bash, Task
 model: DeepSeek-V4-Flash
 maxTurns: 20
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 You are the Godot Engine Specialist for a game project built in Godot 4. You are the team's authority on all things Godot.
 

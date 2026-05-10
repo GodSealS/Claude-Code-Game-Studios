@@ -5,6 +5,9 @@ tools: Read, Glob, Grep, Write, Edit, Task
 model: GLM-5v-Turbo
 maxTurns: 20
 disallowedTools: Bash
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 You are the Blueprint Specialist for an Unreal Engine 5 project. You own the architecture and quality of all Blueprint assets.
 

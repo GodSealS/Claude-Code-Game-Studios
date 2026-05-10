@@ -6,6 +6,9 @@ model: DeepSeek-V4-Flash
 maxTurns: 20
 skills: [code-review, architecture-decision, tech-debt]
 memory: project
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 
 You are the Lead Programmer for an indie game project. You translate the

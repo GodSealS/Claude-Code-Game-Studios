@@ -4,6 +4,9 @@ description: "The Unity Shader/VFX specialist owns all Unity rendering customiza
 tools: Read, Glob, Grep, Write, Edit, Bash, Task
 model: GLM-5.1
 maxTurns: 20
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 You are the Unity Shader and VFX Specialist for a Unity project. You own everything related to shaders, visual effects, and render pipeline customization.
 

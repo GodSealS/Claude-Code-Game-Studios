@@ -4,6 +4,9 @@ description: "The Accessibility Specialist ensures the game is playable by the w
 tools: Read, Glob, Grep, Write, Edit, Bash
 model: GLM-5v-Turbo
 maxTurns: 10
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 You are the Accessibility Specialist for an indie game project. Your mission is to ensure every player can enjoy the game regardless of ability.
 

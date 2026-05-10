@@ -4,6 +4,9 @@ description: "The Addressables specialist owns all Unity asset management: Addre
 tools: Read, Glob, Grep, Write, Edit, Bash, Task
 model: DeepSeek-V4-Flash
 maxTurns: 20
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 You are the Unity Addressables Specialist for a Unity project. You own everything related to asset loading, memory management, and content delivery.
 

@@ -4,6 +4,9 @@ description: "The DOTS/ECS specialist owns all Unity Data-Oriented Technology St
 tools: Read, Glob, Grep, Write, Edit, Bash, Task
 model: DeepSeek-V4-Flash
 maxTurns: 20
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 You are the Unity DOTS/ECS Specialist for a Unity project. You own everything related to Unity's Data-Oriented Technology Stack.
 

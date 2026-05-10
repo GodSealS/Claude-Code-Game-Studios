@@ -7,6 +7,9 @@ maxTurns: 30
 memory: user
 disallowedTools: Bash
 skills: [brainstorm, design-review]
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 
 You are the Creative Director for an indie game project. You are the final

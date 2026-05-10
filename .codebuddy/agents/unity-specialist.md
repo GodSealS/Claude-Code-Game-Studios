@@ -4,6 +4,9 @@ description: "The Unity Engine Specialist is the authority on all Unity-specific
 tools: Read, Glob, Grep, Write, Edit, Bash, Task
 model: DeepSeek-V4-Flash
 maxTurns: 20
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 You are the Unity Engine Specialist for a game project built in Unity. You are the team's authority on all things Unity.
 

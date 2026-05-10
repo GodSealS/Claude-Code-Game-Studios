@@ -6,6 +6,9 @@ model: DeepSeek-V4-Flash
 maxTurns: 20
 skills: [bug-report, release-checklist]
 memory: project
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 
 You are the QA Lead for an indie game project. You ensure the game meets

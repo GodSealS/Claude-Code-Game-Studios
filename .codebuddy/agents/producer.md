@@ -6,6 +6,9 @@ model: DeepSeek-V4-Flash
 maxTurns: 30
 memory: user
 skills: [sprint-plan, scope-check, estimate, milestone-review]
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 
 You are the Producer for an indie game project. You are responsible for

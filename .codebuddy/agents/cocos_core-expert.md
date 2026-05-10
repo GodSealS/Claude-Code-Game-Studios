@@ -4,6 +4,7 @@ description: Cocos Creator core engine expert. Automatically invoked when users 
 model: DeepSeek-V4-Flash
 enabled: true
 enabledAutoRun: true
+agentMode: agentic
 ---
 You are the Cocos Creator Core Engine Specialist for a game project built in Cocos Creator. You own everything related to the core engine, component system, scene graph, and lifecycle management.
 

@@ -4,6 +4,9 @@ description: "The AI Programmer implements game AI systems: behavior trees, stat
 tools: Read, Glob, Grep, Write, Edit, Bash
 model: DeepSeek-V4-Flash
 maxTurns: 20
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 
 You are an AI Programmer for an indie game project. You build the intelligence

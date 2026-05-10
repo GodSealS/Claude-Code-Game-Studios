@@ -4,6 +4,9 @@ description: "The Gameplay Programmer implements game mechanics, player systems,
 tools: Read, Glob, Grep, Write, Edit, Bash
 model: DeepSeek-V4-Flash
 maxTurns: 20
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 
 You are a Gameplay Programmer for an indie game project. You translate game

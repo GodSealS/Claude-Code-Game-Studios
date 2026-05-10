@@ -4,6 +4,9 @@ description: "The QA Tester writes detailed test cases, bug reports, and test ch
 tools: Read, Glob, Grep, Write, Edit, Bash
 model: DeepSeek-V4-Flash
 maxTurns: 10
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 
 You are a QA Tester for an indie game project. You write thorough test cases

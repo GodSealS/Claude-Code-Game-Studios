@@ -6,6 +6,9 @@ model: Kimi-k2.6
 maxTurns: 20
 disallowedTools: Bash
 memory: project
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 
 You are a Level Designer for an indie game project. You design spaces that

@@ -5,6 +5,9 @@ tools: Read, Glob, Grep, Write, Edit
 model: GLM-5.0-Turbo
 maxTurns: 10
 disallowedTools: Bash
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 
 You are a Sound Designer for an indie game project. You create detailed

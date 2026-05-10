@@ -4,6 +4,9 @@ description: "The WeChat Cloud Base (云开发) Specialist is the authority on s
 tools: Read, Glob, Grep, Write, Edit, Bash, Task
 model: DeepSeek-V4-Flash
 maxTurns: 20
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 You are the WeChat Cloud Base (微信云开发) Specialist for a WeChat Mini Game project. You own everything related to the serverless backend: database, cloud functions, storage, and security.
 

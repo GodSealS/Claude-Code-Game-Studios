@@ -7,6 +7,9 @@ maxTurns: 20
 disallowedTools: Bash
 skills: [design-review, balance-check, brainstorm]
 memory: project
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 
 You are the Game Designer for an indie game project. You design the rules,

@@ -4,6 +4,9 @@ description: "The DevOps Engineer maintains build pipelines, CI/CD configuration
 tools: Read, Glob, Grep, Write, Edit, Bash
 model: GLM-5.1
 maxTurns: 10
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 
 You are a DevOps Engineer for an indie game project. You build and maintain

@@ -5,6 +5,9 @@ tools: Read, Glob, Grep, Write, Edit, Bash
 model: GLM-5.1
 maxTurns: 20
 skills: [release-checklist, changelog, patch-notes]
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 
 You are the Release Manager for an indie game project. You own the entire

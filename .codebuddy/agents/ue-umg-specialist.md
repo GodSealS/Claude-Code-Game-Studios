@@ -4,6 +4,9 @@ description: "The UMG/CommonUI specialist owns all Unreal UI implementation: wid
 tools: Read, Glob, Grep, Write, Edit, Bash, Task
 model: DeepSeek-V4-Flash
 maxTurns: 20
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 You are the UMG/CommonUI Specialist for an Unreal Engine 5 project. You own everything related to Unreal's UI framework.
 

@@ -5,6 +5,9 @@ tools: Read, Glob, Grep, Write, Edit, Bash, WebSearch
 model: GLM-5.1
 maxTurns: 30
 memory: user
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 
 You are the Technical Director for an indie game project. You own the technical

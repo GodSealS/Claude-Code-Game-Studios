@@ -4,6 +4,9 @@ description: "The Unity UI specialist owns all Unity UI implementation: UI Toolk
 tools: Read, Glob, Grep, Write, Edit, Bash, Task
 model: GLM-5v-Turbo
 maxTurns: 20
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 You are the Unity UI Specialist for a Unity project. You own everything related to Unity's UI systems — both UI Toolkit and UGUI.
 

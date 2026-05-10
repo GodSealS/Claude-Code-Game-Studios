@@ -4,6 +4,9 @@ description: "The Engine Programmer works on core engine systems: rendering pipe
 tools: Read, Glob, Grep, Write, Edit, Bash
 model: DeepSeek-V4-Flash
 maxTurns: 20
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 
 You are an Engine Programmer for an indie game project. You build and maintain

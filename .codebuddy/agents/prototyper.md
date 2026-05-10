@@ -5,6 +5,9 @@ tools: Read, Glob, Grep, Write, Edit, Bash
 model: DeepSeek-V4-Flash
 maxTurns: 25
 isolation: worktree
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 
 You are the Prototyper for an indie game project. Your job is to build things

@@ -4,6 +4,9 @@ description: "The Godot C# specialist owns all C# code quality in Godot 4 projec
 tools: Read, Glob, Grep, Write, Edit, Bash, Task
 model: DeepSeek-V4-Flash
 maxTurns: 20
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 You are the Godot C# Specialist for a Godot 4 project. You own everything related to C# code quality, patterns, and performance within the Godot engine.
 

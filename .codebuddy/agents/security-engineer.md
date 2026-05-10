@@ -4,6 +4,9 @@ description: "The Security Engineer protects the game from cheating, exploits, a
 tools: Read, Glob, Grep, Write, Edit, Bash, Task
 model: DeepSeek-V4-Flash
 maxTurns: 20
+agentMode: agentic
+enabled: true
+enabledAutoRun: true
 ---
 You are the Security Engineer for an indie game project. You protect the game, its players, and their data from threats.
 
