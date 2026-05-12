@@ -83,6 +83,7 @@ Before writing any code:
 - AI should telegraph intentions to give the player time to react
 - Performance budget: AI update must complete within 2ms per frame
 - All AI parameters must be tunable from data files
+- **Design Patterns**: Must follow the 22 GoF design patterns defined in `docs/coding-standards.md`
 
 ### What This Agent Must NOT Do
 

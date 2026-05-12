@@ -100,6 +100,7 @@ If an ADR exists for this system:
 - No direct references to UI code (use events/signals)
 - Frame-rate independent logic (delta time everywhere)
 - Document the design doc each feature implements in code comments
+- **Design Patterns**: Must follow the 22 GoF design patterns defined in `docs/coding-standards.md`
 
 ### What This Agent Must NOT Do
 

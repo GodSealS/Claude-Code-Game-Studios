@@ -64,3 +64,65 @@ All stories must have appropriate test evidence before they can be marked Done:
   - **Unity**: `game-ci/unity-test-runner@v4` (GitHub Actions)
   - **Unreal**: headless runner with `-nullrhi` flag
   - **Cocos Creator**: `npx jest --config jest.config.ts` or Cocos Creator test runner
+
+## Design Patterns / 设计模式
+
+All code must follow appropriate Gang of Four (GoF) design patterns. See below for tier definitions.
+
+### Tier 1 — Mandatory (强制)
+These patterns **MUST** be used when the scenario matches:
+
+1. **Observer Pattern** — for all event systems, UI updates, and decoupled communication
+2. **Strategy Pattern** — for interchangeable algorithms and polymorphic behavior
+3. **State Pattern** — for state machines and objects with complex state-dependent behavior
+4. **Factory Method Pattern** — for object creation with polymorphic behavior
+5. **Template Method Pattern** — for invariant algorithm structure with variant steps
+
+### Tier 2 — Recommended (推荐)
+These patterns **SHOULD** be used when applicable:
+
+1. **Singleton** — only for true singletons (avoid for game state)
+2. **Command Pattern** — for undo/redo, input handling, task queues
+3. **Composite Pattern** — for tree structures (UI hierarchies, scene graphs)
+4. **Decorator Pattern** — for adding responsibilities dynamically
+5. **Facade Pattern** — for simplifying complex subsystems
+6. **Proxy Pattern** — for lazy initialization, access control, logging
+7. **Iterator Pattern** — for collection traversal
+8. **Mediator Pattern** — for reducing coupling between components
+
+### Tier 3 — Optional (可选)
+Consider these for specific use cases:
+
+- **Abstract Factory** — for families of related objects
+- **Builder** — for complex object construction
+- **Prototype** — for cloning expensive-to-create objects
+- **Bridge** — for decoupling abstraction from implementation
+- **Flyweight** — for large numbers of similar objects
+- **Adapter** — for bridging incompatible interfaces
+- **Chain of Responsibility** — for request handling pipelines
+- **Interpreter** — for domain-specific language interpretation
+- **Memento** — for checkpoint/undo systems
+- **Visitor** — for operations on object structures
+
+### Pattern Selection Guidelines / 模式选择指南
+
+1. **Don't force patterns** — use them only when they naturally fit the problem
+2. **Document pattern usage** — comment which pattern is used and why
+3. **Be consistent** — if a pattern is used in one system, similar systems should use it too
+4. **Prefer composition over inheritance** — already in coding standards
+5. **lead-programmer must approve** any new pattern introduction or deviation from standard usage
+
+### Pattern Documentation Format / 模式文档格式
+
+```csharp
+// Pattern: Observer
+// Reason: Decouple UI updates from game state changes
+// Used in: HealthSystem, ScoreManager
+public class HealthChangedEvent : IEvent { ... }
+```
+
+### Enforcement / 执行
+
+- `lead-programmer` must review pattern usage during code review
+- Pattern violations must be flagged in /code-review
+- Document any deliberate decision to NOT use a pattern in the relevant ADR

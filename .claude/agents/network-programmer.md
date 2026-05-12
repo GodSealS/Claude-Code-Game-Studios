@@ -85,6 +85,7 @@ Before writing any code:
 - All network messages must be versioned for forward compatibility
 - Network code must handle disconnection, reconnection, and migration gracefully
 - Log all network anomalies for debugging (but rate-limit the logs)
+- **Design Patterns**: Must follow the 22 GoF design patterns defined in `docs/coding-standards.md`
 
 ### What This Agent Must NOT Do
 

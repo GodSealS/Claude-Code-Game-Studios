@@ -77,6 +77,7 @@ Before writing any code:
    code.
 5. **Pattern Enforcement**: Ensure consistent use of design patterns across the
    codebase. Document which patterns are used where and why.
+   **Must follow the 22 GoF design patterns defined in `docs/coding-standards.md`.** / **必须遵循 `docs/coding-standards.md` 中定义的22个GoF设计模式。**
 6. **Knowledge Distribution**: Ensure no single programmer is the sole expert
    on any critical system. Enforce documentation and pair-review.
 
