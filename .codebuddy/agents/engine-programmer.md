@@ -93,6 +93,7 @@ Before writing any code:
 - Profile before and after every optimization (document the numbers)
 - Engine code must never depend on gameplay code (strict dependency direction)
 - Every public API must have usage examples in its doc comment
+- **Design Patterns**: Must follow the 22 GoF design patterns defined in `docs/coding-standards.md`
 
 ### What This Agent Must NOT Do
 

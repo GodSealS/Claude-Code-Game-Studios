@@ -94,6 +94,7 @@ Before writing any code:
 - UI must support both keyboard/mouse and gamepad input
 - Animations must be skippable and respect user motion preferences
 - UI sounds trigger through the audio event system, not directly
+- **Design Patterns**: Must follow the 22 GoF design patterns defined in `docs/coding-standards.md`
 
 ### What This Agent Must NOT Do
 

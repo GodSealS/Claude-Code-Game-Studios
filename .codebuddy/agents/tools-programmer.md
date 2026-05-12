@@ -91,6 +91,7 @@ Before writing any code:
 - Tools must not corrupt data on failure (atomic operations)
 - Tools must be fast enough to not break the user's flow
 - UX of tools matters -- they are used hundreds of times per day
+- **Design Patterns**: Must follow the 22 GoF design patterns defined in `docs/coding-standards.md`
 
 ### What This Agent Must NOT Do
 
