@@ -9,6 +9,42 @@
   For UI changes, verify with screenshots. Compare expected output to actual output
   before marking work complete. Every implementation should have a way to prove it works.
 
+# Data Container Rules
+
+## Integer Enum → Lookup Table: Use Array, Never Map
+
+**Rule**: When enum values are dense integers (0, 1, 2, ... N), lookup tables MUST use arrays. `Map` / `ReadonlyMap` is forbidden for this pattern.
+
+**Rationale**:
+- Array indexing `arr[key]` is a direct memory offset — O(1) with zero hashing overhead
+- Map requires hash computation + bucket lookup, measurably slower for dense integer keys (< 1000 entries)
+- Array makes the index-to-value relationship visually obvious at a glance
+
+**Forbidden**:
+```typescript
+// ❌ Dense integer enum keys should use array, not Map
+const rates: ReadonlyMap<ElementType, number> = new Map([
+    [ElementType.WOOD, 8],
+    [ElementType.WATER, 10],
+]);
+```
+
+**Correct**:
+```typescript
+// ✅ Enum values 0-4 serve as direct array indices
+const rates: readonly number[] = [
+    0,  // placeholder / unused
+    8,  // WOOD(1)
+    10, // WATER(2)
+] as const;
+```
+
+**Exceptions** (Map is still allowed):
+- Key type is **string** (e.g. locale codes `'en'`, `'zh'`)
+- Key type is **object reference** (e.g. `Map<ICollidable, Set<ICollidable>>`)
+- Key type is **runtime dynamic value** (e.g. touch ID, entity ID)
+- Data is **extremely sparse** (e.g. 3 values out of 1000 possible keys)
+
 # Design Document Standards
 
 - All design docs use Markdown
