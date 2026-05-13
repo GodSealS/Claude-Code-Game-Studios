@@ -456,7 +456,7 @@ results = validator.validate_agents(agents)
 
 # 导出为其他格式
 agents.export("cursor", ".cursor/rules/")
-agents.export("claude", ".claude/agents/")
+agents.export("claude", ".codebuddy/agents/")
 ```
 
 ---

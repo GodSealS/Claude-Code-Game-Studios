@@ -64,7 +64,7 @@ No gate IDs assigned.
 
 ## Protocol Compliance
 
-[ ] Prioritizes local ADR files over model's internal training data for architectural patterns.
+- [ ] Prioritizes local ADR files over model's internal training data for architectural patterns.
 - [ ] Stays within declared domain (mechanics, player systems, combat)
 - [ ] Redirects out-of-domain requests to correct agent (ui-programmer, ai-programmer, engine-programmer)
 - [ ] Returns structured findings (code scaffold, method signatures, inline comments) not freeform opinions

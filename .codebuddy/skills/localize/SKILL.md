@@ -279,7 +279,7 @@ just translating text. This mode validates the implementation.
 Read `.codebuddy/docs/technical-preferences.md` to determine the engine. Then check:
 
 **Layout mirroring**
-- Is RTL layout enabled in the engine? (Godot: `Control.layout_direction`, Unity: `RTL Support` package, Unreal: text direction flags, Cocos Creator: `cc.Label.overflow` with RTL-aware layout in `cc.Widget`)
+- Is RTL layout enabled in the engine? (Godot: `Control.layout_direction`, Unity: `RTL Support` package, Unreal: text direction flags)
 - Are all UI containers set to auto-mirror, or are positions hardcoded?
 - Do progress bars, health bars, and directional indicators mirror correctly?
 

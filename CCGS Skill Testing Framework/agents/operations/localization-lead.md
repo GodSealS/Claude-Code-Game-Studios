@@ -4,7 +4,7 @@
 - **Domain**: Internationalization (i18n) architecture, string extraction workflows and tooling configuration, locale testing methodology, translation pipeline design (extraction → TMS → import), string quality standards, locale-specific formatting rules (plurals, RTL, date/number formats)
 - **Does NOT own**: Game narrative content and dialogue writing (writer), code implementation of i18n calls (gameplay-programmer), translation work itself (external translators)
 - **Model tier**: DeepSeek-V4-Flash
-- **Gate IDs handled**: LC-PIPELINE-READY, LC-LOCALE-SIGN-OFF
+- **Gate IDs**: None; escalates pipeline architecture decisions to technical-director when they affect build systems
 - **Domain**: i18n architecture, string extraction (UE5.5 Commandlets), locale rules (Plurals/RTL).
 
 ---

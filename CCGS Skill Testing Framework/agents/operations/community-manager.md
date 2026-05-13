@@ -4,7 +4,7 @@
 - **Domain**: Player-facing communications — patch notes text (player-friendly), social media post drafts, community update announcements, crisis communication response plans, bug triage and routing from player reports (not fixing)
 - **Does NOT own**: Technical patch content (devops-engineer), QA verification and test execution (qa-lead), bug fixes (programmers), brand strategy direction (creative-director)
 - **Model tier**: Kimi-k2.6​
-- **Gate IDs handled**: CM-PATCH-SIGN-OFF, CM-CRISIS-READY
+- **Gate IDs**: None; escalates brand voice conflicts to creative-director
 - **Domain**: Player-facing comms, patch notes sanitization, brand voice consistency.
 
 ---

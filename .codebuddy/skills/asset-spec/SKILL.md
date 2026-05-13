@@ -6,14 +6,12 @@ user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Task, AskUserQuestion
 ---
 
-If no argument is provided, check whether `design/assets/asset-manifest.md` exists:
-- If it exists: read it, find the first context (system/level/character) with any asset at status "Needed" but no spec file written yet, and use `AskUserQuestion`:
-  - Prompt: "The next unspecced context is **[target]**. Generate asset specs for it?"
-  - Options: `[A] Yes — spec [target]` / `[B] Pick a different target` / `[C] Stop here`
-- If no manifest: fail with:
-  > "Usage: `/asset-spec system:<name>` — e.g., `/asset-spec system:tower-defense`
-  > Or: `/asset-spec level:iron-gate-fortress` / `/asset-spec character:frost-warden`
-  > Run after your art bible and GDDs are approved."
+If no argument is provided, check whether `design/assets/entity-inventory.md` exists:
+- If it exists: read it, find the first entity or screen with status "Needed" but no spec file yet, and use `AskUserQuestion`:
+  - Prompt: "The next unspecced item is **[name]**. Generate specs for it?"
+  - Options: `[A] Yes — spec [name]` / `[B] Pick a different item` / `[C] Stop here`
+- If no entity inventory: check `design/assets/asset-manifest.md`. If manifest exists, same flow above but reading from manifest.
+- If neither exists: **start the Entity & Screen Inventory flow** (Phase 0b below) rather than failing.
 
 ---
 

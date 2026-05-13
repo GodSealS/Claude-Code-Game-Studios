@@ -5,7 +5,7 @@
 - **Does NOT own**: Test strategy and test plan design (qa-lead), implementation fixes for found bugs (appropriate programmer), QA process architecture (qa-lead)
 - **Category**: qa
 - **Model tier**: DeepSeek-V4-Flash
-- **Gate IDs**: QT-TEST-CASE, QT-EVIDENCE-RECORD
+- **Gate IDs**: None; flags ambiguous acceptance criteria to qa-lead rather than resolving independently
 - **Domain**: Test case authoring, structured bug reporting, evidence recording (UE 5.5 standards).
 
 ---

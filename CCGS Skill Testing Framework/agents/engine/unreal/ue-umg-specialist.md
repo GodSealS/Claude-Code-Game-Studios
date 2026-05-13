@@ -52,7 +52,7 @@
 - Output is a concrete recommendation with the specific UMG component to use, not a vague "optimize it"
 
 ### Case 5: Context pass — CommonUI setup already configured
-**Input context**: Project uses CommonUI with the following registered InputAction tags: UI.Action.Confirm, UI.Action.Back, UI.Action.Pause, UI.Action.Secondary, UI.Action.Filter.
+**Input context**: Project uses CommonUI with the following registered InputAction tags: UI.Action.Confirm, UI.Action.Back, UI.Action.Pause, UI.Action.Secondary.
 **Input**: "Add a 'Sort Inventory' button to the inventory widget that works with CommonUI."
 **Expected behavior**:
 - Uses UI.Action.Secondary (or recommends registering a new tag like UI.Action.Sort if Secondary is already allocated)

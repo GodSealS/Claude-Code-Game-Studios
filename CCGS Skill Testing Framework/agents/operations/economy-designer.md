@@ -4,7 +4,7 @@
 - **Domain**: Resource economy design, loot table design, progression curves (XP, level, unlock), in-game market and shop design, economic balance analysis, sink and faucet mechanics, inflation/deflation risk assessment
 - **Does NOT own**: Live ops event scheduling and structure (live-ops-designer), code implementation, analytics tracking design (analytics-engineer), narrative justification for economy systems (writer)
 - **Model tier**: DeepSeek-V4-Flash
-- **Gate IDs handled**: ED-ECONOMY-BALANCE, ED-LOOT-VALIDATION
+- **Gate IDs**: None; escalates economy-breaking design conflicts to creative-director or producer
 - **Domain**: Resource economy, loot tables, sink/faucet balancing, progression math.
 
 ---

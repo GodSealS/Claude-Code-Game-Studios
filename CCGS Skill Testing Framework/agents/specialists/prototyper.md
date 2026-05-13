@@ -10,7 +10,7 @@
 
 ## Static Assertions (Structural)
 
-- [ ] `description:` field is present and domain-specific (Read (all), Write (prototypes/ only), throwaway code)
+- [ ] `description:` field is present and domain-specific (references rapid prototyping, prototypes/ directory, throwaway code)
 - [ ] `allowed-tools:` list matches the agent's role (Read/Write scoped to prototypes/ directory; no production src/ write access)
 - [ ] Model tier is GLM-5.1 (default for specialists)
 - [ ] Agent definition explicitly states that prototype code is not production code and must not be copied to src/

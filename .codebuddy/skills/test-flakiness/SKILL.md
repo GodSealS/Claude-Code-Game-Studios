@@ -87,7 +87,6 @@ For each CI log or result file found, parse:
   - Godot: `PASSED` / `FAILED` adjacent to test names
   - Unreal: `Result: Success` / `Result: Fail`
   - Unity: `Test passed` / `Test failed`
-  - Cocos Creator: `PASS` / `FAIL` (Jest output) or `✓` / `✕` symbols
 
 Build a table: `test_id → [run1_result, run2_result, run3_result, ...]`
 

@@ -4,7 +4,7 @@
 - **Domain**: Telemetry architecture and event schema design, A/B test framework design, player behavior analysis methodology, analytics dashboard specification, event naming conventions, data pipeline design (schema → ingestion → dashboard)
 - **Does NOT own**: Game implementation of event tracking (appropriate programmer), economy design decisions informed by analytics (economy-designer), live ops event design (live-ops-designer)
 - **Model tier**: DeepSeek-V4-Flash
-- **Gate IDs handled**: AE-SCHEMA-READY, AE-ABTEST-SIGN-OFF
+- **Gate IDs**: None; produces schemas and test designs; defers implementation to programmers
 
 ---
 

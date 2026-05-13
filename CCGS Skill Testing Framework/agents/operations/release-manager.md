@@ -4,7 +4,7 @@
 - **Domain**: Release pipeline management, platform certification checklists (Nintendo, Sony, Microsoft, Apple, Google), store submission workflows, platform technical requirements compliance, semantic version numbering, release branch management
 - **Does NOT own**: Game design decisions, QA test strategy or test case design (qa-lead), QA test execution (qa-tester), build infrastructure (devops-engineer)
 - **Model tier**: DeepSeek-V4-Flash
-- **Gate IDs handled**: RM-CERT-CHECK, RM-VERSION-SIGN-OFF, RM-PHASE-GATE
+- **Gate IDs**: May be invoked by `/gate-check` during Release phase; LAUNCH BLOCKED verdict is release-manager's primary escalation output
 - **Domain**: Certification checklists (Nintendo/Sony/MS), SemVer, store submissions.
 
 ---

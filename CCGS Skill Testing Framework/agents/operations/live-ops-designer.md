@@ -4,7 +4,7 @@
 - **Domain**: Post-launch content strategy, seasonal events (design and structure), battle pass design, content cadence planning, player retention mechanic design, live service feature roadmaps
 - **Does NOT own**: Economy math and reward value calculations (economy-designer), analytics tracking implementation (analytics-engineer), narrative content within events (writer), code implementation
 - **Model tier**: GLM-5.1
-- **Gate IDs handled**: LO-EVENT-REVIEW, LO-SEASON-PLAN, LO-PHASE-GATE
+- **Gate IDs**: None; escalates monetization concerns to creative-director for brand/ethics review
 - **Domain**: Seasonal events, Battle Pass structure, retention mechanics, cadence.
 
 ---

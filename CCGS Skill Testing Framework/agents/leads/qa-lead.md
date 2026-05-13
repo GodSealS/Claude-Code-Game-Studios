@@ -69,9 +69,8 @@ Verified by reading the agent's `.codebuddy/agents/qa-lead.md` frontmatter:
 
 ## Protocol Compliance
 
-- [ ] Returns QL-STORY-READY verdicts using ADEQUATE / GAPS / INADEQUATE only
-- [ ] Returns QL-TEST-COVERAGE verdicts using ADEQUATE / GAPS / INADEQUATE only (or PASS / FAIL for release gates)
-- [ ] Verdict token is formatted exactly as `GATE-ID: VERDICT`.
+- [ ] Returns QL-STORY-READY verdicts using ADEQUATE / INADEQUATE vocabulary only
+- [ ] Returns QL-TEST-COVERAGE verdicts using ADEQUATE / INADEQUATE vocabulary only (or PASS / FAIL for release gates)
 - [ ] Stays within declared QA and test strategy domain
 - [ ] Escalates technical standards disputes to lead-programmer
 - [ ] Uses gate IDs in output (e.g., `QL-STORY-READY: INADEQUATE`) not inline prose verdicts

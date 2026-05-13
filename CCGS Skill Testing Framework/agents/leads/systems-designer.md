@@ -1,10 +1,10 @@
 # Agent Test Spec: systems-designer
 
 ## Agent Summary
-- **Domain**: Combat formulas, progression curves, crafting economy, and numerical balance.
-- **Model tier**: DeepSeek-V4-Flash
-- **Gate IDs handled**: SD-FORMULA-REVIEW, SD-ECONOMY-BALANCE, SD-PHASE-GATE
-- **Does NOT own**: Narrative lore, visual art, or code implementation.
+**Domain owned:** Combat formulas, progression curves, crafting recipes, status effect interactions, economy math, numerical balance.
+**Does NOT own:** Narrative and lore (narrative-director), visual design (art-director), code implementation (lead-programmer), conceptual mechanic rules (game-designer — collaborates with).
+**Model tier:** DeepSeek-V4-Flash (individual system analysis — formula review and balance math).
+**Gate IDs handled:** Systems review verdicts on formulas and balance specs (uses APPROVED / NEEDS REVISION vocabulary).
 
 ---
 

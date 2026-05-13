@@ -43,8 +43,20 @@ significant cross-system dependencies, requires more than one week of
 implementation, or fundamentally alters an existing system's core rules — stop
 and redirect to `/design-system` instead.
 
-Present the classification to the user and confirm it is correct before
-proceeding. If there is no argument, ask the user to describe the change.
+If there is no argument, ask the user to describe the change (plain text prompt), then classify it using the criteria above.
+
+Present the inferred classification using `AskUserQuestion`:
+- Prompt: "I've classified this as **[inferred type]** — [brief reason]. Is that correct?"
+- Options:
+  - `[A] Yes — [inferred type] is correct`
+  - `[B] Tuning — changing numbers or balance values only`
+  - `[C] Tweak — small behavioral change to an existing system`
+  - `[D] Addition — adding a small mechanic to an existing system`
+  - `[E] New Small System — standalone feature, under one week of work`
+  - `[F] This is too large — redirect me to /design-system`
+
+If [F]: stop. Verdict: **REDIRECTED** — use `/design-system` for this change.
+Otherwise: proceed with the selected type.
 
 ---
 
@@ -209,9 +221,17 @@ tracking threshold — quick spec is sufficient."]
 
 ## 4. Approval and Filing
 
-Present the draft to the user in full. Then ask:
+Present the draft to the user in full. Then use `AskUserQuestion`:
+- Prompt: "Here's the Quick Design Spec draft. How do you want to proceed?"
+- Options:
+  - `[A] Approve — write it as shown`
+  - `[B] Revise — I'll describe what to change`
+  - `[C] This grew too large — redirect to /design-system instead`
 
-"May I write this Quick Design Spec to
+If [B]: collect the requested changes, revise the draft, and re-present this widget.
+If [C]: stop. Verdict: **REDIRECTED** — use `/design-system` for this change.
+
+If [A]: ask "May I write this Quick Design Spec to
 `design/quick-specs/[kebab-case-title]-[YYYY-MM-DD].md`?"
 
 Use today's date in the filename. The title should be a kebab-case description

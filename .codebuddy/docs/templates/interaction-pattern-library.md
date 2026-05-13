@@ -7,7 +7,7 @@
 > **Engine**: [Godot 4.6 / Unity 6 / Unreal Engine 5 / Cocos Creator 3.x]
 > **UI Framework**: [Godot Control nodes / Unity UI Toolkit / Unreal UMG / Cocos Creator cc.UI components]
 > **Related Documents**:
-> - `docs/art-bible.md` — visual standards (colors, typography, iconography)
+> - `design/art/art-bible.md` — visual standards (colors, typography, iconography)
 > - `docs/accessibility-requirements.md` — accessibility commitments per feature
 > - `docs/ux/ux-spec-[screen].md` — individual screen specs that reference patterns
 
