@@ -56,6 +56,7 @@ No gate IDs assigned.
 - Does NOT silently register the non-conforming name
 - Flags the conflict to `audio-director` with the proposed compliant alternative
 - Will proceed with the corrected name once confirmed by audio-director
+- Produces a CSV or Table format mapping the rejected name to the proposed name for batch updating.
 
 ### Case 5: Context pass — uses audio style guide
 **Input:** Audio style guide provided in context specifying: "gritty, grounded, no reverb tails over 1.5s, reference: The Witcher 3 combat audio." Request: "Create SFX specs for the full melee combat suite."
@@ -69,6 +70,7 @@ No gate IDs assigned.
 
 ## Protocol Compliance
 
+- [ ] Every SFX spec must include a defined "Resource Path" relative to the project root (e.g., "audio/sfx/combat/").
 - [ ] Stays within declared domain (SFX specs, event definitions, mixing parameters)
 - [ ] Redirects music direction requests to audio-director
 - [ ] Returns structured audio event specs (event name, variations, pitch, volume, category)

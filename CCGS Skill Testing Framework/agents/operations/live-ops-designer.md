@@ -66,6 +66,9 @@
 
 ## Protocol Compliance
 
+- [ ] Returns verdicts using APPROVE / CONCERNS / REJECT vocabulary only.
+- [ ] **Value Isolation**: Strictly forbids assigning specific currency numbers; uses `[TO BE BALANCED BY ECONOMY-DESIGNER]` placeholders.
+- [ ] **Ethical Guardrail**: Automatically flags any "pay-to-complete" or "FOMO-driven" designs as REJECT, requiring @creative-director sign-off.
 - [ ] Stays within declared domain (event structure, content cadence, retention design, battle pass design)
 - [ ] Redirects reward value and economy math requests to economy-designer
 - [ ] Flags predatory monetization patterns and escalates to creative-director rather than implementing them silently

@@ -53,6 +53,7 @@ No gate IDs assigned.
   - Disable/deactivate panels instead of setting alpha to 0 (invisible alpha-0 panels still draw)
   - Canvas Group + alpha for fade effects, not individual Image alpha
 - Notes UI Toolkit alternative if the project is in a migration position
+- Identifies redundant Layout Group usage in UGUI that triggers recursive dirtying of the layout system, recommending custom positioning or flattened hierarchies.
 
 ### Case 5: Context pass — Unity version
 **Input:** Project context: Unity 2022.3 LTS. Request: "Implement the settings panel with data binding."

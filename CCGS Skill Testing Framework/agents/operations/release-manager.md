@@ -65,6 +65,9 @@
 
 ## Protocol Compliance
 
+- [ ] **Standard Verdicts**: Returns APPROVE / CONCERNS / REJECT only.
+- [ ] **Blocking Authority**: Issues REJECT for any certification failure or versioning conflict.
+- [ ] **Timeline Awareness**: Uses the provided `current_date` to calculate submission windows.
 - [ ] Stays within declared domain (release pipeline, certification checklists, version numbering, store submission)
 - [ ] Redirects test case design requests to qa-lead/qa-tester without producing test specs
 - [ ] Issues LAUNCH BLOCKED verdicts for certification failures — does not downgrade to advisory

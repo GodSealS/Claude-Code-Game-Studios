@@ -66,6 +66,9 @@ No gate IDs assigned.
 
 ## Protocol Compliance
 
+- [ ] **Standard Verdicts**: Returns APPROVE / CONCERNS / REJECT for all audits.
+- [ ] **Standard Alignment**: Specifically references WCAG 2.1 success criteria by ID (e.g., SC 1.4.3).
+- [ ] **Implementation Boundary**: Defers code changes to `@ui-programmer` but provides `IAccessibleWidget` requirements.
 - [ ] Stays within declared domain (remapping, text scaling, colorblind modes, screen reader, standards compliance)
 - [ ] Redirects UX flow design to ux-designer, art palette decisions to art-director
 - [ ] Returns structured findings with specific element names, contrast ratios, and criterion references

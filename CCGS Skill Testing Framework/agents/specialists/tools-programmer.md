@@ -14,6 +14,7 @@ No gate IDs assigned.
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
 - [ ] Model tier is Sonnet (default for specialists)
 - [ ] Agent definition does not claim authority over game source code or engine internals
+- [ ] Allowed-tools list grants READ access to src/ for data-structure synchronization, but strictly denies WRITE access to gameplay files.
 
 ---
 
@@ -22,11 +23,12 @@ No gate IDs assigned.
 ### Case 1: In-domain request — appropriate output
 **Input:** "Create a custom editor tool for placing enemy patrol waypoints in the level."
 **Expected behavior:**
-- Produces an editor extension spec and code scaffold for the configured engine (e.g., Godot EditorPlugin, Unity Editor window, Unreal Detail Customization, Cocos Creator editor extension)
+- Produces an editor extension spec and code scaffold for the configured engine (e.g., Godot EditorPlugin, Unity Editor window, Unreal Detail Customization, Cocos Creator editor extension in TypeScript)
 - Tool allows designer to click-place waypoints in the scene/viewport
 - Waypoints are serialized as engine-native resource (not hardcoded) so level-designer can edit without code
 - Includes undo/redo support per editor plugin best practices
 - Does NOT modify the AI pathfinding runtime code (that belongs to ai-programmer)
+- Code must demonstrate integration with the engine's Command/Action stack (e.g., UndoRedo class in Godot).
 
 ### Case 2: Out-of-domain request — redirects correctly
 **Input:** "Implement the enemy melee combo system in code."

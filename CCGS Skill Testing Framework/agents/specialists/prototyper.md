@@ -71,6 +71,7 @@
 - [ ] Produces structured conclusion documents (VALIDATED or ABANDONED verdict) after prototype evaluation
 - [ ] Does not recommend preserving prototype code in production form without explicit warnings
 - [ ] Uses the project's configured engine and scripting language; flags version uncertainty
+- [ ] Automatically generates a 'migration_risk_report' if the prototype is validated, highlighting technical debt inherited if code is copied.
 
 ---
 

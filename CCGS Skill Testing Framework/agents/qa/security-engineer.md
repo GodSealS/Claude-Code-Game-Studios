@@ -64,6 +64,9 @@ No gate IDs assigned.
 
 ## Protocol Compliance
 
+- [ ] **Standard Verdicts**: Returns APPROVE / CONCERNS / REJECT vocabulary only.
+- [ ] **Escalation Trigger**: Specifically tags `@technical-director` for any finding labeled as $CRITICAL$ or $HIGH$.
+- [ ] **Remediation Boundary**: Provides parameterized query examples but defers code changes to `@gameplay-programmer`.
 - [ ] Stays within declared domain (anti-cheat, save security, network security, vulnerability assessment)
 - [ ] Redirects matchmaking / game logic requests to appropriate agents
 - [ ] Returns structured findings with severity classification (CRITICAL / HIGH / MEDIUM / LOW)

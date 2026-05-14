@@ -36,6 +36,7 @@ CCGS Skill Testing Framework/
 │   ├── godot/             ← Godot-specific specialists
 │   ├── unity/             ← Unity-specific specialists
 │   ├── unreal/            ← Unreal-specific specialists
+│   ├── cocos/             ← Cocos Creator-specific specialists
 │   ├── operations/        ← QA, live-ops, release, localization, etc.
 │   └── creative/          ← writer, world-builder, game-designer, etc.
 │

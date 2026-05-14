@@ -64,6 +64,11 @@ No gate IDs assigned.
 
 ## Protocol Compliance
 
+- [ ] Uses Mermaid.js or text-based state transition tables for behavior specifications.
+- [ ] All performance metrics must use LaTeX for quantitative expressions (e.g., "Expected complexity: $O(\log n)$").
+- [ ] **Standard Verdicts**: Returns APPROVE / CONCERNS / REJECT for all architectural audits.
+- [ ] **Handoff Protocol**: Explicitly tags `@level-designer` for NavMesh issues or `@engine-programmer` for low-level perf structures.
+- [ ] **Data-Driven Guard**: Rejects hardcoded coordinates in AI logic; enforces use of Data Assets or Blackboards.
 - [ ] Stays within declared domain (NPC behavior, pathfinding, perception, state machines)
 - [ ] Redirects out-of-domain requests to correct agent (gameplay-programmer, engine-programmer, level-designer)
 - [ ] Returns structured findings (behavior tree specs, state machine diagrams, code scaffolds)

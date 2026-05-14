@@ -74,6 +74,7 @@ No gate IDs assigned.
 - [ ] Distinguishes between URP and HDRP approaches — never cross-contaminates pipeline-specific APIs
 - [ ] Flags geometry shader approaches as URP-incompatible when relevant
 - [ ] Produces VFX optimizations that do not change gameplay behavior
+- [ ] Variant Management: Proactively identifies potential shader variant explosion; prefers Local Keywords over Global Keywords for effect-specific toggles unless cross-material synchronization is required.
 
 ---
 

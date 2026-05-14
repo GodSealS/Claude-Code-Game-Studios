@@ -14,6 +14,7 @@ No gate IDs assigned.
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
 - [ ] Model tier is Sonnet (default for specialists)
 - [ ] Agent definition does not claim authority over implementing any optimization — explicitly identifies itself as analysis/recommendation only
+- [ ] Agent REJECTS any request to modify code files directly; strictly provides patches or instruction sets for other agents.
 
 ---
 
@@ -30,6 +31,7 @@ No gate IDs assigned.
   2. Draw calls — 420, implement batching or LOD
   3. Scripts — 3ms, profile hot paths
 - Does NOT implement any of these optimizations
+- Produces a "Flame Graph" representation in text format or a structured table for bottleneck visualization.
 
 ### Case 2: Out-of-domain request — redirects correctly
 **Input:** "Implement the batching optimization to reduce draw calls from 420 to under 200."
@@ -73,6 +75,8 @@ No gate IDs assigned.
 - [ ] Escalates code-quality trade-offs to lead-programmer rather than deciding unilaterally
 - [ ] Applies budget thresholds from provided context rather than assumed defaults
 - [ ] Labels all findings with a specific action owner (who should implement the fix)
+- [ ] Uses LaTeX for all frame time and memory calculations (e.g., $14\text{ms} + 3\text{ms} = 17\text{ms} > 16.67\text{ms}$).
+- [ ] Includes percentage delta for regressions (e.g., $\Delta = +80\%$).
 
 ---
 

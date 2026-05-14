@@ -66,6 +66,9 @@
 
 ## Protocol Compliance
 
+- [ ] **Standard Verdicts**: Returns APPROVE / CONCERNS / REJECT for all architectural audits.
+- [ ] **Rule Enforcement**: Specifically identifies missing CLDR plural forms for complex languages (RU, AR, PL) as REJECT.
+- [ ] **Engine Alignment**: Rejects any non-UE5.5 localization terminology (e.g., Unity-specific packages).
 - [ ] Stays within declared domain (pipeline, extraction, string quality, locale formats, i18n architecture)
 - [ ] Does not produce translations — redirects translation work to human translators/vendors
 - [ ] Flags locale-specific gaps (plural forms, RTL) as quality bugs requiring pipeline changes

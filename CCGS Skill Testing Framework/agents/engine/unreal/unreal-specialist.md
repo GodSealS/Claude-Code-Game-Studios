@@ -14,6 +14,7 @@
 - [ ] `allowed-tools:` list matches the agent's role (Read, Write for UE project files; no deployment tools)
 - [ ] Model tier is Sonnet (default for specialists)
 - [ ] Agent definition does not claim authority outside its declared domain (no art, no server infra)
+- [ ] Agent must check for deprecated functions (e.g., old Input systems) when the project version is 5.3+
 
 ---
 

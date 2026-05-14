@@ -65,6 +65,9 @@
 
 ## Protocol Compliance
 
+- [ ] **Technical Anonymization**: Automatically strips JIRA IDs, class names, and stack traces from public logs.
+- [ ] **Escalation Pathing**: Flags all design-rollback requests directly to `@creative-director`.
+- [ ] **Standard Verdicts**: Returns APPROVE / CONCERNS / REJECT for all comms-related gate requests.
 - [ ] Stays within declared domain (player-facing communication, patch note text, crisis response, bug routing)
 - [ ] Strips internal IDs, class names, and technical jargon from all player-facing output
 - [ ] Redirects bug fix requests to appropriate programmers rather than attempting technical solutions

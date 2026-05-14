@@ -143,6 +143,10 @@ modifying themes mid-state. Use `focus_mode = FOCUS_ALL` to ensure keyboard
 focusability. Set `mouse_default_cursor_shape = CURSOR_POINTING_HAND`. For the
 scale animation, use a Tween on the `scale` property of the button's parent
 Control — scaling the Button itself can clip children.]
+[Cocos Creator: Extend `cc.Button` component. Use `transition = cc.Button.Transition.SCALE`
+for press animation. Set `interactable` property for disabled state. For custom
+hover visuals, listen to `cc.Node.EventType.MOUSE_ENTER` / `MOUSE_LEAVE` events.
+Use `cc.Widget` for layout positioning within parent containers.]
 
 ---
 
@@ -174,6 +178,9 @@ as direct focus activation.
 appear together, ensure Secondary is always positioned consistently — right/bottom
 of Primary on horizontal layouts, or below Primary on vertical layouts. Consistency
 across screens is more important than per-screen aesthetic preference.]
+[Cocos Creator: Same as Button (Primary). Use `cc.Button.Transition.COLOR` for
+outline-to-fill hover transition. Position Secondary relative to Primary using
+`cc.Layout` component or `cc.Widget` alignment.]
 
 ---
 
@@ -207,6 +214,7 @@ consequential but reversible.
 **Accessibility**: Screen reader must announce the destructive nature: "[Label] button — this action cannot be undone." In addition to accessible name, use the `description` property if available to add the warning text.
 
 **Implementation Notes**: [Destructive button triggers a separate Confirmation Dialog scene. Pass the action callback to the dialog — the button itself does not hold the execution logic. This separation prevents accidental execution if the confirmation dialog has a bug.]
+[Cocos Creator: Use `cc.Button` with custom color/outline for destructive state. Confirmation dialog is a separate prefab instantiated via `cc.instantiate()`. Pass callback via component property. Use `cc.BlockInputEvents` component on the overlay to prevent background interaction.]
 
 ---
 
@@ -243,6 +251,10 @@ built-in CheckButton provides accessibility role but uses a checkbox-style visua
 a custom slide-toggle animation may be needed for the target art style. Ensure
 the slide animation is skipped when motion reduction mode is active — in that
 case, snap to final state instantly.]
+[Cocos Creator: Use `cc.Toggle` component for built-in check/switch behavior.
+For custom slide-toggle visual, animate thumb node position using `cc.tween()`.
+Listen to `toggle` event for state changes. Use `cc.ToggleContainer` if mutual
+exclusion is needed.]
 
 ---
 
@@ -280,6 +292,10 @@ Override keyboard input to add Page Up/Down support via `_input()`. Bind the
 mode is enabled, ensure value label updates are the sole feedback — do not suppress
 them. Rumble feedback on gamepad slider adjustment is a nice enhancement for
 accessibility.]
+[Cocos Creator: Use `cc.Slider` component with `cc.Sprite` for track and thumb.
+Listen to `slide` event for continuous updates. Set `step` property for discrete
+increments. Update numeric label via event callback. For Page Up/Down, add custom
+keyboard listener in `onKeyDown`.]
 
 ---
 
@@ -317,6 +333,10 @@ closed state) and a `PopupMenu` or a `VBoxContainer` revealed by animation. Nati
 `OptionButton` provides accessibility but limited visual customization. Ensure
 the popup positions itself above the control if it would be clipped by the screen
 bottom. Close the popup on `_input` detecting click outside its rect.]
+[Cocos Creator: Use `cc.ToggleContainer` with custom item prefabs, or build a
+custom dropdown with a `cc.Button` header and a `cc.Layout` list revealed by
+`cc.tween()` animation. Use `cc.ScrollView` for long option lists. Close on
+outside click via global touch listener with target bounds check.]
 
 ---
 
@@ -351,6 +371,9 @@ Each row is a custom `Control` or `PanelContainer` with a `_gui_input` override.
 For keyboard navigation inside the scroll container, implement custom focus
 traversal — Godot's default Tab navigation does not scroll the container to keep
 focused items in view. Use `ensure_control_visible()` on the scroll container.]
+[Cocos Creator: Use `cc.ScrollView` with vertical direction. Each row is a custom
+prefab with `cc.Layout` for internal layout. Use `cc.ScrollView.scrollToOffset()`
+to keep focused items visible. Handle selection via touch/click events on each row.]
 
 ---
 
@@ -388,6 +411,10 @@ cells (remove interactive states).
 cell is a custom `Control`. Implement custom D-pad navigation by overriding
 `_gui_input` and calculating the cell to the left/right/above/below based on
 index and column count. `GridContainer` does not provide this natively.]
+[Cocos Creator: Use `cc.Layout` with `type = GRID` for grid arrangement. Each
+cell is a prefab with `cc.Button` for interaction. Implement D-pad navigation
+by tracking selected index and calculating adjacent cells. Use `cc.ScrollView`
+wrapper for scrollable grids.]
 
 ---
 
@@ -430,6 +457,10 @@ is a full-screen `ColorRect` at 60% black opacity. Use `grab_focus()` on the
 dialog's primary button after the open animation completes. Override `_input()` to
 implement the focus trap — intercept Tab navigation and reroute to the dialog's
 focusable elements.]
+[Cocos Creator: Use a dedicated modal prefab with a full-screen `cc.Node` overlay
+at high `zIndex`. Background overlay is a `cc.Sprite` with semi-transparent color.
+Use `cc.BlockInputEvents` to prevent background interaction. Set `cc.Widget`
+to stretch full screen. Animate open/close with `cc.tween()` on scale and opacity.]
 
 ---
 
@@ -537,6 +568,9 @@ child of the trigger element. Show/hide with a `Timer` node. Position the toolti
 using a `CanvasLayer` to ensure it appears above all other UI. For screen edges,
 detect if the tooltip rect extends beyond `get_viewport_rect()` and flip the
 position to the opposite side.]
+[Cocos Creator: Attach tooltip node as child, initially `active = false`. Show on
+hover after delay using `scheduleOnce()`. Position using `cc.Widget` or manual
+`setPosition()`. Clamp position within `cc.view.getVisibleSize()` bounds.]
 
 ---
 
@@ -572,6 +606,9 @@ For indeterminate mode, `ProgressBar` does not have a native indeterminate state
 in Godot 4.x — implement using a looping `Tween` on a fill element's position.
 Ensure the Tween is paused when motion reduction mode is active and a static
 indicator is shown instead.]
+[Cocos Creator: Use `cc.ProgressBar` component with `cc.Sprite` for bar and fill.
+Set `progress` property for value. For indeterminate mode, use `cc.tween()` to
+loop the fill sprite position. Listen to progress changes for value label updates.]
 
 ---
 
@@ -612,6 +649,10 @@ but always include a visible `Label` node as the field's accessible name. Bind
 submission on Enter. On console, `LineEdit.call("_popup_keyboard")` or use the OS
 virtual keyboard API — verify against engine-reference/godot/ for Godot 4.6
 console keyboard API specifics.]
+[Cocos Creator: Use `cc.EditBox` component for text input. Set `placeholder`
+property for hint text. Listen to `text-changed` event for real-time validation,
+`editing-did-end` for blur validation. On mobile, native keyboard is auto-invoked.
+Always include a separate `cc.Label` for the field's visible label.]
 
 ---
 
@@ -650,6 +691,10 @@ styling, implement manually with a `HBoxContainer` of tab buttons and a
 implemented in the screen's `_input()` override — it is not built into Godot's
 tab system. Check platform conventions: Xbox uses LB/RB; PlayStation uses L1/R1;
 both are the same physical button, so a single binding works.]
+[Cocos Creator: Use `cc.ToggleContainer` for tab bar with `cc.Toggle` buttons.
+Content area is a `cc.Node` swapped on tab change. For shoulder button shortcut,
+listen to gamepad input in `onKeyDown`. Animate content transition with `cc.tween()`
+on opacity.]
 
 ---
 
@@ -687,6 +732,9 @@ on the focused child whenever `gui_focus_changed` fires inside the container.
 Bind this via a recursive `connect` on the container's `gui_focus_changed` signal.
 For smooth scroll animation, use a `Tween` on `scroll_vertical` rather than
 setting it directly.]
+[Cocos Creator: Use `cc.ScrollView` component. Call `scrollToOffset()` to keep
+focused items visible. Listen to `scrolling` event for scroll position updates.
+For smooth scroll, use `cc.tween()` on `scrollView.content` position.]
 
 ---
 
@@ -774,6 +822,9 @@ critical player resource. Health, mana, stamina, shield, fuel.
 bar effect — back bar holds previous value (drains via Tween), front bar holds
 current value (updates instantly). Threshold states trigger `StyleBoxFlat` swaps
 on the front bar. Ghost bar Tween duration is tunable as a designer parameter.]
+[Cocos Creator: Use two `cc.ProgressBar` nodes stacked. Back bar for ghost (previous
+value), front bar for current. Animate ghost drain with `cc.tween()` on `progress`
+property. Swap threshold states by changing `cc.Sprite` spriteFrame on the fill.]
 
 ---
 
@@ -830,6 +881,10 @@ when the player enters the interaction zone, disappears when they leave.
 **Accessibility**: The button icon must be accompanied by a text label — do not rely on icon alone (some players use custom button labels or adaptive controllers with non-standard icons). The prompt must be positioned to not overlap character health or critical HUD information.
 
 **Implementation Notes**: [Godot: Attach as a `Node3D` child (or `Node2D` child in 2D) of the interactable object. Use a `BillboardMesh` or a `SubViewport` with a UI scene for 3D games — this keeps the prompt facing the camera without code. Update the button icon texture based on `Input.get_joy_name()` or keyboard detection via `InputEventKey` vs `InputEventJoypadButton`. Hold progress implemented as an `AnimationPlayer` or `Tween` on a radial mask shader.]
+[Cocos Creator: Attach prompt node as child of the interactable `cc.Node`. In 3D,
+use `cc.Billboard` component to face camera. Update button icon based on input
+device type via `cc.systemEvent`. Hold progress via `cc.Sprite` with `FILLED` type
+animated by `cc.tween()`.]
 
 ---
 
@@ -859,6 +914,10 @@ instances recycled via an object pool. Each instance is given a random small
 horizontal offset on spawn (±20px) to reduce overlap. Float animation via
 `Tween` on `position.y` and `modulate.a`. Critical hit scale-pop via Tween
 with `EASE_OUT` on scale followed by linear settle.]
+[Cocos Creator: Object pool of `cc.Label` (2D) or `cc.Label` in world space (3D)
+nodes. Random horizontal offset on spawn. Float animation via `cc.tween()` on
+`position` and `opacity`. Critical hit scale-pop via `cc.tween()` with `easing`
+on `scale`. Recycle via `node.removeFromParent()` and pool return.]
 
 ---
 
@@ -888,6 +947,10 @@ a stack of `Control` scenes. `push(screen_scene)` instantiates and animates in.
 `pop()` animates out and frees. `replace(screen_scene)` calls pop then push without
 the intermediate stack state. Use `CanvasLayer` per screen to isolate input handling.
 Store the "return focus" element reference before pushing so it can be restored on pop.]
+[Cocos Creator: Implement as a `ScreenManager` singleton managing a stack of
+`cc.Node` prefabs. `push(prefab)` instantiates via `cc.instantiate()` and animates
+in with `cc.tween()`. `pop()` animates out and calls `destroy()`. Use `zIndex`
+for screen ordering. Store "return focus" node reference before pushing.]
 
 ---
 

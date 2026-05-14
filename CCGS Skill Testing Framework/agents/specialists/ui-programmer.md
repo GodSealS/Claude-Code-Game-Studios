@@ -77,6 +77,8 @@ No gate IDs assigned.
 - [ ] Flags ambiguous UX specs back to ux-designer rather than making arbitrary implementation decisions
 - [ ] Returns structured output (implementation code, data binding patterns, state machine for UI states)
 - [ ] Uses the correct engine UI toolkit for the project — never cross-engine code
+- [ ] Enforces localization keys (e.g., "#ID_INV_TITLE") instead of hardcoded strings in all UI implementations.
+- [ ] Strictly adheres to the MVVM or MVC pattern provided in the technical-preferences.md to decouple UI from gameplay state.
 
 ---
 

@@ -8,7 +8,12 @@ Last verified: 2026-04-25
 |------|---------|
 | `WebSocket` | Browser/mini game WebSocket client |
 | `XMLHttpRequest` / `fetch` | HTTP requests |
-| `socket.io` (3rd party) | Common choice for multiplayer |
+
+### Third-Party Libraries
+
+| Library | Purpose |
+|---------|---------|
+| `socket.io` | Common choice for multiplayer with WebSocket fallback |
 
 ## WebSocket Example
 

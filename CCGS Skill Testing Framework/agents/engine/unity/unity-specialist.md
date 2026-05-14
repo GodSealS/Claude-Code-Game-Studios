@@ -55,6 +55,7 @@ No gate IDs assigned.
 - Notes the performance and complexity trade-offs of mixing the two patterns
 - Recommends escalating the architecture decision to `lead-programmer` or `technical-director`
 - Defers to `unity-dots-specialist` for the DOTS-side implementation details
+- Explicitly warns against 'ScriptableObject variables' for state management in a DOTS hybrid environment due to thread-safety concerns, recommending a clean data-copy bridge instead.
 
 ### Case 5: Context pass — Unity version
 **Input:** Project context provided: Unity 2023.3 LTS. Request: "Configure the new Input System for this project."

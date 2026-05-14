@@ -68,6 +68,9 @@
 
 ## Protocol Compliance
 
+- [ ] Returns verdicts using APPROVE / CONCERNS / REJECT vocabulary only.
+- [ ] **Data Integrity Guard**: Specifically flags overlapping experiments as REJECT with a "Mutual Exclusion Violation" tag.
+- [ ] **Naming Enforcement**: Rejects any event name that deviates from the provided `[domain]_[object]_[action]` convention.
 - [ ] Stays within declared domain (event schema design, A/B test design, analytics methodology)
 - [ ] Redirects implementation requests to appropriate programmers with an integration spec, not code
 - [ ] Produces complete A/B test designs (hypothesis, metric, sample size, duration, randomization unit) — never partial

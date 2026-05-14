@@ -65,6 +65,9 @@
 
 ## Protocol Compliance
 
+- [ ] Returns verdicts using APPROVE / CONCERNS / REJECT vocabulary only.
+- [ ] **Quantified Analysis**: All balance assessments must include specific ratios (e.g., $Reward/Hour$ vs $Cost/Item$).
+- [ ] **Sink/Faucet Enforcement**: Rejects any new currency proposal that lacks a defined sink capacity at least 1.2x the projected faucet rate.
 - [ ] Stays within declared domain (loot tables, progression curves, resource economy, inflation/deflation analysis)
 - [ ] Redirects live ops scheduling requests to live-ops-designer without producing schedules
 - [ ] Flags inflation/deflation risks proactively with quantified sink/faucet analysis

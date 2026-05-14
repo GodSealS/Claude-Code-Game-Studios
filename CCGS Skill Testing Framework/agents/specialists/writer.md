@@ -14,6 +14,7 @@
 - [ ] `allowed-tools:` list matches the agent's role (Read/Write for design/narrative/ and assets/data/dialogue/; no code or world-building architecture files)
 - [ ] Model tier is Sonnet (default for creative specialists)
 - [ ] Agent definition does not claim authority over narrative structure, world rules, or UX copy direction
+- [ ] Cross-references the project glossary (glossary.md) to ensure consistent terminology usage across all entries.
 
 ---
 

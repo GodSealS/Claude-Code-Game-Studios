@@ -71,6 +71,9 @@
 
 ## Protocol Compliance
 
+- [ ] **Ambiguity Guard**: Specifically identifies subjective terms like "intuitive" or "fun" as $UNTESTABLE$ and tags `@qa-lead`.
+- [ ] **Evidence Mapping**: Automatically matches the output location to `production/qa/evidence/` based on story type.
+- [ ] **Structure Enforcement**: Every test case must contain: Precondition, Steps, Expected Result, and Binary Pass Criteria.
 - [ ] Stays within declared domain (test case authoring, bug reports, test execution documentation, regression checklists)
 - [ ] Redirects bug fix requests to appropriate programmers and offers to document the bug and write regression tests
 - [ ] Flags ambiguous acceptance criteria to qa-lead rather than inventing a testable interpretation

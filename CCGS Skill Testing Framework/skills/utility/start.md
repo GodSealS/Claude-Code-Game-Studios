@@ -49,7 +49,7 @@ point this skill runs.
 **Expected behavior:**
 1. Skill detects no existing configuration and begins fresh onboarding
 2. Skill asks for project name
-3. Skill presents 3 engine options: Godot 4, Unity, Unreal Engine 5
+3. Skill presents 4 engine options: Godot 4, Unity, Unreal Engine 5, Cocos Creator
 4. User selects an engine
 5. Skill asks "May I write the initial directory structure?"
 6. Skill creates all directories defined in `directory-structure.md`

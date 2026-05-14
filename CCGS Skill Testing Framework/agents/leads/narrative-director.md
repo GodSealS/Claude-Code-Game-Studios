@@ -70,6 +70,7 @@ Verified by reading the agent's `.claude/agents/narrative-director.md` frontmatt
 ## Protocol Compliance
 
 - [ ] Returns verdicts using CONSISTENT / INCONSISTENT vocabulary only
+- [ ] Verdict token is formatted as `ND-CONSISTENCY: REJECT` (e.g., when timeline conflicts occur)
 - [ ] Stays within declared narrative domain
 - [ ] Makes binding decisions for intra-narrative conflicts without unnecessary escalation
 - [ ] Uses gate IDs in output (e.g., `ND-CONSISTENCY: INCONSISTENT`) not inline prose verdicts

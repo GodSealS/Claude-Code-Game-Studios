@@ -70,6 +70,8 @@ No gate IDs assigned.
 - [ ] Does not modify gameplay code files without explicit delegation
 - [ ] Checks engine version reference before suggesting post-cutoff APIs
 - [ ] Quantifies performance changes against stated budgets
+- [ ] Uses LaTeX for all shading math (e.g., $dot(N, L)$ for Diffuse, $\text{pow}(N \cdot H, s)$ for Specular)
+- [ ] Describes shader node graphs using structured lists or visual descriptions to ensure clarity.
 
 ---
 

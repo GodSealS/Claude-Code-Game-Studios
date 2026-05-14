@@ -8,7 +8,12 @@ Last verified: 2026-04-25
 |------|---------|
 | `AudioSource` | Component that plays `AudioClip`s |
 | `AudioClip` | Audio asset (mp3, ogg, wav) |
-| `AudioManager` (custom) | Common pattern for BGM/SFX management |
+
+### Common Patterns (Custom)
+
+| Pattern | Description |
+|---------|-------------|
+| `AudioManager` | Common custom singleton for BGM/SFX management |
 
 ## Common Operations
 

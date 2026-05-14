@@ -8,10 +8,11 @@ Last verified: 2026-04-25
 |------|---------|
 | `Camera` | Scene capture and projection |
 | `MeshRenderer` | 3D mesh rendering component |
-| `ModelComponent` | Legacy name; now `MeshRenderer` |
 | `ForwardPipeline` | Default forward rendering pipeline |
 | `DeferredPipeline` | Deferred rendering (3.8+, desktop) |
 | `Custom Render Pipeline` | Visual node-based pipeline editor |
+
+> **Note**: `ModelComponent` is a legacy 2.x name. Use `MeshRenderer` in 3.x.
 
 ## Camera Setup
 

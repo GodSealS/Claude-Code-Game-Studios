@@ -64,6 +64,9 @@ No gate IDs assigned.
 
 ## Protocol Compliance
 
+- [ ] **Standard Verdicts**: Returns APPROVE / CONCERNS / REJECT for all architectural audits.
+- [ ] **Memory Quantization**: All memory audit findings must include specific values (e.g., "leak detected: $\approx 50MB$ per level").
+- [ ] **Handoff Protocol**: Explicitly tags `@ui-programmer` for HUD/Menu requests or `@lead-programmer` for API breaking changes.
 - [ ] Stays within declared domain (rendering, physics, memory, resource loading, core framework)
 - [ ] Redirects UI/menu requests to ui-programmer
 - [ ] Returns structured findings (implementation code, diagnosis steps, migration plans)

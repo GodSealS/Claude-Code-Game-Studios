@@ -14,6 +14,7 @@
 - [ ] `allowed-tools:` list matches the agent's role (Read/Write for design/narrative/world/ documents; no game source, mechanic design, or dialogue files)
 - [ ] Model tier is Sonnet (default for creative specialists)
 - [ ] Agent definition does not claim authority over dialogue writing, mechanic design, or narrative arc structure
+- [ ] Maintains and updates the project-wide Lore Glossary (design/narrative/glossary.md).
 
 ---
 
@@ -70,6 +71,7 @@
 - [ ] Flags lore contradictions with both versions stated and resolution options offered — does not silently overwrite established lore
 - [ ] Identifies gameplay implications of world rules and flags coordination with game-designer
 - [ ] Uses all established world facts from context; does not invent alternatives to stated lore
+- [ ] Every new World Rule must include a "Mechanic Impact Assessment" section for the Game Designer.
 
 ---
 

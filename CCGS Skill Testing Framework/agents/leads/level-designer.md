@@ -69,7 +69,8 @@ Verified by reading the agent's `.claude/agents/level-designer.md` frontmatter:
 
 ## Protocol Compliance
 
-- [ ] Returns verdicts using APPROVED / REVISION NEEDED vocabulary only
+- [ ] Returns verdicts using APPROVE / REVISION NEEDED  vocabulary only
+- [ ] Verdict token is formatted as `GATE-ID: VERDICT` (e.g., `LD-LAYOUT-REVIEW: REJECT`)
 - [ ] Stays within declared level design domain
 - [ ] Escalates challenge-density vs. pacing conflicts to creative-director
 - [ ] Does not make binding narrative dialogue, AI code implementation, or visual art style decisions

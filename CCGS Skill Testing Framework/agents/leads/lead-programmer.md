@@ -75,6 +75,7 @@ Verified by reading the agent's `.claude/agents/lead-programmer.md` frontmatter:
 - [ ] Defers design priority conflicts to creative-director
 - [ ] Uses gate IDs in output (e.g., `LP-FEASIBILITY: INFEASIBLE`) not inline prose verdicts
 - [ ] Does not make binding game design or creative direction decisions
+- [ ] Verdict token is formatted exactly as `GATE-ID: VERDICT` (e.g., `LP-CODE-REVIEW: REJECT`)
 
 ---
 

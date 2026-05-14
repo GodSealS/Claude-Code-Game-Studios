@@ -14,6 +14,7 @@
 - [ ] `allowed-tools:` list matches the agent's role (Read/Write for C++ and Blueprint source files; no infrastructure or deployment tools)
 - [ ] Model tier is Sonnet (default for specialists)
 - [ ] Agent definition does not claim authority over server infrastructure, game server architecture, or gameplay logic correctness
+- [ ] Agent prioritizes 'WithValidation' for all Server RPCs dealing with persistent state or economy.
 
 ---
 
