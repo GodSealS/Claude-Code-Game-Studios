@@ -58,6 +58,7 @@ The user needs creative exploration before anything else.
    **Concept phase:**
    - `/brainstorm open` — discover your game concept
    - `/setup-engine` — configure the engine (brainstorm will recommend one)
+   - `/prototype` — throwaway concept build: validate the core idea is fun before designing (1–3 days)
    - `/art-bible` — define visual identity (uses the Visual Identity Anchor brainstorm produces)
    - `/map-systems` — decompose the concept into systems
    - `/design-system` — author a GDD for each MVP system
@@ -70,7 +71,7 @@ The user needs creative exploration before anything else.
    - `/architecture-review` — validate architecture coverage
    **Pre-Production phase:**
    - `/ux-design` — author UX specs for key screens (main menu, HUD, core interactions)
-   - `/prototype` — build a throwaway prototype to validate the core mechanic
+   - `/vertical-slice` — production-quality end-to-end build to validate the full game loop
    - `/playtest-report (×1+)` — document each vertical slice playtest session
    - `/create-epics` — map systems to epics
    - `/create-stories` — break epics into implementable stories
@@ -86,6 +87,7 @@ The user needs creative exploration before anything else.
    **Concept phase:**
    - `/brainstorm [hint]` — develop the idea into a full concept
    - `/setup-engine` — configure the engine
+   - `/prototype` — throwaway concept build: validate the core idea is fun before designing (1–3 days)
    - `/art-bible` — define visual identity (uses the Visual Identity Anchor brainstorm produces)
    - `/map-systems` — decompose the concept into systems
    - `/design-system` — author a GDD for each MVP system
@@ -98,7 +100,7 @@ The user needs creative exploration before anything else.
    - `/architecture-review` — validate architecture coverage
    **Pre-Production phase:**
    - `/ux-design` — author UX specs for key screens (main menu, HUD, core interactions)
-   - `/prototype` — build a throwaway prototype to validate the core mechanic
+   - `/vertical-slice` — production-quality end-to-end build to validate the full game loop
    - `/playtest-report (×1+)` — document each vertical slice playtest session
    - `/create-epics` — map systems to epics
    - `/create-stories` — break epics into implementable stories
@@ -116,6 +118,7 @@ The user needs creative exploration before anything else.
 3. Show the recommended path:
    **Concept phase:**
    - `/brainstorm` or `/setup-engine` — (their pick from step 2)
+   - `/prototype` — throwaway concept build: validate the core idea is fun before designing (1–3 days)
    - `/art-bible` — define visual identity (after brainstorm if run, or after concept doc exists)
    - `/design-review` — validate the concept doc
    - `/map-systems` — decompose the concept into individual systems
@@ -129,7 +132,7 @@ The user needs creative exploration before anything else.
    - `/architecture-review` — validate architecture coverage
    **Pre-Production phase:**
    - `/ux-design` — author UX specs for key screens (main menu, HUD, core interactions)
-   - `/prototype` — build a throwaway prototype to validate the core mechanic
+   - `/vertical-slice` — production-quality end-to-end build to validate the full game loop
    - `/playtest-report (×1+)` — document each vertical slice playtest session
    - `/create-epics` — map systems to epics
    - `/create-stories` — break epics into implementable stories
@@ -160,6 +163,22 @@ The user needs creative exploration before anything else.
    - `/architecture-decision retrofit [path]` — add missing ADR sections
    - `/architecture-review` — bootstrap the TR requirement registry
    - `/gate-check` — validate readiness for next phase
+
+---
+
+## Phase 3c: Write Initial Stage File
+
+After confirming the starting path (and before asking about review mode), write the initial stage to `production/stage.txt`. Create the `production/` directory if it does not exist.
+
+Stage mapping:
+- **Path A, B, or C (starting from scratch)**: write `Concept`
+- **Path D, existing project, engine not configured or only a game concept exists**: write `Concept`
+- **Path D, existing project with GDDs but no architecture documents**: write `Systems Design`
+- **Path D, existing project with full architecture (ADRs, architecture doc)**: write `Technical Setup`
+
+Do this silently — no "May I write?" needed for this single-line file.
+
+Say: "I've set `production/stage.txt` to `[stage]` — this anchors your status line and stage detection."
 
 ---
 

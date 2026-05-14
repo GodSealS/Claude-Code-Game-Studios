@@ -1,7 +1,7 @@
 ---
 name: team-combat
 description: "Orchestrate the combat team: coordinates game-designer, gameplay-programmer, ai-programmer, technical-artist, sound-designer, and qa-tester to design, implement, and validate a combat feature end-to-end."
-argument-hint: "[combat feature description]"
+argument-hint: "[combat feature description] [--review full|lean|solo]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Bash, Task, AskUserQuestion, TodoWrite
 ---
@@ -15,6 +15,19 @@ When this skill is invoked with a valid argument, orchestrate the combat team th
 the user with the subagent's proposals as selectable options. Write the agent's
 full analysis in conversation, then capture the decision with concise labels.
 The user must approve before moving to the next phase.
+
+## Phase 0: Resolve Review Mode
+
+1. If `--review [mode]` was passed as an argument, use that mode.
+2. Else read `production/review-mode.txt` — use whatever is written there.
+3. Else default to `lean`.
+
+Modes:
+- `full` — spawn all director and lead gates as described
+- `lean` — skip director gates unless they are PHASE-GATE type (CD-PHASE-GATE, TD-PHASE-GATE, PR-PHASE-GATE, AD-PHASE-GATE)
+- `solo` — skip all director gate spawning entirely; run the skill without any agent gates
+
+Store the resolved mode for use in all subsequent phases.
 
 ## Team Composition
 - **game-designer** — Design the mechanic, define formulas and edge cases
@@ -53,10 +66,19 @@ Delegate to **gameplay-programmer** (with **ai-programmer** if AI is involved):
 - Output: architecture sketch with file list and interface definitions
 
 Then spawn the **primary engine specialist** to validate the proposed architecture:
-- Is the class/node/component structure idiomatic for the pinned engine? (e.g., Godot node hierarchy, Unity MonoBehaviour vs DOTS, Unreal Actor/Component design, Cocos Creator Node/Component system)
+- Is the class/node/component structure idiomatic for the pinned engine? (e.g., Godot node hierarchy, Unity MonoBehaviour vs DOTS, Unreal Actor/Component design)
 - Are there engine-native systems that should be used instead of custom implementations?
 - Any proposed APIs that are deprecated or changed in the pinned engine version?
 - Output: engine architecture notes — incorporate into the architecture before Phase 3 begins
+
+Use `AskUserQuestion`:
+- Prompt: "Architecture sketch complete. Approve to proceed with parallel implementation."
+- Options:
+  - `[A] Proceed — spawn implementation agents (gameplay-programmer, ai-programmer, technical-artist, sound-designer)`
+  - `[B] Revise the architecture first — I'll describe what needs to change`
+  - `[C] Stop here — I'll continue later`
+
+Only spawn implementation agents if user selects [A].
 
 ### Phase 3: Implementation (parallel where possible)
 Delegate in parallel:

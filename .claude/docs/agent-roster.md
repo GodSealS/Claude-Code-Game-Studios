@@ -24,7 +24,7 @@ domain lead) should delegate to specialists.
 | `release-manager` | Release pipeline | Build management, versioning, changelogs, deployment, rollbacks |
 | `localization-lead` | Internationalization | String externalization, translation pipeline, locale testing |
 
-## Tier 3 -- Specialist Agents (Sonnet or Haiku)
+## Tier 3 -- Specialist Agents (Sonnet / Haiku assigned per agent)
 | Agent | Domain | Model | When to Use |
 |-------|--------|-------|-------------|
 | `systems-designer` | Systems design | Sonnet | Specific mechanic implementation, formula design, loops |
@@ -37,10 +37,10 @@ domain lead) should delegate to specialists.
 | `tools-programmer` | Dev tools | Sonnet | Editor extensions, pipeline tools, debug utilities |
 | `ui-programmer` | UI implementation | Sonnet | UI framework, screens, widgets, data binding |
 | `technical-artist` | Tech art | Sonnet | Shaders, VFX, optimization, art pipeline tools |
-| `sound-designer` | Sound design | Haiku | SFX design docs, audio event lists, mixing notes |
+| `sound-designer` | Sound design | Sonnet | SFX design docs, audio event lists, mixing notes |
 | `writer` | Dialogue/lore | Sonnet | Dialogue writing, lore entries, item descriptions |
 | `world-builder` | World/lore design | Sonnet | World rules, faction design, history, geography |
-| `qa-tester` | Test execution | Haiku | Writing test cases, bug reports, test checklists |
+| `qa-tester` | Test execution | Sonnet | Writing test cases, bug reports, test checklists |
 | `performance-analyst` | Performance | Sonnet | Profiling, optimization recs, memory analysis |
 | `devops-engineer` | Build/deploy | Haiku | CI/CD, build scripts, version control workflow |
 | `analytics-engineer` | Telemetry | Sonnet | Event tracking, dashboards, A/B test design |
@@ -85,6 +85,7 @@ domain lead) should delegate to specialists.
 | Agent | Subsystem | Model | When to Use |
 | ---- | ---- | ---- | ---- |
 | `godot-gdscript-specialist` | GDScript | Sonnet | Static typing, design patterns, signals, coroutines, GDScript performance |
+| `godot-csharp-specialist` | C# / .NET | Sonnet | .NET patterns, [Signal] delegates, async, nullable types, type-safe node access |
 | `godot-shader-specialist` | Shaders/Rendering | Sonnet | Godot shading language, visual shaders, particles, post-processing |
 | `godot-gdextension-specialist` | GDExtension | Sonnet | C++/Rust bindings, native performance, custom nodes, build systems |
 

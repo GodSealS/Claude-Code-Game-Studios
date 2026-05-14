@@ -55,7 +55,7 @@ If no engine is specified, run an interactive engine selection process:
 1. **What kind of game?** (2D, 3D, or both?)
 2. **Primary input method?** (keyboard/mouse, gamepad, touch, or mixed?)
 3. **Team size and experience?** (solo beginner, solo experienced, small team?)
-4. **Any strong language preferences?** (GDScript, C#, C++, TypeScript, visual scripting?)
+4. **Any strong language preferences?** (GDScript, C#, C++, TypeScript,JavaScript, visual scripting?)
 5. **Budget for engine licensing?** (free only, or commercial licenses OK?)
 
 ### Produce a recommendation
@@ -109,7 +109,7 @@ Do NOT use a simple scoring matrix that eliminates engines. Instead, reason thro
 3. Name the best alternative and when to choose it instead
 4. Explicitly state: "This is a starting point, not a verdict — you can always migrate engines, and many developers switch between projects."
 5. Use `AskUserQuestion` to confirm: "Does this recommendation feel right, or would you like to explore a different engine?"
-   - Options: `[Primary engine] (Recommended)` / `[Alternative engine]` / `[Third engine]` / `[Fourth engine]` / `Explore further` / `Type something`
+   - Options: `[Primary engine] (Recommended)` / `[Alternative engine]` / `[Third engine]` / `Explore further` / `Type something`
 
 **If the user picks "Explore further":**
 Use `AskUserQuestion` with concept-specific deep-dive topics. Always generate these options from the user's actual concept — do not use generic options. Always include at minimum:
@@ -366,7 +366,7 @@ Check whether the engine version is likely beyond the LLM's training data.
 - Godot: training data likely covers up to ~4.3
 - Unity: training data likely covers up to ~2023.x / early 6000.x
 - Unreal: training data likely covers up to ~5.3 / early 5.4
-- Cocos Creator: training data likely covers up to ~3.7
+- Cocos Creator: training data likely covers up to ~3.8
 
 Compare the user's chosen version against these baselines:
 
@@ -606,7 +606,7 @@ After setup is complete, output:
 Engine Setup Complete
 =====================
 Engine:          [name] [version]
-Language:        [GDScript | C# | GDScript + C# | C# | C++ + Blueprint | TypeScript]
+Language:        [GDScript | C# | GDScript + C# | C# | C++ + Blueprint | TypeScript | JavaScript]
 Knowledge Risk:  [LOW/MEDIUM/HIGH]
 Reference Docs:  [created/skipped]
 CLAUDE.md:       [updated]
@@ -617,7 +617,7 @@ Next Steps:
 1. Review docs/engine-reference/<engine>/VERSION.md
 2. [If from /brainstorm] Run /map-systems to decompose your concept into individual systems
 3. [If from /brainstorm] Run /design-system to author per-system GDDs (guided, section-by-section)
-4. [If from /brainstorm] Run /prototype [core-mechanic] to test the core loop
+4. [If from /brainstorm] Run /prototype [core-mechanic] to validate the core idea before writing GDDs
 5. [If fresh start] Run /brainstorm to discover your game concept
 6. Create your first milestone: /sprint-plan new
 ```
