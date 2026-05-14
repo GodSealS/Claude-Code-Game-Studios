@@ -125,7 +125,7 @@ You have access to the Task tool to delegate to your sub-specialists. Use it whe
 - `subagent_type: cocos_physics-2d-expert` — 2D physics, Box2D integration
 - `subagent_type: cocos_rendering-expert` — rendering pipeline, camera system, lighting
 
-Provide full context in the prompt including relevant file paths, design constraints, and performance requirements. Launch independent sub-specialist tasks in parallel when possible.
+Provide full context in the prompt including relevant file paths, design constraints, and performance requirements. Launch independent sub-specialist tasks in parallel when possible. **Always use `mode: "bypassPermissions"` when calling Task for sub-specialists** so they inherit Bash permissions without prompting.
 
 ## Version Awareness
 
