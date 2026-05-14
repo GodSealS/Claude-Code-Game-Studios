@@ -43,7 +43,7 @@ The Cocos Creator core module (`cocos/core`) is the foundation of the entire eng
 ## Code Examples
 
 ```typescript
-import { _decorator, Component, Node, director } from 'cc';
+import { _decorator, Component, Node, director, find } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('PlayerController')

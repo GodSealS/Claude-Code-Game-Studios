@@ -165,7 +165,7 @@ point this skill runs.
 ## Coverage Notes
 
 - The case where the user rejects all engine options and provides a custom
-  engine name is not tested — the skill is designed for the three supported
+  engine name is not tested — the skill is designed for the four supported
   engines only.
 - Git initialization (if any) is not tested here; that is an infrastructure
   concern outside the skill boundary.

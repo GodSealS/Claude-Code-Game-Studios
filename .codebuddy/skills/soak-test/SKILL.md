@@ -108,11 +108,9 @@ Engine-specific monitoring guidance:
 - Alert threshold: Physical Memory Used growth > 50MB over the full soak
 
 **Cocos Creator:**
-- Open Chrome DevTools → Memory tab (for web builds) or use `cc.profiler` API
-- Record: JS Heap Size (MB), Node Count, Component Count at each checkpoint
-- Alert threshold: JS Heap Size growth > 20% from T+0 after the first 15 minutes
-- Use `cc.profiler.getStats()` to programmatically capture memory snapshots
-- For native builds, use platform-specific profilers (Xcode Instruments, Android Profiler)
+- Open DevTools → Memory tab (if running in browser preview) or use `cc.profiler` in native builds
+- Record: JS Heap Size (MB), Node Count, Texture Memory
+- Alert threshold: JS Heap growth > 20% from T+0 after the first 15 minutes
 
 ### Stability observation items (if focus = stability or all)
 
@@ -157,6 +155,7 @@ Before starting the soak:
   - **Godot**: Debugger → Monitors tab → Memory section visible
   - **Unity**: Memory Profiler window open
   - **Unreal**: `stat memory` ready in console
+  - **Cocos Creator**: DevTools → Memory tab open (browser) or `cc.profiler` enabled (native)
 - [ ] Soak target confirmed: [session design intent from game concept]
 - [ ] Prior known issues to watch for: [from most recent playtest / qa-plan]
 

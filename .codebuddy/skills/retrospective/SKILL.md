@@ -3,7 +3,7 @@ name: retrospective
 description: "Generates a sprint or milestone retrospective by analyzing completed work, velocity, blockers, and patterns. Produces actionable insights for the next iteration."
 argument-hint: "[sprint-N|milestone-name]"
 user-invocable: true
-allowed-tools: Read, Glob, Grep, Write
+allowed-tools: Read, Glob, Grep, Write, Bash, AskUserQuestion
 context: |
   !git log --oneline --since="2 weeks ago" 2>/dev/null
 ---

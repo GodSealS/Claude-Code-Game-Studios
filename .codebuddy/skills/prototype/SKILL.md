@@ -178,7 +178,7 @@ Reframe the hypothesis and simplify aggressively, or switch to Paper path.
 
 **Output:** A minimal runnable engine project in `prototypes/[name]-concept/`.
 
-**Lighter alternative — Love2D (Lua):** If the project engine (Godot, Unity, Unreal)
+**Lighter alternative — Love2D (Lua):** If the project engine (Godot, Unity, Unreal,Cocos Creator)
 feels too heavy to stand up for a throwaway build, consider Love2D — a minimal 2D
 framework that installs in minutes, requires no project scaffolding, and renders
 natively with no browser latency. Used by many indie devs for rapid 2D action and

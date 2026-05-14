@@ -111,14 +111,14 @@ Frontend or CI pipeline. Please confirm test status manually."
 
 **Cocos Creator:**
 ```bash
-npm test 2>&1 || npx jest 2>&1
+npx jest --config jest.config.ts 2>&1
 ```
-If `npm test` is not configured, check for test scripts:
+If `jest.config.ts` does not exist, try:
 ```bash
-cat package.json | grep -A5 '"scripts"'
+npx jest 2>&1
 ```
-If no test script found: "Cocos Creator test runner not configured. Add a
-`test` script to `package.json` (e.g., `jest` or `mocha`) and re-run."
+If neither works: "Cocos Creator test runner not found — confirm Jest is
+configured or use the Cocos Creator editor test runner."
 
 **Unknown engine / not configured:**
 "Engine not configured in `.claude/docs/technical-preferences.md`. Run

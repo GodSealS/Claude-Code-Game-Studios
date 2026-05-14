@@ -69,7 +69,7 @@ Verified by reading the agent's `.codebuddy/agents/narrative-director.md` frontm
 
 ## Protocol Compliance
 
-- [ ] Returns verdicts using APPROVE / CONCERNS / REJECT vocabulary only
+- [ ] Returns verdicts using CONSISTENT / INCONSISTENT vocabulary only
 - [ ] Verdict token is formatted as `ND-CONSISTENCY: REJECT` (e.g., when timeline conflicts occur)
 - [ ] Stays within declared narrative domain
 - [ ] Makes binding decisions for intra-narrative conflicts without unnecessary escalation

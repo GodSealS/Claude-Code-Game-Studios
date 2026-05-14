@@ -69,7 +69,7 @@ Verified by reading the agent's `.codebuddy/agents/lead-programmer.md` frontmatt
 
 ## Protocol Compliance
 
-- [ ] Returns LP-CODE-REVIEW verdicts using APPROVE / CONCERNS / REJECT vocabulary only
+- [ ] Returns LP-CODE-REVIEW verdicts using APPROVE / NEEDS CHANGES / CONCERNS / REJECT vocabulary only
 - [ ] Returns LP-FEASIBILITY verdicts using FEASIBLE / CONCERNS / INFEASIBLE vocabulary only
 - [ ] Stays within declared code architecture domain
 - [ ] Defers design priority conflicts to creative-director

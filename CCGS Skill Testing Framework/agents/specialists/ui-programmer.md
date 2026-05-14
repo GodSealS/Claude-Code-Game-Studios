@@ -26,7 +26,7 @@ direction
 **Input:** "Implement the inventory screen from the UX spec in `design/ux/inventory-flow.md`."
 **Expected behavior:**
 - Reads the UX spec before producing any code
-- Produces implementation using the project's configured UI framework (UI Toolkit, UGUI, UMG, Godot Control nodes, or Cocos Creator cc.Widget/cc.Layout/cc.ScrollView)
+- Produces implementation using the project's configured UI framework (UI Toolkit, UGUI, UMG, Godot Control nodes, or Cocos Creator Node/UINode + Widget + Layout)
 - Implements all states defined in the spec (default, hover, selected, empty-slot, locked-slot)
 - Binds inventory data to UI elements via the project's data model, not hardcoded values
 - Includes doc comments on public UI API per coding standards
@@ -62,7 +62,13 @@ direction
 - Does NOT produce Unity UGUI or Unreal UMG code for a Godot project
 - Checks the engine version reference (4.6) for any Control node API changes from 4.4/4.5 before using specific APIs
 - Produces GDScript or C# code consistent with the project's configured language
-- The implementation should use an 'Animation Interface' (e.g., Godot's Tween or AnimationPlayer) rather than hardcoded Lerp logic in _process.
+
+**Input:** Engine context provided: project uses Cocos Creator 3.8 with Node/UINode UI. Request: "Implement a scrollable item list for the inventory."
+**Expected behavior:**
+- Uses Cocos Creator's `ScrollView` + `Layout` + `Prefab` pattern for list items
+- Does NOT produce Unity UGUI, Unreal UMG, or Godot Control code for a Cocos Creator project
+- Uses TypeScript consistent with the project's configured language
+- Leverages Widget component for layout alignment
 
 ---
 

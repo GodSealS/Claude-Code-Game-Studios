@@ -40,9 +40,9 @@ Verified by reading the agent's `.codebuddy/agents/game-designer.md` frontmatter
 
 ### Case 3: Gate verdict — correct vocabulary
 **Scenario:** A mechanic spec for "Environmental Hazard Damage" is submitted. The spec defines three hazard types (fire, acid, electricity) but does not specify what happens when a player is simultaneously affected by multiple hazard types, what happens when a hazard is applied during the invincibility window from a dodge, or what the damage frequency is (per-second, per-tick, on-enter).
-**Expected:** Returns REJECT [list of blockers] with specific identification of the undefined edge cases...
+**Expected:** Returns `NEEDS REVISION` with specific identification of the undefined edge cases: multi-hazard interaction, hazard-during-invincibility, and damage frequency specification.
 **Assertions:**
-- [ ] Verdict is exactly one of APPROVE / CONCERNS / REJECT
+- [ ] Verdict is exactly one of APPROVED / NEEDS REVISION — not freeform text
 - [ ] Rationale identifies the specific missing edge cases by name
 - [ ] Does not reject the entire mechanic — identifies the specific gaps to fill
 - [ ] Provides actionable guidance on what to define (not how to implement it)

@@ -37,7 +37,6 @@ CCGS Skill Testing Framework/
 │   ├── unity/             ← Unity-specific specialists
 │   ├── unreal/            ← Unreal-specific specialists
 │   ├── cocos/             ← Cocos Creator-specific specialists
-│   ├── wechat/            ← WeChat Mini Game specialists
 │   ├── operations/        ← QA, live-ops, release, localization, etc.
 │   └── creative/          ← writer, world-builder, game-designer, etc.
 │
@@ -115,8 +114,7 @@ All testing is driven by two skills already in the framework:
 | `godot` | godot-specialist, godot-gdscript-specialist, godot-csharp-specialist, godot-shader-specialist, godot-gdextension-specialist |
 | `unity` | unity-specialist, unity-ui-specialist, unity-shader-specialist, unity-dots-specialist, unity-addressables-specialist |
 | `unreal` | unreal-specialist, ue-gas-specialist, ue-replication-specialist, ue-umg-specialist, ue-blueprint-specialist |
-| `cocos` | cocos-specialist, cocos_2d-expert, cocos_3d-expert, cocos_gfx-expert, cocos_core-expert, cocos_physics-expert, cocos_physics-2d-expert, cocos_animation-expert, cocos_rendering-expert |
-| `wechat` | wechat-specialist, wechat-minigame-specialist, wechat-shader-specialist, wechat-ui-specialist, wechat-cloudbase-specialist |
+| `cocos` | cocos-specialist, cocos_2d-expert, cocos_3d-expert, cocos_core-expert, cocos_animation-expert, cocos_gfx-expert, cocos_rendering-expert, cocos_physics-expert, cocos_physics-2d-expert |
 | `operations` | devops-engineer, security-engineer, performance-analyst, analytics-engineer, community-manager |
 | `creative` | writer, world-builder, game-designer, economy-designer, systems-designer, prototyper |
 

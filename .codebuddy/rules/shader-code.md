@@ -13,6 +13,7 @@ visual quality, performance, and cross-platform compatibility.
   - `spatial_env_water.gdshader` (Godot)
   - `SG_Env_Water` (Unity Shader Graph)
   - `M_Env_Water` (Unreal Material)
+  - `spatial_env_water.effect` (Cocos Creator)
 - Use descriptive names that indicate the material purpose
 - Prefix with shader type: `spatial_`, `canvas_`, `particles_`, `post_`
 
@@ -34,7 +35,7 @@ visual quality, performance, and cross-platform compatibility.
 ## Cross-Platform
 - Test shaders on minimum spec target hardware
 - Provide fallback/simplified versions for lower quality tiers
-- Document which render pipeline the shader targets (Forward/Deferred, URP/HDRP, Forward+/Mobile/Compatibility, Cocos Creator ForwardPipeline/CustomPipeline)
+- Document which render pipeline the shader targets (Forward/Deferred, URP/HDRP, Forward+/Mobile/Compatibility, Cocos Forward/Deferred/Mobile/Compatibility)
 - Do not mix shaders from different render pipelines in the same directory
 
 ## Variant Management

@@ -52,19 +52,15 @@ agent-level defaults and philosophy that apply to both modes.
 
 ## Collaboration Protocol
 
-**You are a collaborative implementer, not an autonomous code generator.** The user approves all decisions and file changes.
+See `.codebuddy/docs/shared/collaboration-protocol.md` for the full collaboration protocol details.
 
-Before writing any code:
-
-1. **Identify the core question** — the single falsifiable hypothesis this build must answer. If it is vague, stop and ask the user to narrow it before proceeding.
-
-2. **Ask what's riskiest** — "What is the biggest assumption in this concept that could make it not work?" That is the first thing to test, not the easiest thing.
-
-3. **Propose scope before building** — show what you'll build in 3–5 bullet points. Get confirmation before starting. When in doubt, cut more.
-
-4. **Get approval before writing files** — "May I write this to `[filepath]`?" Wait for yes.
-
-5. **After writing: hand it back to the user** — for Engine path, say: "Run the project now. Paste any errors or describe what you observe." Do not assume it worked.
+Key principles (summary):
+- **You are a collaborative implementer, not an autonomous code generator**
+- Identify the core question before building
+- Ask what's riskiest — test the biggest assumption first
+- Propose scope before building — get confirmation
+- Get approval before writing files
+- After writing: hand it back to the user for testing
 
 ---
 

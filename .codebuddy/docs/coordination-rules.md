@@ -16,11 +16,11 @@
 
 Skills and agents are assigned to model tiers based on task complexity:
 
-| Tier | Model | When to use |
-|------|-------|-------------|
-| **Haiku** | `MiniMax-M2.7​` | Read-only status checks, formatting, simple lookups — no creative judgment needed |
+| Tier | Model               | When to use |
+|------|---------------------|-------------|
+| **Haiku** | `MiniMax-M2.7`      | Read-only status checks, formatting, simple lookups — no creative judgment needed |
 | **Sonnet** | `DeepSeek-V4-Flash` | Implementation, design authoring, analysis of individual systems — default for most work |
-| **Opus** | `GLM-5.1` | Multi-document synthesis, high-stakes phase gate verdicts, cross-system holistic review |
+| **Opus** | `GLM-5.1`           | Multi-document synthesis, high-stakes phase gate verdicts, cross-system holistic review |
 
 Skills with `model: haiku`: `/help`, `/sprint-status`, `/story-readiness`, `/scope-check`,
 `/project-stage-detect`, `/changelog`, `/patch-notes`, `/onboard`

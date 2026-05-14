@@ -39,7 +39,7 @@ Verified by reading the agent's `.codebuddy/agents/technical-director.md` frontm
 - [ ] May note technical constraints that affect dialogue (e.g., localization string limits, data format), but defers all content decisions
 
 ### Case 3: Gate verdict — correct vocabulary
-**Scenario:** A proposed multiplayer mechanic requires raycasting against all active entities every frame to detect line-of-sight. At expected player counts (1000 entities in a large zone), this is O(n²) . Request is tagged TD-FEASIBILITY.
+**Scenario:** A proposed multiplayer mechanic requires raycasting against all active entities every frame to detect line-of-sight. At expected player counts (1000 entities in a large zone), this is O(n²) per frame. Request is tagged TD-FEASIBILITY.
 **Expected:** Returns `TD-FEASIBILITY: CONCERNS` with specific citation of the O(n²) complexity and the entity count that makes this infeasible at target framerate.
 **Assertions:**
 - [ ] Verdict is exactly one of APPROVE / CONCERNS / REJECT — not freeform text

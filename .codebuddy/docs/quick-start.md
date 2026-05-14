@@ -69,14 +69,14 @@ Ask yourself: "What department would handle this in a real studio?"
 | Write Godot C# code | `godot-csharp-specialist` |
 | Create Godot shaders | `godot-shader-specialist` |
 | Build GDExtension modules | `godot-gdextension-specialist` |
-| Optimize 2D rendering | `cocos_2d-expert` |
-| Load/render 3D models | `cocos_3d-expert` |
-| Implement animation systems | `cocos_animation-expert` |
-| Manage Node/Component lifecycle | `cocos_core-expert` |
-| Create custom shaders/pipeline | `cocos_gfx-expert` |
-| Implement 3D physics/collision | `cocos_physics-expert` |
-| Implement 2D physics/Box2D | `cocos_physics-2d-expert` |
-| Configure rendering pipeline | `cocos_rendering-expert` |
+| Build Cocos 2D systems | `cocos_2d-expert` |
+| Build Cocos 3D systems | `cocos_3d-expert` |
+| Optimize Cocos core engine | `cocos_core-expert` |
+| Create Cocos animations | `cocos_animation-expert` |
+| Write Cocos shaders/effects | `cocos_gfx-expert` |
+| Configure Cocos rendering | `cocos_rendering-expert` |
+| Implement Cocos 3D physics | `cocos_physics-expert` |
+| Implement Cocos 2D physics | `cocos_physics-2d-expert` |
 | Plan live events and seasons | `live-ops-designer` |
 | Write patch notes for players | `community-manager` |
 | Brainstorm a new game idea | Use `/brainstorm` skill |

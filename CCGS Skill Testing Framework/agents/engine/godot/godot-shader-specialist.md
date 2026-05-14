@@ -10,12 +10,11 @@ No gate IDs assigned.
 
 ## Static Assertions (Structural)
 
-Verified by reading the agent's `.codebuddy/agents/godot-shader-specialist.md` frontmatter:
-
 - [ ] `description:` field is present and domain-specific (references Godot shading language / materials / post-processing)
-- [ ] `allowed-tools:` list includes image_analysis (to process visual references); no Bash unless profiling tools are used
-- [ ] Model tier is `GLM-5v-Turbo` (Strategic choice for VFX/Shader domain; NOT the DeepSeek-V4-Flash specialist default)
-- [ ] Agent definition references `docs/engine-reference/godot/VERSION.md` for API changes
+- [ ] `allowed-tools:` list includes Read, Write, Edit, Glob, Grep
+- [ ] Model tier is GLM-5v-Turbo (default for specialists)
+- [ ] Agent definition references `docs/engine-reference/godot/VERSION.md` as the authoritative source for Godot shader API changes
+
 ---
 
 ## Test Cases

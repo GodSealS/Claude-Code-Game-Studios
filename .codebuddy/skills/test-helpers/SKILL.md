@@ -298,9 +298,9 @@ namespace GameTestHelpers
 
 ---
 
-### Cocos Creator (TypeScript / Jest)
+### Cocos Creator (Jest / TypeScript)
 
-**Base helper** (`tests/helpers/game-assertions.ts`):
+**Base helper** (`tests/helpers/gameAssertions.ts`):
 
 ```typescript
 /**
@@ -308,8 +308,8 @@ namespace GameTestHelpers
  * Extends Jest's expect with domain-specific helpers.
  *
  * Usage:
- *   import { assertInRange } from '../helpers/game-assertions';
- *   assertInRange(entity.health, 0, entity.maxHealth, 'health');
+ *   import { assertInRange } from '../helpers/gameAssertions';
+ *   assertInRange(entity.health, 0, entity.maxHealth);
  */
 
 /**
@@ -332,52 +332,79 @@ export function assertInRange(
 }
 
 /**
- * Assert that a cc.Node has a specific component attached.
+ * Assert that a node emits a specific event during an action.
  */
-export function assertHasComponent<T extends cc.Component>(
-    node: cc.Node,
-    componentClass: new (...args: any[]) => T
-): void {
-    const component = node.getComponent(componentClass);
-    expect(component).not.toBeNull();
+export async function assertEventEmitted(
+    emitter: { once: (event: string, callback: (...args: any[]) => void) => void },
+    eventName: string,
+    action: () => void | Promise<void>
+): Promise<void> {
+    let emitted = false;
+    emitter.once(eventName, () => { emitted = true; });
+    await action();
+    expect(emitted).toBe(true);
 }
 
 /**
- * Assert that a cc.Node exists as a child at the given path.
+ * Assert a child node exists at the given path under a parent.
  */
-export function assertChildExists(parent: cc.Node, childName: string): void {
+export function assertNodeExists(parent: { getChildByName: (name: string) => any }, childName: string): void {
     const child = parent.getChildByName(childName);
     expect(child).not.toBeNull();
 }
 ```
 
-**Factory helper** (`tests/helpers/game-factory.ts`):
+**Factory helper** (`tests/helpers/gameFactory.ts`):
 
 ```typescript
+import { Node } from 'cc';
+
 /**
  * Factory functions for creating test game objects.
- * Returns minimal cc.Node objects configured for unit testing.
+ * Returns minimal objects configured for unit testing.
  *
  * Usage: const player = GameFactory.makePlayer({ health: 100 });
  */
 
 export class GameFactory {
     /**
-     * Create a minimal cc.Node with a named component for testing.
+     * Create a minimal player-like Node for testing.
+     * Override properties as needed via the options parameter.
      */
-    static makeNode(name: string = 'TestNode'): cc.Node {
-        const node = new cc.Node(name);
+    static makePlayer(options: { health?: number; maxHealth?: number } = {}): Node {
+        const { health = 100, maxHealth = 100 } = options;
+        const node = new Node('TestPlayer');
+        (node as any).health = health;
+        (node as any).maxHealth = maxHealth;
         return node;
     }
+}
+```
 
+**Scene helper** (`tests/helpers/sceneRunnerHelper.ts`):
+
+```typescript
+import { director, Node } from 'cc';
+
+/**
+ * Utilities for scene-based integration tests.
+ */
+export class SceneRunnerHelper {
     /**
-     * Create a minimal player-like node for testing.
-     * Override properties as needed.
+     * Load a scene by name and wait one frame for onLoad/start to complete.
      */
-    static makePlayer(options: { health?: number } = {}): cc.Node {
-        const node = new cc.Node('TestPlayer');
-        // Add custom component or use setProperty for test metadata
-        return node;
+    static async loadSceneAndWait(sceneName: string): Promise<Node> {
+        return new Promise((resolve) => {
+            director.loadScene(sceneName, () => {
+                const scene = director.getScene();
+                if (scene) {
+                    // Wait one frame for lifecycle methods
+                    setTimeout(() => resolve(scene), 0);
+                } else {
+                    throw new Error(`Failed to load scene: ${sceneName}`);
+                }
+            });
+        });
     }
 }
 ```
@@ -458,7 +485,8 @@ After writing: Verdict: **COMPLETE** — helper files created.
 "Helper files created. To use them in a test:
 - Godot: `class_name` is auto-imported — no explicit import needed
 - Unity: Add `using` directive or reference the test assembly
-- Unreal: `#include \"tests/helpers/GameTestHelpers.h\"`"
+- Unreal: `#include \"tests/helpers/GameTestHelpers.h\"`
+- Cocos Creator: `import { assertInRange } from '../helpers/gameAssertions';`"
 
 ---
 

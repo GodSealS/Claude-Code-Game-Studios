@@ -203,74 +203,39 @@ Test category naming: "MyGame.[System].[Feature]"
 
 #### Cocos Creator (`Engine: Cocos Creator` or `Engine: Cocos`)
 
-Create `jest.config.js` (or update if exists):
-
-```javascript
-module.exports = {
-    preset: 'ts-jest',
-    testEnvironment: 'node',
-    roots: ['<rootDir>/tests'],
-    testMatch: ['**/*.test.ts'],
-    moduleNameMapper: {
-        '^cc$': '<rootDir>/tests/__mocks__/cc.ts'
-    }
-};
-```
-
-Create `tests/__mocks__/cc.ts` (minimal Cocos Creator API mock for unit testing):
+Create `jest.config.ts`:
 
 ```typescript
-// Minimal mock of cc module for unit testing without engine runtime
-export namespace cc {
-    export class Node {
-        name: string;
-        children: Node[] = [];
-        components: Component[] = [];
-        constructor(name?: string) { this.name = name || 'Node'; }
-        addChild(child: Node) { this.children.push(child); }
-        getChildByName(name: string): Node | null {
-            return this.children.find(c => c.name === name) || null;
-        }
-        getComponent<T>(cls: new (...args: any[]) => T): T | null {
-            return (this.components.find(c => c instanceof cls) as T) || null;
-        }
-        addComponent<T>(cls: new (...args: any[]) => T): T {
-            const comp = new cls();
-            this.components.push(comp as Component);
-            return comp;
-        }
-    }
-    export class Component {}
-    export class Sprite extends Component {}
-    export class Label extends Component {
-        string: string = '';
-    }
-    export class Button extends Component {}
-}
+import type { Config } from 'jest';
+
+const config: Config = {
+    preset: 'ts-jest',
+    testEnvironment: 'node',
+    roots: ['<rootDir>/tests/unit', '<rootDir>/tests/integration'],
+    testMatch: ['**/*.test.ts'],
+    moduleFileExtensions: ['ts', 'js', 'json'],
+    collectCoverageFrom: [
+        'src/**/*.ts',
+        '!src/**/*.d.ts',
+    ],
+    coverageDirectory: 'coverage',
+};
+
+export default config;
 ```
 
-Create `tests/unit/README.md`:
-```markdown
-# Unit Tests
-Unit tests for pure logic: formulas, state machines, data validation.
-Uses Jest + ts-jest with cc module mocks.
-Run: npm test
-```
+Create `tests/unit/.gitkeep` with content:
+`// Unit tests go here — one subdirectory per system (e.g., tests/unit/combat/)`
 
-Create `tests/integration/README.md`:
-```markdown
-# Integration Tests
-Integration tests for cross-system interactions.
-May require Cocos Creator editor runtime for component-based tests.
-```
+Create `tests/integration/.gitkeep` with content:
+`// Integration tests go here — one subdirectory per system`
 
 Note in the README: **Setting up Jest for Cocos Creator**
 ```
-1. npm install --save-dev jest ts-jest @types/jest typescript
-2. Create jest.config.js with ts-jest preset
-3. Create cc module mocks in tests/__mocks__/cc.ts
-4. Add "test": "jest" to package.json scripts
-5. Verify: npm test
+1. npm install --save-dev jest ts-jest @types/jest
+2. Configure jest.config.ts (created above)
+3. Run tests: npx jest --config jest.config.ts
+4. For Cocos Creator editor integration, use the built-in test runner panel
 ```
 
 ---
@@ -411,6 +376,51 @@ jobs:
 
 Note: UE CI requires a self-hosted runner with Unreal Editor installed.
 Set the `UE_EDITOR_PATH` environment variable on the runner.
+
+### Cocos Creator
+
+Create `.github/workflows/tests.yml`:
+
+```yaml
+name: Automated Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: Run Jest Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Tests
+        run: npx jest --config jest.config.ts --ci --coverage
+
+      - name: Upload Coverage
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage/
+```
+
+Note: Cocos Creator CI uses Node.js + Jest. Ensure `package.json` includes
+`jest`, `ts-jest`, and `@types/jest` as devDependencies.
 
 ---
 

@@ -10,12 +10,6 @@
 | `/help` | Context-aware "what do I do next?" — reads current stage and surfaces the required next step |
 | `/project-stage-detect` | Full project audit — detect phase, identify existence gaps, recommend next steps |
 | `/setup-engine` | Configure engine + version, detect knowledge gaps, populate version-aware reference docs |
-| `/setup-wechat-minigame` | Initialize WeChat Mini Game project with platform-specific configuration, boilerplate code, and directory structure |
-| `/wechat-shader` | Initialize WebGL shader pipeline, convert Unity/Unreal/Godot shaders to WebGL GLSL, optimize for mobile, render pipeline standards |
-| `/wechat-ui-design` | Design UI with Figma/Sketch, produce assets in Photoshop/Illustrator, build adaptive layouts in FairyGUI with data binding and screen management |
-| `/wechat-physics-box2d` | Initialize Box2D WASM 2D physics engine, create physics world via unified IPhysicsWorld interface |
-| `/wechat-physics-bullet` | Initialize Bullet (ammo.js) WASM 3D physics engine, create physics world with soft body support |
-| `/wechat-physics-jolt` | Initialize JoltPhysics WASM high-performance 3D physics engine, deterministic simulation, built-in character controller |
 | `/adopt` | Brownfield format audit — checks internal structure of existing GDDs/ADRs/stories, produces migration plan |
 
 ## Game Design
@@ -73,7 +67,6 @@
 | `/design-review` | Review a game design document for completeness and consistency |
 | `/code-review` | Architectural code review for a file or changeset |
 | `/balance-check` | Analyze game balance data, formulas, and config — flag outliers |
-| `/asset-audit` | Audit assets for naming conventions, file size budgets, and pipeline compliance |
 | `/content-audit` | Audit GDD-specified content counts against implemented content |
 | `/scope-check` | Analyze feature or sprint scope against original plan, flag scope creep |
 | `/perf-profile` | Structured performance profiling with bottleneck identification |

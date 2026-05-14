@@ -30,9 +30,7 @@ domain lead) should delegate to specialists.
 | `systems-designer` | Systems design | DeepSeek-V4-Flash | Specific mechanic implementation, formula design, loops |
 | `level-designer` | Level design | Kimi-k2.6 | Level layouts, pacing, encounter design, flow |
 | `economy-designer` | Economy/balance | DeepSeek-V4-Flash | Resource economies, loot tables, progression curves |
-
 | `gameplay-programmer` | Gameplay code | DeepSeek-V4-Flash | Feature implementation, gameplay systems code |
-
 | `engine-programmer` | Engine systems | DeepSeek-V4-Flash | Core engine, rendering, physics, memory management |
 | `ai-programmer` | AI systems | DeepSeek-V4-Flash | Behavior trees, pathfinding, NPC logic, state machines |
 | `network-programmer` | Networking | DeepSeek-V4-Flash | Netcode, replication, lag compensation, matchmaking |
@@ -62,8 +60,7 @@ domain lead) should delegate to specialists.
 | `unreal-specialist` | Unreal Engine 5 | DeepSeek-V4-Flash | Blueprint vs C++, GAS overview, UE subsystems, Unreal optimization |
 | `unity-specialist` | Unity | DeepSeek-V4-Flash | MonoBehaviour vs DOTS, Addressables, URP/HDRP, Unity optimization |
 | `godot-specialist` | Godot 4 | DeepSeek-V4-Flash | GDScript patterns, node/scene architecture, signals, Godot optimization |
-| `wechat-specialist` | WeChat Mini Game | DeepSeek-V4-Flash | WeChat platform architecture (MVC/ECS), wx.* APIs, game loop optimization, state/resource management, audio systems, sub-specialist coordination |
-| `cocos-specialist` | Cocos Creator | DeepSeek-V4-Flash | Component system, scene graph, rendering pipeline, Cocos optimization |
+| `cocos-specialist` | Cocos Creator | DeepSeek-V4-Flash | TypeScript, Node/UINode, component system, Cocos optimization  |
 
 
 ### Unreal Engine Sub-Specialists
@@ -89,6 +86,7 @@ domain lead) should delegate to specialists.
 | Agent | Subsystem | Model | When to Use |
 | ---- | ---- | ---- | ---- |
 | `godot-gdscript-specialist` | GDScript | DeepSeek-V4-Flash | Static typing, design patterns, signals, coroutines, GDScript performance |
+| `godot-csharp-specialist` | C# / .NET | DeepSeek-V4-Flash | .NET patterns, [Signal] delegates, async, nullable types, type-safe node access |
 | `godot-shader-specialist` | Shaders/Rendering | GLM-5v-Turbo | Godot shading language, visual shaders, particles, post-processing |
 | `godot-gdextension-specialist` | GDExtension | DeepSeek-V4-Flash | C++/Rust bindings, native performance, custom nodes, build systems |
 
@@ -106,20 +104,3 @@ domain lead) should delegate to specialists.
 | `cocos_rendering-expert` | Rendering Pipeline | DeepSeek-V4-Flash | Camera system, lighting, shadows, post-processing, optimization |
 
 ---
-
-### WeChat Mini Game (微信小游戏) Sub-Specialists
-
-| Agent | Domain | Model | Reports To | When to Use |
-| ---- | ---- | ---- | ---- | ---- |
-| `wechat-minigame-specialist` | Gameplay & Physics | DeepSeek-V4-Flash | wechat-specialist | Platform APIs, 4MB package limit, physics engines (Box2D/Bullet/JoltPhysics via unified IPhysicsWorld interface), WASM integration, Spine/DragonBones animation runtimes |
-| `wechat-shader-specialist` | WebGL Shaders | GLM-5v-Turbo | wechat-specialist | Custom shaders, WebGL 1.0/2.0, Unity/Unreal/Godot shader conversion to GLSL, post-processing effects, render pipeline standards |
-| `wechat-ui-specialist` | UI/UX Design | GLM-5v-Turbo | wechat-specialist | Figma/Sketch prototyping, Photoshop/Illustrator asset production, FairyGUI layout with data binding, screen management, portrait-first design, WeChat design system compliance |
-| `wechat-cloudbase-specialist` | Cloud Backend | DeepSeek-V4-Flash | wechat-specialist | Serverless backend, database, cloud functions, storage, security rules, anti-cheat |
-
-**Notes:**
-- `wechat-specialist` is the Engine Lead for the WeChat platform, coordinating all sub-specialists
-- WeChat Mini Game specialists use TypeScript (preferred) for all JavaScript code
-- 4MB package size limit is strictly enforced
-- Audio format: AAC preferred, MP3 fallback; avoid WAV and OGG
-- Cloud Base provides serverless backend with MongoDB-like database
-- Real-name verification (实名制) and anti-addiction (防沉迷) compliance required for China market
