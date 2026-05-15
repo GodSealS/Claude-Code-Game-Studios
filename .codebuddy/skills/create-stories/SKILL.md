@@ -78,16 +78,38 @@ The type determines what test evidence is required before `/story-done` can clos
 
 ---
 
-## 4. Decompose the GDD into Stories
+## 4. Decompose the GDD into Stories (Vertical Slice Method)
+
+Use **tracer bullet vertical slices** — each story is a thin end-to-end path
+through all layers (data, logic, UI, tests), NOT a horizontal slice of one layer.
+
+### How vertical slicing works
+
+| Horizontal (wrong) | Vertical (correct) |
+|---|---|
+| Story A: Data layer (schema + models) | Story A: Create entity (data → logic → test) |
+| Story B: Logic layer (business rules) | Story B: Update entity (data → logic → test) |
+| Story C: UI layer (screens) | Story C: Display entity (logic → UI → test) |
+
+A completed vertical slice is **demoable or verifiable on its own** — it delivers
+value end-to-end even if it's narrow.
+
+### HITL vs AFK classification
+
+Each story should also be classified:
+- **HITL** (Human In The Loop) — requires human interaction: architectural decision, design review, manual verification
+- **AFK** (Away From Keyboard) — can be implemented and tested without human interaction
+
+Prefer AFK over HITL where possible.
+
+### Process
 
 For each GDD acceptance criterion:
 
 1. Group related criteria that require the same core implementation
-2. Each group = one story
+2. Each group = one story — structured as a vertical slice (cuts through all layers)
 3. Order stories: foundational behaviour first, edge cases last, UI last
-
-**Story sizing rule:** one story = one focused session (~2-4 hours). If a
-group of criteria would take longer, split into two stories.
+4. Classify each story as HITL or AFK
 
 For each story, determine:
 - **GDD requirement**: which acceptance criterion(ia) does this satisfy?

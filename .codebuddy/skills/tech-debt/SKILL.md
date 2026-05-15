@@ -1,7 +1,7 @@
 ---
 name: tech-debt
 description: "Track, categorize, and prioritize technical debt across the codebase. Scans for debt indicators, maintains a debt register, and recommends repayment scheduling."
-argument-hint: "[scan|add|prioritize|report]"
+argument-hint: "[scan|add|deepen|prioritize|report]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, AskUserQuestion
 ---
@@ -12,6 +12,7 @@ Determine the mode from the argument:
 
 - `scan` — Scan the codebase for tech debt indicators
 - `add` — Add a new tech debt entry manually
+- `deepen` — Analyze architecture for deepening opportunities (see [LANGUAGE.md](LANGUAGE.md))
 - `prioritize` — Re-prioritize the existing debt register
 - `report` — Generate a summary report of current debt status
 
@@ -97,6 +98,34 @@ Ask: "May I write the re-prioritized register back to `docs/tech-debt-register.m
 If yes, write the updated file. Verdict: **COMPLETE** — register re-prioritized and saved.
 
 If no, stop here. Verdict: **BLOCKED** — user declined write.
+
+---
+
+## Phase 2E: Deepen Mode
+
+Analyze the codebase for **architecture deepening opportunities** — refactors that turn shallow modules into deep ones. Uses the vocabulary from [LANGUAGE.md](LANGUAGE.md).
+
+Read `docs/tech-debt-register.md` for existing debt context. Then explore the codebase and identify:
+
+### Candidates for deepening
+
+For each candidate, apply the **deletion test**: "If this module were deleted, would its complexity vanish or reappear across N callers?" If the latter, it's earning its keep and likely deep enough. If the former, it's a pass-through — consider folding it away.
+
+Surface candidates as a numbered list:
+
+| #  | Files | Problem | Deepening Proposal | Benefits |
+|----|-------|---------|-------------------|----------|
+| 1  | [files] | Interface is nearly as complex as the implementation — shallow | [what would change] | Locality + Leverage |
+
+For each candidate:
+- **Problem** — why the current architecture causes friction (in terms of Locality and Leverage)
+- **Proposal** — how a deepened interface would look
+- **Benefits** — in terms of testability, maintainability, and AI-navigability
+- **ADR conflicts** — if this contradicts an existing ADR, mark it clearly
+
+Present the list. Ask: "Which of these would you like to explore further?" using AskUserQuestion.
+
+If the user picks a candidate, refine the deepening plan together before adding it to the debt register.
 
 ---
 

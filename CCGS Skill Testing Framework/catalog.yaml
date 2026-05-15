@@ -522,6 +522,39 @@ skills:
     priority: low
     category: analysis
 
+  - name: diagnose
+    spec: ""
+    last_static: ""
+    last_static_result: ""
+    last_spec: ""
+    last_spec_result: ""
+    last_category: ""
+    last_category_result: ""
+    priority: high
+    category: analysis
+
+  - name: grill-with-docs
+    spec: ""
+    last_static: ""
+    last_static_result: ""
+    last_spec: ""
+    last_spec_result: ""
+    last_category: ""
+    last_category_result: ""
+    priority: high
+    category: utility
+
+  - name: tdd
+    spec: ""
+    last_static: ""
+    last_static_result: ""
+    last_spec: ""
+    last_spec_result: ""
+    last_category: ""
+    last_category_result: ""
+    priority: high
+    category: utility
+
   - name: test-evidence-review
     spec: CCGS Skill Testing Framework/skills/analysis/test-evidence-review.md
     last_static: ""
@@ -788,6 +821,28 @@ skills:
 
   - name: day-one-patch
     spec: CCGS Skill Testing Framework/skills/utility/day-one-patch.md
+    last_static: ""
+    last_static_result: ""
+    last_spec: ""
+    last_spec_result: ""
+    last_category: ""
+    last_category_result: ""
+    priority: low
+    category: utility
+
+  - name: caveman
+    spec: ""
+    last_static: ""
+    last_static_result: ""
+    last_spec: ""
+    last_spec_result: ""
+    last_category: ""
+    last_category_result: ""
+    priority: low
+    category: utility
+
+  - name: handoff
+    spec: ""
     last_static: ""
     last_static_result: ""
     last_spec: ""

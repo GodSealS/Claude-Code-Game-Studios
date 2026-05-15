@@ -10,13 +10,14 @@ allowed-tools: Read, Glob, Grep, Write
 
 Validates `.codebuddy/skills/*/SKILL.md` files for structural compliance and
 behavioral correctness. No external dependencies — runs entirely within the
-existing skill/hook/template architecture.
+existing skill/hook/template architecture. The [skill-authoring-standards.md](../docs/skill-authoring-standards.md)
+is the authoritative reference for what a well-formed skill looks like.
 
 **Four modes:**
 
 | Mode | Command | Purpose | Token Cost |
 |------|---------|---------|------------|
-| `static` | `/skill-test static [name\|all]` | Structural linter — 7 compliance checks per skill | Low (~1k/skill) |
+| `static` | `/skill-test static [name\|all]` | Structural linter — 8 compliance checks per skill | Low (~1k/skill) |
 | `spec` | `/skill-test spec [name]` | Behavioral verifier — evaluates assertions in test spec | Medium (~5k/skill) |
 | `category` | `/skill-test category [name\|all]` | Category rubric — checks skill against its category-specific metrics | Low (~2k/skill) |
 | `audit` | `/skill-test audit` | Coverage report — skills, agent specs, last test dates | Low (~3k total) |
@@ -27,8 +28,8 @@ existing skill/hook/template architecture.
 
 Determine mode from the first argument:
 
-- `static [name]` → run 7 structural checks on one skill
-- `static all` → run 7 structural checks on all skills (Glob `.codebuddy/skills/*/SKILL.md`)
+- `static [name]` → run 8 structural checks on one skill
+- `static all` → run 8 structural checks on all skills (Glob `.codebuddy/skills/*/SKILL.md`)
 - `spec [name]` → read skill + test spec, evaluate assertions
 - `category [name]` → run category-specific rubric from `CCGS Skill Testing Framework/quality-rubric.md`
 - `category all` → run category rubric for every skill that has a `category:` in catalog
@@ -97,6 +98,24 @@ hint against the first phase's "Parse Arguments" section.
 
 **WARN** if hint is `""` or if documented modes don't match hint.
 
+### Check 8 — Standards Compliance (authoritative reference)
+
+Cross-reference the skill against `.codebuddy/docs/skill-authoring-standards.md`.
+Verify the skill follows all guidelines in the **Must-Pass Checks** checklist:
+
+- Description includes triggers ("Use when...")
+- 2+ phase headings exist
+- Contains verdict keyword
+- Contains "May I write" before Write/Edit tool use
+- Contains "Recommended Next Steps" section
+- argument-hint non-empty and matches Parse Argument section
+- No time-sensitive info (dates, versions)
+- Consistent terminology
+- References go one level deep only (no nested sub-references)
+
+Each failing item is a **WARN**. If the skill falls short on 3+ items, flag as
+**FAIL Standards** and recommend the skill author review `skill-authoring-standards.md`.
+
 ---
 
 ### Static Mode Output Format
@@ -112,6 +131,7 @@ Check 4 — Collaborative Protocol: PASS ("May I write" found)
 Check 5 — Next-Step Handoff:     WARN (no follow-up section found)
 Check 6 — Fork Context Complexity: PASS (8 phases, context: fork set)
 Check 7 — Argument Hint:         PASS
+Check 8 — Standards Compliance:  PASS (all 9 must-pass items satisfied)
 
 Verdict: WARNINGS (1 warning, 0 failures)
 Recommended: Add a "Follow-Up Actions" section at the end of the skill.

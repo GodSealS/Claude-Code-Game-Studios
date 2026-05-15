@@ -114,6 +114,9 @@ Ask yourself: "What department would handle this in a real studio?"
 | `/estimate` | Produces structured effort estimates |
 | `/design-review` | Reviews a design document |
 | `/code-review` | Reviews code for quality and architecture |
+| `/diagnose` | Disciplined debugging: reproduce → hypothesise → fix → regression-test |
+| `/grill-with-docs` | Stress-test a plan against the domain model, sharpen terminology, update docs |
+| `/tdd` | Test-driven development with red-green-refactor loop |
 | `/balance-check` | Analyzes game balance data |
 | `/asset-audit` | Audits assets for compliance |
 | `/content-audit` | GDD-specified content vs. implemented — find gaps |
@@ -127,6 +130,9 @@ Ask yourself: "What department would handle this in a real studio?"
 | `/milestone-review` | Reviews milestone progress |
 | `/retrospective` | Runs sprint/milestone retrospective |
 | `/bug-report` | Structured bug report creation |
+| `/bug-triage` | Re-prioritize open bugs, assign to sprints, surface systemic trends |
+| `/caveman` | Ultra-compressed communication — cuts token usage ~75% |
+| `/handoff` | Compact session into handoff document for another agent |
 | `/playtest-report` | Creates or analyzes playtest feedback |
 | `/onboard` | Generates onboarding docs for a role |
 | `/release-checklist` | Validates pre-release checklist |

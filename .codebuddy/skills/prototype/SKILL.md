@@ -232,6 +232,8 @@ recommendation pre-stated:
   - `HTML — browser prototype` — puzzle, card, turn-based, strategy, idle. Opens by double-clicking, no install. 85–90% reliable. **Not suitable for action games** — browser latency lies about feel.
   - `Engine — native prototype` — action, platformer, physics, or anything where feel IS the hypothesis. 50–60% one-shot; 2–4 iteration rounds are normal. Requires engine installed.
   - `Paper — rules document + play log` — strategy, economy, logic, board-game-style mechanics. 100% reliable. Cannot validate feel.
+  - `Logic — terminal app prototype` — validate state machines, data models, API design. Pure logic behind a throwaway TUI. See [LOGIC.md](LOGIC.md).
+  - `UI — multiple UI variations` — generate structurally different UIs switchable via URL param. See [UI.md](UI.md).
 
 ---
 

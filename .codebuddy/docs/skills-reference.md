@@ -1,6 +1,6 @@
 # Available Skills (Slash Commands)
 
-81 slash commands organized by phase. Type `/` in CodeBuddy to access any of them.
+87 slash commands organized by phase. Type `/` in CodeBuddy to access any of them.
 
 ## Onboarding & Navigation
 
@@ -11,6 +11,7 @@
 | `/project-stage-detect` | Full project audit — detect phase, identify existence gaps, recommend next steps |
 | `/setup-engine` | Configure engine + version, detect knowledge gaps, populate version-aware reference docs |
 | `/adopt` | Brownfield format audit — checks internal structure of existing GDDs/ADRs/stories, produces migration plan |
+| `/grill-with-docs` | Stress-test a plan against the domain model, sharpen terminology, and update CONTEXT.md/ADRs inline |
 
 ## Game Design
 
@@ -66,6 +67,7 @@
 |---------|---------|
 | `/design-review` | Review a game design document for completeness and consistency |
 | `/code-review` | Architectural code review for a file or changeset |
+| `/diagnose` | Disciplined debugging loop: feedback loop → reproduce → hypothesise → instrument → fix → regression-test |
 | `/balance-check` | Analyze game balance data, formulas, and config — flag outliers |
 | `/content-audit` | Audit GDD-specified content counts against implemented content |
 | `/scope-check` | Analyze feature or sprint scope against original plan, flag scope creep |
@@ -80,6 +82,7 @@
 | Command | Purpose |
 |---------|---------|
 | `/qa-plan` | Generate a QA test plan for a sprint or feature |
+| `/tdd` | Test-driven development with red-green-refactor loop — builds features one vertical slice at a time |
 | `/smoke-check` | Run critical path smoke test gate before QA hand-off |
 | `/soak-test` | Generate a soak test protocol for extended play sessions |
 | `/regression-suite` | Map test coverage to GDD critical paths, identify fixed bugs without regression tests |
@@ -98,6 +101,8 @@
 | `/retrospective` | Run a structured sprint or milestone retrospective |
 | `/bug-report` | Create a structured bug report |
 | `/bug-triage` | Read all open bugs, re-evaluate priority vs. severity, assign owner and label |
+| `/caveman` | Ultra-compressed communication mode — cuts token usage ~75% |
+| `/handoff` | Compact conversation into a handoff document for another agent |
 | `/reverse-document` | Generate design or architecture docs from existing implementation |
 | `/playtest-report` | Generate a structured playtest report or analyze existing playtest notes |
 

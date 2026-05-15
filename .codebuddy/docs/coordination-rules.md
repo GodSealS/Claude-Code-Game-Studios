@@ -11,6 +11,14 @@
    `producer` agent coordinates the propagation.
 5. **No Unilateral Cross-Domain Changes**: An agent must never modify files
    outside its designated directories without explicit delegation.
+6. **Zoom-Out on Unfamiliar Code**: When encountering code you don't know well,
+   go up a layer of abstraction. Give a map of all relevant modules and callers
+   using the project's domain glossary before proposing changes.
+7. **Domain Glossary First**: At session start, check for `CONTEXT.md` in the
+   project root. If it exists, read it to understand the shared vocabulary before
+   making any code or design changes. Use its terms consistently in all output.
+   If it does not exist, create it lazily when the first domain term is resolved
+   (see `.codebuddy/docs/context-glossary-pattern.md`).
 
 ## Model Tier Assignment
 

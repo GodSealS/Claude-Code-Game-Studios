@@ -69,6 +69,9 @@ If BOTH static and category baselines are 0 FAILs and 0 WARNs, stop:
 
 Read the full skill file at `.codebuddy/skills/[name]/SKILL.md`.
 
+The authoritative reference for skill quality is `.codebuddy/docs/skill-authoring-standards.md`.
+Use it as the target standard when proposing fixes.
+
 For each failing or warning **static** check, identify the exact gap:
 
 - **Check 1 fail** → which frontmatter field is missing
@@ -96,6 +99,10 @@ Show the full combined diagnosis to the user before proposing any changes.
 Write a targeted fix for each failure and warning. Show the proposed changes
 as clearly marked before/after blocks. Only change what is failing — do not
 rewrite sections that are passing.
+
+**Reference the standards**: For each fix, state which must-pass item from
+`.codebuddy/docs/skill-authoring-standards.md` this change satisfies.
+This helps the user understand why the change is needed, not just what changed.
 
 Ask: "May I write this improved version to `.codebuddy/skills/[name]/SKILL.md`?"
 
@@ -142,3 +149,4 @@ If yes: run `git checkout -- .codebuddy/skills/[name]/SKILL.md`
 - Run `/skill-test static all` to find the next skill with failures.
 - Run `/skill-improve [next-name]` to continue the loop on another skill.
 - Run `/skill-test audit` to see overall coverage progress.
+- For deeper guidance on skill structure, see `.codebuddy/docs/skill-authoring-standards.md`.
