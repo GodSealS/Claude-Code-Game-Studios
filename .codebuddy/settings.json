@@ -15,7 +15,9 @@
       "Bash(dir *)",
       "Bash(python -m json.tool*)",
       "Bash(python -m pytest*)",
-      "Bash(py -m pytest*)"
+      "Bash(py -m pytest*)",
+      "Bash(npx jest*)",
+      "Bash(jest*)"
     ],
     "deny": [
       "Bash(rm -rf *)",
@@ -155,5 +157,10 @@
         ]
       }
     ]
+  },
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": true,
+    "excludedCommands": ["git", "docker", "rm", "curl"]
   }
 }
