@@ -91,7 +91,7 @@ If they differ, use `AskUserQuestion` before proceeding:
   - `[C] Stop here — I want to review the manifest diff first`
 
 If [A]: edit the story file's `Manifest Version:` field to the current manifest date before spawning the programmer. Then read the manifest carefully for new rules.
-If [B]: edit the story file's `Manifest Version:` field to the current manifest date AND add a `Manifest-Note: Proceeded with old manifest rules on [date] — non-compliance risk accepted.` line to the story header. Read the manifest for new rules anyway. Note the decision in the Phase 6 summary under "Deviations". `/story-done` will include the Manifest-Note in its deviations section without re-checking staleness.
+If [B]: edit the story file's `Manifest Version:` field to the current manifest date AND add a `Manifest-Note: Proceeded with old manifest rules on [date] — non-compliance risk accepted.` line to the story header. Read the manifest for new rules anyway. Note the decision in the Phase 7 summary under "Deviations". `/story-done` will include the Manifest-Note in its deviations section without re-checking staleness.
 If [C]: stop. Do not spawn any agent. Let the user review and re-run `/dev-story`.
 
 ### Dependency validation
@@ -109,7 +109,7 @@ After extracting the **Dependencies** list from the story file, validate each:
        - `[C] The dependency is done but status wasn't updated — mark it Complete and continue`
    - If [B]: set story status to **BLOCKED** in session state and stop. Do not spawn any programmer agent.
    - If [C]: ask "May I update [dependency path] Status to Complete?" before continuing.
-   - If [A]: note in Phase 6 summary under "Deviations": "Implemented with incomplete dependency: [dependency title] — [status]."
+   - If [A]: note in Phase 7 summary under "Deviations": "Implemented with incomplete dependency: [dependency title] — [status]."
 
 If a dependency file cannot be found: warn "Dependency story not found: [path]. Verify the path or create the story file."
 
@@ -132,13 +132,74 @@ Silently update two things before spawning any agent:
 
 ---
 
-## Phase 3: Route to the Right Programmer
+## Phase 3: Requirement Alignment
+
+**Purpose**: Catch misalignment before code starts. All context is loaded — now
+challenge the story against the project's domain language, ADR, and edge cases
+before spawning a programmer.
+
+**Config/Data stories**: Skip alignment entirely — data values are unambiguous
+by nature. Jump directly to Phase 5 (Config/Data note).
+
+### 3a: Scan for ambiguity
+
+Re-read the acceptance criteria and implementation notes. Look for:
+
+- **Vague terms**: "smooth", "responsive", "fast", "correct", "appropriate",
+  "reasonable" — these are not testable. Propose a concrete threshold or
+  measurement.
+- **Unstated preconditions**: What system state must hold before this story can
+  work? If not stated, flag it.
+- **Implicit assumptions**: Does the story assume something the ADR or GDD does
+  not guarantee? Surface the gap.
+- **ADR/criterion conflict**: Does any acceptance criterion imply an approach the
+  ADR explicitly forbids? This is a **BLOCKER** — surface it before proceeding.
+
+### 3b: Cross-reference with domain language
+
+Read `CLAUDE.md` or `CONTEXT.md` at the project root if they exist. Check
+whether the story uses terms that conflict with the established domain
+vocabulary. If a conflict exists:
+
+> "The story says [term], but the project glossary defines it as [definition].
+> Are we refining the definition here, or should the story use the existing term?"
+
+### 3c: Edge case probing
+
+Invent 2-3 concrete scenarios that stress-test the acceptance criteria boundary:
+
+- What happens at maximum / minimum values?
+- What happens with invalid or missing inputs?
+- What happens when this system interacts with an incomplete dependency?
+- What happens under the performance budget?
+
+### 3d: Present findings
+
+Use `AskUserQuestion` to surface what you found:
+
+- **Prompt**: "Before routing to a programmer, I have [N] questions about this
+  story:"
+- List each finding with your recommended answer (1-2 lines each)
+- **Options**:
+  - `[A] Accept my recommendations and proceed`
+  - `[B] Let's discuss specific questions`
+  - `[C] Skip alignment — proceed directly to implementation`
+
+**If [A]**: Log the resolution silently, proceed to Phase 4.
+**If [B]**: Walk through each question one at a time, wait for input, resolve,
+then proceed.
+**If [C]**: Skip alignment. Note "Requirement alignment skipped" in the Phase 8
+summary under "Deviations".
+
+---
+
+## Phase 4: Route to the Right Programmer
 
 Based on the story's **Layer**, **Type**, and **system name**, determine which
 specialist to spawn via Task.
 
 **Config/Data stories — skip agent spawning entirely:**
-If the story's Type is `Config/Data`, no programmer agent or engine specialist is needed. Jump directly to Phase 4 (Config/Data note). The implementation is a data file edit — no routing table evaluation, no engine specialist.
+If the story's Type is `Config/Data`, no programmer agent or engine specialist is needed. Jump directly to Phase 5 (Config/Data note). The implementation is a data file edit — no routing table evaluation, no engine specialist.
 
 ### Primary agent routing table
 
@@ -150,7 +211,7 @@ If the story's Type is `Config/Data`, no programmer agent or engine specialist i
 | Core or Feature — gameplay mechanics | `gameplay-programmer` |
 | Core or Feature — AI behaviour, pathfinding | `ai-programmer` |
 | Core or Feature — networking, replication | `network-programmer` |
-| Config/Data — no code | No agent needed (see Phase 4 Config note) |
+| Config/Data — no code | No agent needed (see Phase 5 Config note) |
 
 ### Engine specialist — always spawn as secondary for code stories
 
@@ -172,7 +233,7 @@ assumptions about post-cutoff engine APIs that need expert verification.
 
 ---
 
-## Phase 4: Implement
+## Phase 5: Implement
 
 Spawn the chosen programmer agent(s) via Task with the full context package:
 
@@ -208,23 +269,23 @@ check happens in `/story-done` via manual confirmation.
 
 ---
 
-## Phase 5: Test Evidence Requirements
+## Phase 6: Test Evidence Requirements
 
-The test requirement was included in the Phase 4 programmer agent brief (item 7). This phase summarizes what evidence each story type requires — used when collecting the Phase 6 summary.
+The test requirement was included in the Phase 5 programmer agent brief (item 7). This phase summarizes what evidence each story type requires — used when collecting the Phase 7 summary.
 
 | Story Type | Required Evidence | Notes |
 |---|---|---|
-| **Logic** | Automated unit test at path from story's Test Evidence section | BLOCKING — included in Phase 4 agent brief |
-| **Integration** | Integration test OR documented playtest record | BLOCKING — included in Phase 4 agent brief |
-| **Visual/Feel** | Evidence doc at `production/qa/evidence/[slug]-evidence.md` | ADVISORY — note in Phase 6 summary |
-| **UI** | Manual walkthrough doc or interaction test | ADVISORY — note in Phase 6 summary |
+| **Logic** | Automated unit test at path from story's Test Evidence section | BLOCKING — included in Phase 5 agent brief |
+| **Integration** | Integration test OR documented playtest record | BLOCKING — included in Phase 5 agent brief |
+| **Visual/Feel** | Evidence doc at `production/qa/evidence/[slug]-evidence.md` | ADVISORY — note in Phase 7 summary |
+| **UI** | Manual walkthrough doc or interaction test | ADVISORY — note in Phase 7 summary |
 | **Config/Data** | None — smoke check serves as evidence | N/A |
 
-For Visual/Feel and UI stories, include in the Phase 6 summary: "Manual evidence required at `production/qa/evidence/[slug]-evidence.md` before this story can be fully closed."
+For Visual/Feel and UI stories, include in the Phase 7 summary: "Manual evidence required at `production/qa/evidence/[slug]-evidence.md` before this story can be fully closed."
 
 ---
 
-## Phase 6: Collect and Summarise
+## Phase 7: Collect and Summarise
 
 After the programmer agent(s) complete, collect:
 
@@ -259,7 +320,7 @@ Ready for: `/code-review [file1] [file2]` then `/story-done [story-path]`
 
 ---
 
-## Phase 7: Update Session State
+## Phase 8: Update Session State
 
 Silently append to `production/session-state/active.md`:
 

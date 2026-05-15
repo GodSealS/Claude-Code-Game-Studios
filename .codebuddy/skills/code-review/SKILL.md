@@ -1,6 +1,6 @@
 ---
 name: code-review
-description: "Performs an architectural and quality code review on a specified file or set of files. Checks for coding standard compliance, architectural pattern adherence, SOLID principles, testability, and performance concerns."
+description: "Performs an architectural and quality code review on a specified file or set of files. Checks for coding standard compliance, architectural pattern adherence, SOLID principles, module depth, seams, testability, and performance concerns."
 argument-hint: "[path-to-file-or-directory]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Bash, Task, AskUserQuestion
@@ -78,7 +78,40 @@ Identify the system category (engine, gameplay, AI, networking, UI, tools) and e
 
 ---
 
-## Phase 6: Game-Specific Concerns
+## Phase 6: Architecture Depth Analysis
+
+Evaluate whether each module is **deep** or **shallow**:
+
+- [ ] **Interface-to-implementation ratio**: Does the module's public interface
+  (method signatures, exported types, event contracts) stay small while the
+  implementation does substantial work? A deep module hides complexity; a
+  shallow module's interface is nearly as complex as its implementation.
+- [ ] **Deletion test**: Imagine deleting this module. Does the complexity
+  simply vanish (pass-through — shallow), or does it reappear spread across
+  N callers (the module was earning its keep — deep)?
+- [ ] **Seam quality**: Is there a clear seam (interface boundary) where
+  behavior could be altered without editing the module in place? Can the
+  module be tested through its public interface alone, without reaching into
+  internals?
+- [ ] **Locality**: Does change to a behavior require editing one file, or
+  must the reviewer understand 3+ scattered files?
+- [ ] **One-adapter vs two-adapter seam**: If only one implementation of the
+  interface exists, the seam is hypothetical. Flag modules where a second
+  adapter would improve testability (e.g., an in-memory replacement for a
+  database-backed repository).
+
+For each finding, classify:
+
+- **GOOD** — deep module with clean seam; complexity is localised
+- **SHALLOW** — module does work but its interface is as complex as what it
+  hides; consider consolidating callers into the module
+- **PASS-THROUGH** — module adds no value; delete and distribute its callers
+- **NO SEAM** — module is untestable without refactoring; add a clear interface
+  boundary
+
+---
+
+## Phase 7: Game-Specific Concerns
 
 - [ ] Frame-rate independence (delta time usage)
 - [ ] No allocations in hot paths (update loops)
@@ -88,7 +121,7 @@ Identify the system category (engine, gameplay, AI, networking, UI, tools) and e
 
 ---
 
-## Phase 7: Specialist Reviews (Parallel)
+## Phase 8: Specialist Reviews (Parallel)
 
 Spawn all applicable specialists simultaneously via Task — do not wait for one before starting the next.
 
@@ -123,7 +156,7 @@ Collect all specialist findings before producing output.
 
 ---
 
-## Phase 8: Output Review
+## Phase 9: Output Review
 
 ```
 ## Code Review: [File/System Name]
@@ -143,6 +176,9 @@ Collect all specialist findings before producing output.
 
 ### Architecture: [CLEAN / MINOR ISSUES / VIOLATIONS FOUND]
 [List specific architectural concerns]
+
+### Architecture Depth: [GOOD / SHALLOW / PASS-THROUGH / NO SEAM]
+[For each file: depth classification, deletion test result, seam quality, and any consolidation recommendations]
 
 ### SOLID: [COMPLIANT / ISSUES FOUND]
 [List specific violations]
@@ -166,7 +202,7 @@ This skill is read-only — no files are written.
 
 ---
 
-## Phase 9: Next Steps
+## Phase 10: Next Steps
 
 Use `AskUserQuestion`:
 - Prompt: "Code review complete — verdict: [APPROVED / CHANGES REQUIRED / MAJOR REVISION]. How would you like to proceed?"
