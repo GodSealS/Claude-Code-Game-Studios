@@ -4,6 +4,8 @@ description: "Scan all GDDs against the entity registry to detect cross-document
 argument-hint: "[full | since-last-review | entity:<name> | item:<name>]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Bash, AskUserQuestion
+context: fork 
+model: DeepSeek-V4-Pro
 ---
 
 # Consistency Check

@@ -4,6 +4,8 @@ description: "Validate that a story file is implementation-ready. Checks for emb
 argument-hint: "[story-file-path or 'all' or 'sprint']"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, AskUserQuestion, Task
+context: fork 
+model: DeepSeek-V4-Pro
 ---
 
 # Story Readiness

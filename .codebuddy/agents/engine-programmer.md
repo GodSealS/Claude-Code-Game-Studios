@@ -2,7 +2,7 @@
 name: engine-programmer
 description: "The Engine Programmer works on core engine systems: rendering pipeline, physics, memory management, resource loading, scene management, and core framework code. Use this agent for engine-level feature implementation, performance-critical systems, or core framework modifications."
 tools: Read, Glob, Grep, Write, Edit, Bash
-model: DeepSeek-V4-Flash
+model: DeepSeek-V4-Pro
 maxTurns: 20
 agentMode: agentic
 enabled: true

@@ -4,6 +4,8 @@ description: "Generates a contextual onboarding document for a new contributor o
 argument-hint: "[role|area]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write
+context: fork 
+model: DeepSeek-V4-Flash
 ---
 
 ## Phase 1: Load Project Context

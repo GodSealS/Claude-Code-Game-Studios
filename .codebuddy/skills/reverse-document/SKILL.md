@@ -5,6 +5,8 @@ argument-hint: "<type> <path> (e.g., 'design src/gameplay/combat' or 'architectu
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Bash
 # Read-only diagnostic skill — no specialist agent delegation needed
+context: fork 
+model: DeepSeek-V4-Flash
 ---
 
 # Reverse Documentation

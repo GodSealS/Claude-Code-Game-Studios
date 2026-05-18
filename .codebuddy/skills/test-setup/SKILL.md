@@ -4,6 +4,8 @@ description: "Scaffold the test framework and CI/CD pipeline for the project's e
 argument-hint: "[force]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Bash, Write
+context: fork 
+model: DeepSeek-V4-Pro
 ---
 
 # Test Setup

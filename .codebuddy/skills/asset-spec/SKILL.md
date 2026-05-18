@@ -4,6 +4,8 @@ description: "Generate per-asset visual specifications and AI generation prompts
 argument-hint: "[system:<name> | level:<name> | character:<name>] [--review full|lean|solo]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Task, AskUserQuestion
+context: fork 
+model: DeepSeek-V4-Flash
 ---
 
 If no argument is provided, check whether `design/assets/entity-inventory.md` exists:

@@ -4,6 +4,8 @@ description: "Reviews a game design document for completeness, internal consiste
 argument-hint: "[path-to-design-doc] [--depth full|lean|solo]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Task, AskUserQuestion
+context: fork 
+model: DeepSeek-V4-Pro
 ---
 
 ## Phase 0: Parse Arguments
