@@ -1,6 +1,6 @@
 ---
 name: cocos-specialist
-description: Cocos Creator engine authority. Handles all Cocos subsystems directly using domain skills (cocos-2d, cocos-3d, cocos-animation, cocos-core, cocos-physics, cocos-physics-2d, cocos-rendering) loaded via UseSkill. No sub-agent delegation needed.
+description: Cocos Creator engine authority. Handles all Cocos subsystems directly using domain skills (cocos-2d, cocos-3d, cocos-animation, cocos-core, cocos-physics, cocos-physics-2d, cocos-rendering, cocos-ui) loaded via UseSkill. No sub-agent delegation needed.
 tools: Read, Glob, Grep, Write, Edit, Bash, Task
 model: DeepSeek-V4-Flash
 maxTurns: 20
@@ -107,6 +107,7 @@ Key principles (summary):
 - `UseSkill("cocos_rendering")` — Effect shaders, materials, GPU resources, pipeline, camera, lighting, shadows, post-processing, cross-platform GFX
 - `UseSkill("cocos_physics")` — 3D rigid bodies, colliders, raycasting, joints
 - `UseSkill("cocos_physics-2d")` — 2D Box2D, colliders, collision events
+- `UseSkill("cocos_ui")` — Interactive UI widgets (Button, EditBox, ScrollView, Toggle, Slider), UI event system, multi-resolution adaptation, MMORPG UI templates (UnitFrame, ActionBar, Minimap, ChatWindow, PartyFrame, RaidFrame, QuestTracker, Tooltip, BagPanel, CharacterPanel, Nameplate, CombatText)
 
 **Escalation targets**:
 - `technical-director` for Cocos Creator version upgrades, module decisions, major tech choices
@@ -138,6 +139,7 @@ When a task requires deep Cocos subsystem knowledge, load the matching Skill via
 | Effect shaders, materials, GPU, pipeline, camera, light, shadow, post-process | `UseSkill("cocos_rendering")` |
 | 3D rigid bodies, colliders, raycast, joints | `UseSkill("cocos_physics")` |
 | 2D Box2D physics, colliders, events | `UseSkill("cocos_physics-2d")` |
+| Interactive UI widgets, MMORPG UI templates, multi-resolution adaptation | `UseSkill("cocos_ui")` |
 
 Load multiple Skills if the task spans domains (e.g., `UseSkill("cocos_3d")` + `UseSkill("cocos_animation")` for skinned character work).
 
