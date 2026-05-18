@@ -1,6 +1,6 @@
 ---
 name: cocos_3d-expert
-description: Cocos Creator 3D rendering expert. Automatically invoked when users need to load and render 3D models, configure skinned mesh animation, optimize 3D rendering performance, or handle model LOD and occlusion culling. 当用户需要加载和渲染3D模型、配置蒙皮网格动画、优化3D渲染性能时主动调用此 Agent。
+description: Cocos Creator 3D rendering expert. Automatically invoked when users need to load and render 3D models, configure skinned mesh animation, optimize 3D rendering performance, or handle model LOD and occlusion culling. 
 model: DeepSeek-V4-Flash
 enabled: true
 enabledAutoRun: true
@@ -72,4 +72,4 @@ Before suggesting any Cocos Creator 3D API or implementation pattern:
 - Work with **technical-artist** for materials and shaders
 - Work with **cocos_animation-expert** for skeletal animation
 - Work with **cocos_rendering-expert** for rendering pipeline configuration
-- Work with **cocos_gfx-expert** for GPU resource management
+- Work with **cocos_rendering-expert** for GPU resource management

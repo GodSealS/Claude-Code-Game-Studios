@@ -73,8 +73,7 @@ Ask yourself: "What department would handle this in a real studio?"
 | Build Cocos 3D systems | `cocos_3d-expert` |
 | Optimize Cocos core engine | `cocos_core-expert` |
 | Create Cocos animations | `cocos_animation-expert` |
-| Write Cocos shaders/effects | `cocos_gfx-expert` |
-| Configure Cocos rendering | `cocos_rendering-expert` |
+| Write Cocos shaders/effects & configure rendering | `cocos_rendering-expert` |
 | Implement Cocos 3D physics | `cocos_physics-expert` |
 | Implement Cocos 2D physics | `cocos_physics-2d-expert` |
 | Plan live events and seasons | `live-ops-designer` |

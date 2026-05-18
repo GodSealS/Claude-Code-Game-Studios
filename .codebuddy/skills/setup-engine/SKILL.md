@@ -325,7 +325,7 @@ Also populate the `## Engine Specialists` section in `technical-preferences.md` 
 - **2D Specialist**: cocos_2d-expert (2D rendering, sprites, UI, text, graphics)
 - **3D Specialist**: cocos_3d-expert (3D mesh rendering, skinned animation, model management)
 - **Animation Specialist**: cocos_animation-expert (animation systems, skeletal animation, state machines, blending)
-- **Shader Specialist**: cocos_gfx-expert (custom shaders, GPU resources, rendering backends)
+- **Shader Specialist**: cocos_rendering-expert (custom shaders, GPU resources, rendering backends)
 - **Rendering Specialist**: cocos_rendering-expert (rendering pipeline, camera, lighting, post-processing)
 - **Physics 3D Specialist**: cocos_physics-expert (3D physics, rigid bodies, collision, joints)
 - **Physics 2D Specialist**: cocos_physics-2d-expert (2D physics, Box2D, platformer mechanics)
@@ -339,7 +339,7 @@ Also populate the `## Engine Specialists` section in `technical-preferences.md` 
 | 2D UI / sprite / text code | cocos_2d-expert |
 | 3D model / mesh code | cocos_3d-expert |
 | Animation / state machine code | cocos_animation-expert |
-| Custom shader / effect files (.effect, .chunk) | cocos_gfx-expert |
+| Custom shader / effect files (.effect, .chunk) | cocos_rendering-expert |
 | Rendering pipeline / camera / lighting config | cocos_rendering-expert |
 | 3D physics code | cocos_physics-expert |
 | 2D physics code | cocos_physics-2d-expert |

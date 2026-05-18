@@ -98,9 +98,8 @@ domain lead) should delegate to specialists.
 | `cocos_3d-expert` | 3D Rendering | DeepSeek-V4-Flash | Mesh rendering, skinned animation, model management, LOD |
 | `cocos_animation-expert` | Animation System | DeepSeek-V4-Flash | Animation clips, skeletal animation, state machines, blending |
 | `cocos_core-expert` | Core Engine | DeepSeek-V4-Flash | Component system, scene graph, lifecycle management, event system |
-| `cocos_gfx-expert` | Graphics API | DeepSeek-V4-Flash | Shaders, GPU resources, cross-platform backends, rendering pipeline |
 | `cocos_physics-expert` | 3D Physics | DeepSeek-V4-Flash | Rigid bodies, collision detection, raycasting, joints |
 | `cocos_physics-2d-expert` | 2D Physics | DeepSeek-V4-Flash | Box2D integration, 2D collision detection, physics events |
-| `cocos_rendering-expert` | Rendering Pipeline | DeepSeek-V4-Flash | Camera system, lighting, shadows, post-processing, optimization |
+| `cocos_rendering-expert` | Rendering & GFX | DeepSeek-V4-Flash | Effect shaders, materials, GPU resources, pipeline, camera, lighting, shadows, post-processing, cross-platform |
 
 ---

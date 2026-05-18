@@ -54,8 +54,7 @@
       cocos_3d-expert          -- 3D: Mesh, SkinnedMeshRenderer, Terrain, 3D scene graph
       cocos_core-expert        -- Core: Director, Node lifecycle, Scheduler, EventTarget, asset pipeline
       cocos_animation-expert   -- Animation: AnimationClip, SkeletalAnimation, state machine, blend
-      cocos_gfx-expert         -- GFX: Pipeline states, shaders (.effect), render pipeline (Forward/Deferred)
-      cocos_rendering-expert   -- Rendering: Lighting, shadows, post-processing, render pipeline config
+      cocos_rendering-expert   -- Rendering & GFX: Effect shaders, GPU resources, pipeline, camera, lighting, shadows, post-processing
       cocos_physics-expert     -- Physics 3D: Rigidbody, Collider, raycast, physics world
       cocos_physics-2d-expert  -- Physics 2D: RigidBody2D, Collider2D, joints, 2D physics world
 ```

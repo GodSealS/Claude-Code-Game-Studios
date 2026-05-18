@@ -1,6 +1,6 @@
 ---
 name: cocos_physics-2d-expert
-description: Cocos Creator 2D physics engine expert. Automatically invoked when users need to add physics effects to 2D games, implement 2D collision detection, configure Box2D physics parameters, handle 2D physics collision events, or implement platformer physics. 当用户需要为2D游戏添加物理效果、实现2D碰撞检测时主动调用此 Agent。
+description: Cocos Creator 2D physics engine expert. Automatically invoked when users need to add physics effects to 2D games, implement 2D collision detection, configure Box2D physics parameters, handle 2D physics collision events, or implement platformer physics.
 model: DeepSeek-V4-Flash
 enabled: true
 enabledAutoRun: true

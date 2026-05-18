@@ -1,6 +1,6 @@
 ---
 name: cocos_physics-expert
-description: Cocos Creator 3D physics engine expert. Automatically invoked when users need to add rigid bodies and colliders, implement character collision detection, configure physics world parameters, use raycast, create joint constraints, or handle physics collision events. 当用户需要添加刚体和碰撞体、实现碰撞检测、使用射线检测时主动调用此 Agent。
+description: Cocos Creator 3D physics engine expert. Automatically invoked when users need to add rigid bodies and colliders, implement character collision detection, configure physics world parameters, use raycast, create joint constraints, or handle physics collision events. 
 model: DeepSeek-V4-Flash
 enabled: true
 enabledAutoRun: true

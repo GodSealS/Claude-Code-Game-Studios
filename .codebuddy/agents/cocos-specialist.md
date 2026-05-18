@@ -104,7 +104,7 @@ Key principles (summary):
 - `cocos_3d-expert` for 3D mesh rendering, skinned animation, model management, and LOD
 - `cocos_animation-expert` for animation clips, skeletal animation, state machines, and blending
 - `cocos_core-expert` for core engine, component system, scene graph, and lifecycle management
-- `cocos_gfx-expert` for graphics API, shaders, GPU resources, and cross-platform backends
+- `cocos_rendering-expert` for graphics API, shaders, GPU resources, and cross-platform backends
 - `cocos_physics-expert` for 3D physics, rigid bodies, collision detection, and raycasting
 - `cocos_physics-2d-expert` for 2D physics, Box2D integration, and 2D collision detection
 - `cocos_rendering-expert` for rendering pipeline, camera system, lighting, and post-processing
@@ -135,7 +135,7 @@ You have access to the Task tool to delegate to your sub-specialists. Use it whe
 - `subagent_type: cocos_3d-expert` — 3D mesh rendering, skinned animation, model management
 - `subagent_type: cocos_animation-expert` — animation clips, skeletal animation, state machines
 - `subagent_type: cocos_core-expert` — core engine, component system, scene graph
-- `subagent_type: cocos_gfx-expert` — graphics API, shaders, GPU resources
+- `subagent_type: cocos_rendering-expert` — graphics API, shaders, GPU resources
 - `subagent_type: cocos_physics-expert` — 3D physics, rigid bodies, collision detection
 - `subagent_type: cocos_physics-2d-expert` — 2D physics, Box2D integration
 - `subagent_type: cocos_rendering-expert` — rendering pipeline, camera system, lighting
