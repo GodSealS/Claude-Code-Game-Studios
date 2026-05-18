@@ -30,33 +30,15 @@
     live-ops-designer       -- Seasons, events, battle passes, retention, live economy
     community-manager       -- Patch notes, player feedback, crisis comms
 
-  Engine Specialists (use the SET matching your engine):
-    unreal-specialist  -- UE5 lead: Blueprint/C++, GAS overview, UE subsystems
-      ue-gas-specialist         -- GAS: abilities, effects, attributes, tags, prediction
-      ue-blueprint-specialist   -- Blueprint: BP/C++ boundary, graph standards, optimization
-      ue-replication-specialist -- Networking: replication, RPCs, prediction, bandwidth
-      ue-umg-specialist         -- UI: UMG, CommonUI, widget hierarchy, data binding
-
+  Engine Specialists (self-contained — use Skills for subsystem knowledge):
+    unreal-specialist  -- UE5 lead: C++/BP architecture, GAS overview, UE subsystems
+                         Skills: ue-gas, ue-blueprint, ue-replication, ue-umg
     unity-specialist   -- Unity lead: MonoBehaviour/DOTS, Addressables, URP/HDRP
-      unity-dots-specialist         -- DOTS/ECS: Jobs, Burst, hybrid renderer
-      unity-shader-specialist       -- Shaders: Shader Graph, VFX Graph, SRP customization
-      unity-addressables-specialist -- Assets: async loading, bundles, memory, CDN
-      unity-ui-specialist           -- UI: UI Toolkit, UGUI, UXML/USS, data binding
-
+                         Skills: unity-shader, unity-dots, unity-addressables, unity-ui
     godot-specialist   -- Godot 4 lead: GDScript, node/scene, signals, resources
-      godot-gdscript-specialist    -- GDScript: static typing, patterns, signals, performance
-      godot-csharp-specialist      -- C#: .NET patterns, [Signal] delegates, async, type-safe node access
-      godot-shader-specialist      -- Shaders: Godot shading language, visual shaders, VFX
-      godot-gdextension-specialist -- Native: C++/Rust bindings, GDExtension, build systems
-
-    cocos-specialist   -- Cocos Creator 3.8 lead: TypeScript, Node/UINode, component system
-      cocos_2d-expert          -- 2D: Sprite, TiledMap, Spine/DragonBones, 2D physics
-      cocos_3d-expert          -- 3D: Mesh, SkinnedMeshRenderer, Terrain, 3D scene graph
-      cocos_core-expert        -- Core: Director, Node lifecycle, Scheduler, EventTarget, asset pipeline
-      cocos_animation-expert   -- Animation: AnimationClip, SkeletalAnimation, state machine, blend
-      cocos_rendering-expert   -- Rendering & GFX: Effect shaders, GPU resources, pipeline, camera, lighting, shadows, post-processing
-      cocos_physics-expert     -- Physics 3D: Rigidbody, Collider, raycast, physics world
-      cocos_physics-2d-expert  -- Physics 2D: RigidBody2D, Collider2D, joints, 2D physics world
+                         Skills: godot-gdscript, godot-csharp, godot-shader, godot-gdextension
+    cocos-specialist   -- Cocos Creator lead: TypeScript, component system, all subsystems
+                         Skills: cocos_2d, cocos_3d, cocos_animation, cocos_core, cocos_rendering, cocos_physics, cocos_physics-2d
 ```
 
 ### Legend

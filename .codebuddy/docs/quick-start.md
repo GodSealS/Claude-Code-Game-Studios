@@ -57,25 +57,10 @@ Ask yourself: "What department would handle this in a real studio?"
 | Get Unity advice | `unity-specialist` |
 | Get Godot advice | `godot-specialist` |
 | Get Cocos Creator advice | `cocos-specialist` |
-| Design GAS abilities/effects | `ue-gas-specialist` |
-| Define BP/C++ boundaries | `ue-blueprint-specialist` |
-| Implement UE replication | `ue-replication-specialist` |
-| Build UMG/CommonUI widgets | `ue-umg-specialist` |
-| Design DOTS/ECS architecture | `unity-dots-specialist` |
-| Write Unity shaders/VFX | `unity-shader-specialist` |
-| Manage Addressable assets | `unity-addressables-specialist` |
-| Build UI Toolkit/UGUI screens | `unity-ui-specialist` |
-| Write idiomatic GDScript | `godot-gdscript-specialist` |
-| Write Godot C# code | `godot-csharp-specialist` |
-| Create Godot shaders | `godot-shader-specialist` |
-| Build GDExtension modules | `godot-gdextension-specialist` |
-| Build Cocos 2D systems | `cocos_2d-expert` |
-| Build Cocos 3D systems | `cocos_3d-expert` |
-| Optimize Cocos core engine | `cocos_core-expert` |
-| Create Cocos animations | `cocos_animation-expert` |
-| Write Cocos shaders/effects & configure rendering | `cocos_rendering-expert` |
-| Implement Cocos 3D physics | `cocos_physics-expert` |
-| Implement Cocos 2D physics | `cocos_physics-2d-expert` |
+| Get Unreal Engine advice (GAS/BP/Replication/UMG) | `unreal-specialist` |
+| Get Unity advice (shaders/DOTS/addressables/UI) | `unity-specialist` |
+| Get Godot advice (GDScript/C#/shaders/GDExtension) | `godot-specialist` |
+| Get Cocos Creator advice (all subsystems) | `cocos-specialist` |
 | Plan live events and seasons | `live-ops-designer` |
 | Write patch notes for players | `community-manager` |
 | Brainstorm a new game idea | Use `/brainstorm` skill |

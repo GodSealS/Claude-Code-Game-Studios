@@ -5,6 +5,8 @@ The following agents are available. Each has a dedicated definition file in
 spans multiple domains, the coordinating agent (usually `producer` or the
 domain lead) should delegate to specialists.
 
+Engine specialists use **Skills** (via `UseSkill()`) for subsystem knowledge instead of spawning sub-agents.
+
 ## Tier 1 -- Leadership Agents (GLM-5.1)
 | Agent | Domain | When to Use |
 |-------|--------|-------------|
@@ -53,53 +55,13 @@ domain lead) should delegate to specialists.
 
 ## Engine-Specific Agents (use the set matching your engine)
 
-### Engine Leads
+### Engine Leads (self-contained — uses Skills for subsystem knowledge)
 
-| Agent | Engine | Model | When to Use |
-| ---- | ---- | ---- | ---- |
-| `unreal-specialist` | Unreal Engine 5 | DeepSeek-V4-Flash | Blueprint vs C++, GAS overview, UE subsystems, Unreal optimization |
-| `unity-specialist` | Unity | DeepSeek-V4-Flash | MonoBehaviour vs DOTS, Addressables, URP/HDRP, Unity optimization |
-| `godot-specialist` | Godot 4 | DeepSeek-V4-Flash | GDScript patterns, node/scene architecture, signals, Godot optimization |
-| `cocos-specialist` | Cocos Creator | DeepSeek-V4-Flash | TypeScript, Node/UINode, component system, Cocos optimization  |
-
-
-### Unreal Engine Sub-Specialists
-
-| Agent | Subsystem | Model | When to Use |
-| ---- | ---- | ---- | ---- |
-| `ue-gas-specialist` | Gameplay Ability System | DeepSeek-V4-Flash | Abilities, gameplay effects, attribute sets, tags, prediction |
-| `ue-blueprint-specialist` | Blueprint Architecture | GLM-5v-Turbo | BP/C++ boundary, graph standards, naming, BP optimization |
-| `ue-replication-specialist` | Networking/Replication | GLM-5.1 | Property replication, RPCs, prediction, relevancy, bandwidth |
-| `ue-umg-specialist` | UMG/CommonUI | DeepSeek-V4-Flash | Widget hierarchy, data binding, CommonUI input, UI performance |
-
-### Unity Sub-Specialists
-
-| Agent | Subsystem | Model | When to Use |
-| ---- | ---- | ---- | ---- |
-| `unity-dots-specialist` | DOTS/ECS | DeepSeek-V4-Flash | Entity Component System, Jobs, Burst compiler, hybrid renderer |
-| `unity-shader-specialist` | Shaders/VFX | GLM-5.1 | Shader Graph, VFX Graph, URP/HDRP customization, post-processing |
-| `unity-addressables-specialist` | Asset Management | DeepSeek-V4-Flash | Addressable groups, async loading, memory, content delivery |
-| `unity-ui-specialist` | UI Toolkit/UGUI | GLM-5v-Turbo | UI Toolkit, UXML/USS, UGUI Canvas, data binding, cross-platform input |
-
-### Godot Sub-Specialists
-
-| Agent | Subsystem | Model | When to Use |
-| ---- | ---- | ---- | ---- |
-| `godot-gdscript-specialist` | GDScript | DeepSeek-V4-Flash | Static typing, design patterns, signals, coroutines, GDScript performance |
-| `godot-csharp-specialist` | C# / .NET | DeepSeek-V4-Flash | .NET patterns, [Signal] delegates, async, nullable types, type-safe node access |
-| `godot-shader-specialist` | Shaders/Rendering | GLM-5v-Turbo | Godot shading language, visual shaders, particles, post-processing |
-| `godot-gdextension-specialist` | GDExtension | DeepSeek-V4-Flash | C++/Rust bindings, native performance, custom nodes, build systems |
-
-### Cocos Creator Sub-Specialists
-
-| Agent | Subsystem | Model | When to Use |
-| ---- | ---- | ---- | ---- |
-| `cocos_2d-expert` | 2D Rendering | DeepSeek-V4-Flash | Sprite, UI components, 2D graphics, text rendering, mask effects |
-| `cocos_3d-expert` | 3D Rendering | DeepSeek-V4-Flash | Mesh rendering, skinned animation, model management, LOD |
-| `cocos_animation-expert` | Animation System | DeepSeek-V4-Flash | Animation clips, skeletal animation, state machines, blending |
-| `cocos_core-expert` | Core Engine | DeepSeek-V4-Flash | Component system, scene graph, lifecycle management, event system |
-| `cocos_physics-expert` | 3D Physics | DeepSeek-V4-Flash | Rigid bodies, collision detection, raycasting, joints |
-| `cocos_physics-2d-expert` | 2D Physics | DeepSeek-V4-Flash | Box2D integration, 2D collision detection, physics events |
-| `cocos_rendering-expert` | Rendering & GFX | DeepSeek-V4-Flash | Effect shaders, materials, GPU resources, pipeline, camera, lighting, shadows, post-processing, cross-platform |
+| Agent | Engine | Skills Loaded |
+| ---- | ---- | ---- |
+| `unreal-specialist` | Unreal Engine 5 | `ue-gas`, `ue-blueprint`, `ue-replication`, `ue-umg` |
+| `unity-specialist` | Unity | `unity-shader`, `unity-dots`, `unity-addressables`, `unity-ui` |
+| `godot-specialist` | Godot 4 | `godot-gdscript`, `godot-csharp`, `godot-shader`, `godot-gdextension` |
+| `cocos-specialist` | Cocos Creator | `cocos_2d`, `cocos_3d`, `cocos_animation`, `cocos_core`, `cocos_rendering`, `cocos_physics`, `cocos_physics-2d` |
 
 ---

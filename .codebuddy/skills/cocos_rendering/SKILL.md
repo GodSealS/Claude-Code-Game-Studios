@@ -1,84 +1,140 @@
 ---
 name: cocos_rendering
-description: Cocos Creator rendering pipeline expert. Triggers when users need to handle Renderer, Camera, Light, ForwardPipeline, rendering pipeline configuration, camera system, lighting system, shadows, post-processing. 当用户需要处理渲染管线、相机、光照、阴影、后处理等渲染相关功能时触发此 Skill。
+description: Cocos Creator rendering & GFX expert. Triggers for Effect shaders, materials, GPU resources (Device/Buffer/Texture/Shader/PipelineState), Forward/Deferred pipeline, camera, lighting, shadows, post-processing, custom render passes, and cross-platform (WebGL/Vulkan/Metal) rendering.
 ---
 
-# Rendering - Cocos Creator Rendering Pipeline
+# Rendering & GFX - Cocos Creator Full Rendering Stack
 
 ## Overview
 
-The Cocos Creator rendering module (`cocos/rendering`) provides rendering pipeline, camera system, and lighting system, responsible for submitting scene data to the GPU for drawing.
+Covers the complete Cocos Creator rendering stack:
+- `cocos/rendering` — pipeline, camera, lighting, shadows, post-processing
+- `cocos/gfx` — GPU abstraction layer (WebGL, Vulkan, Metal), buffers, textures, shaders
 
 ## Domain Knowledge
 
 ### Core Design Patterns
 - **pipeline-pattern** — Configurable rendering pipeline executed pass by pass
 - **render-pass** — Each rendering pass handles a specific rendering task
+- **abstraction-layer** — Shields differences between graphics APIs, providing unified interface
 
-### Key Concepts
-- `Renderer` — Renderer, drives the rendering process
-- `Camera` — Camera, defines viewpoint, projection, and render target
-- `Light` — Light source (Directional, Point, Spot, Ambient)
-- `Pipeline` — Rendering pipeline (Forward, Deferred)
+### Key Concepts — Rendering Layer
+- `Renderer` — Drives the rendering process
+- `Camera` — Viewpoint, projection, render target, culling, visibility layers
+- `Light` — Directional, Point, Spot, Ambient
+- `Pipeline` — Forward (default), Deferred
+- `Shadows` — Shadow map, cascades, PCF filtering
+
+### Key Concepts — GFX Layer
+- `Device` — Graphics device, factory and manager for GPU resources
+- `Buffer` — GPU buffer (vertex, index, uniform, storage)
+- `Texture` — GPU texture (2D, Cube, 3D, RenderTarget)
+- `Shader` — Shader program compilation, uniform/attribute reflection
+- `PipelineState` — Blend, depth/stencil, rasterizer, input layout
 
 ## Key APIs
 
-### Classes
-- `Renderer` — Renderer management
-- `Camera` — Camera component (view matrix, projection matrix, rendering layers)
-- `Light` — Light base class
-- `Pipeline` — Rendering pipeline
+### Pipeline / Camera / Light
+- `Camera` — `fov`, `near`, `far`, `clearFlags`, `visibility`, `projection`
+- `DirectionalLight` — `intensity`, `color`, `shadowEnabled`, `shadowPcf`
+- `PointLight` / `SpotLight` — `range`, `intensity`, `color`
+- Forward vs Deferred pipeline selection
 
-### Functions
-- `render()` — Execute one frame of rendering
-- `present()` — Submit rendering results to screen
-- `resize()` — Respond to window size changes
+### GFX — GPU Resources
+- `device.createBuffer()` — Vertex/index/uniform buffer
+- `device.createTexture()` — 2D/Cube/3D/RenderTarget texture
+- `device.createShader()` — Shader from GLSL stages
+- `device.createPipelineState()` — Blend/depth/rasterizer state
+- `device.createRenderPass()` — Custom render pass with attachments
+- `device.createFramebuffer()` — Framebuffer wrapping render targets
 
-## Dependencies
-- Required modules: `gfx`, `core`
+## Shader Compilation Pipeline
+```
+GLSL Source (.effect / inline) → Effect Compiler → SPIR-V (Vulkan) / GLSL ES (WebGL)
+     → Backend Compiler → Platform Shader
+```
+
+## Pipeline Selection
+| Factor          | Forward                | Deferred               |
+|-----------------|------------------------|------------------------|
+| Light count     | < 8 per object         | Unlimited (G-Buffer)   |
+| Transparency    | Native                 | Needs forward pass     |
+| Anti-aliasing   | MSAA supported         | Post-process AA only   |
+| Mobile          | Excellent              | Avoid                  |
+| Memory          | Lower                  | Higher (G-Buffer)      |
+
+## Cross-Platform Compatibility
+| Feature         | WebGL 1.0             | WebGL 2.0             | Vulkan/Metal |
+|-----------------|-----------------------|-----------------------|--------------|
+| RGBA8           | ✓                     | ✓                     | ✓            |
+| Uniform buffers | ✗ (emulated)          | ✓                     | ✓            |
+| Storage buffers | ✗                     | ✗                     | ✓            |
+| Compute shaders | ✗                     | ✗                     | ✓            |
+| MRT             | Extension             | ✓                     | ✓            |
+| BCn / ETC2/ASTC | ✗ / Extension         | ✗ / Extension         | ✓            |
 
 ## Code Examples
 
 ```typescript
-import { Camera, DirectionalLight, Shadows } from 'cc';
+import { Camera, DirectionalLight, director } from 'cc';
 
-// Configure camera
+// Camera setup
 const camera = node.getComponent(Camera);
 camera.fov = 60;
 camera.near = 0.1;
 camera.far = 1000;
-camera.clearFlags = Camera.ClearFlag.SOLID_COLOR;
+camera.visibility = Layers.Enum.DEFAULT;
 
-// Add directional light
-const lightNode = new Node('DirectionalLight');
+// Directional light with shadows
 const light = lightNode.addComponent(DirectionalLight);
-light.intensity = 1.0;
-light.color = Color.WHITE;
 light.shadowEnabled = true;
 
-// Rendering layer control
-camera.visibility = Layers.Enum.DEFAULT;
+// GFX — Create shader from source
+const device = director.root.device;
+const shader = device.createShader({
+    stages: [
+        { stage: ShaderStage.VERTEX, source: vertSource },
+        { stage: ShaderStage.FRAGMENT, source: fragSource },
+    ],
+});
+
+// GFX — Render target
+const rt = device.createTexture({
+    textureType: TextureType.TEX2D,
+    usage: TextureUsage.COLOR_ATTACHMENT | TextureUsage.SAMPLED,
+    format: Format.RGBA8,
+    width: 1024, height: 1024,
+});
 ```
 
 ## Usage Guide
 
-### When to Use This Skill
-- Configuring rendering pipeline (Forward/Deferred)
-- Adjusting camera parameters and rendering layers
-- Setting up lighting and shadows
-- Implementing post-processing effects
-- Optimizing rendering performance (Draw Call, Overdraw)
+### When to Use
+- Effect shader and material creation
+- GPU buffer/texture resource management
+- Forward/Deferred pipeline configuration
+- Camera setup (FOV, projection, culling, layers)
+- Lighting (Directional, Point, Spot) and shadow mapping
+- Post-processing effects (bloom, tonemapping, color grading)
+- Custom render pass and framebuffer setup
+- Cross-platform shader/rendering troubleshooting
 
 ### Best Practices
-1. Prefer Forward pipeline on mobile; consider Deferred on PC
-2. Use `visibility` to control camera rendering layers and reduce unnecessary drawing
-3. Only enable shadows for necessary objects; control shadow map resolution
-4. Combine post-processing effects into fewer passes to reduce fullscreen draws
-5. Use RenderTexture for mini-maps, mirrors, and other special effects
+1. Prefer Forward pipeline on mobile; Deferred only on high-end desktop
+2. Use `visibility` layers to control camera rendering, reduce unnecessary draws
+3. Only enable shadows on necessary objects; control shadow map resolution (512-2048)
+4. Combine post-processing into fewer passes to reduce fullscreen draws
+5. Create GPU resources through `Device` uniformly; do not call low-level APIs directly
+6. Pre-compile all shader variants at init — never compile on hot path
+7. Use buffer pools (ring buffer / triple buffering) for per-frame uniform updates
+8. Check `device.capabilities` before assuming GPU features (compute, MRT, instancing)
 
 ### Common Tasks
-- Configure rendering pipeline
-- Implement multi-camera rendering
-- Set up lighting and shadows
-- Create post-processing effects
-- Rendering performance optimization
+- Write Effect shaders and configure materials
+- Set up Forward or Deferred rendering pipeline
+- Configure multi-camera and rendering layers
+- Set up directional/point/spot lights with shadows
+- Implement bloom, tonemapping, color grading post-processing
+- Create custom render passes with RenderTexture
+- Manage GPU resource lifecycle
+- Optimize draw calls, overdraw, and shader complexity
