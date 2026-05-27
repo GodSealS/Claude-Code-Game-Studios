@@ -477,7 +477,71 @@ The section should instruct the agent to:
 
 ---
 
-## 10. Refresh Subcommand
+## 10. Cleanup Unused Engine Artifacts
+
+> **Guard**: This section applies ONLY to full setup mode (engine selection + version pin). **Skip for `/setup-engine refresh`, `/setup-engine upgrade`, and guided-only mode that exits before pinning.**
+
+Once the chosen engine is fully configured and confirmed, delete all agents and skills belonging to the three **unselected** engines. This prevents accidental use of wrong-engine agents and reduces repository clutter.
+
+### Map: Engine → Agent Files
+
+Each engine has ONE primary specialist agent in `.codebuddy/agents/`:
+
+| Engine | Agent File to Delete (if not chosen) |
+|--------|--------------------------------------|
+| Godot | `.codebuddy/agents/godot-specialist.md` |
+| Unity | `.codebuddy/agents/unity-specialist.md` |
+| Unreal | `.codebuddy/agents/unreal-specialist.md` |
+| Cocos Creator | `.codebuddy/agents/cocos-specialist.md` |
+
+### Map: Engine → Skill Directories
+
+Each engine has domain-specific skill directories under `.codebuddy/skills/`:
+
+| Engine | Skill Directories to Delete (if not chosen) |
+|--------|---------------------------------------------|
+| Godot | `godot-csharp/`, `godot-gdextension/`, `godot-gdscript/`, `godot-shader/` |
+| Unity | `unity-addressables/`, `unity-dots/`, `unity-shader/`, `unity-ui/` |
+| Unreal | `ue-blueprint/`, `ue-gas/`, `ue-replication/`, `ue-umg/` |
+| Cocos Creator | `cocos_2d/`, `cocos_3d/`, `cocos_animation/`, `cocos_core/`, `cocos_editor/`, `cocos_physics/`, `cocos_physics-2d/`, `cocos_rendering/`, `cocos_ui/` |
+
+### Procedure
+
+1. Identify the **chosen** engine (from Section 2/3)
+2. Build the deletion list: all agents and skill directories for the three **unselected** engines
+3. Present the deletion plan to the user:
+
+> "Setup for [chosen engine] is complete. I recommend deleting the agents and
+> skills for [engine A], [engine B], and [engine C] to keep the workspace clean
+> and prevent wrong-engine tooling from being used. This will remove:
+>
+> **Agents** (4 files from 3 unselected engines):
+> - .codebuddy/agents/godot-specialist.md
+> - .codebuddy/agents/unity-specialist.md
+> - .codebuddy/agents/unreal-specialist.md
+> - .codebuddy/agents/cocos-specialist.md
+>   → KEEPING: .codebuddy/agents/[chosen]-specialist.md
+>
+> **Skills** ([N] directories from 3 unselected engines):
+>   [List each engine's skill directories]
+>
+> May I proceed with deletion?"
+
+4. Wait for explicit confirmation
+5. For each confirmed file/directory, use `delete_file` to remove it
+6. Report what was deleted and what was kept
+
+### Guardrails
+
+- NEVER delete the chosen engine's agent or skill directories
+- NEVER delete non-engine agents (design, production, QA, etc.) — only the 4 engine primary specialists
+- NEVER delete non-engine skill directories — only those listed in the engine→skills map above
+- If any file/directory in the deletion list does not exist, note it and skip — do not error
+- If the user declines deletion, respect it and move on
+
+---
+
+## 11. Refresh Subcommand
 
 If invoked as `/setup-engine refresh`:
 
@@ -493,7 +557,7 @@ If invoked as `/setup-engine refresh`:
 
 ---
 
-## 11. Upgrade Subcommand
+## 12. Upgrade Subcommand
 
 If invoked as `/setup-engine upgrade [old-version] [new-version]`:
 
@@ -598,7 +662,7 @@ Next steps:
 
 ---
 
-## 12. Output Summary
+## 13. Output Summary
 
 After setup is complete, output:
 
@@ -612,6 +676,7 @@ Reference Docs:  [created/skipped]
 CODEBUDDY.md:    [updated]
 Tech Prefs:      [created/updated]
 Agent Config:    [verified]
+Cleanup:         [removed agents: [N] files] + [removed skills: [M] directories] from [3 unselected engines]
 
 Next Steps:
 1. Review docs/engine-reference/<engine>/VERSION.md
