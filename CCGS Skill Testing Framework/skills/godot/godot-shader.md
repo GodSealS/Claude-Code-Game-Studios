@@ -1,25 +1,27 @@
-# Agent Test Spec: godot-shader-specialist
+# Agent Test Spec: godot-shader
 
 ## Agent Summary
 Domain: Godot shading language (GLSL-derivative), visual shaders (VisualShader graph), material setup, particle shaders, and post-processing effects.
-Does NOT own: gameplay code, art style direction.
-Model tier: GLM-5v-Turbo (Selected for multi-modal visual-to-code synthesis; handles reference image interpretation).
+Architecture: **Private skill** loaded by `godot-specialist` via `UseSkill("godot-shader")`. Not a standalone agent.
+Does NOT cover: gameplay code, art style direction.
 No gate IDs assigned.
 
 ---
 
 ## Static Assertions (Structural)
 
-- [ ] `description:` field is present and domain-specific (references Godot shading language / materials / post-processing)
-- [ ] `allowed-tools:` list includes Read, Write, Edit, Glob, Grep
-- [ ] Model tier is GLM-5v-Turbo (default for specialists)
-- [ ] Agent definition references `docs/engine-reference/godot/VERSION.md` as the authoritative source for Godot shader API changes
+- [ ] Declared as a skill (`name: godot-shader` in frontmatter) at `.codebuddy/skills/godot-shader/SKILL.md`
+- [ ] `description:` field matches: "Godot shader domain. gdshader language, visual shaders, particle shaders, post-processing, render budgets."
+- [ ] Skill file is only loaded by `godot-specialist` — no other agent definition references `UseSkill("godot-shader")`
+- [ ] Skill does NOT claim authority over gameplay code or GDScript
+- [ ] Skill includes version awareness section referencing `docs/engine-reference/godot/VERSION.md`
+- [ ] Skill includes post-cutoff rendering change notes (D3D12 default 4.6, glow rework 4.6, shader texture types 4.4, etc.)
 
 ---
 
 ## Test Cases
 
-### Case 1: In-domain request — appropriate output
+### Case 1: In-domain request — appropriate shader guidance
 **Input:** "Write a dissolve effect shader for enemy death in Godot."
 **Expected behavior:**
 - Produces valid Godot shading language code (not HLSL, not GLSL directly)
@@ -70,7 +72,7 @@ No gate IDs assigned.
 ## Protocol Compliance
 
 - [ ] Stays within declared domain (Godot shading language, materials, VFX shaders, post-processing)
-- [ ] Redirects gameplay code requests to gameplay-programmer
+- [ ] Redirects gameplay code requests to gameplay-programmer or godot-gdscript skill
 - [ ] Produces valid Godot shading language — never HLSL or raw GLSL without a Godot wrapper
 - [ ] Checks engine version reference for post-cutoff shader API changes (4.4 texture types, 4.6 glow rework)
 - [ ] Returns structured output (shader code with uniforms documented, LOD strategies with performance rationale)
@@ -80,5 +82,5 @@ No gate IDs assigned.
 
 ## Coverage Notes
 - Dissolve shader (Case 1) should be paired with a visual test screenshot in `production/qa/evidence/`
-- Texture API flag (Case 3) confirms the agent checks VERSION.md before using APIs that changed post-4.3
-- Glow rework (Case 5) is a Godot 4.6-specific test — verifies the agent applies the most recent migration notes
+- Texture API flag (Case 3) confirms the skill checks VERSION.md before using APIs that changed post-4.3
+- Glow rework (Case 5) is a Godot 4.6-specific test — verifies the skill applies the most recent migration notes

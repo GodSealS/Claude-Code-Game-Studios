@@ -1,25 +1,27 @@
-# Agent Test Spec: godot-gdscript-specialist
+# Agent Test Spec: godot-gdscript
 
 ## Agent Summary
 Domain: GDScript static typing, design patterns in GDScript, signal architecture, coroutine/await patterns, and GDScript performance.
-Does NOT own: shader code (godot-shader-specialist), GDExtension bindings (godot-gdextension-specialist).
-Model tier: DeepSeek-V4-Flash (default).
+Architecture: **Private skill** loaded by `godot-specialist` via `UseSkill("godot-gdscript")`. Not a standalone agent.
+Does NOT cover: shader code (godot-shader skill), GDExtension bindings (godot-gdextension skill), C# code (godot-csharp skill).
 No gate IDs assigned.
 
 ---
 
 ## Static Assertions (Structural)
 
-- [ ] `description:` field is present and domain-specific (references GDScript / static typing / signals / coroutines)
-- [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is DeepSeek-V4-Flash (default for specialists)
-- [ ] Agent definition does not claim authority over shader code or GDExtension
+- [ ] Declared as a skill (`name: godot-gdscript` in frontmatter) at `.codebuddy/skills/godot-gdscript/SKILL.md`
+- [ ] `description:` field matches: "Godot GDScript domain. Static typing, signals, coroutines, design patterns, naming, performance."
+- [ ] Skill file is only loaded by `godot-specialist` — no other agent definition references `UseSkill("godot-gdscript")`
+- [ ] Skill does NOT claim authority over shader code, GDExtension, or C# code
+- [ ] Skill includes version awareness section referencing `docs/engine-reference/godot/VERSION.md`
+- [ ] Skill includes ripgrep file filtering guidance for GDScript files
 
 ---
 
 ## Test Cases
 
-### Case 1: In-domain request — appropriate output
+### Case 1: In-domain request — appropriate GDScript guidance
 **Input:** "Review this GDScript file for type annotation coverage."
 **Expected behavior:**
 - Reads the provided GDScript file
@@ -28,12 +30,12 @@ No gate IDs assigned.
 - Notes the performance and tooling benefits of static typing in Godot 4
 - Does NOT rewrite the entire file unprompted — produces a findings list for the developer to apply
 
-### Case 2: Out-of-domain request — redirects correctly
+### Case 2: Out-of-domain request — stays within GDScript boundary
 **Input:** "Write a vertex shader to distort the mesh in world space."
 **Expected behavior:**
 - Does NOT produce shader code in GDScript or in Godot's shading language
-- Explicitly states that shader authoring belongs to `godot-shader-specialist`
-- Redirects the request to `godot-shader-specialist`
+- Explicitly states that shader authoring belongs to `godot-shader` skill
+- Redirects the request to `godot-shader` skill (godot-specialist should load `UseSkill("godot-shader")`)
 - May note that the GDScript side (passing uniforms to a shader, setting shader parameters) is within its domain
 
 ### Case 3: Async loading with coroutines
@@ -50,7 +52,7 @@ No gate IDs assigned.
 **Expected behavior:**
 - Identifies that an untyped `Array` foregoes compiler optimization in GDScript
 - Recommends converting to a typed array (`Array[Node]` or the specific type) to enable JIT hints
-- Notes that if this is still insufficient, escalates the hot path to C# migration recommendation
+- Notes that if this is still insufficient, escalates the hot path to C# migration recommendation (via godot-csharp skill)
 - Produces the typed array refactor as the immediate fix
 - Does NOT recommend migrating the entire codebase to C# without profiling evidence
 
@@ -68,8 +70,9 @@ No gate IDs assigned.
 ## Protocol Compliance
 
 - [ ] Stays within declared domain (GDScript — typing, patterns, signals, coroutines, performance)
-- [ ] Redirects shader requests to godot-shader-specialist
-- [ ] Redirects GDExtension requests to godot-gdextension-specialist
+- [ ] Redirects shader requests to `godot-shader` skill
+- [ ] Redirects GDExtension requests to `godot-gdextension` skill
+- [ ] Redirects C# requests to `godot-csharp` skill
 - [ ] Returns structured GDScript output with full static typing
 - [ ] Uses Godot 4 API only — no deprecated Godot 3 patterns (yield, connect with strings, etc.)
 - [ ] Flags post-cutoff features (4.4, 4.5, 4.6) and marks them as requiring doc verification
@@ -79,4 +82,4 @@ No gate IDs assigned.
 ## Coverage Notes
 - Type annotation review (Case 1) output is suitable as a code review checklist
 - Async loading (Case 3) should produce testable code verifiable with a unit test in `tests/unit/`
-- Post-cutoff @abstract (Case 5) confirms the agent flags version uncertainty rather than silently using unverified APIs
+- Post-cutoff @abstract (Case 5) confirms the skill flags version uncertainty rather than silently using unverified APIs

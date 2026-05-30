@@ -797,6 +797,51 @@ skills:
     priority: low
     category: utility
 
+  # Engine — Godot Skills (loaded by godot-specialist via UseSkill)
+  - name: godot-gdscript
+    spec: CCGS Skill Testing Framework/skills/godot/godot-gdscript.md
+    last_static: ""
+    last_static_result: ""
+    last_spec: ""
+    last_spec_result: ""
+    last_category: ""
+    last_category_result: ""
+    priority: high
+    category: engine
+
+  - name: godot-csharp
+    spec: CCGS Skill Testing Framework/skills/godot/godot-csharp.md
+    last_static: ""
+    last_static_result: ""
+    last_spec: ""
+    last_spec_result: ""
+    last_category: ""
+    last_category_result: ""
+    priority: high
+    category: engine
+
+  - name: godot-shader
+    spec: CCGS Skill Testing Framework/skills/godot/godot-shader.md
+    last_static: ""
+    last_static_result: ""
+    last_spec: ""
+    last_spec_result: ""
+    last_category: ""
+    last_category_result: ""
+    priority: high
+    category: engine
+
+  - name: godot-gdextension
+    spec: CCGS Skill Testing Framework/skills/godot/godot-gdextension.md
+    last_static: ""
+    last_static_result: ""
+    last_spec: ""
+    last_spec_result: ""
+    last_category: ""
+    last_category_result: ""
+    priority: high
+    category: engine
+
   # Engine — Cocos Creator Skills (loaded by cocos-specialist via UseSkill)
   - name: cocos_2d
     spec: CCGS Skill Testing Framework/skills/cocos/cocos_2d.md
@@ -1039,33 +1084,9 @@ agents:
     last_spec_result: ""
     category: specialist
 
-  # Engine Specialists — Godot
+  # Engine Specialists — Godot (consolidated: single agent with Skill-based routing)
   - name: godot-specialist
     spec: CCGS Skill Testing Framework/agents/engine/godot/godot-specialist.md
-    last_spec: ""
-    last_spec_result: ""
-    category: engine
-
-  - name: godot-gdscript-specialist
-    spec: CCGS Skill Testing Framework/agents/engine/godot/godot-gdscript-specialist.md
-    last_spec: ""
-    last_spec_result: ""
-    category: engine
-
-  - name: godot-csharp-specialist
-    spec: CCGS Skill Testing Framework/agents/engine/godot/godot-csharp-specialist.md
-    last_spec: ""
-    last_spec_result: ""
-    category: engine
-
-  - name: godot-shader-specialist
-    spec: CCGS Skill Testing Framework/agents/engine/godot/godot-shader-specialist.md
-    last_spec: ""
-    last_spec_result: ""
-    category: engine
-
-  - name: godot-gdextension-specialist
-    spec: CCGS Skill Testing Framework/agents/engine/godot/godot-gdextension-specialist.md
     last_spec: ""
     last_spec_result: ""
     category: engine

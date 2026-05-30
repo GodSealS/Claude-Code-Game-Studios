@@ -314,11 +314,43 @@ Note: `_Process(double delta)` uses `double` in Godot 4 C# — cast to `float` w
 - Avoid `GodotObject.Call()` (string-based) — define typed interfaces instead
 - Threshold for C# → GDExtension: if a method runs >1000 times per frame AND profiling shows it is a bottleneck, consider GDExtension (C++/Rust). C# is already significantly faster than GDScript — escalate to GDExtension only under measured evidence
 
+## Thread Safety
+
+Godot nodes are NOT thread-safe — all node access MUST happen on the main thread.
+
+### Correct Pattern: Marshal to Main Thread
+```csharp
+// Pattern 1 — CallDeferred for fire-and-forget
+GetTree().CallDeferred(SceneTree.MethodName.SetPause, true);
+
+// Pattern 2 — Callable.From().CallDeferred() for arbitrary actions
+Callable.From(() =>
+{
+    _sprite.Position = newPos;
+}).CallDeferred();
+
+// Pattern 3 — Thread-safe queue for background work
+private readonly ConcurrentQueue<Action> _mainThreadQueue = new();
+
+// On background thread: _mainThreadQueue.Enqueue(() => { ... });
+// In _Process:
+public override void _Process(double delta)
+{
+    while (_mainThreadQueue.TryDequeue(out var action))
+        action();
+}
+```
+
+- NEVER access nodes from `Task.Run()` or `Thread` directly
+- Use `CallDeferred()` or thread-safe queues to marshal work from background threads
+- Check `GodotObject.IsInstanceValid(this)` after any `await` — the node may have been freed
+
 ## Common C# Godot Anti-Patterns
 - Missing `partial` on node classes (source generator fails silently — very hard to debug)
 - Using `Task.Delay()` instead of `GetTree().CreateTimer()` (breaks frame sync)
 - Calling `GetNode()` without generics (drops type safety)
 - Forgetting to disconnect signals in `_ExitTree()` (memory leaks, use-after-free errors)
+- Accessing Godot nodes from background threads (thread-safety violation)
 - Using `Godot.Collections.*` for internal C# data (unnecessary marshalling overhead)
 - Static fields holding node references (breaks scene reload, multiple instances)
 - Calling `_Ready()` or other lifecycle methods directly — never call them yourself

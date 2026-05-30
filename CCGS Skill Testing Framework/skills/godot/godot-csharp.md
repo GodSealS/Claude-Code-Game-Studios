@@ -1,25 +1,27 @@
-# Agent Test Spec: godot-csharp-specialist
+# Agent Test Spec: godot-csharp
 
 ## Agent Summary
 Domain: C# patterns in Godot 4, .NET idioms applied to Godot, [Export] attribute usage, signal delegates, and async/await patterns.
-Does NOT own: GDScript code (gdscript-specialist), GDExtension C/C++ bindings (gdextension-specialist).
-Model tier: DeepSeek-V4-Flash (default).
+Architecture: **Private skill** loaded by `godot-specialist` via `UseSkill("godot-csharp")`. Not a standalone agent.
+Does NOT cover: GDScript code (godot-gdscript skill), GDExtension C/C++ bindings (godot-gdextension skill).
 No gate IDs assigned.
 
 ---
 
 ## Static Assertions (Structural)
 
-- [ ] `description:` field is present and domain-specific (references C# in Godot 4 / .NET patterns / signal delegates)
-- [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is DeepSeek-V4-Flash (default for specialists)
-- [ ] Agent definition does not claim authority over GDScript or GDExtension code
+- [ ] Declared as a skill (`name: godot-csharp` in frontmatter) at `.codebuddy/skills/godot-csharp/SKILL.md`
+- [ ] `description:` field matches: "Godot C# domain. partial class, [Export], [Signal] delegates, async ToSignal(), node access, .NET patterns."
+- [ ] Skill file is only loaded by `godot-specialist` — no other agent definition references `UseSkill("godot-csharp")`
+- [ ] Skill does NOT claim authority over GDScript or GDExtension code
+- [ ] Skill includes version awareness section referencing `docs/engine-reference/godot/VERSION.md`
+- [ ] Skill includes ripgrep file filtering guidance for GDScript files
 
 ---
 
 ## Test Cases
 
-### Case 1: In-domain request — appropriate output
+### Case 1: In-domain request — appropriate C# guidance
 **Input:** "Create an export property for enemy health with validation that clamps it between 1 and 1000."
 **Expected behavior:**
 - Produces a C# property with `[Export]` attribute
@@ -28,13 +30,13 @@ No gate IDs assigned.
 - Follows Godot 4 C# naming conventions (PascalCase for properties, fields private with underscore prefix)
 - Includes XML doc comment on the property per coding standards
 
-### Case 2: Out-of-domain request — redirects correctly
+### Case 2: Out-of-domain request — stays within C# boundary
 **Input:** "Rewrite this enemy health system in GDScript."
 **Expected behavior:**
-- Does NOT produce GDScript code
-- Explicitly states that GDScript authoring belongs to `godot-gdscript-specialist`
-- Redirects the request to `godot-gdscript-specialist`
-- May note that the C# interface can be described so the gdscript-specialist knows the expected API shape
+- Does NOT produce GDScript code or GDScript-specific guidance
+- Explicitly states that GDScript domain knowledge belongs to the `godot-gdscript` skill
+- Suggests the caller (godot-specialist) load `UseSkill("godot-gdscript")` instead
+- May describe the C# interface so the GDScript skill knows the expected API shape
 
 ### Case 3: Async signal awaiting
 **Input:** "Wait for an animation to finish before transitioning game state using C# async."
@@ -56,18 +58,18 @@ No gate IDs assigned.
 ### Case 5: Context pass — Godot 4.6 API correctness
 **Input:** Engine version context: Godot 4.6. Request: "Connect a signal using the new typed signal delegate pattern."
 **Expected behavior:**
-- Produces C# signal connection using the typed delegate pattern introduced in Godot 4 C# (`+=` operator on typed signal)
+- Produces C# signal connection using the typed delegate pattern (`+=` operator on typed signal)
 - Checks the 4.6 context to confirm no breaking changes to the signal delegate API in 4.4, 4.5, or 4.6
 - Does NOT use the old string-based `Connect("signal_name", callable)` pattern (deprecated in Godot 4 C#)
-- Produces code compatible with the project's pinned 4.6 version as documented in VERSION.md
+- Produces guidance compatible with the project's pinned 4.6 version as documented in VERSION.md
 
 ---
 
 ## Protocol Compliance
 
 - [ ] Stays within declared domain (C# in Godot 4 — patterns, exports, signals, async)
-- [ ] Redirects GDScript requests to godot-gdscript-specialist
-- [ ] Redirects GDExtension requests to godot-gdextension-specialist
+- [ ] When asked about GDScript: redirects to `godot-gdscript` skill, suggests loading `UseSkill("godot-gdscript")`
+- [ ] When asked about GDExtension: redirects to `godot-gdextension` skill
 - [ ] Returns C# code following Godot 4 conventions (not Unity MonoBehaviour patterns)
 - [ ] Flags multi-threaded Godot node access as unsafe and provides the correct pattern
 - [ ] Uses typed signal delegates — not deprecated string-based Connect() calls
@@ -77,5 +79,5 @@ No gate IDs assigned.
 
 ## Coverage Notes
 - Export property with validation (Case 1) should have a unit test verifying the clamp behavior
-- Threading conflict (Case 4) is safety-critical: the agent must identify and fix this without prompting
-- Async signal (Case 3) verifies the agent applies .NET idioms correctly within Godot's single-thread constraint
+- Threading conflict (Case 4) is safety-critical: the skill must identify and fix this without prompting
+- Async signal (Case 3) verifies the skill applies .NET idioms correctly within Godot's single-thread constraint

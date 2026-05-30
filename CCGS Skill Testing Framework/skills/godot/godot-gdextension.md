@@ -1,25 +1,27 @@
-# Agent Test Spec: godot-gdextension-specialist
+# Agent Test Spec: godot-gdextension
 
 ## Agent Summary
 Domain: GDExtension API, godot-cpp C++ bindings, godot-rust bindings, native library integration, and native performance optimization.
-Does NOT own: GDScript code (gdscript-specialist), shader code (godot-shader-specialist).
-Model tier: DeepSeek-V4-Flash (default).
+Architecture: **Private skill** loaded by `godot-specialist` via `UseSkill("godot-gdextension")`. Not a standalone agent.
+Does NOT cover: GDScript code (godot-gdscript skill), shader code (godot-shader skill).
 No gate IDs assigned.
 
 ---
 
 ## Static Assertions (Structural)
 
-- [ ] `description:` field is present and domain-specific (references GDExtension / godot-cpp / native bindings)
-- [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is DeepSeek-V4-Flash (default for specialists)
-- [ ] Agent definition does not claim authority over GDScript or shader authoring
+- [ ] Declared as a skill (`name: godot-gdextension` in frontmatter) at `.codebuddy/skills/godot-gdextension/SKILL.md`
+- [ ] `description:` field matches: "GDExtension domain. C++/Rust bindings, native performance, custom nodes, build systems, ABI compatibility."
+- [ ] Skill file is only loaded by `godot-specialist` — no other agent definition references `UseSkill("godot-gdextension")`
+- [ ] Skill does NOT claim authority over GDScript or shader authoring
+- [ ] Skill includes version awareness section referencing `docs/engine-reference/godot/VERSION.md`
+- [ ] Skill includes ABI compatibility warning about minor version upgrades
 
 ---
 
 ## Test Cases
 
-### Case 1: In-domain request — appropriate output
+### Case 1: In-domain request — appropriate GDExtension guidance
 **Input:** "Expose a C++ rigid-body physics simulation library to GDScript via GDExtension."
 **Expected behavior:**
 - Produces a GDExtension binding pattern using godot-cpp:
@@ -28,14 +30,14 @@ No gate IDs assigned.
   - `_bind_methods()` implementation exposing the physics API to GDScript
   - `GDExtension` entry point (`gdextension_init`) setup
 - Notes the `.gdextension` manifest file format required
-- Does NOT produce the GDScript usage code (that belongs to gdscript-specialist)
+- Does NOT produce the GDScript usage code (that belongs to godot-gdscript skill)
 
-### Case 2: Out-of-domain redirect
+### Case 2: Out-of-domain — stays within native boundary
 **Input:** "Write the GDScript that calls the physics simulation from Case 1."
 **Expected behavior:**
 - Does NOT produce GDScript code
-- Explicitly states that GDScript authoring belongs to `godot-gdscript-specialist`
-- Redirects to `godot-gdscript-specialist`
+- Explicitly states that GDScript authoring belongs to `godot-gdscript` skill
+- Redirects the request to `godot-gdscript` skill (godot-specialist should load `UseSkill("godot-gdscript")`)
 - May describe the API surface the GDScript should call (method names, parameter types) as a handoff spec
 
 ### Case 3: ABI compatibility risk — minor version update
@@ -71,8 +73,8 @@ No gate IDs assigned.
 ## Protocol Compliance
 
 - [ ] Stays within declared domain (GDExtension, godot-cpp, godot-rust, native bindings)
-- [ ] Redirects GDScript authoring to godot-gdscript-specialist
-- [ ] Redirects shader authoring to godot-shader-specialist
+- [ ] Redirects GDScript authoring to `godot-gdscript` skill
+- [ ] Redirects shader authoring to `godot-shader` skill
 - [ ] Returns structured output (binding patterns, RAII examples, ABI checklists)
 - [ ] Flags ABI compatibility risks on minor version upgrades — never assumes binary compatibility
 - [ ] Uses Godot-specific memory management (`memnew`/`memdelete`, `Ref<T>`) not raw C++ new/delete
@@ -82,5 +84,5 @@ No gate IDs assigned.
 
 ## Coverage Notes
 - Binding pattern (Case 1) should include a smoke test verifying the extension loads and the method is callable from GDScript
-- ABI risk (Case 3) is a critical escalation path — the agent must not approve shipping an unverified extension binary
-- Memory management (Case 4) verifies the agent applies Godot-specific patterns, not generic C++ RAII
+- ABI risk (Case 3) is a critical escalation path — the skill must not approve shipping an unverified extension binary
+- Memory management (Case 4) verifies the skill applies Godot-specific patterns, not generic C++ RAII
