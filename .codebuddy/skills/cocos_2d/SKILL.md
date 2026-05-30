@@ -1,9 +1,14 @@
 ---
 name: cocos_2d
 description: Cocos Creator 2D rendering expert. Triggers when users need to handle Sprite, Label, Mask, Graphics, UI components, 2D sprite rendering, text rendering, mask effects, 2D graphics drawing. 当用户需要处理精灵、文本、遮罩、2D图形绘制、UI组件等2D渲染相关功能时触发此 Skill。
+allowed-tools: Read, Grep
+argument-hint: ""
+user-invocable: false
 ---
 
 # 2D - Cocos Creator 2D Rendering System
+
+> **READY**: Skill loaded — provides Cocos Creator 2D rendering domain knowledge.
 
 ## Overview
 
@@ -54,9 +59,22 @@ label.string = 'Hello Cocos';
 label.fontSize = 24;
 label.overflow = Label.Overflow.CLAMP;
 
+// Label with custom TTF font
+const customLabel = node.addComponent(Label);
+customLabel.string = 'Custom Font Text';
+customLabel.font = this.customTTFFont;  // Assign imported TTF Font asset
+customLabel.fontSize = 32;
+customLabel.enableOutline = true;
+customLabel.outlineColor = new Color(0, 0, 0, 255);
+customLabel.outlineWidth = 2;
+
 // Mask
 const mask = node.addComponent(Mask);
 mask.type = Mask.Type.RECT;
+
+// Dynamic mask: resize or animate alphaThreshold for effects
+mask.alphaThreshold = 0.5;  // Controls STENCIL mask softness
+// To animate mask size, adjust the mask node's scale or the referenced SpriteFrame
 
 // 2D graphics drawing
 const g = node.addComponent(Graphics);
@@ -80,6 +98,8 @@ g.fill();
 3. Be aware of vertex count limits when drawing complex shapes with Graphics
 4. Prefer RECT mask type; STENCIL type is more expensive
 5. Use Widget component on UI nodes for multi-resolution adaptation
+6. Monitor draw calls and fill-rate via Cocos Creator's **built-in profiler** (F12 or `cc.profiler`) when optimizing 2D scenes
+7. Provide fallback fonts via `Label.fontFamily` for internationalization: specify a font stack (e.g., `"CustomFont, Arial, sans-serif"`) to ensure text renders when the primary font is unavailable
 
 ### Common Tasks
 - Create sprites and atlas animations
@@ -87,3 +107,14 @@ g.fill();
 - Draw custom shapes with Graphics
 - Configure UI masks and clipping
 - UI adaptation and multi-resolution support
+
+## Related Skills
+- `cocos_core` — Component, Node, Scene, Director, lifecycle management
+- `cocos_rendering` — Materials, shaders, custom render passes, GFX layer
+- `cocos_ui` — Button, ScrollView, Layout, Widget, and MMORPG UI templates
+
+## Recommended Next Steps
+1. Verify which Cocos Creator version the project uses via `docs/engine-reference/cocos/VERSION.md`
+2. For sprite-heavy UIs, load `cocos_rendering` to discuss material/batching optimization
+3. For interactive UI components, load `cocos_ui` for Button, ScrollView, and event system patterns
+4. For text localization workflows, consult the project's localization pipeline

@@ -1,6 +1,8 @@
-# 目录结构详解
+# Directory Structure / 目录结构详解
 
-本文档详细解释项目中每个目录的用途、包含的文件以及提供的功能。
+This document explains the purpose, contents, and features of each directory in the project.
+
+> **中文翻译**：本文档详细解释项目中每个目录的用途、包含的文件以及提供的功能。
 
 ---
 
@@ -42,7 +44,7 @@ Claude-Code-Game-Studios/
 name: producer
 description: "管理所有生产相关事务..."
 tools: Read, Glob, Grep, Write, Edit, Bash, WebSearch
-model: DeepSeek-V4-Flash
+model: DeepSeek-V3.2
 maxTurns: 30
 memory: user
 skills: [sprint-plan, scope-check, estimate, milestone-review]

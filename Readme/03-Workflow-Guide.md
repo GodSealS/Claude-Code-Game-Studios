@@ -1,6 +1,8 @@
-# 工作流程指南
+# Workflow Guide / 工作流指南
 
-本文档详细解释在 CodeBuddy Game Studios 架构下开发游戏的完整工作流程。
+This document details the complete workflow for game development under the CodeBuddy Game Studios architecture.
+
+> **中文翻译**：本文档详细解释在 CodeBuddy Game Studios 架构下开发游戏的完整工作流程。
 
 ---
 

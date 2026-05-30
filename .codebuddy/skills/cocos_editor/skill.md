@@ -8,7 +8,7 @@ description: >
   Trigger scenarios include: creating UI interfaces, building scenes, creating VFX, creating prefabs,
   managing assets, configuring components, adjusting node hierarchies, building projects, debugging editor state, etc.
 argument-hint: "[action description] --scene [scene name] --node [node name]"
-user-invocable: true
+user-invocable: false
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, Task, mcp_get_tool_description, mcp_call_tool
 ---
 
@@ -204,6 +204,9 @@ delete scene node → use `prefab_instance.instantiate` to spawn.
 2. **Get state before modifying**: call `scene_hierarchy.get` before scene edits
 3. **Verify after operations**: call the matching query tool to confirm
 4. **Batch optimization**: independent creates in parallel; dependent ops sequential; use `batchSet`
+5. **Write protocol**: this skill never directly modifies project `.scene` or `.prefab` files.
+   All entity creation/modification goes through MCP Server tool calls. May I write to
+   workflow sub-files or reference documents when updating them.
 
 ### Error Handling
 
@@ -250,6 +253,12 @@ delete scene node → use `prefab_instance.instantiate` to spawn.
 3. **UUID references** — use UUID, not path names
 4. **Save after edits** — `scene_management.save`
 5. **Add first, configure second** — components before properties
+
+### Verdict
+
+- **COMPLETE** — all requested editor operations executed successfully
+- **BLOCKED** — Cocos MCP Server not connected or unreachable
+- **READY** — workflow sub-file loaded, ready to execute the recipe steps
 
 ### Recommended Next Steps
 

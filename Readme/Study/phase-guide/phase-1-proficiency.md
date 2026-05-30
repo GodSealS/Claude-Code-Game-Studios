@@ -104,7 +104,7 @@
 
 ```markdown
 Frontmatter 要点：
-- model: DeepSeek-V4-Flash（默认层级，适合实现和分析）
+- model: DeepSeek-V3.2（默认层级，适合实现和分析）
 - tools: Read, Glob, Grep, Write, Edit, Bash, Task（完整工具集）
 
 核心职责：

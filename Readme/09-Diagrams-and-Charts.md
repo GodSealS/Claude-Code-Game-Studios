@@ -1,6 +1,8 @@
-# 流程图和组织结构图
+# Diagrams and Charts / 图表
 
-本文档包含 CodeBuddy Game Studios 的各种流程图和组织结构图，使用 Mermaid 语法编写。
+This document contains various flowcharts and organizational charts for CodeBuddy Game Studios, written in Mermaid syntax.
+
+> **中文翻译**：本文档包含 CodeBuddy Game Studios 的各种流程图和组织结构图，使用 Mermaid 语法编写。
 
 ---
 

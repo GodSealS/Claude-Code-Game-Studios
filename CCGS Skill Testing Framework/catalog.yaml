@@ -797,6 +797,106 @@ skills:
     priority: low
     category: utility
 
+  # Engine — Cocos Creator Skills (loaded by cocos-specialist via UseSkill)
+  - name: cocos_2d
+    spec: CCGS Skill Testing Framework/skills/cocos/cocos_2d.md
+    last_static: "2026-05-30"
+    last_static_result: "NON-COMPLIANT (3/5 — 仅缺裁决关键词, 域参考Skill不适用)"
+    last_spec: "2026-05-30"
+    last_spec_result: "CONCERNS"
+    last_category: "2026-05-30"
+    last_category_result: "PASS"
+    priority: high
+    category: engine
+
+  - name: cocos_3d
+    spec: CCGS Skill Testing Framework/skills/cocos/cocos_3d.md
+    last_static: "2026-05-30"
+    last_static_result: "NON-COMPLIANT (3/5 — 仅缺裁决关键词, 域参考Skill不适用)"
+    last_spec: "2026-05-30"
+    last_spec_result: "FAIL"
+    last_category: "2026-05-30"
+    last_category_result: "PASS"
+    priority: high
+    category: engine
+
+  - name: cocos_animation
+    spec: CCGS Skill Testing Framework/skills/cocos/cocos_animation.md
+    last_static: "2026-05-30"
+    last_static_result: "NON-COMPLIANT (3/5 — 仅缺裁决关键词, 域参考Skill不适用)"
+    last_spec: "2026-05-30"
+    last_spec_result: "FAIL"
+    last_category: "2026-05-30"
+    last_category_result: "PASS"
+    priority: high
+    category: engine
+
+  - name: cocos_core
+    spec: CCGS Skill Testing Framework/skills/cocos/cocos_core.md
+    last_static: "2026-05-30"
+    last_static_result: "NON-COMPLIANT (3/5 — 仅缺裁决关键词, 域参考Skill不适用)"
+    last_spec: "2026-05-30"
+    last_spec_result: "FAIL"
+    last_category: "2026-05-30"
+    last_category_result: "PASS"
+    priority: high
+    category: engine
+
+  - name: cocos_physics
+    spec: CCGS Skill Testing Framework/skills/cocos/cocos_physics.md
+    last_static: "2026-05-30"
+    last_static_result: "NON-COMPLIANT (3/5 — 仅缺裁决关键词, 域参考Skill不适用)"
+    last_spec: "2026-05-30"
+    last_spec_result: "FAIL"
+    last_category: "2026-05-30"
+    last_category_result: "PASS"
+    priority: high
+    category: engine
+
+  - name: cocos_physics-2d
+    spec: CCGS Skill Testing Framework/skills/cocos/cocos_physics-2d.md
+    last_static: "2026-05-30"
+    last_static_result: "NON-COMPLIANT (3/5 — 仅缺裁决关键词, 域参考Skill不适用)"
+    last_spec: "2026-05-30"
+    last_spec_result: "FAIL"
+    last_category: "2026-05-30"
+    last_category_result: "PASS"
+    priority: high
+    category: engine
+
+  - name: cocos_rendering
+    spec: CCGS Skill Testing Framework/skills/cocos/cocos_rendering.md
+    last_static: "2026-05-30"
+    last_static_result: "NON-COMPLIANT (3/5 — 仅缺裁决关键词, 域参考Skill不适用)"
+    last_spec: "2026-05-30"
+    last_spec_result: "FAIL"
+    last_category: "2026-05-30"
+    last_category_result: "PASS"
+    priority: high
+    category: engine
+
+  - name: cocos_ui
+    spec: CCGS Skill Testing Framework/skills/cocos/cocos_ui.md
+    last_static: "2026-05-30"
+    last_static_result: "NON-COMPLIANT (3/5 — 仅缺裁决关键词, 域参考Skill不适用)"
+    last_spec: "2026-05-30"
+    last_spec_result: "FAIL"
+    last_category: "2026-05-30"
+    last_category_result: "PASS"
+    priority: high
+    category: engine
+
+  - name: cocos_editor
+    spec: CCGS Skill Testing Framework/skills/cocos/cocos_editor.md
+    last_static: "2026-05-30"
+    last_static_result: "COMPLIANT"
+    last_spec: "2026-05-30"
+    last_spec_result: "PASS"
+    last_category: "2026-05-30"
+    last_category_result: "PASS"
+    priority: high
+    category: engine
+
 agents:
   # Tier 1 Directors (DeepSeek-V4-Flash)
   - name: creative-director
@@ -1063,59 +1163,15 @@ agents:
     last_spec_result: ""
     category: engine
 
-  # Engine Specialists — Cocos Creator
+  # Engine Specialists — Cocos Creator (consolidated: single agent with Skill-based routing)
   - name: cocos-specialist
     spec: CCGS Skill Testing Framework/agents/engine/cocos/cocos-specialist.md
-    last_spec: ""
-    last_spec_result: ""
-    category: engine
-
-  - name: cocos_2d-expert
-    spec: CCGS Skill Testing Framework/agents/engine/cocos/cocos_2d-expert.md
-    last_spec: ""
-    last_spec_result: ""
-    category: engine
-
-  - name: cocos_3d-expert
-    spec: CCGS Skill Testing Framework/agents/engine/cocos/cocos_3d-expert.md
-    last_spec: ""
-    last_spec_result: ""
-    category: engine
-
-  - name: cocos_gfx-expert
-    spec: CCGS Skill Testing Framework/agents/engine/cocos/cocos_gfx-expert.md
-    last_spec: ""
-    last_spec_result: ""
-    category: engine
-
-  - name: cocos_core-expert
-    spec: CCGS Skill Testing Framework/agents/engine/cocos/cocos_core-expert.md
-    last_spec: ""
-    last_spec_result: ""
-    category: engine
-
-  - name: cocos_physics-expert
-    spec: CCGS Skill Testing Framework/agents/engine/cocos/cocos_physics-expert.md
-    last_spec: ""
-    last_spec_result: ""
-    category: engine
-
-  - name: cocos_physics-2d-expert
-    spec: CCGS Skill Testing Framework/agents/engine/cocos/cocos_physics-2d-expert.md
-    last_spec: ""
-    last_spec_result: ""
-    category: engine
-
-  - name: cocos_animation-expert
-    spec: CCGS Skill Testing Framework/agents/engine/cocos/cocos_animation-expert.md
-    last_spec: ""
-    last_spec_result: ""
-    category: engine
-
-  - name: cocos_rendering-expert
-    spec: CCGS Skill Testing Framework/agents/engine/cocos/cocos_rendering-expert.md
-    last_spec: ""
-    last_spec_result: ""
+    last_static: "2026-05-30"
+    last_static_result: "COMPLIANT"
+    last_spec: "2026-05-30"
+    last_spec_result: "PASS"
+    last_category: "2026-05-30"
+    last_category_result: "PASS"
     category: engine
 
   # Operations

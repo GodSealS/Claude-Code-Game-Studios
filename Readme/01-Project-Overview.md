@@ -1,6 +1,8 @@
-# CodeBuddy Game Studios - 项目概览
+# Project Overview / 项目概览
 
-> **一个完整的 AI 驱动游戏开发工作室架构**
+> A complete AI-driven game development studio architecture
+
+> **中文翻译**：一个完整的 AI 驱动游戏开发工作室架构
 
 ## 什么是 CodeBuddy Game Studios？
 

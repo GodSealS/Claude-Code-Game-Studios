@@ -222,7 +222,7 @@ flowchart LR
 4. **崩溃恢复**：新会话启动时，`session-start.sh` 自动检测 `active.md`，Agent 读取后恢复上下文。
 5. **模型层级**：
    - **Haiku**（MiniMax-M2.7）：只读状态检查、格式化、简单查找
-   - **Sonnet**（DeepSeek-V4-Flash）：实现、设计撰写、单系统分析（默认）
+   - **Sonnet**（DeepSeek-V3.2）：实现、设计撰写、单系统分析（默认）
    - **Opus**（GLM-5.1）：多文档综合、高 stakes 阶段门控裁决
 
 ---

@@ -1,9 +1,14 @@
 ---
 name: cocos_ui
 description: Cocos Creator UI system expert. Triggers when users need to handle Button, EditBox, ScrollView, Toggle, Slider, ProgressBar, Layout, Widget, PageView, RichText, UI event system, and MMORPG UI templates (UnitFrame, ActionBar, Minimap, ChatWindow, PartyFrame, RaidFrame, QuestTracker, Tooltip, BagPanel, CharacterPanel, CastingBar, Nameplate, CombatText, LootRoll, VendorPanel). 当用户需要处理交互式UI组件、UI事件系统、多分辨率适配、或魔兽世界风格MMORPG UI模板时触发此 Skill。
+allowed-tools: Read, Grep
+argument-hint: ""
+user-invocable: false
 ---
 
 # Cocos Creator UI System & MMORPG UI Templates
+
+> **READY**: Skill loaded — provides Cocos Creator UI system domain knowledge.
 
 ## Overview
 
@@ -1711,3 +1716,198 @@ slider.slideEvents.push((slider: Slider) => {
 - **Set up combat feedback**: CombatText + Nameplate + CastingBar integration
 - **Build social panels**: ChatWindow + GuildPanel + FriendsList
 - **Implement trading UI**: VendorPanel + AuctionHouse + LootRoll
+- **Create modal dialogs and popups**: Dialog system with overlay + stacking
+
+---
+
+## Modal Dialog / Popup System
+
+Dialog template with blocking overlay, centered panel, and dialog stacking.
+
+**Features:**
+- `BlockInputEvents` overlay to prevent background interaction
+- Centered panel with title, body, and action buttons
+- Fade-in/fade-out animation
+- Dialog stacking/queuing (show one dialog, dismiss, next pops)
+- Close on overlay click (configurable) or explicit dismiss
+
+**Structure:**
+```
+DialogManager (Node, singleton)
+├── Overlay (Sprite, fullscreen + BlockInputEvents)
+│   └── Blocker (BlockInputEvents component)
+└── DialogStack (Node)
+    └── DialogPanel[0..N] (Node, Widget: centered)
+        ├── Border (Sprite)
+        ├── Title (Label)
+        ├── Body (Label / RichText)
+        └── ActionButtons (Layout:HORIZONTAL)
+            ├── BtnCancel (Button + Label)
+            └── BtnConfirm (Button + Label)
+```
+
+**Code Example:**
+```typescript
+import { Node, Sprite, Label, Button, Widget, BlockInputEvents, UITransform, Color, UIOpacity, tween, Layout } from 'cc';
+
+interface DialogConfig {
+    title: string;
+    body: string;
+    confirmText?: string;
+    cancelText?: string;
+    onConfirm?: () => void;
+    onCancel?: () => void;
+    closeOnOverlay?: boolean;  // Close dialog when clicking outside
+}
+
+class DialogManager {
+    private static instance: DialogManager;
+    private overlay: Node;
+    private dialogStack: DialogConfig[] = [];
+    private activeDialog: Node | null = null;
+
+    static get Instance(): DialogManager {
+        if (!this.instance) {
+            this.instance = new DialogManager();
+        }
+        return this.instance;
+    }
+
+    constructor() {
+        // Overlay (reused across all dialogs)
+        this.overlay = new Node('DialogOverlay');
+        this.overlay.addComponent(UITransform).setContentSize(1920, 1080);  // Assumes design resolution
+        this.overlay.addComponent(UIOpacity).opacity = 0;
+
+        const bg = this.overlay.addComponent(Sprite);
+        bg.color = new Color(0, 0, 0, 100);
+        this.overlay.addComponent(BlockInputEvents);
+        this.overlay.active = false;
+    }
+
+    show(config: DialogConfig): void {
+        if (this.activeDialog) {
+            // Queue: push to stack, show after current dialog closes
+            this.dialogStack.push(config);
+            return;
+        }
+        this.buildAndShow(config);
+    }
+
+    private buildAndShow(config: DialogConfig): void {
+        this.overlay.active = true;
+        this.activeDialog = new Node('DialogPanel');
+        this.activeDialog.addComponent(UITransform).setContentSize(360, 200);
+        this.overlay.addChild(this.activeDialog);
+
+        // Widget: center the dialog
+        const widget = this.activeDialog.addComponent(Widget);
+        widget.isAlignHorizontalCenter = true;
+        widget.isAlignVerticalCenter = true;
+
+        // Border background
+        const border = new Node('Border');
+        border.addComponent(UITransform).setContentSize(364, 204);
+        border.addComponent(Sprite);
+        this.activeDialog.addChild(border);
+
+        // Title
+        const titleNode = new Node('Title');
+        titleNode.addComponent(UITransform).setContentSize(320, 30);
+        titleNode.setPosition(0, 80, 0);
+        const titleLabel = titleNode.addComponent(Label);
+        titleLabel.string = config.title;
+        titleLabel.fontSize = 18;
+        titleLabel.color = Color.WHITE;
+        this.activeDialog.addChild(titleNode);
+
+        // Body
+        const bodyNode = new Node('Body');
+        bodyNode.addComponent(UITransform).setContentSize(320, 80);
+        bodyNode.setPosition(0, 20, 0);
+        const bodyLabel = bodyNode.addComponent(Label);
+        bodyLabel.string = config.body;
+        bodyLabel.fontSize = 14;
+        bodyLabel.color = new Color(200, 200, 200);
+        bodyLabel.overflow = Label.Overflow.SHRINK;
+        this.activeDialog.addChild(bodyNode);
+
+        // Action buttons
+        const btnRow = new Node('Actions');
+        btnRow.addComponent(UITransform).setContentSize(320, 40);
+        btnRow.addComponent(Layout).type = Layout.Type.HORIZONTAL;
+        btnRow.addComponent(Layout).spacingX = 16;
+        btnRow.setPosition(0, -70, 0);
+        this.activeDialog.addChild(btnRow);
+
+        if (config.cancelText) {
+            const cancelNode = new Node('BtnCancel');
+            cancelNode.addComponent(UITransform).setContentSize(100, 36);
+            const cancelBtn = cancelNode.addComponent(Button);
+            const cancelLabel = cancelNode.addComponent(Label);
+            cancelLabel.string = config.cancelText;
+            cancelLabel.fontSize = 14;
+            cancelBtn.clickEvents.push(() => {
+                config.onCancel?.();
+                this.dismiss();
+            });
+            btnRow.addChild(cancelNode);
+        }
+
+        if (config.confirmText) {
+            const confirmNode = new Node('BtnConfirm');
+            confirmNode.addComponent(UITransform).setContentSize(100, 36);
+            const confirmBtn = confirmNode.addComponent(Button);
+            const confirmLabel = confirmNode.addComponent(Label);
+            confirmLabel.string = config.confirmText;
+            confirmLabel.fontSize = 14;
+            confirmBtn.clickEvents.push(() => {
+                config.onConfirm?.();
+                this.dismiss();
+            });
+            btnRow.addChild(confirmNode);
+        }
+
+        // Overlay click to close (optional)
+        if (config.closeOnOverlay) {
+            this.overlay.on(Node.EventType.TOUCH_END, () => {
+                config.onCancel?.();
+                this.dismiss();
+            }, this);
+        }
+
+        // Fade in
+        const overlayOpacity = this.overlay.getComponent(UIOpacity);
+        overlayOpacity.opacity = 0;
+        tween(overlayOpacity).to(0.2, { opacity: 255 }).start();
+    }
+
+    dismiss(): void {
+        const overlayOpacity = this.overlay.getComponent(UIOpacity);
+        tween(overlayOpacity).to(0.15, { opacity: 0 }).call(() => {
+            if (this.activeDialog) {
+                this.activeDialog.removeFromParent();
+                this.activeDialog.destroy();
+                this.activeDialog = null;
+            }
+            this.overlay.active = false;
+            // Process next dialog in queue
+            const next = this.dialogStack.shift();
+            if (next) {
+                this.buildAndShow(next);
+            }
+        }).start();
+    }
+}
+```
+
+## Related Skills
+- `cocos_2d` — Sprite, Label, Mask, Graphics for UI rendering components
+- `cocos_core` — Component lifecycle, event system, Node hierarchy
+- `cocos_editor` — MCP editor operations for creating UI nodes and components visually
+
+## Recommended Next Steps
+1. Verify Cocos Creator version via `docs/engine-reference/cocos/VERSION.md`
+2. For UI rendering optimization (sprite batching, draw calls), load `cocos_2d`
+3. For editor-based UI layout (visual Canvas and Widget setup), use `cocos_editor` MCP tools
+4. For UI event-driven game logic, consult `cocos_core` for EventTarget and lifecycle patterns

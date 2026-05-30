@@ -1,6 +1,8 @@
-# Open Spec 集成指南
+# Open Spec Integration / Open Spec 集成
 
-本文档介绍如何将 CodeBuddy Game Studios 提示词工程与 Open Spec 结合使用，实现更强大的游戏开发工作流。
+This document introduces how to combine CodeBuddy Game Studios prompt engineering with Open Spec for a more powerful game development workflow.
+
+> **中文翻译**：本文档介绍如何将 CodeBuddy Game Studios 提示词工程与 Open Spec 结合使用，实现更强大的游戏开发工作流。
 
 ---
 
@@ -180,7 +182,7 @@ agents:
       - sprint-plan
       - scope-check
       - estimate
-    model: "DeepSeek-V4-Flash"
+    model: "DeepSeek-V3.2"
     
   game-designer:
     name: "Game Designer"
@@ -456,7 +458,7 @@ results = validator.validate_agents(agents)
 
 # 导出为其他格式
 agents.export("cursor", ".cursor/rules/")
-agents.export("claude", ".codebuddy/agents/")
+agents.export("claude", ".claude/agents/")
 ```
 
 ---

@@ -1,9 +1,14 @@
 ---
 name: cocos_rendering
 description: Cocos Creator rendering & GFX expert. Triggers for Effect shaders, materials, GPU resources (Device/Buffer/Texture/Shader/PipelineState), Forward/Deferred pipeline, camera, lighting, shadows, post-processing, custom render passes, and cross-platform (WebGL/Vulkan/Metal) rendering.
+allowed-tools: Read, Grep
+argument-hint: ""
+user-invocable: false
 ---
 
 # Rendering & GFX - Cocos Creator Full Rendering Stack
+
+> **READY**: Skill loaded — provides Cocos Creator rendering & GFX domain knowledge.
 
 ## Overview
 
@@ -138,3 +143,72 @@ const rt = device.createTexture({
 - Create custom render passes with RenderTexture
 - Manage GPU resource lifecycle
 - Optimize draw calls, overdraw, and shader complexity
+
+## Post-Processing Pipeline
+
+```typescript
+import { Camera, director } from 'cc';
+
+// Bloom + Tone mapping + Vignette (via Effect assets and Blit material)
+// 1. Create bloom Effect asset (.effect file) → post-process pass
+// 2. Create tone mapping Effect asset → ACES / Reinhard / Filmic pass
+// 3. Create vignette Effect asset → edge darken pass
+
+const camera = node.getComponent(Camera);
+
+// Post-processing via RenderTexture + Blit:
+// - Render scene to HDR RenderTexture
+// - Apply bloom pass (threshold-based luminance extraction → gaussian blur → composite)
+// - Apply tone mapping pass (HDR → LDR)
+// - Apply vignette pass (multiply screen with radial gradient)
+// - Blit final result to screen
+
+// Bloom parameters:
+const bloomSettings = {
+    threshold: 0.8,       // Minimum luminance to bloom
+    intensity: 1.2,        // Bloom brightness multiplier
+    iterations: 4,         // Gaussian blur iterations (higher = smoother, slower)
+    radius: 2.0            // Blur sample radius
+};
+
+// Tone mapping modes:
+// - ACES (cinematic, recommended default) — natural contrast, filmic look
+// - Reinhard — simple, prone to desaturation
+// - Linear — no mapping, raw HDR
+```
+
+## Cascaded Shadow Mapping
+
+```typescript
+import { DirectionalLight, Camera } from 'cc';
+
+// Directional light with cascaded shadows (CSM)
+const light = lightNode.getComponent(DirectionalLight);
+light.shadowEnabled = true;
+// Configure in DirectionalLight component:
+light.shadowPcf = 2;                    // PCF filter samples (0-4, higher = softer)
+light.shadowBias = 0.001;               // Depth bias to prevent shadow acne
+light.shadowNormalBias = 0.02;          // Normal offset bias
+light.shadowMapSize = 1024;             // Shadow map resolution per cascade
+
+// Cascaded shadow splits (distance-based quality levels):
+// - Near cascade (< 20m): high quality, tight frustum
+// - Mid cascade (20-60m): medium quality
+// - Far cascade (> 60m): low quality, wide frustum
+// Control via DirectionalLight.shadowDistance + camera far plane
+// Note: CSM auto-splits based on camera frustum; adjust near/far plane to balance quality
+// Trade-off: more cascades = higher memory (N × shadowMapSize²) but better quality
+```
+
+## Related Skills
+- `cocos_core` — Component lifecycle, Node hierarchy, Game/Director
+- `cocos_3d` — MeshRenderer, SkinnedMeshRenderer, model rendering pipeline
+- `cocos_2d` — Sprite, Label, 2D rendering and batching
+- `cocos_editor` — MCP editor build pipeline, platform-specific build settings
+
+## Recommended Next Steps
+1. Verify Cocos Creator version via `docs/engine-reference/cocos/VERSION.md`
+2. Check `device.capabilities` before using compute shaders, MRT, or SSBO
+3. For 3D model rendering integration, load `cocos_3d` for mesh/material binding
+4. For UI layer rendering, load `cocos_2d` for sprite batching and Canvas setup
+5. For build-time platform configuration, use `cocos_editor` MCP tools

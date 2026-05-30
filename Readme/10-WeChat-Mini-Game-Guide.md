@@ -1,6 +1,8 @@
-# 微信小游戏开发指南
+# WeChat Mini Game Guide / 微信小游戏指南
 
-本指南介绍如何在 Claude Code Game Studios 架构下开发微信小游戏（WeChat Mini Games）。
+This guide introduces how to develop WeChat Mini Games under the Claude Code Game Studios architecture.
+
+> **中文翻译**：本指南介绍如何在 Claude Code Game Studios 架构下开发微信小游戏（WeChat Mini Games）。
 
 ---
 
@@ -607,6 +609,7 @@ A: 主要优化点：
 - [微信云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)
 - [微信开发者工具下载](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)
 
+<!-- 中文翻译 -->
 ### CodeBuddy Agents
 - [wechat-specialist](../../.codebuddy/agents/wechat-specialist.md) - 微信平台核心协调者（架构决策、游戏循环、状态管理）
 - [wechat-minigame-specialist](../../.codebuddy/agents/wechat-minigame-specialist.md) - 平台 API、物理引擎、WASM、骨骼动画
@@ -614,6 +617,7 @@ A: 主要优化点：
 - [wechat-shader-specialist](../../.codebuddy/agents/wechat-shader-specialist.md) - WebGL Shader 开发
 - [wechat-ui-specialist](../../.codebuddy/agents/wechat-ui-specialist.md) - UI 设计、FairyGUI、数据绑定
 
+<!-- 中文翻译 -->
 ### CodeBuddy Skills
 - `/setup-wechat-minigame` - 项目初始化
 - `/wechat-shader` - Shader 开发和转换
