@@ -5,11 +5,11 @@
 [One sentence: what does this sprint achieve toward the current milestone?] / [一句话：此冲刺为实现当前里程碑实现了什么？]
 
 <!-- 中文翻译 -->
-## Milestone Context
+## Milestone Context / 里程碑背景
 
-- **Current Milestone**: [Name]
-- **Milestone Deadline**: [Date]
-- **Sprints Remaining**: [N]
+- **Current Milestone**: [Name] / **当前里程碑**: [名称]
+- **Milestone Deadline**: [Date] / **里程碑截止日期**: [日期]
+- **Sprints Remaining**: [N] / **剩余冲刺**: [N]
 
 <!-- 中文翻译 -->
 ## Capacity

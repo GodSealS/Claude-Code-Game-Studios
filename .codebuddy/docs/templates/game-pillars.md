@@ -40,12 +40,12 @@ specific effective pillars can be: / 具体而明确：
 
 | Game / 游戏 | Pillars / 支柱 | Why They Work / 为何有效 |
 | ---- | ---- | ---- |
-| **God of War (2018)** | Visceral combat; Father-son emotional journey; Continuous camera (no cuts); Norse mythology reimagined | "Continuous camera" is radical — it cut a standard cinematic tool. "Father-son journey" constrains narrative, level design, AND combat (Atreus as companion). |
-| **Hades** | Fast fluid combat; Story depth through repetition; Every run teaches something new | "Story through repetition" justified the roguelike structure narratively — death IS the story. "Every run teaches" constrains level and encounter design. |
-| **The Last of Us** | Story is essential, not optional; AI partners build relationships; Stealth is always an option | "AI partners build relationships" drove massive investment in companion AI — not just pathfinding, but emotional presence. |
-| **Celeste** | Tough but fair; Accessibility without compromise; Story and mechanics are the same thing | "Story and mechanics are the same thing" — climbing IS the struggle, the dash IS the anxiety. Pillar prevented mechanics from being "just gameplay." |
-| **Hollow Knight** | Atmosphere over explanation; Earned mastery; World tells its own story | "Atmosphere over explanation" — no tutorials, no hand-holding, the world teaches through environmental design. |
-| **Dead Cells** | Every weapon is viable; Combat is a dance; Permanent death creates meaning | "Every weapon is viable" is extremely constraining — it demands constant balance work across hundreds of items. |
+| **God of War (2018)** | Visceral combat; Father-son emotional journey; Continuous camera (no cuts); Norse mythology reimagined / 战神（2018） | "Continuous camera" is radical — it cut a standard cinematic tool. "Father-son journey" constrains narrative, level design, AND combat (Atreus as companion). / "连续镜头"是激进的——它砍掉了一个标准的电影工具。"父子旅程"约束了叙事、关卡设计以及战斗（Atreus作为伙伴）。|
+| **Hades** | Fast fluid combat; Story depth through repetition; Every run teaches something new / 哈迪斯 | "Story through repetition" justified the roguelike structure narratively — death IS the story. "Every run teaches" constrains level and encounter design. / "通过重复讲述故事"在叙事上为roguelike结构提供了合理性——死亡就是故事本身。"每次尝试教会新东西"约束了关卡和遭遇设计。|
+| **The Last of Us** | Story is essential, not optional; AI partners build relationships; Stealth is always an option / 最后生还者 | "AI partners build relationships" drove massive investment in companion AI — not just pathfinding, but emotional presence. / "AI伙伴建立关系"推动了对陪伴AI的巨大投入——不仅仅是寻路，还有情感存在。|
+| **Celeste** | Tough but fair; Accessibility without compromise; Story and mechanics are the same thing / 蔚蓝 | "Story and mechanics are the same thing" — climbing IS the struggle, the dash IS the anxiety. Pillar prevented mechanics from being "just gameplay." / "故事和机制是同一件事"——攀爬就是奋斗，冲刺就是焦虑。支柱防止了机制仅仅是"玩法"。|
+| **Hollow Knight** | Atmosphere over explanation; Earned mastery; World tells its own story / 空洞骑士 | "Atmosphere over explanation" — no tutorials, no hand-holding, the world teaches through environmental design. / "氛围胜过解释"——没有教程，没有手把手引导，世界通过环境设计来教导。|
+| **Dead Cells** | Every weapon is viable; Combat is a dance; Permanent death creates meaning / 死亡细胞 | "Every weapon is viable" is extremely constraining — it demands constant balance work across hundreds of items. / "每把武器都可用"是非常严格的约束——它要求对数百件物品持续进行平衡工作。|
 
 ---
 
@@ -123,207 +123,207 @@ between X and Y, this pillar says we choose __."] / X和Y，这个支柱说我�
 
 ---
 
-### Pillar 2: [Name]
+### Pillar 2: [Name] / 支柱2：[名称]
 
-**One-Sentence Definition**: [Specific, falsifiable statement]
+**One-Sentence Definition**: [Specific, falsifiable statement] / **一句话定义**: [具体、可证伪的陈述]
 
-**Target Aesthetics Served**: [MDA aesthetics]
+**Target Aesthetics Served**: [MDA aesthetics] / **服务的目标美学**: [MDA美学]
 
-**Design Test**: [Concrete decision it resolves]
+**Design Test**: [Concrete decision it resolves] / **设计测试**: [它解决的具体决策]
 
 <!-- 中文翻译 -->
-#### What This Means for Each Department
+#### What This Means for Each Department / 这对每个部门意味着什么
 
-| Department | This Pillar Says... | Example |
+| Department / 部门 | This Pillar Says... / 这个支柱说... | Example / 示例 |
 | ---- | ---- | ---- |
-| **Game Design** | [Constraint/inspiration] | [Example] |
-| **Art** | [Constraint/inspiration] | [Example] |
-| **Audio** | [Constraint/inspiration] | [Example] |
-| **Narrative** | [Constraint/inspiration] | [Example] |
-| **Engineering** | [Constraint/inspiration] | [Example] |
+| **Game Design** | [Constraint/inspiration] / [约束/启发] | [Example] / [示例] |
+| **Art** | [Constraint/inspiration] / [约束/启发] | [Example] / [示例] |
+| **Audio** | [Constraint/inspiration] / [约束/启发] | [Example] / [示例] |
+| **Narrative** | [Constraint/inspiration] / [约束/启发] | [Example] / [示例] |
+| **Engineering** | [Constraint/inspiration] / [约束/启发] | [Example] / [示例] |
 
 <!-- 中文翻译 -->
-#### Serving This Pillar
-- [Example]
-- [Example]
+#### Serving This Pillar / 服务这个支柱
+- [Example] / [示例]
+- [Example] / [示例]
 
 <!-- 中文翻译 -->
-#### Violating This Pillar
-- [Example]
-- [Example]
+#### Violating This Pillar / 违反这个支柱
+- [Example] / [示例]
+- [Example] / [示例]
 
 ---
 
-### Pillar 3: [Name]
+### Pillar 3: [Name] / 支柱3：[名称]
 
-**One-Sentence Definition**: [Specific, falsifiable statement]
+**One-Sentence Definition**: [Specific, falsifiable statement] / **一句话定义**: [具体、可证伪的陈述]
 
-**Target Aesthetics Served**: [MDA aesthetics]
+**Target Aesthetics Served**: [MDA aesthetics] / **服务的目标美学**: [MDA美学]
 
-**Design Test**: [Concrete decision it resolves]
+**Design Test**: [Concrete decision it resolves] / **设计测试**: [它解决的具体决策]
 
 <!-- 中文翻译 -->
-#### What This Means for Each Department
+#### What This Means for Each Department / 这对每个部门意味着什么
 
-| Department | This Pillar Says... | Example |
+| Department / 部门 | This Pillar Says... / 这个支柱说... | Example / 示例 |
 | ---- | ---- | ---- |
-| **Game Design** | [Constraint/inspiration] | [Example] |
-| **Art** | [Constraint/inspiration] | [Example] |
-| **Audio** | [Constraint/inspiration] | [Example] |
-| **Narrative** | [Constraint/inspiration] | [Example] |
-| **Engineering** | [Constraint/inspiration] | [Example] |
+| **Game Design** | [Constraint/inspiration] / [约束/启发] | [Example] / [示例] |
+| **Art** | [Constraint/inspiration] / [约束/启发] | [Example] / [示例] |
+| **Audio** | [Constraint/inspiration] / [约束/启发] | [Example] / [示例] |
+| **Narrative** | [Constraint/inspiration] / [约束/启发] | [Example] / [示例] |
+| **Engineering** | [Constraint/inspiration] / [约束/启发] | [Example] / [示例] |
 
 <!-- 中文翻译 -->
-#### Serving This Pillar
-- [Example]
-- [Example]
+#### Serving This Pillar / 服务这个支柱
+- [Example] / [示例]
+- [Example] / [示例]
 
 <!-- 中文翻译 -->
-#### Violating This Pillar
-- [Example]
-- [Example]
+#### Violating This Pillar / 违反这个支柱
+- [Example] / [示例]
+- [Example] / [示例]
 
 ---
 
-### Pillar 4: [Name] (Optional)
+### Pillar 4: [Name] (Optional) / 支柱4：[名称]（可选）
 
-[Same structure as Pillars 1-3]
+[Same structure as Pillars 1-3] / [与支柱1-3结构相同]
 
-### Pillar 5: [Name] (Optional)
+### Pillar 5: [Name] (Optional) / 支柱5：[名称]（可选）
 
-[Same structure as Pillars 1-3]
+[Same structure as Pillars 1-3] / [与支柱1-3结构相同]
 
 ---
 
 <!-- 中文翻译 -->
-## Anti-Pillars (What This Game Is NOT)
+## Anti-Pillars (What This Game Is NOT) / 反支柱（这个游戏不是什么）
 
 Anti-pillars are equally important as pillars — they prevent scope creep and
-keep the vision focused. Every "no" protects the "yes."
+keep the vision focused. Every "no" protects the "yes." / 反支柱与支柱同等重要——它们防止范围蔓延，保持愿景专注。每一个"不是"都在保护"是"。
 
 Great anti-pillars are things the team might actually want to do. "NOT a racing
 game" is obvious and useless. "NOT an open-world game" is useful if the genre
-could plausibly support it.
+could plausibly support it. / 好的反支柱是团队可能真的想做的事情。"不是一个赛车游戏"是显而易见且无用的。"不是一个开放世界游戏"在该类型本来可以实现它的情况下才有用。
 
 - **NOT [thing]**: [Why this is explicitly excluded, what pillar it would
-  compromise, and what it would cost in development focus]
-- **NOT [thing]**: [Why excluded]
-- **NOT [thing]**: [Why excluded]
+  compromise, and what it would cost in development focus] / **不是[某事物]**: [为什么明确排除它，它会损害哪个支柱，以及它会在开发焦点上付出什么代价]
+- **NOT [thing]**: [Why excluded] / **不是[某事物]**: [为什么排除]
+- **NOT [thing]**: [Why excluded] / **不是[某事物]**: [为什么排除]
 
 ---
 
 <!-- 中文翻译 -->
-## Pillar Conflict Resolution
+## Pillar Conflict Resolution / 支柱冲突解决
 
 When two pillars conflict (and they will), use this priority order. The ranking
-reflects which aspects of the experience are most essential to the core fantasy.
+reflects which aspects of the experience are most essential to the core fantasy. / 当两个支柱发生冲突时（它们会冲突的），使用这个优先级顺序。这个排名反映了哪些体验方面对核心幻想最重要。
 
-| Priority | Pillar | Rationale |
-| ---- | ---- | ---- |
-| 1 | [Highest priority pillar] | [Why this wins when it conflicts with others] |
-| 2 | [Second priority] | [Why] |
-| 3 | [Third priority] | [Why] |
+| Priority | Pillar | Rationale | 优先级 | 支柱 | 理由 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| 1 | [Highest priority pillar] | [Why this wins when it conflicts with others] | 1 | [最高优先级支柱] | [为什么它在与其他支柱冲突时获胜] |
+| 2 | [Second priority] | [Why] | 2 | [第二优先级] | [为什么] |
+| 3 | [Third priority] | [Why] | 3 | [第三优先级] | [为什么] |
 
-**Resolution Process**:
-1. Identify which pillars are in tension
-2. Consult the priority ranking above
+**Resolution Process**: / **解决流程**：
+1. Identify which pillars are in tension / 识别哪些支柱处于张力中
+2. Consult the priority ranking above / 参考上面的优先级排名
 3. If the lower-priority pillar can be served partially without compromising the
-   higher-priority one, do so
-4. If not, the higher-priority pillar wins
-5. Document the decision and rationale in the relevant design document
+   higher-priority one, do so / 如果低优先级支柱可以在不损害高优先级支柱的情况下部分满足，就这样做
+4. If not, the higher-priority pillar wins / 如果不能，高优先级支柱获胜
+5. Document the decision and rationale in the relevant design document / 在相关设计文档中记录决策和理由
 6. If the conflict is fundamental (two pillars are irreconcilable), escalate to
-   the creative-director to consider revising the pillars themselves
+   the creative-director to consider revising the pillars themselves / 如果冲突是根本性的（两个支柱无法调和），升级到创意总监考虑修改支柱本身
 
 ---
 
 <!-- 中文翻译 -->
-## Player Motivation Alignment
+## Player Motivation Alignment / 玩家动机对齐
 
 [Verify that the pillars collectively serve the target player's psychological needs.
 Based on Self-Determination Theory (Deci & Ryan) and the Player Experience of
-Need Satisfaction model.]
+Need Satisfaction model.] / [验证支柱共同服务于目标玩家的心理需求。基于自我决定理论（Deci & Ryan）和玩家需求满足体验模型。]
 
-| Need | Which Pillar Serves It | How |
-| ---- | ---- | ---- |
-| **Autonomy** (meaningful choice, player agency) | [Pillar name] | [How this pillar creates autonomy] |
-| **Competence** (mastery, skill growth, clear feedback) | [Pillar name] | [How this pillar creates competence] |
-| **Relatedness** (connection, belonging, emotional bond) | [Pillar name] | [How this pillar creates relatedness] |
+| Need | Which Pillar Serves It | How | 需求 | 哪个支柱服务它 | 如何 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| **Autonomy** (meaningful choice, player agency) | [Pillar name] | [How this pillar creates autonomy] | **自主性**（有意义的选择、玩家能动性） | [支柱名称] | [该支柱如何创造自主性] |
+| **Competence** (mastery, skill growth, clear feedback) | [Pillar name] | [How this pillar creates competence] | **能力感**（掌握、技能成长、清晰反馈） | [支柱名称] | [该支柱如何创造能力感] |
+| **Relatedness** (connection, belonging, emotional bond) | [Pillar name] | [How this pillar creates relatedness] | **关联性**（连接、归属感、情感纽带） | [支柱名称] | [该支柱如何创造关联性] |
 
 **Gap check**: If any of the three needs is not served by at least one pillar,
 consider whether the pillar set is complete. A game that satisfies all three
-SDT needs has the strongest foundation for sustained engagement.
+SDT needs has the strongest foundation for sustained engagement. / **缺口检查**: 如果三个需求中任何一项没有被至少一个支柱服务，考虑支柱集合是否完整。一款满足所有三个SDT需求的游戏拥有最强大的持续参与基础。
 
 ---
 
 <!-- 中文翻译 -->
-## Emotional Arc
+## Emotional Arc / 情感弧线
 
 [Map the intended emotional journey of a play session. This should be a
-deliberate design, not an accident.]
+deliberate design, not an accident.] / [绘制一次游戏会话的预期情感旅程。这应该是有意的设计，而不是偶然。]
 
 <!-- 中文翻译 -->
-### Session Emotional Arc
+### Session Emotional Arc / 会话情感弧线
 
-| Phase | Duration | Target Emotion | Pillar(s) Driving It | Mechanics Delivering It |
-| ---- | ---- | ---- | ---- | ---- |
-| Opening | [e.g., 0-5 min] | [e.g., Curiosity, anticipation] | [Which pillar] | [What the player does] |
-| Rising | [e.g., 5-20 min] | [e.g., Tension, focus, flow] | [Which pillar] | [What the player does] |
-| Climax | [e.g., 20-30 min] | [e.g., Triumph, relief, awe] | [Which pillar] | [What the player does] |
-| Resolution | [e.g., 30-40 min] | [e.g., Satisfaction, reflection] | [Which pillar] | [What the player does] |
-| Hook | [End of session] | [e.g., Curiosity, unfinished business] | [Which pillar] | [What makes them return] |
+| Phase | Duration | Target Emotion | Pillar(s) Driving It | Mechanics Delivering It | 阶段 | 时长 | 目标情感 | 驱动它的支柱 | 实现它的机制 |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| Opening | [e.g., 0-5 min] | [e.g., Curiosity, anticipation] | [Which pillar] | [What the player does] | 开场 | [例如0-5分钟] | [例如：好奇、期待] | [哪个支柱] | [玩家做什么] |
+| Rising | [e.g., 5-20 min] | [e.g., Tension, focus, flow] | [Which pillar] | [What the player does] | 上升 | [例如5-20分钟] | [例如：紧张、专注、心流] | [哪个支柱] | [玩家做什么] |
+| Climax | [e.g., 20-30 min] | [e.g., Triumph, relief, awe] | [Which pillar] | [What the player does] | 高潮 | [例如20-30分钟] | [例如：胜利、释然、敬畏] | [哪个支柱] | [玩家做什么] |
+| Resolution | [e.g., 30-40 min] | [e.g., Satisfaction, reflection] | [Which pillar] | [What the player does] | 收尾 | [例如30-40分钟] | [例如：满足、反思] | [哪个支柱] | [玩家做什么] |
+| Hook | [End of session] | [e.g., Curiosity, unfinished business] | [Which pillar] | [What makes them return] | 钩子 | [会话结束] | [例如：好奇、未完成之事] | [哪个支柱] | [什么让他们回来] |
 
 <!-- 中文翻译 -->
-### Long-Term Emotional Progression
+### Long-Term Emotional Progression / 长期情感进展
 
 [How does the emotional experience evolve across the full game? Early game vs
-mid game vs late game vs endgame should each feel distinct.]
+mid game vs late game vs endgame should each feel distinct.] / [情感体验在整个游戏过程中如何演变？游戏前期vs中期vs后期vs终局应该各自感觉不同。]
 
 ---
 
 <!-- 中文翻译 -->
-## Reference Games
+## Reference Games / 参考游戏
 
-| Reference | What We Take From It | What We Do Differently | Which Pillar It Validates |
-| ---- | ---- | ---- | ---- |
-| [Game 1] | [Specific mechanic, feeling, or approach] | [Our twist] | [Pillar name] |
-| [Game 2] | [What we learn] | [Our twist] | [Pillar name] |
-| [Game 3] | [What we learn] | [Our twist] | [Pillar name] |
+| Reference | What We Take From It | What We Do Differently | Which Pillar It Validates | 参考游戏 | 我们从中获取什么 | 我们有什么不同做法 | 它验证哪个支柱 |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| [Game 1] | [Specific mechanic, feeling, or approach] | [Our twist] | [Pillar name] | [游戏1] | [具体机制、感觉或方法] | [我们的特色] | [支柱名称] |
+| [Game 2] | [What we learn] | [Our twist] | [Pillar name] | [游戏2] | [我们学到什么] | [我们的特色] | [支柱名称] |
+| [Game 3] | [What we learn] | [Our twist] | [Pillar name] | [游戏3] | [我们学到什么] | [我们的特色] | [支柱名称] |
 
 **Non-game inspirations**: [Films, books, music, art, real-world experiences
-that inform the tone, world, or feel. Great games pull from outside the medium.]
+that inform the tone, world, or feel. Great games pull from outside the medium.] / **非游戏灵感**: [影响游戏基调、世界观或感觉的电影、书籍、音乐、艺术和真实世界体验。优秀的游戏从媒介外部汲取灵感。]
 
 ---
 
 <!-- 中文翻译 -->
-## Pillar Validation Checklist
+## Pillar Validation Checklist / 支柱验证清单
 
-Before finalizing the pillars, verify:
+Before finalizing the pillars, verify: / 在最终确定支柱之前，验证：
 
-- [ ] **Count**: 3-5 pillars (no more, no fewer)
-- [ ] **Falsifiable**: Each pillar makes a claim that could be wrong
-- [ ] **Constraining**: Each pillar forces saying "no" to some plausible ideas
-- [ ] **Cross-departmental**: Each pillar has implications for design, art, audio, narrative, AND engineering
-- [ ] **Design-tested**: Each pillar has a concrete design test that resolves a real decision
-- [ ] **Anti-pillars defined**: At least 3 explicit "this game is NOT" statements
-- [ ] **Priority-ranked**: Clear order for resolving conflicts between pillars
-- [ ] **MDA-aligned**: Pillars collectively deliver the top-ranked target aesthetics
-- [ ] **SDT coverage**: At least one pillar serves Autonomy, one Competence, one Relatedness
-- [ ] **Memorable**: The team can recite all pillars from memory
-- [ ] **Core fantasy served**: Every pillar traces back to the core fantasy promise
+- [ ] **Count**: 3-5 pillars (no more, no fewer) / **数量**: 3-5个支柱（不多不少）
+- [ ] **Falsifiable**: Each pillar makes a claim that could be wrong / **可证伪性**: 每个支柱都做出可能错误的声明
+- [ ] **Constraining**: Each pillar forces saying "no" to some plausible ideas / **约束性**: 每个支柱迫使对一些看似合理的想法说"不"
+- [ ] **Cross-departmental**: Each pillar has implications for design, art, audio, narrative, AND engineering / **跨部门性**: 每个支柱对设计、美术、音频、叙事和工程都有影响
+- [ ] **Design-tested**: Each pillar has a concrete design test that resolves a real decision / **设计测试**: 每个支柱都有一个解决真实决策的具体设计测试
+- [ ] **Anti-pillars defined**: At least 3 explicit "this game is NOT" statements / **反支柱已定义**: 至少3个明确的"这个游戏不是"的陈述
+- [ ] **Priority-ranked**: Clear order for resolving conflicts between pillars / **优先级排名**: 解决支柱冲突的明确顺序
+- [ ] **MDA-aligned**: Pillars collectively deliver the top-ranked target aesthetics / **MDA对齐**: 支柱共同实现排名最高的目标美学
+- [ ] **SDT coverage**: At least one pillar serves Autonomy, one Competence, one Relatedness / **SDT覆盖**: 至少一个支柱服务自主性、一个服务能力感、一个服务关联性
+- [ ] **Memorable**: The team can recite all pillars from memory / **可记忆性**: 团队能背诵所有支柱
+- [ ] **Core fantasy served**: Every pillar traces back to the core fantasy promise / **核心幻想服务**: 每个支柱都追溯到核心幻想承诺
 
 ---
 
 <!-- 后续步骤 -->
-## Next Steps
+## Next Steps / 后续步骤
 
-- [ ] Get pillar approval from creative-director
-- [ ] Distribute to all department leads for sign-off
-- [ ] Create design tests for each pillar using real upcoming decisions
-- [ ] Schedule first pillar review (after 2 weeks of development)
-- [ ] Add pillars to the game-concept document and pitch document
+- [ ] Get pillar approval from creative-director / 获得创意总监的支柱批准
+- [ ] Distribute to all department leads for sign-off / 分发给所有部门主管签署
+- [ ] Create design tests for each pillar using real upcoming decisions / 使用实际即将做出的决策为每个支柱创建设计测试
+- [ ] Schedule first pillar review (after 2 weeks of development) / 安排第一次支柱评审（开发2周后）
+- [ ] Add pillars to the game-concept document and pitch document / 将支柱添加到游戏概念文档和推介文档中
 
 ---
 
 *This document is the creative north star. It lives in `design/gdd/game-pillars.md`
 and is referenced by every design, art, audio, and narrative document in the project.
-Review quarterly or after major milestone pivots.*
+Review quarterly or after major milestone pivots.* / *本文档是创意指北星。它位于 `design/gdd/game-pillars.md`，被项目中的每一个设计、美术、音频和叙事文档引用。每季度或在重大里程碑转折后进行评审。*

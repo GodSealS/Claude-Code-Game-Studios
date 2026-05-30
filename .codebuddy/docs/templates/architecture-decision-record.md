@@ -56,34 +56,34 @@ chosen approach.] / 选择的方法。]
 ### Problem Statement
 
 [What problem are we solving? Why must this decision be made now? What is the
-cost of not deciding?]
+cost of not deciding?] / [我们要解决什么问题？为什么必须现在做出这个决定？不决定的代价是什么？]
 
 <!-- 中文翻译 -->
 ### Current State
 
-[How does the system work today? What is wrong with the current approach?]
+[How does the system work today? What is wrong with the current approach?] / [当前系统如何工作？当前方法有什么问题？]
 
 <!-- 约束 -->
 ### Constraints
 
-- [Technical constraints -- engine limitations, platform requirements]
-- [Timeline constraints -- deadline pressures, dependencies]
-- [Resource constraints -- team size, expertise available]
-- [Compatibility requirements -- must work with existing systems]
+- [Technical constraints -- engine limitations, platform requirements] / [技术约束——引擎限制、平台需求]
+- [Timeline constraints -- deadline pressures, dependencies] / [时间线约束——截止日期压力、依赖关系]
+- [Resource constraints -- team size, expertise available] / [资源约束——团队规模、可用专业知识]
+- [Compatibility requirements -- must work with existing systems] / [兼容性要求——必须与现有系统协同工作]
 
 <!-- 要求 -->
 ### Requirements
 
-- [Functional requirement 1]
-- [Functional requirement 2]
-- [Performance requirement -- specific, measurable]
-- [Scalability requirement]
+- [Functional requirement 1] / [功能需求1]
+- [Functional requirement 2] / [功能需求2]
+- [Performance requirement -- specific, measurable] / [性能需求——具体、可衡量]
+- [Scalability requirement] / [可扩展性需求]
 
 <!-- 决策 -->
 ## Decision
 
 [The specific technical decision, described in enough detail for someone to
-implement it without further clarification.]
+implement it without further clarification.] / [具体的技术决策，描述足够详细，以便其他人无需进一步澄清即可实施。]
 
 <!-- 架构 -->
 ### Architecture
@@ -104,40 +104,40 @@ creates. These become the contracts that implementers must respect.]
 <!-- 中文翻译 -->
 ### Implementation Guidelines
 
-[Specific guidance for the programmer implementing this decision.]
+[Specific guidance for the programmer implementing this decision.] / [为实施此决策的程序员提供的具体指导。]
 
 <!-- 考虑的替代方案 -->
 ## Alternatives Considered
 
-### Alternative 1: [Name]
+### Alternative 1: [Name] / [方案1: [名称]]
 
-- **Description**: [How this approach would work]
-- **Pros**: [What is good about this approach]
-- **Cons**: [What is bad about this approach]
-- **Estimated Effort**: [Relative effort compared to chosen approach]
-- **Rejection Reason**: [Why this was not chosen]
+- **Description**: [How this approach would work] / [描述：此方法将如何工作]
+- **Pros**: [What is good about this approach] / [优点：此方法的好处]
+- **Cons**: [What is bad about this approach] / [缺点：此方法的坏处]
+- **Estimated Effort**: [Relative effort compared to chosen approach] / [预估工作量：与所选方法相比的相对工作量]
+- **Rejection Reason**: [Why this was not chosen] / [拒绝原因：为何未选择此方案]
 
-### Alternative 2: [Name]
+### Alternative 2: [Name] / [方案2: [名称]]
 
-[Same structure as above]
+[Same structure as above] / [与上述结构相同]
 
 <!-- 后果 -->
 ## Consequences
 
 <!-- 中文翻译 -->
-### Positive
+### Positive / 积极影响
 
-- [Good outcomes of this decision]
-
-<!-- 中文翻译 -->
-### Negative
-
-- [Trade-offs and costs we are accepting]
+- [Good outcomes of this decision] / [此决策的好结果]
 
 <!-- 中文翻译 -->
-### Neutral
+### Negative / 消极影响
 
-- [Changes that are neither good nor bad, just different]
+- [Trade-offs and costs we are accepting] / [我们接受的权衡和成本]
+
+<!-- 中文翻译 -->
+### Neutral / 中性影响
+
+- [Changes that are neither good nor bad, just different] / [既不好也不坏，只是不同的变化]
 
 <!-- 风险 -->
 ## Risks
@@ -156,24 +156,24 @@ creates. These become the contracts that implementers must respect.]
 | Network (if applicable) | [X]KB/s | [Y]KB/s | [Z]KB/s |
 
 <!-- 迁移计划 -->
-## Migration Plan
+## Migration Plan / 迁移计划
 
-[If this changes existing systems, the step-by-step plan to migrate.]
+[If this changes existing systems, the step-by-step plan to migrate.] / [如果这改变了现有系统，分步迁移计划。]
 
-1. [Step 1 -- what changes, what breaks, how to verify]
-2. [Step 2]
-3. [Step 3]
+1. [Step 1 -- what changes, what breaks, how to verify] / [步骤1——改变什么，破坏什么，如何验证]
+2. [Step 2] / [步骤2]
+3. [Step 3] / [步骤3]
 
-**Rollback plan**: [How to revert if this decision proves wrong]
+**Rollback plan**: [How to revert if this decision proves wrong] / **回滚计划**：[如果此决策被证明是错误的，如何恢复]
 
 <!-- 验证标准 -->
-## Validation Criteria
+## Validation Criteria / 验证标准
 
-[How we will know this decision was correct after implementation.]
+[How we will know this decision was correct after implementation.] / [实施后我们如何知道此决策是正确的。]
 
-- [ ] [Measurable criterion 1]
-- [ ] [Measurable criterion 2]
-- [ ] [Performance criterion]
+- [ ] [Measurable criterion 1] / [可衡量的标准1]
+- [ ] [Measurable criterion 2] / [可衡量的标准2]
+- [ ] [Performance criterion] / [性能标准]
 
 <!-- 满足的 GDD 需求 -->
 ## GDD Requirements Addressed
@@ -191,7 +191,7 @@ creates. These become the contracts that implementers must respect.]
 > decision unlocks or constrains]"
 
 <!-- 中文翻译 -->
-## Related
+## Related / 相关
 
-- [Link to related ADRs — note if supersedes, contradicts, or depends on]
-- [Link to relevant code files once implemented]
+- [Link to related ADRs — note if supersedes, contradicts, or depends on] / [相关ADR链接——注明是否取代、矛盾或依赖]
+- [Link to relevant code files once implemented] / [实施后相关代码文件链接]

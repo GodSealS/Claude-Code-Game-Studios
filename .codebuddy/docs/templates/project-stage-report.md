@@ -40,45 +40,45 @@
   - [ ] [Missing system 2 + impact] / [缺失的系统2 + 影响]
 
 <!-- 中文翻译 -->
-### Architecture Documentation
-- **Status**: [X%] complete
-- **ADRs Found**: [N] decisions documented in `docs/architecture/`
-- **Coverage**:
-  - ✅ [Decision area 1] — documented
-  - ⚠️  [Decision area 2] — undocumented but implemented
-  - ❌ [Decision area 3] — neither documented nor decided
-- **Key Gaps**:
-  - [ ] [Missing ADR 1 + why it's needed]
-  - [ ] [Missing ADR 2 + why it's needed]
+### Architecture Documentation / 架构文档
+- **Status**: [X%] complete / **状态**：[X%] 完成
+- **ADRs Found**: [N] decisions documented in `docs/architecture/` / **找到的ADRs**：[N]个决策记录在 `docs/architecture/` 中
+- **Coverage**: / **覆盖范围**：
+  - ✅ [Decision area 1] — documented / ✅ [决策领域1] — 已记录
+  - ⚠️  [Decision area 2] — undocumented but implemented / ⚠️  [决策领域2] — 未记录但已实现
+  - ❌ [Decision area 3] — neither documented nor decided / ❌ [决策领域3] — 既未记录也未决定
+- **Key Gaps**: / **关键差距**：
+  - [ ] [Missing ADR 1 + why it's needed] / [ ] [缺失的ADR 1 + 为什么需要]
+  - [ ] [Missing ADR 2 + why it's needed] / [ ] [缺失的ADR 2 + 为什么需要]
 
 <!-- 中文翻译 -->
-### Production Management
-- **Status**: [X%] complete
-- **Found**:
-  - Sprint plans: [N] in `production/sprints/`
-  - Milestones: [N] in `production/milestones/`
-  - Roadmap: [Exists | Missing]
-- **Key Gaps**:
-  - [ ] [Missing production artifact + impact]
+### Production Management / 生产管理
+- **Status**: [X%] complete / **状态**：[X%] 完成
+- **Found**: / **找到**：
+  - Sprint plans: [N] in `production/sprints/` / 冲刺计划：[N]个在 `production/sprints/` 中
+  - Milestones: [N] in `production/milestones/` / 里程碑：[N]个在 `production/milestones/` 中
+  - Roadmap: [Exists | Missing] / 路线图：[存在|缺失]
+- **Key Gaps**: / **关键差距**：
+  - [ ] [Missing production artifact + impact] / [ ] [缺失的生产制品 + 影响]
 
 <!-- 中文翻译 -->
-### Testing
-- **Status**: [X%] coverage (estimated)
-- **Test Files**: [N] in `tests/`
-- **Coverage by System**:
-  - [System 1]: [X%] (estimated)
-  - [System 2]: [X%] (estimated)
-- **Key Gaps**:
-  - [ ] [Missing test area + risk]
+### Testing / 测试
+- **Status**: [X%] coverage (estimated) / **状态**：[X%] 覆盖率（估计）
+- **Test Files**: [N] in `tests/` / **测试文件**：[N]个在 `tests/` 中
+- **Coverage by System**: / **按系统覆盖**：
+  - [System 1]: [X%] (estimated) / [系统1]：[X%]（估计）
+  - [System 2]: [X%] (estimated) / [系统2]：[X%]（估计）
+- **Key Gaps**: / **关键差距**：
+  - [ ] [Missing test area + risk] / [ ] [缺失的测试领域 + 风险]
 
 <!-- 中文翻译 -->
-### Prototypes
-- **Active Prototypes**: [N] in `prototypes/`
-  - ✅ [Prototype 1] — documented with README
-  - ⚠️  [Prototype 2] — no README, unclear status
-- **Archived**: [N] (experiments completed)
-- **Key Gaps**:
-  - [ ] [Undocumented prototype + why it matters]
+### Prototypes / 原型
+- **Active Prototypes**: [N] in `prototypes/` / **活动原型**：[N]个在 `prototypes/` 中
+  - ✅ [Prototype 1] — documented with README / ✅ [原型1] — 有README记录
+  - ⚠️  [Prototype 2] — no README, unclear status / ⚠️  [原型2] — 无README，状态不明
+- **Archived**: [N] (experiments completed) / **已归档**：[N]个（实验已完成）
+- **Key Gaps**: / **关键差距**：
+  - [ ] [Undocumented prototype + why it matters] / [ ] [未记录的原型 + 为什么重要]
 
 ---
 

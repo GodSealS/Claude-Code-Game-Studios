@@ -22,32 +22,32 @@
 | [Date] | [What happened] | [How it affected the project] |
 
 <!-- 中文翻译 -->
-## What Went Well
+## What Went Well / 做得好的方面
 
-### [Category 1: e.g., Technical Execution]
-**What**: [Description]
-**Why it worked**: [Root cause of success]
-**How to repeat**: [What to keep doing]
+### [Category 1: e.g., Technical Execution] / [类别 1：例如，技术执行]
+**What**: [Description] / **是什么**: [描述]
+**Why it worked**: [Root cause of success] / **为什么有效**: [成功的根本原因]
+**How to repeat**: [What to keep doing] / **如何重复**: [需要继续保持的做法]
 
-### [Category 2: e.g., Team Coordination]
-**What**: [Description]
-**Why it worked**: [Root cause]
-**How to repeat**: [Action]
-
-<!-- 中文翻译 -->
-## What Went Poorly
-
-### [Category 1: e.g., Scope Management]
-**What**: [Description]
-**Root cause**: [Why this happened]
-**Impact**: [Time/quality/morale cost]
-**Prevention**: [How to avoid next time]
-
-### [Category 2]
-[Same structure]
+### [Category 2: e.g., Team Coordination] / [类别 2：例如，团队协调]
+**What**: [Description] / **是什么**: [描述]
+**Why it worked**: [Root cause] / **为什么有效**: [根本原因]
+**How to repeat**: [Action] / **如何重复**: [行动]
 
 <!-- 中文翻译 -->
-## Key Metrics
+## What Went Poorly / 做得不好的方面
+
+### [Category 1: e.g., Scope Management] / [类别 1：例如，范围管理]
+**What**: [Description] / **是什么**: [描述]
+**Root cause**: [Why this happened] / **根本原因**: [为什么会发生]
+**Impact**: [Time/quality/morale cost] / **影响**: [时间/质量/士气成本]
+**Prevention**: [How to avoid next time] / **预防**: [下次如何避免]
+
+### [Category 2] / [类别 2]
+[Same structure] / [相同结构]
+
+<!-- 中文翻译 -->
+## Key Metrics / 关键指标
 
 | Metric | Target | Actual | Notes |
 | ------ | ------ | ------ | ----- |
@@ -58,18 +58,18 @@
 | Scope changes | 0 | [N] | |
 
 <!-- 中文翻译 -->
-## Lessons Learned
+## Lessons Learned / 经验教训
 
-1. **[Lesson]**: [Explanation and how it changes future work]
-2. **[Lesson]**: [Explanation]
+1. **[Lesson]**: [Explanation and how it changes future work] / **[教训]**: [解释及如何改变未来工作]
+2. **[Lesson]**: [Explanation] / **[教训]**: [解释]
 
 <!-- 行动项 -->
-## Action Items
+## Action Items / 行动项
 
 | # | Action | Owner | Deadline | Status |
 | - | ------ | ----- | -------- | ------ |
 | 1 | [Action] | [Who] | [When] | [Open/Done] |
 
 <!-- 中文翻译 -->
-## Acknowledgments
-[Call out exceptional contributions]
+## Acknowledgments / 致谢
+[Call out exceptional contributions] / [表彰杰出贡献]

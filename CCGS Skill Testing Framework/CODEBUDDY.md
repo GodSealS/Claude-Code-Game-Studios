@@ -92,5 +92,6 @@ Nothing in `.codebuddy/` imports from here. Deleting this folder has no effect o
 CCGS skills or agents themselves. `/skill-test` and `/skill-improve` will report that
 `catalog.yaml` is missing and guide the user to initialize it.
 
+## 此文件夹可删除 / This folder is deletable
 
 <!-- 中文翻译标记 / Chinese translation marker -->

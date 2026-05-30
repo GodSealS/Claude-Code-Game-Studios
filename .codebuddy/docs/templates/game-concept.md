@@ -34,7 +34,7 @@
 ---
 
 <!-- 核心幻想 -->
-## Core Fantasy
+## Core Fantasy / 核心幻想
 
 [What power, experience, or feeling does the player get from this game?
 What can they do here that they can't do anywhere else?
@@ -47,7 +47,15 @@ Examples of strong core fantasies:
 - "You are a lone survivor building a new life in a hostile wilderness" (survival)
 - "You command a civilization across millennia" (strategy)
 - "You explore a vast, beautiful world at your own pace" (open world)
-- "You master intricate combat and overcome impossible odds" (soulslike)]
+- "You master intricate combat and overcome impossible odds" (soulslike)] / [玩家从这款游戏中获得什么力量、体验或感觉？他们能在这里做什么其他游戏做不到的事情？
+
+核心幻想是情感承诺。它不是功能列表——而是回答"为什么有人会选择这款游戏而不是其他他们能做的任何事情？"
+
+强大核心幻想示例：
+- "你是在敌对荒野中建立新生活的孤独幸存者"（生存）
+- "你跨越千年指挥一个文明"（策略）
+- "你按照自己的节奏探索广阔美丽的世界"（开放世界）
+- "你掌握复杂的战斗并克服不可能的困难"（类魂）]
 
 ---
 

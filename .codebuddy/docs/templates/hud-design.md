@@ -1,25 +1,25 @@
 # HUD Design: [Game Name] / HUD 设计：[游戏名称]
 
-> **Status**: Draft | In Review | Approved | Implemented
-> **Author**: [Name or agent — e.g., ui-designer]
-> **Last Updated**: [Date]
-> **Game**: [Game name — this is a single document per game, not per element]
-> **Platform Targets**: [All platforms this HUD must work on — e.g., PC, PS5, Xbox Series X, Steam Deck]
-> **Related GDDs**: [Every system that exposes information through the HUD — e.g., `design/gdd/combat.md`, `design/gdd/progression.md`, `design/gdd/quests.md`]
-> **Accessibility Tier**: Basic | Standard | Comprehensive | Exemplary
-> **Style Reference**: [Link to art bible HUD section if it exists — e.g., `design/gdd/art-bible.md § HUD Visual Language`]
+> **Status**: Draft | In Review | Approved | Implemented / **状态**: 草案 | 评审中 | 已批准 | 已实现
+> **Author**: [Name or agent — e.g., ui-designer] / **作者**: [姓名或代理 — 例如：ui-designer]
+> **Last Updated**: [Date] / **最后更新**: [日期]
+> **Game**: [Game name — this is a single document per game, not per element] / **游戏**: [游戏名称 — 这是每个游戏一份文档，而不是每个元素一份]
+> **Platform Targets**: [All platforms this HUD must work on — e.g., PC, PS5, Xbox Series X, Steam Deck] / **目标平台**: [所有HUD必须在此工作的平台 — 例如：PC、PS5、Xbox Series X、Steam Deck]
+> **Related GDDs**: [Every system that exposes information through the HUD — e.g., `design/gdd/combat.md`, `design/gdd/progression.md`, `design/gdd/quests.md`] / **相关GDD**: [每个通过HUD暴露信息的系统 — 例如：`design/gdd/combat.md`、`design/gdd/progression.md`、`design/gdd/quests.md`]
+> **Accessibility Tier**: Basic | Standard | Comprehensive | Exemplary / **无障碍层级**: 基础 | 标准 | 全面 | 典范
+> **Style Reference**: [Link to art bible HUD section if it exists — e.g., `design/gdd/art-bible.md § HUD Visual Language`] / **风格参考**: [美术圣经HUD章节的链接(如果存在) — 例如：`design/gdd/art-bible.md § HUD视觉语言`]
 
 > **Note — Scope boundary**: This document specifies all elements that overlay the
 > game world during active gameplay — health bars, ammo counters, minimaps, quest
 > trackers, subtitles, damage numbers, and notification toasts. For menu screens,
 > pause menus, inventory, and dialogs that the player navigates explicitly, use
 > `ux-spec.md` instead. The test: if it appears while the player is directly
-> controlling their character, it belongs here.
+> controlling their character, it belongs here. / **注意 — 范围边界**: 本文档指定了在活跃游戏玩法期间覆盖游戏世界的所有元素——血条、弹药计数、小地图、任务追踪器、字幕、伤害数字和通知提示。对于玩家明确导航的菜单屏幕、暂停菜单、背包和对话框，请使用 `ux-spec.md`。测试方法：如果它在玩家直接控制角色时出现，它就属于这里。
 
 ---
 
 <!-- 中文翻译 -->
-## 1. HUD Philosophy
+## 1. HUD Philosophy / 1. HUD设计哲学
 
 > **Why this section exists**: The HUD design philosophy is not decoration — it is a
 > design constraint that every subsequent decision is measured against. Without a
@@ -27,47 +27,42 @@
 > bigger icon") without any principled way to push back. With a philosophy, there is
 > a shared, explicit standard. More importantly, the philosophy prevents the HUD from
 > slowly growing to cover the game world while each individual addition seemed
-> reasonable in isolation. Write this before specifying any elements.
+> reasonable in isolation. Write this before specifying any elements. / **为什么存在此章节**: HUD设计哲学不是装饰——它是每个后续决策都要参照的设计约束。没有哲学，各个元素会被应请求添加（"任务追踪器想要更大的图标"），而没有任何原则性的方式拒绝。有了哲学，就有了共享的、明确的标准。更重要的是，哲学防止HUD慢慢增长到覆盖整个游戏世界，而每一次单独添加在孤立看时似乎都合情合理。在指定任何元素之前先写这个。
 
-**What is this game's relationship with on-screen information?**
+**What is this game's relationship with on-screen information?** / **这个游戏与屏幕信息的关系是什么？**
 
 [One paragraph. This is a design statement, not a description of features. Consider
-the game's genre, pacing, and player fantasy. A stealth game's HUD philosophy might
-be: "The world is the interface. If the player has to look away from the environment
-to survive, the HUD has failed." A tactics game might say: "Complete situational
-awareness is the game. The HUD is not an overlay — it is the battlefield."
+the game's genre, pacing, and player fantasy. / [一段话。这是设计陈述，而非功能描述。考虑游戏的类型、节奏和玩家幻想。
 
-Reference comparable games if helpful, but describe your specific stance:
+Reference comparable games if helpful, but describe your specific stance: / 如有帮助可参考类似游戏，但描述你具体的立场：
 Example — diegetic-first action RPG: "We treat screen information as a concession,
 not a feature. Every HUD element must earn its pixel space by answering the question:
 would the player make demonstrably worse decisions without this information visible?
-If the answer is 'they'd adapt,' we put it in the environment instead."]
+If the answer is 'they'd adapt,' we put it in the environment instead." / 示例——内叙优先动作RPG："我们将屏幕信息视为一种让步，而非功能。每个HUD元素必须通过回答问题来赢得其像素空间：没有这些信息可见，玩家是否会做出明显更差的决策？如果答案是'他们会适应'，我们就把信息放在环境中。"]
 
-**Visibility principle** — when in doubt, show or hide?
+**Visibility principle** — when in doubt, show or hide? / **可见性原则** — 有疑问时，显示还是隐藏？
 
 [State the default resolution for ambiguous cases. Options:
 - Default to HIDE: information is available on demand (e.g., Dark Souls — no quest tracker, no minimap, stats are in a menu)
 - Default to SHOW: players prefer to be informed; cluttered is better than uncertain
 - Default to CONTEXTUAL: information appears when it becomes relevant and fades when it does not
-Most games benefit from contextual defaults. State your game's default clearly so every element decision is consistent.]
+Most games benefit from contextual defaults. State your game's default clearly so every element decision is consistent.] / [陈述模糊情况下的默认解决方案。选项：
+- 默认隐藏：信息按需提供（例如：黑暗之魂——没有任务追踪、没有小地图、数据在菜单中）
+- 默认显示：玩家偏好掌握信息；杂乱总比不确定好
+- 默认上下文：信息在相关时出现，不相关时淡出
+大多数游戏受益于上下文默认。清晰地陈述游戏的默认值，使每个元素的决策都保持一致。]
 
-**The Rule of Necessity for this game**:
+**The Rule of Necessity for this game**: / **必要性规则**:
 
-[Complete this sentence: "A HUD element earns its place when ______________."
-
-Example: "...the player would have to stop playing to find the same information
-elsewhere, or would make meaningfully worse decisions without it."
-
-Example: "...removing it in playtesting causes measurable frustration or confusion
-in more than 25% of testers within the first hour of play."
+[Complete this sentence: "A HUD element earns its place when ______________." / [完成这句话："一个HUD元素赢得其位置，当______________。"
 
 This rule is the veto power over feature requests to add HUD elements. Document it
-so it can be cited in design reviews.]
+so it can be cited in design reviews.] / 这条规则是添加HUD元素的功能请求的否决权。记录下来，以便可以在设计评审中引用。]
 
 ---
 
 <!-- 中文翻译 -->
-## 2. Information Architecture
+## 2. Information Architecture / 2. 信息架构
 
 > **Why this section exists**: Before specifying any HUD element's visual design,
 > position, or behavior, you must answer a more fundamental question: should this
@@ -75,7 +70,7 @@ so it can be cited in design reviews.]
 > you to categorize EVERY piece of information the game world generates and make an
 > explicit, intentional decision about how each is presented. "We'll figure that out
 > later" is how games end up with 18 elements competing for the player's peripheral
-> vision. This table is the master inventory of game information, not just HUD information.
+> vision. This table is the master inventory of game information, not just HUD information. / **为什么存在此章节**: 在指定HUD元素之前，你必须回答一个更根本的问题：这些信息应该出现在HUD上吗？本章节是一个强制功能——要求你对游戏世界产生的每一份信息进行分类，并对每份信息的呈现方式做出明确、有意的决定。
 
 | Information Type | Always Show | Contextual (show when relevant) | On Demand (menu/button) | Hidden (environmental / diegetic) | Reasoning |
 |-----------------|-------------|--------------------------------|------------------------|----------------------------------|-----------|
@@ -97,14 +92,14 @@ so it can be cited in design reviews.]
 ---
 
 <!-- 中文翻译 -->
-## 3. Layout Zones
+## 3. Layout Zones / 3. 布局区域
 
 > **Why this section exists**: The game world is the primary content — the HUD is a
 > frame around it. Before placing any element, divide the screen into named zones
 > with explicit positions and safe zone margins. This section prevents two failure
 > modes: (1) elements placed ad-hoc until the screen is cluttered, and (2) elements
 > that overlap platform-required safe zones and get rejected in certification.
-> Every element in Section 4 must be assigned to a zone defined here.
+> Every element in Section 4 must be assigned to a zone defined here. / **为什么存在此章节**: 游戏世界是主要内容——HUD是它的框架。在放置任何元素之前，将屏幕划分为带有明确位置和安全区边距的命名区域。本章节防止两种失败模式：(1) 临时放置元素直到屏幕杂乱，以及(2) 元素重叠平台要求的安全区而被认证拒绝。
 
 <!-- 中文翻译 -->
 ### 3.1 Zone Diagram
@@ -166,13 +161,13 @@ so it can be cited in design reviews.]
 ---
 
 <!-- 中文翻译 -->
-## 4. HUD Element Specifications
+## 4. HUD Element Specifications / 4. HUD元素规格
 
 > **Why this section exists**: Each HUD element needs its own specification to be
 > built correctly. Ad-hoc implementation of HUD elements produces inconsistent
 > sizing, mismatched update frequencies, missing urgency states, and accessibility
 > failures. This section is the implementation brief for every element — fill it
-> completely before any element moves into development.
+> completely before any element moves into development. / **为什么存在此章节**: 每个HUD元素需要自己的规格才能正确构建。临时实现HUD元素会产生不一致的尺寸、不匹配的更新频率、缺失的紧急状态和无障碍失败。本章节是每个元素的实现摘要——在元素进入开发之前完整填写。
 
 <!-- 中文翻译 -->
 ### 4.1 Element Overview Table
@@ -233,14 +228,13 @@ so it can be cited in design reviews.]
 ---
 
 <!-- 中文翻译 -->
-## 5. HUD States by Gameplay Context
+## 5. HUD States by Gameplay Context / 5. 按游戏上下文划分的HUD状态
 
 > **Why this section exists**: The HUD is not a static overlay — it is a dynamic
 > system that must adapt to what the player is doing. A HUD designed only for
 > standard gameplay will look wrong in cutscenes, feel cluttered in exploration,
 > and occlude critical information in boss fights. This section defines the
-> transformations the HUD undergoes in each gameplay context. It is also the spec
-> for the system that manages HUD visibility — the HUD state machine.
+> transformations the HUD undergoes in each gameplay context. / **为什么存在此章节**: HUD不是静态叠加层——它是一个必须适应玩家正在做什么的动态系统。仅针对标准游戏玩法设计的HUD在过场动画中会看起来不对，在探索中会感觉杂乱，在Boss战中会遮挡关键信息。本章节定义HUD在每个游戏玩法上下文中经历的变化。
 
 | Context | Elements Shown | Elements Hidden | Elements Modified | Transition Into This State |
 |---------|---------------|-----------------|------------------|---------------------------|
@@ -257,119 +251,83 @@ so it can be cited in design reviews.]
 ---
 
 <!-- 中文翻译 -->
-## 6. Information Hierarchy
+## 6. Information Hierarchy / 6. 信息层级
 
 > **Why this section exists**: Not all HUD information is equally important. When
 > screen space is limited, when the player is under high stress, or when elements
 > compete for the same zone, there must be a principled priority order that governs
-> which elements survive and which get suppressed. This section formalizes that
-> hierarchy so it can be enforced systematically and not just "feels obvious" decisions
-> made at implementation time.
+> which elements survive and which get suppressed. / **为什么存在此章节**: 并非所有HUD信息都同等重要。当屏幕空间有限、玩家处于高压状态或元素竞争同一区域时，必须有一个原则性的优先级顺序来决定哪些元素保留、哪些被压制。
 
 | Element | Priority Tier | Reasoning | What Replaces It If Hidden |
 |---------|--------------|-----------|---------------------------|
-| [Subtitles] | [MUST KEEP — never hide during dialogue] | [Accessibility requirement. Legal requirement in some markets. Story clarity.] | [N/A — nothing replaces subtitles] |
-| [Health Bar] | [MUST KEEP — during any state where the player can be damaged] | [Without health visibility, survival decisions become impossible] | [Auditory cues (heartbeat, breathing) supplement but do not replace] |
-| [Crosshair] | [MUST KEEP — while aiming with a ranged weapon] | [Targeting without a crosshair is a precision failure, not a difficulty feature] | [Alternative: dot-only mode for minimalists; never fully hidden while aiming] |
-| [Interaction Prompt] | [MUST KEEP — when player is in interaction range] | [Without it, interactive objects are invisible to the player] | [Environmental visual cues can supplement but interaction affordance must be explicit] |
-| [Ammo Counter] | [SHOULD KEEP] | [Low ammo decisions (switch weapon, reload) require awareness; can be contextual] | [Auditory "click" on empty chamber is acceptable fallback for experienced players] |
-| [Minimap] | [SHOULD KEEP] | [Navigation requires spatial awareness; loss forces repeated map opens] | [Compass strip (simplified directional indicator) is acceptable fallback] |
-| [Status Effects] | [SHOULD KEEP — while active] | [Active debuffs change what actions are viable; invisible debuffs feel unfair] | [Character animation states can partially communicate status effects (limping, sparks)] |
-| [Quest Objective] | [CAN HIDE] | [Player can hold objective in memory for extended periods; contextual is correct default] | [Player remembers objective from context] |
-| [Damage Numbers] | [CAN HIDE] | [Feedback element, not decision-critical. Many players turn these off.] | [Hit sounds and enemy reactions communicate hit registration] |
-| [Notification Toasts] | [CAN HIDE in high-intensity moments] | [Mid-combat "You gained 50 XP" is noise, not signal. Queue and show after combat.] | [Queue held and released when combat ends] |
-| [Combo Counter] | [ALWAYS HIDE when combo resets or player is not attacking] | [Stale combo information is actively misleading] | [N/A — simply hidden] |
+| [Subtitles] | [MUST KEEP — never hide during dialogue / 必须保留] | [Accessibility requirement / 无障碍要求] | [N/A] |
+| [Health Bar] | [MUST KEEP — while player can be damaged / 必须保留—可受伤时] | [Without health visibility, survival decisions impossible / 无血量可见则生存决策不可能] | [Auditory cues / 听觉提示] |
+| [Crosshair] | [MUST KEEP — while aiming / 必须保留—瞄准时] | [Precision requirement / 精确度需求] | [Dot-only mode / 仅点模式] |
+| [Interaction Prompt] | [MUST KEEP — in interaction range / 必须保留—交互范围内] | [Interactive objects invisible without it / 交互对象不可见] | [Environmental cues / 环境提示] |
+| [Ammo Counter] | [SHOULD KEEP / 应当保留] | [Low ammo decisions require awareness / 低弹药决策需要感知] | [Auditory "click" / 听觉"咔哒"声] |
+| [Minimap] | [SHOULD KEEP / 应当保留] | [Navigation needs spatial awareness / 导航需要空间感知] | [Compass strip / 指南针条] |
+| [Status Effects] | [SHOULD KEEP — while active / 应当保留—激活时] | [Invisible debuffs feel unfair / 不可见减益感觉不公平] | [Character anim / 角色动画] |
+| [Quest Objective] | [CAN HIDE / 可隐藏] | [Player remembers / 玩家记得] | [Context / 上下文] |
+| [Damage Numbers] | [CAN HIDE / 可隐藏] | [Feedback, not decision-critical / 反馈，非关键决策] | [Hit sounds / 打击声] |
+| [Notification Toasts] | [CAN HIDE in combat / 战斗中可隐藏] | [Noise in combat / 战斗中的噪音] | [Queue post-combat / 战斗后队列] |
+| [Combo Counter] | [HIDE when inactive / 不活跃时隐藏] | [Stale info misleading / 过时信息误导] | [N/A] |
 
 ---
 
 <!-- 中文翻译 -->
-## 7. Visual Budget
+## 7. Visual Budget / 7. 视觉预算
 
 > **Why this section exists**: Without explicit budget constraints, HUD elements
 > accumulate until the game world is nearly invisible. These numbers are hard limits,
-> not guidelines. Every element addition that would breach a limit requires explicit
-> approval and must displace or reduce an existing element.
+> not guidelines. / **为什么存在此章节**: 没有明确的预算约束，HUD元素会积累到游戏世界几乎不可见的程度。这些数字是硬性限制，不是指导方针。
 
-| Budget Constraint | Limit | Measurement Method | Current Estimate | Status |
-|------------------|-------|--------------------|-----------------|--------|
-| Maximum simultaneous active HUD elements | [8] | [Count all visible, non-faded elements at any one frame] | [TBD — verify at implementation] | [To verify] |
-| Maximum % of screen occupied by HUD (exploration mode) | [12%] | [Pixel area of all HUD elements / total screen pixels] | [TBD] | [To verify] |
-| Maximum % of screen occupied by HUD (combat mode) | [22%] | [Same method — combat adds ammo, crosshair, enemy bars] | [TBD] | [To verify] |
-| Maximum % of center screen zone (40% of screen W/H) occupied | [5%] | [Only crosshair and interaction prompt allowed here] | [TBD] | [To verify] |
-| Minimum contrast ratio — HUD text on any background | [4.5:1 (WCAG AA)] | [Measured against the darkest and lightest game world areas the element will appear over] | [TBD] | [To verify] |
-| Maximum opacity for HUD background panels | [65%] | [Opacity of any panel behind HUD text — must preserve world visibility through panel] | [TBD] | [To verify] |
-| Minimum HUD element size at minimum supported resolution | [40px for icons, 18px for text] | [Measure at lowest target resolution] | [TBD] | [To verify] |
+| Budget Constraint | Limit | 预算约束 | 限制 |
+|------------------|-------|------|------|
+| Max simultaneous HUD elements | [8] | 最大同时HUD元素 | [8] |
+| Max % screen HUD (exploration) | [12%] | 最大屏幕HUD占比（探索） | [12%] |
+| Max % screen HUD (combat) | [22%] | 最大屏幕HUD占比（战斗） | [22%] |
+| Max % center screen zone | [5%] | 最大中心屏幕区域占比 | [5%] |
+| Min contrast ratio | [4.5:1 (WCAG AA)] | 最小对比度 | [4.5:1] |
+| Max HUD panel opacity | [65%] | 最大HUD面板不透明度 | [65%] |
+| Min element size | [40px icons, 18px text] | 最小元素尺寸 | [40px图标, 18px文本] |
 
-> **How to apply these budgets**: For every new HUD element proposed during
-> production, require the proposer to state (1) which budget line it affects,
-> (2) what the new total will be, and (3) what existing element will be reduced or
-> made contextual to stay within budget. "It's a small icon" is not an analysis.
+> **How to apply these budgets**: For every new HUD element, state (1) which budget it affects, (2) the new total, and (3) what gets reduced. "It's a small icon" is not an analysis. / **如何应用这些预算**: 每新增一个HUD元素，说明(1)影响哪个预算项，(2)新的总计，(3)什么会被缩减。"这只是一个小图标"不是分析。
 
 ---
 
 <!-- 中文翻译 -->
-## 8. Feedback & Notification Systems
+## 8. Feedback & Notification Systems / 8. 反馈与通知系统
 
 > **Why this section exists**: Notifications are the most frequently-added and
-> worst-controlled part of most HUDs. Every system wants to tell the player
-> something. Without explicit rules about notification priority, stacking limits,
-> and queue behavior, the notification zone becomes a firehose of overlapping
-> toasts that players learn to ignore entirely. This section establishes the
-> notification contract for all systems.
+> worst-controlled part of most HUDs. Without explicit rules about notification
+> priority, stacking limits, and queue behavior, the notification zone becomes a
+> firehose of overlapping toasts that players learn to ignore entirely. / **为什么存在此章节**: 通知是大多数HUD中添加最频繁、控制最差的部​分。没有关于通知优先级、叠加限制和队列行为的明确规则，通知区域就变成玩家学会完全忽略的重叠提示洪流。
 
-| Notification Type | Trigger System | Screen Position | Duration (ms) | Animation In / Out | Max Simultaneous | Priority | Queue Behavior | Dismissible? |
-|------------------|---------------|-----------------|--------------|-------------------|-----------------|----------|---------------|-------------|
-| [Item Pickup] | [InventorySystem] | [Bottom Right — toast] | [2000] | [Slide in from right 200ms / fade out 300ms] | [3 stacked] | [Low] | [FIFO queue; older toasts pushed up as new ones enter] | [No — auto-dismiss] |
-| [XP Gain] | [ProgressionSystem] | [Bottom Right — toast, below item toasts] | [1500] | [Fade in 150ms / fade out 300ms] | [1 — XP messages merge: "XP +150"] | [Very Low — suppress during combat, queue for post-combat] | [Combat-aware queue] | [No] |
-| [Level Up] | [ProgressionSystem] | [Center screen — persistent until dismissed] | [Persistent — requires input to dismiss] | [Scale up from 80% + fade in 400ms] | [1] | [High — interrupts normal toasts] | [Pauses all other notifications until dismissed] | [Yes — any input] |
-| [Quest Update] | [QuestSystem] | [Top Center] | [4000] | [Slide down from top 250ms / fade out 400ms] | [1 — top center is single-message zone] | [Medium] | [If quest update arrives while previous is visible, extend duration by 2000ms; do not stack] | [No] |
-| [Objective Complete] | [QuestSystem] | [Top Center] | [3000] | [Same as Quest Update but with additional completion sound] | [1] | [Medium-High — preempts Quest Update] | [Preempts any queued top-center message] | [No] |
-| [Critical Warning (low health, hazard)] | [CombatSystem / EnvironmentSystem] | [Screen edge vignette + text at center-bottom] | [Persistent while condition active] | [Fade in 200ms; fades out 500ms when condition clears] | [1 per warning type] | [Critical — never suppressed] | [Renders immediately, bypasses all queues] | [No] |
-| [Achievement Unlocked] | [AchievementSystem] | [Bottom Right — distinct from item toasts] | [4000] | [Slide in from right with icon expansion 300ms / fade out 400ms] | [1] | [Low] | [Queues behind item toasts; never more than one achievement toast at a time] | [No] |
-| [Hint / Tutorial] | [TutorialSystem] | [Bottom Center] | [Persistent — until player performs the action or dismisses] | [Fade in 300ms] | [1] | [Medium] | [Only one tutorial hint at a time; queue others] | [Yes — B button / Esc] |
-
-**Notification queue rules**:
-1. Combat-aware queue: notifications tagged as Low priority are queued, not displayed, when the player is in combat state. The queue is flushed in a batch when the player exits combat, with a max of 3 items displayed in sequence.
-2. Merge rule: identical notification types that fire within 500ms of each other are merged into a single notification with a combined value (e.g., "Item Pickup x3" rather than three separate toasts).
-3. Critical notifications (health warning, environmental hazard) are never queued, never merged, and always displayed immediately regardless of combat state or existing notifications.
+**Notification queue rules**: / **通知队列规则**：
+1. Combat-aware queue: Low priority notifications are queued during combat, then flushed post-combat with max 3 items. / 战斗感知队列：低优先级通知在战斗中排队，战后释放最多3条。
+2. Merge rule: identical notifications within 500ms merge into one ("Item Pickup x3"). / 合并规则：500ms内的相同通知合并为一条。
+3. Critical notifications (health warning, hazard) are never queued or merged. / 关键通知（血量警告、危险）永不排队或合并。
 
 ---
 
 <!-- 中文翻译 -->
-## 9. Platform Adaptation
+## 9. Platform Adaptation / 9. 平台适配
 
 > **Why this section exists**: A HUD designed at 1920x1080 on a monitor may be
 > illegible on a 55-inch TV at 4K, broken at 1280x720 on Steam Deck, or hidden
-> behind a notch on mobile. Platform adaptation is not optional post-ship work —
-> it is a design requirement that must be specified before implementation so the
-> architecture can support it from the start. Every platform listed here requires
-> explicit layout testing before certification.
+> behind a notch on mobile. Platform adaptation is not optional post-ship work. / **为什么存在此章节**: 在1920x1080显示器上设计的HUD可能在4K 55英寸电视上看不清，在Steam Deck 1280x720上破碎，或在移动端被刘海遮挡。平台适配不是可选的发布后工作。
 
-| Platform | Safe Zone | Resolution Range | Input Method | HUD-Specific Notes |
-|----------|-----------|-----------------|-------------|-------------------|
-| [PC — Windows, 1920x1080 reference] | [3% margin] | [1280x720 min to 3840x2160 max] | [Mouse + keyboard, controller optional] | [HUD must scale correctly at all resolutions. Test at 1280x720 — minimum before cert. Consider ultrawide (21:9) — minimap must not stretch.] |
-| [PC — Steam Deck, 1280x800] | [5% margin] | [Fixed 1280x800] | [Controller + touchscreen] | [Smaller screen means minimum text sizes are critical. Test ALL elements at this resolution. Touch targets irrelevant (controller-only by default).] |
-| [PlayStation 5 / Xbox Series X] | [10% margin] | [1080p to 4K] | [Controller] | [Console certification requires TV safe zone compliance. Action-safe is 90% of screen area. Test on a real TV, not a monitor — overscan behavior differs.] |
-| [Mobile — iOS / Android] | [15% top, 10% other sides] | [360x640 min to 414x896 common] | [Touch] | [Notch/camera cutout avoidance at top. Bottom home indicator zone avoidance. Portrait and landscape layouts may differ significantly — specify both.] |
-
-**HUD repositionability requirement**: Players must be able to reposition at minimum the following elements using an in-game HUD layout editor (required for accessibility compliance on console):
-- Health bar
-- Minimap
-- Ability bar (if present)
-
-Repositioning saves to player profile, not to a single slot. Applies across play sessions.
+**HUD repositionability requirement**: Players must be able to reposition Health bar, Minimap, and Ability bar using an in-game HUD layout editor. / **HUD可重定位要求**: 玩家必须能使用游戏内HUD布局编辑器重定位血条、小地图和技能栏。
 
 ---
 
 <!-- 中文翻译 -->
-## 10. Accessibility — HUD Specific
+## 10. Accessibility — HUD Specific / 10. 无障碍 — HUD专项
 
 > **Why this section exists**: HUD accessibility failures are the most visible
-> accessibility failures in games — players encounter the HUD in every session,
-> in every gameplay moment. Color-blind failures, illegible text at minimum scale,
-> and inability to disable distracting animations are among the top accessibility
-> complaints in game reviews. This section defines HUD-specific requirements; refer
-> to the project's `docs/accessibility-requirements.md` for the full project standard.
+> accessibility failures in games. Color-blind failures, illegible text at minimum
+> scale, and inability to disable distracting animations are among the top
+> accessibility complaints in game reviews. / **为什么存在此章节**: HUD无障碍失败是游戏中最显眼的无障碍失败。色盲失败、最小比例下文字不可读、无法禁用令人分心的动画是游戏评测中最常见的无障碍投诉。
 
 <!-- 中文翻译 -->
 ### 10.1 Colorblind Modes
@@ -446,13 +404,12 @@ The following player-adjustable settings must be available from the Accessibilit
 ---
 
 <!-- 中文翻译 -->
-## 11. Tuning Knobs
+## 11. Tuning Knobs / 11. 调优参数
 
 > **Why this section exists**: HUD behavior should be data-driven to the same degree
 > as gameplay systems. Values that are hardcoded are values that require an engineer
 > to change. Values that are in config can be tuned by a designer or adjusted for
-> player preferences. Document all tunable parameters before implementation so the
-> programmer knows which values to externalize.
+> player preferences. / **为什么存在此章节**: HUD行为应该和游戏玩法系统一样是数据驱动的。硬编码值需要工程师来更改，配置值可由设计师调优或根据玩家偏好调整。
 
 | Parameter | Current Value | Range | Effect of Increase | Effect of Decrease | Player Adjustable? | Notes |
 |-----------|-------------|-------|-------------------|-------------------|-------------------|-------|
@@ -469,59 +426,47 @@ The following player-adjustable settings must be available from the Accessibilit
 ---
 
 <!-- 中文翻译 -->
-## 12. Acceptance Criteria
+## 12. Acceptance Criteria / 12. 验收标准
 
 > **Why this section exists**: These criteria are the certification checklist for the
-> HUD. Every item must pass before the HUD can be marked Approved. QA must be able
-> to verify each item independently.
+> HUD. Every item must pass before the HUD can be marked Approved. / **为什么存在此章节**: 这些标准是HUD的认证清单。每一项必须通过后HUD才能被标记为已批准。QA必须能独立验证每一项。
 
-**Layout & Visibility**
-- [ ] All HUD elements are within platform safe zone margins on all target platforms
-- [ ] No two HUD elements overlap in any documented gameplay context
-- [ ] HUD occupies less than [12]% of screen area in exploration context (measure at reference resolution)
-- [ ] HUD occupies less than [22]% of screen area in combat context
-- [ ] No HUD element occupies the center [40]% of screen during exploration (crosshair excepted during combat)
-- [ ] All HUD elements are visible and legible at minimum supported resolution on all platforms
+**Layout & Visibility** / **布局与可见性**
+- [ ] All HUD elements are within platform safe zone margins on all target platforms / 所有HUD元素在所有目标平台上都处于安全区边距内
+- [ ] No two HUD elements overlap in any documented gameplay context / 任何记录的玩法场景中都没有HUD元素重叠
+- [ ] HUD occupies less than [12]% of screen area in exploration context / HUD在探索场景中占用少于[12]%的屏幕区域
+- [ ] HUD occupies less than [22]% of screen area in combat context / HUD在战斗场景中占用少于[22]%的屏幕区域
+- [ ] All HUD elements are visible and legible at minimum supported resolution / 所有HUD元素在最低支持分辨率下可见且可读
 
-**Per-Context Correctness**
-- [ ] HUD correctly shows only specified elements in every context defined in Section 5
-- [ ] Context transitions (combat enter/exit, dialogue, cinematic) show correct elements within transition timing spec
-- [ ] Boss health bar appears correctly on boss encounter trigger and disappears after boss defeat
-- [ ] Death state correctly hides all gameplay HUD elements
+**Accessibility** / **无障碍**
+- [ ] All HUD text meets 4.5:1 contrast ratio / 所有HUD文本达到4.5:1对比度
+- [ ] No HUD element uses color as the ONLY differentiator / 没有HUD元素仅使用颜色作为区分
+- [ ] Subtitles appear for all voiced lines when enabled / 字幕在所有语音内容上启用时正确显示
+- [ ] Reduced Motion setting disables all specified animations / 减少动画设置禁用所有指定的动画
+- [ ] Text Scale 150% does not cause overflow or overlap / 文本缩放150%不导致溢出或重叠
 
-**Accessibility**
-- [ ] All HUD text elements meet 4.5:1 contrast ratio against all backgrounds they appear over (test light AND dark scenes)
-- [ ] No HUD element uses color as the ONLY differentiator (verify: remove color from each element and confirm information is still communicated)
-- [ ] Subtitles appear for all voiced lines and ambient dialogue when subtitle setting is enabled
-- [ ] Subtitle text never disappears while audio is still playing
-- [ ] Reduced Motion setting disables all HUD animations listed in Section 10.3
-- [ ] Text Scale 150% does not cause any HUD text to overflow its container or overlap another element
-- [ ] All player-adjustable HUD settings in Section 10.5 are functional and persist between sessions
+**Notifications** / **通知**
+- [ ] Same-type notifications within 500ms merge / 500ms内同类型通知合并
+- [ ] Low-priority notifications queued during combat / 低优先级通知在战斗中排队
+- [ ] Critical warnings appear immediately / 关键警告立即出现
+- [ ] Max [3] notification toasts visible simultaneously / 最多[3]条通知提示同时可见
 
-**Notifications**
-- [ ] Notifications of the same type that fire within 500ms merge into a single notification
-- [ ] Low-priority notifications are queued (not displayed) during combat and released post-combat
-- [ ] Critical warnings (low health, hazard) appear immediately regardless of queue state or combat state
-- [ ] No more than [3] notification toasts are visible simultaneously
-- [ ] Notification queue is cleared correctly on level transition (no stale notifications from previous area)
-
-**Platform**
-- [ ] All elements respect 10% safe zone margins on console (test on physical TV — not monitor)
-- [ ] HUD displays correctly at 1280x720 (Steam Deck) with no element clipping or overlap
-- [ ] HUD elements are repositionable (Health, Minimap, Ability Bar) and reposition settings persist
-- [ ] Controller disconnection during play does not cause HUD state corruption
+**Platform** / **平台**
+- [ ] All elements respect 10% safe zone on console / 所有元素遵守主机10%安全区
+- [ ] HUD displays correctly at 1280x720 (Steam Deck) / HUD在1280x720正确显示
+- [ ] HUD elements are repositionable and settings persist / HUD元素可重定位且设置持久化
 
 ---
 
 <!-- 中文翻译 -->
-## 13. Open Questions
+## 13. Open Questions / 13. 待解决问题
 
 > Track unresolved design questions here. All questions must be resolved before
-> the HUD design document can be marked Approved.
+> the HUD design document can be marked Approved. / 在此追踪未解决的设计问题。所有问题必须在HUD设计文档标记为已批准之前解决。
 
-| Question | Owner | Deadline | Resolution |
-|----------|-------|----------|-----------|
-| [e.g., Should the minimap show enemy positions by default, or only after a detection skill is unlocked?] | [systems-designer + ui-designer] | [Sprint 5, Day 2] | [Pending — depends on progression GDD decision] |
-| [e.g., Does the game have a boss health bar, or do bosses use the standard enemy health bar? Bosses need a visually distinct treatment if they are significantly more important than normal enemies.] | [game-designer] | [Sprint 5, Day 1] | [Pending] |
-| [e.g., Damage numbers: diegetic (floating in world space, occluded by geometry) or screen space (always readable, overlaid on HUD layer)?] | [ui-designer + lead-programmer] | [Sprint 4, Day 5] | [Pending — architecture decision affects rendering layer choice] |
-| [e.g., Mobile portrait vs. landscape: does the game support both orientations? If yes, each requires its own zone layout.] | [producer] | [Sprint 3, Day 3] | [Pending — platform scope decision required first] |
+| Question | Owner | Deadline | Resolution | 问题 | 负责人 | 截止日期 | 解决方案 |
+|----------|-------|----------|-----------|------|--------|----------|----------|
+| [Should the minimap show enemy positions by default?] | [systems-designer + ui-designer] | [Sprint 5, Day 2] | [Pending] | [小地图应默认显示敌人位置吗？] | [系统设计师 + UI设计师] | [冲刺5, 第2天] | [待定] |
+| [Do bosses have a distinct health bar treatment?] | [game-designer] | [Sprint 5, Day 1] | [Pending] | [Boss有独特的血条处理吗？] | [游戏设计师] | [冲刺5, 第1天] | [待定] |
+| [Damage numbers: diegetic (world-space) or screen-space?] | [ui-designer + lead-programmer] | [Sprint 4, Day 5] | [Pending] | [伤害数字: 内叙式(世界空间)还是屏幕空间?] | [UI设计师 + 主程] | [冲刺4, 第5天] | [待定] |
+| [Does the game support both portrait and landscape?] | [producer] | [Sprint 3, Day 3] | [Pending] | [游戏支持竖屏和横屏两种方向吗?] | [制作人] | [冲刺3, 第3天] | [待定] |

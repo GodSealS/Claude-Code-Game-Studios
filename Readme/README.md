@@ -23,6 +23,8 @@ Welcome to the complete documentation directory for CodeBuddy Game Studios. This
 | 11 | [Unity 代理协作指南](./11-Unity-Agent-Collaboration-Guide.md) | Unity 引擎专家的协作方法与示例 | Unity 开发者 |
 | 12 | [WeChat 代理协作指南](./12-WeChat-Agent-Collaboration-Guide.md) | WeChat 小游戏专家的协作方法与示例 | WeChat 开发者 |
 | 13 | [Cocos Creator 引擎使用指南](./cocos-creator-guide.md) | Cocos Creator 引擎提示词激活与使用方法 | Cocos Creator 开发者 |
+| 14 | [Templates 模板指南](./13-Templates-Guide.md) | 38 个模板在提示词工程中的作用、核心模板、编写方法 | 高级用户、架构师 |
+| 15 | [Skill Testing Framework 详解](./14-Skill-Testing-Framework-Guide.md) | 测试框架目录结构、每级目录功能详解、如何扩展框架（新增 Skill/Agent 规格、类别、测试维度） | 高级用户、架构师、QA |
 
 ---
 
@@ -56,14 +58,16 @@ Welcome to the complete documentation directory for CodeBuddy Game Studios. This
 5. [Skills 参考手册](./05-Skills-Reference.md)
 6. [Hooks 和 Rules 说明](./06-Hooks-and-Rules.md)
 
-### 路径 4: 架构师指南（45 分钟）
+### 路径 4: 架构师指南（90 分钟）
 
 适合需要扩展或定制架构的人：
 
 1. [项目概览](./01-Project-Overview.md)
 2. [目录结构详解](./02-Directory-Structure.md)
 3. [Hooks 和 Rules 说明](./06-Hooks-and-Rules.md)
-4. [Open Spec 集成指南](./08-Open-Spec-Integration.md)
+4. [Templates 模板指南](./13-Templates-Guide.md)
+5. [Skill Testing Framework 详解](./14-Skill-Testing-Framework-Guide.md)
+6. [Open Spec 集成指南](./08-Open-Spec-Integration.md)
 
 ---
 
@@ -100,6 +104,10 @@ Hook 是在特定事件时自动执行的脚本，用于：
 ### 什么是 Rule？
 
 Rule 是针对特定路径文件的编码规范，自动在编辑时应用。
+
+### 什么是 Template？
+
+Template 是 Skills 和 Agents 的**输出格式契约**——定义了 AI 产出文档必须遵循的章节结构、表格格式和验证标准。38 个模板覆盖从游戏概念到发布检查的完整流水线。详见 [Templates 模板指南](./13-Templates-Guide.md)。
 
 ---
 

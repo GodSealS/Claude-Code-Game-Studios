@@ -26,79 +26,79 @@ emotional or power fantasy being served? This section guides all detail / 情感
 decisions below.]
 
 <!-- 详细设计 -->
-## Detailed Design
+## Detailed Design / 详细设计
 
 <!-- 中文翻译 -->
-### Core Rules
+### Core Rules / 核心规则
 
 [Precise, unambiguous rules. A programmer should be able to implement this
 section without asking questions. Use numbered rules for sequential processes
-and bullet points for properties.]
+and bullet points for properties.] / [精确、明确的规则。程序员应该能够在不提问的情况下实现此部分。对顺序过程使用编号规则，对属性使用项目符号。]
 
 <!-- 中文翻译 -->
-### States and Transitions
+### States and Transitions / 状态和转换
 
 [If this system has states (e.g., weapon states, status effects, phases),
-document every state and every valid transition between states.]
+document every state and every valid transition between states.] / [如果此系统有状态（例如，武器状态、状态效果、阶段），记录每个状态和每个有效状态转换。]
 
-| State | Entry Condition | Exit Condition | Behavior |
+| State / 状态 | Entry Condition / 进入条件 | Exit Condition / 退出条件 | Behavior / 行为 |
 |-------|----------------|----------------|----------|
 
 <!-- 中文翻译 -->
-### Interactions with Other Systems
+### Interactions with Other Systems / 与其他系统的交互
 
 [How does this system interact with combat? Inventory? Progression? UI?
 For each interaction, specify the interface: what data flows in, what flows
-out, and who is responsible for what.]
+out, and who is responsible for what.] / [此系统如何与战斗交互？库存？进度？UI？对于每个交互，指定接口：什么数据流入，什么数据流出，以及谁负责什么。]
 
 <!-- 公式 -->
-## Formulas
+## Formulas / 公式
 
-[Every mathematical formula used by this system. For each formula:]
+[Every mathematical formula used by this system. For each formula:] / [此系统使用的每个数学公式。对于每个公式：]
 
-### [Formula Name]
+### [Formula Name] / [公式名称]
 
 ```
 result = base_value * (1 + modifier_sum) * scaling_factor
 ```
 
-| Variable | Type | Range | Source | Description |
+| Variable / 变量 | Type / 类型 | Range / 范围 | Source / 来源 | Description / 描述 |
 |----------|------|-------|--------|-------------|
-| base_value | float | 1-100 | data file | The base amount before modifiers |
-| modifier_sum | float | -0.9 to 5.0 | calculated | Sum of all active modifiers |
-| scaling_factor | float | 0.5-2.0 | data file | Level-based scaling |
+| base_value | float | 1-100 | data file | The base amount before modifiers / 修改前的基础值 |
+| modifier_sum | float | -0.9 to 5.0 | calculated | Sum of all active modifiers / 所有活动修改器之和 |
+| scaling_factor | float | 0.5-2.0 | data file | Level-based scaling / 基于等级的缩放 |
 
-**Expected output range**: [min] to [max]
-**Edge case**: When modifier_sum < -0.9, clamp to -0.9 to prevent negative results.
+**Expected output range**: [min] to [max] / **预期输出范围**：[最小值]到[最大值]
+**Edge case**: When modifier_sum < -0.9, clamp to -0.9 to prevent negative results. / **边界情况**：当modifier_sum < -0.9时，限制为-0.9以防止负结果。
 
 <!-- 边界情况 -->
-## Edge Cases
+## Edge Cases / 边界情况
 
 [Explicitly document what happens in unusual situations. Each edge case
-should have a clear resolution.]
+should have a clear resolution.] / [明确记录异常情况下发生的情况。每个边界情况应有明确解决方案。]
 
-| Scenario | Expected Behavior | Rationale |
+| Scenario / 场景 | Expected Behavior / 预期行为 | Rationale / 理由 |
 |----------|------------------|-----------|
-| [What if X is zero?] | [This happens] | [Because of this reason] |
-| [What if both effects trigger?] | [Priority rule] | [Design reasoning] |
+| [What if X is zero?] | [This happens] | [Because of this reason] / [因为此原因] |
+| [What if both effects trigger?] | [Priority rule] | [Design reasoning] / [设计推理] |
 
 <!-- 依赖 -->
-## Dependencies
+## Dependencies / 依赖
 
-[List every system this mechanic depends on or that depends on this mechanic.]
+[List every system this mechanic depends on or that depends on this mechanic.] / [列出此机制依赖的每个系统或依赖此机制的每个系统。]
 
-| System | Direction | Nature of Dependency |
+| System / 系统 | Direction / 方向 | Nature of Dependency / 依赖性质 |
 |--------|-----------|---------------------|
-| [Combat] | This depends on Combat | Needs damage calculation results |
-| [Inventory] | Inventory depends on this | Provides item effect data |
+| [Combat] | This depends on Combat / 此依赖战斗 | Needs damage calculation results / 需要伤害计算结果 |
+| [Inventory] | Inventory depends on this / 库存依赖此 | Provides item effect data / 提供物品效果数据 |
 
 <!-- 调节旋钮 -->
-## Tuning Knobs
+## Tuning Knobs / 调节旋钮
 
 [Every value that should be adjustable for balancing. Include the current
-value, the safe range, and what happens at the extremes.]
+value, the safe range, and what happens at the extremes.] / [每个应可调节以平衡的值。包括当前值、安全范围以及在极端情况下的影响。]
 
-| Parameter | Current Value | Safe Range | Effect of Increase | Effect of Decrease |
+| Parameter / 参数 | Current Value / 当前值 | Safe Range / 安全范围 | Effect of Increase / 增加的影响 | Effect of Decrease / 减少的影响 |
 |-----------|--------------|------------|-------------------|-------------------|
 
 <!-- 中文翻译 -->
