@@ -942,6 +942,51 @@ skills:
     priority: high
     category: engine
 
+  # Engine — Unreal Skills (loaded by unreal-specialist via UseSkill)
+  - name: ue-blueprint
+    spec: CCGS Skill Testing Framework/skills/unreal/ue-blueprint.md
+    last_static: "2026-05-31"
+    last_static_result: "NON-COMPLIANT (2F/3W — 预期：私有skill，缺argument-hint/user-invocable/allowed-tools/verdict)"
+    last_spec: "2026-05-31"
+    last_spec_result: "PASS"
+    last_category: "2026-05-31"
+    last_category_result: "PASS"
+    priority: high
+    category: engine
+
+  - name: ue-gas
+    spec: CCGS Skill Testing Framework/skills/unreal/ue-gas.md
+    last_static: "2026-05-31"
+    last_static_result: "NON-COMPLIANT (2F/3W — 预期：私有skill，缺argument-hint/user-invocable/allowed-tools/verdict)"
+    last_spec: "2026-05-31"
+    last_spec_result: "PASS"
+    last_category: "2026-05-31"
+    last_category_result: "PASS"
+    priority: high
+    category: engine
+
+  - name: ue-replication
+    spec: CCGS Skill Testing Framework/skills/unreal/ue-replication.md
+    last_static: "2026-05-31"
+    last_static_result: "NON-COMPLIANT (2F/3W — 预期：私有skill，缺argument-hint/user-invocable/allowed-tools/verdict)"
+    last_spec: "2026-05-31"
+    last_spec_result: "PASS"
+    last_category: "2026-05-31"
+    last_category_result: "PASS"
+    priority: high
+    category: engine
+
+  - name: ue-umg
+    spec: CCGS Skill Testing Framework/skills/unreal/ue-umg.md
+    last_static: "2026-05-31"
+    last_static_result: "NON-COMPLIANT (2F/3W — 预期：私有skill，缺argument-hint/user-invocable/allowed-tools/verdict)"
+    last_spec: "2026-05-31"
+    last_spec_result: "PASS"
+    last_category: "2026-05-31"
+    last_category_result: "PASS"
+    priority: high
+    category: engine
+
 agents:
   # Tier 1 Directors (DeepSeek-V4-Flash)
   - name: creative-director
@@ -1122,35 +1167,15 @@ agents:
     last_spec_result: ""
     category: engine
 
-  # Engine Specialists — Unreal
+  # Engine Specialists — Unreal (consolidated: single agent with Skill-based routing)
   - name: unreal-specialist
     spec: CCGS Skill Testing Framework/agents/engine/unreal/unreal-specialist.md
-    last_spec: ""
-    last_spec_result: ""
-    category: engine
-
-  - name: ue-blueprint-specialist
-    spec: CCGS Skill Testing Framework/agents/engine/unreal/ue-blueprint-specialist.md
-    last_spec: ""
-    last_spec_result: ""
-    category: engine
-
-  - name: ue-gas-specialist
-    spec: CCGS Skill Testing Framework/agents/engine/unreal/ue-gas-specialist.md
-    last_spec: ""
-    last_spec_result: ""
-    category: engine
-
-  - name: ue-umg-specialist
-    spec: CCGS Skill Testing Framework/agents/engine/unreal/ue-umg-specialist.md
-    last_spec: ""
-    last_spec_result: ""
-    category: engine
-
-  - name: ue-replication-specialist
-    spec: CCGS Skill Testing Framework/agents/engine/unreal/ue-replication-specialist.md
-    last_spec: ""
-    last_spec_result: ""
+    last_static: "2026-05-31"
+    last_static_result: "NON-COMPLIANT (2F/1W — 预期：agent格式，缺argument-hint/user-invocable/allowed-tools/verdict)"
+    last_spec: "2026-05-31"
+    last_spec_result: "PASS"
+    last_category: "2026-05-31"
+    last_category_result: "PASS"
     category: engine
 
   # Engine Specialists — WeChat

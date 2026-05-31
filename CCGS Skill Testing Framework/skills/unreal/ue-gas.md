@@ -1,19 +1,26 @@
-# Agent Test Spec: ue-gas-specialist
+# Agent Test Spec: ue-gas
 
 ## Agent Summary
 - **Domain**: Gameplay Ability System (GAS) — abilities (UGameplayAbility), gameplay effects (UGameplayEffect), attribute sets (UAttributeSet), gameplay tags, ability tasks (UAbilityTask), ability specs (FGameplayAbilitySpec), GAS prediction and latency compensation
-- **Does NOT own**: UI display of ability state (ue-umg-specialist), net replication of GAS data beyond built-in GAS prediction (ue-replication-specialist), art or VFX for ability feedback (vfx-artist)
-- **Model tier**: GLM-5.0-Turbo
-- **Gate IDs**: None; defers cross-domain calls to the appropriate specialist
+- **Architecture**: Private skill loaded exclusively by `unreal-specialist` via `UseSkill("ue-gas")`. Not a standalone agent — routing/rejection handled by unreal-specialist.
+- **Does NOT own**: UI display of ability state (ue-umg skill), net replication of GAS data beyond built-in GAS prediction (ue-replication skill), art or VFX for ability feedback (vfx-artist)
+- **Model tier**: DeepSeek-V4-Flash
+- **Gate IDs**: None; defers cross-domain calls to the appropriate skill via unreal-specialist
 
 ---
 
 ## Static Assertions (Structural)
 
+Agent-level verification — the skill implementation at `.codebuddy/skills/ue-gas/SKILL.md` must pass agent-standard checks:
+
 - [ ] `description:` field is present and domain-specific (references GAS, abilities, GameplayEffects, AttributeSets)
-- [ ] `allowed-tools:` list matches the agent's role (Read/Write for GAS source files; no deployment or server tools)
-- [ ] Model tier is GLM-5.0-Turbo (default for specialists)
-- [ ] Agent definition does not claim authority over UI implementation or low-level net serialization
+- [ ] `tools:` list matches the skill's role (Read, Write for GAS source files; no deployment or server tools)
+- [ ] Model tier is DeepSeek-V4-Flash
+- [ ] Skill file is ONLY loaded by `unreal-specialist` — no other agent definition references `UseSkill("ue-gas")`
+- [ ] Skill does NOT claim authority over UI implementation or low-level net serialization
+- [ ] Skill includes version awareness section referencing `docs/engine-reference/unreal/VERSION.md`
+- [ ] Gameplay Tag hierarchy conventions documented (Ability.*, Effect.*, State.*, Cooldown.*, Status.*)
+- [ ] Ability lifecycle rules documented: ActivateAbility/EndAbility/CanActivateAbility, CommitAbility for cost/cooldown
 
 ---
 
@@ -32,7 +39,7 @@
 **Expected behavior**:
 - Clarifies that GAS has built-in replication for AbilitySpecs and GameplayEffects via the AbilitySystemComponent's replication mode
 - Explains the three ASC replication modes (Full, Mixed, Minimal) and when to use each
-- For custom replication needs beyond GAS built-ins, explicitly states: "For custom net serialization of GAS data, coordinate with ue-replication-specialist"
+- For custom replication needs beyond GAS built-ins, explicitly states: "For custom net serialization of GAS data, coordinate with ue-replication skill"
 - Does NOT attempt to write custom replication code outside GAS's own systems without flagging the domain boundary
 
 ### Case 3: Domain boundary — incorrect GameplayTag hierarchy
@@ -67,10 +74,12 @@
 ## Protocol Compliance
 
 - [ ] Stays within declared domain (GAS: abilities, effects, attributes, tags, ability tasks)
-- [ ] Redirects custom replication requests to ue-replication-specialist with clear explanation of boundary
+- [ ] Redirects custom replication requests to ue-replication skill with clear explanation of boundary
 - [ ] Returns structured findings (ability outline + GameplayEffect definition) rather than vague descriptions
 - [ ] Enforces tag hierarchy naming conventions proactively
 - [ ] Uses only attributes and tags present in the provided context; does not invent new ones without noting it
+- [ ] Version awareness: reads `docs/engine-reference/unreal/VERSION.md` before suggesting APIs
+- [ ] Skill is ONLY loadable by unreal-specialist — no standalone invocation path
 
 ---
 

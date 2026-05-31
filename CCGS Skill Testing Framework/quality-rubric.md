@@ -215,13 +215,17 @@ qa-tester, writer, world-builder
 
 ### `engine`
 
-**Agents**: godot-specialist, godot-gdscript-specialist, godot-csharp-specialist,
-godot-shader-specialist, godot-gdextension-specialist, unity-specialist, unity-ui-specialist,
+**Agents**: godot-specialist, godot-csharp-specialist, godot-shader-specialist,
+godot-gdextension-specialist, unity-specialist, unity-ui-specialist,
 unity-shader-specialist, unity-dots-specialist, unity-addressables-specialist,
-unreal-specialist, ue-blueprint-specialist, ue-gas-specialist, ue-umg-specialist,
-ue-replication-specialist, cocos-specialist, cocos_2d-expert, cocos_3d-expert,
+unreal-specialist, cocos-specialist, cocos_2d-expert, cocos_3d-expert,
 cocos_core-expert, cocos_animation-expert, cocos_gfx-expert, cocos_rendering-expert,
 cocos_physics-expert, cocos_physics-2d-expert
+
+**Engine Skills** (loaded by engine-specialist agents via `UseSkill()`):
+godot-gdscript, godot-csharp, godot-shader, godot-gdextension, ue-blueprint,
+ue-gas, ue-replication, ue-umg, cocos_2d, cocos_3d, cocos_animation, cocos_core,
+cocos_physics, cocos_physics-2d, cocos_rendering, cocos_ui, cocos_editor
 
 | Metric | PASS criteria |
 |---|---|

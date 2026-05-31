@@ -1,8 +1,9 @@
-# Agent Test Spec: ue-blueprint-specialist
+# Agent Test Spec: ue-blueprint
 
 ## Agent Summary
 - **Domain**: Blueprint architecture, the Blueprint/C++ boundary, Blueprint graph quality, Blueprint performance optimization, Blueprint Function Library design
-- **Does NOT own**: C++ implementation (engine-programmer or gameplay-programmer), art assets or shaders, UI/UX flow design (ux-designer)
+- **Architecture**: Private skill loaded exclusively by `unreal-specialist` via `UseSkill("ue-blueprint")`. Not a standalone agent — routing/rejection handled by unreal-specialist.
+- **Does NOT own**: C++ implementation (engine-programmer or gameplay-programmer), art assets or shaders, UI/UX flow design (ux-designer), GAS abilities (ue-gas skill)
 - **Model tier**: DeepSeek-V4-Flash
 - **Gate IDs**: None; defers to unreal-specialist or lead-programmer for cross-domain rulings
 
@@ -10,10 +11,16 @@
 
 ## Static Assertions (Structural)
 
+Agent-level verification — the skill implementation at `.codebuddy/skills/ue-blueprint/SKILL.md` must pass agent-standard checks:
+
 - [ ] `description:` field is present and domain-specific (references Blueprint architecture and optimization)
-- [ ] `allowed-tools:` list matches the agent's role (Read for Blueprint project files; no server or deployment tools)
-- [ ] Model tier is DeepSeek-V4-Flash (default for specialists)
-- [ ] Agent definition does not claim authority over C++ implementation decisions
+- [ ] `tools:` list matches the skill's role (Read, Write, Edit for BP and C++ source files; no server or deployment tools)
+- [ ] Model tier is DeepSeek-V4-Flash
+- [ ] Skill file is ONLY loaded by `unreal-specialist` — no other agent definition references `UseSkill("ue-blueprint")`
+- [ ] Skill does NOT claim authority over C++ implementation decisions or GAS architecture
+- [ ] Skill includes version awareness section referencing `docs/engine-reference/unreal/VERSION.md`
+- [ ] Naming conventions documented: BP_/BPI_/BPFL_ prefixes, E_/S_ for enums/structs
+- [ ] Graph complexity budget stated explicitly (max nodes per function)
 
 ---
 
@@ -53,7 +60,7 @@
 - Notes that if the damage logic is performance-sensitive or shared with C++, it may be a candidate for migration to unreal-specialist review
 - Output is a concrete refactor plan, not a vague recommendation
 
-### Case 5: Context pass — Blueprint complexity budget
+### Case 5: Context pass — Blueprint complexity budget enforcement
 **Input context**: Project conventions specify a maximum of 100 nodes per Blueprint event graph before a mandatory Function Library extraction.
 **Input**: "Here is our inventory Blueprint graph [150 nodes shown]. Is it ready to ship?"
 **Expected behavior**:
@@ -71,6 +78,8 @@
 - [ ] Returns structured findings (problem/impact/alternatives format) rather than freeform opinions
 - [ ] Enforces Blueprint safety patterns (null checks, IsValid) proactively
 - [ ] References project conventions when evaluating graph complexity
+- [ ] Version awareness: reads `docs/engine-reference/unreal/VERSION.md` before suggesting APIs
+- [ ] Skill is ONLY loadable by unreal-specialist — no standalone invocation path
 
 ---
 

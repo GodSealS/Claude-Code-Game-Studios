@@ -1,7 +1,8 @@
-# Agent Test Spec: ue-umg-specialist
+# Agent Test Spec: ue-umg
 
 ## Agent Summary
 - **Domain**: UMG widget hierarchy design, data binding patterns, CommonUI input routing and action tags, widget styling (WidgetStyle assets), UI optimization (widget pooling, ListView, invalidation)
+- **Architecture**: Private skill loaded exclusively by `unreal-specialist` via `UseSkill("ue-umg")`. Not a standalone agent — routing/rejection handled by unreal-specialist.
 - **Does NOT own**: UX flow and screen navigation design (ux-designer), gameplay logic (gameplay-programmer), backend data sources (game code), server communication
 - **Model tier**: DeepSeek-V4-Flash
 - **Gate IDs**: None; defers UX flow decisions to ux-designer
@@ -10,10 +11,16 @@
 
 ## Static Assertions (Structural)
 
+Agent-level verification — the skill implementation at `.codebuddy/skills/ue-umg/SKILL.md` must pass agent-standard checks:
+
 - [ ] `description:` field is present and domain-specific (references UMG, widget hierarchy, CommonUI)
-- [ ] `allowed-tools:` list matches the agent's role (Read/Write for UI assets and Blueprint files; no server or gameplay source tools)
-- [ ] Model tier is DeepSeek-V4-Flash (default for specialists)
-- [ ] Agent definition does not claim authority over UX flow, navigation architecture, or gameplay data logic
+- [ ] `tools:` list matches the skill's role (Read, Write for UI assets and Blueprint files; no server or gameplay source tools)
+- [ ] Model tier is DeepSeek-V4-Flash
+- [ ] Skill file is ONLY loaded by `unreal-specialist` — no other agent definition references `UseSkill("ue-umg")`
+- [ ] Skill does NOT claim authority over UX flow, navigation architecture, or gameplay data logic
+- [ ] Skill includes version awareness section referencing `docs/engine-reference/unreal/VERSION.md`
+- [ ] CommonUI conventions documented: UCommonActivatableWidget, CommonInputActionDataBase, UCommonButtonBase
+- [ ] Data binding pattern documented: ViewModel/WidgetController, UI never directly modifies game state
 
 ---
 
@@ -69,6 +76,8 @@
 - [ ] Returns structured findings (widget hierarchy + binding pattern) rather than freeform opinions
 - [ ] Uses existing CommonUI InputAction tags from context; does not invent new ones without flagging registration requirement
 - [ ] Recommends virtualized lists (ListView/TileView) before widget pooling for large collections
+- [ ] Version awareness: reads `docs/engine-reference/unreal/VERSION.md` before suggesting APIs
+- [ ] Skill is ONLY loadable by unreal-specialist — no standalone invocation path
 
 ---
 

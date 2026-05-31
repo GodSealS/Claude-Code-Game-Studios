@@ -1,8 +1,9 @@
-# Agent Test Spec: ue-replication-specialist
+# Agent Test Spec: ue-replication
 
 ## Agent Summary
 - **Domain**: Property replication (UPROPERTY Replicated/ReplicatedUsing), RPCs (Server/Client/NetMulticast), client prediction and reconciliation, net relevancy and always-relevant settings, net serialization (FArchive/NetSerialize), bandwidth optimization and replication frequency tuning
-- **Does NOT own**: Gameplay logic being replicated (gameplay-programmer), server infrastructure and hosting (devops-engineer), GAS-specific prediction (ue-gas-specialist handles GAS net prediction)
+- **Architecture**: Private skill loaded exclusively by `unreal-specialist` via `UseSkill("ue-replication")`. Not a standalone agent — routing/rejection handled by unreal-specialist.
+- **Does NOT own**: Gameplay logic being replicated (gameplay-programmer), server infrastructure and hosting (devops-engineer), GAS-specific prediction (ue-gas skill handles GAS net prediction)
 - **Model tier**: DeepSeek-V4-Flash
 - **Gate IDs**: None; escalates security-relevant replication concerns to lead-programmer
 
@@ -10,11 +11,16 @@
 
 ## Static Assertions (Structural)
 
+Agent-level verification — the skill implementation at `.codebuddy/skills/ue-replication/SKILL.md` must pass agent-standard checks:
+
 - [ ] `description:` field is present and domain-specific (references replication, RPCs, client prediction, bandwidth)
-- [ ] `allowed-tools:` list matches the agent's role (Read/Write for C++ and Blueprint source files; no infrastructure or deployment tools)
-- [ ] Model tier is DeepSeek-V4-Flash (default for specialists)
-- [ ] Agent definition does not claim authority over server infrastructure, game server architecture, or gameplay logic correctness
-- [ ] Agent prioritizes 'WithValidation' for all Server RPCs dealing with persistent state or economy.
+- [ ] `tools:` list matches the skill's role (Read, Write for C++ and Blueprint source files; no infrastructure or deployment tools)
+- [ ] Model tier is DeepSeek-V4-Flash
+- [ ] Skill file is ONLY loaded by `unreal-specialist` — no other agent definition references `UseSkill("ue-replication")`
+- [ ] Skill does NOT claim authority over server infrastructure, game server architecture, or gameplay logic correctness
+- [ ] Skill includes version awareness section referencing `docs/engine-reference/unreal/VERSION.md`
+- [ ] Skill prioritizes 'WithValidation' for all Server RPCs dealing with persistent state or economy
+- [ ] DOREPLIFETIME, ReplicatedUsing, GetLifetimeReplicatedProps patterns documented
 
 ---
 
@@ -26,7 +32,7 @@
 - Produces a UPROPERTY(ReplicatedUsing=OnRep_Health) declaration in the appropriate Character or AttributeSet class
 - Describes the OnRep_Health function: apply visual/audio feedback, reconcile predicted value with server-authoritative value
 - Explains the client prediction pattern: local client applies tentative damage immediately, server authoritative value arrives via OnRep and corrects any discrepancy
-- Notes that if GAS is in use, the built-in GAS prediction handles this — recommend coordinating with ue-gas-specialist
+- Notes that if GAS is in use, the built-in GAS prediction handles this — recommend coordinating with ue-gas skill
 - Output is a concrete code structure (property declaration + OnRep outline), not a conceptual description only
 
 ### Case 2: Out-of-domain request — game server architecture
@@ -73,11 +79,13 @@
 - [ ] Flags unvalidated server RPCs as security issues and recommends lead-programmer review
 - [ ] Returns structured findings (property declarations, bandwidth estimates, optimization options) not freeform advice
 - [ ] Uses project-provided bandwidth budget numbers when evaluating replication design choices
+- [ ] Version awareness: reads `docs/engine-reference/unreal/VERSION.md` before suggesting APIs
+- [ ] Skill is ONLY loadable by unreal-specialist — no standalone invocation path
 
 ---
 
 ## Coverage Notes
 - Case 3 (RPC security) is a shipping-critical test — unvalidated RPCs are a top-ten multiplayer exploit vector
 - Case 5 is the most important context-awareness test; agent must use actual budget numbers, not generic advice
-- Case 1 GAS branch: if GAS is configured, agent should detect it and defer to ue-gas-specialist for GAS-managed attributes
+- Case 1 GAS branch: if GAS is configured, agent should detect it and defer to ue-gas skill for GAS-managed attributes
 - No automated runner; review manually or via `/skill-test`
