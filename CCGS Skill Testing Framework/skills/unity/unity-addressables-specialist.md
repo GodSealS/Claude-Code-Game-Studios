@@ -2,8 +2,9 @@
 
 ## Agent Summary
 Domain: Addressable Asset System — groups, async loading/unloading, handle lifecycle management, memory budgeting, content catalogs, and remote content delivery.
+Corresponds to skill at `.codebuddy/skills/unity-addressables/SKILL.md`, loaded by `unity-specialist` via `UseSkill("unity-addressables")`.
 Does NOT own: rendering systems (engine-programmer), game logic that uses the loaded assets (gameplay-programmer).
-Model tier: GLM-5.1 (default).
+Model tier: N/A — inherited from unity-specialist (DeepSeek-V4-Flash).
 No gate IDs assigned.
 
 ---
@@ -11,9 +12,12 @@ No gate IDs assigned.
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references Addressables / asset loading / content catalogs / remote delivery)
-- [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is GLM-5.1 (default for specialists)
+- [ ] `allowed-tools:` — N/A; inherited from unity-specialist (Read, Glob, Grep, Write, Edit, Bash, Task)
+- [ ] Model tier: N/A — inherited from unity-specialist (DeepSeek-V4-Flash)
 - [ ] Agent definition does not claim authority over rendering systems or gameplay using the loaded assets
+- [ ] Corresponding skill file exists at `.codebuddy/skills/unity-addressables/SKILL.md` with correct frontmatter (`name: unity-addressables`)
+- [ ] Skill is registered in unity-specialist's "Handles directly via Skills" delegation map
+- [ ] Skill is registered in unity-specialist's "Skill-Based Specialization" routing table
 
 ---
 
@@ -34,7 +38,7 @@ No gate IDs assigned.
 **Expected behavior:**
 - Does NOT produce rendering or mesh material assignment code
 - Explicitly states that rendering system implementation belongs to `engine-programmer`
-- Redirects the request to `engine-programmer`
+- Redirects the request to `engine-programmer` (via unity-specialist routing)
 - May describe the asset type and API surface it will provide (e.g., `Texture2D` reference once the handle completes) as a handoff spec
 
 ### Case 3: Memory leak — un-released handle
@@ -55,7 +59,7 @@ No gate IDs assigned.
   - `Addressables.DownloadDependenciesAsync()` to pre-warm the updated content
 - Notes catalog hash checking for change detection
 - Addresses the edge case: what happens if a player starts a session, the catalog updates mid-session — defines behavior (complete current session on old catalog, reload on next launch)
-- Does NOT design the server-side CDN infrastructure (defers to devops-engineer)
+- Does NOT design the server-side CDN infrastructure (defers to devops-engineer via unity-specialist routing)
 
 ### Case 5: Context pass — platform memory constraints
 **Input:** Platform context: Nintendo Switch target, 4GB RAM, practical asset memory ceiling 512MB. Request: "Design the Addressables loading strategy for a large open-world level."

@@ -2,8 +2,9 @@
 
 ## Agent Summary
 Domain: Unity Shader Graph, custom HLSL, VFX Graph, URP/HDRP pipeline customization, and post-processing effects.
+Corresponds to skill at `.codebuddy/skills/unity-shader/SKILL.md`, loaded by `unity-specialist` via `UseSkill("unity-shader")`.
 Does NOT own: gameplay code, art style direction.
-Model tier: GLM-5v-Turbo (default).
+Model tier: N/A — inherited from unity-specialist (DeepSeek-V4-Flash).
 No gate IDs assigned.
 
 ---
@@ -11,9 +12,12 @@ No gate IDs assigned.
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references Shader Graph / HLSL / VFX Graph / URP / HDRP)
-- [ ] `allowed-tools:` list includes Read, Write, Edit, Glob, Grep
-- [ ] Model tier is GLM-5v-Turbo (Vision-optimized for graphics)
+- [ ] `allowed-tools:` — N/A; inherited from unity-specialist (Read, Glob, Grep, Write, Edit, Bash, Task)
+- [ ] Model tier: N/A — inherited from unity-specialist (DeepSeek-V4-Flash)
 - [ ] Agent definition does not claim authority over gameplay code or art direction
+- [ ] Corresponding skill file exists at `.codebuddy/skills/unity-shader/SKILL.md` with correct frontmatter (`name: unity-shader`)
+- [ ] Skill is registered in unity-specialist's "Handles directly via Skills" delegation map
+- [ ] Skill is registered in unity-specialist's "Skill-Based Specialization" routing table
 
 ---
 

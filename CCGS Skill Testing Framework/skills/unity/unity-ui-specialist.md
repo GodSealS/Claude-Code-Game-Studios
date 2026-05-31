@@ -2,8 +2,9 @@
 
 ## Agent Summary
 Domain: Unity UI Toolkit (UXML/USS), UGUI (Canvas), data binding, runtime UI performance, and UI input event handling.
+Corresponds to skill at `.codebuddy/skills/unity-ui/SKILL.md`, loaded by `unity-specialist` via `UseSkill("unity-ui")`.
 Does NOT own: UX flow design (ux-designer), visual art style (art-director).
-Model tier: DeepSeek-V4-Flash (Logic-optimized for UI architecture).
+Model tier: N/A — inherited from unity-specialist (DeepSeek-V4-Flash).
 No gate IDs assigned.
 
 ---
@@ -11,9 +12,12 @@ No gate IDs assigned.
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references UI Toolkit / UGUI / Canvas / data binding)
-- [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is DeepSeek-V4-Flash (default for specialists)
+- [ ] `allowed-tools:` — N/A; inherited from unity-specialist (Read, Glob, Grep, Write, Edit, Bash, Task)
+- [ ] Model tier: N/A — inherited from unity-specialist (DeepSeek-V4-Flash)
 - [ ] Agent definition does not claim authority over UX flow design or visual art direction
+- [ ] Corresponding skill file exists at `.codebuddy/skills/unity-ui/SKILL.md` with correct frontmatter (`name: unity-ui`)
+- [ ] Skill is registered in unity-specialist's "Handles directly via Skills" delegation map
+- [ ] Skill is registered in unity-specialist's "Skill-Based Specialization" routing table
 
 ---
 

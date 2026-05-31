@@ -202,7 +202,7 @@ mkdir "CCGS Skill Testing Framework/skills/[new-category]"
 **步骤 1**：在 `catalog.yaml` 中为 skills/agents 条目添加新的追踪字段：
 ```yaml
 - name: [skill-name]
-  ...
+  
   last_integration: ""
   last_integration_result: ""
 ```
@@ -248,7 +248,7 @@ cp templates/skill-test-spec.md skills/utility/battle-test.md
 - name: battle-test
   spec: CCGS Skill Testing Framework/skills/utility/battle-test.md
   last_static: ""
-  ...
+  
   priority: low
   category: utility
 ```

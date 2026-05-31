@@ -2,8 +2,9 @@
 
 ## Agent Summary
 Domain: ECS architecture (IComponentData, ISystem, SystemAPI), Jobs system (IJob, IJobEntity, Burst), Burst compiler constraints, DOTS gameplay systems, and hybrid renderer.
+Corresponds to skill at `.codebuddy/skills/unity-dots/SKILL.md`, loaded by `unity-specialist` via `UseSkill("unity-dots")`.
 Does NOT own: MonoBehaviour gameplay code (gameplay-programmer), UI implementation (unity-ui-specialist).
-Model tier: DeepSeek-V4-Flash (default).
+Model tier: N/A — inherited from unity-specialist (DeepSeek-V4-Flash).
 No gate IDs assigned.
 
 ---
@@ -11,9 +12,12 @@ No gate IDs assigned.
 ## Static Assertions (Structural)
 
 - [ ] `description:` field is present and domain-specific (references ECS / Jobs / Burst / IComponentData)
-- [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is DeepSeek-V4-Flash (default for specialists)
+- [ ] `allowed-tools:` — N/A; inherited from unity-specialist (Read, Glob, Grep, Write, Edit, Bash, Task)
+- [ ] Model tier: N/A — inherited from unity-specialist (DeepSeek-V4-Flash)
 - [ ] Agent definition does not claim authority over MonoBehaviour gameplay or UI systems
+- [ ] Corresponding skill file exists at `.codebuddy/skills/unity-dots/SKILL.md` with correct frontmatter (`name: unity-dots`)
+- [ ] Skill is registered in unity-specialist's "Handles directly via Skills" delegation map
+- [ ] Skill is registered in unity-specialist's "Skill-Based Specialization" routing table
 
 ---
 

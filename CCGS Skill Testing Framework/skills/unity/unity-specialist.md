@@ -1,19 +1,22 @@
 # Agent Test Spec: unity-specialist
 
 ## Agent Summary
-Domain: Unity-specific architecture patterns, MonoBehaviour vs DOTS decisions, and subsystem selection (Addressables, New Input System, UI Toolkit, Cinemachine, etc.).
-Does NOT own: language-specific deep dives (delegates to unity-dots-specialist, unity-ui-specialist, etc.).
-Model tier: Kimi-k2.6 (Decision & Routing Specialist).
+Domain: Unity engine authority. Handles ALL Unity subdomains directly — shaders/VFX, DOTS/ECS, Addressables, and UI — by loading the appropriate private Skill via `UseSkill()`. No sub-agent delegation.
+Does NOT own: game design decisions, cross-engine architecture, server/CDN infrastructure.
+Model tier: DeepSeek-V4-Flash.
 No gate IDs assigned.
 
 ---
 
 ## Static Assertions (Structural)
 
-- [ ] `description:` field is present and domain-specific (references Unity patterns / MonoBehaviour / subsystem decisions)
-- [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep,allowed-tools
-- [ ] Model tier is Kimi-k2.6 (default for specialists)
-- [ ] Agent definition acknowledges the sub-specialist routing table (DOTS, UI, Shader, Addressables)
+- [ ] `description:` field is present and domain-specific (references Unity engine authority / Skill-based domain handling)
+- [ ] `tools:` list includes Read, Glob, Grep, Write, Edit, Bash, Task
+- [ ] Model tier is DeepSeek-V4-Flash
+- [ ] Agent definition contains a Skill routing table mapping task domains to `UseSkill()` calls (unity-shader, unity-dots, unity-addressables, unity-ui)
+- [ ] Agent definition explicitly states "NO sub-agent delegation — load skill and self-execute"
+- [ ] Delegation map lists 4 private skills (unity-shader, unity-dots, unity-addressables, unity-ui) as "Handles directly via Skills"
+- [ ] Skill table in "Skill-Based Specialization" section maps each domain to the correct `UseSkill()` call
 
 ---
 
@@ -47,17 +50,26 @@ No gate IDs assigned.
 - Directs to verify against official Unity 6 documentation
 - Does NOT assume the project is on Unity 6 without confirmation
 
-### Case 4: DOTS vs. MonoBehaviour conflict
+### Case 4: Skill loading — DOTS/ECS deep dive
 **Input:** "The combat system uses MonoBehaviour for state management, but we want to add a DOTS-based projectile system. Can they coexist?"
 **Expected behavior:**
 - Recognizes this as a hybrid architecture scenario
 - Explains the hybrid approach: MonoBehaviour can interface with DOTS via SystemAPI, IComponentData, and managed components
 - Notes the performance and complexity trade-offs of mixing the two patterns
 - Recommends escalating the architecture decision to `lead-programmer` or `technical-director`
-- Defers to `unity-dots-specialist` for the DOTS-side implementation details
+- Loads `unity-dots` skill via `UseSkill("unity-dots")` to provide DOTS-side implementation details
 - Explicitly warns against 'ScriptableObject variables' for state management in a DOTS hybrid environment due to thread-safety concerns, recommending a clean data-copy bridge instead.
 
-### Case 5: Context pass — Unity version
+### Case 5: Skill loading — UI system selection
+**Input:** Project context: Unity 2022.3 LTS. Request: "Implement a dynamic inventory UI with real-time item updates."
+**Expected behavior:**
+- Identifies this as a UI domain task requiring deep UI Toolkit knowledge
+- Loads `unity-ui` skill via `UseSkill("unity-ui")` to handle the implementation
+- The loaded skill provides UXML structure, USS styling, and data binding patterns
+- Applies Unity 2022.3 LTS context (uses runtime binding system available in 2022.3)
+- Does NOT delegate to a non-existent sub-agent — handles directly via the loaded skill
+
+### Case 6: Context pass — Unity version
 **Input:** Project context provided: Unity 2023.3 LTS. Request: "Configure the new Input System for this project."
 **Expected behavior:**
 - Applies Unity 2023.3 LTS context: uses the New Input System (com.unity.inputsystem) package
@@ -71,8 +83,11 @@ No gate IDs assigned.
 
 - [ ] Stays within declared domain (Unity architecture decisions, pattern selection, subsystem routing)
 - [ ] Redirects Godot patterns to appropriate Godot specialists or flags them as wrong-engine
-- [ ] Redirects DOTS implementation to unity-dots-specialist
-- [ ] Redirects UI implementation to unity-ui-specialist
+- [ ] Loads `unity-shader` skill via `UseSkill("unity-shader")` for shader/VFX/rendering pipeline work
+- [ ] Loads `unity-dots` skill via `UseSkill("unity-dots")` for DOTS/ECS/Jobs/Burst work
+- [ ] Loads `unity-addressables` skill via `UseSkill("unity-addressables")` for asset loading/content delivery work
+- [ ] Loads `unity-ui` skill via `UseSkill("unity-ui")` for UI Toolkit/UGUI work
+- [ ] Never delegates to non-existent engine sub-agents — handles all Unity domains directly via Skills
 - [ ] Flags Unity version-gated APIs and requires version confirmation before suggesting them
 - [ ] Returns structured pattern decision guides, not freeform opinions
 
@@ -81,4 +96,5 @@ No gate IDs assigned.
 ## Coverage Notes
 - MonoBehaviour vs. ScriptableObject (Case 1) should be documented as an ADR if it results in a project-level decision
 - Version flag (Case 3) confirms the agent does not assume the latest Unity version without context
-- DOTS hybrid (Case 4) verifies the agent escalates architecture conflicts rather than resolving them unilaterally
+- Skill loading (Case 4 + Case 5) verifies the agent correctly loads private skills via `UseSkill()` instead of delegating to sub-agents
+- The 4 private skills (unity-shader, unity-dots, unity-addressables, unity-ui) must only be triggerable by unity-specialist — other agents must NOT have access to these skills
