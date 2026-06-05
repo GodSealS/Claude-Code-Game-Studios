@@ -93,7 +93,7 @@ Read `design/gdd/game-concept.md` if it exists. Extract:
 - Core fantasy (what the player is supposed to feel)
 - Core loop (the moment-to-moment action being tested)
 
-Read `CLAUDE.md` and `.claude/docs/technical-preferences.md` for the engine and
+Read `CODEBUDDY.md` and `.claude/docs/technical-preferences.md` for the engine and
 language in use.
 
 ---

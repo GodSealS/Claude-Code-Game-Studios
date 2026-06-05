@@ -14,7 +14,7 @@ Tests the skills and agents themselves — not any game built with them.
 ```
 CCGS Skill Testing Framework/
 ├── README.md              ← you are here
-├── CLAUDE.md              ← tells Claude how to use this framework
+├── CODEBUDDY.md           ← tells CodeBuddy how to use this framework
 ├── catalog.yaml           ← master registry: all 81 skills + 58 agents, coverage tracking
 ├── quality-rubric.md      ← category-specific pass/fail metrics for /skill-test category
 │

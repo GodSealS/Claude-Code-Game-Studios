@@ -172,7 +172,7 @@ versions, and which files are safe to overwrite vs. which need a manual merge.
 ## Project Structure
 
 ```
-CLAUDE.md                           # Master configuration
+CODEBUDDY.md                        # Master configuration
 .codebuddy/
   settings.json                     # Hooks, permissions, safety rules
   agents/                           # 49 agent definitions (markdown + YAML frontmatter)

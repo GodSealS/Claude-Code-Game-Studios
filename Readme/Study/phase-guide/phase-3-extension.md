@@ -298,7 +298,7 @@ cat .codebuddy/agents/<new-agent>.md | grep "^name:"
 ### 5.3 团队同步
 
 - 在团队频道或文档中公告新 Skill/Agent/Rule 的功能和使用方法
-- 更新项目的 `CLAUDE.md` 或 `CODEBUDDY.md`（如技术栈或分工有重大变化）
+- 更新项目的 `CODEBUDDY.md`（如技术栈或分工有重大变化）
 - 安排一次 `/code-review` 或设计审查，收集团队反馈
 
 ---

@@ -10,7 +10,7 @@ model: DeepSeek-V4-Flash
 
 ## Phase 1: Load Project Context
 
-Read CLAUDE.md for project overview and standards.
+Read CODEBUDDY.md for project overview and standards.
 
 Read the relevant agent definition from `.codebuddy/agents/` if a specific role is specified.
 

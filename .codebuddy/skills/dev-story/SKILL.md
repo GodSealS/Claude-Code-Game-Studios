@@ -159,7 +159,7 @@ Re-read the acceptance criteria and implementation notes. Look for:
 
 ### 3b: Cross-reference with domain language
 
-Read `CLAUDE.md` or `CONTEXT.md` at the project root if they exist. Check
+Read `CODEBUDDY.md` or `CONTEXT.md` at the project root if they exist. Check
 whether the story uses terms that conflict with the established domain
 vocabulary. If a conflict exists:
 

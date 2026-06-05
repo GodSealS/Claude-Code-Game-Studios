@@ -26,7 +26,7 @@ Determine what to diagnose:
 - **If plain description**: parse it for: what broke, when, how to reproduce,
   and what the expected behavior is. Search the codebase for related files.
 
-Read the project's domain glossary from `CLAUDE.md` or `CONTEXT.md` at the
+Read the project's domain glossary from `CODEBUDDY.md` or `CONTEXT.md` at the
 project root if they exist — clear mental model of the relevant modules
 prevents misdirected debugging.
 

@@ -698,7 +698,7 @@ Verdict: **COMPLETE** — engine configured and reference docs populated.
 - If reference docs already exist for a different engine, ask before replacing
 - Always show the user what you're about to change before making CODEBUDDY.md edits
 - If WebSearch returns ambiguous results, show the user and let them decide
-- When the user chose **GDScript**: copy the GDScript CLAUDE.md template from Appendix A1 exactly. NEVER add "C++ via GDExtension" to the Language field. GDScript projects may use GDExtension, but it is not a primary project language. The `godot-gdextension-specialist` in the routing table is available for when native extensions are needed — it does not make C++ a project language.
+- When the user chose **GDScript**: copy the GDScript CODEBUDDY.md template from Appendix A1 exactly. NEVER add "C++ via GDExtension" to the Language field. GDScript projects may use GDExtension, but it is not a primary project language. The `godot-gdextension-specialist` in the routing table is available for when native extensions are needed — it does not make C++ a project language.
 
 ---
 

@@ -43,7 +43,7 @@ Resolve the review mode:
 See `.claude/docs/director-gates.md` for the full check pattern.
 
 Read the following files to understand the full design intent:
-- `CLAUDE.md` — tech stack and engine
+- `CODEBUDDY.md` — tech stack and engine
 - `design/gdd/game-concept.md` — core fantasy and game pillars
 - `design/gdd/systems-index.md` — MVP systems and their priorities
 - `docs/architecture/architecture.md` — layer structure

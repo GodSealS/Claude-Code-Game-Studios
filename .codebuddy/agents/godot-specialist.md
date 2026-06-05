@@ -75,7 +75,7 @@ Key principles (summary):
 - Use sparingly — only for truly global systems (audio manager, save system, events bus)
 - Autoloads must not depend on scene-specific state
 - Never use autoloads as a dumping ground for convenience functions
-- Document every autoload's purpose in CLAUDE.md
+- Document every autoload's purpose in CODEBUDDY.md
 
 ### Common Pitfalls to Flag
 - Using `get_node()` with long relative paths instead of signals or groups

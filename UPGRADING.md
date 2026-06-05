@@ -46,7 +46,7 @@ Git will flag conflicts only in files that both the template *and* you have
 changed. Resolve each one — your game content goes in, structural improvements
 come along for the ride. Then commit the merge.
 
-**Tip:** The files most likely to conflict are `CLAUDE.md` and
+**Tip:** The files most likely to conflict are `CODEBUDDY.md` and
 `.codebuddy/docs/technical-preferences.md`, because you've filled them in with
 your engine and project settings. Keep your content; accept the structural changes.
 
@@ -308,7 +308,7 @@ No files require manual merging in this release. All changes are to infrastructu
 | **Agent updates** | 14 specialist agents — `memory: project` added |
 | **Agent updates** | `prototyper` — `isolation: worktree` (throwaway work in isolated git branch) |
 | **Model routing** | Haiku/Sonnet/Opus tier assignments documented in coordination rules; skills declare their tier in frontmatter |
-| **Directory CLAUDE.md** | Scaffolded `design/CLAUDE.md`, `src/CLAUDE.md`, `docs/CLAUDE.md` — path-scoped instructions for each directory |
+| **Directory CODEBUDDY.md** | Scaffolded `design/CODEBUDDY.md`, `src/CODEBUDDY.md`, `docs/CODEBUDDY.md` — path-scoped instructions for each directory |
 | **Pipeline integrity** | TR-ID stability, manifest versioning, ADR status gates, TR-ID reference not quote |
 | **GDD template** | `## Game Feel` section added (input responsiveness, animation targets, impact moments) |
 
@@ -358,9 +358,9 @@ No files require manual merging in this release. All changes are to infrastructu
 .codebuddy/docs/templates/interaction-pattern-library.md
 .codebuddy/docs/templates/player-journey.md
 .codebuddy/docs/templates/difficulty-curve.md
-design/CLAUDE.md
-src/CLAUDE.md
-docs/CLAUDE.md
+design/CODEBUDDY.md
+src/CODEBUDDY.md
+docs/CODEBUDDY.md
 ```
 
 **Existing files to overwrite (no user content):**
@@ -486,9 +486,9 @@ The new `validate-skill-change.sh` hook reminds you to run `/skill-test` automat
 
 Skills are now explicitly assigned to Haiku, Sonnet, or Opus tiers based on task complexity. Read-only status checks use Haiku; complex multi-document synthesis uses Opus; everything else defaults to Sonnet. Tier assignments are documented in `.codebuddy/docs/coordination-rules.md`.
 
-#### Directory CLAUDE.md Files
+#### Directory CODEBUDDY.md Files
 
-Three new directory-scoped CLAUDE.md files (`design/`, `src/`, `docs/`) provide path-specific instructions to agents working in those directories. These load automatically when Claude Code reads files in that directory.
+Three new directory-scoped CODEBUDDY.md files (`design/`, `src/`, `docs/`) provide path-specific instructions to agents working in those directories. These load automatically when CodeBuddy reads files in that directory.
 
 ---
 
@@ -649,7 +649,7 @@ future sessions without requiring manual file edits.
 | **Context management** | Major rewrite — file-backed state strategy added |
 | **Agent updates** | 14 design/creative agents — AskUserQuestion integration |
 | **Skill updates** | All 7 `team-*` skills + `brainstorm` — AskUserQuestion at phase transitions |
-| **CLAUDE.md** | Slimmed from ~159 to ~60 lines; 5 doc imports instead of 10 |
+| **CODEBUDDY.md** | Slimmed from ~159 to ~60 lines; 5 doc imports instead of 10 |
 | **Hook updates** | All 8 hooks — Windows compatibility fixes, new features |
 | **Docs removed** | `docs/IMPROVEMENTS-PROPOSAL.md`, `docs/MULTI-STAGE-DOCUMENT-WORKFLOW.md` |
 
@@ -736,7 +736,7 @@ If you *have* customized agent prompts, see "Merge carefully" below.
 These files contain both template structure and your project-specific content.
 Do **not** overwrite them — merge the changes manually.
 
-#### `CLAUDE.md`
+#### `CODEBUDDY.md`
 
 The template version was slimmed from ~159 lines to ~60 lines. The key
 structural change: 5 doc imports were removed because they're auto-loaded

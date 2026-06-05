@@ -35,7 +35,7 @@ confirm the scope before proceeding:
 - If yes, proceed with the description as the spec.
 - If no, ask for clarification.
 
-Read the project's domain glossary from `CLAUDE.md` or `CONTEXT.md` at the
+Read the project's domain glossary from `CODEBUDDY.md` or `CONTEXT.md` at the
 project root if they exist. Use domain vocabulary in test names and interface
 design.
 
