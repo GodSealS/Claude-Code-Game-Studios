@@ -1,0 +1,133 @@
+# 知识库技术索引
+# Agent 每次设计阶段读取此文件检索候选技术
+# 添加新技术时确保: ref 路径正确, tags 覆盖核心技术关键词, domain 明确
+
+entries:
+
+  # ===== AI / 感知 =====
+  - ref: "game-programming-gems/vol1/ch01-spatial-hashing"
+    title: "空间哈希快速近邻查询"
+    tags: [spatial, hash, proximity, query, broad-phase, performance]
+    problem: "大量物体(1000+)实时近邻查询，避免 O(n²)"
+    domain: [ai, physics, rendering]
+    engine: [unreal, unity, godot, cocos]
+
+  - ref: "game-programming-gems/vol2/ch03-influence-map"
+    title: "影响图驱动AI决策"
+    tags: [ai, influence, map, tactic, strategy, position]
+    problem: "大量单位基于空间位置做战术决策"
+    domain: [ai]
+    engine: [unreal, unity, godot]
+
+  - ref: "game-programming-gems/vol3/ch05-goal-action-planning"
+    title: "目标导向行动规划 (GOAP)"
+    tags: [ai, planning, goal, action, state, behavior]
+    problem: "需要AI自动规划动作序列而非预定义行为树"
+    domain: [ai]
+    engine: [unreal, unity, godot]
+
+  # ===== 渲染 / 性能 =====
+  - ref: "game-programming-gems/vol1/ch02-continuous-lod"
+    title: "连续LOD网格简化系统"
+    tags: [lod, mesh, simplification, performance, rendering]
+    problem: "远处模型消耗过多三角形，需要平滑过渡的LOD"
+    domain: [rendering]
+    engine: [unreal, unity]
+
+  - ref: "game-programming-gems/vol2/ch04-occlusion-culling"
+    title: "遮挡剔除的层次化方法"
+    tags: [occlusion, culling, rendering, performance, visibility]
+    problem: "复杂场景中大量被遮挡物导致不必要的draw call"
+    domain: [rendering]
+    engine: [unreal, unity, godot]
+
+  - ref: "game-programming-gems/vol4/ch01-gpu-particle-system"
+    title: "GPU驱动的百万粒子系统"
+    tags: [particle, gpu, compute-shader, vfx, performance]
+    problem: "需要10万+粒子同时存在且每帧计算"
+    domain: [rendering, vfx]
+    engine: [unreal, unity, godot]
+
+  # ===== 物理 =====
+  - ref: "game-programming-gems/vol1/ch05-verlet-integration"
+    title: "Verlet积分用于稳定物理模拟"
+    tags: [physics, integration, verlet, stability, cloth, rope]
+    problem: "刚体/布料模拟数值不稳定导致爆炸"
+    domain: [physics]
+    engine: [unreal, unity, godot]
+
+  - ref: "game-programming-gems/vol3/ch02-separating-axis"
+    title: "分离轴定理 (SAT) 碰撞检测"
+    tags: [physics, collision, sat, obb, convex, detection]
+    problem: "任意凸多面体之间的碰撞检测"
+    domain: [physics]
+    engine: [unreal, unity, godot, cocos]
+
+  # ===== 网络 =====
+  - ref: "game-programming-gems/vol2/ch08-dead-reckoning"
+    title: "航位推测法用于网络实体插值"
+    tags: [networking, prediction, interpolation, dead-reckoning, bandwidth]
+    problem: "网络延迟导致实体位置跳跃/卡顿"
+    domain: [networking]
+    engine: [unreal, unity, godot]
+
+  - ref: "game-programming-gems/vol4/ch06-interest-management"
+    title: "兴趣管理：按需复制网络状态"
+    tags: [networking, relevancy, bandwidth, interest, aoi]
+    problem: "大世界多人场景下全量复制带宽爆炸"
+    domain: [networking]
+    engine: [unreal, unity, godot]
+
+  # ===== 寻路 =====
+  - ref: "game-programming-gems/vol1/ch03-hierarchical-pathfinding"
+    title: "层次化A*寻路"
+    tags: [pathfinding, astar, hierarchical, navigation, performance]
+    problem: "大地图A*搜索节点过多导致卡顿"
+    domain: [ai, navigation]
+    engine: [unreal, unity, godot]
+
+  - ref: "game-programming-gems/vol3/ch08-flow-field"
+    title: "流场寻路 (Flow Field)"
+    tags: [pathfinding, flow-field, crowd, rts, navigation]
+    problem: "大量单位同时寻路到同一目标"
+    domain: [ai, navigation]
+    engine: [unreal, unity, godot]
+
+  # ===== 数据 / 序列化 =====
+  - ref: "game-programming-gems/vol2/ch07-object-serialization"
+    title: "游戏对象深序列化系统"
+    tags: [serialization, save, load, persistence, data]
+    problem: "需要存档/读档系统能处理复杂的对象引用图"
+    domain: [data, systems]
+    engine: [unreal, unity, godot, cocos]
+
+  # ===== UI =====
+  - ref: "game-programming-gems/vol4/ch03-data-driven-ui"
+    title: "数据驱动的动态UI系统"
+    tags: [ui, data-binding, mvc, mvvm, dynamic]
+    problem: "UI元素频繁随游戏数据变化，需要解耦"
+    domain: [ui]
+    engine: [unreal, unity, godot, cocos]
+
+  # ===== 内存 =====
+  - ref: "game-programming-gems/vol1/ch04-object-pool"
+    title: "通用对象池系统"
+    tags: [memory, pooling, performance, allocation, gc]
+    problem: "频繁创建/销毁对象导致GC压力或内存碎片"
+    domain: [systems, performance]
+    engine: [unreal, unity, godot, cocos]
+
+  - ref: "game-programming-gems/vol2/ch05-memory-budget"
+    title: "内存预算与碎片管理"
+    tags: [memory, budget, fragmentation, allocator, management]
+    problem: "需要严格控制内存上限并避免碎片"
+    domain: [systems, performance]
+    engine: [unreal, unity, godot, cocos]
+
+  # ===== 动画 =====
+  - ref: "game-programming-gems/vol3/ch04-animation-blending"
+    title: "程序化动画混合技术"
+    tags: [animation, blending, procedural, ik, locomotion]
+    problem: "需要平滑过渡多种动画状态且避免滑步"
+    domain: [animation, rendering]
+    engine: [unreal, unity, godot]
