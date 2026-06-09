@@ -310,13 +310,12 @@
 
 ---
 
-<!-- 中文翻译 -->
-## Version History
+## Version History / 版本历史
 
-| Date | Author | Changes |
-|------|--------|---------|
-| [Date] | Claude (reverse-doc) | Initial concept doc from prototype analysis |
-| [Date] | [User] | Clarified outcomes, added playtest feedback |
+| Date / 日期 | Author / 作者 | Changes / 变更内容 |
+|-------------|---------------|-------------------|
+| [Date] | Claude (reverse-doc) | Initial concept doc from prototype analysis / 从原型分析生成初始概念文档 |
+| [Date] | [User] | Clarified outcomes, added playtest feedback / 澄清结果，添加试玩反馈 |
 
 ---
 

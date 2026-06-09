@@ -72,22 +72,22 @@ so it can be cited in design reviews.] / 这条规则是添加HUD元素的功能
 > later" is how games end up with 18 elements competing for the player's peripheral
 > vision. This table is the master inventory of game information, not just HUD information. / **为什么存在此章节**: 在指定HUD元素之前，你必须回答一个更根本的问题：这些信息应该出现在HUD上吗？本章节是一个强制功能——要求你对游戏世界产生的每一份信息进行分类，并对每份信息的呈现方式做出明确、有意的决定。
 
-| Information Type | Always Show | Contextual (show when relevant) | On Demand (menu/button) | Hidden (environmental / diegetic) | Reasoning |
-|-----------------|-------------|--------------------------------|------------------------|----------------------------------|-----------|
-| [Health / Vitality] | [X if action game — player needs constant awareness] | [X if exploration game — show only when injured] | [ ] | [ ] | [Example: always visible because health decisions (retreat, heal) must be instant in combat] |
-| [Primary resource (mana / stamina / ammo)] | [ ] | [X — show when resource is being consumed or is critically low] | [ ] | [ ] | [Example: contextual because stable resource levels are not decision-relevant] |
-| [Secondary resource (currency / materials)] | [ ] | [ ] | [X — check in inventory] | [ ] | [Example: on-demand because resource totals don't affect immediate gameplay decisions] |
-| [Minimap / Compass] | [X] | [ ] | [ ] | [ ] | [Example: always visible because navigation decisions are constant during exploration] |
-| [Quest objective] | [ ] | [X — show when objective changes or player is near it] | [ ] | [ ] | [Example: contextual — player knows their objective; only remind at key moments] |
-| [Enemy health bar] | [ ] | [X — show only during combat encounters] | [ ] | [ ] | [Example: contextual because enemy health is irrelevant outside combat] |
-| [Status effects (buffs/debuffs)] | [ ] | [X — show when active] | [ ] | [ ] | [Example: contextual because status effects only affect decisions when present] |
-| [Dialogue subtitles] | [X when dialogue is playing] | [ ] | [ ] | [ ] | [Example: always show while dialogue is active — accessibility requirement] |
-| [Combo / streak counter] | [ ] | [X — show while combo is active, hide on reset] | [ ] | [ ] | [Example: contextual because it communicates active performance, not baseline state] |
-| [Timer] | [ ] | [X — show only in timed sequences] | [ ] | [ ] | [Example: contextual because timers only exist in specific encounter types] |
-| [Tutorial prompts] | [ ] | [X — show for first-time situations only] | [ ] | [ ] | [Example: contextual and one-time; never repeat to experienced players] |
-| [Score / points] | [ ] | [X — show in score-relevant modes only] | [ ] | [ ] | [Example: contextual by game mode; hidden in modes where score is irrelevant] |
-| [XP / level progress] | [ ] | [ ] | [X — available via character screen] | [ ] | [Example: on-demand because progression does not affect in-moment gameplay decisions] |
-| [Waypoint / objective marker] | [ ] | [X — show when player is navigating to objective] | [ ] | [ ] | [Example: contextual — suppress during cutscenes, cinematic moments, and free exploration] |
+| Information Type / 信息类型 | Always Show / 始终显示 | Contextual (show when relevant) / 情境显示（相关时显示） | On Demand (menu/button) / 按需显示（菜单/按钮） | Hidden (environmental / diegetic) / 隐藏（环境化/叙事化） | Reasoning / 理由 |
+|---------------------|-------------|--------------------------------|------------------------|----------------------------------|-----------|
+| [Health / Vitality / 生命值/活力] | [X if action game — player needs constant awareness / 若为动作游戏则显示X——玩家需要持续感知] | [X if exploration game — show only when injured / 若为探索游戏则显示X——仅在受伤时显示] | [ ] | [ ] | [Example: always visible because health decisions (retreat, heal) must be instant in combat / 示例：始终可见，因为生命值决策（撤退、治疗）必须在战斗中即时做出] |
+| [Primary resource (mana / stamina / ammo) / 主要资源（法力/体力/弹药）] | [ ] | [X — show when resource is being consumed or is critically low / X——在资源被消耗或严重不足时显示] | [ ] | [ ] | [Example: contextual because stable resource levels are not decision-relevant / 示例：情境显示，因为稳定的资源水平与决策无关] |
+| [Secondary resource (currency / materials) / 次要资源（货币/材料）] | [ ] | [ ] | [X — check in inventory / X——在库存中查看] | [ ] | [Example: on-demand because resource totals don't affect immediate gameplay decisions / 示例：按需显示，因为资源总量不影响即时游戏决策] |
+| [Minimap / Compass / 小地图/指南针] | [X] | [ ] | [ ] | [ ] | [Example: always visible because navigation decisions are constant during exploration / 示例：始终可见，因为探索过程中导航决策是持续的] |
+| [Quest objective / 任务目标] | [ ] | [X — show when objective changes or player is near it / X——当目标改变或玩家接近时显示] | [ ] | [ ] | [Example: contextual — player knows their objective; only remind at key moments / 示例：情境显示——玩家知道自己的目标；仅在关键时刻提醒] |
+| [Enemy health bar / 敌人血条] | [ ] | [X — show only during combat encounters / X——仅在战斗遭遇期间显示] | [ ] | [ ] | [Example: contextual because enemy health is irrelevant outside combat / 示例：情境显示，因为敌人生命值在战斗外无关紧要] |
+| [Status effects (buffs/debuffs) / 状态效果（增益/减益）] | [ ] | [X — show when active / X——激活时显示] | [ ] | [ ] | [Example: contextual because status effects only affect decisions when present / 示例：情境显示，因为状态效果仅在存在时影响决策] |
+| [Dialogue subtitles / 对话字幕] | [X when dialogue is playing / 对话播放时显示X] | [ ] | [ ] | [ ] | [Example: always show while dialogue is active — accessibility requirement / 示例：对话激活时始终显示——无障碍需求] |
+| [Combo / streak counter / 连击/连击计数器] | [ ] | [X — show while combo is active, hide on reset / X——连击激活时显示，重置时隐藏] | [ ] | [ ] | [Example: contextual because it communicates active performance, not baseline state / 示例：情境显示，因为它传达的是活跃表现，而非基线状态] |
+| [Timer / 计时器] | [ ] | [X — show only in timed sequences / X——仅在计时序列中显示] | [ ] | [ ] | [Example: contextual because timers only exist in specific encounter types / 示例：情境显示，因为计时器仅存在于特定遭遇类型中] |
+| [Tutorial prompts / 教程提示] | [ ] | [X — show for first-time situations only / X——仅首次出现时显示] | [ ] | [ ] | [Example: contextual and one-time; never repeat to experienced players / 示例：情境显示且一次性；绝不向有经验的玩家重复] |
+| [Score / points / 分数/点数] | [ ] | [X — show in score-relevant modes only / X——仅在分数相关模式中显示] | [ ] | [ ] | [Example: contextual by game mode; hidden in modes where score is irrelevant / 示例：按游戏模式情境显示；在分数无关的模式中隐藏] |
+| [XP / level progress / 经验值/等级进度] | [ ] | [ ] | [X — available via character screen / X——通过角色界面查看] | [ ] | [Example: on-demand because progression does not affect in-moment gameplay decisions / 示例：按需显示，因为进度不影响即时游戏决策] |
+| [Waypoint / objective marker / 路点/目标标记] | [ ] | [X — show when player is navigating to objective / X——当玩家导航至目标时显示] | [ ] | [ ] | [Example: contextual — suppress during cutscenes, cinematic moments, and free exploration / 示例：情境显示——在过场动画、电影化时刻和自由探索期间抑制] |
 
 ---
 
@@ -101,12 +101,11 @@ so it can be cited in design reviews.] / 这条规则是添加HUD元素的功能
 > that overlap platform-required safe zones and get rejected in certification.
 > Every element in Section 4 must be assigned to a zone defined here. / **为什么存在此章节**: 游戏世界是主要内容——HUD是它的框架。在放置任何元素之前，将屏幕划分为带有明确位置和安全区边距的命名区域。本章节防止两种失败模式：(1) 临时放置元素直到屏幕杂乱，以及(2) 元素重叠平台要求的安全区而被认证拒绝。
 
-<!-- 中文翻译 -->
-### 3.1 Zone Diagram
+### 3.1 Zone Diagram / 3.1 区域示意图
 
 ```
 [Draw your HUD layout zones. Customize this to match your game's actual layout.
- Axes represent approximate screen percentage. Adjust zone names and sizes.]
+ Axes represent approximate screen percentage. Adjust zone names and sizes. / 绘制你的HUD布局区域。自定义此图以匹配你游戏的实际布局。坐标轴代表大致的屏幕百分比。调整区域名称和大小。]
 
  0%                                             100%
  ┌──────────────────────────────────────────────────┐  0%
@@ -132,31 +131,30 @@ so it can be cited in design reviews.] / 这条规则是添加HUD元素的功能
 > Rule for zone placement: the center 40% of the screen (both horizontally and
 > vertically) is the player's primary focus area. Keep this zone as clear as
 > possible at all times. HUD elements that appear in the center zone — crosshairs,
-> interaction prompts, hit markers — must be minimal, high-contrast, and brief.
+> interaction prompts, hit markers — must be minimal, high-contrast, and brief. / 区域放置规则：屏幕中心40%（水平和垂直方向）是玩家的主要关注区域。始终尽可能保持此区域清晰。出现在中心区域的HUD元素——十字准线、交互提示、命中标记——必须极简、高对比度且短暂。
 
-<!-- 中文翻译 -->
-### 3.2 Zone Specification Table
+### 3.2 Zone Specification Table / 3.2 区域规格表
 
-| Zone Name | Screen Position | Safe Zone Compliant | Primary Elements | Max Simultaneous Elements | Notes |
+| Zone Name / 区域名称 | Screen Position / 屏幕位置 | Safe Zone Compliant / 安全区域合规 | Primary Elements / 主要元素 | Max Simultaneous Elements / 最大同时显示元素数 | Notes / 备注 |
 |-----------|----------------|---------------------|-----------------|--------------------------|-------|
-| [Top Left] | [Top-left corner, within safe margin] | [Yes — 10% from top, 10% from left] | [Health bar, stamina bar, shield bar] | [3] | [Vital status — player's own resources. Priority zone for player state.] |
-| [Top Center] | [Top edge, centered horizontally] | [Yes — 10% from top] | [Quest objective, area name (on enter)] | [1 — only one message at a time] | [Use for narrative context, not mechanical information. Keep text minimal.] |
-| [Top Right] | [Top-right corner, within safe margin] | [Yes — 10% from top, 10% from right] | [Ammo count, ability cooldowns] | [2] | [Weapon/ability state. Most relevant during active combat.] |
-| [Center] | [Screen center ±15%] | [N/A — not a margin zone] | [Crosshair, interaction prompt, hit marker] | [1 active at a time] | [CRITICAL: Nothing persistent here. Only momentary indicators.] |
-| [Bottom Left] | [Bottom-left corner, within safe margin] | [Yes — 10% from bottom, 10% from left] | [Minimap, ability icons] | [2] | [Navigation and ability readout. Small, non-intrusive.] |
-| [Bottom Center] | [Bottom edge, centered horizontally] | [Yes — 10% from bottom] | [Subtitles, tutorial prompts] | [2 — subtitle + tutorial may coexist] | [Highest-priority accessibility zone. Never place other elements here.] |
-| [Bottom Right] | [Bottom-right corner, within safe margin] | [Yes — 10% from bottom, 10% from right] | [Notification toasts, pick-up feedback] | [3 stacked] | [Transient notifications. Stack vertically. Oldest disappears first.] |
+| [Top Left / 左上] | [Top-left corner, within safe margin / 左上角，在安全边距内] | [Yes — 10% from top, 10% from left / 是——距顶部10%，距左侧10%] | [Health bar, stamina bar, shield bar / 生命条、体力条、护盾条] | [3] | [Vital status — player's own resources. Priority zone for player state. / 生命状态——玩家自己的资源。玩家状态的优先区域。] |
+| [Top Center / 顶部中央] | [Top edge, centered horizontally / 顶部边缘，水平居中] | [Yes — 10% from top / 是——距顶部10%] | [Quest objective, area name (on enter) / 任务目标、区域名称（进入时）] | [1 — only one message at a time / 1——每次仅一条消息] | [Use for narrative context, not mechanical information. Keep text minimal. / 用于叙事上下文，而非机械信息。保持文本简洁。] |
+| [Top Right / 右上] | [Top-right corner, within safe margin / 右上角，在安全边距内] | [Yes — 10% from top, 10% from right / 是——距顶部10%，距右侧10%] | [Ammo count, ability cooldowns / 弹药计数、技能冷却] | [2] | [Weapon/ability state. Most relevant during active combat. / 武器/技能状态。在主动战斗期间最相关。] |
+| [Center / 中心] | [Screen center ±15% / 屏幕中心±15%] | [N/A — not a margin zone / 不适用——非边距区域] | [Crosshair, interaction prompt, hit marker / 十字准线、交互提示、命中标记] | [1 active at a time / 每次1个活跃] | [CRITICAL: Nothing persistent here. Only momentary indicators. / 关键：此处无持久内容。仅瞬时指示器。] |
+| [Bottom Left / 左下] | [Bottom-left corner, within safe margin / 左下角，在安全边距内] | [Yes — 10% from bottom, 10% from left / 是——距底部10%，距左侧10%] | [Minimap, ability icons / 小地图、技能图标] | [2] | [Navigation and ability readout. Small, non-intrusive. / 导航和技能读数。小巧，非侵入式。] |
+| [Bottom Center / 底部中央] | [Bottom edge, centered horizontally / 底部边缘，水平居中] | [Yes — 10% from bottom / 是——距底部10%] | [Subtitles, tutorial prompts / 字幕、教程提示] | [2 — subtitle + tutorial may coexist / 2——字幕+教程可共存] | [Highest-priority accessibility zone. Never place other elements here. / 最高优先级的无障碍区域。切勿在此放置其他元素。] |
+| [Bottom Right / 右下] | [Bottom-right corner, within safe margin / 右下角，在安全边距内] | [Yes — 10% from bottom, 10% from right / 是——距底部10%，距右侧10%] | [Notification toasts, pick-up feedback / 通知弹窗、拾取反馈] | [3 stacked / 3个堆叠] | [Transient notifications. Stack vertically. Oldest disappears first. / 瞬时通知。垂直堆叠。最早的先消失。] |
 
-**Safe zone margins by platform**:
+**Safe zone margins by platform / 各平台安全区域边距**:
 
-| Platform | Top | Bottom | Left | Right | Notes |
+| Platform / 平台 | Top / 顶部 | Bottom / 底部 | Left / 左侧 | Right / 右侧 | Notes / 备注 |
 |----------|-----|--------|------|-------|-------|
-| [PC — windowed] | [0% — no safe zone required] | [0%] | [0%] | [0%] | [But respect minimum resolution — elements must not crowd at 1280x720] |
-| [PC — fullscreen] | [3%] | [3%] | [3%] | [3%] | [Slight margin for 4K TV-connected PCs] |
-| [Console — TV] | [10%] | [10%] | [10%] | [10%] | [Action-safe zone for broadcast-spec TVs. Some TVs overscan beyond this.] |
-| [Steam Deck] | [5%] | [5%] | [5%] | [5%] | [Small screen; safe zone is smaller but crowding risk is higher] |
-| [Mobile — portrait] | [15% top] | [10% bottom] | [5%] | [5%] | [15% top avoids notch/camera cutout on most devices] |
-| [Mobile — landscape] | [5%] | [5%] | [15% left] | [15% right] | [Thumb placement on landscape — side zones are obscured by hands] |
+| [PC — windowed / PC——窗口化] | [0% — no safe zone required / 0%——无需安全区域] | [0%] | [0%] | [0%] | [But respect minimum resolution — elements must not crowd at 1280x720 / 但需尊重最低分辨率——元素在1280x720下不得拥挤] |
+| [PC — fullscreen / PC——全屏] | [3%] | [3%] | [3%] | [3%] | [Slight margin for 4K TV-connected PCs / 为连接4K电视的PC保留轻微边距] |
+| [Console — TV / 主机——电视] | [10%] | [10%] | [10%] | [10%] | [Action-safe zone for broadcast-spec TVs. Some TVs overscan beyond this. / 广播规格电视的动作安全区域。某些电视会过扫描超出此范围。] |
+| [Steam Deck / Steam Deck] | [5%] | [5%] | [5%] | [5%] | [Small screen; safe zone is smaller but crowding risk is higher / 小屏幕；安全区域更小但拥挤风险更高] |
+| [Mobile — portrait / 移动端——竖屏] | [15% top / 顶部15%] | [10% bottom / 底部10%] | [5%] | [5%] | [15% top avoids notch/camera cutout on most devices / 顶部15%可避免大多数设备的刘海/摄像头切口] |
+| [Mobile — landscape / 移动端——横屏] | [5%] | [5%] | [15% left / 左侧15%] | [15% right / 右侧15%] | [Thumb placement on landscape — side zones are obscured by hands / 横屏时拇指放置——侧边区域被手遮挡] |
 
 ---
 
@@ -169,25 +167,25 @@ so it can be cited in design reviews.] / 这条规则是添加HUD元素的功能
 > failures. This section is the implementation brief for every element — fill it
 > completely before any element moves into development. / **为什么存在此章节**: 每个HUD元素需要自己的规格才能正确构建。临时实现HUD元素会产生不一致的尺寸、不匹配的更新频率、缺失的紧急状态和无障碍失败。本章节是每个元素的实现摘要——在元素进入开发之前完整填写。
 
-<!-- 中文翻译 -->
-### 4.1 Element Overview Table
+### 4.1 Element Overview Table / 4.1 元素概览表
 
-> One row per HUD element. This is the master inventory for implementation planning.
+> One row per HUD element. This is the master inventory for implementation planning. / 每个HUD元素一行。这是实现规划的主清单。
 
-| Element Name | Zone | Always Visible | Visibility Trigger | Data Source | Update Frequency | Max Size (% screen W) | Min Readable Size | Overlap Priority | Accessibility Alt |
+| Element Name / 元素名称 | Zone / 区域 | Always Visible / 始终可见 | Visibility Trigger / 可见性触发器 | Data Source / 数据源 | Update Frequency / 更新频率 | Max Size (% screen W) / 最大尺寸（屏幕宽度百分比） | Min Readable Size / 最小可读尺寸 | Overlap Priority / 重叠优先级 | Accessibility Alt / 无障碍替代 |
+| Element Name / 元素名称 | Zone / 区域 | Always Visible / 始终可见 | Visibility Trigger / 可见性触发器 | Data Source / 数据源 | Update Frequency / 更新频率 | Max Size (% screen W) / 最大尺寸（屏幕宽度百分比） | Min Readable Size / 最小可读尺寸 | Overlap Priority / 重叠优先级 | Accessibility Alt / 无障碍替代 |
 |-------------|------|---------------|-------------------|-------------|-----------------|----------------------|------------------|-----------------|------------------|
-| [Health Bar] | [Top Left] | [Yes] | [N/A] | [PlayerStats] | [On value change] | [20%] | [120px wide] | [1 — highest] | [Numerical text label showing current/max: "80/100"] |
-| [Stamina Bar] | [Top Left] | [No — context] | [Show when consuming stamina; hide 3s after full] | [PlayerStats] | [Realtime during use] | [15%] | [80px wide] | [2] | [Numerical label, or hide if full (accessible assumption)] |
-| [Shield Indicator] | [Top Left] | [No — context] | [Show when shield is active or recently hit] | [PlayerStats] | [On value change] | [20%] | [120px wide] | [3] | [Numerical label. Must not use color alone — add shield icon.] |
-| [Ammo Counter] | [Top Right] | [No — context] | [Show when weapon is equipped; hide when unarmed] | [WeaponSystem] | [On fire / on reload] | [10%] | ["88/888" readable at game's min resolution] | [4] | [Text-only fallback: "32 / 120"] |
-| [Minimap] | [Bottom Left] | [Yes] | [N/A — but suppressed in cinematic mode] | [NavigationSystem] | [Realtime] | [18%] | [150x150px] | [5] | [Cardinal direction compass strip as fallback; must be toggleable] |
-| [Quest Objective] | [Top Center] | [No — context] | [Show on objective change; show when near objective location; hide after 5s] | [QuestSystem] | [On event] | [30%] | [Legible at body text size] | [6] | [Read aloud on objective change via screen reader] |
-| [Crosshair] | [Center] | [No — context] | [Show when ranged weapon equipped; hide in melee or unarmed] | [WeaponSystem / AimSystem] | [Realtime] | [3%] | [12px diameter minimum] | [1 — center zone priority] | [Reduce motion: static crosshair only. Option to enlarge.] |
-| [Interaction Prompt] | [Center] | [No — context] | [Show when player is within interaction range of an interactive object] | [InteractionSystem] | [On enter/exit interaction range] | [15%] | [24px icon + readable text] | [2 — center zone] | [Text description of interaction always present, not icon-only] |
-| [Subtitles] | [Bottom Center] | [No — always on when dialogue plays, if setting enabled] | [Show during any voiced line or ambient dialogue] | [DialogueSystem] | [Per dialogue line] | [60%] | [Minimum 24px font] | [1 — highest in zone] | [This IS the accessibility feature — see Section 8 for subtitle spec] |
-| [Damage Numbers] | [World-space / anchored to entity] | [No — context] | [Show on any damage event; duration 800ms] | [CombatSystem] | [On event] | [5% per number] | [18px minimum] | [3] | [Option to disable; numbers can overwhelm for photosensitive players] |
-| [Status Effect Icons] | [Top Left — below health bar] | [No — context] | [Show when any status effect is active on player] | [StatusSystem] | [On effect add/remove] | [3% per icon] | [24px per icon] | [3] | [Icon + text label on hover/focus. Never icon-only.] |
-| [Notification Toast] | [Bottom Right] | [No — event-driven] | [On loot, XP gain, achievement, quest update] | [Multiple — see Section 6] | [On event] | [25%] | [Legible at body text size] | [7 — lowest] | [Queued; never overlapping. Read by screen reader if subtitle mode on.] |
+| [Health Bar / 生命条] | [Top Left / 左上] | [Yes / 是] | [N/A] | [PlayerStats / 玩家状态] | [On value change / 值变化时] | [20%] | [120px wide / 120像素宽] | [1 — highest / 1——最高] | [Numerical text label showing current/max: "80/100" / 显示当前/最大值的数字文本标签：“80/100”] |
+| [Stamina Bar / 体力条] | [Top Left / 左上] | [No — context / 否——情境] | [Show when consuming stamina; hide 3s after full / 消耗体力时显示；满值3秒后隐藏] | [PlayerStats / 玩家状态] | [Realtime during use / 使用时实时] | [15%] | [80px wide / 80像素宽] | [2] | [Numerical label, or hide if full (accessible assumption) / 数字标签，或满值时隐藏（无障碍假设）] |
+| [Shield Indicator / 护盾指示器] | [Top Left / 左上] | [No — context / 否——情境] | [Show when shield is active or recently hit / 护盾激活或最近受击时显示] | [PlayerStats / 玩家状态] | [On value change / 值变化时] | [20%] | [120px wide / 120像素宽] | [3] | [Numerical label. Must not use color alone — add shield icon. / 数字标签。不得仅使用颜色——添加护盾图标。] |
+| [Ammo Counter / 弹药计数器] | [Top Right / 右上] | [No — context / 否——情境] | [Show when weapon is equipped; hide when unarmed / 装备武器时显示；解除武装时隐藏] | [WeaponSystem / 武器系统] | [On fire / on reload / 开火/装填时] | [10%] | ["88/888" readable at game's min resolution / 在游戏最低分辨率下可读] | [4] | [Text-only fallback: "32 / 120" / 仅文本回退：“32 / 120”] |
+| [Minimap / 小地图] | [Bottom Left / 左下] | [Yes / 是] | [N/A — but suppressed in cinematic mode / 不适用——但在电影模式下抑制] | [NavigationSystem / 导航系统] | [Realtime / 实时] | [18%] | [150x150px] | [5] | [Cardinal direction compass strip as fallback; must be toggleable / 基点方向罗盘条作为回退；必须可切换] |
+| [Quest Objective / 任务目标] | [Top Center / 顶部中央] | [No — context / 否——情境] | [Show on objective change; show when near objective location; hide after 5s / 目标变化时显示；接近目标位置时显示；5秒后隐藏] | [QuestSystem / 任务系统] | [On event / 事件触发] | [30%] | [Legible at body text size / 正文尺寸下可读] | [6] | [Read aloud on objective change via screen reader / 目标变化时通过屏幕阅读器朗读] |
+| [Crosshair / 十字准线] | [Center / 中心] | [No — context / 否——情境] | [Show when ranged weapon equipped; hide in melee or unarmed / 装备远程武器时显示；近战或徒手时隐藏] | [WeaponSystem / AimSystem / 武器系统/瞄准系统] | [Realtime / 实时] | [3%] | [12px diameter minimum / 最小直径12像素] | [1 — center zone priority / 1——中心区域优先] | [Reduce motion: static crosshair only. Option to enlarge. / 减少动作：仅静态十字准线。可放大选项。] |
+| [Interaction Prompt / 交互提示] | [Center / 中心] | [No — context / 否——情境] | [Show when player is within interaction range of an interactive object / 玩家在可交互对象的交互范围内时显示] | [InteractionSystem / 交互系统] | [On enter/exit interaction range / 进入/离开交互范围时] | [15%] | [24px icon + readable text / 24像素图标+可读文本] | [2 — center zone / 2——中心区域] | [Text description of interaction always present, not icon-only / 始终存在交互的文本描述，非仅图标] |
+| [Subtitles / 字幕] | [Bottom Center / 底部中央] | [No — always on when dialogue plays, if setting enabled / 否——对话播放时始终开启（若设置启用）] | [Show during any voiced line or ambient dialogue / 任何语音 line 或环境对话期间显示] | [DialogueSystem / 对话系统] | [Per dialogue line / 每行对话] | [60%] | [Minimum 24px font / 最小24像素字体] | [1 — highest in zone / 1——区域内最高] | [This IS the accessibility feature — see Section 8 for subtitle spec / 这即是无障碍功能——字幕规格见第8节] |
+| [Damage Numbers / 伤害数字] | [World-space / anchored to entity / 世界空间/锚定到实体] | [No — context / 否——情境] | [Show on any damage event; duration 800ms / 任何伤害事件时显示；持续800毫秒] | [CombatSystem / 战斗系统] | [On event / 事件触发] | [5% per number / 每个数字5%] | [18px minimum / 最小18像素] | [3] | [Option to disable; numbers can overwhelm for photosensitive players / 可禁用选项；数字可能让光敏性玩家不堪重负] |
+| [Status Effect Icons / 状态效果图标] | [Top Left — below health bar / 左上——生命条下方] | [No — context / 否——情境] | [Show when any status effect is active on player / 玩家有任何活跃状态效果时显示] | [StatusSystem / 状态系统] | [On effect add/remove / 效果添加/移除时] | [3% per icon / 每个图标3%] | [24px per icon / 每个图标24像素] | [3] | [Icon + text label on hover/focus. Never icon-only. / 悬停/聚焦时图标+文本标签。绝不仅图标。] |
+| [Notification Toast / 通知弹窗] | [Bottom Right / 右下] | [No — event-driven / 否——事件驱动] | [On loot, XP gain, achievement, quest update / 拾取、经验获取、成就、任务更新时] | [Multiple — see Section 6 / 多个——见第6节] | [On event / 事件触发] | [25%] | [Legible at body text size / 正文尺寸下可读] | [7 — lowest / 7——最低] | [Queued; never overlapping. Read by screen reader if subtitle mode on. / 排队；绝不重叠。若字幕模式开启则由屏幕阅读器朗读。] |
 
 <!-- 中文翻译 -->
 ### 4.2 Element Detail Blocks

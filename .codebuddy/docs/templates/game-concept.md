@@ -78,280 +78,232 @@ The hook should be / 卖点应该：
 
 ---
 
-<!-- 中文翻译 -->
-## Player Experience Analysis (MDA Framework)
+## Player Experience Analysis (MDA Framework) / 玩家体验分析（MDA框架）
 
-The MDA (Mechanics-Dynamics-Aesthetics) framework ensures we design from the
-player's emotional experience backward to the systems that create it.
+The MDA (Mechanics-Dynamics-Aesthetics) framework ensures we design from the player's emotional experience backward to the systems that create it. / MDA（机制-动态-美学）框架确保我们从玩家的情感体验出发，反向设计创造这种体验的系统。
 
-<!-- 中文翻译 -->
-### Target Aesthetics (What the player FEELS)
-Rank the following aesthetic goals for this game (1 = primary, mark N/A if not
-relevant). These come from the MDA framework's 8 aesthetic categories:
+### Target Aesthetics (What the player FEELS) / 目标美学（玩家的感受）
+Rank the following aesthetic goals for this game (1 = primary, mark N/A if not relevant). These come from the MDA framework's 8 aesthetic categories: / 为这款游戏排列以下美学目标（1=主要，如不相关标记为N/A）。这些来自MDA框架的8个美学类别：
 
-| Aesthetic | Priority | How We Deliver It |
+| Aesthetic / 美学 | Priority / 优先级 | How We Deliver It / 如何实现 |
 | ---- | ---- | ---- |
-| **Sensation** (sensory pleasure) | [1-8 or N/A] | [Visual beauty, audio design, haptics] |
-| **Fantasy** (make-believe, role-playing) | [Priority] | [World, characters, player identity] |
-| **Narrative** (drama, story arc) | [Priority] | [Plot structure, player-driven stories] |
-| **Challenge** (obstacle course, mastery) | [Priority] | [Difficulty curve, skill ceiling] |
-| **Fellowship** (social connection) | [Priority] | [Co-op, guilds, shared experiences] |
-| **Discovery** (exploration, secrets) | [Priority] | [Hidden areas, emergent systems, lore] |
-| **Expression** (self-expression, creativity) | [Priority] | [Build variety, cosmetics, creation tools] |
-| **Submission** (relaxation, comfort zone) | [Priority] | [Low-stress loops, ambient gameplay] |
+| **Sensation** (sensory pleasure) / **感官**（感官愉悦） | [1-8 or N/A] | [Visual beauty, audio design, haptics] / [视觉美感、音频设计、触觉反馈] |
+| **Fantasy** (make-believe, role-playing) / **幻想**（角色扮演、假装） | [Priority] | [World, characters, player identity] / [世界、角色、玩家身份] |
+| **Narrative** (drama, story arc) / **叙事**（戏剧、故事弧） | [Priority] | [Plot structure, player-driven stories] / [情节结构、玩家驱动的故事] |
+| **Challenge** (obstacle course, mastery) / **挑战**（障碍过程、精通） | [Priority] | [Difficulty curve, skill ceiling] / [难度曲线、技能上限] |
+| **Fellowship** (social connection) / **友谊**（社交联系） | [Priority] | [Co-op, guilds, shared experiences] / [合作、公会、共享体验] |
+| **Discovery** (exploration, secrets) / **探索**（探索、秘密） | [Priority] | [Hidden areas, emergent systems, lore] / [隐藏区域、涌现系统、背景设定] |
+| **Expression** (self-expression, creativity) / **表达**（自我表达、创造力） | [Priority] | [Build variety, cosmetics, creation tools] / [构建多样性、装饰、创造工具] |
+| **Submission** (relaxation, comfort zone) / **沉浸**（放松、舒适区） | [Priority] | [Low-stress loops, ambient gameplay] / [低压力循环、环境游戏玩法] |
 
-<!-- 中文翻译 -->
-### Key Dynamics (Emergent player behaviors)
-[What behaviors do we WANT to emerge from our mechanics? What should players
-naturally start doing without being told?
+### Key Dynamics (Emergent player behaviors) / 关键动态（涌现的玩家行为）
+[What behaviors do we WANT to emerge from our mechanics? What should players naturally start doing without being told?] / [我们希望从我们的机制中涌现什么行为？玩家应该在不受指示的情况下自然开始做什么？]
 
-Example: "Players will experiment with ability combinations to find synergies"
-Example: "Players will share discoveries with the community"]
+Example: "Players will experiment with ability combinations to find synergies" / 示例："玩家将尝试能力组合以找到协同效应"
+Example: "Players will share discoveries with the community" / 示例："玩家将与客户分享发现"
 
-<!-- 中文翻译 -->
-### Core Mechanics (Systems we build)
-[What are the 3-5 mechanical systems that generate the dynamics and aesthetics
-above? These are the rules, verbs, and systems we actually implement.]
+### Core Mechanics (Systems we build) / 核心机制（我们构建的系统）
+[What are the 3-5 mechanical systems that generate the dynamics and aesthetics above? These are the rules, verbs, and systems we actually implement.] / [产生上述动态和美学的3-5个机械系统是什么？这些是我们实际实现的规则、动词和系统。]
 
-1. [Mechanic 1 — e.g., "Real-time combat with stamina management"]
-2. [Mechanic 2 — e.g., "Procedurally generated dungeons with hand-crafted rooms"]
-3. [Mechanic 3 — e.g., "Crafting system with discoverable recipes"]
+1. [Mechanic 1 — e.g., "Real-time combat with stamina management"] / [机制1 — 例如："带耐力管理的实时战斗"]
+2. [Mechanic 2 — e.g., "Procedurally generated dungeons with hand-crafted rooms"] / [机制2 — 例如："带有手工制作房间的程序生成地牢"]
+3. [Mechanic 3 — e.g., "Crafting system with discoverable recipes"] / [机制3 — 例如："带有可发现配方的制作系统"]
 
 ---
 
-<!-- 中文翻译 -->
-## Player Motivation Profile
+## Player Motivation Profile / 玩家动机概况
 
-Understanding WHY players play helps us make every design decision. Based on
-Self-Determination Theory (SDT) and the Player Experience of Need Satisfaction
-(PENS) model.
+Understanding WHY players play helps us make every design decision. Based on Self-Determination Theory (SDT) and the Player Experience of Need Satisfaction (PENS) model. / 理解玩家为什么玩游戏有助于我们做出每个设计决策。基于自我决定理论（SDT）和玩家需求满足体验（PENS）模型。
 
-<!-- 中文翻译 -->
-### Primary Psychological Needs Served
+### Primary Psychological Needs Served / 主要心理需求满足
 
-| Need | How This Game Satisfies It | Strength |
+| Need / 需求 | How This Game Satisfies It / 游戏如何满足 | Strength / 强度 |
 | ---- | ---- | ---- |
-| **Autonomy** (freedom, meaningful choice) | [How does the player feel in control?] | [Core / Supporting / Minimal] |
-| **Competence** (mastery, skill growth) | [How does the player feel skilled?] | [Core / Supporting / Minimal] |
-| **Relatedness** (connection, belonging) | [How does the player feel connected?] | [Core / Supporting / Minimal] |
+| **Autonomy** (freedom, meaningful choice) / **自主性**（自由、有意义的选择） | [How does the player feel in control?] / [玩家如何感到掌控？] | [Core / Supporting / Minimal] / [核心/支持/最小] |
+| **Competence** (mastery, skill growth) / **胜任感**（精通、技能成长） | [How does the player feel skilled?] / [玩家如何感到有技能？] | [Core / Supporting / Minimal] / [核心/支持/最小] |
+| **Relatedness** (connection, belonging) / **关联感**（联系、归属感） | [How does the player feel connected?] / [玩家如何感到有联系？] | [Core / Supporting / Minimal] / [核心/支持/最小] |
 
-<!-- 中文翻译 -->
-### Player Type Appeal (Bartle Taxonomy)
+### Player Type Appeal (Bartle Taxonomy) / 玩家类型吸引力（巴特尔分类法）
 
-Which player types does this game primarily serve?
+Which player types does this game primarily serve? / 这款游戏主要服务于哪些玩家类型？
 
-- [ ] **Achievers** (goal completion, collection, progression) — How: [...]
-- [ ] **Explorers** (discovery, understanding systems, finding secrets) — How: [...]
-- [ ] **Socializers** (relationships, cooperation, community) — How: [...]
-- [ ] **Killers/Competitors** (domination, PvP, leaderboards) — How: [...]
+- [ ] **Achievers** (goal completion, collection, progression) — How: [...] / **成就者**（目标完成、收集、进度）—— 如何：[...]
+- [ ] **Explorers** (discovery, understanding systems, finding secrets) — How: [...] / **探索者**（发现、理解系统、寻找秘密）—— 如何：[...]
+- [ ] **Socializers** (relationships, cooperation, community) — How: [...] / **社交者**（关系、合作、社区）—— 如何：[...]
+- [ ] **Killers/Competitors** (domination, PvP, leaderboards) — How: [...] / **杀手/竞争者**（统治、PvP、排行榜）—— 如何：[...]
 
-<!-- 中文翻译 -->
-### Flow State Design
+### Flow State Design / 心流状态设计
 
-Flow occurs when challenge matches skill. How does this game maintain flow?
+Flow occurs when challenge matches skill. How does this game maintain flow? / 当挑战与技能匹配时，心流状态出现。这款游戏如何维持心流？
 
-- **Onboarding curve**: [How do the first 10 minutes teach the player?]
-- **Difficulty scaling**: [How does challenge grow with player skill?]
-- **Feedback clarity**: [How does the player know they're improving?]
-- **Recovery from failure**: [How quickly can they try again? Is failure punishing or educational?]
+- **Onboarding curve / 新手引导曲线**: [How do the first 10 minutes teach the player?] / [前10分钟如何教导玩家？]
+- **Difficulty scaling / 难度缩放**: [How does challenge grow with player skill?] / [挑战如何随玩家技能增长？]
+- **Feedback clarity / 反馈清晰度**: [How does the player know they're improving?] / [玩家如何知道他们在进步？]
+- **Recovery from failure / 失败恢复**: [How quickly can they try again? Is failure punishing or educational?] / [他们能多快再次尝试？失败是惩罚性的还是教育性的？]
 
 ---
 
-<!-- 中文翻译 -->
-## Core Loop
+## Core Loop / 核心循环
 
-<!-- 中文翻译 -->
-### Moment-to-Moment (30 seconds)
-[What is the player physically doing most of the time? The most basic, repeated
-action. This MUST be intrinsically satisfying — if the 30-second loop isn't
-fun in isolation, no amount of progression will save the game.]
+### Moment-to-Moment (30 seconds) / 瞬间到瞬间（30秒）
+[What is the player physically doing most of the time? The most basic, repeated action. This MUST be intrinsically satisfying — if the 30-second loop isn't fun in isolation, no amount of progression will save the game.] / [玩家在大多数时间在物理上做什么？最基本、重复的动作。这必须是内在令人满意的——如果30秒循环单独来看无趣，再多的进度也无法拯救游戏。]
 
-<!-- 中文翻译 -->
-### Short-Term (5-15 minutes)
-[What objective or cycle structures the moment-to-moment play? Encounters,
-puzzles, rounds, quests. This is where "one more turn" or "one more run"
-psychology lives.]
+### Short-Term (5-15 minutes) / 短期（5-15分钟）
+[What objective or cycle structures the moment-to-moment play? Encounters, puzzles, rounds, quests. This is where "one more turn" or "one more run" psychology lives.] / [什么目标或循环构建了瞬间到瞬间的游戏？遭遇、谜题、回合、任务。这是"再来一回合"或"再来一次运行"心理所在的地方。]
 
-<!-- 中文翻译 -->
-### Session-Level (30-120 minutes)
-[What does a full play session look like? What does the player accomplish?
-This should end with a natural stopping point AND a reason to come back.]
+### Session-Level (30-120 minutes) / 会话级别（30-120分钟）
+[What does a full play session? What does the player accomplish? This should end with a natural stopping point AND a reason to come back.] / [完整的游戏会话是什么样的？玩家完成了什么？这应该以一个自然的停止点和一个回来的理由结束。]
 
-<!-- 中文翻译 -->
-### Long-Term Progression
-[How does the player grow over days/weeks? Character progression, unlocks,
-story advancement, mastery. What is the player working toward?]
+### Long-Term Progression / 长期进度
+[How does the player grow over days/weeks? Character progression, unlocks, story advancement, mastery. What is the player working toward?] / [玩家如何在数天/数周内成长？角色进度、解锁、故事推进、精通。玩家正在朝着什么努力？]
 
-<!-- 中文翻译 -->
-### Retention Hooks
-[What specifically brings the player back for their next session?]
-- **Curiosity**: [Unanswered questions, unexplored areas, locked content]
-- **Investment**: [Progress they don't want to lose, characters they care about]
-- **Social**: [Friends playing, guild obligations, shared goals]
-- **Mastery**: [Skills to improve, challenges to overcome, rankings to climb]
+### Retention Hooks / 留存钩子
+[What specifically brings the player back for their next session?] / [具体是什么让玩家回到他们的下一个会话？]
+- **Curiosity / 好奇心**: [Unanswered questions, unexplored areas, locked content] / [未回答的问题、未探索的区域、锁定的内容]
+- **Investment / 投入**: [Progress they don't want to lose, characters they care about] / [他们不想失去的进度、他们关心的角色]
+- **Social / 社交**: [Friends playing, guild obligations, shared goals] / [朋友在玩、公会义务、共享目标]
+- **Mastery / 精通**: [Skills to improve, challenges to overcome, rankings to climb] / [需要改进的技能、需要克服的挑战、需要攀登的排名]
 
 ---
 
-<!-- 中文翻译 -->
-## Game Pillars
+## Game Pillars / 游戏支柱
 
-Design pillars are non-negotiable principles that guide EVERY decision. When
-two design choices conflict, pillars break the tie. Keep to 3-5 pillars.
+Design pillars are non-negotiable principles that guide EVERY decision. When two design choices conflict, pillars break the tie. Keep to 3-5 pillars. / 设计支柱是指导每个决策的不可协商的原则。当两个设计选择冲突时，支柱打破平局。保持3-5个支柱。
 
-Real AAA examples:
-- God of War: "Intense combat", "Father-son story", "World exploration"
-- Hades: "Fast fluid combat", "Narrative depth through repeated runs"
-- The Last of Us: "Story as essential", "AI partners build relationships", "Stealth encouraged"
+Real AAA examples / 真实AAA examples:
+- God of War: "Intense combat", "Father-son story", "World exploration" / 《战神》："激烈战斗"、"父子故事"、"世界探索"
+- Hades: "Fast fluid combat", "Narrative depth through repeated runs" / 《黑帝斯》："快速流畅战斗"、"通过重复运行实现叙事深度"
+- The Last of Us: "Story as essential", "AI partners build relationships", "Stealth encouraged" / 《最后生还者》："故事至关重要"、"AI伙伴建立关系"、"鼓励潜行"
 
-### Pillar 1: [Name]
-[One sentence defining this non-negotiable design principle.]
+### Pillar 1: [Name] / 支柱1：[名称]
+[One sentence defining this non-negotiable design principle.] / [一句话定义这个不可协商的设计原则。]
 
-*Design test*: [A concrete decision this pillar would resolve. "If we're
-debating between X and Y, this pillar says we choose __."]
+*Design test / 设计测试*: [A concrete decision this pillar would resolve. "If we're debating between X and Y, this pillar says we choose __."] / [这个支柱会解决的具体决策。"如果我们在X和Y之间辩论，这个支柱说我们选择__。"]
 
-### Pillar 2: [Name]
-[Definition]
+### Pillar 2: [Name] / 支柱2：[名称]
+[Definition] / [定义]
 
-*Design test*: [Decision it resolves]
+*Design test / 设计测试*: [Decision it resolves] / [它解决的决策]
 
-### Pillar 3: [Name]
-[Definition]
+### Pillar 3: [Name] / 支柱3：[名称]
+[Definition] / [定义]
 
-*Design test*: [Decision it resolves]
+*Design test / 设计测试*: [Decision it resolves] / [它解决的决策]
 
-<!-- 中文翻译 -->
-### Anti-Pillars (What This Game Is NOT)
+### Anti-Pillars (What This Game Is NOT) / 反支柱（这款游戏不是什么）
+Anti-pillars are equally important — they prevent scope creep and keep the vision focused. Every "no" protects the "yes." / 反支柱同样重要——它们防止范围蔓延并保持愿景集中。每个"不"都保护"是"。
 
-Anti-pillars are equally important — they prevent scope creep and keep the
-vision focused. Every "no" protects the "yes."
-
-- **NOT [thing]**: [Why this is explicitly excluded and what it would compromise]
-- **NOT [thing]**: [Why]
-- **NOT [thing]**: [Why]
+- **NOT [thing] / 不是[事物]**: [Why this is explicitly excluded and what it would compromise] / [为什么这被明确排除以及它会损害什么]
+- **NOT [thing] / 不是[事物]**: [Why] / [为什么]
+- **NOT [thing] / 不是[事物]**: [Why] / [为什么]
 
 ---
 
-<!-- 中文翻译 -->
-## Inspiration and References
+## Inspiration and References / 灵感与参考
 
-| Reference | What We Take From It | What We Do Differently | Why It Matters |
+| Reference / 参考 | What We Take From It / 我们从中获取什么 | What We Do Differently / 我们的不同做法 | Why It Matters / 为什么重要 |
 | ---- | ---- | ---- | ---- |
-| [Game 1] | [Specific mechanic, feeling, or approach] | [Our twist] | [What it validates about our concept] |
-| [Game 2] | [What we learn] | [Our twist] | [Validation] |
-| [Game 3] | [What we learn] | [Our twist] | [Validation] |
+| [Game 1] | [Specific mechanic, feeling, or approach] / [具体机制、感觉或方法] | [Our twist] / [我们的变体] | [What it validates about our concept] / [它验证了我们的概念的什么] |
+| [Game 2] | [What we learn] / [我们学到的] | [Our twist] / [我们的变体] | [Validation] / [验证] |
+| [Game 3] | [What we learn] / [我们学到的] | [Our twist] / [我们的变体] | [Validation] / [验证] |
 
-**Non-game inspirations**: [Films, books, music, art, real-world experiences
-that influence the tone, world, or feel. Great games often pull from outside
-the medium.]
+**Non-game inspirations / 非游戏灵感**: [Films, books, music, art, real-world experiences that influence the tone, world, or feel. Great games often pull from outside the medium.] / [影响基调、世界或感觉的电影、书籍、音乐、艺术、现实世界经验。优秀的游戏通常从媒体外部汲取灵感。]
 
 ---
 
-<!-- 中文翻译 -->
-## Target Player Profile
+## Target Player Profile / 目标玩家概况
 
-[Be specific. "Gamers" is not a target audience.]
+[Be specific. "Gamers" is not a target audience.] / [要具体。"玩家"不是一个目标受众。]
 
-| Attribute | Detail |
+| Attribute / 属性 | Detail / 详情 |
 | ---- | ---- |
-| **Age range** | [e.g., 18-35] |
-| **Gaming experience** | [Casual / Mid-core / Hardcore] |
-| **Time availability** | [e.g., "30-minute sessions on weeknights, longer on weekends"] |
-| **Platform preference** | [Where they play most] |
-| **Current games they play** | [2-3 specific titles] |
-| **What they're looking for** | [The unmet need this game fills] |
-| **What would turn them away** | [Dealbreakers for this audience] |
+| **Age range / 年龄范围** | [e.g., 18-35] / [例如：18-35岁] |
+| **Gaming experience / 游戏经验** | [Casual / Mid-core / Hardcore] / [休闲/中度核心/硬核] |
+| **Time availability / 时间可用性** | [e.g., "30-minute sessions on weeknights, longer on weekends"] / [例如："工作日晚上30分钟，周末更长"] |
+| **Platform preference / 平台偏好** | [Where they play most] / [他们最常玩的地方] |
+| **Current games they play / 他们当前玩的游戏** | [2-3 specific titles] / [2-3个具体游戏名称] |
+| **What they're looking for / 他们在寻找什么** | [The unmet need this game fills] / [这款游戏满足的未满足需求] |
+| **What would turn them away / 什么会让他们离开** | [Dealbreakers for this audience] / [这个受众的致命问题] |
 
 ---
 
-<!-- 中文翻译 -->
-## Technical Considerations
+## Technical Considerations / 技术考量
 
-| Consideration | Assessment |
+| Consideration / 考量 | Assessment / 评估 |
 | ---- | ---- |
-| **Recommended Engine** | [Godot / Unity / Unreal and why — consider scope, team expertise, platform targets] |
-| **Key Technical Challenges** | [What's technically hard about this game?] |
-| **Art Style** | [Pixel / 2D / 2.5D / 3D stylized / 3D realistic] |
-| **Art Pipeline Complexity** | [Low (asset store + modifications) / Medium (custom 2D) / High (custom 3D)] |
-| **Audio Needs** | [Minimal / Moderate / Music-heavy / Adaptive] |
-| **Networking** | [None / P2P / Client-Server / Dedicated Servers] |
-| **Content Volume** | [Estimate: X levels, Y items, Z hours of gameplay] |
-| **Procedural Systems** | [Any procedural generation? What scope?] |
+| **Recommended Engine / 推荐引擎** | [Godot / Unity / Unreal and why — consider scope, team expertise, platform targets] / [Godot/Unity/Unreal 以及为什么——考虑范围、团队专业知识、平台目标] |
+| **Key Technical Challenges / 关键技术挑战** | [What's technically hard about this game?] / [这款游戏在技术上有何难点？] |
+| **Art Style / 艺术风格** | [Pixel / 2D / 2.5D / 3D stylized / 3D realistic] / [像素/2D/2.5D/3D风格化/3D写实] |
+| **Art Pipeline Complexity / 美术管线复杂度** | [Low (asset store + modifications) / Medium (custom 2D) / High (custom 3D)] / [低（资源商店+修改）/中（自定义2D）/高（自定义3D）] |
+| **Audio Needs / 音频需求** | [Minimal / Moderate / Music-heavy / Adaptive] / [最小/适中/音乐为主/自适应] |
+| **Networking / 网络** | [None / P2P / Client-Server / Dedicated Servers] / [无/P2P/客户端-服务器/专用服务器] |
+| **Content Volume / 内容量** | [Estimate: X levels, Y items, Z hours of gameplay] / [预估：X关卡、Y物品、Z小时游戏时间] |
+| **Procedural Systems / 程序生成系统** | [Any procedural generation? What scope?] / [有任何程序生成吗？什么范围？] |
 
 ---
 
-<!-- 中文翻译 -->
-## Risks and Open Questions
+## Risks and Open Questions / 风险与开放问题
 
-<!-- 中文翻译 -->
-### Design Risks
-[Things that could make the game unfun or uncompelling]
-- [Risk 1 — e.g., "Core loop may not sustain sessions > 30 minutes"]
-- [Risk 2 — e.g., "Player motivation unclear after main story ends"]
+### Design Risks / 设计风险
+[Things that could make the game unfun or uncompelling] / [可能使游戏无趣或缺乏吸引力的因素]
+- [Risk 1 — e.g., "Core loop may not sustain sessions > 30 minutes"] / [风险1 — 例如："核心循环可能无法维持>30分钟的游戏会话"]
+- [Risk 2 — e.g., "Player motivation unclear after main story ends"] / [风险2 — 例如："主线故事结束后玩家动机不明确"]
 
-<!-- 中文翻译 -->
-### Technical Risks
-[Things that could be hard or impossible to build]
-- [Risk 1 — e.g., "Procedural generation quality is unproven"]
-- [Risk 2 — e.g., "Networking for 100+ players may require dedicated infrastructure"]
+### Technical Risks / 技术风险
+[Things that could be hard or impossible to build] / [可能难以或无法构建的因素]
+- [Risk 1 — e.g., "Procedural generation quality is unproven"] / [风险1 — 例如："程序生成质量未经证实"]
+- [Risk 2 — e.g., "Networking for 100+ players may require dedicated infrastructure"] / [风险2 — 例如："100+玩家的网络可能需要专用基础设施"]
 
-<!-- 中文翻译 -->
-### Market Risks
-[Things that could prevent commercial success]
-- [Risk 1 — e.g., "Genre is saturated with established competitors"]
-- [Risk 2 — e.g., "Target audience may be too niche for financial sustainability"]
+### Market Risks / 市场风险
+[Things that could prevent commercial success] / [可能阻碍商业成功的因素]
+- [Risk 1 — e.g., "Genre is saturated with established competitors"] / [风险1 — 例如："类型已被成熟竞争对手饱和"]
+- [Risk 2 — e.g., "Target audience may be too niche for financial sustainability"] / [风险2 — 例如："目标受众可能过于小众，无法维持财务"]
 
-<!-- 中文翻译 -->
-### Scope Risks
-[Things that could blow the timeline]
-- [Risk 1 — e.g., "Content volume exceeds team capacity"]
-- [Risk 2 — e.g., "Feature X depends on technology we haven't prototyped"]
+### Scope Risks / 范围风险
+[Things that could blow the timeline] / [可能破坏时间线的因素]
+- [Risk 1 — e.g., "Content volume exceeds team capacity"] / [风险1 — 例如："内容量超出团队能力"]
+- [Risk 2 — e.g., "Feature X depends on technology we haven't prototyped"] / [风险2 — 例如："功能X依赖于我们尚未原型化的技术"]
 
-<!-- 待解决问题 -->
-### Open Questions
-[Things that need prototyping or research before we can answer]
-- [Question 1 — and how we plan to answer it]
-- [Question 2 — and what prototype would resolve it]
+### Open Questions / 开放问题
+[Things that need prototyping or research before we can answer] / [在我们可以回答之前需要原型化或研究的事项]
+- [Question 1 — and how we plan to answer it] / [问题1 —— 以及我们计划如何回答它]
+- [Question 2 — and what prototype would resolve it] / [问题2 —— 以及什么原型会解决它]
 
 ---
 
-<!-- 中文翻译 -->
-## MVP Definition
+## MVP Definition / MVP 定义
 
-[The absolute minimum version that validates the core hypothesis. The MVP
-answers ONE question: "Is the core loop fun?"]
+[The absolute minimum version that validates the core hypothesis. The MVP answers ONE question: "Is the core loop fun?"] / [验证核心假设的绝对最小版本。MVP回答一个问题："核心循环有趣吗？"]
 
-**Core hypothesis**: [The single statement the MVP tests, e.g., "Players find
-the combat-crafting loop engaging for 30+ minute sessions"]
+**Core hypothesis / 核心假设**: [The single statement the MVP tests, e.g., "Players find the combat-crafting loop engaging for 30+ minute sessions"] / [MVP测试的唯一陈述，例如："玩家发现战斗-制作循环在30+分钟的游戏会话中具有吸引力"]
 
-**Required for MVP**:
-1. [Essential feature 1 — directly tests the hypothesis]
-2. [Essential feature 2]
-3. [Essential feature 3]
+**Required for MVP / MVP所需**:
+1. [Essential feature 1 — directly tests the hypothesis] / [基本功能1 - 直接测试假设]
+2. [Essential feature 2] / [基本功能2]
+3. [Essential feature 3] / [基本功能3]
 
-**Explicitly NOT in MVP** (defer to later):
-- [Feature that's nice but doesn't test the hypothesis]
-- [Feature that adds scope without validating the core]
+**Explicitly NOT in MVP / 明确不在MVP中** (defer to later / 推迟到以后):
+- [Feature that's nice but doesn't test the hypothesis] / [很好但不测试假设的功能]
+- [Feature that adds scope without validating the core] / [增加范围但不验证核心的功能]
 
-<!-- 中文翻译 -->
-### Scope Tiers (if budget/time shrinks)
+### Scope Tiers (if budget/time shrinks) / 范围层级（如果预算/时间缩减）
 
-| Tier | Content | Features | Timeline |
+| Tier / 层级 | Content / 内容 | Features / 功能 | Timeline / 时间线 |
 | ---- | ---- | ---- | ---- |
-| **MVP** | [Minimal] | [Core loop only] | [X weeks] |
-| **Vertical Slice** | [One complete area] | [Core + progression] | [X weeks] |
-| **Alpha** | [All areas, placeholder] | [All features, rough] | [X weeks] |
-| **Full Vision** | [Complete content] | [All features, polished] | [X weeks] |
+| **MVP** | [Minimal] / [最小] | [Core loop only] / [仅核心循环] | [X weeks] / [X周] |
+| **Vertical Slice / 垂直切片** | [One complete area] / [一个完整区域] | [Core + progression] / [核心+进度] | [X weeks] / [X周] |
+| **Alpha** | [All areas, placeholder] / [所有区域，占位符] | [All features, rough] / [所有功能，粗糙] | [X weeks] / [X周] |
+| **Full Vision / 完整愿景** | [Complete content] / [完整内容] | [All features, polished] / [所有功能，精致] | [X weeks] / [X周] |
 
 ---
 
-<!-- 后续步骤 -->
-## Next Steps
+## Next Steps / 后续步骤
 
-- [ ] Get concept approval from creative-director
-- [ ] Fill in CLAUDE.md technology stack based on engine choice (`/setup-engine`)
-- [ ] Create game pillars document (`/design-review` to validate)
-- [ ] Decompose concept into systems (`/map-systems` — maps dependencies, assigns priorities, guides per-system GDD writing)
-- [ ] Create first architecture decision record (`/architecture-decision`)
-- [ ] Prototype core loop (`/prototype [core-mechanic]`)
-- [ ] Validate core loop with playtest (`/playtest-report`)
-- [ ] Plan first milestone (`/sprint-plan new`)
+- [ ] Get concept approval from creative-director / 从创意总监处获得概念批准
+- [ ] Fill in CLAUDE.md technology stack based on engine choice (`/setup-engine`) / 根据引擎选择填写CLAUDE.md技术栈（`/setup-engine`）
+- [ ] Create game pillars document (`/design-review` to validate) / 创建游戏支柱文档（`/design-review`进行验证）
+- [ ] Decompose concept into systems (`/map-systems` — maps dependencies, assigns priorities, guides per-system GDD writing) / 将概念分解为系统（`/map-systems` - 映射依赖关系、分配优先级、指导每个系统的GDD编写）
+- [ ] Create first architecture decision record (`/architecture-decision`) / 创建第一个架构决策记录（`/architecture-decision`）
+- [ ] Prototype core loop (`/prototype [core-mechanic]`) / 原型化核心循环（`/prototype [core-mechanic]`）
+- [ ] Validate core loop with playtest (`/playtest-report`) / 通过试玩测试验证核心循环（`/playtest-report`）
+- [ ] Plan first milestone (`/sprint-plan new`) / 规划第一个里程碑（`/sprint-plan new`）

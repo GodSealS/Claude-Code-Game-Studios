@@ -79,94 +79,85 @@ Describe the power structure.]
 
 ---
 
-<!-- 中文翻译 -->
-## Territory and Resources
+## Territory and Resources / 领土与资源
 
-<!-- 中文翻译 -->
-### Holdings
-[Where does this faction control territory? What are their key locations?]
+### Holdings / 领地
+[Where does this faction control territory? What are their key locations?] / [这个阵营控制哪些领土？他们的关键地点在哪里？]
 
-<!-- 资源 -->
-### Resources
-- **Primary resource**: [What they have abundance of]
-- **Scarcity**: [What they lack and need]
-- **Trade goods**: [What they export/sell]
+### Resources / 资源
+- **Primary resource / 主要资源**: [What they have abundance of] / [他们拥有丰富的资源]
+- **Scarcity / 稀缺资源**: [What they lack and need] / [他们缺乏并需要的资源]
+- **Trade goods / 贸易商品**: [What they export/sell] / [他们出口/销售的商品]
 
-<!-- 中文翻译 -->
-### Military Strength
-[How powerful are they? Standing army? Special forces? Magical capabilities?
-Technology level?]
+### Military Strength / 军事力量
+[How powerful are they? Standing army? Special forces? Magical capabilities? Technology level?] / [他们有多强大？常备军？特种部队？魔法能力？科技水平？]
 
 ---
 
-<!-- 中文翻译 -->
-## Relationships
+## Relationships / 关系
 
-| Faction | Relationship | Reason | Trend |
+| Faction / 阵营 | Relationship / 关系 | Reason / 原因 | Trend / 趋势 |
 | ---- | ---- | ---- | ---- |
-| [Faction A] | [Allied / Friendly / Neutral / Tense / Hostile / War] | [Why] | [Improving / Stable / Deteriorating] |
-| [Faction B] | [Relationship] | [Why] | [Trend] |
-| [Player] | [Starting disposition] | [Why] | [Player-influenced] |
+| [Faction A] | [Allied / Friendly / Neutral / Tense / Hostile / War] / [盟友/友好/中立/紧张/敌对/战争] | [Why] / [原因] | [Improving / Stable / Deteriorating] / [改善/稳定/恶化] |
+| [Faction B] | [Relationship] / [关系] | [Why] / [原因] | [Trend] / [趋势] |
+| [Player] | [Starting disposition] / [初始态度] | [Why] / [原因] | [Player-influenced] / [受玩家影响] |
 
 ---
 
-<!-- 中文翻译 -->
-## Reputation System (if applicable)
+## Reputation System (if applicable) / 声望系统（如适用）
 
-| Tier | Points | Benefits | Requirements |
+| Tier / 等级 | Points / 点数 | Benefits / 好处 | Requirements / 要求 |
 | ---- | ---- | ---- | ---- |
-| Hostile | [-1000 to -500] | [Attacked on sight] | [Betrayal, war crimes] |
-| Unfriendly | [-500 to -100] | [No services, higher prices] | [Opposing actions] |
-| Neutral | [-100 to 100] | [Basic services] | [Default] |
-| Friendly | [100 to 500] | [Discounts, quests] | [Complete tasks] |
-| Honored | [500 to 1000] | [Unique items, areas, abilities] | [Major questline] |
-| Exalted | [1000+] | [Best rewards, title, housing] | [Full faction commitment] |
+| Hostile / 敌对 | [-1000 to -500] | [Attacked on sight] / [见面即攻击] | [Betrayal, war crimes] / [背叛、战争罪行] |
+| Unfriendly / 不友好 | [-500 to -100] | [No services, higher prices] / [无服务、价格更高] | [Opposing actions] / [敌对行动] |
+| Neutral / 中立 | [-100 to 100] | [Basic services] / [基础服务] | [Default] / [默认] |
+| Friendly / 友好 | [100 to 500] | [Discounts, quests] / [折扣、任务] | [Complete tasks] / [完成任务] |
+| Honored / 尊敬 | [500 to 1000] | [Unique items, areas, abilities] / [独特物品、区域、能力] | [Major questline] / [主要任务线] |
+| Exalted / 崇敬 | [1000+] | [Best rewards, title, housing] / [最佳奖励、头衔、住房] | [Full faction commitment] / [完全阵营承诺] |
 
 ---
 
 ## Gameplay Role / 玩法角色
 
 ### Player Interaction / 玩家交互
-[How does the player encounter and interact with this faction? Quests?
-Trading? Combat? Diplomacy?]
+[How does the player encounter and interact with this faction? Quests? Trading? Combat? Diplomacy?] / [玩家如何遇到并与这个阵营交互？任务？交易？战斗？外交？]
 
 ### Unique Mechanics / 独特机制
-[Does this faction introduce any unique gameplay mechanics? Crafting recipes?
-Combat styles? Magic systems?]
+[Does this faction introduce any unique gameplay mechanics? Crafting recipes? Combat styles? Magic systems?] / [这个阵营是否引入了任何独特的游戏机制？制作配方？战斗风格？魔法系统？]
 
 ### Questlines / 任务线
-[Brief overview of the major questlines associated with this faction.]
+[Brief overview of the major questlines associated with this faction.] / [与该阵营相关的主要任务线简要概述。]
 
 ---
 
 ## Aesthetic Guide / 美学指南
 
 ### Architecture / 建筑
-[What do their buildings look like? Materials, shapes, scale.]
+[What do their buildings look like? Materials, shapes, scale.] / [他们的建筑是什么样子的？材料、形状、规模。]
 
 ### Clothing/Armor / 服装/护甲
-[What do members wear? Identifying visual elements.]
+[What do members wear? Identifying visual elements.] / [成员穿什么？辨识性视觉元素。]
 
 ### Technology/Magic Level / 科技/魔法水平
-[What tools, weapons, and abilities do they use?]
+[What tools, weapons, and abilities do they use?] / [他们使用什么工具、武器和能力？]
 
 ### Audio Palette / 音频调色板
-[What sounds are associated with this faction? Musical themes, ambient sounds.]
+[What sounds are associated with this faction? Musical themes, ambient sounds.] / [什么声音与这个阵营相关？音乐主题、环境声音。]
 
 ---
 
 ## Lore Consistency Notes / 背景一致性说明
 
-- **Canon level**: [Core / Extended / Flavor — how important is this to the main story?]
-- **Contradictions to watch**: [Any potential conflicts with other lore]
-- **Open questions**: [Things not yet decided about this faction]
-- **Off-limits**: [Things that must NOT be true about this faction]
+- **Canon level / 正史级别**: [Core / Extended / Flavor — how important is this to the main story?] / [核心/扩展/风味——这对主线故事有多重要？]
+- **Contradictions to watch / 需注意的矛盾**: [Any potential conflicts with other lore] / [与其他背景设定的任何潜在冲突]
+- **Open questions / 开放问题**: [Things not yet decided about this faction] / [关于这个阵营尚未决定的事项]
+- **Off-limits / 禁忌**: [Things that must NOT be true about this faction] / [关于这个阵营不能为真的事项]
 
 ---
 
 ## Dependencies / 依赖关系
 
-- Related factions: [List factions that interact with this one]
-- Related areas: [Levels/regions where this faction appears]
-- Related questlines: [Story arcs involving this faction]
-- Affects: [economy, combat encounters, narrative branches]
+- **Related factions / 相关阵营**: [List factions that interact with this one] / [列出与此阵营交互的阵营]
+- **Related areas / 相关区域**: [Levels/regions where this faction appears] / [该阵营出现的关卡/区域]
+- **Related questlines / 相关任务线**: [Story arcs involving this faction] / [涉及该阵营的故事弧]
+- **Affects / 影响**: [economy, combat encounters, narrative branches] / [经济、战斗遭遇、叙事分支]
