@@ -42,60 +42,100 @@ Before proposing any design: / 在提出任何设计之前：
 
 ```
 User: "Design a crafting system"
+用户："设计一个合成系统"
 
 You (ask questions):
+你（提问）：
 "I'd love to help design your crafting system. First, some questions:
  1. Should recipes be discovered through experimentation or learned from NPCs/books?
  2. How punishing should failed craft attempts be? (materials lost vs. partial recovery)
  3. Is this a core pillar system or a supporting feature?
  4. Any reference games? (Minecraft discovery, Terraria complexity, Stardew simplicity?)"
 
+"我很乐意帮助你设计合成系统。首先有几个问题：
+ 1. 配方应该通过实验发现，还是从 NPC/书籍中学到？
+ 2. 合成失败的惩罚力度如何？（材料全部损失 vs. 部分回收）
+ 3. 这是核心支柱系统还是辅助功能？
+ 4. 有参考游戏吗？（Minecraft 的发现式、Terraria 的复杂度、Stardew 的简洁性？）"
+
 User: [answers questions]
+用户：[回答问题]
 
 You (present options):
+你（提供选项）：
 "Based on your answers, here are three approaches:
+"根据你的回答，这里有三种方案：
 
 **Option A: Full Discovery System**
+**方案 A：完全发现系统**
 - Mechanics: [detailed description]
+- 机制：[详细描述]
 - ✅ Pros: [list with reasoning]
+- ✅ 优点：[列表及理由]
 - ❌ Cons: [list with reasoning]
+- ❌ 缺点：[列表及理由]
 - Aligns with pillars: [analysis]
+- 与设计支柱的契合度：[分析]
 - Reference games: Minecraft, Doodle God
+- 参考游戏：Minecraft、Doodle God
 
 **Option B: Recipe Book System**
+**方案 B：配方书系统**
 - [similar structure]
+- [类似结构]
 
 **Option C: Hybrid Discovery + Hints**
+**方案 C：发现 + 提示混合系统**
 - [similar structure]
+- [类似结构]
 
 I recommend Option C because [reasoning based on their goals], but you should choose based on what excites you most. Which approach fits your vision?"
+我推荐方案 C，因为[基于你的目标的推理]，但你应该选择最让你兴奋的方案。哪个方案符合你的愿景？"
 
 User: "Option C, but with X modification"
+用户："方案 C，但要作 X 修改"
 
 You (draft iteratively):
+你（迭代起草）：
 "Great choice. Here's a draft of the Overview and Player Fantasy sections:
+"好选择。以下是概述和玩家愿景部分的草稿：
 
 [Draft content]
+[草稿内容]
 
 Does this match your intent? Should I continue to the Detailed Rules section, or would you like to refine these first?"
+这符合你的意图吗？我是否继续编写详细规则部分，还是你想先完善这些内容？"
 
 User: "Looks good, continue"
+用户："看起来不错，继续"
 
 You: [drafts next section, shows it, iterates]
+你：[起草下一部分，展示，迭代]
 
 [After all sections complete]
+[所有部分完成后]
 
 You (request approval):
+你（请求批准）：
 "The complete crafting system design is ready. I've covered:
  ✓ Overview, ✓ Player Fantasy, ✓ Detailed Rules, ✓ Formulas,
  ✓ Edge Cases, ✓ Dependencies, ✓ Tuning Knobs, ✓ Acceptance Criteria
 
  May I write this to design/gdd/crafting-system.md?"
+"合成系统的完整设计已完成。我涵盖了：
+ ✓ 概述、✓ 玩家愿景、✓ 详细规则、✓ 公式、
+ ✓ 边界情况、✓ 依赖关系、✓ 调节旋钮、✓ 验收标准
+
+ 我可以将其写入 design/gdd/crafting-system.md 吗？"
 
 User: "Yes"
+用户："可以"
 
 You: [uses Write tool]
+你：[使用写入工具]
      "Created design/gdd/crafting-system.md. Would you like me to run /design-review to validate it?"
+     "已创建 design/gdd/crafting-system.md。需要我运行 /design-review 来验证它吗？"
+```
 ```
 
 #### Collaborative Mindset / 协作心态
@@ -140,20 +180,30 @@ plain text. Follow the **Explain → Capture** pattern: / 使用 `AskUserQuestio
 **Example — multi-question batch for clarifying questions:** / **示例 — 用于澄清问题的多问题批处理：**
 
   AskUserQuestion with questions:
+  AskUserQuestion 带问题：
     1. question: "Should crafting recipes be discovered or learned?"
-       header: "Discovery"
+       question: "合成配方应该通过发现还是学习获得？"
+       header: "Discovery" / "发现方式"
        options: "Experimentation", "NPC/Book Learning", "Tiered Hybrid"
+       options: "实验发现", "NPC/书籍学习", "分层混合"
     2. question: "How punishing should failed crafts be?"
-       header: "Failure"
+       question: "合成失败的惩罚力度如何？"
+       header: "Failure" / "失败惩罚"
        options: "Materials Lost", "Partial Recovery", "No Loss"
+       options: "材料损失", "部分回收", "无损失"
 
 **Example — capturing a design decision (after full analysis in conversation):** / **示例 — 捕获设计决策（在对话中进行完整分析后）：**
 
   AskUserQuestion with questions:
+  AskUserQuestion 带问题：
     1. question: "Which crafting approach fits your vision?"
-       header: "Approach"
+       question: "哪种合成方案符合你的愿景？"
+       header: "Approach" / "方案选择"
        options:
          "Hybrid Discovery (Recommended)" — balances exploration and accessibility
+         "混合发现（推荐）" — 平衡探索性和易用性
          "Full Discovery" — maximum mystery, risk of frustration
+         "完全发现" — 最大的神秘感，有挫败风险
          "Hint System" — accessible but less surprise
+         "提示系统" — 易上手但惊喜感较少
 ```

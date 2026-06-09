@@ -86,19 +86,22 @@ cost of not deciding?] / [我们要解决什么问题？为什么必须现在做
 implement it without further clarification.] / [具体的技术决策，描述足够详细，以便其他人无需进一步澄清即可实施。]
 
 <!-- 架构 -->
-### Architecture
+### Architecture / 架构
 
 ```
 [ASCII diagram showing the system architecture this decision creates.
 Show components, data flow direction, and key interfaces.]
+[ASCII 图，展示此决策创建的系统架构。
+显示组件、数据流方向和关键接口。]
 ```
 
-<!-- 中文翻译 -->
-### Key Interfaces
+### Key Interfaces / 关键接口
 
 ```
 [Pseudocode or language-specific interface definitions that this decision
 creates. These become the contracts that implementers must respect.]
+[此决策创建的伪代码或语言特定接口定义。
+这些成为实现者必须遵守的契约。]
 ```
 
 <!-- 中文翻译 -->
@@ -189,6 +192,8 @@ creates. These become the contracts that implementers must respect.]
 > If this is a foundational decision with no direct GDD dependency, write:
 > "Foundational — no GDD requirement. Enables: [list what GDD systems this
 > decision unlocks or constrains]"
+> 如果这是一个基础性决策，没有直接依赖 GDD，则写入：
+> "基础性 — 无 GDD 需求。支持：[列出此决策解锁或约束的 GDD 系统]"
 
 <!-- 中文翻译 -->
 ## Related / 相关
