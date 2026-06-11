@@ -6,6 +6,7 @@ user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Bash, AskUserQuestion
 context: |
   !git log --oneline --since="2 weeks ago" 2>/dev/null
+model: DeepSeek-V4-Flash
 ---
 
 ## Phase 1: Parse Arguments

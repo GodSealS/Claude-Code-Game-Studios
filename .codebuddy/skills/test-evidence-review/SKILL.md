@@ -4,6 +4,8 @@ description: "Quality review of test files and manual evidence documents. Goes b
 argument-hint: "[story-path | sprint | system-name]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write
+context: fork
+model: DeepSeek-V4-Pro
 ---
 
 # Test Evidence Review

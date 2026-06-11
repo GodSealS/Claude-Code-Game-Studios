@@ -4,6 +4,8 @@ description: "Estimates task effort by analyzing complexity, dependencies, histo
 argument-hint: "[task-description]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep
+context: fork
+model: DeepSeek-V4-Flash
 ---
 
 ## Phase 1: Understand the Task

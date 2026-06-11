@@ -4,6 +4,8 @@ description: "Orchestrate level design team: level-designer + narrative-director
 argument-hint: "[level name or area to design] [--review full|lean|solo]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Bash, Task, AskUserQuestion, TodoWrite
+context: fork
+model: DeepSeek-V4-Pro
 ---
 
 When this skill is invoked:

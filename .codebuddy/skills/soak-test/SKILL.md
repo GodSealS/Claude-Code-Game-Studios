@@ -4,6 +4,8 @@ description: "Generate a soak test protocol for extended play sessions. Defines 
 argument-hint: "[duration: 30m | 1h | 2h | 4h] [focus: memory | stability | balance | all]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write
+context: fork
+model: DeepSeek-V4-Flash
 ---
 
 # Soak Test

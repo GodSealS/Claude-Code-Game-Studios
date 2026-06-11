@@ -4,6 +4,8 @@ description: "First-time onboarding — asks where you are, then guides you to t
 argument-hint: "[no arguments]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, AskUserQuestion
+context: fork
+model: DeepSeek-V4-Flash
 ---
 
 # Guided Onboarding

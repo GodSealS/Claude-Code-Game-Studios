@@ -4,6 +4,8 @@ description: "Guided game concept ideation — from zero idea to a structured ga
 argument-hint: "[genre or theme hint, or 'open'] [--review full|lean|solo]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, WebSearch, Task, AskUserQuestion
+context: fork
+model: DeepSeek-V4-Flash
 ---
 
 When this skill is invoked:

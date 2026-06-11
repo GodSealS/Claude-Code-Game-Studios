@@ -4,6 +4,8 @@ description: "Prepare a day-one patch for a game launch. Scopes, prioritises, im
 argument-hint: "[scope: known-bugs | cert-feedback | all]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Bash, Task, AskUserQuestion
+context: fork
+model: DeepSeek-V4-Flash
 ---
 
 # Day-One Patch

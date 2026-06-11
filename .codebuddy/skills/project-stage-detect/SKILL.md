@@ -4,6 +4,8 @@ description: "Automatically analyze project state, detect stage, identify gaps, 
 argument-hint: "[optional: role filter like 'programmer' or 'designer']"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Bash, Write
+context: fork
+model: DeepSeek-V4-Flash
 # Read-only diagnostic skill — no specialist agent delegation needed
 ---
 

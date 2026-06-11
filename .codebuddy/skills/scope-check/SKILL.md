@@ -4,6 +4,8 @@ description: "Analyze a feature or sprint for scope creep by comparing current s
 argument-hint: "[feature-name or sprint-N]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Bash
+context: fork
+model: DeepSeek-V4-Pro
 ---
 
 # Scope Check

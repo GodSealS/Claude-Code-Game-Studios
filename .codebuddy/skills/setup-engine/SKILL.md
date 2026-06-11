@@ -4,6 +4,8 @@ description: "Configure the project's game engine and version. Pins the engine i
 argument-hint: "[engine] | [engine version] | refresh | upgrade [old-version] [new-version] | no args for guided selection"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch, Task, AskUserQuestion
+context: fork
+model: DeepSeek-V4-Flash
 ---
 
 When this skill is invoked:
@@ -183,6 +185,212 @@ Update the Technology Stack section, replacing the `[CHOOSE]` placeholders with 
 - **Build System**: Cocos Creator Build Pipeline
 - **Asset Pipeline**: Cocos Creator Asset Database + dynamic load
 ```
+
+---
+
+## 4.5. Create Engine Project Directory Structure
+
+After updating CODEBUDDY.md, create the engine-specific project directory
+structure. The generic `directory-structure.md` (`src/`, `assets/`, `design/`,
+`docs/`, etc.) defines the project management overlay — the engine-specific
+structure defines where the engine's actual source, content, and build files live.
+
+### Collaborative Step
+
+Show the user the proposed engine-specific directories using the template from
+**Appendix B** (at the bottom of this skill). Explain:
+> "Each engine has its own required directory layout. Creating these now ensures
+> all agents understand where to place source code, assets, and configurations.
+> The generic `src/` and `assets/` directories from `directory-structure.md` will
+> map into the engine-specific layout."
+
+Ask: "May I create the [engine] project directory structure?"
+
+Wait for confirmation before creating any directories or files.
+
+### Create Engine Directory Structure
+
+Based on the chosen engine, create the directory structure from **Appendix B**.
+Also create a `.gitignore` (or append to existing `.gitignore`) with the
+engine-specific ignore rules from Appendix B.
+
+#### Unreal
+
+```text
+MyProject/
+├── MyProject.uproject          # ★ Project entry file
+├── Config/                     # Project settings, input, engine params
+├── Content/                    # ★ All game assets (Blueprints, textures, models, maps, materials)
+├── Source/                     # C++ source (.h / .cpp / .Build.cs)
+├── Binaries/                   # Compiled output
+├── Intermediate/               # Temp / intermediate build files
+├── Saved/                      # Runtime-generated files (logs, autosaves, crashes)
+├── DerivedDataCache/           # Asset derived data cache (DDC)
+├── Build/                      # Build/packaging support files
+└── Plugins/                    # Project-level plugins
+```
+
+Ignore patterns for `.gitignore`:
+```gitignore
+# Unreal Engine
+Binaries/
+Intermediate/
+Saved/
+DerivedDataCache/
+Build/
+.vs/
+*.sln
+*.suo
+*.xcodeproj
+*.xcworkspace
+```
+
+#### Unity
+
+```text
+MyUnityProject/
+├── Assets/                     # [Must] Core assets (Code, Scenes, Art, Prefabs)
+│   ├── _ProjectName/           # Namespace folder
+│   │   ├── Art/                # Textures, Materials, Models, Animations
+│   │   ├── Audio/
+│   │   ├── Prefabs/
+│   │   ├── Scenes/
+│   │   └── Scripts/
+│   │       ├── Runtime/        # Gameplay logic
+│   │       └── Editor/         # Editor tools (not included in build)
+│   ├── Plugins/                # [Must] Native plugins
+│   ├── Resources/              # [Caution] Resources.Load()
+│   ├── StreamingAssets/        # [Must] Files copied to build as-is
+│   └── Settings/               # ScriptableObjects (e.g., GameConfig)
+├── Packages/                   # [Must] Package manager manifests
+│   └── manifest.json
+├── ProjectSettings/            # [Must] Global project settings
+├── Library/                    # [Ignore] Local cache & compilation artifacts
+├── Temp/                       # [Ignore] Temporary files
+├── Logs/                       # [Ignore] Editor logs
+└── UserSettings/               # [Ignore] Personal editor preferences
+```
+
+Ignore patterns for `.gitignore`:
+```gitignore
+# Unity
+[Ll]ibrary/
+[Tt]emp/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+.vs/
+.idea/
+*.csproj
+*.sln
+*.user
+*.userprefs
+*.unityproj
+Builds/
+*.apk
+*.ipa
+```
+
+#### Cocos Creator
+
+```text
+MyCocosProject/
+├── assets/                     # ★ Core resource directory (scenes, scripts, prefabs, art)
+│   ├── scenes/                 # Scene files (.scene)
+│   ├── scripts/                # Scripts (.ts / .js)
+│   ├── prefabs/                # Prefabs (.prefab)
+│   ├── textures/               # Textures
+│   ├── materials/              # Materials (.mtl)
+│   ├── models/                 # Models / FBX
+│   ├── animations/             # Animation clips
+│   ├── audio/                  # Audio
+│   ├── resources/              # Runtime-loaded resources (Resources.load)
+│   └── internal/               # Built-in engine resources (do not touch)
+├── settings/                   # ★ Project config (build, platform, module settings)
+├── profiles/                   # Local build/run configs (no VCS)
+├── local/                      # Local cache & temp data (no VCS)
+├── packages/                   # Project-level plugins
+├── dist/                       # Build output (no VCS)
+└── temp/                       # Temporary files (deletable)
+```
+
+Ignore patterns for `.gitignore`:
+```gitignore
+# Cocos Creator
+/local/
+/profiles/
+/temp/
+/dist/
+/build/
+node_modules/
+package-lock.json
+
+# Do NOT ignore .meta files!
+```
+
+> **CRITICAL for Cocos Creator**: Do NOT add `*.meta` to `.gitignore`.
+> `.meta` files are required for asset references and must be version-controlled.
+
+#### Godot
+
+```text
+MyGodotProject/
+├── project.godot               # ★ Project core config file
+├── scenes/                     # Scene files (.tscn)
+├── scripts/                    # Scripts (GDScript: .gd, C#: .cs)
+├── assets/                     # Raw art assets (textures, models, audio, fonts)
+│   ├── textures/
+│   ├── models/
+│   ├── audio/
+│   └── fonts/
+├── themes/                     # UI theme resources (.tres)
+├── autoload/                   # Autoload singleton scripts
+├── addons/                     # Plugin directory (EditorPlugins)
+├── shaders/                    # Shader files (.gdshader)
+├── resources/                  # Custom resources (.res, .tres, .cfg)
+├── .godot/                     # Engine cache (deletable, like Library/)
+├── .import/                    # Asset import cache (deletable)
+├── builds/                     # Build output (ignore)
+├── docs/                       # Project docs (optional)
+└── tests/                      # Unit tests (optional)
+```
+
+Ignore patterns for `.gitignore`:
+```gitignore
+# Godot 4.x
+.godot/
+.import/
+builds/
+exports/
+*.exe
+*.dmg
+*.apk
+*.aab
+*.translation
+*.remap
+.idea/
+*.sln
+*.csproj
+*.userprefs
+*.pidb
+*.suo
+```
+
+### After Creation
+
+After creating the directories and `.gitignore`, output which directories were
+created and the mapping between the engine-specific structure and the generic
+`directory-structure.md` overlay:
+
+| Engine Directory | Maps To | Purpose |
+|------------------|---------|---------|
+| **Unreal** `Source/` | `src/` | C++ source code |
+| **Unreal** `Content/` | `assets/` | All game assets |
+| **Unity** `Assets/_ProjectName/Scripts/` | `src/` | C# source code |
+| **Unity** `Assets/_ProjectName/` | `assets/` | All game assets |
+| **Cocos** `assets/scripts/` | `src/` | TypeScript source code |
+| **Cocos** `assets/` | `assets/` | All game assets |
+| **Godot** `scripts/` | `src/` | GDScript/C# source code |
+| **Godot** `assets/` | `assets/` | Raw art assets |
 
 ---
 
@@ -477,71 +685,7 @@ The section should instruct the agent to:
 
 ---
 
-## 10. Cleanup Unused Engine Artifacts
-
-> **Guard**: This section applies ONLY to full setup mode (engine selection + version pin). **Skip for `/setup-engine refresh`, `/setup-engine upgrade`, and guided-only mode that exits before pinning.**
-
-Once the chosen engine is fully configured and confirmed, delete all agents and skills belonging to the three **unselected** engines. This prevents accidental use of wrong-engine agents and reduces repository clutter.
-
-### Map: Engine → Agent Files
-
-Each engine has ONE primary specialist agent in `.codebuddy/agents/`:
-
-| Engine | Agent File to Delete (if not chosen) |
-|--------|--------------------------------------|
-| Godot | `.codebuddy/agents/godot-specialist.md` |
-| Unity | `.codebuddy/agents/unity-specialist.md` |
-| Unreal | `.codebuddy/agents/unreal-specialist.md` |
-| Cocos Creator | `.codebuddy/agents/cocos-specialist.md` |
-
-### Map: Engine → Skill Directories
-
-Each engine has domain-specific skill directories under `.codebuddy/skills/`:
-
-| Engine | Skill Directories to Delete (if not chosen) |
-|--------|---------------------------------------------|
-| Godot | `godot-csharp/`, `godot-gdextension/`, `godot-gdscript/`, `godot-shader/` |
-| Unity | `unity-addressables/`, `unity-dots/`, `unity-shader/`, `unity-ui/` |
-| Unreal | `ue-blueprint/`, `ue-gas/`, `ue-replication/`, `ue-umg/` |
-| Cocos Creator | `cocos_2d/`, `cocos_3d/`, `cocos_animation/`, `cocos_core/`, `cocos_editor/`, `cocos_physics/`, `cocos_physics-2d/`, `cocos_rendering/`, `cocos_ui/` |
-
-### Procedure
-
-1. Identify the **chosen** engine (from Section 2/3)
-2. Build the deletion list: all agents and skill directories for the three **unselected** engines
-3. Present the deletion plan to the user:
-
-> "Setup for [chosen engine] is complete. I recommend deleting the agents and
-> skills for [engine A], [engine B], and [engine C] to keep the workspace clean
-> and prevent wrong-engine tooling from being used. This will remove:
->
-> **Agents** (4 files from 3 unselected engines):
-> - .codebuddy/agents/godot-specialist.md
-> - .codebuddy/agents/unity-specialist.md
-> - .codebuddy/agents/unreal-specialist.md
-> - .codebuddy/agents/cocos-specialist.md
->   → KEEPING: .codebuddy/agents/[chosen]-specialist.md
->
-> **Skills** ([N] directories from 3 unselected engines):
->   [List each engine's skill directories]
->
-> May I proceed with deletion?"
-
-4. Wait for explicit confirmation
-5. For each confirmed file/directory, use `delete_file` to remove it
-6. Report what was deleted and what was kept
-
-### Guardrails
-
-- NEVER delete the chosen engine's agent or skill directories
-- NEVER delete non-engine agents (design, production, QA, etc.) — only the 4 engine primary specialists
-- NEVER delete non-engine skill directories — only those listed in the engine→skills map above
-- If any file/directory in the deletion list does not exist, note it and skip — do not error
-- If the user declines deletion, respect it and move on
-
----
-
-## 11. Refresh Subcommand
+## 10. Refresh Subcommand
 
 If invoked as `/setup-engine refresh`:
 
@@ -557,7 +701,7 @@ If invoked as `/setup-engine refresh`:
 
 ---
 
-## 12. Upgrade Subcommand
+## 11. Upgrade Subcommand
 
 If invoked as `/setup-engine upgrade [old-version] [new-version]`:
 
@@ -662,7 +806,7 @@ Next steps:
 
 ---
 
-## 13. Output Summary
+## 12. Output Summary
 
 After setup is complete, output:
 
@@ -676,15 +820,16 @@ Reference Docs:  [created/skipped]
 CODEBUDDY.md:    [updated]
 Tech Prefs:      [created/updated]
 Agent Config:    [verified]
-Cleanup:         [removed agents: [N] files] + [removed skills: [M] directories] from [3 unselected engines]
+Project Dirs:    [created] (engine-specific layout + .gitignore)
 
 Next Steps:
 1. Review docs/engine-reference/<engine>/VERSION.md
-2. [If from /brainstorm] Run /map-systems to decompose your concept into individual systems
-3. [If from /brainstorm] Run /design-system to author per-system GDDs (guided, section-by-section)
-4. [If from /brainstorm] Run /prototype [core-mechanic] to validate the core idea before writing GDDs
-5. [If fresh start] Run /brainstorm to discover your game concept
-6. Create your first milestone: /sprint-plan new
+2. Verify the engine-specific directory structure matches your engine version
+3. [If from /brainstorm] Run /map-systems to decompose your concept into individual systems
+4. [If from /brainstorm] Run /design-system to author per-system GDDs (guided, section-by-section)
+5. [If from /brainstorm] Run /prototype [core-mechanic] to validate the core idea before writing GDDs
+6. [If fresh start] Run /brainstorm to discover your game concept
+7. Create your first milestone: /sprint-plan new
 ```
 
 ---
@@ -834,4 +979,232 @@ Use GDScript conventions for `.gd` files and C# conventions for `.cs` files. Mix
 | Project config (.csproj, NuGet) | godot-csharp-specialist |
 | Native extension / plugin files (.gdextension, C++) | godot-gdextension-specialist |
 | General architecture review | godot-specialist |
+```
+
+---
+
+## Appendix B — Engine Project Directory Structures
+
+Engine-specific project directory layouts. Referenced from Section 4.5.
+
+---
+
+### B1. Unreal Engine
+
+```text
+MyProject/
+├── MyProject.uproject          # ★ Project entry file (text format, double-click to launch)
+├── Config/                     # Configuration files (project settings / input / engine params)
+├── Content/                    # ★ All game assets (Blueprints, textures, models, maps, materials…)
+├── Source/                     # C++ source code (.h / .cpp / .Build.cs)
+├── Binaries/                   # Compiled output (executables, DLLs, PDBs)
+├── Intermediate/               # Temp/intermediate files (UBT generated, compile intermediates, shader cache)
+├── Saved/                      # Runtime-generated files (logs, autosaves, local config copies, crash info)
+├── DerivedDataCache/           # Asset derived data cache (DDC — deleting forces recompute, slows first load)
+├── Build/                      # Build/packaging support files (platform-specific build configs)
+├── Plugins/                    # Project-level plugins (each with .uplugin + own Content/Source/Binaries…)
+├── .vs/                        # Visual Studio local cache (if present)
+└── MyProject.sln               # VS solution file (if C++, generated)
+```
+
+```gitignore
+# Unreal Engine
+Binaries/
+Intermediate/
+Saved/
+DerivedDataCache/
+Build/
+.vs/
+*.sln
+*.suo
+*.xcodeproj
+*.xcworkspace
+```
+
+---
+
+### B2. Unity
+
+```text
+MyUnityProject/
+├── Assets/                     # [✅ Must] Core assets (Code, Scenes, Art, Prefabs)
+│   ├── _ProjectName/           # Recommended: Namespace folder
+│   │   ├── Art/                # Textures, Materials, Models, Animations
+│   │   ├── Audio/
+│   │   ├── Prefabs/
+│   │   ├── Scenes/
+│   │   └── Scripts/
+│   │       ├── Runtime/        # Gameplay logic
+│   │       └── Editor/         # Editor tools (not included in build)
+│   ├── Plugins/                # [✅ Must] Native plugins (.dll, .so, iOS/Android libs)
+│   ├── Resources/              # [⚠️ Use Caution] Loaded via Resources.Load()
+│   ├── StreamingAssets/        # [✅ Must] Files copied to build as-is
+│   └── Settings/               # ScriptableObjects (e.g., GameConfig)
+├── Packages/                   # [✅ Must] Package manager manifests
+│   ├── manifest.json           # Defines dependencies (URP, Input System, etc.)
+│   └── packages-lock.json      # Locks versions for team consistency
+├── ProjectSettings/            # [✅ Must] Global project settings
+│   ├── ProjectSettings.asset
+│   ├── GraphicsSettings.asset
+│   ├── InputManager.asset
+│   ├── TagManager.asset
+│   └── ... (other .asset files)
+├── Library/                    # [🚫 Ignore] Local cache & compilation artifacts (Deletable)
+├── Temp/                       # [🚫 Ignore] Temporary files during runtime
+├── Logs/                       # [🚫 Ignore] Editor logs
+├── UserSettings/               # [🚫 Ignore] Personal editor preferences
+├── .vs/                        # [🚫 Ignore] Visual Studio cache
+├── MyUnityProject.sln          # [🚫 Ignore] VS Solution (Regenerated)
+└── Assembly-CSharp.csproj      # [🚫 Ignore] Project files (Regenerated)
+```
+
+```gitignore
+# Unity Folders
+[Ll]ibrary/
+[Tt]emp/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+
+# Visual Studio / Rider
+.vs/
+.idea/
+*.csproj
+*.sln
+*.user
+*.userprefs
+*.unityproj
+
+# OS Generated
+.DS_Store
+Thumbs.db
+
+# Builds
+Builds/
+*.apk
+*.ipa
+```
+
+---
+
+### B3. Cocos Creator
+
+```text
+MyCocosProject/
+├── assets/                     # ★ Core resource directory (scenes, scripts, prefabs, art assets)
+│   ├── scenes/                 # Scene files (.scene)
+│   ├── scripts/                # Scripts (.ts / .js)
+│   ├── prefabs/                # Prefabs (.prefab)
+│   ├── textures/               # Textures
+│   ├── materials/              # Materials (.mtl)
+│   ├── models/                 # Models / FBX
+│   ├── animations/             # Animation clips
+│   ├── audio/                  # Sound effects
+│   ├── resources/              # Runtime-loaded resources (Resources.load)
+│   └── internal/               # Built-in engine resources (do not touch)
+├── settings/                   # ★ Project configuration (build, platform, module settings)
+│   ├── project.json            # Project basic info
+│   ├── builder.json            # Build config (legacy)
+│   └── platform.json           # Platform config
+├── profiles/                   # Local build/run configs (do not commit to VCS)
+├── local/                      # Local cache & temp data (do not commit to VCS)
+├── packages/                   # Project-level plugins (extend editor features)
+├── dist/                       # Build output directory (do not commit to VCS)
+├── temp/                       # Temporary files (deletable)
+├── tsconfig.json               # TypeScript config
+├── package.json                # npm dependency management
+└── package-lock.json           # Locked dependency versions
+```
+
+```gitignore
+# ===== Cocos Creator =====
+/local/
+/profiles/
+/temp/
+/dist/
+/build/
+
+# ===== Meta files =====
+# ❌ Do NOT ignore .meta files!
+# *.meta  # <-- NEVER write this line
+
+# ===== Node / NPM =====
+node_modules/
+package-lock.json
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+
+# ===== IDE =====
+.vscode/
+.idea/
+*.sln
+*.vcxproj
+*.user
+```
+
+> **CRITICAL**: Do NOT ignore `*.meta` files in Cocos Creator. Each asset has a
+> corresponding `.meta` file that stores import settings and GUID references.
+> Ignoring them will break asset references across the project.
+
+---
+
+### B4. Godot
+
+```text
+MyGodotProject/
+├── project.godot               # ★ Project core config file (text format, equivalent to .uproject + ProjectSettings)
+├── scenes/                     # Scene files (.tscn)
+├── scripts/                    # Scripts (GDScript: .gd, C#: .cs)
+├── assets/                     # Raw art assets (textures, models, audio, fonts)
+│   ├── textures/
+│   ├── models/
+│   ├── audio/
+│   └── fonts/
+├── themes/                     # UI theme resources (.tres)
+├── autoload/                   # Autoload singleton scripts (global managers)
+├── addons/                     # Plugin directory (EditorPlugins)
+├── shaders/                    # Shader files (.gdshader)
+├── resources/                  # Custom resources (.res, .tres, .cfg)
+├── .godot/                     # ★ Engine cache & temp data (deletable, like Library/)
+├── .import/                    # Asset import cache (deletable, like DerivedDataCache/)
+├── builds/                     # Build output (exported game packages, suggest ignoring)
+├── docs/                       # Project docs (optional, not engine-required)
+└── tests/                      # Unit tests (optional, not engine-required)
+```
+
+```gitignore
+# Godot 4.x specific
+.godot/
+.import/
+
+# Build output
+builds/
+exports/
+*.exe
+*.dmg
+*.apk
+*.aab
+
+# GDScript temp files
+*.translation
+*.remap
+
+# C# specific (if using Mono/C#)
+# If GDScript-only, this section can be omitted
+bin/
+obj/
+*.sln
+*.csproj
+*.userprefs
+*.pidb
+*.suo
+
+# OS generated
+.DS_Store
+Thumbs.db
+
+# IDE specific
+.vscode/
+.idea/
 ```

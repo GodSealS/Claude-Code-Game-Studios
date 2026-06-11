@@ -4,6 +4,8 @@ description: "Orchestrate the live-ops team for post-launch content planning: co
 argument-hint: "[season name or event description] [--review full|lean|solo]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Bash, Task, AskUserQuestion, TodoWrite
+context: fork
+model: DeepSeek-V4-Pro
 ---
 **Argument check:** If no season name or event description is provided, output:
 > "Usage: `/team-live-ops [season name or event description]` — Provide the name or description of the season or live event to plan."

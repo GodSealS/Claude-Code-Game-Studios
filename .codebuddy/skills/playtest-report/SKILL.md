@@ -4,6 +4,8 @@ description: "Generates a structured playtest report template or analyzes existi
 argument-hint: "[new|analyze path-to-notes] [--review full|lean|solo]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Task, AskUserQuestion
+context: fork
+model: DeepSeek-V4-Flash
 ---
 
 ## Phase 1: Parse Arguments
