@@ -4,8 +4,7 @@ description: "Guided, section-by-section GDD authoring for a single game system.
 argument-hint: "<system-name> [--review full|lean|solo]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Task, AskUserQuestion, TodoWrite
-context: fork
-model: DeepSeek-V4-Pro
+model: Deepseek-V4-Pro
 ---
 
 When this skill is invoked:

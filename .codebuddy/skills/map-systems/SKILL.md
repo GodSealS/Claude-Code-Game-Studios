@@ -4,8 +4,7 @@ description: "Decompose a game concept into individual systems, map dependencies
 argument-hint: "[next | system-name] [--review full|lean|solo]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, AskUserQuestion, TodoWrite, Task
-context: fork
-model: DeepSeek-V4-Pro
+model: Deepseek-V4-Pro
 ---
 
 When this skill is invoked:

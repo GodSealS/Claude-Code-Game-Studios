@@ -1,9 +1,9 @@
 ---
 name: cocos_2d
-description: Cocos Creator 2D rendering expert. Triggers when users need to handle Sprite, Label, Mask, Graphics, UI components, 2D sprite rendering, text rendering, mask effects, 2D graphics drawing. 当用户需要处理精灵、文本、遮罩、2D图形绘制、UI组件等2D渲染相关功能时触发此 Skill。
+description: "Cocos Creator 2D rendering expert. Triggers when users need to handle Sprite, Label, Mask, Graphics, UI components, 2D sprite rendering, text rendering, mask effects, 2D graphics drawing. 当用户需要处理精灵、文本、遮罩、2D图形绘制、UI组件等2D渲染相关功能时触发此 Skill。"
+user-invocable: false
 allowed-tools: Read, Grep
 argument-hint: ""
-user-invocable: false
 ---
 
 # 2D - Cocos Creator 2D Rendering System

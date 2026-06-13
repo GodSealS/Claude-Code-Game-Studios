@@ -4,8 +4,7 @@ description: "Holistic cross-GDD consistency and game design review. Reads all s
 argument-hint: "[focus: full | consistency | design-theory | since-last-review]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Bash, AskUserQuestion, Task
-context: fork
-model: DeepSeek-V4-Pro
+model: Deepseek-V4-Pro
 ---
 
 # Review All GDDs

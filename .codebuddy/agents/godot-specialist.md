@@ -1,8 +1,8 @@
 ---
 name: godot-specialist
-description: Godot 4 engine authority. Handles all Godot domains directly using domain skills (godot-gdscript, godot-csharp, godot-shader, godot-gdextension) loaded via UseSkill. No sub-agent delegation needed.
+description: "Godot 4 engine authority. Handles all Godot domains directly using domain skills (godot-gdscript, godot-csharp, godot-shader, godot-gdextension) loaded via UseSkill. No sub-agent delegation needed."
 tools: Read, Glob, Grep, Write, Edit, Bash, Task
-model: DeepSeek-V4-Flash
+model: Deepseek-V4-Flash
 maxTurns: 20
 agentMode: agentic
 enabled: true

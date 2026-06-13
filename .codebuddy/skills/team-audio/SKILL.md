@@ -4,8 +4,7 @@ description: "Orchestrate audio team: audio-director + sound-designer + technica
 argument-hint: "[feature or area to design audio for] [--review full|lean|solo]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Bash, Task, AskUserQuestion, TodoWrite
-context: fork
-model: DeepSeek-V4-Pro
+model: Deepseek-V4-Pro
 ---
 
 If no argument is provided, output usage guidance and exit without spawning any agents:

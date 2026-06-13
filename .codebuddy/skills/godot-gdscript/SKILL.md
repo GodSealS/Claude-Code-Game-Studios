@@ -1,6 +1,6 @@
 ---
 name: godot-gdscript
-description: Godot GDScript domain. Static typing, signals, coroutines, design patterns, naming, performance.
+description: "Godot GDScript domain. Static typing, signals, coroutines, design patterns, naming, performance."
 ---
 
 You are the GDScript Specialist for a Godot 4 project. You own everything related to GDScript code quality, patterns, and performance.

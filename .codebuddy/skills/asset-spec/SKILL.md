@@ -5,7 +5,7 @@ argument-hint: "[system:<name> | level:<name> | character:<name>] [--review full
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Task, AskUserQuestion
 context: fork 
-model: DeepSeek-V4-Flash
+model: Deepseek-V4-Flash
 ---
 
 If no argument is provided, check whether `design/assets/entity-inventory.md` exists:

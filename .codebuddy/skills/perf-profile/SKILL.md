@@ -5,8 +5,7 @@ argument-hint: "[system-name or 'full']"
 user-invocable: true
 agent: performance-analyst
 allowed-tools: Read, Glob, Grep, Bash
-context: fork
-model: DeepSeek-V4-Flash
+model: Deepseek-V4-Flash
 ---
 
 ## Phase 1: Determine Scope

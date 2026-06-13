@@ -4,8 +4,7 @@ description: "Creates a structured bug report from a description, or analyzes co
 argument-hint: "[description] | analyze [path-to-file]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write
-context: fork
-model: DeepSeek-V4-Flash
+model: Deepseek-V4-Flash
 ---
 
 ## Phase 1: Parse Arguments

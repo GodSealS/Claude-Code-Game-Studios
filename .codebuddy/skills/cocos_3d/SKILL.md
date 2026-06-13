@@ -1,10 +1,11 @@
 ---
 name: cocos_3d
-description: Cocos Creator 3D rendering expert. Triggers when users need to handle MeshRenderer, SkinnedMeshRenderer, Model, 3D mesh rendering, skinned mesh, model loading and management. 当用户需要处理网格渲染、蒙皮网格、3D模型加载与管理等3D渲染相关功能时触发此 Skill。
+description: "Cocos Creator 3D rendering expert. Triggers when users need to handle MeshRenderer, SkinnedMeshRenderer, Model, 3D mesh rendering, skinned mesh, model loading and management. 当用户需要处理网格渲染、蒙皮网格、3D模型加载与管理等3D渲染相关功能时触发此 Skill。"
+user-invocable: false
 allowed-tools: Read, Grep
 argument-hint: ""
-user-invocable: false
 ---
+
 
 # 3D - Cocos Creator 3D Rendering System
 

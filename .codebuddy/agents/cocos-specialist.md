@@ -1,8 +1,8 @@
 ---
 name: cocos-specialist
-description: Cocos Creator engine authority. Handles all Cocos subsystems directly using domain skills (cocos_2d, cocos_3d, cocos_animation, cocos_core, cocos_physics, cocos_physics-2d, cocos_rendering, cocos_ui, cocos_editor) loaded via UseSkill. No sub-agent delegation needed.
+description: "Cocos Creator engine authority. Handles all Cocos subsystems directly using domain skills (cocos_2d, cocos_3d, cocos_animation, cocos_core, cocos_physics, cocos_physics-2d, cocos_rendering, cocos_ui, cocos_editor) loaded via UseSkill. No sub-agent delegation needed."
 tools: Read, Glob, Grep, Write, Edit, Bash, Task
-model: DeepSeek-V4-Flash
+model: Deepseek-V4-Flash
 maxTurns: 20
 agentMode: agentic
 enabled: true

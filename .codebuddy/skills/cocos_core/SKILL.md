@@ -1,9 +1,9 @@
 ---
 name: cocos_core
-description: Cocos Creator core engine expert. Triggers when users need to handle Component, Node, Director, Game, Scene, ECS architecture, scene graph, lifecycle management, event system, object pool. 当用户需要处理组件、节点、场景图、生命周期管理、事件系统、对象池等核心功能时触发此 Skill。
+description: "Cocos Creator core engine expert. Triggers when users need to handle Component, Node, Director, Game, Scene, ECS architecture, scene graph, lifecycle management, event system, object pool. 当用户需要处理组件、节点、场景图、生命周期管理、事件系统、对象池等核心功能时触发此 Skill。"
+user-invocable: false
 allowed-tools: Read, Grep
 argument-hint: ""
-user-invocable: false
 ---
 
 # Core - Cocos Creator Core Engine

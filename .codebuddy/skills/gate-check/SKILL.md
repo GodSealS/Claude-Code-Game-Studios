@@ -5,7 +5,7 @@ argument-hint: "[target-phase: systems-design | technical-setup | pre-production
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Bash, Write, Task, AskUserQuestion
 context: fork 
-model: DeepSeek-V4-Pro
+model: Deepseek-V4-Pro
 ---
 
 # Phase Gate Validation

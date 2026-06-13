@@ -4,8 +4,7 @@ description: "Generate engine-specific test helper libraries for the project's t
 argument-hint: "[system-name | all | scaffold]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write
-context: fork
-model: DeepSeek-V4-Flash
+model: Deepseek-V4-Flash
 ---
 
 # Test Helpers

@@ -5,7 +5,7 @@ argument-hint: "[story-path]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Bash, Task, AskUserQuestion
 context: fork
-model: DeepSeek-V4-Pro
+model: Deepseek-V4-Pro
 ---
 
 # Dev Story

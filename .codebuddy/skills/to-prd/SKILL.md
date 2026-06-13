@@ -4,8 +4,7 @@ description: "Turn the current conversation context into a PRD (Product Requirem
 argument-hint: "[optional reference to the feature being specified]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, AskUserQuestion
-context: fork
-model: DeepSeek-V4-Pro
+model: Deepseek-V4-Pro
 ---
 
 # To PRD

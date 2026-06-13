@@ -1,9 +1,9 @@
 ---
 name: cocos_physics
-description: Cocos Creator 3D physics engine expert. Triggers when users need to handle RigidBody, Collider, PhysicsWorld, Joint, raycast, collision detection, rigid body dynamics, 3D physics simulation. 当用户需要处理刚体、碰撞体、射线检测、3D物理模拟等物理相关功能时触发此 Skill。
+description: "Cocos Creator 3D physics engine expert. Triggers when users need to handle RigidBody, Collider, PhysicsWorld, Joint, raycast, collision detection, rigid body dynamics, 3D physics simulation. 当用户需要处理刚体、碰撞体、射线检测、3D物理模拟等物理相关功能时触发此 Skill。"
+user-invocable: false
 allowed-tools: Read, Grep
 argument-hint: ""
-user-invocable: false
 ---
 
 # Physics - Cocos Creator 3D Physics Engine

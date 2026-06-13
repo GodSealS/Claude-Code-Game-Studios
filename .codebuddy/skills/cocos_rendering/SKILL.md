@@ -1,10 +1,11 @@
 ---
 name: cocos_rendering
-description: Cocos Creator rendering & GFX expert. Triggers for Effect shaders, materials, GPU resources (Device/Buffer/Texture/Shader/PipelineState), Forward/Deferred pipeline, camera, lighting, shadows, post-processing, custom render passes, and cross-platform (WebGL/Vulkan/Metal) rendering.
+description: "Cocos Creator rendering & GFX expert. Triggers for Effect shaders, materials, GPU resources (Device/Buffer/Texture/Shader/PipelineState), Forward/Deferred pipeline, camera, lighting, shadows, post-processing, custom render passes, and cross-platform (WebGL/Vulkan/Metal) rendering."
+user-invocable: false
 allowed-tools: Read, Grep
 argument-hint: ""
-user-invocable: false
 ---
+
 
 # Rendering & GFX - Cocos Creator Full Rendering Stack
 

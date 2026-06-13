@@ -4,8 +4,7 @@ description: "Track, categorize, and prioritize technical debt across the codeba
 argument-hint: "[scan|add|prioritize|report]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, AskUserQuestion
-context: fork
-model: DeepSeek-V4-Flash
+model: Deepseek-V4-Flash
 ---
 
 ## Phase 1: Parse Subcommand

@@ -2,7 +2,7 @@
 name: qa-tester
 description: "The QA Tester writes detailed test cases, bug reports, and test checklists. Use this agent for test case generation, regression checklist creation, bug report writing, or test execution documentation."
 tools: Read, Glob, Grep, Write, Edit, Bash
-model: DeepSeek-V4-Flash
+model: Deepseek-V4-Flash
 maxTurns: 10
 agentMode: agentic
 enabled: true

@@ -4,8 +4,7 @@ description: "Improve a skill using a test-fix-retest loop. Runs static checks, 
 argument-hint: "[skill-name]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Bash
-context: fork
-model: DeepSeek-V4-Flash
+model: Deepseek-V4-Flash
 ---
 
 # Skill Improve
@@ -26,6 +25,18 @@ Example: /skill-improve tech-debt
 
 Verify `.codebuddy/skills/[name]/SKILL.md` exists. If not, stop with:
 "Skill '[name]' not found."
+
+### Phase 1a: Discover Companion Files
+
+Glob `.codebuddy/skills/[name]/` for all non-SKILL.md files and subdirectories
+(e.g., `workflow-*.md`, `references/`, `api-reference.md`). Record the list.
+
+If companions exist, display:
+"Companion files detected (N): [list]. These will be included in the improvement loop."
+
+If the SKILL.md references companion files (via routing tables, "Load This File"
+columns, or `references/` paths) but those files are missing on disk, warn:
+"WARNING: SKILL.md references companion files that don't exist: [list]"
 
 ---
 
@@ -71,6 +82,11 @@ If BOTH static and category baselines are 0 FAILs and 0 WARNs, stop:
 
 Read the full skill file at `.codebuddy/skills/[name]/SKILL.md`.
 
+If companion files were found in Phase 1a, also read each companion file.
+Companion files may contain referenced workflows, API docs, or reference
+material that governs how the skill behaves — they are part of the skill's
+specification and must be consistent with SKILL.md.
+
 For each failing or warning **static** check, identify the exact gap:
 
 - **Check 1 fail** → which frontmatter field is missing
@@ -107,9 +123,11 @@ If the user says no, stop here.
 
 ## Phase 5: Write and Retest
 
-Record the current content of the skill file (for revert if needed).
+Record the current content of ALL skill files — both `SKILL.md` and any companion
+files — for revert if needed.
 
 Write the improved skill to `.codebuddy/skills/[name]/SKILL.md`.
+If companion files were modified during the fix, write those as well.
 
 Re-run `/skill-test static [name]` and record the new static score.
 If a category was assigned, also re-run `/skill-test category [name]` and record the new category score.
@@ -134,8 +152,9 @@ Show a summary of what was fixed in each dimension.
 **If combined score is the same or worse:**
 Report: "Combined score did not improve."
 Show what changed and why it may not have helped.
-Ask: "May I revert `.codebuddy/skills/[name]/SKILL.md` using git checkout?"
-If yes: run `git checkout -- .codebuddy/skills/[name]/SKILL.md`
+Ask: "May I revert all changes to `.codebuddy/skills/[name]/` using git checkout?"
+If yes: run `git checkout -- .codebuddy/skills/[name]/`
+(This reverts both SKILL.md and any companion files that were modified.)
 
 ---
 

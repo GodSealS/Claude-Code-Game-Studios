@@ -1,8 +1,8 @@
 ---
 name: unity-specialist
-description: Unity engine authority. Handles all Unity domains directly using domain skills (unity-shader, unity-dots, unity-addressables, unity-ui) loaded via UseSkill. No sub-agent delegation.
+description: "Unity engine authority. Handles all Unity domains directly using domain skills (unity-shader, unity-dots, unity-addressables, unity-ui) loaded via UseSkill. No sub-agent delegation."
 tools: Read, Glob, Grep, Write, Edit, Bash, Task
-model: DeepSeek-V4-Flash
+model: Deepseek-V4-Flash
 maxTurns: 20
 agentMode: agentic
 enabled: true

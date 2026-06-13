@@ -6,7 +6,7 @@ user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Bash
 # Read-only diagnostic skill — no specialist agent delegation needed
 context: fork 
-model: DeepSeek-V4-Flash
+model: Deepseek-V4-Flash
 ---
 
 # Reverse Documentation

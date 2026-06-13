@@ -5,7 +5,7 @@ argument-hint: "[role|area]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write
 context: fork 
-model: DeepSeek-V4-Flash
+model: Deepseek-V4-Flash
 ---
 
 ## Phase 1: Load Project Context

@@ -1,9 +1,9 @@
 ---
 name: cocos_animation
-description: Cocos Creator animation system expert. Triggers when users need to handle AnimationClip, AnimationState, SkeletonAnimation, animation state machines, skeletal animation, animation blending (crossFade), keyframe animation. 当用户需要处理动画剪辑、骨骼动画、动画状态机、动画混合等动画相关功能时触发此 Skill。
+description: "Cocos Creator animation system expert. Triggers when users need to handle AnimationClip, AnimationState, SkeletonAnimation, animation state machines, skeletal animation, animation blending (crossFade), keyframe animation. 当用户需要处理动画剪辑、骨骼动画、动画状态机、动画混合等动画相关功能时触发此 Skill。"
+user-invocable: false
 allowed-tools: Read, Grep
 argument-hint: ""
-user-invocable: false
 ---
 
 # Animation - Cocos Creator Animation System

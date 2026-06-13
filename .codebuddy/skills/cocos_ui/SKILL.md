@@ -1,10 +1,11 @@
 ---
 name: cocos_ui
-description: Cocos Creator UI system expert. Triggers when users need to handle Button, EditBox, ScrollView, Toggle, Slider, ProgressBar, Layout, Widget, PageView, RichText, UI event system, and MMORPG UI templates (UnitFrame, ActionBar, Minimap, ChatWindow, PartyFrame, RaidFrame, QuestTracker, Tooltip, BagPanel, CharacterPanel, CastingBar, Nameplate, CombatText, LootRoll, VendorPanel). 当用户需要处理交互式UI组件、UI事件系统、多分辨率适配、或魔兽世界风格MMORPG UI模板时触发此 Skill。
+description: "Cocos Creator UI system expert. Triggers when users need to handle Button, EditBox, ScrollView, Toggle, Slider, ProgressBar, Layout, Widget, PageView, RichText, UI event system, and MMORPG UI templates (UnitFrame, ActionBar, Minimap, ChatWindow, PartyFrame, RaidFrame, QuestTracker, Tooltip, BagPanel, CharacterPanel, CastingBar, Nameplate, CombatText, LootRoll, VendorPanel). 当用户需要处理交互式UI组件、UI事件系统、多分辨率适配、或魔兽世界风格MMORPG UI模板时触发此 Skill。"
+user-invocable: false
 allowed-tools: Read, Grep
 argument-hint: ""
-user-invocable: false
 ---
+
 
 # Cocos Creator UI System & MMORPG UI Templates
 

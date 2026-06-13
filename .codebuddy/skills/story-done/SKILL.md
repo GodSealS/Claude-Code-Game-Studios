@@ -5,7 +5,7 @@ argument-hint: "[story-file-path] [--review full|lean|solo]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Bash, Write, Edit, AskUserQuestion, Task
 context: fork 
-model: DeepSeek-V4-Flash
+model: Deepseek-V4-Flash
 ---
 
 # Story Done

@@ -4,8 +4,7 @@ description: "Lightweight design spec for small changes — tuning adjustments, 
 argument-hint: "[brief description of the change]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, AskUserQuestion
-context: fork
-model: DeepSeek-V4-Flash
+model: Deepseek-V4-Flash
 ---
 
 # Quick Design

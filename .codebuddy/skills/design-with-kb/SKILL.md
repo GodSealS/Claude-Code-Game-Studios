@@ -1,6 +1,6 @@
 ---
 name: design-with-kb
-description: Search knowledge-base for matching design patterns and techniques before implementing. Reads INDEX.yaml, matches by domain/tags/engine, reads candidate chapters, outputs suitability assessment.
+description: "Search knowledge-base for matching design patterns and techniques before implementing. Reads INDEX.yaml, matches by domain/tags/engine, reads candidate chapters, outputs suitability assessment."
 argument-hint: "[problem description or design domain]"
 user-invocable: true
 allowed-tools: Read, Grep, Glob, Write, Edit

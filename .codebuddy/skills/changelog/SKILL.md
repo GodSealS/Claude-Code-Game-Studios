@@ -6,8 +6,8 @@ user-invocable: true
 allowed-tools: Read, Glob, Grep, Bash, Write
 context: |
   !git log --oneline -30 2>/dev/null
-  !git tag --list --sort=-v:refname 2>/dev/null | head -5 | fork 
-model: DeepSeek-V4-Flash
+  !git tag --list --sort=-v:refname 2>/dev/null | head -5 
+model: Deepseek-V4-Flash
 ---
 
 ## Phase 1: Parse Arguments

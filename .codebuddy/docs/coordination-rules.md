@@ -14,22 +14,50 @@
 
 ## Model Tier Assignment
 
-Skills and agents are assigned to model tiers based on task complexity:
+Skills and agents declare their `model:` directly in YAML frontmatter. The tiers
+below describe the **target capability** of each model and the kinds of work
+assigned to it. This file does NOT enforce routing — `models.config.yaml`
+(`/setup-engine`, `codesquad config`) is the runtime override mechanism.
 
-| Tier | Model               | When to use |
-|------|---------------------|-------------|
-| **Haiku** | `MiniMax-M2.7`      | Read-only status checks, formatting, simple lookups — no creative judgment needed |
-| **Sonnet** | `DeepSeek-V4-Flash` | Implementation, design authoring, analysis of individual systems — default for most work |
-| **Opus** | `GLM-5.1`           | Multi-document synthesis, high-stakes phase gate verdicts, cross-system holistic review |
+| Tier   | Model                | Used for                                                                                  |
+|--------|----------------------|-------------------------------------------------------------------------------------------|
+| **Haiku**  | `Deepseek-V4-Flash`  | Read-only status checks, formatting, simple lookups — no creative judgment needed     |
+| **Sonnet** | `Deepseek-V4-Pro`    | Implementation, design authoring, analysis of individual systems — default for most work |
+| **Opus**   | `GLM-5.1`            | Multi-document synthesis, high-stakes phase gate verdicts, cross-system holistic review |
+| **Opus-alt** | `Kimi-K2.6`        | Creative vision, narrative depth, world design — alternative Opus-tier choice          |
 
-Skills with `model: haiku`: `/help`, `/sprint-status`, `/story-readiness`, `/scope-check`,
-`/project-stage-detect`, `/changelog`, `/patch-notes`, `/onboard`
+**Specialty models** (vision / audio / tool-use — substituted for a tier above when
+the task requires that capability):
 
-Skills with `model: opus`: `/review-all-gdds`, `/architecture-review`, `/gate-check`
+| Capability | Model             | Agents                                                |
+|------------|-------------------|-------------------------------------------------------|
+| Vision     | `GLM-5v-Turbo`    | `art-director`, `technical-artist`, `accessibility-specialist` |
+| Audio      | `GLM-5.0-Turbo`   | `community-manager`, `sound-designer`                 |
+| Tool/UI    | `MiniMax-M3`      | `world-builder`, `ui-programmer`, `tools-programmer`, `network-programmer`, `security-engineer` |
 
-All other skills default to DeepSeek-V4-Flash. When creating new skills, assign Haiku if the
-skill only reads and formats; assign Opus if it must synthesize 5+ documents with
-high-stakes output; otherwise leave unset (DeepSeek-V4-Flash).
+**Tiers in practice** (typical frontmatter distribution):
+
+- `Deepseek-V4-Flash` — engine specialists (`unreal-specialist`, `unity-specialist`,
+  `godot-specialist`, `cocos-specialist`), `economy-designer`, `qa-tester`,
+  `analytics-engineer`, `prototyper`, `live-ops-designer`, `localization-lead`.
+  Plus ~25 read-only / formatting skills (`/help`, `/sprint-status`,
+  `/changelog`, `/playtest-report`, etc.).
+- `Deepseek-V4-Pro` — code-writing specialists (`gameplay-programmer`,
+  `engine-programmer`, `ai-programmer`, `qa-lead`, `writer`, `systems-designer`,
+  `test-foo`), plus design/analysis skills (`/design-system`, `/design-review`,
+  `/dev-story`, `/review-all-gdds`, `/gate-check`, `/architecture-decision`, etc.).
+- `GLM-5.1` — Tier-1 directors and high-stakes decision agents
+  (`technical-director`, `release-manager`, `lead-programmer`, `devops-engineer`,
+  `performance-analyst`, `ux-designer`).
+- `Kimi-K2.6` — Tier-1 + Tier-2 creative leads (`creative-director`, `producer`,
+  `game-designer`, `narrative-director`, `level-designer`).
+
+> **Note**: Do NOT write `model: haiku` / `model: sonnet` / `model: opus` in
+> frontmatter. The project uses concrete model names (e.g. `Deepseek-V4-Flash`).
+> When `codesquad init` copies AICore to a third-party tool, the
+> `codebuddyAdapter.getDefaultModels()` returns `{}` — AICore's original model
+> names are preserved unchanged. See `docs/model-mapping-design.md` for the
+> cross-tool mapping rules.
 
 ## Subagents vs Agent Teams
 

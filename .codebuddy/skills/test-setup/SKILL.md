@@ -5,7 +5,7 @@ argument-hint: "[force]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Bash, Write
 context: fork 
-model: DeepSeek-V4-Pro
+model: Deepseek-V4-Pro
 ---
 
 # Test Setup

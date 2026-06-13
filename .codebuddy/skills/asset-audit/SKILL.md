@@ -4,8 +4,7 @@ description: "Audits game assets for compliance with naming conventions, file si
 argument-hint: "[category|all]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep
-context: fork
-model: DeepSeek-V4-Flash
+model: Deepseek-V4-Flash
 # Read-only diagnostic skill — no specialist agent delegation needed
 ---
 

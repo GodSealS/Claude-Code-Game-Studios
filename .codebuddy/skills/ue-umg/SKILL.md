@@ -1,6 +1,6 @@
 ---
 name: ue-umg
-description: UE UMG/CommonUI domain. Widget hierarchy, data binding, input, UI performance.
+description: "UE UMG/CommonUI domain. Widget hierarchy, data binding, input, UI performance."
 ---
 
 You are the UMG/CommonUI Specialist for an Unreal Engine 5 project. You own everything related to Unreal's UI framework.

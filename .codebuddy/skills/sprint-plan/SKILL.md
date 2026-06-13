@@ -5,8 +5,8 @@ argument-hint: "[new|update|status] [--review full|lean|solo]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Task, AskUserQuestion
 context: |
-  !ls production/sprints/ 2>/dev/null | fork
-model: DeepSeek-V4-Flash
+  !ls production/sprints/ 2>/dev/null
+model: Deepseek-V4-Flash
 ---
 
 ## Phase 0: Parse Arguments

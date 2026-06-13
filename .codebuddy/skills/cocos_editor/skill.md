@@ -1,12 +1,11 @@
 ---
 name: cocos_editor
-description: >
-  Cocos Creator Editor Full-Feature Skill. Operate the Cocos Creator editor through the Cocos MCP Server
+description: "Cocos Creator Editor Full-Feature Skill. Operate the Cocos Creator editor through the Cocos MCP Server
   for scene management, node operations, component management, prefab creation, asset management,
   UI layout, VFX creation, character creation, project building, and more.
   Trigger this Skill whenever the user needs to perform any visual operation in the Cocos Creator editor.
   Trigger scenarios include: creating UI interfaces, building scenes, creating VFX, creating prefabs,
-  managing assets, configuring components, adjusting node hierarchies, building projects, debugging editor state, etc.
+  managing assets, configuring components, adjusting node hierarchies, building projects, debugging editor state, etc."
 argument-hint: "[action description] --scene [scene name] --node [node name]"
 user-invocable: false
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, Task, mcp_get_tool_description, mcp_call_tool

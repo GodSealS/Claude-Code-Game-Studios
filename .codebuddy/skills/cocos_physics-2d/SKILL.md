@@ -1,9 +1,9 @@
 ---
 name: cocos_physics-2d
-description: Cocos Creator 2D physics engine expert. Triggers when users need to handle RigidBody2D, Collider2D, PhysicsWorld2D, 2D collision detection, Box2D integration, 2D rigid body dynamics. 当用户需要处理2D刚体、2D碰撞检测、Box2D集成等2D物理相关功能时触发此 Skill。
+description: "Cocos Creator 2D physics engine expert. Triggers when users need to handle RigidBody2D, Collider2D, PhysicsWorld2D, 2D collision detection, Box2D integration, 2D rigid body dynamics. 当用户需要处理2D刚体、2D碰撞检测、Box2D集成等2D物理相关功能时触发此 Skill。"
+user-invocable: false
 allowed-tools: Read, Grep
 argument-hint: ""
-user-invocable: false
 ---
 
 # Physics 2D - Cocos Creator 2D Physics Engine
